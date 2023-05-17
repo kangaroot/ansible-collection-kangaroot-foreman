@@ -1,0 +1,411 @@
+---
+# foreman oracle linux content group vars file for katello-main
+
+foreman_content_credentials_ol9: []
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-oracle
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_ol9:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 9 BaseOS Latest (x86_64) | ol9_x86_64_baseos_latest ###
+      - name: Oracle Linux 9 BaseOS Latest (x86_64)
+        description: Base operating system packages released for Oracle Linux 9 (x86_64) including the latest errata packages. (x86_64)
+        label: ol9_x86_64_baseos_latest
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/baseos/latest/x86_64/"
+        <<: *foreman_products_defaults
+      ### Oracle Linux 9 Application Stream Packages (x86_64) | ol9_x86_64_appstream ###
+      - name: Oracle Linux 9 Application Stream Packages (x86_64)
+        description: Application Stream packages released for Oracle Linux 9 including the latest errata packages. (x86_64)
+        label: ol9_x86_64_appstream
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/appstream/x86_64/"
+        <<: *foreman_products_defaults
+
+      ### Oracle Linux 9 Addons (x86_64) | ol9_x86_64_addons ###
+      - name: Oracle Linux 9 Addons (x86_64)
+        description: Latest Add-on packages for Oracle Linux 9 (x86_64)
+        label: ol9_x86_64_addons
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/addons/x86_64/"
+        <<: *foreman_products_defaults
+      ### Packages for creating test and development environments for Oracle Linux 9 (x86_64) | ol9_x86_64_developer ###
+      - name: Packages for creating test and development environments for Oracle Linux 9 (x86_64)
+        description: Latest packages for creating test and development environments - Oracle LInux 9 (x86_64)
+        label: ol9_x86_64_developer
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/developer/x86_64/"
+        <<: *foreman_products_defaults
+      ### Oracle Linux 9 EPEL Packages (x86_64) | ol9_x86_64_developer_EPEL ###
+      - name: Oracle Linux 9 EPEL Packages (x86_64)
+        description: EPEL packages for Oracle Linux 9 (x86_64)
+        label: ol9_x86_64_developer_EPEL
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/developer/EPEL/x86_64/"
+        <<: *foreman_products_defaults
+      ### Oracle Linux 9 CodeReady Builder (x86_64) | ol9_x86_64_codeready_builder ###
+      - name: Oracle Linux 9 CodeReady Builder (x86_64)
+        description: Repository of additional development and build tools for Oracle Linux 9 (x86_64) - (Unsupported)
+        label: ol9_x86_64_codeready_builder
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/codeready/builder/x86_64/"
+        <<: *foreman_products_defaults
+      # ### Oracle Linux 9 CodeReady Builder Developer Preview (x86_64) | ol9_x86_64_codeready_builder_developer ###
+      # - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
+      #   description: Developer preview of Oracle Linux 9 CodeReady Builder Packages (x86_64) - (Unsupported)
+      #   label: ol9_x86_64_codeready_builder_developer
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/codeready/builder/developer/x86_64/"
+      #   <<: *foreman_products_defaults
+      ### Oracle Linux 9 Distro Builder (x86_64) | ol9_x86_64_distro_builder ###
+      - name: Oracle Linux 9 Distro Builder (x86_64)
+        description: Oracle Linux 9 Distro Builder Packages (x86_64) - (Unsupported)
+        label: ol9_x86_64_distro_builder
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/distro/builder/x86_64/"
+        <<: *foreman_products_defaults
+
+      ### Oracle Linux 9 UEK Release 7 (x86_64) | ol9_x86_64_UEKR7 ###
+      - name: Oracle Linux 9 UEK Release 7 (x86_64)
+        description: Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 9 (x86_64)
+        label: ol9_x86_64_UEKR7
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/UEKR7/x86_64/"
+        <<: *foreman_products_defaults
+      # ### Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64) | ol9_x86_64_developer_UEKR7 ###
+      # - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64)
+      #   description: Developer preview of Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 9 (x86_64) - (not for production use)
+      #   label: ol9_x86_64_developer_UEKR7
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/developer/UEKR7/x86_64/"
+      #   <<: *foreman_products_defaults
+      ### Oracle Linux 9 RDMA (x86_64) | ol9_x86_64_RDMA ###
+      - name: Oracle Linux 9 RDMA (x86_64)
+        description: Latest RDMA packages for Oracle Linux 9 (x86_64)
+        label: ol9_x86_64_RDMA
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/RDMA/x86_64/"
+        <<: *foreman_products_defaults
+      ### Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64) | ol9_x86_64_MODRHCK ###
+      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64)
+        description: Latest Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64).
+        label: ol9_x86_64_MODRHCK
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/MODRHCK/x86_64/"
+        <<: *foreman_products_defaults
+
+      # ### MySQL 8.0 Connectors Community for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_connectors_community ###
+      # - name: MySQL 8.0 Connectors Community for Oracle Linux 8 (x86_64)
+      #   description: Latest MySQL 8.0 Connectors Community packages for Oracle Linux 8 (x86_64).
+      #   label: ol8_x86_64_MySQL80_connectors_community
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/MySQL80/connectors/community/x86_64/"
+      #   <<: *foreman_products_defaults
+      # ### MySQL 8.0 for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_community ###
+      # - name: MySQL 8.0 for Oracle Linux 8 (x86_64)
+      #   description: Latest MySQL 8.0 packages for Oracle Linux 8 (x86_64).
+      #   label: ol8_x86_64_MySQL80_community
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/MySQL80/community/x86_64/"
+      #   <<: *foreman_products_defaults
+      # ### MySQL 8.0 Tools Community for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_tools_community ###
+      # - name: MySQL 8.0 Tools Community for Oracle Linux 8 (x86_64)
+      #   description: Latest MySQL 8.0 Tools Community packages for Oracle Linux 8 (x86_64).
+      #   label: ol8_x86_64_MySQL80_tools_community
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/MySQL80/tools/community/x86_64/"
+      #   <<: *foreman_products_defaults
+
+      # ### Oracle Linux 9 KVM Utilities (x86_64) | ol9_x86_64_kvm_utils ###
+      # - name: Oracle Linux 9 KVM Utilities (x86_64)
+      #   description: Latest Oracle Linux 9 KVM Utilities Packages (x86_64)
+      #   label: ol9_x86_64_kvm_utils
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/kvm/utils/x86_64/"
+      #   <<: *foreman_products_defaults
+      # ### Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64) | ol9_x86_64_developer_kvm_utils ###
+      # - name: Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64)
+      #   description: Latest KVM Utility packages for test and development for Oracle Linux 9 (x86_64).
+      #   label: ol9_x86_64_developer_kvm_utils
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/developer/kvm/utils/x86_64/"
+      #   <<: *foreman_products_defaults
+
+      # ### Oracle Linux Manager 2.10 Client (x86_64) | ol9_x86_64_oraclelinuxmanager210_client ###
+      # - name: Oracle Linux Manager 2.10 Client (x86_64)
+      #   description: Latest Oracle Linux Manager 2.10 Client packages for Oracle Linux 9 (x86_64)
+      #   label: ol9_x86_64_oraclelinuxmanager210_client
+      #   url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/oraclelinuxmanager210/client/x86_64/"
+      #   <<: *foreman_products_defaults
+
+      ### Oracle Linux 9 BaseOS GA (x86_64) | ol9_x86_64_u0_baseos_base ###
+      - name: Oracle Linux 9 BaseOS GA (x86_64)
+        description: Base operating system packages released for Oracle Linux 9 (x86_64). No errata included
+        label: ol9_x86_64_u0_baseos_base
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/0/baseos/base/x86_64/"
+        <<: *foreman_products_defaults
+      ### Oracle Linux 9.1 BaseOS (x86_64) | ol9_x86_64_u1_baseos_base ###
+      - name: Oracle Linux 9.1 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 9.1 (x86_64). No errata included
+        label: ol9_x86_64_u1_baseos_base
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/1/baseos/base/x86_64/"
+        <<: *foreman_products_defaults
+
+foreman_content_views_ol9:
+  - name: cv_ol9_x86_64_baseos_latest
+    repositories:
+      - name: Oracle Linux 9 BaseOS Latest (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol9_x86_64_appstream
+    repositories:
+      - name: Oracle Linux 9 Application Stream Packages (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+  - name: cv_ol9_x86_64_addons
+    repositories:
+      - name: Oracle Linux 9 Addons (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol9_x86_64_developer
+    repositories:
+      - name: Packages for creating test and development environments for Oracle Linux 9 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol9_x86_64_developer_EPEL
+    repositories:
+      - name: Oracle Linux 9 EPEL Packages (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol9_x86_64_codeready_builder
+    repositories:
+      - name: Oracle Linux 9 CodeReady Builder (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  # - name: cv_ol9_x86_64_codeready_builder_developer
+  #   repositories:
+  #     - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  - name: cv_ol9_x86_64_distro_builder
+    repositories:
+      - name: Oracle Linux 9 Distro Builder (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+  - name: cv_ol9_x86_64_UEKR7
+    repositories:
+      - name: Oracle Linux 9 UEK Release 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  # - name: cv_ol9_x86_64_developer_UEKR7
+  #   repositories:
+  #     - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  - name: cv_ol9_x86_64_RDMA
+    repositories:
+      - name: Oracle Linux 9 RDMA (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol9_x86_64_MODRHCK
+    repositories:
+      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+  # - name: cv_ol9_x86_64_MySQL80_connectors_community
+  #   repositories:
+  #     - name: MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  # - name: cv_ol9_x86_64_MySQL80_community
+  #   repositories:
+  #     - name: MySQL 8.0 for Oracle Linux 9 (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  # - name: cv_ol9_x86_64_MySQL80_tools_community
+  #   repositories:
+  #     - name: MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+
+  # - name: cv_ol9_x86_64_kvm_utils
+  #   repositories:
+  #     - name: Oracle Linux 9 KVM Utilities (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  # - name: cv_ol9_x86_64_developer_kvm_utils
+  #   repositories:
+  #     - name: Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+
+  # - name: cv_ol9_x86_64_oraclelinuxmanager210_client
+  #   repositories:
+  #     - name: Oracle Linux Manager 2.10 Client (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+
+  - name: ccv_ol9
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_ol9_x86_64_baseos_latest
+        latest: true
+      - content_view: cv_ol9_x86_64_appstream
+        latest: true
+      - content_view: cv_ol9_x86_64_addons
+        latest: true
+      - content_view: cv_ol9_x86_64_developer
+        latest: true
+      - content_view: cv_ol9_x86_64_developer_EPEL
+        latest: true
+      - content_view: cv_ol9_x86_64_codeready_builder
+        latest: true
+      # - content_view: cv_ol9_x86_64_codeready_builder_developer
+      #   latest: true
+      - content_view: cv_ol9_x86_64_distro_builder
+        latest: true
+      - content_view: cv_ol9_x86_64_UEKR7
+        latest: true
+      # - content_view: cv_ol9_x86_64_developer_UEKR7
+      #   latest: true
+      - content_view: cv_ol9_x86_64_RDMA
+        latest: true
+      - content_view: cv_ol9_x86_64_MODRHCK
+        latest: true
+      # - content_view: cv_ol9_x86_64_MySQL80_connectors_community
+      #   latest: true
+      # - content_view: cv_ol9_x86_64_MySQL80_community
+      #   latest: true
+      # - content_view: cv_ol9_x86_64_MySQL80_tools_community
+      #   latest: true
+      # - content_view: cv_ol9_x86_64_kvm_utils
+      #   latest: true
+      # - content_view: cv_ol9_x86_64_developer_kvm_utils
+      #   latest: true
+      # - content_view: cv_ol9_x86_64_oraclelinuxmanager210_client
+      #   latest: true
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    - template_kind: "cloud-init"
+      provisioning_template: "CloudInit default"
+    - template_kind: "finish"
+      provisioning_template: "Kickstart default finish"
+    - template_kind: "host_init_config"
+      provisioning_template: "Linux host_init_config default"
+    - template_kind: "iPXE"
+      provisioning_template: "Kickstart default iPXE"
+    - template_kind: "provision"
+      provisioning_template: "Kickstart default"
+    - template_kind: "PXEGrub"
+      provisioning_template: "Kickstart default PXEGrub"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "Kickstart default PXEGrub2"
+    - template_kind: "PXELinux"
+      provisioning_template: "Kickstart default PXELinux"
+    - template_kind: "user_data"
+      provisioning_template: "Kickstart default user data"
+
+foreman_operatingsystems_ol9:
+  - name: "OracleLinux"
+    major: "9"
+    minor: ""
+    description: "Oracle Linux 9"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "0"
+    description: "Oracle Linux 9.0"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "1"
+    description: "Oracle Linux 9.1"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_ol9:
+  # - name: Oracle Linux 9.0 BaseOS
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_ga_baseos_base/"
+  #   <<: *foreman_installation_media_defaults
+  #   operatingsystems:
+  #     - Oracle Linux 9.0
+  - name: Oracle Linux 9.1 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_u1_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 9
+      - Oracle Linux 9.1
+
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  organization: "TME"
+  # lifecycle_environment: "Library"
+  subscriptions:
+    - name: "Oracle Linux"
+  auto_attach: False
+  # release_version: 9
+  # service_level: Standard
+
+foreman_activation_keys_ol9:
+  - name: ak_ol9
+    content_view: ccv_ol9
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_baseos_latest"
+        override: default
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_appstream"
+        override: default
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_addons"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_developer"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_developer_EPEL"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_codeready_builder"
+        override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_codeready_builder_developer"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_distro_builder"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_UEKR7"
+        override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_developer_UEKR7"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_RDMA"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_x86_64_MODRHCK"
+        override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_MySQL80_connectors_community"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_MySQL80_community"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_MySQL80_tools_community"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_kvm_utils"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_developer_kvm_utils"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_OL_ol9_x86_64_oraclelinuxmanager210_client"
+      #   override: disabled
+
+foreman_sync_plan_products_ol9: []
+

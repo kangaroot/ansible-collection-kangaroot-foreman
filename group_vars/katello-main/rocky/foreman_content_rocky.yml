@@ -1,0 +1,73 @@
+---
+# foreman rocky linux content group vars file for katello-main
+
+foreman_default_repo_baseurl_rocky: https://download.rockylinux.org/pub/rocky
+foreman_default_repo_baseurl_rocky8: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky) }}"
+foreman_default_repo_baseurl_rocky9: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky) }}"
+foreman_default_repo_baseurl_rocky_vault: https://download.rockylinux.org/vault/rocky
+
+foreman_content_credentials_rocky_main:
+  - name: RPM-GPG-KEY-rockyofficial
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky) ~ '/RPM-GPG-KEY-rockyofficial', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-rockyofficial') }}"
+
+foreman_content_credentials_rocky: "{{ foreman_content_credentials_rocky_main | default([]) |
+  union( foreman_content_credentials_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_rocky_main: []
+foreman_products_rocky: "{{ foreman_products_rocky_main | default([]) |
+  union( foreman_products_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_rocky_main: []
+foreman_content_views_rocky: "{{ foreman_content_views_rocky_main | default([]) |
+  union( foreman_content_views_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_operatingsystems_rocky_main: []
+foreman_operatingsystems_rocky: "{{ foreman_operatingsystems_rocky_main | default([]) |
+  union( foreman_operatingsystems_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_installation_media_rocky_defaults: &foreman_installation_media_rocky_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  operatingsystems:
+    - Rocky Linux 8
+    - Rocky Linux 9
+
+foreman_installation_media_rocky_main:
+  - name: Rocky Linux mirror
+    path: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky) }}/$major/BaseOS/$arch/kickstart"
+    <<: *foreman_installation_media_rocky_defaults
+
+foreman_installation_media_rocky: "{{ foreman_installation_media_rocky_main | default([]) |
+  union( foreman_installation_media_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_rocky_main: []
+foreman_activation_keys_rocky: "{{ foreman_activation_keys_rocky_main | default([]) |
+  union( foreman_activation_keys_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_rocky_main:
+  - Rocky Linux
+
+foreman_sync_plan_products_rocky: "{{ foreman_sync_plan_products_rocky_main | default([]) |
+  union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_rocky9 | default([]) if foreman_enable_rocky9 | default( foreman_enable_rocky | default(false) | bool ) | bool else [] )
+  }}"
+

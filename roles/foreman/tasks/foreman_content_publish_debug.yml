@@ -1,0 +1,19 @@
+---
+# content publish debug tasks file for foreman
+
+- name: "Debug | Build content view variables"
+  set_fact:
+    content_views: "{{ foreman_content_views | default([]) | selectattr('composite', 'undefined') | list }}"
+    composite_content_views: "{{ foreman_content_views | default([]) | selectattr('composite', 'defined') | list }}"
+  tags: [ "katello_publish_debug" ]
+
+- name: "Debug | Show content views"
+  debug:
+    var: content_views
+  tags: [ "katello_publish_debug" ]
+
+- name: "Debug | Show composite content views"
+  debug:
+    var: composite_content_views
+  tags: [ "katello_publish_debug" ]
+

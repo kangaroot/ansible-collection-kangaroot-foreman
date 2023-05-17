@@ -1,0 +1,167 @@
+---
+# content section configuration tasks file for foreman
+
+- name: "Configuration | Include theforeman.foreman.manifest role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.manifest
+  when:
+    foreman_manifest_path | default('') != ''
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.lifecycle_environments role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.lifecycle_environments
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.content_credentials role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.content_credentials
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.repositories role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.repositories
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.content_views role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.content_views
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+
+- name: "Repository sync | Sync repositories"
+  theforeman.foreman.repository_sync:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    product: "{{ item }}"
+  async: 14400
+  poll: 0
+  loop: "{{ foreman_products | selectattr('repositories', 'defined') | map(attribute='name') | list }}"
+  # with_subelements:
+  #   - "{{ foreman_products | selectattr('repositories', 'defined') | list }}"
+  #   - repositories
+  when:
+    foreman_content_sync_now | default(false) | bool
+  register: foreman_repositories_sync
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+# - name: "Debug | Repository sync | Show repositories sync tasks status"
+#   debug:
+#     var: foreman_repositories_sync
+#   tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Repository sync | Wait for repositories sync completion"
+  ansible.builtin.async_status:
+    jid: "{{ item.ansible_job_id }}"
+  retries: 99999
+  delay: 10
+  loop: "{{ foreman_repositories_sync.results }}"
+  when:
+    foreman_content_sync_now | default(false) | bool
+  register: foreman_repository_sync_job_result
+  until: foreman_repository_sync_job_result.finished
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+
+- name: "Configuration | Gather content view versions"
+  theforeman.foreman.content_view_version_info:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view }}"
+  loop: "{{ foreman_content_views | default([]) | selectattr('composite', 'undefined') | map(attribute='name') | list }}"
+  loop_control:
+    loop_var: "content_view"
+  register: content_view_versions
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Gather composite content view versions"
+  theforeman.foreman.content_view_version_info:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view }}"
+  loop: "{{ foreman_content_views | default([]) | selectattr('composite', 'defined') | map(attribute='name') | list }}"
+  loop_control:
+    loop_var: "content_view"
+  register: composite_content_view_versions
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+# - name: "Configuration | Show content view versions"
+#   debug:
+#     var: content_view_versions
+#   tags: [ "katello", "configuration", "foreman_config_content" ]
+
+# - name: "Configuration | Show composite content view versions"
+#   debug:
+#     var: composite_content_view_versions
+#   tags: [ "katello", "configuration", "foreman_config_content" ]
+
+
+- name: "Configuration | Publish content views initial version"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view_version.content_view }}"
+    lifecycle_environments:
+      - Library
+  loop: "{{ content_view_versions.results | default([]) }}"
+  loop_control:
+    loop_var: "content_view_version"
+    label: "{{ content_view_version.content_view }}"
+  when:
+    # not content_view_version.skipped | default(true) | bool and
+    content_view_version.content_view_versions | default([]) == []
+  register: content_view_initial_publish_result
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+# - name: "Configuration | Show publish result for content views initial version"
+#   debug:
+#     var: content_view_initial_publish_result
+#   tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Publish composite content views initial version"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view_version.content_view }}"
+    lifecycle_environments:
+      - Library
+  loop: "{{ composite_content_view_versions.results | default([]) }}"
+  loop_control:
+    loop_var: "content_view_version"
+    label: "{{ content_view_version.content_view }}"
+  when:
+    # not content_view_version.skipped | default(true) | bool and
+    content_view_version.content_view_versions | default([]) == []
+  register: composite_content_view_initial_publish_result
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+# - name: "Configuration | Show publish result for composite content views initial version"
+#   debug:
+#     var: composite_content_view_initial_publish_result
+#   tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.sync_plans role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.sync_plans
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+- name: "Configuration | Include theforeman.foreman.activation_keys role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.activation_keys
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+

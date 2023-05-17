@@ -1,0 +1,13 @@
+---
+# foreman custom provisioning group vars file for foreman-main
+
+# foreman_operatingsystems_custom: "{{ [] |
+#   union( foreman_operatingsystems_myproduct1 | default([]) ) |
+#   union( foreman_operatingsystems_myproduct2 | default([]) )
+#   }}"
+
+# foreman_installation_media_custom: "{{ [] |
+#   union( foreman_installation_media_myproduct1 | default([]) ) |
+#   union( foreman_installation_media_myproduct2 | default([]) )
+#   }}"
+

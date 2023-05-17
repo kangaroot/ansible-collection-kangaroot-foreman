@@ -1,0 +1,35 @@
+---
+# foreman operations group vars file for foreman-main
+
+foreman_installer_options_main:
+  - "--foreman-initial-location \"{{ foreman_default_location }}\""
+  - "--foreman-initial-organization \"{{ foreman_organization }}\""
+  - "--foreman-initial-admin-email root@{{ foreman_server_hostname }}"
+  - "--foreman-initial-admin-first-name Admin"
+  - "--foreman-initial-admin-last-name User"
+  - "--foreman-initial-admin-password {{ foreman_password }}"
+  - "--foreman-initial-admin-username {{ foreman_username }}"
+  - "--foreman-email-delivery-method sendmail"
+
+  # - "--enable-foreman-cli-ansible"
+
+  # - "--enable-foreman-plugin-ansible"
+  # - "--enable-foreman-plugin-bootdisk"
+  # - "--enable-foreman-plugin-default-hostgroup"
+  # - "--enable-foreman-plugin-dhcp-browser"
+  # - "--enable-foreman-plugin-discovery"
+  # - "--enable-foreman-plugin-hooks"
+  # - "--enable-foreman-plugin-remote-execution"
+  # - "--enable-foreman-plugin-remote-execution-cockpit"
+  # - "--enable-foreman-proxy-plugin-remote-execution-script"
+  # - "--enable-foreman-plugin-statistics"
+  # - "--enable-foreman-plugin-setup"
+  # - "--enable-foreman-plugin-tasks"
+  # - "--foreman-plugin-tasks-automatic-cleanup true"
+  # - "--enable-foreman-plugin-templates"
+
+  # - "--enable-foreman-plugin-ovirt-provision"
+  # - "--enable-foreman-compute-libvirt"
+  # - "--enable-foreman-compute-ovirt"
+  # - "--enable-foreman-compute-vmware"
+

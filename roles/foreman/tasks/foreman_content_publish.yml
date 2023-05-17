@@ -1,0 +1,50 @@
+---
+# content publish tasks file for foreman
+
+- name: "Publish content views"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view.name | default(content_view) }}"
+    lifecycle_environments:
+      - Library
+  loop: "{{ foreman_content_views | default([]) }}"
+  loop_control:
+    loop_var: "content_view"
+  when:
+    not content_view.composite | default(false)
+  register: content_view_publish_result
+  tags: [ "katello_publish" ]
+
+# - name: "Show publish result for content views"
+#   debug:
+#     var: content_view_publish_result
+#   tags: [ "katello_publish" ]
+
+- name: "Publish composite content views"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view.name | default(content_view) }}"
+    lifecycle_environments:
+      - Library
+  loop: "{{ foreman_content_views | default([]) }}"
+  loop_control:
+    loop_var: "content_view"
+  when:
+    content_view.composite | default(false) | bool and
+    not content_view.auto_publish | default(false) | bool
+  register: composite_content_view_publish_result
+  tags: [ "katello_publish" ]
+
+# - name: "Show publish result for composite content views"
+#   debug:
+#     var: composite_content_view_publish_result
+#   tags: [ "katello_publish" ]
+

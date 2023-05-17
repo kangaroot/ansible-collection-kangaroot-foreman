@@ -1,0 +1,12 @@
+---
+# content promote tasks file for foreman
+
+- name: "Content Promote | Promote content views"
+  include_tasks: foreman_content_promote_inner.yml
+  loop: "{{ foreman_lifecycle_environments | default([]) }}"
+  loop_control:
+    loop_var: lifecycle_environment
+  when:
+    lifecycle_environment.name | default(lifecycle_environment) in promote_lifecycle_environments | default([])
+  tags: [ "katello_promote" ]
+

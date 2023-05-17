@@ -1,0 +1,197 @@
+---
+# foreman docker ce content group vars file for katello-main
+
+foreman_content_credentials_docker_ce:
+  - name: RPM-GPG-KEY-docker-ce
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) ~ '/gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-docker-ce') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-docker-ce
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_docker_ce:
+  - name: Docker
+    label: Docker
+    repositories:
+      - name: Docker CE Stable - x86_64 - EL7
+        label: docker-ce-stable-el7
+        url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/x86_64/stable"
+        <<: *foreman_products_defaults
+      # - name: Docker CE Stable - Debuginfo x86_64 - EL7
+      #   label: docker-ce-stable-debuginfo-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/debug-x86_64/stable"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Stable - Sources - EL7
+      #   label: docker-ce-stable-source-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/source/stable"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - x86_64 - EL7
+      #   label: docker-ce-test-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/x86_64/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - Debuginfo x86_64 - EL7
+      #   label: docker-ce-test-debuginfo-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/debug-x86_64/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - Sources - EL7
+      #   label: docker-ce-test-source-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/source/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - x86_64 - EL7
+      #   label: docker-ce-nightly-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/x86_64/nightly"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - Debuginfo x86_64 - EL7
+      #   label: docker-ce-nightly-debuginfo-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/debug-x86_64/nightly"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - Sources - EL7
+      #   label: docker-ce-nightly-source-el7
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/7/source/nightly"
+      #   <<: *foreman_products_defaults
+
+      - name: Docker CE Stable - x86_64 - EL8
+        label: docker-ce-stable-el8
+        url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/x86_64/stable"
+        <<: *foreman_products_defaults
+      # - name: Docker CE Stable - Debuginfo x86_64 - EL8
+      #   label: docker-ce-stable-debuginfo-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/debug-x86_64/stable"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Stable - Sources - EL8
+      #   label: docker-ce-stable-source-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/source/stable"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - x86_64 - EL8
+      #   label: docker-ce-test-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/x86_64/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - Debuginfo x86_64 - EL8
+      #   label: docker-ce-test-debuginfo-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/debug-x86_64/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Test - Sources - EL8
+      #   label: docker-ce-test-source-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/source/test"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - x86_64 - EL8
+      #   label: docker-ce-nightly-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/x86_64/nightly"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - Debuginfo x86_64 - EL8
+      #   label: docker-ce-nightly-debuginfo-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/debug-x86_64/nightly"
+      #   <<: *foreman_products_defaults
+      # - name: Docker CE Nightly - Sources - EL8
+      #   label: docker-ce-nightly-source-el8
+      #   url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/source/nightly"
+      #   <<: *foreman_products_defaults
+
+foreman_content_views_docker_ce:
+  - name: cv_docker_ce_stable_el7
+    repositories:
+      - name: Docker CE Stable - x86_64 - EL7
+        product: Docker
+    allow_promote: False
+  # - name: cv_docker_ce_stable_debuginfo_el7
+  #   repositories:
+  #     - name: Docker CE Stable - Debuginfo x86_64 - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_stable_source_el7
+  #   repositories:
+  #     - name: Docker CE Stable - Sources - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_el7
+  #   repositories:
+  #     - name: Docker CE Test - x86_64 - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_debuginfo_el7
+  #   repositories:
+  #     - name: Docker CE Test - Debuginfo x86_64 - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_source_el7
+  #   repositories:
+  #     - name: Docker CE Test - Sources - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_el7
+  #   repositories:
+  #     - name: Docker CE Nightly - x86_64 - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_debuginfo_el7
+  #   repositories:
+  #     - name: Docker CE Nightly - Debuginfo x86_64 - EL7
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_source_el7
+  #   repositories:
+  #     - name: Docker CE Nightly - Sources - EL7
+  #       product: Docker
+  #   allow_promote: False
+
+  - name: cv_docker_ce_stable_el8
+    repositories:
+      - name: Docker CE Stable - x86_64 - EL8
+        product: Docker
+    allow_promote: False
+  # - name: cv_docker_ce_stable_debuginfo_el8
+  #   repositories:
+  #     - name: Docker CE Stable - Debuginfo x86_64 - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_stable_source_el8
+  #   repositories:
+  #     - name: Docker CE Stable - Sources - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_el8
+  #   repositories:
+  #     - name: Docker CE Test - x86_64 - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_debuginfo_el8
+  #   repositories:
+  #     - name: Docker CE Test - Debuginfo x86_64 - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_test_source_el8
+  #   repositories:
+  #     - name: Docker CE Test - Sources - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_el8
+  #   repositories:
+  #     - name: Docker CE Nightly - x86_64 - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_debuginfo_el8
+  #   repositories:
+  #     - name: Docker CE Nightly - Debuginfo x86_64 - EL8
+  #       product: Docker
+  #   allow_promote: False
+  # - name: cv_docker_ce_nightly_source_el8
+  #   repositories:
+  #     - name: Docker CE Nightly - Sources - EL8
+  #       product: Docker
+  #   allow_promote: False
+
+foreman_activation_keys_docker_ce: []
+
+foreman_sync_plan_products_docker_ce:
+  - Docker
+

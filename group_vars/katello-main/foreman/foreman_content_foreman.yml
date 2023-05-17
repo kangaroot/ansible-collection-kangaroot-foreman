@@ -1,0 +1,267 @@
+---
+# foreman content group vars file for katello-main
+
+foreman_default_repo_baseurl_foreman: https://yum.theforeman.org
+foreman_default_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+foreman_default_repo_baseurl_puppet: http://yum.puppetlabs.com
+
+foreman_content_credentials_foreman:
+  - name: RPM-GPG-KEY-foreman
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) ~ '/releases/latest/RPM-GPG-KEY-foreman', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-foreman') }}"
+  - name: RPM-GPG-KEY-copr-qpid
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/@qpid/qpid/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-copr-qpid') }}"
+  - name: RPM-GPG-KEY-pulpcore
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) ~ '/pulpcore/3.16/GPG-RPM-KEY-pulpcore', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-pulpcore') }}"
+  - name: RPM-GPG-KEY-puppet
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) ~ '/RPM-GPG-KEY-puppet', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-puppet') }}"
+  - name: RPM-GPG-KEY-puppet-20250406
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) ~ '/RPM-GPG-KEY-puppet-20250406', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-puppet-20250406') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-foreman
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_foreman:
+  - name: Foreman
+    label: Foreman
+    repositories:
+      # - name: "Foreman {{ foreman_version }} - EL7"
+      #   label: "foreman-{{ foreman_version_label }}-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/releases/{{ foreman_version }}/el8/x86_64/"
+      - name: "Foreman {{ foreman_version }} - EL8"
+        label: "foreman-{{ foreman_version_label }}-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/releases/{{ foreman_version }}/el8/x86_64/"
+      # - name: "Foreman {{ foreman_version }} - source - EL7"
+      #   label: "foreman-{{ foreman_version_label }}-source-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/releases/{{ foreman_version }}/el7/source/"
+      # - name: "Foreman {{ foreman_version }} - source - EL8"
+      #   label: "foreman-{{ foreman_version_label }}-source-el8"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/releases/{{ foreman_version }}/el8/source/"
+
+      # - name: "Foreman plugins {{ foreman_version }} - EL7"
+      #   label: "foreman-plugins-{{ foreman_version_label }}-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/plugins/{{ foreman_version }}/el7/x86_64/"
+      - name: "Foreman plugins {{ foreman_version }} - EL8"
+        label: "foreman-plugins-{{ foreman_version_label }}-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/plugins/{{ foreman_version }}/el8/x86_64/"
+      # - name: "Foreman plugins-{{ foreman_version }} - source - EL7"
+      #   label: "foreman-plugins-{{ foreman_version_label }}-source-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/plugins/{{ foreman_version }}/el7/source/"
+      # - name: "Foreman plugins-{{ foreman_version }} - source - EL8"
+      #   label: "foreman-plugins-{{ foreman_version_label }}-source-el8"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/plugins/{{ foreman_version }}/el8/source/"
+
+      # - name: "Katello {{ foreman_katello_version }} - EL7"
+      #   label: "katello-{{ foreman_katello_version_label }}-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/katello/el7/x86_64/"
+      - name: "Katello {{ foreman_katello_version }} - EL8"
+        label: "katello-{{ foreman_katello_version_label }}-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/katello/el8/x86_64/"
+      # - name: "Katello {{ foreman_katello_version }} - source - EL7"
+      #   label: "katello-{{ foreman_katello_version_label }}-source-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/katello/el7/source/"
+      # - name: "Katello {{ foreman_katello_version }} - source - EL8"
+      #   label: "katello-{{ foreman_katello_version_label }}-source-el8"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/katello/el8/source/"
+
+      # - name: "Katello {{ foreman_katello_version }} Candlepin - EL7"
+      #   label: "katello-{{ foreman_katello_version_label }}-candlepin-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/candlepin/el7/x86_64/"
+      - name: "Katello {{ foreman_katello_version }} Candlepin - EL8"
+        label: "katello-{{ foreman_katello_version_label }}-candlepin-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/candlepin/el8/x86_64/"
+      # - name: "Katello {{ foreman_katello_version }} Candlepin - source - EL7"
+      #   label: "katello-{{ foreman_katello_version_label }}-candlepin-source-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/candlepin/el7/source/"
+      # - name: "Katello {{ foreman_katello_version }} Candlepin - source - EL8"
+      #   label: "katello-{{ foreman_katello_version_label }}-candlepin-source-el8"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/candlepin/el8/source/"
+
+      # - name: "Pulpcore {{ foreman_pulpcore_version }} - EL7"
+      #   label: "pulpcore-{{ foreman_pulpcore_version_label }}-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/pulpcore/{{ foreman_pulpcore_version }}/el7/x86_64/"
+      #   gpg_key: RPM-GPG-KEY-pulpcore
+      - name: "Pulpcore {{ foreman_pulpcore_version }} - EL8"
+        label: "pulpcore-{{ foreman_pulpcore_version_label }}-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/pulpcore/{{ foreman_pulpcore_version }}/el8/x86_64/"
+        gpg_key: RPM-GPG-KEY-pulpcore
+      # - name: "Pulpcore {{ foreman_pulpcore_version }} - source - EL7"
+      #   label: "pulpcore-{{ foreman_pulpcore_version_label }}-source-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/pulpcore//{{ foreman_pulpcore_version }}/el7/source/"
+      #   gpg_key: RPM-GPG-KEY-pulpcore
+      # - name: "Pulpcore {{ foreman_pulpcore_version }} - source - EL8"
+      #   label: "pulpcore-{{ foreman_pulpcore_version_label }}-source-el8"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/pulpcore//{{ foreman_pulpcore_version }}/el8/source/"
+      #   gpg_key: RPM-GPG-KEY-pulpcore
+
+      # - name: "Puppet {{ foreman_puppet_version }} Repository EL7 - x86_64"
+      #   label: "puppet{{ foreman_puppet_version }}-el7"
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) }}/puppet{{ foreman_puppet_version }}/el/7/x86_64"
+      #   gpg_key: RPM-GPG-KEY-puppet
+      - name: "Puppet {{ foreman_puppet_version }} Repository EL8 - x86_64"
+        label: "puppet{{ foreman_puppet_version }}-el8"
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) }}/puppet{{ foreman_puppet_version }}/el/8/x86_64"
+        gpg_key: RPM-GPG-KEY-puppet
+
+foreman_content_views_foreman:
+  # - name: "cv_foreman_{{ foreman_version_label }}_el7"
+  #   repositories:
+  #     - name: "Foreman {{ foreman_version }} - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_foreman_{{ foreman_version_label }}_el8"
+    repositories:
+      - name: "Foreman {{ foreman_version }} - EL8"
+        product: Foreman
+    allow_promote: False
+  # - name: "cv_foreman_{{ foreman_version_label }}_source_el7"
+  #   repositories:
+  #     - name: "Foreman {{ foreman_version }} - source - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  # - name: "cv_foreman_{{ foreman_version_label }}_source_el8"
+  #   repositories:
+  #     - name: "Foreman {{ foreman_version }} - source - EL8"
+  #       product: Foreman
+  #   allow_promote: False
+
+  # - name: "cv_foreman_plugins_{{ foreman_version_label }}_el7"
+  #   repositories:
+  #     - name: "Foreman plugins {{ foreman_version }} - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_foreman_plugins_{{ foreman_version_label }}_el8"
+    repositories:
+      - name: "Foreman plugins {{ foreman_version }} - EL8"
+        product: Foreman
+    allow_promote: False
+  # - name: "cv_foreman_plugins_{{ foreman_version_label }}_source_el7"
+  #   repositories:
+  #     - name: "Foreman plugins-{{ foreman_version }} - source - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  # - name: "cv_foreman_plugins_{{ foreman_version_label }}_source_el8"
+  #   repositories:
+  #     - name: "Foreman plugins-{{ foreman_version }} - source - EL8"
+  #       product: Foreman
+  #   allow_promote: False
+
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_el7"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_katello_{{ foreman_katello_version_label }}_el8"
+    repositories:
+      - name: "Katello {{ foreman_katello_version }} - EL8"
+        product: Foreman
+    allow_promote: False
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_source_el7"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} - source - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_source_el8"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} - source - EL8"
+  #       product: Foreman
+  #   allow_promote: False
+
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_candlepin_el7"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} Candlepin - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_katello_{{ foreman_katello_version_label }}_candlepin_el8"
+    repositories:
+      - name: "Katello {{ foreman_katello_version }} Candlepin - EL8"
+        product: Foreman
+    allow_promote: False
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_candlepin_source_el7"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} Candlepin - source - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  # - name: "cv_katello_{{ foreman_katello_version_label }}_candlepin_source_el8"
+  #   repositories:
+  #     - name: "Katello {{ foreman_katello_version }} Candlepin - source - EL8"
+  #       product: Foreman
+  #   allow_promote: False
+
+  # - name: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_el7"
+  #   repositories:
+  #     - name: "Pulpcore {{ foreman_pulpcore_version }} - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_el8"
+    repositories:
+      - name: "Pulpcore {{ foreman_pulpcore_version }} - EL8"
+        product: Foreman
+    allow_promote: False
+  # - name: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_source_el7"
+  #   repositories:
+  #     - name: "Pulpcore {{ foreman_pulpcore_version }} - source - EL7"
+  #       product: Foreman
+  #   allow_promote: False
+  # - name: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_source_el8"
+  #   repositories:
+  #     - name: "Pulpcore {{ foreman_pulpcore_version }} - source - EL8"
+  #       product: Foreman
+  #   allow_promote: False
+
+  # - name: "cv_puppet{{ foreman_puppet_version }}_el7"
+  #   repositories:
+  #     - name: "Puppet {{ foreman_puppet_version }} Repository EL7 - x86_64"
+  #       product: Foreman
+  #   allow_promote: False
+  - name: "cv_puppet{{ foreman_puppet_version }}_el8"
+    repositories:
+      - name: "Puppet {{ foreman_puppet_version }} Repository EL8 - x86_64"
+        product: Foreman
+    allow_promote: False
+
+foreman_activation_keys_foreman: []
+
+foreman_sync_plan_products_foreman:
+  - Foreman
+

@@ -1,0 +1,140 @@
+---
+# main content for foremen group vars file for katello-main
+
+foreman_content_view_version_cleanup_keep: 0
+foreman_update_repositories: false
+
+# foreman_manifest_path: /root/rhel_manifest.zip
+
+foreman_lifecycle_environments:
+  - name: "dev"
+    prior: "Library"
+  - name: "acc"
+    prior: "dev"
+  - name: "prod"
+    prior: "acc"
+
+foreman_content_credentials_main: []
+foreman_content_credentials: "{{ foreman_content_credentials_main | default([]) |
+  union( foreman_content_credentials_ceph | default([]) if foreman_enable_ceph | default(false) | bool else [] ) |
+  union( foreman_content_credentials_datadog | default([]) if foreman_enable_datadog | default(false) | bool else [] ) |
+  union( foreman_content_credentials_docker | default([]) if foreman_enable_docker | default(false) | bool else [] ) |
+  union( foreman_content_credentials_elrepo | default([]) if foreman_enable_elrepo | default(false) | bool else [] ) |
+  union( foreman_content_credentials_epel | default([]) if foreman_enable_epel | default(false) | bool else [] ) |
+  union( foreman_content_credentials_fedora_copr | default([]) if foreman_enable_fedora_copr | default(false) | bool else [] ) |
+  union( foreman_content_credentials_foreman | default([]) if foreman_enable_foreman | default(false) | bool else [] ) |
+  union( foreman_content_credentials_hashicorp | default([]) if foreman_enable_hashicorp | default(false) | bool else [] ) |
+  union( foreman_content_credentials_kubernetes | default([]) if foreman_enable_kubernetes | default(false) | bool else [] ) |
+  union( foreman_content_credentials_microsoft | default([]) if foreman_enable_microsoft | default(false) | bool else [] ) |
+  union( foreman_content_credentials_nginx | default([]) if foreman_enable_nginx | default(false) | bool else [] ) |
+  union( foreman_content_credentials_centos | default([]) if foreman_enable_centos | default(false) | bool else [] ) |
+  union( foreman_content_credentials_debian | default([]) if foreman_enable_debian | default(false) | bool else [] ) |
+  union( foreman_content_credentials_ol | default([]) if foreman_enable_ol | default(false) | bool else [] ) |
+  union( foreman_content_credentials_ol_uln | default([]) if foreman_enable_ol_uln | default(false) | bool else [] ) |
+  union( foreman_content_credentials_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
+  union( foreman_content_credentials_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
+  union( foreman_content_credentials_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_content_credentials_custom | default([]) )
+  }}"
+
+foreman_products_main: []
+foreman_products: "{{ foreman_products_main | default([]) |
+  union( foreman_products_ceph | default([]) if foreman_enable_ceph | default(false) | bool else [] ) |
+  union( foreman_products_datadog | default([]) if foreman_enable_datadog | default(false) | bool else [] ) |
+  union( foreman_products_docker | default([]) if foreman_enable_docker | default(false) | bool else [] ) |
+  union( foreman_products_elrepo | default([]) if foreman_enable_elrepo | default(false) | bool else [] ) |
+  union( foreman_products_epel | default([]) if foreman_enable_epel | default(false) | bool else [] ) |
+  union( foreman_products_fedora_copr | default([]) if foreman_enable_copr | default(false) | bool else [] ) |
+  union( foreman_products_foreman | default([]) if foreman_enable_foreman | default(false) | bool else [] ) |
+  union( foreman_products_hashicorp | default([]) if foreman_enable_hashicorp | default(false) | bool else [] ) |
+  union( foreman_products_kubernetes | default([]) if foreman_enable_kubernetes | default(false) | bool else [] ) |
+  union( foreman_products_microsoft | default([]) if foreman_enable_microsoft | default(false) | bool else [] ) |
+  union( foreman_products_nginx | default([]) if foreman_enable_nginx | default(false) | bool else [] ) |
+  union( foreman_products_centos | default([]) if foreman_enable_centos | default(false) | bool else [] ) |
+  union( foreman_products_debian | default([]) if foreman_enable_debian | default(false) | bool else [] ) |
+  union( foreman_products_ol | default([]) if foreman_enable_ol | default(false) | bool else [] ) |
+  union( foreman_products_ol_uln | default([]) if foreman_enable_ol_uln | default(false) | bool else [] ) |
+  union( foreman_products_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
+  union( foreman_products_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
+  union( foreman_products_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_products_custom | default([]) )
+  }}"
+
+foreman_content_views_main: []
+foreman_content_views: "{{ foreman_content_views_main | default([]) |
+  union( foreman_content_views_ceph | default([]) if foreman_enable_ceph | default(false) | bool else [] ) |
+  union( foreman_content_views_datadog | default([]) if foreman_enable_datadog | default(false) | bool else [] ) |
+  union( foreman_content_views_docker | default([]) if foreman_enable_docker | default(false) | bool else [] ) |
+  union( foreman_content_views_elrepo | default([]) if foreman_enable_elrepo | default(false) | bool else [] ) |
+  union( foreman_content_views_epel | default([]) if foreman_enable_epel | default(false) | bool else [] ) |
+  union( foreman_content_views_fedora_copr | default([]) if foreman_enable_copr | default(false) | bool else [] ) |
+  union( foreman_content_views_foreman | default([]) if foreman_enable_foreman | default(false) | bool else [] ) |
+  union( foreman_content_views_hashicorp | default([]) if foreman_enable_hashicorp | default(false) | bool else [] ) |
+  union( foreman_content_views_kubernetes | default([]) if foreman_enable_kubernetes | default(false) | bool else [] ) |
+  union( foreman_content_views_microsoft | default([]) if foreman_enable_microsoft | default(false) | bool else [] ) |
+  union( foreman_content_views_nginx | default([]) if foreman_enable_nginx | default(false) | bool else [] ) |
+  union( foreman_content_views_centos | default([]) if foreman_enable_centos | default(false) | bool else [] ) |
+  union( foreman_content_views_debian | default([]) if foreman_enable_debian | default(false) | bool else [] ) |
+  union( foreman_content_views_ol | default([]) if foreman_enable_ol | default(false) | bool else [] ) |
+  union( foreman_content_views_ol_uln | default([]) if foreman_enable_ol_uln | default(false) | bool else [] ) |
+  union( foreman_content_views_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
+  union( foreman_content_views_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
+  union( foreman_content_views_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_content_views_custom | default([]) )
+  }}"
+
+foreman_activation_keys_main:
+  - name: "ak_basic"
+    description: "Registers hosts in Library/Default Organization View and tries to attach the best fitting subscription(s) from all available in the organization"
+
+foreman_activation_keys: "{{ foreman_activation_keys_main | default([]) |
+  union( foreman_activation_keys_ceph | default([]) if foreman_enable_ceph | default(false) | bool else [] ) |
+  union( foreman_activation_keys_datadog | default([]) if foreman_enable_datadog | default(false) | bool else [] ) |
+  union( foreman_activation_keys_docker | default([]) if foreman_enable_docker | default(false) | bool else [] ) |
+  union( foreman_activation_keys_elrepo | default([]) if foreman_enable_elrepo | default(false) | bool else [] ) |
+  union( foreman_activation_keys_epel | default([]) if foreman_enable_epel | default(false) | bool else [] ) |
+  union( foreman_activation_keys_fedora_copr | default([]) if foreman_enable_copr | default(false) | bool else [] ) |
+  union( foreman_activation_keys_foreman | default([]) if foreman_enable_foreman | default(false) | bool else [] ) |
+  union( foreman_activation_keys_hashicorp | default([]) if foreman_enable_hashicorp | default(false) | bool else [] ) |
+  union( foreman_activation_keys_kubernetes | default([]) if foreman_enable_kubernetes | default(false) | bool else [] ) |
+  union( foreman_activation_keys_microsoft | default([]) if foreman_enable_microsoft | default(false) | bool else [] ) |
+  union( foreman_activation_keys_nginx | default([]) if foreman_enable_nginx | default(false) | bool else [] ) |
+  union( foreman_activation_keys_centos | default([]) if foreman_enable_centos | default(false) | bool else [] ) |
+  union( foreman_activation_keys_debian | default([]) if foreman_enable_debian | default(false) | bool else [] ) |
+  union( foreman_activation_keys_ol | default([]) if foreman_enable_ol | default(false) | bool else [] ) |
+  union( foreman_activation_keys_ol_uln | default([]) if foreman_enable_ol_uln | default(false) | bool else [] ) |
+  union( foreman_activation_keys_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
+  union( foreman_activation_keys_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
+  union( foreman_activation_keys_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_activation_keys_custom | default([]) )
+  }}"
+
+foreman_sync_plan_products_main: []
+foreman_sync_plan_products: "{{ foreman_sync_plan_products_main | default([]) |
+  union( foreman_sync_plan_products_ceph | default([]) if foreman_enable_ceph | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_datadog | default([]) if foreman_enable_datadog | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_docker | default([]) if foreman_enable_docker | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_elrepo | default([]) if foreman_enable_elrepo | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_epel | default([]) if foreman_enable_epel | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_fedora_copr | default([]) if foreman_enable_copr | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_foreman | default([]) if foreman_enable_foreman | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_hashicorp | default([]) if foreman_enable_hashicorp | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_kubernetes | default([]) if foreman_enable_kubernetes | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_microsoft | default([]) if foreman_enable_microsoft | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_nginx | default([]) if foreman_enable_nginx | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_centos | default([]) if foreman_enable_centos | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_debian | default([]) if foreman_enable_debian | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_ol | default([]) if foreman_enable_ol | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_ol_uln | default([]) if foreman_enable_ol_uln | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_custom | default([]) )
+  }}"
+
+foreman_sync_plans:
+  - name: Daily Sync
+    interval: daily
+    sync_date: 2020-11-07 04:15:00 UTC
+    products: "{{ foreman_sync_plan_products | default([]) }}"
+

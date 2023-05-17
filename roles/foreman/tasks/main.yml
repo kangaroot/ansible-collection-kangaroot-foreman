@@ -1,0 +1,57 @@
+---
+# tasks file for foreman
+
+- name: "Debug | Include debug tasks"
+  ansible.builtin.include_tasks: foreman_debug.yml
+  tags: [ "foreman_debug", "katello_debug" ]
+
+- name: "Configuration | Include Administer section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_administer.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
+
+- name: "Configuration | Include Infrastructure section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_infrastructure.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
+
+- name: "Configuration | Include Content section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_content.yml
+  tags: [ "katello", "configuration", "foreman_config_content" ]
+
+
+- name: "Debug | Content Publish | Include Content publish debug tasks"
+  ansible.builtin.include_tasks: foreman_content_publish_debug.yml
+  tags: [ "katello", "configuration", "katello_publish_debug" ]
+
+- name: "Content Publish | Include Content publish tasks"
+  ansible.builtin.include_tasks: foreman_content_publish.yml
+  tags: [ "katello", "configuration", "katello_publish" ]
+
+- name: "Debug | Content Promote | Include Content promote debug tasks"
+  ansible.builtin.include_tasks: foreman_content_promote_debug.yml
+  tags: [ "katello", "configuration", "katello_promote_debug" ]
+
+- name: "Content Promote | Include Content promote tasks"
+  ansible.builtin.include_tasks: foreman_content_promote.yml
+  tags: [ "katello", "configuration", "katello_promote" ]
+
+- name: "Content Cleanup | Include Content cleanup tasks"
+  ansible.builtin.include_tasks: foreman_content_cleanup.yml
+  tags: [ "katello", "configuration", "katello_cleanup" ]
+
+
+- name: "Configuration | Include Provisioning section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_provisioning.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+
+- name: "Configuration | Include Infrastructure compute section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_infrastructure_compute.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
+
+- name: "Configuration | Include Templates section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_templates.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
+
+- name: "Configuration | Include Configuration section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_configuration.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
+

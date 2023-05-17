@@ -1,0 +1,21 @@
+---
+# configuration section configuration tasks file for foreman
+
+- name: "Configuration | Create global parameters"
+  theforeman.foreman.global_parameter:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_global_parameters_item.name }}"
+    updated_name: "{{ foreman_global_parameters_item.updated_name | default(omit) }}"
+    parameter_type: "{{ foreman_global_parameters_item.parameter_type | default('omit') }}"
+    value: "{{ foreman_global_parameters_item.value | default(omit) }}"
+    hidden_value: "{{ foreman_global_parameters_item.hidden_value | default(omit) }}"
+    state: "{{ foreman_global_parameters_item.state | default('present') }}"
+  loop: "{{ foreman_global_parameters | default([]) }}"
+  loop_control:
+    loop_var: "foreman_global_parameters_item"
+    label: "{{ foreman_global_parameters_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+

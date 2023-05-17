@@ -1,0 +1,155 @@
+---
+# administer section configuration tasks file for foreman
+
+# Disabled - collection role does not support attributes:
+#            - parameters
+# - name: "Configuration | Include theforeman.foreman.organizations role"
+#   ansible.builtin.include_role:
+#     name: theforeman.foreman.organizations
+#   tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create organizations"
+  theforeman.foreman.organization:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_organizations_item.name }}"
+    label: "{{ foreman_organizations_item.label }}"
+    parameters: "{{ foreman_organizations_item.parameters | default(omit) }}"
+    state: "{{ foreman_organizations_item.state | default('present') }}"
+  loop: "{{ foreman_organizations | default([]) }}"
+  loop_control:
+    loop_var: "foreman_organizations_item"
+    label: "{{ foreman_organizations_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create locations"
+  theforeman.foreman.location:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_locations_item.name }}"
+    organizations: "{{ foreman_locations_item.organizations | default(omit) }}"
+    parameters: "{{ foreman_locations_item.parameters | default(omit) }}"
+    parent: "{{ foreman_locations_item.parent | default(omit) }}"
+    state: "{{ foreman_locations_item.state | default('present') }}"
+  loop: "{{ foreman_locations | default([]) }}"
+  loop_control:
+    loop_var: "foreman_locations_item"
+    label: "{{ foreman_locations_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Include theforeman.foreman.settings role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.settings
+  ignore_errors: true
+  tags: [ "foreman", "katello", "configuration" ]
+
+# Disabled - collection role does not support attributes:
+#            - organizations
+#            - locations
+# - name: "Configuration | Include theforeman.foreman.auth_sources_ldap role"
+#   ansible.builtin.import_role:
+#     name: theforeman.foreman.auth_sources_ldap
+#   tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create LDAP authentication sources"
+  theforeman.foreman.auth_source_ldap:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_auth_sources_ldap_item.name }}"
+    account: "{{ foreman_auth_sources_ldap_item.account }}"
+    account_password: "{{ foreman_auth_sources_ldap_item.account_password }}"
+    organizations: "{{ foreman_auth_sources_ldap_item.organizations | default(omit) }}"
+    locations: "{{ foreman_auth_sources_ldap_item.locations | default(omit) }}"
+    host: "{{ foreman_auth_sources_ldap_item.host | default(omit) }}"
+    port: "{{ foreman_auth_sources_ldap_item.port | default(omit) }}"
+    tls: "{{ foreman_auth_sources_ldap_item.tls | default(omit) }}"
+    server_type: "{{ foreman_auth_sources_ldap_item.server_type | default(omit) }}"
+    base_dn: "{{ foreman_auth_sources_ldap_item.base_dn | default(omit) }}"
+    groups_base: "{{ foreman_auth_sources_ldap_item.groups_base | default(omit) }}"
+    ldap_filter: "{{ foreman_auth_sources_ldap_item.ldap_filter | default(omit) }}"
+    usergroup_sync: "{{ foreman_auth_sources_ldap_item.usergroup_sync | default(omit) }}"
+    onthefly_register: "{{ foreman_auth_sources_ldap_item.onthefly_register | default(omit) }}"
+    use_netgroups: "{{ foreman_auth_sources_ldap_item.use_netgroups | default(omit) }}"
+    attr_firstname: "{{ foreman_auth_sources_ldap_item.attr_firstname | default(omit) }}"
+    attr_lastname: "{{ foreman_auth_sources_ldap_item.attr_lastname | default(omit) }}"
+    attr_login: "{{ foreman_auth_sources_ldap_item.attr_login | default(omit) }}"
+    attr_mail: "{{ foreman_auth_sources_ldap_item.attr_mail | default(omit) }}"
+    attr_photo: "{{ foreman_auth_sources_ldap_item.attr_photo | default(omit) }}"
+    state: "{{ foreman_auth_sources_ldap_item.state | default('present') }}"
+  loop: "{{ foreman_auth_sources_ldap | default([]) }}"
+  loop_control:
+    loop_var: "foreman_auth_sources_ldap_item"
+    label: "{{ foreman_auth_sources_ldap_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create roles"
+  theforeman.foreman.role:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_roles_item.name }}"
+    description: "{{ foreman_roles_item.description | default(omit) }}"
+    organizations: "{{ foreman_roles_item.organizations | default(omit) }}"
+    locations: "{{ foreman_roles_item.locations | default(omit) }}"
+    filters: "{{ foreman_roles_item.filters | default(omit) }}"
+    state: "{{ foreman_roles_item.state | default('present') }}"
+  loop: "{{ foreman_roles | default([]) }}"
+  loop_control:
+    loop_var: "foreman_roles_item"
+    label: "{{ foreman_roles_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create user groups"
+  theforeman.foreman.usergroup:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_usergroups_item.name }}"
+    updated_name: "{{ foreman_usergroups_item.updated_name | default(omit) }}"
+    admin: "{{ foreman_usergroups_item.admin | default(false) | bool }}"
+    roles: "{{ foreman_usergroups_item.roles | default(omit) }}"
+    usergroups: "{{ foreman_usergroups_item.usergroups | default(omit) }}"
+    users: "{{ foreman_usergroups_item.attr_usersphoto | default(omit) }}"
+    state: "{{ foreman_usergroups_item.state | default('present') }}"
+  loop: "{{ foreman_usergroups | default([]) }}"
+  loop_control:
+    loop_var: "foreman_usergroups_item"
+    label: "{{ foreman_usergroups_item.name }}"
+  tags: [ "foreman", "katello", "configuration" ]
+
+- name: "Configuration | Create users"
+  theforeman.foreman.user:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    login: "{{ foreman_users_item.login }}"
+    user_password: "{{ foreman_users_item.user_password | default(omit) }}"
+    organizations: "{{ foreman_users_item.organizations | default(omit) }}"
+    default_organization: "{{ foreman_users_item.default_organization | default(omit) }}"
+    locations: "{{ foreman_users_item.locations | default(omit) }}"
+    default_location: "{{ foreman_users_item.default_location | default(omit) }}"
+    firstname: "{{ foreman_users_item.firstname | default(omit) }}"
+    lastname: "{{ foreman_users_item.lastname | default(omit) }}"
+    mail: "{{ foreman_users_item.mail | default(omit) }}"
+    description: "{{ foreman_users_item.description | default(omit) }}"
+    locale: "{{ foreman_users_item.attr_mail | default(omit) }}"
+    timezone: "{{ foreman_users_item.timezone | default(omit) }}"
+    auth_source: "{{ foreman_users_item.auth_source | default(omit) }}"
+    roles: "{{ foreman_users_item.roles | default(omit) }}"
+    admin: "{{ foreman_users_item.admin | default(omit) }}"
+    state: "{{ foreman_users_item.state | default('present') }}"
+  loop: "{{ foreman_users | default([]) }}"
+  loop_control:
+    loop_var: "foreman_users_item"
+    label: "{{ foreman_users_item.login }}"
+  tags: [ "foreman", "katello", "configuration" ]
+

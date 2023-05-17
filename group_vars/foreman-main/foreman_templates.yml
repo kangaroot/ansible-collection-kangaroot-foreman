@@ -1,0 +1,149 @@
+---
+# foreman templates group vars file for foreman-main
+
+foreman_partition_tables_defaults: &foreman_partition_tables_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  os_family: Redhat
+  locked: no
+
+foreman_partition_tables:
+  - name: Kickstart normal
+    <<: *foreman_partition_tables_defaults
+    layout: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/ptable_kickstart_normal.erb') }}"
+  - name: Kickstart simple
+    <<: *foreman_partition_tables_defaults
+    layout: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/ptable_kickstart_simple.erb') }}"
+  - name: Kickstart minimal
+    <<: *foreman_partition_tables_defaults
+    layout: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/ptable_kickstart_minimal.erb') }}"
+
+foreman_provisioning_templates_defaults: &foreman_provisioning_templates_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  locked: no
+
+foreman_provisioning_templates_osrhel: &foreman_provisioning_templates_osrhel
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates_osdebian: &foreman_provisioning_templates_osdebian
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates_osubuntu: &foreman_provisioning_templates_osubuntu
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates:
+  - name: Kickstart default
+    <<: *foreman_provisioning_templates_osrhel
+    kind: provision
+    locked: yes
+  - name: Kickstart default custom packages
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_default_custom_packages.erb') }}"
+    kind: snippet
+  - name: Kickstart default custom post
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_default_custom_post.erb') }}"
+    kind: snippet
+  - name: Kickstart default custom postnochroot
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_default_custom_postnochroot.erb') }}"
+    kind: snippet
+  - name: Kickstart default finish
+    <<: *foreman_provisioning_templates_osrhel
+    kind: finish
+    locked: yes
+  - name: Kickstart default iPXE
+    <<: *foreman_provisioning_templates_osrhel
+    kind: iPXE
+    locked: yes
+  - name: Kickstart default PXEGrub
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXEGrub
+    locked: yes
+  - name: Kickstart default PXEGrub2
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXEGrub2
+    locked: yes
+  - name: Kickstart default PXELinux
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXELinux
+    locked: yes
+  - name: Kickstart default user data
+    <<: *foreman_provisioning_templates_osrhel
+    kind: user_data
+    locked: yes
+
+  - name: Kickstart Custom
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom.erb') }}"
+    kind: provision
+  - name: Kickstart Custom custom packages
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_custom_packages.erb') }}"
+    kind: snippet
+  - name: Kickstart Custom custom post
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_custom post.erb') }}"
+    kind: snippet
+  - name: Kickstart Custom custom postnochroot
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_custom_postnochroot.erb') }}"
+    kind: snippet
+  - name: Kickstart Custom finish
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_finish.erb') }}"
+    kind: finish
+  - name: Kickstart Custom iPXE
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_ipxe.erb') }}"
+    kind: iPXE
+  - name: Kickstart Custom PXEGrub
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_pxegrub.erb') }}"
+    kind: PXEGrub
+  - name: Kickstart Custom PXEGrub2
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_pxegrub2.erb') }}"
+    kind: PXEGrub2
+  - name: Kickstart Custom PXELinux
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_pxelinux.erb') }}"
+    kind: PXELinux
+  - name: Kickstart Custom user data
+    <<: *foreman_provisioning_templates_osrhel
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_custom_user_data.erb') }}"
+    kind: user_data
+
+  - name: kickstart_kernel_options_custom
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_kernel_options_custom.erb') }}"
+    kind: snippet
+  - name: authorized_ssh_keys_root
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_authorized_ssh_keys_root.erb') }}"
+    kind: snippet
+  - name: remote_execution_ssh_keys_custom
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_remote_execution_ssh_keys_custom.erb') }}"
+    kind: snippet
+  - name: backup_host_keys
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_backup_host_keys.erb') }}"
+    kind: snippet
+  - name: restore_host_keys
+    <<: *foreman_provisioning_templates_defaults
+    template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_restore_host_keys.erb') }}"
+    kind: snippet
+

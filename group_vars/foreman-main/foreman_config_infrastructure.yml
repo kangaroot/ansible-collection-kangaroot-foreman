@@ -1,0 +1,126 @@
+---
+# foreman infrastructure configuration group vars file for foreman-main
+
+foreman_smart_proxies_main:
+  - name: "{{ foreman_server_hostname }}"
+    # organizations:
+    #   - "{{ foreman_organization }}"
+    # locations:
+    #   - "{{ foreman_default_location }}"
+    organizations: "{{ foreman_all_organizations_namelist }}"
+    locations: "{{ foreman_all_locations_namelist }}"
+    # lifecycle_environments: "{{ foreman_lifecycle_environments | map(attribute='name') | list }}"
+    download_policy: on_demand
+
+foreman_smart_proxies: "{{ foreman_smart_proxies_main | default([]) |
+  union( foreman_smart_proxies_group | default([]) ) |
+  union( foreman_smart_proxies_host | default([]) )
+  }}"
+
+
+# foreman_compute_resources_defaults: &foreman_compute_resources_defaults
+#   # organizations:
+#   #   - "{{ foreman_organization }}"
+#   # locations:
+#   #   - "{{ foreman_default_location }}"
+#   organizations: "{{ foreman_all_organizations_namelist }}"
+#   locations: "{{ foreman_all_locations_namelist }}"
+#   # provider: vmware
+
+# foreman_compute_resources_vmware_defaults: &foreman_compute_resources_vmware_defaults
+#   user: "{{ foreman_compute_resource_vmware_username }}"
+#   password: "{{ foreman_compute_resource_vmware_password }}"
+#   # display_type: vmrc
+#   caching_enabled: true
+#   set_console_password: true
+
+# foreman_compute_resources_main:
+#   - name: example.com
+#     <<: *foreman_compute_resources_defaults
+#     provider_params:
+#       <<: *foreman_compute_resources_params_defaults
+
+foreman_compute_resources: "{{ foreman_compute_resources_main | default([]) |
+  union( foreman_compute_resources_group | default([]) ) |
+  union( foreman_compute_resources_host | default([]) )
+  }}"
+
+
+foreman_compute_profiles_main:
+  - name: 1-Small
+  - name: 2-Medium
+  - name: 3-Large
+
+foreman_compute_profiles: "{{ foreman_compute_profiles_main | default([]) |
+  union( foreman_compute_profiles_group | default([]) ) |
+  union( foreman_compute_profiles_host | default([]) )
+  }}"
+
+
+foreman_domains_defaults: &foreman_domains_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+# foreman_domains_main:
+#   - name: example.com
+#     <<: *foreman_domains_defaults
+
+foreman_domains: "{{ foreman_domains_main | default([]) |
+  union( foreman_domains_group | default([]) ) |
+  union( foreman_domains_host | default([]) )
+  }}"
+
+
+foreman_subnets_defaults: &foreman_subnets_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  mask: 255.255.255.0
+  cidr: 24
+  mtu: 1500
+  ipam: None
+  boot_mode: Static
+  domains: "{{ foreman_domains | map(attribute='name') | list }}"
+
+# foreman_subnets_main:
+#   - name: EXAMPLE
+#     network: 192.168.0.0
+#     <<: *foreman_subnets_defaults
+#     gateway: 192.168.0.1
+#     dns_primary: 192.168.0.1
+#     domains: "{{ foreman_domains | map(attribute='name') | list }}"
+#     # dhcp_proxy: "{{ foreman_server_hostname }}"
+#     # tftp_proxy: "{{ foreman_server_hostname }}"
+#     # httpboot_proxy: "{{ foreman_server_hostname }}"
+#     # discovery_proxy: "{{ foreman_server_hostname }}"
+#     # template_proxy: "{{ foreman_server_hostname }}"
+#     # remote_execution_proxies: "{{ foreman_server_hostname }}"
+
+foreman_subnets: "{{ foreman_subnets_main | default([]) |
+  union( foreman_subnets_group | default([]) ) |
+  union( foreman_subnets_host | default([]) )
+  }}"
+
+
+# foreman_http_proxies_main:
+#   - name: "Company Proxy"
+#     url: "http://192.168.0.1:8080"
+#     # organizations:
+#     #   - "{{ foreman_organization }}"
+#     # locations:
+#     #   - "{{ foreman_default_location }}"
+#     organizations: "{{ foreman_all_organizations_namelist }}"
+#     locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_http_proxies: "{{ foreman_http_proxies_main | default([]) |
+  union( foreman_http_proxies_group | default([]) ) |
+  union( foreman_http_proxies_host | default([]) )
+  }}"
+

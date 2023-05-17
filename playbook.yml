@@ -1,0 +1,197 @@
+---
+
+- hosts: foreman
+  roles:
+    - foreman
+
+# - hosts: foreman
+#   tasks:
+#     - set_fact:
+#         content_views: "{{ foreman_content_views | default([]) | selectattr('composite', 'undefined') | list }}"
+#         composite_content_views: "{{ foreman_content_views | default([]) | selectattr('composite', 'defined') | list }}"
+#     - name: "Show content views"
+#       debug:
+#         var: content_views
+#     - name: "Show composite content views"
+#       debug:
+#         var: composite_content_views
+#   tags: [ "foreman_publish_debug" ]
+
+# - hosts: foreman
+#   collections:
+#     - theforeman.foreman
+#   tasks:
+#     - name: "Publish content views"
+#       theforeman.foreman.content_view_version:
+#         username: "{{ foreman_username | default(omit) }}"
+#         password: "{{ foreman_password | default(omit) }}"
+#         server_url: "{{ foreman_server_url | default(omit) }}"
+#         validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#         organization: "{{ foreman_organization }}"
+#         content_view: "{{ content_view.name | default(content_view) }}"
+#         lifecycle_environments:
+#           - Library
+#       loop: "{{ foreman_content_views | default([]) }}"
+#       loop_control:
+#         loop_var: "content_view"
+#       when:
+#         not content_view.composite | default(false)
+#       register: content_view_publish_result
+#     - name: "Show publish result for content views"
+#       debug:
+#         var: content_view_publish_result
+#     - name: "Publish composite content views"
+#       theforeman.foreman.content_view_version:
+#         username: "{{ foreman_username | default(omit) }}"
+#         password: "{{ foreman_password | default(omit) }}"
+#         server_url: "{{ foreman_server_url | default(omit) }}"
+#         validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#         organization: "{{ foreman_organization }}"
+#         content_view: "{{ content_view.name | default(content_view) }}"
+#         lifecycle_environments:
+#           - Library
+#       loop: "{{ foreman_content_views | default([]) }}"
+#       loop_control:
+#         loop_var: "content_view"
+#       when:
+#         content_view.composite | default(false) | bool and
+#         not content_view.auto_publish | default(false) | bool
+#       register: composite_content_view_publish_result
+#     - name: "Show publish result for composite content views"
+#       debug:
+#         var: composite_content_view_publish_result
+#   tags: [ "foreman_publish" ]
+
+# - hosts: foreman
+#   tasks:
+#     - set_fact:
+#         lifecycle_environments: "{{ foreman_lifecycle_environments | default([]) | map(attribute='name') | list }}"
+#     - name: "Show lifecycle environments"
+#       debug:
+#         var: lifecycle_environments
+#   tags: [ "foreman_promote_debug" ]
+
+# - hosts: foreman
+#   collections:
+#     - theforeman.foreman
+#   tasks:
+#     - name: "Define lifecycle environments to promote to"
+#       set_fact:
+#         promote_lifecycle_environments: "{{ foreman_lifecycle_environments | default([]) | map(attribute='name') | list }}"
+#       when: promote_lifecycle_environments is not defined
+#     - name: "Show lifecycle environments to promote to"
+#       debug:
+#         var: promote_lifecycle_environments
+#     - name: Promote to dev lifecycle environment
+#       block:
+#         - name: "Promote content views to dev"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: Library
+#             lifecycle_environments:
+#               - dev
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             not content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#         - name: "Promote composite content views to dev"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: Library
+#             lifecycle_environments:
+#               - dev
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#       when: '"dev" in promote_lifecycle_environments | default([])'
+#     - name: Promote to test lifecycle environment
+#       block:
+#         - name: "Promote content views to test"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: dev
+#             lifecycle_environments:
+#               - test
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             not content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#         - name: "Promote composite content views to test"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: dev
+#             lifecycle_environments:
+#               - test
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#       when: '"test" in promote_lifecycle_environments | default([])'
+#     - name: Promote to prod lifecycle environment
+#       block:
+#         - name: "Promote content views to prod"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: test
+#             lifecycle_environments:
+#               - prod
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             not content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#         - name: "Promote composite content views to prod"
+#           theforeman.foreman.content_view_version:
+#             username: "{{ foreman_username | default(omit) }}"
+#             password: "{{ foreman_password | default(omit) }}"
+#             server_url: "{{ foreman_server_url | default(omit) }}"
+#             validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+#             organization: "{{ foreman_organization }}"
+#             content_view: "{{ content_view.name | default(content_view) }}"
+#             current_lifecycle_environment: test
+#             lifecycle_environments:
+#               - prod
+#           loop: "{{ foreman_content_views | default([]) }}"
+#           loop_control:
+#             loop_var: "content_view"
+#           when:
+#             content_view.composite | default(false) | bool and
+#             content_view.allow_promote | default(true) | bool
+#       when: '"prod" in promote_lifecycle_environments | default([])'
+#   tags: [ "foreman_promote" ]
+

@@ -1,0 +1,90 @@
+---
+# foreman epel 8 content group vars file for katello-main
+
+foreman_content_credentials_epel8:
+  - name: RPM-GPG-KEY-EPEL-8
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) ~ '/RPM-GPG-KEY-EPEL-8', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-EPEL-8') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-EPEL-8
+  download_policy: on_demand
+  # download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_epel8:
+  - name: Extra Packages for Enterprise Linux
+    label: EPEL
+    repositories:
+      - name: Extra Packages for Enterprise Linux 8 - x86_64
+        label: epel-8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/8/Everything/x86_64/"
+      - name: Extra Packages for Enterprise Linux Modular 8 - x86_64
+        label: epel-8-modular
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/8/Modular/x86_64/"
+        mirroring_policy: "mirror_complete"
+      - name: Extra Packages for Enterprise Linux 8 - Next - x86_64
+        label: epel-8-next
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/next/8/Everything/x86_64/"
+      # - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
+      #   label: epel-8-playground
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/playground/8/Everything/x86_64/os/"
+      # - name: Extra Packages for Enterprise Linux 8 - Testing - x86_64
+      #   label: epel-8-testing
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/8/Everything/x86_64/"
+      # - name: Extra Packages for Enterprise Linux Modular 8 - Testing - x86_64
+      #   label: epel-8-modular-testing
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/8/Modular/x86_64/"
+      #   mirroring_policy: "mirror_complete"
+
+foreman_content_views_epel8:
+  - name: cv_epel8
+    repositories:
+      - name: Extra Packages for Enterprise Linux 8 - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
+  - name: cv_epel8_modular
+    repositories:
+      - name: Extra Packages for Enterprise Linux Modular 8 - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
+  - name: cv_epel8_next
+    repositories:
+      - name: Extra Packages for Enterprise Linux 8 - Next - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
+  # - name: cv_epel8_playground
+  #   repositories:
+  #     - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
+  #       product: Extra Packages for Enterprise Linux
+  #   allow_promote: False
+  # - name: cv_epel8_testing
+  #   repositories:
+  #     - name: Extra Packages for Enterprise Linux 8 - Testing - x86_64
+  #       product: Extra Packages for Enterprise Linux
+  #   allow_promote: False
+  # - name: cv_epel8_modular_testing
+  #   repositories:
+  #     - name: Extra Packages for Enterprise Linux Modular 8 - Testing - x86_64
+  #       product: Extra Packages for Enterprise Linux
+  #   allow_promote: False
+
+foreman_activation_keys_epel8: []
+
+foreman_sync_plan_products_epel8:
+  - Extra Packages for Enterprise Linux
+

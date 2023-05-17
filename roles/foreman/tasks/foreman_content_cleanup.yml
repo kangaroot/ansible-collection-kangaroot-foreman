@@ -1,0 +1,8 @@
+---
+# content cleanup tasks file for foreman
+
+- name: "Content Cleanup | Include theforeman.foreman.content_credentials role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.content_view_version_cleanup
+  tags: [ "katello_cleanup" ]
+

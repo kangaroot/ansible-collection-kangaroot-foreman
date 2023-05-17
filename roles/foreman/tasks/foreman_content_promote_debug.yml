@@ -1,0 +1,18 @@
+---
+# content promote debug tasks file for foreman
+
+- name: "Debug | Content Promote | Build lifecycle environment variables"
+  set_fact:
+    lifecycle_environments: "{{ foreman_lifecycle_environments | default([]) | map(attribute='name') | list }}"
+  tags: [ "katello_promote_debug" ]
+
+- name: "Debug | Content Promote | Show promotable lifecycle environments"
+  debug:
+    var: lifecycle_environments
+  tags: [ "katello_promote_debug" ]
+
+- name: "Debug | Content Promote | Show lifecycle environment to promote"
+  debug:
+    var: promote_lifecycle_environments | default([])
+  tags: [ "katello_promote_debug" ]
+

@@ -1,0 +1,63 @@
+---
+# foreman operations group vars file for foreman
+
+foreman_repositories_version: "{{ foreman_version }}"
+# foreman_repositories_katello_version: "{{ foreman_katello_version }}"
+foreman_puppet_repositories_version: "{{ foreman_puppet_version }}"
+
+foreman_installer_scenario: foreman
+
+foreman_installer_command: foreman-installer
+foreman_installer_package: foreman-installer
+foreman_installer_verbose: true
+foreman_installer_no_colors: false
+foreman_installer_locale: 'en_US.UTF-8'
+foreman_installer_timeout: 1800
+
+foreman_installer_options_global:
+  # Puppet: Enable or disable options
+  # - "--no-enable-puppet"
+  # - "--foreman-proxy-puppet false"
+  # - "--foreman-proxy-puppetca false"
+  # - "--no-enable-foreman-cli-puppet"
+  # - "--no-enable-foreman-plugin-puppet"
+  # - "--no-enable-foreman-plugin-puppetdb"
+
+  - "--foreman-proxy-foreman-base-url \"{{ foreman_server_url }}\""
+
+  - "--foreman-proxy-http true"
+  - "--foreman-proxy-http-port {{ foreman_proxy_http_port | default(8080) }}"
+  - "--foreman-proxy-ssl true"
+  - "--foreman-proxy-ssl-port {{ foreman_proxy_https_port | default(9090) }}"
+
+  # IPA: Use IPA certificate
+  # - "--foreman-proxy-ssl-ca /etc/ipa/ca.crt"
+  # - "--foreman-proxy-ssl-cert /etc/pki/tls/certs/{{ inventory_hostname }}.pem"
+  # - "--foreman-proxy-ssl-key /etc/pki/tls/private/{{ inventory_hostname }}.key"
+  # - "--foreman-proxy-foreman-ssl-ca /etc/ipa/ca.crt"
+  # - "--foreman-proxy-foreman-ssl-cert /etc/pki/tls/certs/{{ inventory_hostname }}.pem"
+  # - "--foreman-proxy-foreman-ssl-key /etc/pki/tls/private/{{ inventory_hostname }}.key"
+
+  # IPA: Enable IPA authentication
+  # - "--foreman-proxy-realm true"
+  # - "--foreman-proxy-realm-principal realm-proxy@IPA.REALM"
+  # - "--foreman-proxy-realm-keytab /etc/foreman-proxy/freeipa.keytab"
+
+  # IPA: Disable dns record removal on host delete
+  # - "--foreman-proxy-freeipa-remove-dns false"
+
+  # Features: Basic features for all use
+  # - "--enable-foreman-proxy-plugin-remote-execution-script"
+  # - "--enable-foreman-proxy-plugin-discovery"
+  # - "--enable-foreman-proxy-plugin-ansible"
+  # - "--foreman-proxy-tftp true"
+  # - "--foreman-proxy-templates true"
+  # - "--foreman-proxy-logs true"
+  # - "--foreman-proxy-registration true"
+
+foreman_installer_options: "{{ foreman_installer_options_global | default([]) |
+  union( foreman_installer_options_main | default([]) ) |
+  union( foreman_installer_options_group | default([]) ) |
+  union( foreman_installer_options_host | default([]) )
+  }}"
+

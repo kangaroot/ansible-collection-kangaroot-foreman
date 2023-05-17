@@ -1,0 +1,96 @@
+<%#
+kind: ptable
+name: Kickstart minimal
+model: Ptable
+oses:
+- AlmaLinux
+- CentOS
+- Fedora
+- RedHat
+- Rocky
+-%>
+<%
+  primary_disk = host_param('install-disk') || 'sda'
+  fstype = host_param('fstype') || 'ext4'
+-%>
+zerombr
+clearpart --all --initlabel
+<%
+  dev = host_param('part_device') || 'sda'
+  swap = host_param('part_swap_size') || '1024'
+  root = host_param('part_root_size') || '5120'
+  home = host_param('part_home_size') || '0'
+  usr = host_param('part_usr_size') || '0'
+  var = host_param('part_var_size') || '5120'
+  varlog = host_param('part_varlog_size') || '0'
+  tmp = host_param('part_var_size') || '2048'
+  fstype = host_param('part_fstype') || 'xfs'
+-%>
+
+<% if @host.pxe_loader.include?('UEFI') -%>
+
+  part /boot/efi --fstype="efi" --ondisk=<%= dev %> --size=200 --fsoptions="umask=0077,shortname=efi"
+  <%- if (@host.operatingsystem.family == 'Redhat' && @host.operatingsystem.major.to_i >= 7 ) -%>
+    part /boot --fstype="<%= fstype %>" --ondisk=<%= dev %> --size=1024
+  <% else -%>
+    part /boot --fstype="ext4" --ondisk=<%= dev %> --size=1024
+  <% end -%>
+
+  part pv.01 --fstype="lvmpv" --ondisk=<%= dev %> --size=1024 --grow
+
+  volgroup vg_system --pesize=4096 pv.01
+
+  logvol /     --fstype="<%= fstype %>" --name=root --vgname=vg_system --size=<%= root %>
+  <% if home != '0' -%>
+    logvol /home --fstype="<%= fstype %>" --name=home --vgname=vg_system --size=<%= home %>
+  <% end -%>
+  <% if tmp != '0' -%>
+    logvol /tmp  --fstype="<%= fstype %>" --name=tmp  --vgname=vg_system --size=<%= tmp %>
+  <% end -%>
+  <% if usr != '0' -%>
+    logvol /usr  --fstype="<%= fstype %>" --name=usr  --vgname=vg_system --size=<%= usr %>
+  <% end -%>
+  <% if var != '0' -%>
+    logvol /var  --fstype="<%= fstype %>" --name=var  --vgname=vg_system --size=<%= var %>
+  <% end -%>
+  <% if varlog != '0' -%>
+    logvol /var/log  --fstype="<%= fstype %>" --name=varlog  --vgname=vg_system --size=<%= varlog %>
+  <% end -%>
+  logvol swap  --fstype=swap --name=swap --vgname=vg_system --size=<%= swap %>
+
+<% elsif @host.pxe_loader.include?('BIOS') -%>
+
+  <%- if (@host.operatingsystem.family == 'Redhat' && @host.operatingsystem.major.to_i >= 7 ) -%>
+    part /boot --fstype="<%= fstype %>" --ondisk=<%= dev %> --size=1024
+  <% else -%>
+    part /boot --fstype="ext4" --ondisk=<%= dev %> --size=1024
+  <% end -%>
+
+  part pv.01 --fstype="lvmpv" --ondisk=<%= dev %> --size=1024 --grow
+
+  volgroup vg_system --pesize=4096 pv.01
+
+  logvol /     --fstype="<%= fstype %>" --name=root --vgname=vg_system --size=<%= root %>
+  <% if home != '0' -%>
+    logvol /home --fstype="<%= fstype %>" --name=home --vgname=vg_system --size=<%= home %>
+  <% end -%>
+  <% if tmp != '0' -%>
+    logvol /tmp  --fstype="<%= fstype %>" --name=tmp  --vgname=vg_system --size=<%= tmp %>
+  <% end -%>
+  <% if usr != '0' -%>
+    logvol /usr  --fstype="<%= fstype %>" --name=usr  --vgname=vg_system --size=<%= usr %>
+  <% end -%>
+  <% if var != '0' -%>
+    logvol /var  --fstype="<%= fstype %>" --name=var  --vgname=vg_system --size=<%= var %>
+  <% end -%>
+  <% if varlog != '0' -%>
+    logvol /var/log  --fstype="<%= fstype %>" --name=varlog  --vgname=vg_system --size=<%= varlog %>
+  <% end -%>
+  logvol swap  --fstype=swap --name=swap --vgname=vg_system --size=<%= swap %>
+
+<% else -%>
+
+# fallback to autopart, PXE loader was set to: <%= @host.pxe_loader %>
+autopart <%= host_param('autopart_options') %>
+
+<% end -%>

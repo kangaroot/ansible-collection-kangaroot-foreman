@@ -1,0 +1,69 @@
+---
+# foreman fedora copr content group vars file for katello-main
+
+foreman_default_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+
+foreman_content_credentials_fedora_copr:
+  - name: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/dgoodwin/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-copr-dgoodwin-subscription-manager') }}"
+  - name: RPM-GPG-KEY-copr-dmann-subscription-manager
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/dmann/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-copr-dmann-subscription-manager') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  # gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_fedora_copr:
+  - name: Fedora COPR
+    label: Fedora_COPR
+    repositories:
+      - name: Fedora COPR - dgoodwin:subscription-manager - OL6
+        label: copr-dgoodwin-subscription-manager-ol6
+        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dgoodwin/subscription-manager/epel-6-x86_64/"
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+      - name: Fedora COPR - dgoodwin:subscription-manager - OL7
+        label: copr-dgoodwin-subscription-manager-ol7
+        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dgoodwin/subscription-manager/epel-7-x86_64/"
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+      - name: Fedora COPR - dmann:subscription-manager - OL8
+        label: copr-dmann-subscription-manager-ol8
+        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dmann/subscription-manager/epel-8-x86_64/"
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
+
+foreman_content_views_fedora_copr:
+  - name: cv_copr_dgoodwin_subscription_manager_ol6
+    repositories:
+      - name: Fedora COPR - dgoodwin:subscription-manager - OL6
+        product: Fedora COPR
+    allow_promote: False
+  - name: cv_copr_dgoodwin_subscription_manager_ol7
+    repositories:
+      - name: Fedora COPR - dgoodwin:subscription-manager - OL7
+        product: Fedora COPR
+    allow_promote: False
+  - name: cv_copr_dmann_subscription_manager_ol8
+    repositories:
+      - name: Fedora COPR - dmann:subscription-manager - OL8
+        product: Fedora COPR
+    allow_promote: False
+
+foreman_activation_keys_fedora_copr: []
+
+foreman_sync_plan_products_fedora_copr:
+  - Fedora COPR
+

@@ -1,0 +1,15 @@
+<%#
+name: restore_host_keys
+model: ProvisioningTemplate
+kind: snippet
+snippet: true
+-%>
+<% if host_param_true?('backup_host_keys') -%>
+
+if [ -d /tmp/ssh ] ; then
+  mv -f /tmp/ssh/ssh_host_* /mnt/sysimage/etc/ssh/.
+  mv -f /tmp/ssh/*srv* /mnt/sysimage/etc/.
+  mv -f /tmp/ssh/*keytab /mnt/sysimage/etc/.
+fi
+
+<% end -%>

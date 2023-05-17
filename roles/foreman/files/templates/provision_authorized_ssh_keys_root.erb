@@ -1,0 +1,18 @@
+<%#
+  kind: snippet
+  name: authorized_ssh_keys_root
+-%>
+<% if !host_param('authorized_ssh_keys_root').blank? -%>
+<%
+  root_ssh_path = "/root/.ssh"
+-%>
+mkdir -p <%= root_ssh_path %>
+cat << EOF >> <%= root_ssh_path %>/authorized_keys
+<%= host_param('authorized_ssh_keys_root') %>
+EOF
+chmod 0700 <%= root_ssh_path %>
+chmod 0600 <%= root_ssh_path %>/authorized_keys
+chown -R root:root <%= root_ssh_path %>
+# Restore SELinux context with restorecon, if it's available:
+command -v restorecon && restorecon -RvF <%= root_ssh_path %> || true
+<% end -%>

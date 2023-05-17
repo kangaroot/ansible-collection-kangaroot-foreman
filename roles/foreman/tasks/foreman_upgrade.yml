@@ -1,0 +1,10 @@
+---
+# upgrade tasks file for foreman
+
+- name: ""
+  stat:
+    path: /etc/foreman-installer/scenarios.d/.installed
+  register: foreman_installer_installed
+
+
+

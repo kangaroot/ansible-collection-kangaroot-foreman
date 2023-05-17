@@ -1,0 +1,8 @@
+---
+# post install tasks file for foreman
+
+- name: Store facts
+  copy:
+    dest: /tmp/any_path_you_want
+    content: "{{ data }}"
+

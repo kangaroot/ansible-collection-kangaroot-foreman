@@ -1,0 +1,41 @@
+---
+# foreman ceph linux content group vars file for katello-main
+
+foreman_default_repo_baseurl_ceph_nautilus_deb10: https://download.ceph.com
+
+foreman_content_credentials_ceph_nautilus_deb10: []
+
+foreman_products_defaults_deb: &foreman_products_defaults_deb
+  content_type: deb
+  # gpg_key: RPM-GPG-KEY-Ceph-release
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+  deb_components: main
+  deb_architectures: amd64
+
+foreman_products_ceph_nautilus_deb10:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Nautilus - Debian 10 (Buster)
+        label: ceph-nautilus-debian-buster
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb10 | default(foreman_default_repo_baseurl_ceph_nautilus_deb10) }}/debian-nautilus/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: buster
+
+foreman_content_views_ceph_nautilus_deb10:
+  - name: cv_ceph_nautilus_deb10
+    repositories:
+      - name: Ceph packages for amd64 - Nautilus - Debian 10 (Buster)
+        product: Ceph
+    allow_promote: False
+
+foreman_activation_keys_ceph_nautilus_deb10: []
+
+foreman_sync_plan_products_ceph_nautilus_deb10: []
+

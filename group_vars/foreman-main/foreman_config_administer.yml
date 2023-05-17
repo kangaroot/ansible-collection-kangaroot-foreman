@@ -1,0 +1,157 @@
+---
+# foreman administer configuration group vars file for foreman-main
+
+foreman_organizations_main:
+  - name: "{{ foreman_organization }}"
+    label: "{{ foreman_organization | regex_replace('{\\s\\.\\-}', '_') }}"
+    state: present
+
+foreman_organizations: "{{ foreman_organizations_main | default([]) |
+  union( foreman_organizations_group | default([]) ) |
+  union( foreman_organizations_host | default([]) )
+  }}"
+
+
+foreman_locations_main:
+  - name: "{{ foreman_default_location }}"
+    # organizations:
+    #   - "{{ foreman_organization }}"
+    organizations: "{{ foreman_all_organizations_namelist }}"
+    state: present
+
+foreman_locations: "{{ foreman_locations_main | default([]) |
+  union( foreman_locations_group | default([]) ) |
+  union( foreman_locations_host | default([]) )
+  }}"
+
+
+# foreman_auth_sources_ldap_main:
+#   - name: ADLDAP
+#     host: ad.example.com
+#     port: 389
+#     tls: no
+#     server_type: active_directory
+#     account: "{{ foreman_ldap_common_username }}"
+#     account_password: "{{ foreman_ldap_common_password }}"
+#     base_dn: "DC=ad,DC=example,DC=com"
+#     groups_base: "OU=Groups,DC=ad,DC=example,DC=com"
+#     # ldap_filter: ""
+#     onthefly_register: yes
+#     usergroup_sync: yes
+#     attr_login: sAMAccountName
+#     attr_firstname: givenName
+#     attr_lastname: sn
+#     attr_mail: mail
+#     attr_photo: jpegPhoto
+#     # use_netgroups: no
+#     # organizations:
+#     #   - "{{ foreman_organization }}"
+#     # locations:
+#     #   - "{{ foreman_default_location }}"
+#     organizations: "{{ foreman_all_organizations_namelist }}"
+#     locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_auth_sources_ldap: "{{ foreman_auth_sources_ldap_main | default([]) |
+  union( foreman_auth_sources_ldap_group | default([]) ) |
+  union( foreman_auth_sources_ldap_host | default([]) )
+  }}"
+
+
+foreman_users_main:
+  - login: "{{ foreman_username }}"
+    # user_password: "{{ foreman_password }}"
+    firstname: Admin
+    lastname: User
+    mail: "root@{{ foreman_server_hostname }}"
+    admin: yes
+    # organizations:
+    #   - "{{ foreman_organization }}"
+    # locations:
+    #   - "{{ foreman_default_location }}"
+    organizations: "{{ foreman_all_organizations_namelist }}"
+    locations: "{{ foreman_all_locations_namelist }}"
+    # default_location: "{{ foreman_default_location }}"
+    default_organization: "{{ foreman_organization }}"
+    # auth_source: INTERNAL
+  # - login: ad_ldap_user
+  #   firstname: ad_ldap_user_firstname
+  #   lastname: ad_ldap_user_lastname
+  #   mail: ad_ldap_user_email
+  #   admin: yes
+  #   organizations: "{{ foreman_all_organizations_namelist }}"
+  #   locations: "{{ foreman_all_locations_namelist }}"
+  #   # default_location: "{{ foreman_default_location }}"
+  #   default_organization: "{{ foreman_organization }}"
+  #   auth_source: ADLDAP
+
+foreman_users: "{{ foreman_users_main | default([]) |
+  union( foreman_users_group | default([]) ) |
+  union( foreman_users_host | default([]) )
+  }}"
+
+
+# foreman_usergroups_main:
+#   - name: ad_ldap_group
+#     admin: yes
+#     users:
+#       - ad_ldap_user
+
+foreman_usergroups: "{{ foreman_usergroups_main | default([]) |
+  union( foreman_usergroups_group | default([]) ) |
+  union( foreman_usergroups_host | default([]) )
+  }}"
+
+
+# foreman_external_usergroups_main:
+#   - name: ad_ldap_user
+#     usergroup: ad_ldap_user
+#     auth_source: External
+
+foreman_external_usergroups: "{{ foreman_external_usergroups_main | default([]) |
+  union( foreman_external_usergroups_group | default([]) ) |
+  union( foreman_external_usergroups_host | default([]) )
+  }}"
+
+
+foreman_roles_main: []
+
+foreman_roles: "{{ foreman_roles_main | default([]) |
+  union( foreman_roles_group | default([]) ) |
+  union( foreman_roles_host | default([]) )
+  }}"
+
+
+# foreman_settings_main:
+#   # General
+#   - name: entries_per_page
+#     value: 100
+#   - name: outofsync_interval
+#     value: 1440
+#   # Authentication
+#   - name: failed_login_attempts_limit
+#     value: 5
+#   # Notifications
+#   - name: rss_enable
+#     value: false
+#   # Facts
+#   - name: ignore_facts_for_operatingsystem
+#     value: true
+#   - name: ignore_facts_for_domain
+#     value: true
+#   # Content
+#   - name: content_default_http_proxy
+#     value: TME BE Proxy
+#   - name: default_download_policy
+#     value: on_demand
+#   - name: default_redhat_download_policy
+#     value: on_demand
+#   - name: default_proxy_download_policy
+#     value: on_demand
+#   - name: foreman_proxy_content_batch_size
+#     value: 10
+
+foreman_settings: "{{ foreman_settings_main | default([]) |
+  union( foreman_settings_group | default([]) ) |
+  union( foreman_settings_host | default([]) )
+  }}"
+

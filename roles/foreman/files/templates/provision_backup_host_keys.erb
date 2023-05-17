@@ -1,0 +1,77 @@
+<%#
+name: backup_host_keys
+model: ProvisioningTemplate
+kind: snippet
+snippet: true
+-%>
+<%
+  backup_host_keys_root = host_param('backup_host_keys_root') ? "#{host_param('backup_host_keys_root')}" : ""
+-%>
+<% if host_param_true?('backup_host_keys') -%>
+
+mkdir -p /mnt/oldroot
+mkdir -p /tmp/ssh
+
+mounted=""
+
+<% if backup_host_keys_root == "" -%>
+
+if [ -b /dev/sda ] ; then
+  disk="/dev/sda"
+elif [ -b /dev/vda ] ; then
+  disk="/dev/vda"
+elif [ -b /dev/xvda ] ; then
+  disk="/dev/xvda"
+else
+  disk="/dev/hda"
+fi
+
+for i in $(/sbin/fdisk -l $disk | grep -i linux | grep -v swap | cut -d" " -f 1) ; do
+  part=$(/usr/sbin/e2label $i)
+  if [ $part = "/" ] ; then
+    mount $i /mnt/oldroot
+    mounted="true"
+    break
+  fi
+done
+
+for i in $(lvm lvscan | grep "root" | sed -e "s/^.*'\(.*\)'.*$/\1/g") ; do
+  lvm lvchange -a y $i
+  mount $i /mnt/oldroot
+  mounted="true"
+  break
+done
+
+<% else -%>
+
+lvm lvchange -a y <%= backup_host_keys_root %>
+mount <%= backup_host_keys_root %> /mnt/oldroot
+mounted="true"
+
+<% end -%>
+
+if [ -d /mnt/oldroot/etc/ssh ] ; then
+  cp -a /mnt/oldroot/etc/ssh/ssh_host_* /tmp/ssh/.
+  echo "Copied old ssh keys"
+else
+  echo "No old ssh directory found"
+fi
+
+# Add other stuff here that needs to be copied
+# like Kerberos keytab files etc.
+if [ -f /mnt/oldroot/etc/krb5.keytab ] ; then
+  cp -a /mnt/oldroot/etc/etc/krb5.keytab /tmp/ssh/.
+  echo "Copied old keytab"
+else
+  echo "No old keytab found"
+fi
+
+if [ -n $mounted ] ; then
+  umount /mnt/oldroot
+fi
+
+<% if backup_host_keys_root != "" -%>
+lvm lvchange -a n <%= backup_host_keys_root %>
+<% end -%>
+
+<% end -%>

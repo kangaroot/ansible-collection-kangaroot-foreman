@@ -1,0 +1,60 @@
+---
+# provisioning section configuration tasks file for foreman
+
+- name: "Configuration | Create architectures"
+  theforeman.foreman.architecture:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_architectures_item.name }}"
+    updated_name: "{{ foreman_architectures_item.updated_name | default(omit) }}"
+    operatingsystems: "{{ foreman_architectures_item.operatingsystems | default(omit) }}"
+    state: "{{ foreman_architectures_item.state | default('present') }}"
+  loop: "{{ foreman_architectures | default([]) }}"
+  loop_control:
+    loop_var: "foreman_architectures_item"
+    label: "{{ foreman_architectures_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+
+- name: "Configuration | Create hardware models"
+  theforeman.foreman.hardware_model:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_hardware_models_item.name }}"
+    hardware_model: "{{ foreman_hardware_models_item.hardware_model | default(omit) }}"
+    info: "{{ foreman_hardware_models_item.info | default(omit) }}"
+    vendor_class: "{{ foreman_hardware_models_item.vendor_class | default(omit) }}"
+    state: "{{ foreman_hardware_models_item.state | default('present') }}"
+  loop: "{{ foreman_hardware_models | default([]) }}"
+  loop_control:
+    loop_var: "foreman_hardware_models_item"
+    label: "{{ foreman_hardware_models_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+
+- name: "Configuration | Include theforeman.foreman.operatingsystems role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.operatingsystems
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+
+- name: "Configuration | Create installation media"
+  theforeman.foreman.installation_medium:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ installation_media_item.name }}"
+    path: "{{ installation_media_item.path }}"
+    os_family: "{{ installation_media_item.os_family | default(omit) }}"
+    organizations: "{{ installation_media_item.organizations | default(omit) }}"
+    locations: "{{ installation_media_item.locations | default(omit) }}"
+    operatingsystems: "{{ installation_media_item.operatingsystems | default(omit) }}"
+    state: "{{ installation_media_item.state | default('present') }}"
+  loop: "{{ foreman_installation_media | default([]) }}"
+  loop_control:
+    loop_var: "installation_media_item"
+    label: "{{ installation_media_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+

@@ -1,0 +1,41 @@
+---
+# inner content promote tasks file for foreman
+
+- name: "Content Promote | Promote content views to {{ lifecycle_environment.name | default(lifecycle_environment) }}"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view.name | default(content_view) }}"
+    current_lifecycle_environment: "{{ lifecycle_environment.prior | default('Library') }}"
+    lifecycle_environments:
+      - "{{ lifecycle_environment.name | default(lifecycle_environment) }}"
+  loop: "{{ foreman_content_views | default([]) }}"
+  loop_control:
+    loop_var: "content_view"
+  when:
+    not content_view.composite | default(false) | bool and
+    content_view.allow_promote | default(true) | bool
+  tags: [ "katello_promote" ]
+
+- name: "Content Promote | Promote composite content views to {{ lifecycle_environment.name | default(lifecycle_environment) }}"
+  theforeman.foreman.content_view_version:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    organization: "{{ foreman_organization }}"
+    content_view: "{{ content_view.name | default(content_view) }}"
+    current_lifecycle_environment: "{{ lifecycle_environment.prior | default('Library') }}"
+    lifecycle_environments:
+      - "{{ lifecycle_environment.name | default(content_view) }}"
+  loop: "{{ foreman_content_views | default([]) }}"
+  loop_control:
+    loop_var: "content_view"
+  when:
+    content_view.composite | default(false) | bool and
+    content_view.allow_promote | default(true) | bool
+  tags: [ "katello_promote" ]
+

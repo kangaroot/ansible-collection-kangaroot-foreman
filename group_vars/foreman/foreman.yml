@@ -1,0 +1,24 @@
+---
+# foreman group vars file for foreman
+
+foreman_server_hostname: "{{ ansible_fqdn | default( ansible_hostname | default('inventory_hostname') ) }}"
+
+foreman_server_url: "https://{{ foreman_server_hostname }}"
+foreman_validate_certs: false
+
+foreman_version: "3.4"
+# foreman_katello_version: "4.6"
+# foreman_pulpcore_version: "3.18"
+foreman_puppet_version: 7
+
+foreman_server_http_port: 80
+foreman_server_https_port: 443
+foreman_proxy_http_port: 8080
+foreman_proxy_https_port: 9090
+
+foreman_organization: Default Organization
+foreman_default_location: Default Location
+
+foreman_all_organizations_namelist: "{{ foreman_organizations | map(attribute='name') | list }}"
+foreman_all_locations_namelist: "{{ foreman_locations | map(attribute='name') | list }}"
+

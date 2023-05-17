@@ -1,0 +1,41 @@
+---
+# foreman ceph linux content group vars file for katello-main
+
+foreman_default_repo_baseurl_ceph_pacific_deb11: https://download.ceph.com
+
+foreman_content_credentials_ceph_pacific_deb11: []
+
+foreman_products_defaults_deb: &foreman_products_defaults_deb
+  content_type: deb
+  # gpg_key: RPM-GPG-KEY-Ceph-release
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+  deb_components: main
+  deb_architectures: amd64
+
+foreman_products_ceph_pacific_deb11:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
+        label: ceph-pacific-debian-bullseye
+        url: "{{ foreman_repo_baseurl_ceph_pacific_deb11 | default(foreman_default_repo_baseurl_ceph_pacific_deb11) }}/debian-pacific/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: bullseye
+
+foreman_content_views_ceph_pacific_deb11:
+  - name: cv_ceph_pacific_deb11
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
+        product: Ceph
+    allow_promote: False
+
+foreman_activation_keys_ceph_pacific_deb11: []
+
+foreman_sync_plan_products_ceph_pacific_deb11: []
+

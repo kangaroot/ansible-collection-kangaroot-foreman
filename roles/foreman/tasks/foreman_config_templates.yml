@@ -1,0 +1,47 @@
+---
+# templates section configuration tasks file for foreman
+
+- name: "Configuration | Create partition tables"
+  theforeman.foreman.partition_table:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_partition_tables_item.name }}"
+    updated_name: "{{ foreman_partition_tables_item.updated_name | default(omit) }}"
+    organizations: "{{ foreman_partition_tables_item.organizations | default(omit) }}"
+    locations: "{{ foreman_partition_tables_item.locations | default(omit) }}"
+    file_name: "{{ foreman_partition_tables_item.file_name | default(omit) }}"
+    layout: "{{ foreman_partition_tables_item.layout | default(omit) }}"
+    locked: "{{ foreman_partition_tables_item.locked | default(omit) }}"
+    os_family: "{{ foreman_partition_tables_item.os_family | default(omit) }}"
+    state: "{{ foreman_partition_tables_item.state | default('present') }}"
+  loop: "{{ foreman_partition_tables | default([]) }}"
+  loop_control:
+    loop_var: "foreman_partition_tables_item"
+    label: "{{ foreman_partition_tables_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
+
+- name: "Configuration | Create provisioning templates"
+  theforeman.foreman.provisioning_template:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_provisioning_templates_item.name }}"
+    updated_name: "{{ foreman_partition_tables_item.updated_name | default(omit) }}"
+    audit_comment: "{{ foreman_provisioning_templates_item.audit_comment | default(omit) }}"
+    organizations: "{{ foreman_provisioning_templates_item.organizations | default(omit) }}"
+    operatingsystems: "{{ foreman_provisioning_templates_item.operatingsystems | default(omit) }}"
+    locations: "{{ foreman_provisioning_templates_item.locations | default(omit) }}"
+    file_name: "{{ foreman_provisioning_templates_item.file_name | default(omit) }}"
+    template: "{{ foreman_provisioning_templates_item.template | default(omit) }}"
+    kind: "{{ foreman_provisioning_templates_item.kind | default(omit) }}"
+    locked: "{{ foreman_provisioning_templates_item.locked | default(omit) }}"
+    state: "{{ foreman_provisioning_templates_item.state | default('present') }}"
+  loop: "{{ foreman_provisioning_templates | default([]) }}"
+  loop_control:
+    loop_var: "foreman_provisioning_templates_item"
+    label: "{{ foreman_provisioning_templates_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
+

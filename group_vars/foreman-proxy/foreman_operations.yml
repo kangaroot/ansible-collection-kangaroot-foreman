@@ -1,0 +1,10 @@
+---
+# foreman operations group vars file for foreman-proxy
+
+foreman_installer_options_main:
+  - "--no-enable-foreman"
+  - "--no-enable-foreman-cli"
+  - "--enable-foreman-proxy"
+  - "--foreman-db-manage false"
+  - "--foreman-proxy-trusted-hosts {{ foreman_server_hostname }}"
+

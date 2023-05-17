@@ -1,0 +1,28 @@
+---
+# custom content for foremen group vars file for katello-main
+
+# foreman_content_credentials_custom: "{{ [] |
+#   union( foreman_content_credentials_myproduct1 | default([]) ) |
+#   union( foreman_content_credentials_myproduct1 | default([]) )
+#   }}"
+
+# foreman_products_custom: "{{ [] |
+#   union( foreman_products_myproduct1 | default([]) ) |
+#   union( foreman_products_myproduct2 | default([]) )
+#   }}"
+
+# foreman_content_views_custom: "{{ [] |
+#   union( foreman_content_views_myproduct1 | default([]) ) |
+#   union( foreman_content_views_myproduct2 | default([]) )
+#   }}"
+
+# foreman_activation_keys_custom: "{{ [] |
+#   union( foreman_activation_keys_myproduct1 | default([]) ) |
+#   union( foreman_activation_keys_myproduct2 | default([]) )
+#   }}"
+
+# foreman_sync_plan_products_custom: "{{ [] |
+#   union( foreman_sync_plan_products_myproduct1 | default([]) ) |
+#   union( foreman_sync_plan_products_myproduct2 | default([]) )
+#   }}"
+
