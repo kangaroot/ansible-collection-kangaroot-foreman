@@ -1,29 +1,6 @@
 ---
 # foreman templates group vars file for foreman-main
 
-### EL OPERATING SYSTEMS DEFAULT TEMPLATES ###
-foreman_operatingsystems_el_template_cloud_init: CloudInit default
-foreman_operatingsystems_el_template_host_init_config: Linux host_init_config default
-foreman_operatingsystems_el_template_finish: Kickstart default finish
-foreman_operatingsystems_el_template_ipxe: Kickstart default iPXE
-foreman_operatingsystems_el_template_provision: Kickstart default
-foreman_operatingsystems_el_template_pxegrub: Kickstart default PXEGrub
-foreman_operatingsystems_el_template_pxegrub2: Kickstart default PXEGrub2
-foreman_operatingsystems_el_template_pxelinux: Kickstart default PXELinux
-foreman_operatingsystems_el_template_user_data: Kickstart default user data
-
-### DEB OPERATING SYSTEMS DEFAULT TEMPLATES ###
-foreman_operatingsystems_deb_template_cloud_init: CloudInit default
-foreman_operatingsystems_deb_template_host_init_config: Linux host_init_config default
-foreman_operatingsystems_deb_template_finish: Preseed default finish
-foreman_operatingsystems_deb_template_ipxe: Preseed default iPXE
-foreman_operatingsystems_deb_template_provision: Preseed default
-foreman_operatingsystems_deb_template_pxegrub: Preseed default PXEGrub
-foreman_operatingsystems_deb_template_pxegrub2: Preseed default PXEGrub2
-foreman_operatingsystems_deb_template_pxelinux: Preseed default PXELinux
-foreman_operatingsystems_deb_template_user_data: Preseed default user data
-
-
 foreman_partition_tables_defaults: &foreman_partition_tables_defaults
   # organizations:
   #   - "{{ foreman_organization }}"
