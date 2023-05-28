@@ -1,13 +1,17 @@
 ---
 # defaults file for foreman
 
+###############################################################################
 ### Connection details
+###############################################################################
 # foreman_username: admin
 # foreman_password: password
 # foreman_server_url: https://foreman.mycompany.com
 # foreman_validate_certs: yes
 
+###############################################################################
 ### Foreman Administer section
+###############################################################################
 foreman_organizations: []
 foreman_locations: []
 foreman_settings: []
@@ -16,14 +20,18 @@ foreman_roles: []
 foreman_usergroups: []
 foreman_users: []
 
+###############################################################################
 ### Foreman Infrastructure section
+###############################################################################
 foreman_domains: []
 foreman_subnets: []
 foreman_smart_proxies: []
 foreman_compute_resources: []
 foreman_compute_profiles: []
 
+###############################################################################
 ### Foreman Content section
+###############################################################################
 # foreman_manifest_download: false
 foreman_manifest_uuid: ''
 foreman_rhsm_username: ''
@@ -41,12 +49,16 @@ foreman_sync_plans: []
 foreman_content_view_version_cleanup_keep: 5
 
 
+###############################################################################
 ### Hosts / Provisioning section
+###############################################################################
 foreman_hardware_models: []
 foreman_architectures: []
 foreman_installation_media: []
 foreman_operatingsystems: []
 
+###############################################################################
 ### Foreman Configuration section
+###############################################################################
 foreman_global_parameters: []
 
