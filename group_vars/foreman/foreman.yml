@@ -22,3 +22,7 @@ foreman_default_location: Default Location
 foreman_all_organizations_namelist: "{{ foreman_organizations | map(attribute='name') | list }}"
 foreman_all_locations_namelist: "{{ foreman_locations | map(attribute='name') | list }}"
 
+foreman_admin_email: "root@{{ foreman_server_hostname }}"
+foreman_admin_firstname: Admin
+foreman_admin_lastname: User
+

@@ -8,42 +8,66 @@ foreman_products_redhat9:
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
+        # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-baseos-rpms
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
+        # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-appstream-rpms
       # Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
+        # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-supplementary-rpms
+
       # Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs
       - name: Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
-        # basearch: x86_64
+        # basearch: noarch
         # label: satellite-client-6-for-rhel-9-x86_64-rpms
 
-      ### Unable to activate with these settings... ###
-      # # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.0
-      # - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '9.0'
-      #   # label: rhel-8-for-x86_64-baseos-kickstart
-      # # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.0
-      # - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '9.0'
-      #   # label: rhel-9-for-x86_64-appstream-kickstart
+      # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.0
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '9.0'
+        # label: rhel-9-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.0
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '9.0'
+        # label: rhel-9-for-x86_64-appstream-kickstart
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
-        # basearch: x86_64
+        # basearch: noarch
         releasever: '9.1'
-        # label: rhel-8-for-x86_64-baseos-kickstart
+        # label: rhel-9-for-x86_64-baseos-kickstart
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
-        # basearch: x86_64
+        # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-appstream-kickstart
+      # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.2
+      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '9.2'
+        # label: rhel-9-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.2
+      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '9.2'
+        # label: rhel-9-for-x86_64-appstream-kickstart
+
+  - name: Red Hat Ansible Automation Platform
+    repository_sets:
+      # Red Hat Ansible Automation Platform 2.2 for RHEL 9 x86_64
+      - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        label: ansible-automation-platform-2.2-for-rhel-9-x86_64-rpms
+      # Red Hat Ansible Automation Platform 2.3 for RHEL 9 x86_64
+      - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        label: ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms
 
 foreman_content_views_redhat9:
   - name: cv_rhel9_baseos
@@ -61,10 +85,22 @@ foreman_content_views_redhat9:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
+
   - name: cv_rhel9_sat_client_6
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+
+  - name: cv_rhel8_ansible_automation_platform_2_2
+    repositories:
+      - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
+    allow_promote: False
+  - name: cv_rhel8_ansible_automation_platform_2_3
+    repositories:
+      - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
 
   - name: ccv_rhel9
@@ -82,6 +118,23 @@ foreman_content_views_redhat9:
       - content_view: cv_epel9
         latest: true
 
+  - name: ccv_rhel9_aap
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_rhel9_baseos
+        latest: true
+      - content_view: cv_rhel9_appstream
+        latest: true
+      - content_view: cv_rhel9_supplementary
+        latest: true
+      - content_view: cv_rhel9_sat_client_6
+        latest: true
+      - content_view: cv_rhel8_ansible_automation_platform_2_2
+        latest: true
+      - content_view: cv_rhel8_ansible_automation_platform_2_3
+        latest: true
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -97,23 +150,23 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
   default_templates:
     - template_kind: "cloud-init"
-      provisioning_template: "CloudInit default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_cloud_init | default( foreman_operatingsystems_rhel_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
     - template_kind: "finish"
-      provisioning_template: "Kickstart default finish"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_finish | default( foreman_operatingsystems_rhel_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
     - template_kind: "host_init_config"
-      provisioning_template: "Linux host_init_config default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_host_init_config | default( foreman_operatingsystems_rhel_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
     - template_kind: "iPXE"
-      provisioning_template: "Kickstart default iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_ipxe | default( foreman_operatingsystems_rhel_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
     - template_kind: "provision"
-      provisioning_template: "Kickstart default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_provision | default( foreman_operatingsystems_rhel_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
     - template_kind: "PXEGrub"
-      provisioning_template: "Kickstart default PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_pxegrub | default( foreman_operatingsystems_rhel_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
     - template_kind: "PXEGrub2"
-      provisioning_template: "Kickstart default PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_pxegrub2 | default( foreman_operatingsystems_rhel_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
     - template_kind: "PXELinux"
-      provisioning_template: "Kickstart default PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_pxelinux | default( foreman_operatingsystems_rhel_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
     - template_kind: "user_data"
-      provisioning_template: "Kickstart default user data"
+      provisioning_template: "{{ foreman_operatingsystems_rhel9_template_user_data | default( foreman_operatingsystems_rhel_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
 foreman_operatingsystems_redhat9:
   - name: "RedHat"
@@ -130,6 +183,11 @@ foreman_operatingsystems_redhat9:
     minor: "1"
     description: "Red Hat 9.1"
     <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
+    minor: "2"
+    description: "Red Hat 9.2"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -145,14 +203,34 @@ foreman_installation_media_redhat9:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9
       - Red Hat 9.0
-  - name: Red Hat 9.0 AppStream
+  - name: Red at 9.0 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9
       - Red Hat 9.0
+  - name: Red Hat 9.1 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/baseos/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 9.1
+  - name: Red at 9.1 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/appstream/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 9.1
+  - name: Red Hat 9.2 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 9
+      - Red Hat 9.2
+  - name: Red at 9.2 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 9
+      - Red Hat 9.2
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
@@ -162,6 +240,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
     # Example to uyse a pool id
     # - pool_id: "8a88e9826db22df5016dd018abdd029b"
     # - name: "Red Hat Ansible Engine"
+    # - name: "Red Hat Ansible Automation Platform"
     # - name: "Red Hat Enterprise Linux for x86_64"
     - name: "Red Hat Enterprise Linux Server"
     # - name: "Red Hat Satellite"
@@ -184,9 +263,6 @@ foreman_activation_keys_redhat9:
   - name: ak_rhel9
     content_view: ccv_rhel9
     <<: *foreman_activation_keys_defaults_el9
-    subscriptions:
-      - name: "Red Hat Enterprise Linux for x86_64"
-      - name: "Extra Packages for Enterprise Linux"
     content_overrides:
       - label: rhel-9-for-x86_64-baseos-rpms
         override: default
@@ -199,6 +275,27 @@ foreman_activation_keys_redhat9:
       - label: "{{ foreman_organization }}_EPEL_epel-9"
         override: default
 
+  - name: ak_rhel9_aap
+    content_view: ccv_rhel9_aap
+    <<: *foreman_activation_keys_defaults_el9
+    subscriptions:
+      - name: "Red Hat Ansible Automation Platform"
+      - name: "Red Hat Enterprise Linux for x86_64"
+    content_overrides:
+      - label: rhel-9-for-x86_64-baseos-rpms
+        override: default
+      - label: rhel-9-for-x86_64-appstream-rpms
+        override: default
+      - label: rhel-9-for-x86_64-supplementary-rpms
+        override: default
+      - label: satellite-client-6-for-rhel-9-x86_64-rpms
+        override: default
+      - label: ansible-automation-platform-2.2-for-rhel-9-x86_64-rpms
+        override: default
+      - label: ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms
+        override: default
+
 foreman_sync_plan_products_redhat:
   - Red Hat Enterprise Linux for x86_64
+  - Red Hat Ansible Automation Platform
 

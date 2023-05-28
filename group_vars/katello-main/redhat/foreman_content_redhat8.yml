@@ -8,78 +8,144 @@ foreman_products_redhat8:
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
+        # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-baseos-rpms
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
+        # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-appstream-rpms
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
+        # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-supplementary-rpms
-      # # Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: x86_64
-      #   # releasever: '8'
-      #   # label: satellite-tools-6.10-for-rhel-8-x86_64-rpms
-      # # Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: x86_64
-      #   # releasever: '8'
-      #   # label: satellite-utils-6.11-for-rhel-8-x86_64-rpms
+
       # Red Hat Satellite Client 6 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Client 6 for RHEL 8 x86_64 (RPMs)
-        # basearch: x86_64
+        # basearch: noarch
         # releasever: '8'
         # label: satellite-client-6-for-rhel-8-x86_64-rpms
-      # # Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: x86_64
-      #   # releasever: '8'
-      #   # label: satellite-maintenance-6.11-for-rhel-8-x86_64-rpms
 
-      ### Unable to activate with these settings... ###
-      # # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.4
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.4'
-      #   # label: rhel-8-for-x86_64-baseos-kickstart
-      # # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.4
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.4'
-      #   # label: rhel-8-for-x86_64-appstream-kickstart
-      # # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.5
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.5'
-      #   # label: rhel-8-for-x86_64-baseos-kickstart
-      # # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.5
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.5'
-      #   # label: rhel-8-for-x86_64-appstream-kickstart
-      # # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.6
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.6'
-      #   # label: rhel-8-for-x86_64-baseos-kickstart
-      # # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.6
-      # - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
-      #   # basearch: x86_64
-      #   releasever: '8.6'
-      #   # label: rhel-8-for-x86_64-appstream-kickstart
+      # Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-tools-6.10-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-utils-6.11-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-utils-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-utils-6.13-for-rhel-8-x86_64-rpms
+
+      # Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-maintenance-6.11-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        # releasever: '8'
+        # label: satellite-maintenance-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 (RPMs)
+        # basearch: x86_64
+        # releasever: '8'
+        # label: satellite-maintenance-6.13-for-rhel-8-x86_64-rpms
+
+      # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.4
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '8.4'
+        # label: rhel-8-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.4
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '8.4'
+        # label: rhel-8-for-x86_64-appstream-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.5
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '8.5'
+        # label: rhel-8-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.5
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '8.5'
+        # label: rhel-8-for-x86_64-appstream-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.6
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '8.6'
+        # label: rhel-8-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.6
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '8.6'
+        # label: rhel-8-for-x86_64-appstream-kickstart
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
-        # basearch: x86_64
+        # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-baseos-kickstart
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
-        # basearch: x86_64
+        # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-appstream-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.8
+      - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
+        # basearch: noarch
+        releasever: '8.8'
+        # label: rhel-8-for-x86_64-baseos-kickstart
+      # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.8
+      - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
+        # basearch: noarch
+        releasever: '8.8'
+        # label: rhel-8-for-x86_64-appstream-kickstart
+
+  - name: Red Hat Ansible Engine
+    repository_sets:
+      # Red Hat Ansible Engine 2 for RHEL 8 x86_64
+      - name: Red Hat Ansible Engine 2 for RHEL 8 x86_64
+        # basearch: noarch
+        label: ansible-2-for-rhel-8-x86_64-rpms
+      # Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 RPMs
+        # basearch: noarch
+        label: ansible-2.9-for-rhel-8-x86_64-rpms
+  
+  - name: Red Hat Ansible Automation Platform
+    repository_sets:
+      # Red Hat Ansible Automation Platform 2.1 for RHEL 8 x86_64
+      - name: Red Hat Ansible Automation Platform 2.1 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        label: ansible-automation-platform-2.1-for-rhel-8-x86_64-rpms
+      # Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64
+      - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        label: ansible-automation-platform-2.2-for-rhel-8-x86_64-rpms
+      # Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64
+      - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 (RPMs)
+        # basearch: noarch
+        label: ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms
+
+      # Red Hat Automation Hub 4.2 for RHEL 8 RPMs x86_64
+      - name: Red Hat Automation Hub 4.2 for RHEL 8 x86_64 (RPMs)
+        basearch: x86_64
+        label: automation-hub-4.2-for-rhel-8-x86_64-rpms
 
   - name: Red Hat Satellite
     repository_sets:
@@ -87,10 +153,14 @@ foreman_products_redhat8:
       - name: Red Hat Satellite 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-6.11-for-rhel-8-x86_64-rpms
-      # # Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: x86_64
-      #   # label: satellite-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 (RPMs)
+        # basearch: x86_64
+        # label: satellite-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite 6.13 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite 6.13 for RHEL 8 x86_64 (RPMs)
+        # basearch: x86_64
+        # label: satellite-6.13-for-rhel-8-x86_64-rpms
 
   - name: Red Hat Satellite Capsule
     repository_sets:
@@ -98,10 +168,14 @@ foreman_products_redhat8:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-capsule-6.11-for-rhel-8-x86_64-rpms
-      # # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: x86_64
-      #   # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
+        # basearch: x86_64
+        # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+      # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
+        # basearch: x86_64
+        # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
 
 foreman_content_views_redhat8:
   - name: cv_rhel8_baseos
@@ -119,48 +193,114 @@ foreman_content_views_redhat8:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
-  # - name: cv_rhel8_sat_tools_6_10
-  #   repositories:
-  #     - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
-  #       product: 'Red Hat Enterprise Linux for x86_64'
-  #   allow_promote: False
-  # - name: cv_rhel8_sat_utils_6_11
-  #   repositories:
-  #     - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
-  #       product: 'Red Hat Enterprise Linux for x86_64'
-  #   allow_promote: False
+
   - name: cv_rhel8_sat_client_6
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
-  # - name: cv_rhel8_sat_maint_6_11
-  #   repositories:
-  #     - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
-  #       product: 'Red Hat Enterprise Linux for x86_64'
-  #   allow_promote: False
+
+  - name: cv_rhel8_sat_tools_6_10
+    repositories:
+      - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+  - name: cv_rhel8_sat_utils_6_11
+    repositories:
+      - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+  - name: cv_rhel8_sat_utils_6_12
+    repositories:
+      - name: Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+  - name: cv_rhel8_sat_utils_6_13
+    repositories:
+      - name: Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+
+  - name: cv_rhel8_sat_maint_6_11
+    repositories:
+      - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+  - name: cv_rhel8_sat_maint_6_12
+    repositories:
+      - name: Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+  - name: cv_rhel8_sat_maint_6_13
+    repositories:
+      - name: Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Enterprise Linux for x86_64'
+    allow_promote: False
+
+  - name: cv_rhel8_ansible_2
+    repositories:
+      - name: Red Hat Ansible Engine 2 for RHEL 8 x86_64
+        product: 'Red Hat Ansible Engine'
+    allow_promote: False
+  - name: cv_rhel8_ansible_2_9
+    repositories:
+      - name: Red Hat Ansible Engine 2.9 for RHEL 8 x86_64
+        product: 'Red Hat Ansible Engine'
+    allow_promote: False
+
+  - name: cv_rhel8_ansible_automation_platform_2_1
+    repositories:
+      - name: Red Hat Ansible Automation Platform 2.1 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
+    allow_promote: False
+  - name: cv_rhel8_ansible_automation_platform_2_2
+    repositories:
+      - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
+    allow_promote: False
+  - name: cv_rhel8_ansible_automation_platform_2_3
+    repositories:
+      - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
+    allow_promote: False
+
+  - name: cv_rhel8_automation_hub_4_2
+    repositories:
+      - name: Red Hat Automation Hub 4.2 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Ansible Automation Platform'
+    allow_promote: False
 
   - name: cv_rhel8_satellite_6_11
     repositories:
       - name: Red Hat Satellite 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
-  # - name: cv_rhel8_satellite_6_12
-  #   repositories:
-  #     - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
-  #       product: 'Red Hat Satellite'
-  #   allow_promote: False
+  - name: cv_rhel8_satellite_6_12
+    repositories:
+      - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Satellite'
+    allow_promote: False
+  - name: cv_rhel8_satellite_6_13
+    repositories:
+      - name: Red Hat Satellite 6.13 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Satellite'
+    allow_promote: False
 
   - name: cv_rhel8_satellite_capsule_6_11
     repositories:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
-  # - name: cv_rhel8_satellite_capsule_6_12
-  #   repositories:
-  #     - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
-  #       product: 'Red Hat Satellite Capsule'
-  #   allow_promote: False
+  - name: cv_rhel8_satellite_capsule_6_12
+    repositories:
+      - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Satellite Capsule'
+    allow_promote: False
+  - name: cv_rhel8_satellite_capsule_6_13
+    repositories:
+      - name: Red Hat Satellite Capsule 6.13 for RHEL 8 x86_64 RPMs
+        product: 'Red Hat Satellite Capsule'
+    allow_promote: False
 
   - name: ccv_rhel8
     composite: True
@@ -172,17 +312,50 @@ foreman_content_views_redhat8:
         latest: true
       - content_view: cv_rhel8_supplementary
         latest: true
-      # - content_view: cv_rhel8_sat_tools_6_10
-      #   latest: true
-      # - content_view: cv_rhel8_sat_utils_6_11
-      #   latest: true
       - content_view: cv_rhel8_sat_client_6
         latest: true
-      # - content_view: cv_rhel8_sat_maint_6_11
-      #   latest: true
+      - content_view: cv_rhel8_sat_tools_6_10
+        latest: true
+      - content_view: cv_rhel8_sat_utils_6_11
+        latest: true
+      - content_view: cv_rhel8_sat_utils_6_12
+        latest: true
+      - content_view: cv_rhel8_sat_utils_6_13
+        latest: true
+      - content_view: cv_rhel8_sat_maint_6_11
+        latest: true
+      - content_view: cv_rhel8_sat_maint_6_12
+        latest: true
+      - content_view: cv_rhel8_sat_maint_6_13
+        latest: true
+      - content_view: cv_rhel8_ansible_2
+        latest: true
+      - content_view: cv_rhel8_ansible_2_9
+        latest: true
       - content_view: cv_epel8
         latest: true
       - content_view: cv_epel8_modular
+        latest: true
+
+  - name: ccv_rhel8_aap
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_rhel8_baseos
+        latest: true
+      - content_view: cv_rhel8_appstream
+        latest: true
+      - content_view: cv_rhel8_sat_client_6
+        latest: true
+      - content_view: cv_rhel8_ansible_2
+        latest: true
+      - content_view: cv_rhel8_ansible_automation_platform_2_1
+        latest: true
+      - content_view: cv_rhel8_ansible_automation_platform_2_2
+        latest: true
+      - content_view: cv_rhel8_ansible_automation_platform_2_3
+        latest: true
+      - content_view: cv_rhel8_automation_hub_4_2
         latest: true
 
   - name: ccv_rhel8_satellite
@@ -195,8 +368,10 @@ foreman_content_views_redhat8:
         latest: true
       - content_view: cv_rhel8_satellite_6_11
         latest: true
-      # - content_view: cv_rhel8_satellite_6_12
-      #   latest: true
+      - content_view: cv_rhel8_satellite_6_12
+        latest: true
+      - content_view: cv_rhel8_satellite_6_13
+        latest: true
 
   - name: ccv_rhel8_capsule
     composite: True
@@ -208,8 +383,10 @@ foreman_content_views_redhat8:
         latest: true
       - content_view: cv_rhel8_satellite_capsule_6_11
         latest: true
-      # - content_view: cv_rhel8_satellite_capsule_6_12
-      #   latest: true
+      - content_view: cv_rhel8_satellite_capsule_6_12
+        latest: true
+      - content_view: cv_rhel8_satellite_capsule_6_13
+        latest: true
 
   # - name: ccv_rhel8_foreman
   #   composite: True
@@ -262,23 +439,23 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
   default_templates:
     - template_kind: "cloud-init"
-      provisioning_template: "CloudInit default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_cloud_init | default( foreman_operatingsystems_rhel_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
     - template_kind: "finish"
-      provisioning_template: "Kickstart default finish"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_finish | default( foreman_operatingsystems_rhel_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
     - template_kind: "host_init_config"
-      provisioning_template: "Linux host_init_config default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_host_init_config | default( foreman_operatingsystems_rhel_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
     - template_kind: "iPXE"
-      provisioning_template: "Kickstart default iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_ipxe | default( foreman_operatingsystems_rhel_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
     - template_kind: "provision"
-      provisioning_template: "Kickstart default"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_provision | default( foreman_operatingsystems_rhel_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
     - template_kind: "PXEGrub"
-      provisioning_template: "Kickstart default PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_pxegrub | default( foreman_operatingsystems_rhel_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
     - template_kind: "PXEGrub2"
-      provisioning_template: "Kickstart default PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_pxegrub2 | default( foreman_operatingsystems_rhel_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
     - template_kind: "PXELinux"
-      provisioning_template: "Kickstart default PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_pxelinux | default( foreman_operatingsystems_rhel_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
     - template_kind: "user_data"
-      provisioning_template: "Kickstart default user data"
+      provisioning_template: "{{ foreman_operatingsystems_rhel8_template_user_data | default( foreman_operatingsystems_rhel_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
 foreman_operatingsystems_redhat8:
   - name: "RedHat"
@@ -305,6 +482,11 @@ foreman_operatingsystems_redhat8:
     major: "8"
     minor: "7"
     description: "Red Hat 8.7"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "8"
+    minor: "8"
+    description: "Red Hat 8.8"
     <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
@@ -341,40 +523,48 @@ foreman_installation_media_redhat8:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8
       - Red Hat 8.6
   - name: Red Hat 8.6 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8
       - Red Hat 8.6
   - name: Red Hat 8.7 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8
       - Red Hat 8.7
   - name: Red Hat 8.7 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
+      - Red Hat 8.7
+  - name: Red Hat 8.8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/baseos/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
       - Red Hat 8
       - Red Hat 8.7
+  - name: Red Hat 8.8 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/appstream/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 8
+      - Red Hat 8.8
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
   lifecycle_environment: "Library"
   subscriptions:
-    # Example to uyse a pool id
+    # Example to use a pool id
     # - pool_id: "8a88e9826db22df5016dd018abdd029b"
     # - name: "Red Hat Ansible Engine"
+    # - name: "Red Hat Ansible Automation Platform"
     # - name: "Red Hat Enterprise Linux for x86_64"
     - name: "Red Hat Enterprise Linux Server"
     # - name: "Red Hat Satellite"
     # - name: "Red Hat Satellite Capsule"
-    # - name: "Red Hat Software Collections (for RHEL Server)"
     - name: "Extra Packages for Enterprise Linux"
     # - name: "Foreman"
   auto_attach: False
@@ -384,6 +574,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_defaults_el8: &foreman_activation_keys_defaults_el8
   <<: *foreman_activation_keys_defaults
   subscriptions:
+    - name: "Red Hat Ansible Engine"
     - name: "Red Hat Enterprise Linux for x86_64"
     - name: "Extra Packages for Enterprise Linux"
   release_version: 8
@@ -392,9 +583,6 @@ foreman_activation_keys_redhat8:
   - name: ak_rhel8
     content_view: ccv_rhel8
     <<: *foreman_activation_keys_defaults_el8
-    subscriptions:
-      - name: "Red Hat Enterprise Linux for x86_64"
-      - name: "Extra Packages for Enterprise Linux"
     content_overrides:
       - label: rhel-8-for-x86_64-baseos-rpms
         override: default
@@ -402,18 +590,57 @@ foreman_activation_keys_redhat8:
         override: default
       - label: rhel-8-for-x86_64-supplementary-rpms
         override: default
-      # - label: satellite-tools-6.10-for-rhel-8-x86_64-rpms
-      #   override: default
-      # - label: satellite-tools-6.11-for-rhel-8-x86_64-rpms
-      #   override: default
       - label: satellite-client-6-for-rhel-8-x86_64-rpms
         override: default
-      # - label: satellite-maintenance-6.11-for-rhel-8-x86_64-rpms
-      #   override: default
+      - label: satellite-tools-6.10-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-utils-6.11-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-utils-6.12-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-utils-6.13-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-maintenance-6.11-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-maintenance-6.12-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-maintenance-6.12-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-2-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-2.9-for-rhel-8-x86_64-rpms
+        override: default
       - label: "{{ foreman_organization }}_EPEL_epel-8"
         override: default
       - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
         override: default
+
+  - name: ak_rhel8_aap
+    content_view: ccv_rhel8_aap
+    <<: *foreman_activation_keys_defaults_el8
+    subscriptions:
+      - name: "Red Hat Ansible Engine"
+      - name: "Red Hat Ansible Automatrion Platform"
+      - name: "Red Hat Enterprise Linux for x86_64"
+    content_overrides:
+      - label: rhel-8-for-x86_64-baseos-rpms
+        override: default
+      - label: rhel-8-for-x86_64-appstream-rpms
+        override: default
+      - label: satellite-client-6-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-2-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-automation-platform-2.1-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-automation-platform-2.2-for-rhel-8-x86_64-rpms
+        override: default
+      - label: ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms
+        override: default
+      - label: cv_rhel8_automation_hub_4_2
+        override: automation-hub-4.2-for-rhel-8-x86_64-rpms
+
+
 
   - name: ak_rhel8_satellite
     content_view: ccv_rhel8_satellite
@@ -428,8 +655,10 @@ foreman_activation_keys_redhat8:
         override: default
       - label: satellite-6.11-for-rhel-8-x86_64-rpms
         override: default
-      # - label: satellite-6.12-for-rhel-8-x86_64-rpms
-      #   override: default
+      - label: satellite-6.12-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-6.13-for-rhel-8-x86_64-rpms
+        override: default
 
   - name: ak_rhel8_capsule
     content_view: ccv_rhel8_capsule
@@ -444,8 +673,10 @@ foreman_activation_keys_redhat8:
         override: default
       - label: satellite-capsule-6.11-for-rhel-8-x86_64-rpms
         override: default
-      # - label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
-      #   override: default
+      - label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+        override: default
+      - label: satellite-capsule-6.13-for-rhel-8-x86_64-rpms
+        override: default
 
   # - name: ak_rhel8_foreman
   #   content_view: ccv_rhel8_foreman
@@ -491,6 +722,8 @@ foreman_activation_keys_redhat8:
 
 foreman_sync_plan_products_redhat8:
   - Red Hat Enterprise Linux for x86_64
+  - Red Hat Ansible Engine
+  - Red Hat Ansible Automation Platform
   - Red Hat Satellite
   - Red Hat Satellite Capsule
 

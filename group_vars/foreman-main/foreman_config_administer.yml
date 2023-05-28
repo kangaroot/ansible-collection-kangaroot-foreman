@@ -60,9 +60,9 @@ foreman_auth_sources_ldap: "{{ foreman_auth_sources_ldap_main | default([]) |
 foreman_users_main:
   - login: "{{ foreman_username }}"
     # user_password: "{{ foreman_password }}"
-    firstname: Admin
-    lastname: User
-    mail: "root@{{ foreman_server_hostname }}"
+    firstname: "{{ foreman_admin_firstname | default('Admin') }}"
+    lastname: "{{ foreman_admin_lastname | default('User') }}"
+    mail: "{{ foreman_admin_email | default('root@' ~ foreman_server_hostname) }}"
     admin: yes
     # organizations:
     #   - "{{ foreman_organization }}"
@@ -103,8 +103,8 @@ foreman_usergroups: "{{ foreman_usergroups_main | default([]) |
 
 
 # foreman_external_usergroups_main:
-#   - name: ad_ldap_user
-#     usergroup: ad_ldap_user
+#   - name: ad_ldap_group
+#     usergroup: ad_ldap_group
 #     auth_source: External
 
 foreman_external_usergroups: "{{ foreman_external_usergroups_main | default([]) |
@@ -139,8 +139,6 @@ foreman_roles: "{{ foreman_roles_main | default([]) |
 #   - name: ignore_facts_for_domain
 #     value: true
 #   # Content
-#   - name: content_default_http_proxy
-#     value: TME BE Proxy
 #   - name: default_download_policy
 #     value: on_demand
 #   - name: default_redhat_download_policy

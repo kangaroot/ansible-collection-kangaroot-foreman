@@ -2,13 +2,13 @@
 # foreman operations group vars file for foreman-main
 
 foreman_installer_options_main:
-  - "--foreman-initial-location \"{{ foreman_default_location }}\""
-  - "--foreman-initial-organization \"{{ foreman_organization }}\""
-  - "--foreman-initial-admin-email root@{{ foreman_server_hostname }}"
-  - "--foreman-initial-admin-first-name Admin"
-  - "--foreman-initial-admin-last-name User"
-  - "--foreman-initial-admin-password {{ foreman_password }}"
-  - "--foreman-initial-admin-username {{ foreman_username }}"
+  - "--foreman-initial-location '{{ foreman_default_location }}'"
+  - "--foreman-initial-organization '{{ foreman_organization }}'"
+  - "--foreman-initial-admin-email '{{ foreman_admin_email | default('root@' ~ foreman_server_hostname) }}'"
+  - "--foreman-initial-admin-first-name '{{ foreman_admin_firstname | default('Admin') }}'"
+  - "--foreman-initial-admin-last-name '{{ foreman_admin_lastname | default('User') }}'"
+  - "--foreman-initial-admin-password '{{ foreman_password }}'"
+  - "--foreman-initial-admin-username '{{ foreman_username }}'"
   - "--foreman-email-delivery-method sendmail"
 
   # - "--enable-foreman-cli-ansible"

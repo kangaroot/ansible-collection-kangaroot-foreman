@@ -57,6 +57,9 @@
 # foreman_enable_ol8_uln: false
 # foreman_enable_ol9_uln: false
 # foreman_enable_redhat: false
+# foreman_enable_redhat7: false
+# foreman_enable_redhat8: false
+# foreman_enable_redhat9: false
 # foreman_enable_rocky: false
 # foreman_enable_rocky8: false
 # foreman_enable_rocky9: false
