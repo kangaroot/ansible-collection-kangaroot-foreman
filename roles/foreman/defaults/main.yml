@@ -71,9 +71,218 @@ foreman_operatingsystems_el_template_pxegrub2: Kickstart default PXEGrub2
 foreman_operatingsystems_el_template_pxelinux: Kickstart default PXELinux
 foreman_operatingsystems_el_template_user_data: Kickstart default user data
 
+### CentOS operating system default templates
+### =========================================
+
+# foreman_operatingsystems_centos_template_cloud_init: CloudInit default
+# foreman_operatingsystems_centos_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_centos_template_finish: Kickstart default finish
+# foreman_operatingsystems_centos_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_centos_template_provision: Kickstart default
+# foreman_operatingsystems_centos_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_centos_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_centos_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_centos_template_user_data: Kickstart default user data
+
+### CentOS 7 operating system default templates
+# foreman_operatingsystems_centos7_template_cloud_init: CloudInit default
+# foreman_operatingsystems_centos7_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_centos7_template_finish: Kickstart default finish
+# foreman_operatingsystems_centos7_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_centos7_template_provision: Kickstart default
+# foreman_operatingsystems_centos7_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_centos7_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_centos7_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_centos7_template_user_data: Kickstart default user data
+
+### CentOS 8 operating system default templates
+# foreman_operatingsystems_centos8_template_cloud_init: CloudInit default
+# foreman_operatingsystems_centos8_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_centos8_template_finish: Kickstart default finish
+# foreman_operatingsystems_centos8_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_centos8_template_provision: Kickstart default
+# foreman_operatingsystems_centos8_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_centos8_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_centos8_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_centos8_template_user_data: Kickstart default user data
+
+### CentOS 8 Stream operating system default templates
+# foreman_operatingsystems_centos8_stream_template_cloud_init: CloudInit default
+# foreman_operatingsystems_centos8_stream_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_centos8_stream_template_finish: Kickstart default finish
+# foreman_operatingsystems_centos8_stream_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_centos8_stream_template_provision: Kickstart default
+# foreman_operatingsystems_centos8_stream_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_centos8_stream_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_centos8_stream_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_centos8_stream_template_user_data: Kickstart default user data
+
+### CentOS 9 Stream operating system default templates
+# foreman_operatingsystems_centos9_stream_template_cloud_init: CloudInit default
+# foreman_operatingsystems_centos9_stream_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_centos9_stream_template_finish: Kickstart default finish
+# foreman_operatingsystems_centos9_stream_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_centos9_stream_template_provision: Kickstart default
+# foreman_operatingsystems_centos9_stream_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_centos9_stream_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_centos9_stream_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_centos9_stream_template_user_data: Kickstart default user data
+
+### Oracle Linux operating system default templates
+### ===============================================
+
+# foreman_operatingsystems_ol_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol_template_provision: Kickstart default
+# foreman_operatingsystems_ol_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol_template_user_data: Kickstart default user data
+
+### Oracle Linux 5 operating system default templates
+# foreman_operatingsystems_ol5_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol5_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol5_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol5_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol5_template_provision: Kickstart default
+# foreman_operatingsystems_ol5_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol5_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol5_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol5_template_user_data: Kickstart default user data
+
+### Oracle Linux 6 operating system default templates
+# foreman_operatingsystems_ol6_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol6_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol6_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol6_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol6_template_provision: Kickstart default
+# foreman_operatingsystems_ol6_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol6_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol6_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol6_template_user_data: Kickstart default user data
+
+### Oracle Linux 7 operating system default templates
+# foreman_operatingsystems_ol7_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol7_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol7_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol7_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol7_template_provision: Kickstart default
+# foreman_operatingsystems_ol7_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol7_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol7_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol7_template_user_data: Kickstart default user data
+
+### Oracle Linux 8 operating system default templates
+# foreman_operatingsystems_ol8_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol8_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol8_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol8_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol8_template_provision: Kickstart default
+# foreman_operatingsystems_ol8_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol8_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol8_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol8_template_user_data: Kickstart default user data
+
+### Oracle Linux 9 operating system default templates
+# foreman_operatingsystems_ol9_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ol9_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ol9_template_finish: Kickstart default finish
+# foreman_operatingsystems_ol9_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_ol9_template_provision: Kickstart default
+# foreman_operatingsystems_ol9_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_ol9_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_ol9_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_ol9_template_user_data: Kickstart default user data
+
+### Red Hat operating system default templates
+### ==========================================
+
+# foreman_operatingsystems_rhel_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rhel_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rhel_template_finish: Kickstart default finish
+# foreman_operatingsystems_rhel_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rhel_template_provision: Kickstart default
+# foreman_operatingsystems_rhel_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rhel_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rhel_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rhel_template_user_data: Kickstart default user data
+
+### Red Hat 7 operating system default templates
+# foreman_operatingsystems_rhel7_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rhel7_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rhel7_template_finish: Kickstart default finish
+# foreman_operatingsystems_rhel7_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rhel7_template_provision: Kickstart default
+# foreman_operatingsystems_rhel7_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rhel7_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rhel7_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rhel7_template_user_data: Kickstart default user data
+
+### Red Hat 8 operating system default templates
+# foreman_operatingsystems_rhel8_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rhel8_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rhel8_template_finish: Kickstart default finish
+# foreman_operatingsystems_rhel8_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rhel8_template_provision: Kickstart default
+# foreman_operatingsystems_rhel8_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rhel8_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rhel8_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rhel8_template_user_data: Kickstart default user data
+
+### Red Hat 9 operating system default templates
+# foreman_operatingsystems_rhel9_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rhel9_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rhel9_template_finish: Kickstart default finish
+# foreman_operatingsystems_rhel9_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rhel9_template_provision: Kickstart default
+# foreman_operatingsystems_rhel9_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rhel9_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rhel9_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rhel9_template_user_data: Kickstart default user data
+
+### Rocky Linux operating system default templates
+### ==============================================
+
+# foreman_operatingsystems_rocky_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rocky_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rocky_template_finish: Kickstart default finish
+# foreman_operatingsystems_rocky_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rocky_template_provision: Kickstart default
+# foreman_operatingsystems_rocky_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rocky_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rocky_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rocky_template_user_data: Kickstart default user data
+
+### Rocky Linux 8 operating system default templates
+# foreman_operatingsystems_rocky8_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rocky8_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rocky8_template_finish: Kickstart default finish
+# foreman_operatingsystems_rocky8_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rocky8_template_provision: Kickstart default
+# foreman_operatingsystems_rocky8_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rocky8_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rocky8_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rocky8_template_user_data: Kickstart default user data
+
+### Rocky Linux 9 operating system default templates
+# foreman_operatingsystems_rocky9_template_cloud_init: CloudInit default
+# foreman_operatingsystems_rocky9_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_rocky9_template_finish: Kickstart default finish
+# foreman_operatingsystems_rocky9_template_ipxe: Kickstart default iPXE
+# foreman_operatingsystems_rocky9_template_provision: Kickstart default
+# foreman_operatingsystems_rocky9_template_pxegrub: Kickstart default PXEGrub
+# foreman_operatingsystems_rocky9_template_pxegrub2: Kickstart default PXEGrub2
+# foreman_operatingsystems_rocky9_template_pxelinux: Kickstart default PXELinux
+# foreman_operatingsystems_rocky9_template_user_data: Kickstart default user data
+
 ### ======================================
 ### DEB operating system default templates
 ### ======================================
+
+### Debian operating system default templates
+### =========================================
 
 # foreman_operatingsystems_deb_template_cloud_init: CloudInit default
 # foreman_operatingsystems_deb_template_host_init_config: Linux host_init_config default
@@ -84,6 +293,100 @@ foreman_operatingsystems_deb_template_provision: Preseed default
 foreman_operatingsystems_deb_template_pxegrub2: Preseed default PXEGrub2
 foreman_operatingsystems_deb_template_pxelinux: Preseed default PXELinux
 foreman_operatingsystems_deb_template_user_data: Preseed default user data
+
+### Debian 9 operating system default templates
+# foreman_operatingsystems_deb9_template_cloud_init: CloudInit default
+# foreman_operatingsystems_deb9_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_deb9_template_finish: Preseed default finish
+# foreman_operatingsystems_deb9_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_deb9_template_provision: Preseed default
+# foreman_operatingsystems_deb9_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_deb9_template_pxegrub2: Preseed default PXEGrub2
+# foreman_operatingsystems_deb9_template_pxelinux: Preseed default PXELinux
+# foreman_operatingsystems_deb9_template_user_data: Preseed default user data
+
+### Debian 10 operating system default templates
+# foreman_operatingsystems_deb10_template_cloud_init: CloudInit default
+# foreman_operatingsystems_deb10_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_deb10_template_finish: Preseed default finish
+# foreman_operatingsystems_deb10_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_deb10_template_provision: Preseed default
+# foreman_operatingsystems_deb10_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_deb10_template_pxegrub2: Preseed default PXEGrub2
+# foreman_operatingsystems_deb10_template_pxelinux: Preseed default PXELinux
+# foreman_operatingsystems_deb10_template_user_data: Preseed default user data
+
+### Debian 11 operating system default templates
+# foreman_operatingsystems_deb11_template_cloud_init: CloudInit default
+# foreman_operatingsystems_deb11_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_deb11_template_finish: Preseed default finish
+# foreman_operatingsystems_deb11_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_deb11_template_provision: Preseed default
+# foreman_operatingsystems_deb11_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_deb11_template_pxegrub2: Preseed default PXEGrub2
+# foreman_operatingsystems_deb11_template_pxelinux: Preseed default PXELinux
+# foreman_operatingsystems_deb11_template_user_data: Preseed default user data
+
+### Ubuntu operating system default templates
+### =========================================
+
+# foreman_operatingsystems_ub_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ub_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ub_template_finish: Preseed default finish
+# foreman_operatingsystems_ub_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_ub_template_provision: Preseed default Autoinstall
+# foreman_operatingsystems_ub_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_ub_template_pxegrub2: Preseed default PXEGrub2 Autoinstall
+# foreman_operatingsystems_ub_template_pxelinux: Preseed default PXELinux Autoinstall
+# foreman_operatingsystems_ub_template_user_data: Preseed Autoinstall cloud-init user data
+
+### Ubuntu 18.04 operating system default templates
+# foreman_operatingsystems_ub1804_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ub1804_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ub1804_template_finish: Preseed default finish
+# foreman_operatingsystems_ub1804_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_ub1804_template_provision: Preseed default Autoinstall
+# foreman_operatingsystems_ub1804_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_ub1804_template_pxegrub2: Preseed default PXEGrub2 Autoinstall
+# foreman_operatingsystems_ub1804_template_pxelinux: Preseed default PXELinux Autoinstall
+# foreman_operatingsystems_ub1804_template_user_data: Preseed Autoinstall cloud-init user data
+
+### Ubuntu 20.04+ operating system default templates
+### ------------------------------------------------
+
+# foreman_operatingsystems_ub2x_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ub2x_template_host_init_config: Linux host_init_config default
+foreman_operatingsystems_ub2x_template_finish: Preseed default finish
+# foreman_operatingsystems_ub2x_template_ipxe: Preseed default iPXE
+foreman_operatingsystems_ub2x_template_provision: Preseed default Autoinstall
+# foreman_operatingsystems_ub2x_template_pxegrub: Preseed default PXEGrub
+foreman_operatingsystems_ub2x_template_pxegrub2: Preseed default PXEGrub2 Autoinstall
+foreman_operatingsystems_ub2x_template_pxelinux: Preseed default PXELinux Autoinstall
+foreman_operatingsystems_ub2x_template_user_data: Preseed Autoinstall cloud-init user data
+
+### Ubuntu 20.04 operating system default templates
+
+# foreman_operatingsystems_ub2004_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ub2004_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ub2004_template_finish: Preseed default finish
+# foreman_operatingsystems_ub2004_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_ub2004_template_provision: Preseed default Autoinstall
+# foreman_operatingsystems_ub2004_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_ub2004_template_pxegrub2: Preseed default PXEGrub2 Autoinstall
+# foreman_operatingsystems_ub2004_template_pxelinux: Preseed default PXELinux Autoinstall
+# foreman_operatingsystems_ub2004_template_user_data: Preseed Autoinstall cloud-init user data
+
+### Ubuntu 22.04 operating system default templates
+
+# foreman_operatingsystems_ub2204_template_cloud_init: CloudInit default
+# foreman_operatingsystems_ub2204_template_host_init_config: Linux host_init_config default
+# foreman_operatingsystems_ub2204_template_finish: Preseed default finish
+# foreman_operatingsystems_ub2204_template_ipxe: Preseed default iPXE
+# foreman_operatingsystems_ub2204_template_provision: Preseed default Autoinstall
+# foreman_operatingsystems_ub2204_template_pxegrub: Preseed default PXEGrub
+# foreman_operatingsystems_ub2204_template_pxegrub2: Preseed default PXEGrub2 Autoinstall
+# foreman_operatingsystems_ub2204_template_pxelinux: Preseed default PXELinux Autoinstall
+# foreman_operatingsystems_ub2204_template_user_data: Preseed Autoinstall cloud-init user data
 
 ###############################################################################
 ### Foreman Configuration section
