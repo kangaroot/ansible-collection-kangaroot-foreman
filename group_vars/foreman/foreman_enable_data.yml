@@ -28,6 +28,14 @@
 # foreman_enable_ceph_docker: false
 # foreman_enable_datadog: false
 # foreman_enable_docker: false
+# foreman_enable_docker_ce: false
+# foreman_enable_docker_ce_el7: false
+# foreman_enable_docker_ce_el8: false
+# foreman_enable_docker_ce_el9: false
+# foreman_enable_docker_ee: false
+# foreman_enable_docker_ee_el7: false
+# foreman_enable_docker_ee_el8: false
+# foreman_enable_docker_ee_el9: false
 # foreman_enable_elrepo: false
 # foreman_enable_epel: false
 # foreman_enable_epel7: false
