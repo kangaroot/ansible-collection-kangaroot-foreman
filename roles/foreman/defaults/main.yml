@@ -134,6 +134,9 @@ foreman_enable_debian: false
 # foreman_enable_debian11: false
 
 ### Oracle Linux (ULN) content data
+foreman_products_ol_uln_username: ""
+foreman_products_ol_uln_password: ""
+
 foreman_enable_ol: false
 # foreman_enable_ol7: false
 # foreman_enable_ol8: false

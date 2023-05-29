@@ -5,8 +5,8 @@ foreman_content_credentials_ol9_uln: []
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  upstream_username: "{{ foreman_products_ol_uln_username }}"
-  upstream_password: "{{ foreman_products_ol_uln_password }}"
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
   gpg_key: RPM-GPG-KEY-oracle
   download_policy: on_demand
   # mirror_on_sync: True
