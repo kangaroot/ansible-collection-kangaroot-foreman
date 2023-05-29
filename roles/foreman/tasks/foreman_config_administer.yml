@@ -6,7 +6,7 @@
 # - name: "Configuration | Include theforeman.foreman.organizations role"
 #   ansible.builtin.include_role:
 #     name: theforeman.foreman.organizations
-#   tags: [ "foreman", "katello", "configuration" ]
+#   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create organizations"
   theforeman.foreman.organization:
@@ -22,7 +22,7 @@
   loop_control:
     loop_var: "foreman_organizations_item"
     label: "{{ foreman_organizations_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create locations"
   theforeman.foreman.location:
@@ -39,13 +39,13 @@
   loop_control:
     loop_var: "foreman_locations_item"
     label: "{{ foreman_locations_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Include theforeman.foreman.settings role"
   ansible.builtin.import_role:
     name: theforeman.foreman.settings
   ignore_errors: true
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 # Disabled - collection role does not support attributes:
 #            - organizations
@@ -53,7 +53,7 @@
 # - name: "Configuration | Include theforeman.foreman.auth_sources_ldap role"
 #   ansible.builtin.import_role:
 #     name: theforeman.foreman.auth_sources_ldap
-#   tags: [ "foreman", "katello", "configuration" ]
+#   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create LDAP authentication sources"
   theforeman.foreman.auth_source_ldap:
@@ -86,7 +86,7 @@
   loop_control:
     loop_var: "foreman_auth_sources_ldap_item"
     label: "{{ foreman_auth_sources_ldap_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create roles"
   theforeman.foreman.role:
@@ -104,7 +104,7 @@
   loop_control:
     loop_var: "foreman_roles_item"
     label: "{{ foreman_roles_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create user groups"
   theforeman.foreman.usergroup:
@@ -123,7 +123,7 @@
   loop_control:
     loop_var: "foreman_usergroups_item"
     label: "{{ foreman_usergroups_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create users"
   theforeman.foreman.user:
@@ -151,5 +151,5 @@
   loop_control:
     loop_var: "foreman_users_item"
     label: "{{ foreman_users_item.login }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
