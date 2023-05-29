@@ -234,49 +234,6 @@ foreman_products_ol8:
       #   url: "{{ foreman_repo_baseurl_oracle8 | default(foreman_default_repo_baseurl_oracle8) }}/OL8/oraclelinuxmanager210/client/x86_64/"
       #   <<: *foreman_products_defaults
 
-      # ### Oracle Linux 8 BaseOS GA Patch (x86_64) | ol8_x86_64_u0_baseos_patch ###
-      # - name: Oracle Linux 8 BaseOS GA Patch (x86_64)
-      #   description: Updated packages published after release of Oracle Linux 8 BaseOS GA (x86_64)
-      #   label: ol8_x86_64_u0_baseos_patch
-      #   url: uln://ol8_x86_64_u0_baseos_patch
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.1 BaseOS Patch (x86_64) | ol8_x86_64_u1_baseos_patch ###
-      # - name: Oracle Linux 8.1 BaseOS Patch (x86_64)
-      #   description: Updated packages published after release of Oracle Linux 8.1 BaseOS (x86_64)
-      #   label: ol8_x86_64_u1_baseos_patch
-      #   url: uln://ol8_x86_64_u1_baseos_patch
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.2 BaseOS Patch (x86_64) | ol8_x86_64_u2_baseos_patch ###
-      # - name: Oracle Linux 8.2 BaseOS Patch (x86_64)
-      #   description: Updated packages published after release of Oracle Linux 8.2 BaseOS (x86_64)
-      #   label: ol8_x86_64_u2_baseos_patch
-      #   url: uln://ol8_x86_64_u2_baseos_patch
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.3 BaseOS Patch (x86_64) | ol8_x86_64_u3_baseos_patch ###
-      # - name: Oracle Linux 8.3 BaseOS Patch (x86_64)
-      #   description: Updated packages published after release of Oracle Linux 8.3 BaseOS (x86_64)
-      #   label: ol8_x86_64_u3_baseos_patch
-      #   url: uln://ol8_x86_64_u3_baseos_patch
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux 8.4 BaseOS Patch (x86_64) | ol8_x86_64_u4_baseos_patch ###
-      - name: Oracle Linux 8.4 BaseOS Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 8.4 BaseOS (x86_64)
-        label: ol8_x86_64_u4_baseos_patch
-        url: uln://ol8_x86_64_u4_baseos_patch
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.5 BaseOS Patch (x86_64) | ol8_x86_64_u5_baseos_patch ###
-      - name: Oracle Linux 8.5 BaseOS Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 8.5 BaseOS (x86_64)
-        label: ol8_x86_64_u5_baseos_patch
-        url: uln://ol8_x86_64_u5_baseos_patch
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.6 BaseOS Patch (x86_64) | ol8_x86_64_u6_baseos_patch ###
-      - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 8.6 BaseOS (x86_64)
-        label: ol8_x86_64_u6_baseos_patch
-        url: uln://ol8_x86_64_u6_baseos_patch
-        <<: *foreman_products_defaults
-
       # ### Oracle Linux 8 BaseOS GA (x86_64) | ol8_x86_64_u0_baseos_base ###
       # - name: Oracle Linux 8 BaseOS GA (x86_64)
       #   description: Base operating system packages released for Oracle Linux 8 GA (x86_64). No errata included
@@ -324,6 +281,12 @@ foreman_products_ol8:
         description: Base operating system packages released for Oracle Linux 8.7 (x86_64). No errata included
         label: ol8_x86_64_u7_baseos_base
         url: "{{ foreman_repo_baseurl_oracle8 | default(foreman_default_repo_baseurl_oracle8) }}/OL8/7/baseos/base/x86_64/"
+        <<: *foreman_products_defaults
+      ### Oracle Linux 8.8 BaseOS (x86_64) | ol8_x86_64_u8_baseos_base ###
+      - name: Oracle Linux 8.8 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.8 (x86_64). No errata included
+        label: ol8_x86_64_u8_baseos_base
+        url: "{{ foreman_repo_baseurl_oracle8 | default(foreman_default_repo_baseurl_oracle8) }}/OL8/8/baseos/base/x86_64/"
         <<: *foreman_products_defaults
 
       # ### Oracle Linux 8 Update 4 Security Validations packages (x86_64) | ol8_x86_64_u4_security_validation ###
@@ -688,6 +651,11 @@ foreman_operatingsystems_ol8:
     minor: "7"
     description: "Oracle Linux 8.7"
     <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "8"
+    minor: "8"
+    description: "Oracle Linux 8.8"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -738,8 +706,13 @@ foreman_installation_media_ol8:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u7_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Oracle Linux 8
       - Oracle Linux 8.7
+  - name: Oracle Linux 8.8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u8_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8
+      - Oracle Linux 8.8
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -823,12 +796,6 @@ foreman_activation_keys_ol8:
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol8_x86_64_oraclelinuxmanager210_client"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_u4_baseos_patch"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_u5_baseos_patch"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_u6_baseos_patch"
-        override: disabled
       # - label: "{{ foreman_organization }}_OL_ol8_x86_64_u4_security_validation"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol8_debuginfo"

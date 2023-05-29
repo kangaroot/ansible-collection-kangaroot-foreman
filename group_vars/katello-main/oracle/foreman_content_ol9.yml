@@ -145,6 +145,12 @@ foreman_products_ol9:
         label: ol9_x86_64_u1_baseos_base
         url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/1/baseos/base/x86_64/"
         <<: *foreman_products_defaults
+      ### Oracle Linux 9.2 BaseOS (x86_64) | ol9_x86_64_u2_baseos_base ###
+      - name: Oracle Linux 9.2 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 9.2 (x86_64). No errata included
+        label: ol9_x86_64_u2_baseos_base
+        url: "{{ foreman_repo_baseurl_oracle9 | default(foreman_default_repo_baseurl_oracle9) }}/OL9/2/baseos/base/x86_64/"
+        <<: *foreman_products_defaults
 
 foreman_content_views_ol9:
   - name: cv_ol9_x86_64_baseos_latest
@@ -333,6 +339,11 @@ foreman_operatingsystems_ol9:
     minor: "1"
     description: "Oracle Linux 9.1"
     <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "2"
+    description: "Oracle Linux 9.2"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -344,17 +355,22 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 foreman_installation_media_ol9:
-  # - name: Oracle Linux 9.0 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_ga_baseos_base/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Oracle Linux 9.0
+  - name: Oracle Linux 9.0 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_ga_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 9.0
   - name: Oracle Linux 9.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_u1_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Oracle Linux 9
       - Oracle Linux 9.1
+  - name: Oracle Linux 9.2 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_linux/ol9_u2_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 9
+      - Oracle Linux 9.2
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"

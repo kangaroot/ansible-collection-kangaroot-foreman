@@ -285,6 +285,18 @@ foreman_products_ol8_uln:
         label: ol8_uln_x86_64_u6_baseos_patch
         url: uln://ol8_x86_64_u6_baseos_patch
         <<: *foreman_products_defaults
+      ### Oracle Linux 8.7 BaseOS Patch (x86_64) | ol8_x86_64_u7_baseos_patch ###
+      - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.7 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u7_baseos_patch
+        url: uln://ol8_x86_64_u7_baseos_patch
+        <<: *foreman_products_defaults
+      ### Oracle Linux 8.8 BaseOS Patch (x86_64) | ol8_x86_64_u8_baseos_patch ###
+      - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.8 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u8_baseos_patch
+        url: uln://ol8_x86_64_u8_baseos_patch
+        <<: *foreman_products_defaults
 
       # ### Oracle Linux 8 BaseOS GA (x86_64) | ol8_x86_64_u0_baseos_base ###
       # - name: Oracle Linux 8 BaseOS GA (x86_64)
@@ -333,6 +345,12 @@ foreman_products_ol8_uln:
         description: Base operating system packages released for Oracle Linux 8.7 (x86_64). No errata included
         label: ol8_uln_x86_64_u7_baseos_base
         url: uln://ol8_x86_64_u7_baseos_base
+        <<: *foreman_products_defaults
+      ### Oracle Linux 8.8 BaseOS (x86_64) | ol8_x86_64_u8_baseos_base ###
+      - name: Oracle Linux 8.8 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.8 (x86_64). No errata included
+        label: ol8_uln_x86_64_u8_baseos_base
+        url: uln://ol8_x86_64_u8_baseos_base
         <<: *foreman_products_defaults
 
       # ### Oracle Linux 8 Update 4 Security Validations packages (x86_64) | ol8_x86_64_u4_security_validation ###
@@ -565,6 +583,16 @@ foreman_content_views_ol8_uln:
       - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
         product: Oracle Linux
     allow_promote: False
+  - name: cv_ol8_uln_x86_64_u7_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol8_uln_x86_64_u8_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
 
   # - name: cv_ol8_uln_x86_64_u4_security_validation
   #   repositories:
@@ -660,6 +688,10 @@ foreman_content_views_ol8_uln:
         latest: true
       - content_view: cv_ol8_uln_x86_64_u6_baseos_patch
         latest: true
+      - content_view: cv_ol8_uln_x86_64_u7_baseos_patch
+        latest: true
+      - content_view: cv_ol8_uln_x86_64_u8_baseos_patch
+        latest: true
       # - content_view: cv_ol8_uln_x86_64_u4_security_validation
       #   latest: true
 
@@ -742,6 +774,11 @@ foreman_operatingsystems_ol8_uln:
     minor: "7"
     description: "Oracle Linux 8.7"
     <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "8"
+    minor: "8"
+    description: "Oracle Linux 8.8"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -792,8 +829,13 @@ foreman_installation_media_ol8_uln:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u7_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Oracle Linux 8
       - Oracle Linux 8.7
+  - name: Oracle Linux 8.8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u8_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8
+      - Oracle Linux 8.8
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -892,6 +934,10 @@ foreman_activation_keys_ol8_uln:
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_u5_baseos_patch"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_u6_baseos_patch"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_u7_baseos_patch"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_u8_baseos_patch"
         override: disabled
       # - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_u4_security_validation"
       #   override: disabled

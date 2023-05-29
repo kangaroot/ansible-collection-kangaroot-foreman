@@ -199,6 +199,12 @@ foreman_products_ol9_uln:
         label: ol9_uln_x86_64_u1_baseos_patch
         url: uln://ol9_x86_64_u1_baseos_patch
         <<: *foreman_products_defaults
+      ### Oracle Linux 9.2 BaseOS Patch (x86_64) | ol9_x86_64_u2_baseos_patch ###
+      - name: Oracle Linux 9.2 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 9.2 BaseOS GA (x86_64).
+        label: ol9_uln_x86_64_u2_baseos_patch
+        url: uln://ol9_x86_64_u2_baseos_patch
+        <<: *foreman_products_defaults
 
       ### Oracle Linux 9 BaseOS GA (x86_64) | ol9_x86_64_u0_baseos_base ###
       - name: Oracle Linux 9 BaseOS GA (x86_64)
@@ -211,6 +217,12 @@ foreman_products_ol9_uln:
         description: Base operating system packages released for Oracle Linux 9.1 (x86_64). No errata included
         label: ol9_uln_x86_64_u1_baseos_base
         url: uln://ol9_x86_64_u1_baseos_base
+        <<: *foreman_products_defaults
+      ### Oracle Linux 9.2 BaseOS (x86_64) | ol9_x86_64_u2_baseos_base ###
+      - name: Oracle Linux 9.2 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 9.2 (x86_64). No errata included
+        label: ol9_uln_x86_64_u2_baseos_base
+        url: uln://ol9_x86_64_u2_baseos_base
         <<: *foreman_products_defaults
 
 foreman_content_views_ol9_uln:
@@ -364,6 +376,11 @@ foreman_content_views_ol9_uln:
       - name: Oracle Linux 9.1 BaseOS Patch (x86_64)
         product: Oracle Linux
     allow_promote: False
+  - name: cv_ol9_uln_x86_64_u2_baseos_patch
+    repositories:
+      - name: Oracle Linux 9.2 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
 
   # - name: cv_ol9_uln_x86_64_u0_baseos_base
   #   repositories:
@@ -373,6 +390,11 @@ foreman_content_views_ol9_uln:
   # - name: cv_ol9_uln_x86_64_u1_baseos_base
   #   repositories:
   #     - name: Oracle Linux 9.1 BaseOS (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: False
+  # - name: cv_ol9_uln_x86_64_u2_baseos_base
+  #   repositories:
+  #     - name: Oracle Linux 9.2 BaseOS (x86_64)
   #       product: Oracle Linux
   #   allow_promote: False
 
@@ -436,6 +458,8 @@ foreman_content_views_ol9_uln:
         latest: true
       - content_view: cv_ol9_uln_x86_64_u1_baseos_patch
         latest: true
+      - content_view: cv_ol9_uln_x86_64_u2_baseos_patch
+        latest: true
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
@@ -486,6 +510,11 @@ foreman_operatingsystems_ol9_uln:
     minor: "1"
     description: "Oracle Linux 9.1"
     <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "2"
+    description: "Oracle Linux 9.2"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -506,8 +535,13 @@ foreman_installation_media_ol9_uln:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u1_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Oracle Linux 9
       - Oracle Linux 9.1
+  - name: Oracle Linux 9.2 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u2_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 9
+      - Oracle Linux 9.2
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -578,6 +612,8 @@ foreman_activation_keys_ol9_uln:
       - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u0_baseos_patch"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u1_baseos_patch"
+        override: disabled
+      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u2_baseos_patch"
         override: disabled
 
 foreman_sync_plan_products_ol9_uln: []
