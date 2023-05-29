@@ -1,0 +1,48 @@
+---
+# defaults file for foreman_content_fedora_copr
+
+foreman_enable_fedora_copr: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7: false
+foreman_enable_fedora_copr_dmann_subscription_manager: false
+foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
+
+
+# foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+
+foreman_default_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+
+
+foreman_content_credentials_fedora_copr_main: []
+foreman_content_credentials_fedora_copr: "{{ foreman_content_credentials_fedora_copr_main | default([]) |
+  union( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_fedora_copr_dmann_subscription_manager | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_fedora_copr_main: []
+foreman_products_fedora_copr: "{{ foreman_products_fedora_copr_main | default([]) |
+  union( foreman_products_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_fedora_copr_dmann_subscription_manager | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_fedora_copr_main: []
+foreman_content_views_fedora_copr: "{{ foreman_content_views_fedora_copr_main | default([]) |
+  union( foreman_content_views_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_fedora_copr_dmann_subscription_manager | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_fedora_copr_main: []
+foreman_activation_keys_fedora_copr: "{{ foreman_activation_keys_fedora_copr_main | default([]) |
+  union( foreman_activation_keys_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_fedora_copr_dmann_subscription_manager | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_fedora_copr_main:
+  - Fedora COPR
+
+foreman_sync_plan_products_fedora_copr: "{{ foreman_sync_plan_products_fedora_copr_main | default([]) |
+  union( foreman_sync_plan_products_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_fedora_copr_dmann_subscription_manager | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | default( foreman_enable_fedora_copr | default(false) | bool ) | bool else [] )
+  }}"
+

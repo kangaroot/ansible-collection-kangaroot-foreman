@@ -1,0 +1,63 @@
+---
+# defaults file for foreman_content_epel
+
+foreman_enable_epel: false
+# foreman_enable_epel7: false
+# foreman_enable_epel8: false
+# foreman_enable_epel9: false
+
+
+# foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
+
+foreman_default_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
+
+
+foreman_content_credentials_epel_main: []
+foreman_content_credentials_epel: "{{ foreman_content_credentials_epel_main | default([]) |
+  union( foreman_content_credentials_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_epel_main: []
+foreman_products_epel: "{{ foreman_products_epel_main | default([]) |
+  union( foreman_products_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_epel_main: []
+foreman_content_views_epel: "{{ foreman_content_views_epel_main | default([]) |
+  union( foreman_content_views_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_operatingsystems_epel_main: []
+foreman_operatingsystems_epel: "{{ foreman_operatingsystems_epel_main | default([]) |
+  union( foreman_operatingsystems_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_installation_media_epel_main: []
+foreman_installation_media_epel: "{{ foreman_installation_media_epel_main | default([]) |
+  union( foreman_installation_media_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_epel_main: []
+foreman_activation_keys_epel: "{{ foreman_activation_keys_epel_main | default([]) |
+  union( foreman_activation_keys_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_epel_main: []
+foreman_sync_plan_products_epel: "{{ foreman_sync_plan_products_epel_main | default([]) |
+  union( foreman_sync_plan_products_epel7 | default([]) if foreman_enable_epel7 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_epel8 | default([]) if foreman_enable_epel8 | default( foreman_enable_epel | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_epel9 | default([]) if foreman_enable_epel9 | default( foreman_enable_epel | default(false) | bool ) | bool else [] )
+  }}"
+

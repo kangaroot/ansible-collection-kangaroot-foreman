@@ -1,0 +1,56 @@
+---
+# defaults file for foreman_content_hashicorp
+
+foreman_enable_hashicorp: false
+foreman_enable_hashicorp_el7: "{{ foreman_enable_hashicorp | bool }}"
+foreman_enable_hashicorp_el8: "{{ foreman_enable_hashicorp | bool }}"
+foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
+
+
+# foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
+
+foreman_default_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
+
+
+foreman_content_credentials_hashicorp_main:
+  - name: RPM-GPG-KEY-Hashicorp
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_hashicorp | default(foreman_default_repo_baseurl_hashicorp) ~ '/gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-hashicorp') }}"
+
+foreman_content_credentials_hashicorp: "{{ foreman_content_credentials_hashicorp_main | default([]) |
+  union( foreman_content_credentials_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_hashicorp_el8 | default([]) if foreman_enable_hashicorp_el8 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_hashicorp_el9 | default([]) if foreman_enable_hashicorp_el9 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_hashicorp_main: []
+foreman_products_hashicorp: "{{ foreman_products_hashicorp_main | default([]) |
+  union( foreman_products_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_hashicorp_el8 | default([]) if foreman_enable_hashicorp_el8 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_hashicorp_el9 | default([]) if foreman_enable_hashicorp_el9 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_hashicorp_main: []
+foreman_content_views_hashicorp: "{{ foreman_content_views_hashicorp_main | default([]) |
+  union( foreman_content_views_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_hashicorp_el8 | default([]) if foreman_enable_hashicorp_el8 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_hashicorp_el9 | default([]) if foreman_enable_hashicorp_el9 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_hashicorp_main: []
+foreman_activation_keys_hashicorp: "{{ foreman_activation_keys_hashicorp_main | default([]) |
+  union( foreman_activation_keys_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_hashicorp_el8 | default([]) if foreman_enable_hashicorp_el8 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_hashicorp_el9 | default([]) if foreman_enable_hashicorp_el9 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_hashicorp_main:
+  - Hashicorp
+
+foreman_sync_plan_products_hashicorp: "{{ foreman_sync_plan_products_hashicorp_main | default([]) |
+  union( foreman_sync_plan_products_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_hashicorp_el8 | default([]) if foreman_enable_hashicorp_el8 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_hashicorp_el9 | default([]) if foreman_enable_hashicorp_el9 | default( foreman_enable_hashicorp | default(false) | bool ) | bool else [] )
+  }}"
+

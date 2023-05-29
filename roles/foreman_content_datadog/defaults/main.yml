@@ -1,0 +1,59 @@
+---
+# defaults file for foreman_content_datadog
+
+foreman_enable_datadog: false
+
+
+# foreman_repo_baseurl_datadog: https://yum.datadoghq.com
+
+foreman_default_repo_baseurl_datadog: https://yum.datadoghq.com
+
+
+foreman_content_credentials_datadog:
+  - name: RPM-GPG-KEY-Datadog
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://keys.datadoghq.com/DATADOG_RPM_KEY_CURRENT.public', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/DATADOG_RPM_KEY_CURRENT.public') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-Datadog
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_datadog:
+  - name: Datadog
+    label: Datadog
+    repositories:
+      - name: Datadog Agent v7
+        label: datadog-v7
+        url: "{{ foreman_repo_baseurl_datadog | default(foreman_default_repo_baseurl_datadog) }}/stable/7/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Datadog Agent v6
+        label: datadog-v6
+        url: "{{ foreman_repo_baseurl_datadog | default(foreman_default_repo_baseurl_datadog) }}/stable/6/x86_64/"
+        <<: *foreman_products_defaults
+
+foreman_content_views_datadog:
+  - name: cv_datadog_v7
+    repositories:
+      - name: Datadog Agent v7
+        product: Datadog
+    allow_promote: False
+  - name: cv_datadog_v6
+    repositories:
+      - name: Datadog Agent v6
+        product: Datadog
+    allow_promote: False
+
+foreman_activation_keys_datadog: []
+
+foreman_sync_plan_products_datadog:
+  - Datadog
+

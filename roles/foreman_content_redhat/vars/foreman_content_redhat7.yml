@@ -1,0 +1,401 @@
+---
+# foreman redhat content vars file for foreman_content_redhat
+
+foreman_content_credentials_redhat7: []
+
+foreman_products_redhat7:
+  - name: Red Hat Enterprise Linux Server
+    repository_sets:
+      # Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server
+      - name: Red Hat Enterprise Linux 7 Server (RPMs)
+        basearch: x86_64
+        releasever: 7Server
+        # label: rhel-7-server-rpms
+      # Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
+      - name: Red Hat Enterprise Linux 7 Server - Extras (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-extras-rpms
+      # Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7Server
+      - name: Red Hat Enterprise Linux 7 Server - Optional (RPMs)
+        basearch: x86_64
+        releasever: 7Server
+        # label: rhel-7-server-optional-rpms
+      # Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7Server
+      - name: Red Hat Enterprise Linux 7 Server - Supplementary (RPMs)
+        basearch: x86_64
+        releasever: 7Server
+        # label: rhel-7-server-supplementary-rpms
+
+      # Red Hat Satellite Client 6 for RHEL 7 Server RPMs x86_64
+      - name: Red Hat Satellite Client 6 (for RHEL 7 Server) (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-satellite-client-6-rpms
+
+      # Red Hat Satellite Maintenance 6 for RHEL 7 Server RPMs x86_64
+      - name: Red Hat Satellite Maintenance 6 (for RHEL 7 Server) (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-satellite-maintenance-6-rpms
+      # Red Hat Satellite Maintenance 6.11 for RHEL 7 Server RPMs x86_64
+      - name: Red Hat Satellite Maintenance 6.11 (for RHEL 7 Server) (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-satellite-maintenance-6.11-rpms
+
+      # Red Hat Satellite Tools 6.10 for RHEL 7 Server RPMs x86_64
+      - name: Red Hat Satellite Tools 6.10 (for RHEL 7 Server) (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-satellite-tools-6.10-rpms
+      # Red Hat Satellite Utils 6.11 for RHEL 7 Server RPMs x86_64
+      - name: Red Hat Satellite Utils 6.11 (for RHEL 7 Server) (RPMs)
+        basearch: x86_64
+        # label: rhel-7-server-satellite-utils-6.11-rpms
+
+      # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.9
+      - name: Red Hat Enterprise Linux 7 Server (Kickstart)
+        basearch: x86_64
+        releasever: '7.9'
+        # label: rhel-7-server-kickstart
+
+  - name: Red Hat Software Collections (for RHEL Server)
+    repository_sets:
+      # Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7Server
+      - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server
+        basearch: x86_64
+        releasever: 7Server
+        # label: rhel-server-rhscl-7-rpms
+
+  - name: Red Hat Ansible Engine
+    repository_sets:
+      # Red Hat Ansible Engine 2 RPMs for Red Hat Enterprise Linux 7 Server x86_64
+      - name: Red Hat Ansible Engine 2 RPMs for Red Hat Enterprise Linux 7 Server
+        basearch: x86_64
+        label: rhel-7-server-ansible-2-rpms
+      # Red Hat Ansible Engine 2.9 RPMs for Red Hat Enterprise Linux 7 Server x86_64
+      - name: Red Hat Ansible Engine 2.9 RPMs for Red Hat Enterprise Linux 7 Server
+        basearch: x86_64
+        label: rhel-7-server-ansible-2.9-rpms
+
+foreman_content_views_redhat7:
+  - name: cv_rhel7_base
+    repositories:
+      - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+  - name: cv_rhel7_extras
+    repositories:
+      - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+  - name: cv_rhel7_optional
+    repositories:
+      - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7Server
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+  - name: cv_rhel7_supplementary
+    repositories:
+      - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7Server
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+
+  - name: cv_rhel7_sat_client_6
+    repositories:
+      - name: Red Hat Satellite Client 6 for RHEL 7 Server RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+
+  - name: cv_rhel7_sat_maint_6
+    repositories:
+      - name: Red Hat Satellite Maintenance 6 for RHEL 7 Server RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+  - name: cv_rhel7_sat_maint_6_11
+    repositories:
+      - name: Red Hat Satellite Maintenance 6.11 for RHEL 7 Server RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+
+  - name: cv_rhel7_sat_tools_6_10
+    repositories:
+      - name: Red Hat Satellite Tools 6.10 for RHEL 7 Server RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+  - name: cv_rhel7_sat_utils_6_11
+    repositories:
+      - name: Red Hat Satellite Utils 6.11 for RHEL 7 Server RPMs x86_64
+        product: 'Red Hat Enterprise Linux Server'
+    allow_promote: False
+
+  - name: cv_rhel7_rhscl
+    repositories:
+      - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7Server
+        product: 'Red Hat Software Collections (for RHEL Server)'
+    allow_promote: False
+
+  - name: cv_rhel7_ansible_2
+    repositories:
+      - name: Red Hat Ansible Engine 2 RPMs for Red Hat Enterprise Linux 7 Server x86_64
+        product: 'Red Hat Ansible Engine'
+    allow_promote: False
+  - name: cv_rhel7_ansible_2_9
+    repositories:
+      - name: Red Hat Ansible Engine 2.9 RPMs for Red Hat Enterprise Linux 7 Server x86_64
+        product: 'Red Hat Ansible Engine'
+    allow_promote: False
+
+  - name: ccv_rhel7
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_rhel7_base
+        latest: true
+      - content_view: cv_rhel7_extras
+        latest: true
+      - content_view: cv_rhel7_optional
+        latest: true
+      - content_view: cv_rhel7_supplementary
+        latest: true
+      - content_view: cv_rhel7_sat_client_6
+        latest: true
+      - content_view: cv_rhel7_sat_tools_6_10
+        latest: true
+      - content_view: cv_rhel7_sat_utils_6_11
+        latest: true
+      - content_view: cv_rhel7_sat_maint_6
+        latest: true
+      - content_view: cv_rhel7_sat_maint_6_11
+        latest: true
+      - content_view: cv_rhel7_rhscl
+        latest: true
+      - content_view: cv_rhel7_ansible_2
+        latest: true
+      - content_view: cv_rhel7_ansible_2_9
+        latest: true
+      - content_view: cv_epel7
+        latest: true
+
+  # - name: ccv_rhel7_foreman
+  #   composite: True
+  #   auto_publish: True
+  #   components:
+  #     - content_view: cv_rhel7_base
+  #       latest: true
+  #     - content_view: cv_rhel7_extras
+  #       latest: true
+  #     - content_view: cv_rhel7_rhscl
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2_9
+  #       latest: true
+  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
+  #       latest: true
+
+  # - name: ccv_rhel7_katello
+  #   composite: True
+  #   auto_publish: True
+  #   components:
+  #     - content_view: cv_rhel7_base
+  #       latest: true
+  #     - content_view: cv_rhel7_extras
+  #       latest: true
+  #     - content_view: cv_rhel7_rhscl
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2_9
+  #       latest: true
+  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_candlepin_el7"
+  #       latest: true
+  #     - content_view: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_el7"
+  #       latest: true
+  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
+  #       latest: true
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    - template_kind: "cloud-init"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_cloud_init | default( foreman_operatingsystems_rhel_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+    - template_kind: "finish"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_finish | default( foreman_operatingsystems_rhel_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+    - template_kind: "host_init_config"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_host_init_config | default( foreman_operatingsystems_rhel_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+    - template_kind: "iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_ipxe | default( foreman_operatingsystems_rhel_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+    - template_kind: "provision"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_provision | default( foreman_operatingsystems_rhel_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+    - template_kind: "PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_pxegrub | default( foreman_operatingsystems_rhel_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_pxegrub2 | default( foreman_operatingsystems_rhel_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+    - template_kind: "PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_pxelinux | default( foreman_operatingsystems_rhel_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+    - template_kind: "user_data"
+      provisioning_template: "{{ foreman_operatingsystems_rhel7_template_user_data | default( foreman_operatingsystems_rhel_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+foreman_operatingsystems_redhat7:
+  - name: "RedHat"
+    major: "7"
+    minor: ""
+    description: "Red Hat 7"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "7"
+    minor: "9"
+    description: "Red Hat 7.9"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_redhat7:
+  - name: Red Hat 7.9
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x86_64/kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Red Hat 7
+      - Red Hat 7.9
+
+# Refer to https://access.redhat.com/solutions/125873 for pool ids
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  organization: "{{ foreman_organization }}"
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   # Example to uyse a pool id
+  #   # - pool_id: "8a88e9826db22df5016dd018abdd029b"
+  #   # - name: "Red Hat Ansible Engine"
+  #   # - name: "Red Hat Ansible Automation Platform"
+  #   # - name: "Red Hat Enterprise Linux for x86_64"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   # - name: "Red Hat Satellite"
+  #   # - name: "Red Hat Satellite Capsule"
+  #   # - name: "Red Hat Software Collections (for RHEL Server)"
+  #   # - name: "Red Hat OpenShift Container Platform"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
+  auto_attach: False
+  release_version: 7Server
+  # service_level: Standard
+
+foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
+  <<: *foreman_activation_keys_defaults
+  # subscriptions:
+  #   - name: "Red Hat Ansible Engine"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   - name: "Red Hat Software Collections (for RHEL Server)"
+  #   - name: "Extra Packages for Enterprise Linux"
+  release_version: 7Server
+
+foreman_activation_keys_redhat7:
+  - name: ak_rhel7
+    content_view: ccv_rhel7
+    <<: *foreman_activation_keys_defaults_el7
+    content_overrides:
+      - label: rhel-7-server-rpms
+        override: default
+      - label: rhel-7-server-extras-rpms
+        override: default
+      - label: rhel-7-server-optional-rpms
+        override: default
+      - label: rhel-7-server-supplementary-rpms
+        override: default
+      - label: rhel-7-server-satellite-client-6-rpms
+        override: default
+      - label: rhel-7-server-satellite-tools-6.10-rpms
+        override: default
+      - label: rhel-7-server-satellite-utils-6.11-rpms
+        override: default
+      - label: rhel-7-server-satellite-maintenance-6-rpms
+        override: default
+      - label: rhel-7-server-satellite-maintenance-6.11-rpms
+        override: default
+      - label: rhel-server-rhscl-7-rpms
+        override: default
+      - label: rhel-7-server-ansible-2-rpms
+        override: default
+      - label: rhel-7-server-ansible-2.9-rpms
+        override: default
+      - label: "{{ foreman_organization }}_EPEL_epel-7"
+        override: disabled
+
+  # - name: ak_rhel7_foreman
+  #   content_view: ccv_rhel7_foreman
+  #   <<: *foreman_activation_keys_defaults_el7
+  #   subscriptions:
+  #     - name: "Red Hat Ansible Engine"
+  #     - name: "Red Hat Enterprise Linux Server"
+  #     - name: "Red Hat Software Collections (for RHEL Server)"
+  #     - name: "Foreman"
+  #   content_overrides:
+  #     - label: rhel-7-server-rpms
+  #       override: default
+  #     - label: rhel-7-server-extras-rpms
+  #       override: default
+  #     - label: rhel-server-rhscl-7-rpms
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el7"
+  #       override: default
+
+  # - name: ak_rhel7_katello
+  #   content_view: ccv_rhel7_katello
+  #   <<: *foreman_activation_keys_defaults_el7
+  #   subscriptions:
+  #     - name: "Red Hat Ansible Engine"
+  #     - name: "Red Hat Enterprise Linux Server"
+  #     - name: "Red Hat Software Collections (for RHEL Server)"
+  #     - name: "Foreman"
+  #   content_overrides:
+  #     - label: rhel-7-server-rpms
+  #       override: default
+  #     - label: rhel-7-server-extras-rpms
+  #       override: default
+  #     - label: rhel-server-rhscl-7-rpms
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el7"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el7"
+  #       override: default
+
+foreman_sync_plan_products_redhat7:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  - Red Hat Ansible Engine
+

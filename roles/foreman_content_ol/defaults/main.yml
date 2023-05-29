@@ -1,0 +1,180 @@
+---
+# defaults file for foreman_content_ol
+
+foreman_products_ol_uln_username: ""
+foreman_products_ol_uln_password: ""
+
+
+foreman_enable_ol: false
+# foreman_enable_ol7: false
+# foreman_enable_ol8: false
+# foreman_enable_ol9: false
+foreman_enable_ol_uln: false
+# foreman_enable_ol7_uln: false
+# foreman_enable_ol8_uln: false
+# foreman_enable_ol9_uln: false
+
+
+# foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
+# foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+# foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
+# foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+# foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+# foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+# foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+
+foreman_default_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
+foreman_default_repo_baseurl_oracle5: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+foreman_default_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
+foreman_default_repo_baseurl_oracle6: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+foreman_default_repo_baseurl_oracle7: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+foreman_default_repo_baseurl_oracle8: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+foreman_default_repo_baseurl_oracle9: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+
+
+foreman_content_credentials_ol_main:
+  - name: RPM-GPG-KEY-oracle
+    content_type: gpg_key
+    # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-oracle') }}"
+    content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-oracle') }}"
+
+foreman_content_credentials_ol_uln_main:
+  - name: RPM-GPG-KEY-oracle
+    content_type: gpg_key
+    # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-oracle') }}"
+    content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-oracle') }}"
+
+foreman_content_credentials_ol: "{{ foreman_content_credentials_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_content_credentials_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_credentials_ol_uln: "{{ foreman_content_credentials_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_content_credentials_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_products_ol_main: []
+foreman_products_ol: "{{ foreman_products_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_ol_uln_main: []
+foreman_products_ol_uln: "{{ foreman_products_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_products_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_content_views_ol_main: []
+foreman_content_views_ol: "{{ foreman_content_views_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_content_views_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_ol_uln_main: []
+foreman_content_views_ol_uln: "{{ foreman_content_views_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_content_views_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_operatingsystems_ol_main: []
+foreman_operatingsystems_ol: "{{ foreman_operatingsystems_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_operatingsystems_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_operatingsystems_ol_uln_main: []
+foreman_operatingsystems_ol_uln: "{{ foreman_operatingsystems_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_operatingsystems_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_installation_media_ol_main: []
+foreman_installation_media_ol: "{{ foreman_installation_media_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_installation_media_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_installation_media_ol_uln_main: []
+foreman_installation_media_ol_uln: "{{ foreman_installation_media_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_installation_media_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_activation_keys_ol_main: []
+foreman_activation_keys_ol: "{{ foreman_activation_keys_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_activation_keys_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_ol_uln_main: []
+foreman_activation_keys_ol_uln: "{{ foreman_activation_keys_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_activation_keys_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+
+
+foreman_sync_plan_products_ol_main:
+  - Oracle Linux
+
+foreman_sync_plan_products_ol_uln_main:
+  - Oracle Linux
+
+foreman_sync_plan_products_ol: "{{ foreman_sync_plan_products_ol_main | default([]) if foreman_enable_ol | default(false) | bool else [] |
+  union( foreman_sync_plan_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_ol_uln: "{{ foreman_sync_plan_products_ol_uln_main | default([]) if foreman_enable_ol_uln | default(false) | bool else [] |
+  union( foreman_sync_plan_products_ol5_uln | default([]) if foreman_enable_ol5_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol6_uln | default([]) if foreman_enable_ol6_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol7_uln | default([]) if foreman_enable_ol7_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol8_uln | default([]) if foreman_enable_ol8_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol9_uln | default([]) if foreman_enable_ol9_uln | default( foreman_enable_ol_uln | default(false) | bool ) | bool else [] )
+  }}"
+

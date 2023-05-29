@@ -1,0 +1,12 @@
+---
+# tasks file for foreman_content_rocky
+
+- name: "Vars | Include Rocky Linux content vars"
+  ansible.builtin.include_vars:
+    dir: vars
+    ignore_files:
+      - "main.yml"
+    extensions:
+      - "yml"
+    ignore_unknown_extensions: true
+

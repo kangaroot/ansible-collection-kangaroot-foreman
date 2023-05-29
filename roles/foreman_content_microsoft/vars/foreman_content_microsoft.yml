@@ -1,0 +1,216 @@
+---
+# foreman microsoft content vars file for foreman_content_microsoft
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-microsoft-prod
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_microsoft_azure_cli:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Azure CLI
+        label: azure-cli
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/yumrepos/azure-cli"
+        <<: *foreman_products_defaults
+
+foreman_products_microsoft_prod_el7:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 7
+        label: microsoft-prod-el7
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/7/prod/"
+        <<: *foreman_products_defaults
+foreman_products_microsoft_prod_el8:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 8
+        label: microsoft-prod-el8
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/8/prod/"
+        <<: *foreman_products_defaults
+foreman_products_microsoft_prod_el9:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 9
+        label: microsoft-prod-el9
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/9/prod/"
+        <<: *foreman_products_defaults
+
+foreman_products_microsoft_prod_main: []
+foreman_products_microsoft_prod: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_products_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_products_microsoft_mssql_server_2017_el7:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2017 - RHEL 7
+        label: mssql-server-2017-el7
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/7/mssql-server-2017/"
+        <<: *foreman_products_defaults
+foreman_products_microsoft_mssql_server_2017_el8:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2017 - RHEL 8
+        label: mssql-server-2017-el8
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/8/mssql-server-2017/"
+        <<: *foreman_products_defaults
+
+foreman_products_microsoft_mssql_server_2017_main: []
+foreman_products_microsoft_mssql_server_2017: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_products_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | default( foreman_enable_microsoft_mssql_server_2017 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | default( foreman_enable_microsoft_mssql_server_2017 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_products_microsoft_mssql_server_2019_el7:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2019 - RHEL 7
+        label: mssql-server-2019-el7
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/7/mssql-server-2019/"
+        <<: *foreman_products_defaults
+foreman_products_microsoft_mssql_server_2019_el8:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2019 - RHEL 8
+        label: mssql-server-2019-el8
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/8/mssql-server-2019/"
+        <<: *foreman_products_defaults
+
+foreman_products_microsoft_mssql_server_2019_main: []
+foreman_products_microsoft_mssql_server_2019: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_products_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | default( foreman_enable_microsoft_mssql_server_2019 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | default( foreman_enable_microsoft_mssql_server_2019 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_products_microsoft_mssql_server_2022_el8:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2022 - RHEL 8
+        label: mssql-server-2022-el8
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/8/mssql-server-2022/"
+        <<: *foreman_products_defaults
+foreman_products_microsoft_mssql_server_2022_el9:
+  - name: Microsoft
+    label: Microsoft
+    repositories:
+      - name: Microsoft SQL Server 2022 - RHEL 9
+        label: mssql-server-2022-el9
+        url: "{{ foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) }}/rhel/9/mssql-server-2022/"
+        <<: *foreman_products_defaults
+
+foreman_products_microsoft_server_2022_main: []
+foreman_products_microsoft_server_2022: "{{ foreman_products_microsoft_server_2022_main | default([]) |
+  union( foreman_products_microsoft_mssql_server_2022_el8 | default([]) if foreman_enable_microsoft_mssql_server_2022_el8 | default( foreman_enable_microsoft_mssql_server_2022 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_microsoft_mssql_server_2022_el9 | default([]) if foreman_enable_microsoft_mssql_server_2022_el9 | default( foreman_enable_microsoft_mssql_server_2022 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+
+foreman_content_views_microsoft_azure_cli:
+  - name: cv_azure_cli
+    repositories:
+      - name: Azure CLI
+        product: Microsoft
+    allow_promote: False
+
+foreman_content_views_microsoft_prod_el7:
+  - name: cv_microsoft_prod_el7
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 7
+        product: Microsoft
+    allow_promote: False
+foreman_content_views_microsoft_prod_el8:
+  - name: cv_microsoft_prod_el8
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 8
+        product: Microsoft
+    allow_promote: False
+foreman_content_views_microsoft_prod_el9:
+  - name: cv_microsoft_prod_el9
+    repositories:
+      - name: Microsoft Linux Software Repository - PROD - RHEL 9
+        product: Microsoft
+    allow_promote: False
+
+foreman_content_views_microsoft_prod_main: []
+foreman_content_views_microsoft_prod: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_content_views_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | default( foreman_enable_microsoft_prod | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_microsoft_mssql_server_2017_el7:
+  - name: cv_mssql_server_2017_el7
+    repositories:
+      - name: Microsoft SQL Server 2017 - RHEL 7
+        product: Microsoft
+    allow_promote: False
+foreman_content_views_microsoft_mssql_server_2017_el8:
+  - name: cv_mssql_server_2017_el8
+    repositories:
+      - name: Microsoft SQL Server 2017 - RHEL 8
+        product: Microsoft
+    allow_promote: False
+
+foreman_content_views_microsoft_mssql_server_2017_main: []
+foreman_content_views_microsoft_mssql_server_2017: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_content_views_microsoft_mssql_server_2017_el7 | default([]) if foreman_enable_microsoft_mssql_server_2017_el7 | default( foreman_enable_microsoft_mssql_server_2017 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2017_el8 | default([]) if foreman_enable_microsoft_mssql_server_2017_el8 | default( foreman_enable_microsoft_mssql_server_2017 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_microsoft_mssql_server_2019_el7:
+  - name: cv_mssql_server_2019_el7
+    repositories:
+      - name: Microsoft SQL Server 2019 - RHEL 7
+        product: Microsoft
+    allow_promote: False
+foreman_content_views_microsoft_mssql_server_2019_el8:
+  - name: cv_mssql_server_2019_el8
+    repositories:
+      - name: Microsoft SQL Server 2019 - RHEL 8
+        product: Microsoft
+    allow_promote: False
+
+foreman_content_views_microsoft_mssql_server_2019_main: []
+foreman_content_views_microsoft_mssql_server_2019: "{{ foreman_products_microsoft_main | default([]) |
+  union( foreman_content_views_microsoft_mssql_server_2019_el7 | default([]) if foreman_enable_microsoft_mssql_server_2019_el7 | default( foreman_enable_microsoft_mssql_server_2019 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2019_el8 | default([]) if foreman_enable_microsoft_mssql_server_2019_el8 | default( foreman_enable_microsoft_mssql_server_2019 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_microsoft_mssql_server_2022_el8:
+  - name: cv_mssql_server_2022_el8
+    repositories:
+      - name: Microsoft SQL Server 2022 - RHEL 8
+        product: Microsoft
+    allow_promote: False
+foreman_content_views_microsoft_mssql_server_2022_el9:
+  - name: cv_mssql_server_2022_el9
+    repositories:
+      - name: Microsoft SQL Server 2022 - RHEL 9
+        product: Microsoft
+    allow_promote: False
+
+foreman_content_views_microsoft_server_2022_main: []
+foreman_content_views_microsoft_server_2022: "{{ foreman_products_microsoft_server_2022_main | default([]) |
+  union( foreman_content_views_microsoft_mssql_server_2022_el8 | default([]) if foreman_enable_microsoft_mssql_server_2022_el8 | default( foreman_enable_microsoft_mssql_server_2022 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_microsoft_mssql_server_2022_el9 | default([]) if foreman_enable_microsoft_mssql_server_2022_el9 | default( foreman_enable_microsoft_mssql_server_2022 | default( foreman_enable_microsoft | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+

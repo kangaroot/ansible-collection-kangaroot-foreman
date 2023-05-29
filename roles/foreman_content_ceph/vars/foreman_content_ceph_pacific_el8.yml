@@ -1,0 +1,43 @@
+---
+# ceph content vars file for foreman_content_ceph
+
+foreman_content_credentials_ceph_pacific_el8: []
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-Ceph-release
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_ceph_pacific_el8:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL8
+        label: ceph-pacific-el8
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el8 | default(foreman_default_repo_baseurl_ceph_pacific_el8) }}/rpm-pacific/el8/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Pacific - EL8
+        label: ceph-noarch-pacific-el8
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el8 | default(foreman_default_repo_baseurl_ceph_pacific_el8) }}/rpm-pacific/el8/noarch"
+        <<: *foreman_products_defaults
+
+foreman_content_views_ceph_pacific_el8:
+  - name: cv_ceph_pacific_el8
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL8
+        product: Ceph
+      - name: Ceph noarch packages - Pacific - EL8
+        product: Ceph
+    allow_promote: False
+
+foreman_activation_keys_ceph_pacific_el8: []
+
+foreman_sync_plan_products_ceph_pacific_el8: []
+

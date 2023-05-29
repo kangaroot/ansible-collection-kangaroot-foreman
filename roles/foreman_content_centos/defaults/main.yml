@@ -1,0 +1,218 @@
+---
+# defaults file for foreman_content_centos
+
+### CentOS content data
+foreman_enable_centos: false
+# foreman_enable_centos7: false
+# foreman_enable_centos8: false
+# foreman_enable_centos8_stream: false
+# foreman_enable_centos9_stream: false
+
+
+# foreman_repo_baseurl_centos: http://mirror.centos.org/centos
+# foreman_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
+# foreman_repo_baseurl_centos8: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
+# foreman_repo_baseurl_centos8_stream: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
+# foreman_repo_baseurl_centos9_stream: https://mirror.stream.centos.org
+# foreman_repo_baseurl_centos_altarch: http://mirror.centos.org/altarch
+# foreman_repo_baseurl_centos_vault: http://vault.centos.org
+# foreman_repo_baseurl_trunk_rdo: https://trunk.rdoproject.org
+
+foreman_default_repo_baseurl_centos: http://mirror.centos.org/centos
+foreman_default_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) }}"
+foreman_default_repo_baseurl_centos8: "{{ foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) }}"
+foreman_default_repo_baseurl_centos8_stream: "{{ foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) }}"
+foreman_default_repo_baseurl_centos9_stream: https://mirror.stream.centos.org
+foreman_default_repo_baseurl_centos_altarch: http://mirror.centos.org/altarch
+foreman_default_repo_baseurl_centos_vault: http://vault.centos.org
+foreman_default_repo_baseurl_trunk_rdo: https://trunk.rdoproject.org
+
+
+foreman_content_credentials_centos_main:
+  - name: RPM-GPG-KEY-CentOS-Official
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Official', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Official') }}"
+  - name: RPM-GPG-KEY-CentOS-Testing
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing') }}"
+
+  - name: RPM-GPG-KEY-CentOS-7
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-7', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-7', split_lines=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-7') }}"
+  - name: RPM-GPG-KEY-CentOS-Debug-7
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Debug-7', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Debug-7', split_lines=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Debug-7') }}"
+  - name: RPM-GPG-KEY-CentOS-Testing-7
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing-7') }}"
+
+  - name: RPM-GPG-KEY-CentOS-SIG-Extras
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Extras-SHA512
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512') }}"
+
+  - name: RPM-GPG-KEY-CentOS-SIG-Atomic
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Atomic', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Atomic') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Automotive
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Automotive', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Automotive') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Cloud
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Cloud') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ConfigManagement', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ConfigManagement') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Core
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Core', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Core') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-HyperScale
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-HyperScale', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-HyperScale') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Infra
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Infra', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Infra') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-ISA
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ISA', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ISA') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Kmods
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Kmods', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Kmods') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Messaging
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Messaging', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Messaging') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-NFV
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-NFV', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-NFV') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-OpsTools
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-OpsTools', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-OpsTools') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-PaaS
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-PaaS', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-PaaS') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-SCLo
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-SCLo') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Storage
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Storage', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Storage') }}"
+  - name: RPM-GPG-KEY-CentOS-SIG-Virtualization
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Virtualization', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Virtualization') }}"
+
+foreman_content_credentials_centos: "{{ foreman_content_credentials_centos_main | default([]) |
+  union( foreman_content_credentials_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_centos_main: []
+foreman_products_centos: "{{ foreman_products_centos_main | default([]) |
+  union( foreman_products_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_centos_main: []
+foreman_content_views_centos: "{{ foreman_content_views_centos_main | default([]) |
+  union( foreman_content_views_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_operatingsystems_centos_main: []
+foreman_operatingsystems_centos: "{{ foreman_operatingsystems_centos_main | default([]) |
+  union( foreman_operatingsystems_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_centos_main:
+  - name: CentOS 7 mirror
+    path: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/$major/os/$arch"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7
+  - name: CentOS 8 mirror
+    path: "{{ foreman_repo_baseurl_centos8 | default(foreman_default_repo_baseurl_centos8) }}/$major/BaseOS/$arch/kickstart"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 8
+  - name: CentOS Stream
+    path: "{{ foreman_repo_baseurl_centos8_stream | default(foreman_default_repo_baseurl_centos8_stream) }}/$major-stream/BaseOS/$arch/os"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 8 Stream
+  - name: CentOS Stream 9 mirror
+    path: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/$major-stream/BaseOS/$arch/os"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 9 Stream
+
+foreman_installation_media_centos: "{{ foreman_installation_media_centos_main | default([]) |
+  union( foreman_installation_media_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_centos_main: []
+foreman_activation_keys_centos: "{{ foreman_activation_keys_centos_main | default([]) |
+  union( foreman_activation_keys_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_centos_main:
+  - CentOS
+
+foreman_sync_plan_products_centos: "{{ foreman_sync_plan_products_centos_main | default([]) |
+  union( foreman_sync_plan_products_centos7 | default([]) if foreman_enable_centos7 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_centos8 | default([]) if foreman_enable_centos8 | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_centos8_stream | default([]) if foreman_enable_centos8_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_centos9_stream | default([]) if foreman_enable_centos9_stream | default( foreman_enable_centos | default(false) | bool ) | bool else [] )
+  }}"
+

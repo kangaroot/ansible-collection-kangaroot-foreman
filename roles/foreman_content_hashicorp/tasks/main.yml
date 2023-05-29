@@ -1,0 +1,12 @@
+---
+# tasks file for foreman_content_hashicorp
+
+- name: "Vars | Include Hashicorp content vars"
+  ansible.builtin.include_vars:
+    dir: vars
+    ignore_files:
+      - "main.yml"
+    extensions:
+      - "yml"
+    ignore_unknown_extensions: true
+

@@ -1,6 +1,44 @@
 ---
 # tasks file for foreman
 
+- name: "Configuration | Import content roles"
+  block:
+    - ansible.builtin.import_role:
+        name: foreman_content_ceph
+    - ansible.builtin.import_role:
+        name: foreman_content_datadog
+    - ansible.builtin.import_role:
+        name: foreman_content_docker
+    - ansible.builtin.import_role:
+        name: foreman_content_elrepo
+    - ansible.builtin.import_role:
+        name: foreman_content_epel
+    - ansible.builtin.import_role:
+        name: foreman_content_fedora_copr
+    - ansible.builtin.import_role:
+        name: foreman_content_foreman
+    - ansible.builtin.import_role:
+        name: foreman_content_hashicorp
+    - ansible.builtin.import_role:
+        name: foreman_content_kubernetes
+    - ansible.builtin.import_role:
+        name: foreman_content_microsoft
+    - ansible.builtin.import_role:
+        name: foreman_content_nginx
+    - ansible.builtin.import_role:
+        name: foreman_content_centos
+    - ansible.builtin.import_role:
+        name: foreman_content_debian
+    - ansible.builtin.import_role:
+        name: foreman_content_ol
+    - ansible.builtin.import_role:
+        name: foreman_content_redhat
+    - ansible.builtin.import_role:
+        name: foreman_content_rocky
+    - ansible.builtin.import_role:
+        name: foreman_content_ubuntu
+  tags: [ "foreman", "katello", "configuration", "always" ]
+
 - name: "Debug | Include debug tasks"
   ansible.builtin.include_tasks: foreman_debug.yml
   tags: [ "foreman_debug", "katello_debug" ]

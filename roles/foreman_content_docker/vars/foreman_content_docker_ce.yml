@@ -1,0 +1,45 @@
+---
+# foreman docker ce content vars file for foreman_content_docker
+
+foreman_content_credentials_docker_ce_main:
+  - name: RPM-GPG-KEY-docker-ce
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) ~ '/gpg', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-docker-ce') }}"
+
+foreman_content_credentials_docker_ce: "{{ ( foreman_content_credentials_docker_ce_main | default([]) if foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_docker_ce_el7 | default([]) if foreman_enable_docker_ce_el7 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_docker_ce_el8 | default([]) if foreman_enable_docker_ce_el8 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_docker_ce_el9 | default([]) if foreman_enable_docker_ce_el9 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_products_docker_ce_main: []
+foreman_products_docker_ce: "{{ ( foreman_products_docker_ce_main | default([]) if foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_docker_ce_el7 | default([]) if foreman_enable_docker_ce_el7 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_docker_ce_el8 | default([]) if foreman_enable_docker_ce_el8 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_products_docker_ce_el9 | default([]) if foreman_enable_docker_ce_el9 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_docker_ce_main: []
+foreman_content_views_docker_ce: "{{ ( foreman_content_views_docker_ce_main | default([]) if foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_docker_ce_el7 | default([]) if foreman_enable_docker_ce_el7 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_docker_ce_el8 | default([]) if foreman_enable_docker_ce_el8 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_content_views_docker_ce_el9 | default([]) if foreman_enable_docker_ce_el9 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_docker_ce_main: []
+foreman_activation_keys_docker_ce: "{{ ( foreman_activation_keys_docker_ce_main | default([]) if foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_docker_ce_el7 | default([]) if foreman_enable_docker_ce_el7 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_docker_ce_el8 | default([]) if foreman_enable_docker_ce_el8 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_docker_ce_el9 | default([]) if foreman_enable_docker_ce_el9 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_docker_ce_main:
+  - Docker
+
+foreman_sync_plan_products_docker_ce: "{{ ( foreman_sync_plan_products_docker_ce_main | default([]) if foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_docker_ce_el7 | default([]) if foreman_enable_docker_ce_el7 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_docker_ce_el8 | default([]) if foreman_enable_docker_ce_el8 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_docker_ce_el9 | default([]) if foreman_enable_docker_ce_el9 | default( foreman_enable_docker_ce | default( foreman_enable_docker | default(false) | bool ) | bool ) | bool else [] )
+  }}"
+

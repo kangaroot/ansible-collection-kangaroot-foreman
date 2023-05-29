@@ -1,0 +1,90 @@
+---
+# defaults file for foreman_content_debian
+
+foreman_enable_debian: false
+# foreman_enable_debian9: false
+# foreman_enable_debian10: false
+# foreman_enable_debian11: false
+
+
+# foreman_repo_baseurl_debian: http://ftp.debian.org/debian
+# foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
+# foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
+# foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
+
+
+foreman_default_repo_baseurl_debian: http://ftp.debian.org/debian
+foreman_default_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
+foreman_default_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
+foreman_default_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
+
+
+foreman_content_credentials_debian_main: []
+
+foreman_content_credentials_debian: "{{ foreman_content_credentials_debian_main | default([]) |
+  union( foreman_content_credentials_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_products_debian_main: []
+foreman_products_debian: "{{ foreman_products_debian_main | default([]) |
+  union( foreman_products_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_content_views_debian_main: []
+foreman_content_views_debian: "{{ foreman_content_views_debian_main | default([]) |
+  union( foreman_content_views_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_operatingsystems_debian_main: []
+foreman_operatingsystems_debian: "{{ foreman_operatingsystems_debian_main | default([]) |
+  union( foreman_operatingsystems_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_installation_media_debian_defaults: &foreman_installation_media_debian_defaults
+  os_family: Debian
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_debian_main:
+  - name: Debian mirror
+    path: "{{ foreman_repo_baseurl_debian9 }}/$major/os/$arch"
+    <<: *foreman_installation_media_debian_defaults
+    operatingsystems:
+      - Debian 9 (Stretch)
+      - Debian 10 (Buster)
+      - Debian 11 (Bullseye)
+
+foreman_installation_media_debian: "{{ foreman_installation_media_debian_main | default([]) |
+  union( foreman_installation_media_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_debian_main: []
+foreman_activation_keys_debian: "{{ foreman_activation_keys_debian_main | default([]) |
+  union( foreman_activation_keys_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_debian_main:
+  - Debian
+
+foreman_sync_plan_products_debian: "{{ foreman_sync_plan_products_debian_main | default([]) |
+  union( foreman_sync_plan_products_debian9 | default([]) if foreman_enable_debian9 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_debian10 | default([]) if foreman_enable_debian10 | default( foreman_enable_debian | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_debian11 | default([]) if foreman_enable_debian11 | default( foreman_enable_debian | default(false) | bool ) | bool else [] )
+  }}"
+

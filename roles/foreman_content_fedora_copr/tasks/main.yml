@@ -1,0 +1,12 @@
+---
+# tasks file for foreman_content_fedora_copr
+
+- name: "Vars | Include Fedora COPR content vars"
+  ansible.builtin.include_vars:
+    dir: vars
+    ignore_files:
+      - "main.yml"
+    extensions:
+      - "yml"
+    ignore_unknown_extensions: true
+

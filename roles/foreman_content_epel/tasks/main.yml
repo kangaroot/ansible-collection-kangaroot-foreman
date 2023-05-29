@@ -1,0 +1,12 @@
+---
+# tasks file for foreman_content_epel
+
+- name: "Vars | Include EPEL content vars"
+  ansible.builtin.include_vars:
+    dir: vars
+    ignore_files:
+      - "main.yml"
+    extensions:
+      - "yml"
+    ignore_unknown_extensions: true
+

@@ -38,6 +38,7 @@ foreman_rhsm_username: ''
 foreman_rhsm_password: ''
 foreman_manifest_path: ''
 # foreman_manifest_state: present
+
 foreman_lifecycle_environments: []
 foreman_content_credentials: []
 foreman_products: []
@@ -47,121 +48,6 @@ foreman_sync_plans: []
 
 # Foreman convent view versions to keep at cleanup
 foreman_content_view_version_cleanup_keep: 5
-
-### ===========================
-### Enable/Disable content data
-### ===========================
-
-### Ceph content data
-foreman_enable_ceph: false
-# foreman_enable_ceph_nautilus_el7: false
-# foreman_enable_ceph_nautilus_el8: false
-# foreman_enable_ceph_nautilus_deb9: false
-# foreman_enable_ceph_nautilus_deb10: false
-# foreman_enable_ceph_nautilus_ub1804: false
-# foreman_enable_ceph_nautilus_ub2004: false
-# foreman_enable_ceph_octopus_el7: false
-# foreman_enable_ceph_octopus_el8: false
-# foreman_enable_ceph_octopus_deb10: false
-# foreman_enable_ceph_octopus_ub1804: false
-# foreman_enable_ceph_octopus_ub2004: false
-# foreman_enable_ceph_pacific_el7: false
-# foreman_enable_ceph_pacific_el8: false
-# foreman_enable_ceph_pacific_el9: false
-# foreman_enable_ceph_pacific_deb10: false
-# foreman_enable_ceph_pacific_deb11: false
-# foreman_enable_ceph_pacific_ub1804: false
-# foreman_enable_ceph_pacific_ub2004: false
-# foreman_enable_ceph_quincy_el7: false
-# foreman_enable_ceph_quincy_el8: false
-# foreman_enable_ceph_quincy_el9: false
-# foreman_enable_ceph_quincy_deb11: false
-# foreman_enable_ceph_quincy_ub2004: false
-# foreman_enable_ceph_docker: false
-
-### Datadog content data
-foreman_enable_datadog: false
-
-### Docker content data
-foreman_enable_docker: false
-# foreman_enable_docker_ce: false
-# foreman_enable_docker_ce_el7: false
-# foreman_enable_docker_ce_el8: false
-# foreman_enable_docker_ce_el9: false
-# foreman_enable_docker_ee: false
-# foreman_enable_docker_ee_el7: false
-# foreman_enable_docker_ee_el8: false
-# foreman_enable_docker_ee_el9: false
-
-### ELrepo content data
-foreman_enable_elrepo: false
-
-### EPEL content data
-foreman_enable_epel: false
-# foreman_enable_epel7: false
-# foreman_enable_epel8: false
-# foreman_enable_epel9: false
-
-### Fedora COPR content data
-foreman_enable_fedora_copr: false
-
-### Foreman content data
-foreman_enable_foreman: false
-
-### Hashicorp content data
-foreman_enable_hashicorp: false
-
-### Kubernetes content data
-foreman_enable_kubernetes: false
-
-### Micorsoft content data
-foreman_enable_microsoft: false
-
-### Nginx content data
-foreman_enable_nginx: false
-
-### CentOS content data
-foreman_enable_centos: false
-# foreman_enable_centos7: false
-# foreman_enable_centos8: false
-# foreman_enable_centos8_stream: false
-# foreman_enable_centos9_stream: false
-
-### Debian content data
-foreman_enable_debian: false
-# foreman_enable_debian9: false
-# foreman_enable_debian10: false
-# foreman_enable_debian11: false
-
-### Oracle Linux (ULN) content data
-foreman_products_ol_uln_username: ""
-foreman_products_ol_uln_password: ""
-
-foreman_enable_ol: false
-# foreman_enable_ol7: false
-# foreman_enable_ol8: false
-# foreman_enable_ol9: false
-foreman_enable_ol_uln: false
-# foreman_enable_ol7_uln: false
-# foreman_enable_ol8_uln: false
-# foreman_enable_ol9_uln: false
-
-### Red Hat content data
-foreman_enable_redhat: false
-# foreman_enable_redhat7: false
-# foreman_enable_redhat8: false
-# foreman_enable_redhat9: false
-
-### Rocky Linux content data
-foreman_enable_rocky: false
-# foreman_enable_rocky8: false
-# foreman_enable_rocky9: false
-
-### Ubuntu content data
-foreman_enable_ubuntu: false
-# foreman_enable_ubuntu1804: false
-# foreman_enable_ubuntu2004: false
-# foreman_enable_ubuntu2204: false
 
 ###############################################################################
 ### Hosts / Provisioning section

@@ -1,0 +1,170 @@
+---
+# foreman ubuntu content vars file for foreman_content_ubuntu
+
+foreman_content_credentials_ubuntu1804: []
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: deb
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+  deb_components: main multiverse restricted universe
+  deb_architectures: amd64
+
+foreman_products_ubuntu1804:
+  - name: Ubuntu
+    label: Ubuntu
+    repositories:
+      - name: Ubuntu 18.04 LTS (Bionic Beaver)
+        label: ubuntu-1804
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ubuntu1804 | default(foreman_default_repo_baseurl_ubuntu1804) }}/"
+        deb_releases: bionic
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Updates
+        label: ubuntu-1804-updates
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ubuntu1804 | default(foreman_default_repo_baseurl_ubuntu1804) }}/"
+        deb_releases: bionic-updates
+      # - name: Ubuntu 18.04 LTS (Bionic Beaver) - Proposed Updates
+      #   label: ubuntu-1804-proposed
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_ubuntu1804 | default(foreman_default_repo_baseurl_ubuntu1804) }}/"
+      #   deb_releases: bionic-proposed
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Backports
+        label: ubuntu-1804-backports
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ubuntu1804 | default(foreman_default_repo_baseurl_ubuntu1804) }}/"
+        deb_releases: bionic-backports
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Security updates
+        label: ubuntu-1804-security
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ubuntu1804 | default(foreman_default_repo_baseurl_ubuntu1804) }}/"
+        deb_releases: bionic-security
+
+foreman_content_views_ubuntu1804:
+  - name: cv_ubuntu1804
+    repositories:
+      - name: Ubuntu 18.04 LTS (Bionic Beaver)
+        product: Ubuntu
+    allow_promote: False
+  - name: cv_ubuntu1804_updates
+    repositories:
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Updates
+        product: Ubuntu
+    allow_promote: False
+  # - name: cv_ubuntu1804_proposed
+  #   repositories:
+  #     - name: Ubuntu 18.04 LTS (Bionic Beaver) - Proposed Updates
+  #       product: Ubuntu
+  #   allow_promote: False
+  - name: cv_ubuntu1804_backports
+    repositories:
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Backports
+        product: Ubuntu
+    allow_promote: False
+  - name: cv_ubuntu1804_security
+    repositories:
+      - name: Ubuntu 18.04 LTS (Bionic Beaver) - Security updates
+        product: Ubuntu
+    allow_promote: False
+
+  - name: ccv_ubuntu1804
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_ubuntu1804
+        latest: true
+      - content_view: cv_ubuntu1804_updates
+        latest: true
+      # - content_view: cv_ubuntu1804_proposed
+      #   latest: true
+      - content_view: cv_ubuntu1804_backports
+        latest: true
+      - content_view: cv_ubuntu1804_security
+        latest: true
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Debian"
+  password_hash: "SHA512"
+  architectures:
+    - amd64
+  # ptables:
+  #   - Preseed default
+  #   - Preseed default LVM
+  ptables: "{{
+    [ 'Preseed default',
+      'Preseed default LVM' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    # - template_kind: "cloud-init"
+    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_cloud_init | default( foreman_operatingsystems_ub_template_cloud_init | default( foreman_operatingsystems_deb_template_cloud_init | default('CloudInit default') ) ) }}"
+    - template_kind: "finish"
+      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_finish | default( foreman_operatingsystems_ub_template_finish | default( foreman_operatingsystems_deb_template_finish | default('Kickstart default finish') ) ) }}"
+    # - template_kind: "host_init_config"
+    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_host_init_config | default( foreman_operatingsystems_ub_template_host_init_config | default( foreman_operatingsystems_deb_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+    # - template_kind: "iPXE"
+    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_ipxe | default( foreman_operatingsystems_ub_template_ipxe | default( foreman_operatingsystems_deb_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+    - template_kind: "provision"
+      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_provision | default( foreman_operatingsystems_ub_template_provision | default( foreman_operatingsystems_deb_template_provision | default('Kickstart default') ) ) }}"
+    # - template_kind: "PXEGrub"
+    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxegrub | default( foreman_operatingsystems_ub_template_pxegrub | default( foreman_operatingsystems_deb_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxegrub2 | default( foreman_operatingsystems_ub_template_pxegrub2 | default( foreman_operatingsystems_deb_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+    - template_kind: "PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxelinux | default( foreman_operatingsystems_ub_template_pxelinux | default( foreman_operatingsystems_deb_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+    - template_kind: "user_data"
+      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_user_data | default( foreman_operatingsystems_ub_template_user_data | default( foreman_operatingsystems_deb_template_user_data | default('Kickstart default user data') ) ) }}"
+
+foreman_operatingsystems_ubuntu1804:
+  - name: "Ubuntu"
+    release_name: bionic
+    description: "Ubuntu 18.04 LTS (Bionic Beaver)"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Debian
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  operatingsystems:
+    - Ubuntu 18.04 LTS (Bionic Beaver)
+
+foreman_installation_media_ubuntu1804:
+  - name: Ubuntu 18.04 LTS (Bionic Beaver)
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Ubuntu/ubuntu-1804/"
+    <<: *foreman_installation_media_defaults
+
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  organization: "{{ foreman_organization }}"
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   - name: "Ubuntu"
+  auto_attach: False
+
+foreman_activation_keys_ubuntu1804:
+  - name: ak_ubuntu1804
+    content_view: ccv_ubuntu1804
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-1804"
+        override: default
+      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-1804-updates"
+        override: default
+      # - label: "{{ foreman_organization }}_Ubuntu_ubuntu-1804-proposed"
+      #   override: default
+      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-1804-backports"
+        override: disabled
+      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-1804-security"
+        override: disabled
+
+foreman_sync_plan_products_ubuntu1804:
+  - Ubuntu
+
