@@ -95,8 +95,16 @@ foreman_enable_ol_uln: false
 ### Red Hat content data
 foreman_enable_redhat: false
 # foreman_enable_redhat7: false
+# foreman_enable_redhat7_sat: false
+# foreman_enable_redhat7_aap: false
+# foreman_enable_redhat7_rhocp: false
 # foreman_enable_redhat8: false
+# foreman_enable_redhat8_sat: false
+# foreman_enable_redhat8_aap: false
+# foreman_enable_redhat8_rhocp: false
 # foreman_enable_redhat9: false
+# foreman_enable_redhat9_aap: false
+# foreman_enable_redhat9_rhocp: false
 
 ### Rocky Linux content data
 foreman_enable_rocky: false

@@ -74,35 +74,6 @@ foreman_products_redhat7:
         basearch: x86_64
         label: rhel-7-server-ansible-2.9-rpms
 
-  - name: Red Hat Ansible Automation Platform
-    repository_sets:
-      # Red Hat Automation Hub 4.2 for RHEL 7 RPMs x86_64
-      - name: Red Hat Automation Hub 4.2 for RHEL 7 (RPMs)
-        basearch: x86_64
-        label: rhel-7-server-automation-hub-4.2-rpms
-
-  - name: Red Hat Satellite
-    repository_sets:
-      # Red Hat Satellite 6.10 for RHEL 7 Server RPMs x86_64
-      - name: Red Hat Satellite 6.10 (for RHEL 7 Server) (RPMs)
-        basearch: x86_64
-        # label: rhel-7-server-satellite-6.10-rpms
-      # Red Hat Satellite 6.11 for RHEL 7 Server RPMs x86_64
-      - name: Red Hat Satellite 6.11 (for RHEL 7 Server) (RPMs)
-        basearch: x86_64
-        # label: rhel-7-server-satellite-6.11-rpms
-
-  - name: Red Hat Satellite Capsule
-    repository_sets:
-      # Red Hat Satellite Capsule 6.10 for RHEL 7 Server RPMs x86_64
-      - name: Red Hat Satellite Capsule 6.10 (for RHEL 7 Server) (RPMs)
-        basearch: x86_64
-        # label: rhel-7-server-satellite-capsule-6.10-rpms
-      # Red Hat Satellite Capsule 6.11 for RHEL 7 Server RPMs x86_64
-      - name: Red Hat Satellite Capsule 6.11 (for RHEL 7 Server) (RPMs)
-        basearch: x86_64
-        # label: rhel-7-server-satellite-capsule-6.11-rpms
-
 foreman_content_views_redhat7:
   - name: cv_rhel7_base
     repositories:
@@ -170,34 +141,6 @@ foreman_content_views_redhat7:
         product: 'Red Hat Ansible Engine'
     allow_promote: False
 
-  - name: cv_rhel7_automation_hub_4_2
-    repositories:
-      - name: Red Hat Automation Hub 4.2 for RHEL 7 RPMs x86_64
-        product: 'Red Hat Ansible Automation Platform'
-    allow_promote: False
-
-  - name: cv_rhel7_satellite_6_10
-    repositories:
-      - name: Red Hat Satellite 6.10 for RHEL 7 Server RPMs x86_64
-        product: 'Red Hat Satellite'
-    allow_promote: False
-  - name: cv_rhel7_satellite_6_11
-    repositories:
-      - name: Red Hat Satellite 6.11 for RHEL 7 Server RPMs x86_64
-        product: 'Red Hat Satellite'
-    allow_promote: False
-
-  - name: cv_rhel7_satellite_capsule_6_10
-    repositories:
-      - name: Red Hat Satellite Capsule 6.10 for RHEL 7 Server RPMs x86_64
-        product: 'Red Hat Satellite Capsule'
-    allow_promote: False
-  - name: cv_rhel7_satellite_capsule_6_11
-    repositories:
-      - name: Red Hat Satellite Capsule 6.11 for RHEL 7 Server RPMs x86_64
-        product: 'Red Hat Satellite Capsule'
-    allow_promote: False
-
   - name: ccv_rhel7
     composite: True
     auto_publish: True
@@ -229,65 +172,6 @@ foreman_content_views_redhat7:
       - content_view: cv_epel7
         latest: true
 
-  - name: ccv_rhel7_aap
-    composite: True
-    auto_publish: True
-    components:
-      - content_view: cv_rhel7_base
-        latest: true
-      - content_view: cv_rhel7_extras
-        latest: true
-      - content_view: cv_rhel7_optional
-        latest: true
-      - content_view: cv_rhel7_supplementary
-        latest: true
-      - content_view: cv_rhel7_sat_client_6
-        latest: true
-      - content_view: cv_rhel7_sat_tools_6_10
-        latest: true
-      - content_view: cv_rhel7_sat_utils_6_11
-        latest: true
-      - content_view: cv_rhel7_sat_maint_6
-        latest: true
-      - content_view: cv_rhel7_sat_maint_6_11
-        latest: true
-      - content_view: cv_rhel7_rhscl
-        latest: true
-      - content_view: cv_rhel7_ansible_2
-        latest: true
-      - content_view: cv_rhel7_ansible_2_9
-        latest: true
-      - content_view: cv_rhel7_automation_hub_4_2
-        latest: true
-      - content_view: cv_epel7
-        latest: true
-
-  - name: ccv_rhel7_satellite
-    composite: True
-    auto_publish: True
-    components:
-      - content_view: cv_rhel7_base
-        latest: true
-      - content_view: cv_rhel7_extras
-        latest: true
-      - content_view: cv_rhel7_satellite_6_10
-        latest: true
-      - content_view: cv_rhel7_satellite_6_11
-        latest: true
-
-  - name: ccv_rhel7_capsule
-    composite: True
-    auto_publish: True
-    components:
-      - content_view: cv_rhel7_base
-        latest: true
-      - content_view: cv_rhel7_extras
-        latest: true
-      - content_view: cv_rhel7_satellite_capsule_6_10
-        latest: true
-      - content_view: cv_rhel7_satellite_capsule_6_11
-        latest: true
-
   # - name: ccv_rhel7_foreman
   #   composite: True
   #   auto_publish: True
@@ -297,6 +181,10 @@ foreman_content_views_redhat7:
   #     - content_view: cv_rhel7_extras
   #       latest: true
   #     - content_view: cv_rhel7_rhscl
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2_9
   #       latest: true
   #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
   #       latest: true
@@ -314,6 +202,10 @@ foreman_content_views_redhat7:
   #     - content_view: cv_rhel7_extras
   #       latest: true
   #     - content_view: cv_rhel7_rhscl
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2
+  #       latest: true
+  #     - content_view: cv_rhel7_ansible_2_9
   #       latest: true
   #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
   #       latest: true
@@ -393,30 +285,31 @@ foreman_installation_media_redhat7:
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
-  lifecycle_environment: "Library"
-  subscriptions:
-    # Example to uyse a pool id
-    # - pool_id: "8a88e9826db22df5016dd018abdd029b"
-    # - name: "Red Hat Ansible Engine"
-    # - name: "Red Hat Ansible Automation Platform"
-    # - name: "Red Hat Enterprise Linux for x86_64"
-    - name: "Red Hat Enterprise Linux Server"
-    # - name: "Red Hat Satellite"
-    # - name: "Red Hat Satellite Capsule"
-    # - name: "Red Hat Software Collections (for RHEL Server)"
-    - name: "Extra Packages for Enterprise Linux"
-    # - name: "Foreman"
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   # Example to uyse a pool id
+  #   # - pool_id: "8a88e9826db22df5016dd018abdd029b"
+  #   # - name: "Red Hat Ansible Engine"
+  #   # - name: "Red Hat Ansible Automation Platform"
+  #   # - name: "Red Hat Enterprise Linux for x86_64"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   # - name: "Red Hat Satellite"
+  #   # - name: "Red Hat Satellite Capsule"
+  #   # - name: "Red Hat Software Collections (for RHEL Server)"
+  #   # - name: "Red Hat OpenShift Container Platform"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
   auto_attach: False
   release_version: 7Server
-  service_level: Standard
+  # service_level: Standard
 
 foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
   <<: *foreman_activation_keys_defaults
-  subscriptions:
-    - name: "Red Hat Ansible Engine"
-    - name: "Red Hat Enterprise Linux Server"
-    - name: "Red Hat Software Collections (for RHEL Server)"
-    - name: "Extra Packages for Enterprise Linux"
+  # subscriptions:
+  #   - name: "Red Hat Ansible Engine"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   - name: "Red Hat Software Collections (for RHEL Server)"
+  #   - name: "Extra Packages for Enterprise Linux"
   release_version: 7Server
 
 foreman_activation_keys_redhat7:
@@ -450,80 +343,6 @@ foreman_activation_keys_redhat7:
         override: default
       - label: "{{ foreman_organization }}_EPEL_epel-7"
         override: disabled
-
-  - name: ak_rhel7_aap
-    content_view: ccv_rhel7_aap
-    <<: *foreman_activation_keys_defaults_el7
-    subscriptions:
-      - name: "Red Hat Ansible Engine"
-      - name: "Red Hat Ansible Automation Platform"
-      - name: "Red Hat Enterprise Linux Server"
-      - name: "Red Hat Software Collections (for RHEL Server)"
-    content_overrides:
-      - label: rhel-7-server-rpms
-        override: default
-      - label: rhel-7-server-extras-rpms
-        override: default
-      - label: rhel-7-server-optional-rpms
-        override: default
-      - label: rhel-7-server-supplementary-rpms
-        override: default
-      - label: rhel-7-server-satellite-client-6-rpms
-        override: default
-      - label: rhel-7-server-satellite-tools-6.10-rpms
-        override: default
-      - label: rhel-7-server-satellite-utils-6.11-rpms
-        override: default
-      - label: rhel-7-server-satellite-maintenance-6-rpms
-        override: default
-      - label: rhel-7-server-satellite-maintenance-6.11-rpms
-        override: default
-      - label: rhel-server-rhscl-7-rpms
-        override: default
-      - label: rhel-7-server-ansible-2-rpms
-        override: default
-      - label: rhel-7-server-ansible-2.9-rpms
-        override: default
-      - label: rhel-7-server-automation-hub-4.2-rpms
-        override: default
-      - label: "{{ foreman_organization }}_EPEL_epel-7"
-        override: disabled
-
-  - name: ak_rhel7_satellite
-    content_view: ccv_rhel7_satellite
-    <<: *foreman_activation_keys_defaults_el7
-    subscriptions:
-      # - name: "Red Hat Ansible Engine"
-      - name: "Red Hat Enterprise Linux Server"
-      - name: "Red Hat Satellite"
-      # - name: "Red Hat Software Collections (for RHEL Server)"
-    content_overrides:
-      - label: rhel-7-server-rpms
-        override: default
-      - label: rhel-7-server-extras-rpms
-        override: default
-      - label: rhel-7-server-satellite-6.10-rpms
-        override: default
-      - label: rhel-7-server-satellite-6.11-rpms
-        override: default
-
-  - name: ak_rhel7_capsule
-    content_view: ccv_rhel7_capsule
-    <<: *foreman_activation_keys_defaults_el7
-    subscriptions:
-      # - name: "Red Hat Ansible Engine"
-      - name: "Red Hat Enterprise Linux Server"
-      - name: "Red Hat Satellite Capsule"
-      # - name: "Red Hat Software Collections (for RHEL Server)"
-    content_overrides:
-      - label: rhel-7-server-rpms
-        override: default
-      - label: rhel-7-server-extras-rpms
-        override: default
-      - label: rhel-7-server-satellite-capsule-6.10-rpms
-        override: default
-      - label: rhel-7-server-satellite-capsule-6.11-rpms
-        override: default
 
   # - name: ak_rhel7_foreman
   #   content_view: ccv_rhel7_foreman
@@ -579,7 +398,4 @@ foreman_sync_plan_products_redhat7:
   - Red Hat Enterprise Linux Server
   - Red Hat Software Collections (for RHEL Server)
   - Red Hat Ansible Engine
-  - Red Hat Ansible Automation Platform
-  - Red Hat Satellite
-  - Red Hat Satellite Capsule
 
