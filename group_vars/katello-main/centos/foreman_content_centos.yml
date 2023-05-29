@@ -100,7 +100,7 @@ foreman_installation_media_centos_defaults: &foreman_installation_media_centos_d
 
 foreman_installation_media_centos_main:
   - name: CentOS 7 mirror
-    path: "{{ foreman_repo_baseurl_centos7 }}/$major/os/$arch"
+    path: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/$major/os/$arch"
     <<: *foreman_installation_media_centos_defaults
     operatingsystems:
       - CentOS 7
