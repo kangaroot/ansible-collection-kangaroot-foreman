@@ -3,6 +3,7 @@
 
 ### CentOS ###
 # foreman_repo_baseurl_centos: http://mirror.centos.org/centos
+# foreman_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
 # foreman_repo_baseurl_centos8: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
 # foreman_repo_baseurl_centos8_stream: "{{ foreman_repo_baseurl_centos | default('http://mirror.centos.org/centos') }}"
 # foreman_repo_baseurl_centos9_stream: https://mirror.stream.centos.org
