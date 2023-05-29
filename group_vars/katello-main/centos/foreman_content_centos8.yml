@@ -139,8 +139,8 @@ foreman_content_views_centos8:
         latest: true
       - content_view: cv_centos8_powertools
         latest: true
-      # - content_view: cv_centos8_ha
-      #   latest: true
+      - content_view: cv_centos8_ha
+        latest: true
       - content_view: cv_epel8
         latest: true
       - content_view: cv_epel8_modular
@@ -336,7 +336,7 @@ foreman_installation_media_centos8:
       - CentOS 8.5.2111
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "TME"
+  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "CentOS"
@@ -361,8 +361,8 @@ foreman_activation_keys_centos8:
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-powertools"
         override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-8-ha"
-      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-8-ha"
+        override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8"
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8-modular"

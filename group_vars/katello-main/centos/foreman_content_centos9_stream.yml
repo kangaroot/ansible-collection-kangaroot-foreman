@@ -76,11 +76,11 @@ foreman_products_centos9_stream:
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/x86_64/storage-ceph-pacific/"
       #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 9 Stream - Ceph Quincy
-      #   label: centos-9-stream-ceph-quincy
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/x86_64/storage-ceph-quincy/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 9 Stream - Ceph Quincy
+        label: centos-9-stream-ceph-quincy
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/x86_64/storage-ceph-quincy/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
       # - name: CentOS 9 Stream - Gluster 9
       #   label: centos-9-stream-gluster9
@@ -92,60 +92,60 @@ foreman_products_centos9_stream:
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/gluster-10/"
       #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 9 Stream - Gluster 11
-      #   label: centos-9-stream-gluster11
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/gluster-11/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 9 Stream - Gluster 11
+        label: centos-9-stream-gluster11
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/gluster-11/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
-      # - name: CentOS 9 Stream - Hyperscale
-      #   label: centos-9-stream-hyperscale
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-main/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
-      # - name: CentOS 9 Stream - Hyperscale Experimental
-      #   label: centos-9-stream-hyperscale-experimental
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
-      # - name: CentOS 9 Stream - Hyperscale Experimental
-      #   label: centos-9-stream-hyperscale-experimental
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
-      # - name: CentOS 9 Stream - Hyperscale Spin
-      #   label: centos-9-stream-hyperscale-spin
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
-      # - name: CentOS 9 Stream - Hyperscale Spin
-      #   label: centos-9-stream-hyperscale-spin
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+      - name: CentOS 9 Stream - Hyperscale
+        label: centos-9-stream-hyperscale
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-main/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+      - name: CentOS 9 Stream - Hyperscale Experimental
+        label: centos-9-stream-hyperscale-experimental
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+      - name: CentOS 9 Stream - Hyperscale Experimental
+        label: centos-9-stream-hyperscale-experimental
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+      - name: CentOS 9 Stream - Hyperscale Spin
+        label: centos-9-stream-hyperscale-spin
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+      - name: CentOS 9 Stream - Hyperscale Spin
+        label: centos-9-stream-hyperscale-spin
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
 
-      # - name: CentOS 9 Stream - Kmods
-      #   label: centos-9-stream-kmods
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/kmods/x86_64/packages-main"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
-      # - name: CentOS 9 Stream - Kmods - Rebuild
-      #   label: centos-9-stream-kmods-rebuild
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/kmods/x86_64/packages-rebuild"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+      - name: CentOS 9 Stream - Kmods
+        label: centos-9-stream-kmods
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/kmods/x86_64/packages-main"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+      - name: CentOS 9 Stream - Kmods - Rebuild
+        label: centos-9-stream-kmods-rebuild
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/kmods/x86_64/packages-rebuild"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
 
-      # - name: CentOS 9 Stream - NFS-Ganesha 4
-      #   label: centos-9-stream-nfs-ganesha-4
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/x86_64/storage-nfsganesha-4/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 9 Stream - NFS-Ganesha 4
+        label: centos-9-stream-nfs-ganesha-4
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/x86_64/storage-nfsganesha-4/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
-      # - name: CentOS 9 Stream - NFV OpenvSwitch
-      #   label: centos-9-stream-nfv-openvswitch
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/nfv/x86_64/openvswitch-2/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-NFV
+      - name: CentOS 9 Stream - NFV OpenvSwitch
+        label: centos-9-stream-nfv-openvswitch
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/nfv/x86_64/openvswitch-2/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-NFV
 
       # - name: CentOS 9 Stream Openstack Client xena
       #   label: centos-9-stream-openstack-client-xena
@@ -219,88 +219,88 @@ foreman_products_centos9_stream:
       #   <<: *foreman_products_openstack_rdo
       #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-yoga/component/ui/puppet-passed-ci"
 
-      # - name: CentOS 9 Stream Openstack zed
-      #   label: centos-9-stream-openstack-zed
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}//8-stream/cloud/x86_64/openstack-zed/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Cloud
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component baremetal
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-baremetal
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/baremetal/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component cinder
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-cinder
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/cinder/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component clients
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-clients
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/clients/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component cloudops
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-cloudops
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/cloudops/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component common
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-common
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/common/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component compute
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-compute
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/compute/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component glance
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-glance
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/glance/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component manila
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-manila
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/manila/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component network
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-network
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/network/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component octavia
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-octavia
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/octavia/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component security
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-security
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/security/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component swift
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-swift
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/swift/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component tempest
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-tempest
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/tempest/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component tripleo
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-tripleo
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/tripleo/puppet-passed-ci"
-      # - name: CentOS 9 Stream Openstack zed Trunk Tested - component ui
-      #   label: centos-9-stream-rdo-trunk-zed-tested-component-ui
-      #   <<: *foreman_products_openstack_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/ui/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed
+        label: centos-9-stream-openstack-zed
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}//8-stream/cloud/x86_64/openstack-zed/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Cloud
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component baremetal
+        label: centos-9-stream-rdo-trunk-zed-tested-component-baremetal
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/baremetal/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component cinder
+        label: centos-9-stream-rdo-trunk-zed-tested-component-cinder
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/cinder/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component clients
+        label: centos-9-stream-rdo-trunk-zed-tested-component-clients
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/clients/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component cloudops
+        label: centos-9-stream-rdo-trunk-zed-tested-component-cloudops
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/cloudops/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component common
+        label: centos-9-stream-rdo-trunk-zed-tested-component-common
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/common/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component compute
+        label: centos-9-stream-rdo-trunk-zed-tested-component-compute
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/compute/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component glance
+        label: centos-9-stream-rdo-trunk-zed-tested-component-glance
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/glance/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component manila
+        label: centos-9-stream-rdo-trunk-zed-tested-component-manila
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/manila/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component network
+        label: centos-9-stream-rdo-trunk-zed-tested-component-network
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/network/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component octavia
+        label: centos-9-stream-rdo-trunk-zed-tested-component-octavia
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/octavia/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component security
+        label: centos-9-stream-rdo-trunk-zed-tested-component-security
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/security/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component swift
+        label: centos-9-stream-rdo-trunk-zed-tested-component-swift
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/swift/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component tempest
+        label: centos-9-stream-rdo-trunk-zed-tested-component-tempest
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/tempest/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component tripleo
+        label: centos-9-stream-rdo-trunk-zed-tested-component-tripleo
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/tripleo/puppet-passed-ci"
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component ui
+        label: centos-9-stream-rdo-trunk-zed-tested-component-ui
+        <<: *foreman_products_openstack_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos9-zed/component/ui/puppet-passed-ci"
 
-      # - name: CentOS 9 Stream - oVirt 4.5
-      #   label: centos-9-stream-ovirt45
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/virt/x86_64/ovirt-45/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Virtualization
-      # - name: oVirt upstream for CentOS 9 Stream - oVirt 4.5
-      #   label: centos-9-stream-ovirt-45-upstream
-      #   <<: *foreman_products_defaults
-      #   url: https://resources.ovirt.org/pub/ovirt-4.5/rpm/el9/
-      #   gpgkey: RPM-GPG-KEY-oVirt-4.5
+      - name: CentOS 9 Stream - oVirt 4.5
+        label: centos-9-stream-ovirt45
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/virt/x86_64/ovirt-45/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Virtualization
+      - name: oVirt upstream for CentOS 9 Stream - oVirt 4.5
+        label: centos-9-stream-ovirt-45-upstream
+        <<: *foreman_products_defaults
+        url: https://resources.ovirt.org/pub/ovirt-4.5/rpm/el9/
+        gpgkey: RPM-GPG-KEY-oVirt-4.5
 
-      # - name: CentOS 9 Stream - RabbitMQ 38
-      #   label: centos-9-stream-rabbitmq-38
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/messaging/x86_64/rabbitmq-38/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Messaging
+      - name: CentOS 9 Stream - RabbitMQ 38
+        label: centos-9-stream-rabbitmq-38
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/messaging/x86_64/rabbitmq-38/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Messaging
 
       # - name: CentOS 9 Stream - Samba 4.14
       #   label: centos-9-stream-samba414
@@ -317,11 +317,11 @@ foreman_products_centos9_stream:
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/samba-416/"
       #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 9 Stream - Samba 4.17
-      #   label: centos-9-stream-samba417
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/samba-417/"
-      #   gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 9 Stream - Samba 4.17
+        label: centos-9-stream-samba417
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/storage/x86_64/samba-417/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
 foreman_content_views_centos9_stream:
   - name: cv_centos9stream_baseos
@@ -377,11 +377,11 @@ foreman_content_views_centos9_stream:
   #     - name: CentOS 9 Stream - Ceph Pacific
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos9stream_ceph_quincy
-  #   repositories:
-  #     - name: CentOS 9 Stream - Ceph Quincy
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_ceph_quincy
+    repositories:
+      - name: CentOS 9 Stream - Ceph Quincy
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos9stream_gluster9
   #   repositories:
@@ -393,60 +393,60 @@ foreman_content_views_centos9_stream:
   #     - name: CentOS 9 Stream - Gluster 10
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos9stream_gluster11
-  #   repositories:
-  #     - name: CentOS 9 Stream - Gluster 11
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_gluster11
+    repositories:
+      - name: CentOS 9 Stream - Gluster 11
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_hyperscale
-  #   repositories:
-  #     - name: CentOS 9 Stream - Hyperscale
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_hyperscale_experimental
-  #   repositories:
-  #     - name: CentOS 9 Stream - Hyperscale Experimental
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_hyperscale_experimental
-  #   repositories:
-  #     - name: CentOS 9 Stream - Hyperscale Experimental
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_hyperscale_spin
-  #   repositories:
-  #     - name: CentOS 9 Stream - Hyperscale Spin
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_hyperscale_spin
-  #   repositories:
-  #     - name: CentOS 9 Stream - Hyperscale Spin
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_hyperscale
+    repositories:
+      - name: CentOS 9 Stream - Hyperscale
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_hyperscale_experimental
+    repositories:
+      - name: CentOS 9 Stream - Hyperscale Experimental
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_hyperscale_experimental
+    repositories:
+      - name: CentOS 9 Stream - Hyperscale Experimental
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_hyperscale_spin
+    repositories:
+      - name: CentOS 9 Stream - Hyperscale Spin
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_hyperscale_spin
+    repositories:
+      - name: CentOS 9 Stream - Hyperscale Spin
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_kmods
-  #   repositories:
-  #     - name: CentOS 9 Stream - Kmods
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_kmods_rebuild
-  #   repositories:
-  #     - name: CentOS 9 Stream - Kmods - Rebuild
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_kmods
+    repositories:
+      - name: CentOS 9 Stream - Kmods
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_kmods_rebuild
+    repositories:
+      - name: CentOS 9 Stream - Kmods - Rebuild
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_nfs_ganesha_4
-  #   repositories:
-  #     - name: CentOS 9 Stream - NFS-Ganesha 4
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_nfs_ganesha_4
+    repositories:
+      - name: CentOS 9 Stream - NFS-Ganesha 4
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_nfv_openvswitch
-  #   repositories:
-  #     - name: CentOS 9 Stream - NFV OpenvSwitch
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_nfv_openvswitch
+    repositories:
+      - name: CentOS 9 Stream - NFV OpenvSwitch
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos9stream_openstack_client_xena
   #   repositories:
@@ -535,103 +535,103 @@ foreman_content_views_centos9_stream:
   #       product: CentOS
   #   allow_promote: False
 
-  # - name: cv_centos9stream_openstack_zed
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_baremetal
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component baremetal
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_cinder
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component cinder
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_clients
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component clients
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_cloudops
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component cloudops
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_common
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component common
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_compute
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component compute
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_glance
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component glance
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_manila
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component manila
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_network
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component network
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_octavia
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component octavia
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_security
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component security
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_swift
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component swift
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_tempest
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component tempest
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_tripleo
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component tripleo
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_rdo_trunk_zed_tested_component_ui
-  #   repositories:
-  #     - name: CentOS 9 Stream Openstack zed Trunk Tested - component ui
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_openstack_zed
+    repositories:
+      - name: CentOS 9 Stream Openstack zed
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_baremetal
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component baremetal
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_cinder
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component cinder
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_clients
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component clients
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_cloudops
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component cloudops
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_common
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component common
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_compute
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component compute
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_glance
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component glance
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_manila
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component manila
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_network
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component network
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_octavia
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component octavia
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_security
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component security
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_swift
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component swift
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_tempest
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component tempest
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_tripleo
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component tripleo
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_rdo_trunk_zed_tested_component_ui
+    repositories:
+      - name: CentOS 9 Stream Openstack zed Trunk Tested - component ui
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_ovirt45
-  #   repositories:
-  #     - name: CentOS 9 Stream - oVirt 4.5
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos9stream_ovirt_45_upstream
-  #   repositories:
-  #     - name: oVirt upstream for CentOS 9 Stream - oVirt 4.5
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_ovirt45
+    repositories:
+      - name: CentOS 9 Stream - oVirt 4.5
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos9stream_ovirt_45_upstream
+    repositories:
+      - name: oVirt upstream for CentOS 9 Stream - oVirt 4.5
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos9stream_rabbitmq_38
-  #   repositories:
-  #     - name: CentOS 9 Stream - RabbitMQ 38
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_rabbitmq_38
+    repositories:
+      - name: CentOS 9 Stream - RabbitMQ 38
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos9stream_samba414
   #   repositories:
@@ -648,11 +648,11 @@ foreman_content_views_centos9_stream:
   #     - name: CentOS 9 Stream - Samba 4.16
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos9stream_samba417
-  #   repositories:
-  #     - name: CentOS 9 Stream - Samba 4.17
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos9stream_samba417
+    repositories:
+      - name: CentOS 9 Stream - Samba 4.17
+        product: CentOS
+    allow_promote: False
 
   - name: ccv_centos9stream
     composite: True
@@ -666,16 +666,16 @@ foreman_content_views_centos9_stream:
         latest: true
       - content_view: cv_centos9stream_crb
         latest: true
-      # - content_view: cv_centos9stream_highavailability
-      #   latest: true
-      # - content_view: cv_centos9stream_nfv
-      #   latest: true
-      # - content_view: cv_centos9stream_rt
-      #   latest: true
-      # - content_view: cv_centos9stream_resilientstorage
-      #   latest: true
-      # - content_view: cv_centos9stream_opstools
-      #   latest: true
+      - content_view: cv_centos9stream_highavailability
+        latest: true
+      - content_view: cv_centos9stream_nfv
+        latest: true
+      - content_view: cv_centos9stream_rt
+        latest: true
+      - content_view: cv_centos9stream_resilientstorage
+        latest: true
+      - content_view: cv_centos9stream_opstools
+        latest: true
       - content_view: cv_epel9
         latest: true
       - content_view: cv_epel9_next
@@ -741,7 +741,7 @@ foreman_installation_media_centos9_stream:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "TME"
+  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "CentOS"
@@ -764,16 +764,16 @@ foreman_activation_keys_centos9_stream:
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-9-stream-crb"
         override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-9-stream-highavailability"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-9-stream-nfv"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-9-stream-rt"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-9-stream-resilientstorage"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_CentOS_centos-9-stream-opstools"
-      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-9-stream-highavailability"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-9-stream-nfv"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-9-stream-rt"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-9-stream-resilientstorage"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-9-stream-opstools"
+        override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-9"
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-9-next"

@@ -92,29 +92,29 @@ foreman_products_centos7:
         url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/configmanagement/x86_64/ansible-29/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
 
-      # - name: CentOS 7 - Azure
-      #   label: centos-7-azure
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/azure/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+      - name: CentOS 7 - Azure
+        label: centos-7-azure
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/azure/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
 
-      # - name: CentOS 7 - DotNet
-      #   label: centos-7-dotnet
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/dotnet/x86_64/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7 - DotNet
+        label: centos-7-dotnet
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/dotnet/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
 
-      # - name: CentOS 7 - fd.io
-      #   label: centos-7-fdio
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/nfv/x86_64/fdio/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+      - name: CentOS 7 - fd.io
+        label: centos-7-fdio
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/nfv/x86_64/fdio/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
 
-      # - name: CentOS 7 - Samba 4.11
-      #   label: centos-7-samba411
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/samba-411/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 7 - Samba 4.11
+        label: centos-7-samba411
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/samba-411/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
       # - name: CentOS 7 - Gluster 4.0 (Short Term Maintanance)
       #   label: centos-7-gluster40
@@ -146,11 +146,11 @@ foreman_products_centos7:
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/gluster-8/"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 7 - Gluster 9
-      #   label: centos-7-gluster9
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/gluster-9/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 7 - Gluster 9
+        label: centos-7-gluster9
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/gluster-9/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
       # - name: CentOS 7 - Ceph Jewel
       #   label: centos-7-ceph-jewel
@@ -162,11 +162,11 @@ foreman_products_centos7:
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/ceph-luminous/"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 7 - Ceph Nautilus
-      #   label: centos-7-ceph-nautilus
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/ceph-nautilus/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 7 - Ceph Nautilus
+        label: centos-7-ceph-nautilus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/ceph-nautilus/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
       # - name: CentOS 7 - NFS Ganesha 2.8
       #   label: centos-7-nfs-ganesha28
@@ -178,11 +178,11 @@ foreman_products_centos7:
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/nfs-ganesha-30/"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
-      # - name: CentOS 7 - NFS Ganesha 4
-      #   label: centos-7-nfs-ganesha4
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/nfsganesha-4/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+      - name: CentOS 7 - NFS Ganesha 4
+        label: centos-7-nfs-ganesha4
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/storage/x86_64/nfsganesha-4/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
       - name: CentOS 7 - nfv common
         label: centos-7-nfv-common
@@ -230,11 +230,11 @@ foreman_products_centos7:
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/paas/x86_64/openshift-origin310/"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
-      # - name: CentOS 7 - OpenShift Origin 3.11
-      #   label: centos-7-openshift-origin311
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/paas/x86_64/openshift-origin311/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+      - name: CentOS 7 - OpenShift Origin 3.11
+        label: centos-7-openshift-origin311
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/paas/x86_64/openshift-origin311/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
 
       # - name: CentOS 7 - OpenStack queens
       #   label: centos-7-openstack-queens
@@ -263,43 +263,43 @@ foreman_products_centos7:
       #   label: centos-7-rdo-trunk-stein-tested
       #   <<: *foreman_products_rdo
       #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos7-stein/current-passed-ci/"
-      # - name: CentOS 7 - OpenStack train
-      #   label: centos-7-openstack-train
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/cloud/x86_64/openstack-train/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
-      # - name: CentOS 7 - OpenStack train Trunk Tested
-      #   label: centos-7-rdo-trunk-train-tested
-      #   <<: *foreman_products_rdo
-      #   url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos7-train/current-passed-ci/"
+      - name: CentOS 7 - OpenStack train
+        label: centos-7-openstack-train
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/cloud/x86_64/openstack-train/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+      - name: CentOS 7 - OpenStack train Trunk Tested
+        label: centos-7-rdo-trunk-train-tested
+        <<: *foreman_products_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo | default(foreman_default_repo_baseurl_trunk_rdo) }}/centos7-train/current-passed-ci/"
 
       # - name: CentOS 7 - oVirt 4.2
       #   label: centos-7-ovirt42
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/ovirt-4.2/"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
-      # - name: CentOS 7 - oVirt 4.3
-      #   label: centos-7-ovirt43
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/ovirt-4.3/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+      - name: CentOS 7 - oVirt 4.3
+        label: centos-7-ovirt43
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/ovirt-4.3/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
 
-      # - name: CentOS 7 - QEMU EV
-      #   label: centos-7-qemu-ev
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/kvm-common/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+      - name: CentOS 7 - QEMU EV
+        label: centos-7-qemu-ev
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/kvm-common/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
 
-      # - name: CentOS 7 LTS Kernels for x86_64
-      #   label: centos-7-kernel
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos_altarch | default(foreman_default_repo_baseurl_centos_altarch) }}/7/kernel/x86_64/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-7
-      # - name: CentOS 7 Experimental Kernels for x86_64
-      #   label: centos-7-kernel-experimental
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos_altarch | default(foreman_default_repo_baseurl_centos_altarch) }}/7/experimental/x86_64/"
-      #   gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7 LTS Kernels for x86_64
+        label: centos-7-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_altarch | default(foreman_default_repo_baseurl_centos_altarch) }}/7/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7 Experimental Kernels for x86_64
+        label: centos-7-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_altarch | default(foreman_default_repo_baseurl_centos_altarch) }}/7/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
 
       # - name: CentOS 7 - xen 4.6
       #   label: centos-7-virt-xen-46
@@ -326,16 +326,16 @@ foreman_products_centos7:
       #   <<: *foreman_products_on_demand
       #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/xen-413"
       #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
-      # - name: CentOS 7 - xen 4.14
-      #   label: centos-7-virt-xen-414
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/xen-414"
-      #   gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
-      # - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
-      #   label: centos-7-virt-xen-epel
-      #   <<: *foreman_products_on_demand
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel | default('http://download.fedoraproject.org/pub/epel/') ) }}/7/x86_64"
-      #   gpg_key: RPM-GPG-KEY-EPEL-7
+      - name: CentOS 7 - xen 4.14
+        label: centos-7-virt-xen-414
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 | default(foreman_default_repo_baseurl_centos7) }}/7/virt/x86_64/xen-414"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+      - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
+        label: centos-7-virt-xen-epel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel | default('http://download.fedoraproject.org/pub/epel/') ) }}/7/x86_64"
+        gpg_key: RPM-GPG-KEY-EPEL-7
 
       # - name: CentOS 7 - Kickstart 7.0.1406
       #   label: centos-7-kickstart-7_0
@@ -668,29 +668,29 @@ foreman_content_views_centos7:
         product: CentOS
     allow_promote: False
 
-  # - name: cv_centos7_azure
-  #   repositories:
-  #     - name: CentOS 7 - Azure
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_azure
+    repositories:
+      - name: CentOS 7 - Azure
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos7_dotnet
-  #   repositories:
-  #     - name: CentOS 7 - DotNet
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_dotnet
+    repositories:
+      - name: CentOS 7 - DotNet
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos7_fdio
-  #   repositories:
-  #     - name: CentOS 7 - fd.io
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_fdio
+    repositories:
+      - name: CentOS 7 - fd.io
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos7_samba411
-  #   repositories:
-  #     - name: CentOS 7 - Samba 4.11
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_samba411
+    repositories:
+      - name: CentOS 7 - Samba 4.11
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_gluster40
   #   repositories:
@@ -722,11 +722,11 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - Gluster 8
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_gluster9
-  #   repositories:
-  #     - name: CentOS 7 - Gluster 9
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_gluster9
+    repositories:
+      - name: CentOS 7 - Gluster 9
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_ceph_jewel
   #   repositories:
@@ -738,11 +738,11 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - Ceph Luminous
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_ceph_nautilus
-  #   repositories:
-  #     - name: CentOS 7 - Ceph Nautilus
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_ceph_nautilus
+    repositories:
+      - name: CentOS 7 - Ceph Nautilus
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_nfs_ganesha28
   #   repositories:
@@ -754,11 +754,11 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - NFS Ganesha 3.0
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_nfs_ganesha4
-  #   repositories:
-  #     - name: CentOS 7 - NFS Ganesha 4
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_nfs_ganesha4
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 4
+        product: CentOS
+    allow_promote: False
 
   - name: cv_centos7_nfv_common
     repositories:
@@ -806,11 +806,11 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - OpenShift Origin
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_openshift_origin311
-  #   repositories:
-  #     - name: CentOS 7 - OpenShift Origin 3.11
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_openshift_origin311
+    repositories:
+      - name: CentOS 7 - OpenShift Origin 3.11
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_openstack_queens
   #   repositories:
@@ -863,51 +863,51 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - OpenStack stein Trunk Tested
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_openstack_train
-  #   repositories:
-  #     - name: CentOS 7 - OpenStack train
-  #       product: CentOS
-  #   allow_promote: False
-  #   filters:
-  #     - name: "CentOS 7 - OpenStack train exclude filter"
-  #       filter_type: "rpm"
-  #       rule_name: sip
-  #     - name: "CentOS 7 - OpenStack train exclude filter"
-  #       filter_type: "rpm"
-  #       rule_name: PyQt4
-  # - name: cv_centos7_rdo_trunk_train_tested
-  #   repositories:
-  #     - name: CentOS 7 - OpenStack train Trunk Tested
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_openstack_train
+    repositories:
+      - name: CentOS 7 - OpenStack train
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+  - name: cv_centos7_rdo_trunk_train_tested
+    repositories:
+      - name: CentOS 7 - OpenStack train Trunk Tested
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_ovirt42
   #   repositories:
   #     - name: CentOS 7 - oVirt 4.2
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_ovirt43
-  #   repositories:
-  #     - name: CentOS 7 - oVirt 4.3
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_ovirt43
+    repositories:
+      - name: CentOS 7 - oVirt 4.3
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos7_qemu_ev
-  #   repositories:
-  #     - name: CentOS 7 - QEMU EV
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_qemu_ev
+    repositories:
+      - name: CentOS 7 - QEMU EV
+        product: CentOS
+    allow_promote: False
 
-  # - name: cv_centos7_kernel
-  #   repositories:
-  #     - name: CentOS 7 LTS Kernels for x86_64
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos7_kernel_experimental
-  #   repositories:
-  #     - name: CentOS 7 Experimental Kernels for x86_64
-  #       product: CentOS
-  #   allow_promote: False
+  - name: cv_centos7_kernel
+    repositories:
+      - name: CentOS 7 LTS Kernels for x86_64
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos7_kernel_experimental
+    repositories:
+      - name: CentOS 7 Experimental Kernels for x86_64
+        product: CentOS
+    allow_promote: False
 
   # - name: cv_centos7_virt_xen_46
   #   repositories:
@@ -934,21 +934,21 @@ foreman_content_views_centos7:
   #     - name: CentOS 7 - xen 4.13
   #       product: CentOS
   #   allow_promote: False
-  # - name: cv_centos7_virt_xen_414
-  #   repositories:
-  #     - name: CentOS 7 - xen 4.14
-  #       product: CentOS
-  #   allow_promote: False
-  # - name: cv_centos7_virt_xen_epel
-  #   repositories:
-  #     - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
-  #       product: CentOS
-  #   allow_promote: False
-  #   filters:
-  #     - name: "CentOS 7 - Extra Packages from EPEL for Xen - x86_64 include filter"
-  #       filter_type: "rpm"
-  #       rule_name: xorriso
-  #       inclusion: yes
+  - name: cv_centos7_virt_xen_414
+    repositories:
+      - name: CentOS 7 - xen 4.14
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos7_virt_xen_epel
+    repositories:
+      - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - Extra Packages from EPEL for Xen - x86_64 include filter"
+        filter_type: "rpm"
+        rule_name: xorriso
+        inclusion: yes
 
   - name: ccv_centos7
     composite: True
@@ -1074,6 +1074,133 @@ foreman_content_views_centos7:
       #   latest: true
       # - content_view: cv_centos7_virt_xen_epel
       #   latest: true
+      - content_view: cv_epel7
+        latest: true
+
+  - name: ccv_centos7_all
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_centos7_base
+        latest: true
+      - content_view: cv_centos7_updates
+        latest: true
+      - content_view: cv_centos7_extras
+        latest: true
+      - content_view: cv_centos7_plus
+        latest: true
+      - content_view: cv_centos7_fasttrack
+        latest: true
+      - content_view: cv_centos7_sclo_sclo
+        latest: true
+      - content_view: cv_centos7_sclo_rh
+        latest: true
+      - content_view: cv_centos7_cr
+        latest: true
+      - content_view: cv_centos7_release_opstools
+        latest: true
+      # - content_view: cv_centos7_ansible_26
+      #   latest: true
+      # - content_view: cv_centos7_ansible_27
+      #   latest: true
+      # - content_view: cv_centos7_ansible_28
+      #   latest: true
+      - content_view: cv_centos7_ansible_29
+        latest: true
+      - content_view: cv_centos7_azure
+        latest: true
+      - content_view: cv_centos7_dotnet
+        latest: true
+      - content_view: cv_centos7_fdio
+        latest: true
+      - content_view: cv_centos7_samba411
+        latest: true
+      # - content_view: cv_centos7_gluster40
+      #   latest: true
+      # - content_view: cv_centos7_gluster41
+      #   latest: true
+      # - content_view: cv_centos7_gluster5
+      #   latest: true
+      # - content_view: cv_centos7_gluster6
+      #   latest: true
+      # - content_view: cv_centos7_gluster7
+      #   latest: true
+      # - content_view: cv_centos7_gluster8
+      #   latest: true
+      - content_view: cv_centos7_gluster9
+        latest: true
+      # - content_view: cv_centos7_ceph_jewel
+      #   latest: true
+      # - content_view: cv_centos7_ceph_luminous
+      #   latest: true
+      - content_view: cv_centos7_ceph_nautilus
+        latest: true
+      # - content_view: cv_centos7_nfs_ganesha28
+      #   latest: true
+      # - content_view: cv_centos7_nfs_ganesha30
+      #   latest: true
+      - content_view: cv_centos7_nfs_ganesha4
+        latest: true
+      - content_view: cv_centos7_nfv_common
+        latest: true
+      # - content_view: cv_centos7_openshift_origin
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin13
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin14
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin15
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin36
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin37
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin39
+      #   latest: true
+      # - content_view: cv_centos7_openshift_origin310
+      #   latest: true
+      - content_view: cv_centos7_openshift_origin311
+        latest: true
+      # - content_view: cv_centos7_openstack_queens
+      #   latest: true
+      # - content_view: cv_centos7_rdo_trunk_queens_tested
+      #   latest: true
+      # - content_view: cv_centos7_openstack_rocky
+      #   latest: true
+      # - content_view: cv_centos7_rdo_trunk_rocky_tested
+      #   latest: true
+      # - content_view: cv_centos7_openstack_stein
+      #   latest: true
+      # - content_view: cv_centos7_rdo_trunk_stein_tested
+      #   latest: true
+      - content_view: cv_centos7_openstack_train
+        latest: true
+      - content_view: cv_centos7_rdo_trunk_train_tested
+        latest: true
+      # - content_view: cv_centos7_ovirt42
+      #   latest: true
+      - content_view: cv_centos7_ovirt43
+        latest: true
+      - content_view: cv_centos7_qemu_ev
+        latest: true
+      - content_view: cv_centos7_kernel
+        latest: true
+      - content_view: cv_centos7_kernel_experimental
+        latest: true
+      # - content_view: cv_centos7_virt_xen_46
+      #   latest: true
+      # - content_view: cv_centos7_virt_xen_48
+      #   latest: true
+      # - content_view: cv_centos7_virt_xen_410
+      #   latest: true
+      # - content_view: cv_centos7_virt_xen_412
+      #   latest: true
+      # - content_view: cv_centos7_virt_xen_413
+      #   latest: true
+      - content_view: cv_centos7_virt_xen_414
+        latest: true
+      - content_view: cv_centos7_virt_xen_epel
+        latest: true
       - content_view: cv_epel7
         latest: true
 
@@ -1628,6 +1755,133 @@ foreman_activation_keys_centos7:
       #   override: disabled
       # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-epel"
       #   override: disabled
+      - label: "{{ foreman_organization }}_EPEL_epel-7"
+        override: disabled
+
+  - name: ak_centos7_all
+    content_view: ccv_centos7_all
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_CentOS_centos-7-base"
+        override: default
+      - label: "{{ foreman_organization }}_CentOS_centos-7-updates"
+        override: default
+      - label: "{{ foreman_organization }}_CentOS_centos-7-extras"
+        override: default
+      - label: "{{ foreman_organization }}_CentOS_centos-7-plus"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-fasttrack"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-sclo"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-rh"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-cr"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-release-opstools"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ansible_26"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ansible_27"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ansible_28"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-ansible-29"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-azure"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-dotnet"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-fdio"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-samba411"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster40"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster41"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster5"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster6"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster7"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-gluster8"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-gluster9"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ceph-jewel"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ceph-luminous"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-ceph-nautilus"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-nfs-ganesha28"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-nfs-ganesha30"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-nfs-ganesha4"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-nfv-common"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin13"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin14"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin15"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin36"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin37"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin39"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin310"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-openshift-origin311"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openstack-queens"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-rdo-trunk-queens-tested"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openstack-rocky"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-rdo-trunk-rocky-tested"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-openstack-stein"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-rdo-trunk-stein-tested"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-openstack-train"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-rdo-trunk-train-tested"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-ovirt42"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-ovirt43"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-qemu-ev"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-kernel"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-kernel-experimental"
+        override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-46"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-48"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-410"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-412"
+      #   override: disabled
+      # - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-413"
+      #   override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-414"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-7-virt-xen-epel"
+        override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-7"
         override: disabled
 

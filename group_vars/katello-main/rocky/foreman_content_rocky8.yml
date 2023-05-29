@@ -154,14 +154,14 @@ foreman_content_views_rocky8:
         latest: true
       - content_view: cv_rocky8_powertools
         latest: true
-      # - content_view: cv_rocky8_ha
-      #   latest: true
-      # - content_view: cv_rocky8_nfv
-      #   latest: true
-      # - content_view: cv_rocky8_resilientstorage
-      #   latest: true
-      # - content_view: cv_rocky8_rt
-      #   latest: true
+      - content_view: cv_rocky8_ha
+        latest: true
+      - content_view: cv_rocky8_nfv
+        latest: true
+      - content_view: cv_rocky8_resilientstorage
+        latest: true
+      - content_view: cv_rocky8_rt
+        latest: true
       - content_view: cv_epel8
         latest: true
       - content_view: cv_epel8_modular
@@ -352,14 +352,14 @@ foreman_activation_keys_rocky8:
         override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
         override: disabled
-      # - label: "{{ foreman_organization }}_Rocky_rocky-8-ha"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_Rocky_rocky-8-nfv"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_Rocky_rocky-8-resilientstorage"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_Rocky_rocky-8-rt"
-      #   override: disabled
+      - label: "{{ foreman_organization }}_Rocky_rocky-8-ha"
+        override: disabled
+      - label: "{{ foreman_organization }}_Rocky_rocky-8-nfv"
+        override: disabled
+      - label: "{{ foreman_organization }}_Rocky_rocky-8-resilientstorage"
+        override: disabled
+      - label: "{{ foreman_organization }}_Rocky_rocky-8-rt"
+        override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8"
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
