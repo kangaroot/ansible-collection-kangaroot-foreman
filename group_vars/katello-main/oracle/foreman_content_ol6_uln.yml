@@ -1689,7 +1689,7 @@ foreman_installation_media_ol6_uln:
       - Oracle Linux 6.10
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "TME"
+  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Oracle Linux"
