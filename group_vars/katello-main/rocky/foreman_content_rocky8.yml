@@ -84,14 +84,22 @@ foreman_products_rocky8:
       #   label: rocky-8-appstream-kickstart-8_6
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/8.6/AppStream/x86_64/kickstart/"
-      - name: Rocky Linux 8 - BaseOS Kickstart 8.7
-        label: rocky-8-baseos-kickstart-8_7
+      # - name: Rocky Linux 8 - BaseOS Kickstart 8.7
+      #   label: rocky-8-baseos-kickstart-8_7
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/BaseOS/x86_64/kickstart/"
+      # - name: Rocky Linux 8 - AppStream Kickstart 8.7
+      #   label: rocky-8-appstream-kickstart-8_7
+      #   <<: *foreman_products_defaults
+      #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/AppStream/x86_64/kickstart/"
+      - name: Rocky Linux 8 - BaseOS Kickstart 8.8
+        label: rocky-8-baseos-kickstart-8_8
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/BaseOS/x86_64/kickstart/"
-      - name: Rocky Linux 8 - AppStream Kickstart 8.7
-        label: rocky-8-appstream-kickstart-8_7
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.8/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 8 - AppStream Kickstart 8.8
+        label: rocky-8-appstream-kickstart-8_8
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/AppStream/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.8/AppStream/x86_64/kickstart/"
 
 foreman_content_views_rocky8:
   - name: cv_rocky8_baseos
@@ -270,6 +278,11 @@ foreman_operatingsystems_rocky8:
     minor: "7"
     description: "Rocky Linux 8.7"
     <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "8"
+    description: "Rocky Linux 8.8"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -313,18 +326,28 @@ foreman_installation_media_rocky8:
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - Rocky Linux 8.6
-  - name: Rocky Linux 8.7 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-baseos-kickstart-8_7/"
+  # - name: Rocky Linux 8.7 BaseOS
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-baseos-kickstart-8_7/"
+  #   <<: *foreman_installation_media_defaults
+  #   operatingsystems:
+  #     - Rocky Linux 8.7
+  # - name: Rocky Linux 8.7 AppStream
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-appstream-kickstart-8_7/"
+  #   <<: *foreman_installation_media_defaults
+  #   operatingsystems:
+  #     - Rocky Linux 8.7
+  - name: Rocky Linux 8.8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-baseos-kickstart-8_8/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 8
-      - Rocky Linux 8.7
-  - name: Rocky Linux 8.7 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-appstream-kickstart-8_7/"
+      - Rocky Linux 8.8
+  - name: Rocky Linux 8.8 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-appstream-kickstart-8_8/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 8
-      - Rocky Linux 8.7
+      - Rocky Linux 8.8
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
