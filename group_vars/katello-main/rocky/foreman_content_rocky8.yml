@@ -329,10 +329,10 @@ foreman_installation_media_rocky8:
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "TME"
   # lifecycle_environment: "Library"
-  subscriptions:
-    - name: "Rocky Linux"
-    - name: "Extra Packages for Enterprise Linux"
-    # - name: "Foreman"
+  # subscriptions:
+  #   - name: "Rocky Linux"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
   auto_attach: False
   # release_version: 8
   # service_level: Standard

@@ -743,10 +743,10 @@ foreman_installation_media_centos9_stream:
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "TME"
   # lifecycle_environment: "Library"
-  subscriptions:
-    - name: "CentOS"
-    - name: "Extra Packages for Enterprise Linux"
-    # - name: "Foreman"
+  # subscriptions:
+  #   - name: "CentOS"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
   auto_attach: False
   # release_version: 9
   # service_level: Standard

@@ -1495,10 +1495,10 @@ foreman_installation_media_centos7:
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
   lifecycle_environment: "Library"
-  subscriptions:
-    - name: "CentOS"
-    - name: "Extra Packages for Enterprise Linux"
-    # - name: "Foreman"
+  # subscriptions:
+  #   - name: "CentOS"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
   auto_attach: False
   # release_version: 7Server
   # service_level: Standard

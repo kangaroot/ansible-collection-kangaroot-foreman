@@ -512,8 +512,8 @@ foreman_installation_media_ol9_uln:
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "TME"
   # lifecycle_environment: "Library"
-  subscriptions:
-    - name: "Oracle Linux"
+  # subscriptions:
+  #   - name: "Oracle Linux"
   auto_attach: False
   # release_version: 9
   # service_level: Standard

@@ -157,9 +157,9 @@ foreman_installation_media_debian10:
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
-  lifecycle_environment: "Library"
-  subscriptions:
-    - name: "Debian"
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   - name: "Debian"
   auto_attach: False
 
 foreman_activation_keys_debian10:
