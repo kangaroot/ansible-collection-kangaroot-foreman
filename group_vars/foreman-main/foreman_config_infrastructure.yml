@@ -14,7 +14,8 @@
 
 foreman_smart_proxies: "{{ foreman_smart_proxies_main | default([]) |
   union( foreman_smart_proxies_group | default([]) ) |
-  union( foreman_smart_proxies_host | default([]) )
+  union( foreman_smart_proxies_host | default([]) ) |
+  union( foreman_smart_proxies_custom | default([]) )
   }}"
 
 
@@ -42,7 +43,8 @@ foreman_smart_proxies: "{{ foreman_smart_proxies_main | default([]) |
 
 foreman_compute_resources: "{{ foreman_compute_resources_main | default([]) |
   union( foreman_compute_resources_group | default([]) ) |
-  union( foreman_compute_resources_host | default([]) )
+  union( foreman_compute_resources_host | default([]) ) |
+  union( foreman_compute_resources_custom | default([]) )
   }}"
 
 
@@ -53,7 +55,8 @@ foreman_compute_profiles_main:
 
 foreman_compute_profiles: "{{ foreman_compute_profiles_main | default([]) |
   union( foreman_compute_profiles_group | default([]) ) |
-  union( foreman_compute_profiles_host | default([]) )
+  union( foreman_compute_profiles_host | default([]) ) |
+  union( foreman_compute_profiles_custom | default([]) )
   }}"
 
 
@@ -71,7 +74,8 @@ foreman_domains_defaults: &foreman_domains_defaults
 
 foreman_domains: "{{ foreman_domains_main | default([]) |
   union( foreman_domains_group | default([]) ) |
-  union( foreman_domains_host | default([]) )
+  union( foreman_domains_host | default([]) ) |
+  union( foreman_domains_custom | default([]) )
   }}"
 
 
@@ -105,7 +109,8 @@ foreman_subnets_defaults: &foreman_subnets_defaults
 
 foreman_subnets: "{{ foreman_subnets_main | default([]) |
   union( foreman_subnets_group | default([]) ) |
-  union( foreman_subnets_host | default([]) )
+  union( foreman_subnets_host | default([]) ) |
+  union( foreman_subnets_custom | default([]) )
   }}"
 
 
@@ -121,6 +126,7 @@ foreman_subnets: "{{ foreman_subnets_main | default([]) |
 
 foreman_http_proxies: "{{ foreman_http_proxies_main | default([]) |
   union( foreman_http_proxies_group | default([]) ) |
-  union( foreman_http_proxies_host | default([]) )
+  union( foreman_http_proxies_host | default([]) ) |
+  union( foreman_http_proxies_custom | default([]) )
   }}"
 

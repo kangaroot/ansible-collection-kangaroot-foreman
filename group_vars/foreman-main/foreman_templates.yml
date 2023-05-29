@@ -11,7 +11,7 @@ foreman_partition_tables_defaults: &foreman_partition_tables_defaults
   os_family: Redhat
   locked: no
 
-foreman_partition_tables:
+foreman_partition_tables_main:
   - name: Kickstart normal
     <<: *foreman_partition_tables_defaults
     layout: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/ptable_kickstart_normal.erb') }}"
@@ -21,6 +21,13 @@ foreman_partition_tables:
   - name: Kickstart minimal
     <<: *foreman_partition_tables_defaults
     layout: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/ptable_kickstart_minimal.erb') }}"
+
+foreman_partition_tables: "{{ foreman_partition_tables_main | default([]) |
+  union( foreman_partition_tables_group | default([]) ) |
+  union( foreman_partition_tables_host | default([]) ) |
+  union( foreman_partition_tables_custom | default([]) )
+  }}"
+
 
 foreman_provisioning_templates_defaults: &foreman_provisioning_templates_defaults
   # organizations:
@@ -43,7 +50,7 @@ foreman_provisioning_templates_osubuntu: &foreman_provisioning_templates_osubunt
   <<: *foreman_provisioning_templates_defaults
   operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
 
-foreman_provisioning_templates:
+foreman_provisioning_templates_main:
   - name: Kickstart default
     <<: *foreman_provisioning_templates_osrhel
     kind: provision
@@ -146,4 +153,10 @@ foreman_provisioning_templates:
     <<: *foreman_provisioning_templates_defaults
     template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_restore_host_keys.erb') }}"
     kind: snippet
+
+foreman_provisioning_templates: "{{ foreman_provisioning_templates_main | default([]) |
+  union( foreman_provisioning_templates_group | default([]) ) |
+  union( foreman_provisioning_templates_host | default([]) ) |
+  union( foreman_provisioning_templates_custom | default([]) )
+  }}"
 

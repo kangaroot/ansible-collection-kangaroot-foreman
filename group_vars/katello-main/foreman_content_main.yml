@@ -6,13 +6,12 @@ foreman_update_repositories: false
 
 # foreman_manifest_path: /root/rhel_manifest.zip
 
-foreman_lifecycle_environments:
-  - name: "dev"
-    prior: "Library"
-  - name: "acc"
-    prior: "dev"
-  - name: "prod"
-    prior: "acc"
+foreman_lifecycle_environments: "{{ foreman_lifecycle_environments_main | default([]) |
+  union( foreman_lifecycle_environments_group | default([]) ) |
+  union( foreman_lifecycle_environments_host | default([]) ) |
+  union( foreman_lifecycle_environments_custom | default([]) )
+  }}"
+
 
 foreman_content_credentials_main: []
 foreman_content_credentials: "{{ foreman_content_credentials_main | default([]) |
@@ -34,8 +33,11 @@ foreman_content_credentials: "{{ foreman_content_credentials_main | default([]) 
   union( foreman_content_credentials_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_content_credentials_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_content_credentials_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_content_credentials_group | default([]) ) |
+  union( foreman_content_credentials_host | default([]) ) |
   union( foreman_content_credentials_custom | default([]) )
   }}"
+
 
 foreman_products_main: []
 foreman_products: "{{ foreman_products_main | default([]) |
@@ -57,8 +59,11 @@ foreman_products: "{{ foreman_products_main | default([]) |
   union( foreman_products_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_products_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_products_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_products_group | default([]) ) |
+  union( foreman_products_host | default([]) ) |
   union( foreman_products_custom | default([]) )
   }}"
+
 
 foreman_content_views_main: []
 foreman_content_views: "{{ foreman_content_views_main | default([]) |
@@ -80,8 +85,11 @@ foreman_content_views: "{{ foreman_content_views_main | default([]) |
   union( foreman_content_views_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_content_views_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_content_views_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_content_views_group | default([]) ) |
+  union( foreman_content_views_host | default([]) ) |
   union( foreman_content_views_custom | default([]) )
   }}"
+
 
 foreman_activation_keys_main:
   - name: "ak_basic"
@@ -106,8 +114,11 @@ foreman_activation_keys: "{{ foreman_activation_keys_main | default([]) |
   union( foreman_activation_keys_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_activation_keys_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_activation_keys_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_activation_keys_group | default([]) ) |
+  union( foreman_activation_keys_host | default([]) ) |
   union( foreman_activation_keys_custom | default([]) )
   }}"
+
 
 foreman_sync_plan_products_main: []
 foreman_sync_plan_products: "{{ foreman_sync_plan_products_main | default([]) |
@@ -129,12 +140,21 @@ foreman_sync_plan_products: "{{ foreman_sync_plan_products_main | default([]) |
   union( foreman_sync_plan_products_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_sync_plan_products_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_sync_plan_products_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_sync_plan_products_group | default([]) ) |
+  union( foreman_sync_plan_products_host | default([]) ) |
   union( foreman_sync_plan_products_custom | default([]) )
   }}"
 
-foreman_sync_plans:
+
+foreman_sync_plans_main:
   - name: Daily Sync
     interval: daily
     sync_date: 2020-11-07 04:15:00 UTC
     products: "{{ foreman_sync_plan_products | default([]) }}"
+
+foreman_sync_plans: "{{ foreman_sync_plans_main | default([]) |
+  union( foreman_sync_plans_group | default([]) ) |
+  union( foreman_sync_plans_host | default([]) ) |
+  union( foreman_sync_plans_custom | default([]) )
+  }}"
 

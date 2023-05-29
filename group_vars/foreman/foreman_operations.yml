@@ -58,6 +58,7 @@ foreman_installer_options_global:
 foreman_installer_options: "{{ foreman_installer_options_global | default([]) |
   union( foreman_installer_options_main | default([]) ) |
   union( foreman_installer_options_group | default([]) ) |
-  union( foreman_installer_options_host | default([]) )
+  union( foreman_installer_options_host | default([]) ) |
+  union( foreman_installer_options_custom | default([]) )
   }}"
 

@@ -1,15 +1,18 @@
 ---
 # foreman provisioning group vars file for foreman-main
 
-foreman_architectures:
-  - name: x86_64
-  - name: i386
-  - name: amd64
-  - name: i686
+foreman_architectures: "{{ foreman_architectures_main | default([]) |
+  union( foreman_architectures_group | default([]) ) |
+  union( foreman_architectures_host | default([]) ) |
+  union( foreman_architectures_custom | default([]) )
+  }}"
 
-foreman_hardware_models:
-  - name: Generic
-  - name: VMware Virtual Platform
+
+foreman_hardware_models: "{{ foreman_hardware_models_main | default([]) |
+  union( foreman_hardware_models_group | default([]) ) |
+  union( foreman_hardware_models_host | default([]) ) |
+  union( foreman_hardware_models_custom | default([]) )
+  }}"
 
 foreman_operatingsystems_main: []
 foreman_operatingsystems: "{{ foreman_operatingsystems_main | default([]) |
@@ -20,6 +23,8 @@ foreman_operatingsystems: "{{ foreman_operatingsystems_main | default([]) |
   union( foreman_operatingsystems_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_operatingsystems_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_operatingsystems_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_group | default([]) ) |
+  union( foreman_operatingsystems_host | default([]) ) |
   union( foreman_operatingsystems_custom | default([]) )
   }}"
 
@@ -32,6 +37,8 @@ foreman_installation_media: "{{ foreman_installation_media_main | default([]) |
   union( foreman_installation_media_redhat | default([]) if foreman_enable_redhat | default(false) | bool else [] ) |
   union( foreman_installation_media_rocky | default([]) if foreman_enable_rocky | default(false) | bool else [] ) |
   union( foreman_installation_media_ubuntu | default([]) if foreman_enable_ubuntu | default(false) | bool else [] ) |
+  union( foreman_installation_media_group | default([]) ) |
+  union( foreman_installation_media_host | default([]) ) |
   union( foreman_installation_media_custom | default([]) )
   }}"
 
