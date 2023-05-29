@@ -13,6 +13,30 @@
 
 ### Ceph ###
 # foreman_repo_baseurl_ceph: https://download.ceph.com
+# foreman_repo_baseurl_ceph_docker: https://quay.io
+# foreman_repo_baseurl_ceph_nautilus_deb9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_nautilus_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_nautilus_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_nautilus_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_nautilus_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_nautilus_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_octopus_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_octopus_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_octopus_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_octopus_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_octopus_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_deb11: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_el9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_pacific_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_quincy_deb11: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_quincy_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_quincy_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_quincy_el9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
+# foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
 
 ### Datadog ###
 # foreman_repo_baseurl_datadog: https://yum.datadoghq.com

@@ -53,18 +53,40 @@ foreman_enable_epel: false
 
 ### Fedora COPR content data
 foreman_enable_fedora_copr: false
+# foreman_enable_fedora_copr_dgoodwin_subscription_manager: false
+# foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6: false
+# foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7: false
+# foreman_enable_fedora_copr_dmann_subscription_manager: false
+# foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
 
 ### Foreman content data
 foreman_enable_foreman: false
 
 ### Hashicorp content data
 foreman_enable_hashicorp: false
+# foreman_enable_hashicorp_el7: false
+# foreman_enable_hashicorp_el8: false
+# foreman_enable_hashicorp_el9: false
 
 ### Kubernetes content data
 foreman_enable_kubernetes: false
 
 ### Micorsoft content data
 foreman_enable_microsoft: false
+# foreman_enable_microsoft_azure_cli: false
+# foreman_enable_microsoft_prod: false
+# foreman_enable_microsoft_prod_el7: false
+# foreman_enable_microsoft_prod_el8: false
+# foreman_enable_microsoft_prod_el9: false
+# foreman_enable_microsoft_mssql_server_2017: false
+# foreman_enable_microsoft_mssql_server_2017_el7: false
+# foreman_enable_microsoft_mssql_server_2017_el8: false
+# foreman_enable_microsoft_mssql_server_2019: false
+# foreman_enable_microsoft_mssql_server_2019_el7: false
+# foreman_enable_microsoft_mssql_server_2019_el8: false
+# foreman_enable_microsoft_mssql_server_2022: false
+# foreman_enable_microsoft_mssql_server_2022_el8: false
+# foreman_enable_microsoft_mssql_server_2022_el9: false
 
 ### Nginx content data
 foreman_enable_nginx: false
