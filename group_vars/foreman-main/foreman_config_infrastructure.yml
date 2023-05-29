@@ -48,10 +48,10 @@ foreman_compute_resources: "{{ foreman_compute_resources_main | default([]) |
   }}"
 
 
-foreman_compute_profiles_main:
-  - name: 1-Small
-  - name: 2-Medium
-  - name: 3-Large
+# foreman_compute_profiles_main:
+#   - name: 1-Small
+#   - name: 2-Medium
+#   - name: 3-Large
 
 foreman_compute_profiles: "{{ foreman_compute_profiles_main | default([]) |
   union( foreman_compute_profiles_group | default([]) ) |
@@ -60,13 +60,13 @@ foreman_compute_profiles: "{{ foreman_compute_profiles_main | default([]) |
   }}"
 
 
-foreman_domains_defaults: &foreman_domains_defaults
-  # organizations:
-  #   - "{{ foreman_organization }}"
-  # locations:
-  #   - "{{ foreman_default_location }}"
-  organizations: "{{ foreman_all_organizations_namelist }}"
-  locations: "{{ foreman_all_locations_namelist }}"
+# foreman_domains_defaults: &foreman_domains_defaults
+#   # organizations:
+#   #   - "{{ foreman_organization }}"
+#   # locations:
+#   #   - "{{ foreman_default_location }}"
+#   organizations: "{{ foreman_all_organizations_namelist }}"
+#   locations: "{{ foreman_all_locations_namelist }}"
 
 # foreman_domains_main:
 #   - name: example.com
@@ -79,19 +79,19 @@ foreman_domains: "{{ foreman_domains_main | default([]) |
   }}"
 
 
-foreman_subnets_defaults: &foreman_subnets_defaults
-  # organizations:
-  #   - "{{ foreman_organization }}"
-  # locations:
-  #   - "{{ foreman_default_location }}"
-  organizations: "{{ foreman_all_organizations_namelist }}"
-  locations: "{{ foreman_all_locations_namelist }}"
-  mask: 255.255.255.0
-  cidr: 24
-  mtu: 1500
-  ipam: None
-  boot_mode: Static
-  domains: "{{ foreman_domains | map(attribute='name') | list }}"
+# foreman_subnets_defaults: &foreman_subnets_defaults
+#   # organizations:
+#   #   - "{{ foreman_organization }}"
+#   # locations:
+#   #   - "{{ foreman_default_location }}"
+#   organizations: "{{ foreman_all_organizations_namelist }}"
+#   locations: "{{ foreman_all_locations_namelist }}"
+#   mask: 255.255.255.0
+#   cidr: 24
+#   mtu: 1500
+#   ipam: None
+#   boot_mode: Static
+#   domains: "{{ foreman_domains | map(attribute='name') | list }}"
 
 # foreman_subnets_main:
 #   - name: EXAMPLE

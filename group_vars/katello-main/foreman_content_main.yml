@@ -1,10 +1,19 @@
 ---
 # main content for foremen group vars file for katello-main
 
-foreman_content_view_version_cleanup_keep: 0
-foreman_update_repositories: false
+# foreman_content_view_version_cleanup_keep: 5
+# foreman_update_repositories: false
 
 # foreman_manifest_path: /root/rhel_manifest.zip
+
+
+# foreman_lifecycle_environments_main:
+#   - name: "dev"
+#     prior: "Library"
+#   - name: "acc"
+#     prior: "dev"
+#   - name: "prod"
+#     prior: "acc"
 
 foreman_lifecycle_environments: "{{ foreman_lifecycle_environments_main | default([]) |
   union( foreman_lifecycle_environments_group | default([]) ) |

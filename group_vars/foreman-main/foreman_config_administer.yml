@@ -1,10 +1,10 @@
 ---
 # foreman administer configuration group vars file for foreman-main
 
-foreman_organizations_main:
-  - name: "{{ foreman_organization }}"
-    label: "{{ foreman_organization | regex_replace('{\\s\\.\\-}', '_') }}"
-    state: present
+# foreman_organizations_main:
+#   - name: "{{ foreman_organization }}"
+#     label: "{{ foreman_organization | regex_replace('{\\s\\.\\-}', '_') }}"
+#     state: present
 
 foreman_organizations: "{{ foreman_organizations_main | default([]) |
   union( foreman_organizations_group | default([]) ) |
@@ -13,12 +13,12 @@ foreman_organizations: "{{ foreman_organizations_main | default([]) |
   }}"
 
 
-foreman_locations_main:
-  - name: "{{ foreman_default_location }}"
-    # organizations:
-    #   - "{{ foreman_organization }}"
-    organizations: "{{ foreman_all_organizations_namelist }}"
-    state: present
+# foreman_locations_main:
+#   - name: "{{ foreman_default_location }}"
+#     # organizations:
+#     #   - "{{ foreman_organization }}"
+#     organizations: "{{ foreman_all_organizations_namelist }}"
+#     state: present
 
 foreman_locations: "{{ foreman_locations_main | default([]) |
   union( foreman_locations_group | default([]) ) |
@@ -60,32 +60,32 @@ foreman_auth_sources_ldap: "{{ foreman_auth_sources_ldap_main | default([]) |
   }}"
 
 
-foreman_users_main:
-  - login: "{{ foreman_username }}"
-    # user_password: "{{ foreman_password }}"
-    firstname: "{{ foreman_admin_firstname | default('Admin') }}"
-    lastname: "{{ foreman_admin_lastname | default('User') }}"
-    mail: "{{ foreman_admin_email | default('root@' ~ foreman_server_hostname) }}"
-    admin: yes
-    # organizations:
-    #   - "{{ foreman_organization }}"
-    # locations:
-    #   - "{{ foreman_default_location }}"
-    organizations: "{{ foreman_all_organizations_namelist }}"
-    locations: "{{ foreman_all_locations_namelist }}"
-    # default_location: "{{ foreman_default_location }}"
-    default_organization: "{{ foreman_organization }}"
-    # auth_source: INTERNAL
-  # - login: ad_ldap_user
-  #   firstname: ad_ldap_user_firstname
-  #   lastname: ad_ldap_user_lastname
-  #   mail: ad_ldap_user_email
-  #   admin: yes
-  #   organizations: "{{ foreman_all_organizations_namelist }}"
-  #   locations: "{{ foreman_all_locations_namelist }}"
-  #   # default_location: "{{ foreman_default_location }}"
-  #   default_organization: "{{ foreman_organization }}"
-  #   auth_source: ADLDAP
+# foreman_users_main:
+#   - login: "{{ foreman_username }}"
+#     # user_password: "{{ foreman_password }}"
+#     firstname: "{{ foreman_admin_firstname | default('Admin') }}"
+#     lastname: "{{ foreman_admin_lastname | default('User') }}"
+#     mail: "{{ foreman_admin_email | default('root@' ~ foreman_server_hostname) }}"
+#     admin: yes
+#     # organizations:
+#     #   - "{{ foreman_organization }}"
+#     # locations:
+#     #   - "{{ foreman_default_location }}"
+#     organizations: "{{ foreman_all_organizations_namelist }}"
+#     locations: "{{ foreman_all_locations_namelist }}"
+#     # default_location: "{{ foreman_default_location }}"
+#     default_organization: "{{ foreman_organization }}"
+#     # auth_source: INTERNAL
+#   # - login: ad_ldap_user
+#   #   firstname: ad_ldap_user_firstname
+#   #   lastname: ad_ldap_user_lastname
+#   #   mail: ad_ldap_user_email
+#   #   admin: yes
+#   #   organizations: "{{ foreman_all_organizations_namelist }}"
+#   #   locations: "{{ foreman_all_locations_namelist }}"
+#   #   # default_location: "{{ foreman_default_location }}"
+#   #   default_organization: "{{ foreman_organization }}"
+#   #   auth_source: ADLDAP
 
 foreman_users: "{{ foreman_users_main | default([]) |
   union( foreman_users_group | default([]) ) |

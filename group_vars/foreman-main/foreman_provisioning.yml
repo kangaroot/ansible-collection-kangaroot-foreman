@@ -1,12 +1,21 @@
 ---
 # foreman provisioning group vars file for foreman-main
 
+# foreman_architectures_main:
+#   - name: x86_64
+#   - name: i386
+#   - name: amd64
+#   - name: i686
+
 foreman_architectures: "{{ foreman_architectures_main | default([]) |
   union( foreman_architectures_group | default([]) ) |
   union( foreman_architectures_host | default([]) ) |
   union( foreman_architectures_custom | default([]) )
   }}"
 
+# foreman_hardware_models_main:
+#   - name: Generic
+#   - name: VMware Virtual Platform
 
 foreman_hardware_models: "{{ foreman_hardware_models_main | default([]) |
   union( foreman_hardware_models_group | default([]) ) |
