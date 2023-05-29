@@ -56,3 +56,8 @@
 #     var: data
 #   tags: [ "katello_debug" ]
 
+- name: "Debug | Show products"
+  debug:
+    var: foreman_products | default([])
+  tags: [ "katello_debug" ]
+
