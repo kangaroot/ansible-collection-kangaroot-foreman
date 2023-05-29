@@ -16,39 +16,39 @@ foreman_content_credentials_ol_main:
     content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-oracle') }}"
 
 foreman_content_credentials_ol: "{{ foreman_content_credentials_ol_main | default([]) |
+  union( foreman_content_credentials_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_credentials_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_credentials_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_credentials_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_content_credentials_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_content_credentials_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_products_ol_main: []
 foreman_products_ol: "{{ foreman_products_ol_main | default([]) |
+  union( foreman_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_products_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_products_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_products_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_content_views_ol_main: []
 foreman_content_views_ol: "{{ foreman_content_views_ol_main | default([]) |
+  union( foreman_content_views_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_views_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_views_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_content_views_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_content_views_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_content_views_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_operatingsystems_ol_main: []
 foreman_operatingsystems_ol: "{{ foreman_operatingsystems_ol_main | default([]) |
+  union( foreman_operatingsystems_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_operatingsystems_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_operatingsystems_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_operatingsystems_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_operatingsystems_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_operatingsystems_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_installation_media_ol_defaults: &foreman_installation_media_ol_defaults
   os_family: Redhat
@@ -68,31 +68,31 @@ foreman_installation_media_ol_defaults: &foreman_installation_media_ol_defaults
 foreman_installation_media_ol_main: []
 
 foreman_installation_media_ol: "{{ foreman_installation_media_ol_main | default([]) |
+  union( foreman_installation_media_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_installation_media_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_installation_media_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_installation_media_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_installation_media_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_installation_media_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_activation_keys_ol_main: []
 
 foreman_activation_keys_ol: "{{ foreman_activation_keys_ol_main | default([]) |
+  union( foreman_activation_keys_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_activation_keys_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_activation_keys_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_activation_keys_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_activation_keys_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_activation_keys_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
 foreman_sync_plan_products_ol_main:
   - Oracle Linux
 
 foreman_sync_plan_products_ol: "{{ foreman_sync_plan_products_ol_main | default([]) |
+  union( foreman_sync_plan_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_sync_plan_products_ol7 | default([]) if foreman_enable_ol7 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_sync_plan_products_ol8 | default([]) if foreman_enable_ol8 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
   union( foreman_sync_plan_products_ol9 | default([]) if foreman_enable_ol9 | default( foreman_enable_ol | default(false) | bool ) | bool else [] )
   }}"
-  # union( foreman_sync_plan_products_ol5 | default([]) if foreman_enable_ol5 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
-  # union( foreman_sync_plan_products_ol6 | default([]) if foreman_enable_ol6 | default( foreman_enable_ol | default(false) | bool ) | bool else [] ) |
 
