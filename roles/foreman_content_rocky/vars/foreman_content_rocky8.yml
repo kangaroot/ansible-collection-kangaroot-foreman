@@ -84,14 +84,14 @@ foreman_products_rocky8:
       #   label: rocky-8-appstream-kickstart-8_6
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/8.6/AppStream/x86_64/kickstart/"
-      # - name: Rocky Linux 8 - BaseOS Kickstart 8.7
-      #   label: rocky-8-baseos-kickstart-8_7
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/BaseOS/x86_64/kickstart/"
-      # - name: Rocky Linux 8 - AppStream Kickstart 8.7
-      #   label: rocky-8-appstream-kickstart-8_7
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky8) }}/8.7/AppStream/x86_64/kickstart/"
+      - name: Rocky Linux 8 - BaseOS Kickstart 8.7
+        label: rocky-8-baseos-kickstart-8_7
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/8.7/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 8 - AppStream Kickstart 8.7
+        label: rocky-8-appstream-kickstart-8_7
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/8.7/AppStream/x86_64/kickstart/"
       - name: Rocky Linux 8 - BaseOS Kickstart 8.8
         label: rocky-8-baseos-kickstart-8_8
         <<: *foreman_products_defaults

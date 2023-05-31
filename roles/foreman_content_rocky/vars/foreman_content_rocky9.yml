@@ -79,11 +79,19 @@ foreman_products_rocky9:
       - name: Rocky Linux 9 - BaseOS Kickstart 9.1
         label: rocky-9-baseos-kickstart-9_1
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky9) }}/9.1/BaseOS/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/9.1/BaseOS/x86_64/kickstart/"
       - name: Rocky Linux 9 - AppStream Kickstart 9.1
         label: rocky-9-appstream-kickstart-9_1
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky9) }}/9.1/AppStream/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky_vault) }}/9.1/AppStream/x86_64/kickstart/"
+      - name: Rocky Linux 9 - BaseOS Kickstart 9.2
+        label: rocky-9-baseos-kickstart-9_2
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky9) }}/9.2/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 9 - AppStream Kickstart 9.2
+        label: rocky-9-appstream-kickstart-9_2
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky | default(foreman_default_repo_baseurl_rocky9) }}/9.2/AppStream/x86_64/kickstart/"
 
 foreman_content_views_rocky9:
   - name: cv_rocky9_baseos
