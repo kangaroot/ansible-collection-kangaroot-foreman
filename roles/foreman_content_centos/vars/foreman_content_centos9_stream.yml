@@ -28,14 +28,10 @@ foreman_content_credentials_centos9_stream: []
   # #   # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False) }}"
   # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing-7') }}"
 
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Extras
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
-  # - name: RPM-GPG-KEY-CentOS-SIG-Extras-SHA512
+  # - name: RPM-GPG-KEY-CentOS-SIG-Extras
   #   content_type: gpg_key
-  #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512', split_lines=False, validate_certs=False) }}"
-  #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512') }}"
+  #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
+  #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
 
   # # - name: RPM-GPG-KEY-CentOS-SIG-Atomic
   # #   content_type: gpg_key
@@ -142,7 +138,7 @@ foreman_products_centos9_stream:
         label: centos-9-stream-extras-common
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos9_stream | default(foreman_default_repo_baseurl_centos9_stream) }}/SIGs/9-stream/extras/x86_64/extras-common/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-Extras-SHA512
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Extras
       - name: CentOS 9 Stream - CRB
         label: centos-9-stream-crb
         <<: *foreman_products_defaults

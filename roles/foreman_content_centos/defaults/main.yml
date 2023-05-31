@@ -59,10 +59,6 @@ foreman_content_credentials_centos_main:
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Extras-SHA512
-    content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512') }}"
 
   - name: RPM-GPG-KEY-CentOS-SIG-Atomic
     content_type: gpg_key
