@@ -433,6 +433,7 @@ foreman_products_centos7:
       - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
         label: centos-7-virt-xen-epel
         <<: *foreman_products_on_demand
+        mirroring_policy: "mirror_content_only"
         url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel | default('http://download.fedoraproject.org/pub/epel/') ) }}/7/x86_64"
         gpg_key: RPM-GPG-KEY-EPEL-7
 
