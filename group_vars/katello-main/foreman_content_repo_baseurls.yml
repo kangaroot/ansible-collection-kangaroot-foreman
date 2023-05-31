@@ -88,6 +88,12 @@
 ### Puppet (required for Foreman) ###
 # foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
 
+### Remi Repository ###
+# foreman_repo_baseurl_remi: https://rpms.remirepo.net
+# foreman_repo_baseurl_remi_el7: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
+# foreman_repo_baseurl_remi_el8: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
+# foreman_repo_baseurl_remi_el9: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
+
 ### Rocky Linux ###
 # foreman_repo_baseurl_rocky: https://download.rockylinux.org/pub/rocky
 # foreman_repo_baseurl_rocky8: "{{ foreman_repo_baseurl_rocky | default('https://download.rockylinux.org/pub/rocky') }}"

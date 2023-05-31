@@ -1,0 +1,61 @@
+---
+# foreman remi content group vars file for foreman_content_remi
+
+foreman_content_credentials_remi_el8:
+  - name: RPM-GPG-KEY-remi2018
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_remi | default(foreman_default_repo_baseurl_remi) ~ '/RPM-GPG-KEY-remi2018', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-remi2018') }}"
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-remi2018
+  download_policy: on_demand
+  # download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_remi_el8:
+  - name: Remi Repository
+    label: Remi
+    repositories:
+      - name: Remi - EL8
+        label: remi-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_remi_el8 | default(foreman_default_repo_baseurl_remi_el8) }}/enterprise/8/remi/x86_64/"
+      - name: Remi Modular - EL8
+        label: remi-modular-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_remi_el8 | default(foreman_default_repo_baseurl_remi_el8) }}/enterprise/8/modular/x86_64/"
+      - name: Remi Safe - EL8
+        label: remi-safe-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_remi_el8 | default(foreman_default_repo_baseurl_remi_el8) }}/enterprise/8/safe/x86_64/"
+
+foreman_content_views_remi_el8:
+  - name: cv_remi_el8
+    repositories:
+      - name: Remi - EL8
+        product: Remi Repository
+    allow_promote: False
+  - name: cv_remi_modular_el8
+    repositories:
+      - name: Remi Modular - EL8
+        product: Remi Repository
+    allow_promote: False
+  - name: cv_remi_safe_el8
+    repositories:
+      - name: Remi Safe - EL8
+        product: Remi Repository
+    allow_promote: False
+
+foreman_activation_keys_remi_el8: []
+
+foreman_sync_plan_products_remi_el8:
+  - Remi Repository
+

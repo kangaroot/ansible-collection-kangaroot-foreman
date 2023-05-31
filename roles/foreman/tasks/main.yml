@@ -26,6 +26,8 @@
     - ansible.builtin.import_role:
         name: foreman_content_nginx
     - ansible.builtin.import_role:
+        name: foreman_content_remi
+    - ansible.builtin.import_role:
         name: foreman_content_centos
     - ansible.builtin.import_role:
         name: foreman_content_debian

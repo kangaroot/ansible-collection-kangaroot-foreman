@@ -91,6 +91,12 @@ foreman_enable_microsoft: false
 ### Nginx content data
 foreman_enable_nginx: false
 
+### Remi Repository content data
+foreman_enable_remi: false
+# foreman_enable_remi_el7: false
+# foreman_enable_remi_el8: false
+# foreman_enable_remi_el9: false
+
 ### CentOS content data
 foreman_enable_centos: false
 # foreman_enable_centos7: false
