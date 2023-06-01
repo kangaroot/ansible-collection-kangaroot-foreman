@@ -51,10 +51,6 @@ foreman_provisioning_templates_osubuntu: &foreman_provisioning_templates_osubunt
   operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
 
 foreman_provisioning_templates_main:
-  - name: Kickstart default
-    <<: *foreman_provisioning_templates_osrhel
-    kind: provision
-    locked: yes
   - name: Kickstart default custom packages
     <<: *foreman_provisioning_templates_defaults
     template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_default_custom_packages.erb') }}"
@@ -67,30 +63,6 @@ foreman_provisioning_templates_main:
     <<: *foreman_provisioning_templates_defaults
     template: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/templates/provision_kickstart_default_custom_postnochroot.erb') }}"
     kind: snippet
-  - name: Kickstart default finish
-    <<: *foreman_provisioning_templates_osrhel
-    kind: finish
-    locked: yes
-  - name: Kickstart default iPXE
-    <<: *foreman_provisioning_templates_osrhel
-    kind: iPXE
-    locked: yes
-  - name: Kickstart default PXEGrub
-    <<: *foreman_provisioning_templates_osrhel
-    kind: PXEGrub
-    locked: yes
-  - name: Kickstart default PXEGrub2
-    <<: *foreman_provisioning_templates_osrhel
-    kind: PXEGrub2
-    locked: yes
-  - name: Kickstart default PXELinux
-    <<: *foreman_provisioning_templates_osrhel
-    kind: PXELinux
-    locked: yes
-  - name: Kickstart default user data
-    <<: *foreman_provisioning_templates_osrhel
-    kind: user_data
-    locked: yes
 
   - name: Kickstart Custom
     <<: *foreman_provisioning_templates_osrhel
