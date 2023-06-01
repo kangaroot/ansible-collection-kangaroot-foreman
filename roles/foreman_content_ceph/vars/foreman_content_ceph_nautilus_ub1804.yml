@@ -22,7 +22,7 @@ foreman_products_ceph_nautilus_ub1804:
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-nautilus-ubuntu-bionic
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub1804 | default(foreman_default_repo_baseurl_ceph_nautilus_ub1804) }}/debian-nautilus/"
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub1804 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
         deb_releases: bionic
 

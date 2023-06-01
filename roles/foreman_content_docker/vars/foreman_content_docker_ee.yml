@@ -4,7 +4,7 @@
 foreman_content_credentials_docker_ee_main:
   - name: RPM-GPG-KEY-docker-ee
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) ~ '/rhel/gpg', split_lines=False, validate_eerts=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_docker_ee ~ '/rhel/gpg', split_lines=False, validate_eerts=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-docker-ee') }}"
 
 foreman_content_credentials_docker_ee: "{{ foreman_content_credentials_docker_ee_main | default([]) if foreman_enable_docker_ee | bool else [] |

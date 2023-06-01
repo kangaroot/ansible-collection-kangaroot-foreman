@@ -12,13 +12,9 @@ foreman_enable_docker_ee_el8: false
 foreman_enable_docker_ee_el9: false
 
 
-# foreman_repo_baseurl_docker: https://download.docker.com/linux/centos
-# foreman_repo_baseurl_docker_ce: "{{ foreman_repo_baseurl_docker | default('https://download.docker.com/linux/centos') }}"
-# foreman_repo_baseurl_docker_ee: https://repos.mirantis.com
-
-foreman_default_repo_baseurl_docker: https://download.docker.com/linux/centos
-foreman_default_repo_baseurl_docker_ce: "{{ foreman_repo_baseurl_docker | default(foreman_default_repo_baseurl_docker) }}"
-foreman_default_repo_baseurl_docker_ee: https://repos.mirantis.com
+foreman_repo_baseurl_docker: https://download.docker.com/linux/centos
+foreman_repo_baseurl_docker_ce: "{{ foreman_repo_baseurl_docker }}"
+foreman_repo_baseurl_docker_ee: https://repos.mirantis.com
 
 
 foreman_content_credentials_docker_main: []

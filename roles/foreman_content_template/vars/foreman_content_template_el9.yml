@@ -4,7 +4,7 @@
 foreman_content_credentials_template_el9:
   - name: RPM-GPG-KEY-Template-9
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_template | default(foreman_default_repo_baseurl_template) ~ '/RPM-GPG-KEY-Template-9', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_template ~ '/RPM-GPG-KEY-Template-9', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Template-9') }}"
 
 foreman_products_defaults: &foreman_products_defaults
@@ -27,7 +27,7 @@ foreman_products_template_el9:
       - name: Template Product EL9
         label: template-el9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_template_el9 | default(foreman_default_repo_baseurl_template_el9) }}/9/x86_64/"
+        url: "{{ foreman_repo_baseurl_template_el9 }}/9/x86_64/"
 
 foreman_content_views_template_el9:
   - name: cv_template_el9

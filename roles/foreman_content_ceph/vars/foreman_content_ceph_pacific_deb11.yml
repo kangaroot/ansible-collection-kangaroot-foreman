@@ -22,7 +22,7 @@ foreman_products_ceph_pacific_deb11:
     repositories:
       - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
         label: ceph-pacific-debian-bullseye
-        url: "{{ foreman_repo_baseurl_ceph_pacific_deb11 | default(foreman_default_repo_baseurl_ceph_pacific_deb11) }}/debian-pacific/"
+        url: "{{ foreman_repo_baseurl_ceph_pacific_deb11 }}/debian-pacific/"
         <<: *foreman_products_defaults_deb
         deb_releases: bullseye
 

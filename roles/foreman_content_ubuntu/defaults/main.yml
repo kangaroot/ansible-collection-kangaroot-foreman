@@ -7,15 +7,10 @@ foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
 foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
 
-# foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
-# foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu | default('http://archive.ubuntu.com/ubuntu') }}"
-# foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu | default('http://archive.ubuntu.com/ubuntu') }}"
-# foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu | default('http://archive.ubuntu.com/ubuntu') }}"
-
-foreman_default_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
-foreman_default_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu | default(foreman_default_repo_baseurl_ubuntu) }}"
-foreman_default_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu | default(foreman_default_repo_baseurl_ubuntu) }}"
-foreman_default_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu | default(foreman_default_repo_baseurl_ubuntu) }}"
+foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
+foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu }}"
+foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu }}"
+foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu }}"
 
 
 foreman_content_credentials_ubuntu_main: []

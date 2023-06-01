@@ -22,7 +22,7 @@ foreman_products_ceph_quincy_deb11:
     repositories:
       - name: Ceph packages for amd64 - Quincy - Debian 11 (Bullseye)
         label: ceph-quincy-debian-bullseye
-        url: "{{ foreman_repo_baseurl_ceph_quincy_deb11 | default(foreman_default_repo_baseurl_ceph_quincy_deb11) }}/debian-quincy/"
+        url: "{{ foreman_repo_baseurl_ceph_quincy_deb11 }}/debian-quincy/"
         <<: *foreman_products_defaults_deb
         deb_releases: bullseye
 

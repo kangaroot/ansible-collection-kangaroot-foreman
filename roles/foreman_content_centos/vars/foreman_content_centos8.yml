@@ -2,101 +2,6 @@
 # centos content group vars file for foreman_content_centos
 
 foreman_content_credentials_centos8: []
-  # - name: RPM-GPG-KEY-CentOS-Official
-  #   content_type: gpg_key
-  #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official', split_lines=False, validate_certs=False) }}"
-  #   # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Official', split_lines=False, validate_certs=False) }}"
-  #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Official') }}"
-  # # - name: RPM-GPG-KEY-CentOS-Testing
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing') }}"
-
-  # # - name: RPM-GPG-KEY-CentOS-7
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-7', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-7', split_lines=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-7') }}"
-  # # - name: RPM-GPG-KEY-CentOS-Debug-7
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Debug-7', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Debug-7', split_lines=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Debug-7') }}"
-  # # - name: RPM-GPG-KEY-CentOS-Testing-7
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_centos | default(foreman_default_repo_baseurl_centos) ~ '/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing-7') }}"
-
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Extras
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
-
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Atomic
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Atomic', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Atomic') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Automotive
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Automotive', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Automotive') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Cloud
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Cloud') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ConfigManagement', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ConfigManagement') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Core
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Core', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Core') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-HyperScale
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-HyperScale', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-HyperScale') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Infra
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Infra', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Infra') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-ISA
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ISA', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ISA') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Kmods
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Kmods', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Kmods') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Messaging
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Messaging', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Messaging') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-NFV
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-NFV', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-NFV') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-OpsTools
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-OpsTools', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-OpsTools') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-PaaS
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-PaaS', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-PaaS') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-SCLo
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-SCLo') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Storage
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Storage', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Storage') }}"
-  # # - name: RPM-GPG-KEY-CentOS-SIG-Virtualization
-  # #   content_type: gpg_key
-  # #   content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Virtualization', split_lines=False, validate_certs=False) }}"
-  # #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Virtualization') }}"
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
@@ -117,76 +22,76 @@ foreman_products_centos8:
       - name: CentOS 8 - BaseOS
         label: centos-8-baseos
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/BaseOS/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/os/"
       - name: CentOS 8 - AppStream
         label: centos-8-appstream
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/AppStream/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/os/"
       - name: CentOS 8 - Extras
         label: centos-8-extras
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/extras/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/extras/x86_64/os/"
       - name: CentOS 8 - Plus
         label: centos-8-plus
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/centosplus/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/centosplus/x86_64/os/"
       - name: CentOS 8 - PowerTools
         label: centos-8-powertools
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/PowerTools/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/PowerTools/x86_64/os/"
       - name: CentOS 8 - HighAvailability
         label: centos-8-ha
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/HighAvailability/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/HighAvailability/x86_64/os/"
 
       # - name: CentOS 8 - BaseOS Kickstart 8.0
       #   label: centos-8-baseos-kickstart-8_0
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.0.1905/BaseOS/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/kickstart/"
       # - name: CentOS 8 - AppStream Kickstart 8.0
       #   label: centos-8-appstream-kickstart-8_0
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.0.1905/AppStream/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/kickstart/"
       # - name: CentOS 8 - BaseOS Kickstart 8.1
       #   label: centos-8-baseos-kickstart-8_1
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.1.1911/BaseOS/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/kickstart/"
       # - name: CentOS 8 - AppStream Kickstart 8.1
       #   label: centos-8-appstream-kickstart-8_1
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.1.1911/AppStream/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/kickstart/"
       # - name: CentOS 8 - BaseOS Kickstart 8.2
       #   label: centos-8-baseos-kickstart-8_2
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.2.2004/BaseOS/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/kickstart/"
       # - name: CentOS 8 - AppStream Kickstart 8.2
       #   label: centos-8-appstream-kickstart-8_2
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.2.2004/AppStream/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/kickstart/"
       # - name: CentOS 8 - BaseOS Kickstart 8.3
       #   label: centos-8-baseos-kickstart-8_3
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.3.2011/BaseOS/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/kickstart/"
       # - name: CentOS 8 - AppStream Kickstart 8.3
       #   label: centos-8-appstream-kickstart-8_3
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.3.2011/AppStream/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/kickstart/"
       # - name: CentOS 8 - BaseOS Kickstart 8.4
       #   label: centos-8-baseos-kickstart-8_4
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.4.2105/BaseOS/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/kickstart/"
       # - name: CentOS 8 - AppStream Kickstart 8.4
       #   label: centos-8-appstream-kickstart-8_4
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.4.2105/AppStream/x86_64/kickstart/"
+      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/kickstart/"
       - name: CentOS 8 - BaseOS Kickstart 8.5
         label: centos-8-baseos-kickstart-8_5
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/BaseOS/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
       - name: CentOS 8 - AppStream Kickstart 8.5
         label: centos-8-appstream-kickstart-8_5
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault | default(foreman_default_repo_baseurl_centos_vault) }}/8.5.2111/AppStream/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
 
 foreman_content_views_centos8:
   - name: cv_centos8_baseos

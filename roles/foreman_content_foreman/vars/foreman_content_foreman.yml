@@ -20,47 +20,47 @@ foreman_products_foreman_el8:
       - name: "Foreman {{ foreman_version }} - EL8"
         label: "foreman-{{ foreman_version_label }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/releases/{{ foreman_version }}/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/releases/{{ foreman_version }}/el8/x86_64/"
 
       - name: "Foreman plugins {{ foreman_version }} - EL8"
         label: "foreman-plugins-{{ foreman_version_label }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/plugins/{{ foreman_version }}/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/plugins/{{ foreman_version }}/el8/x86_64/"
 
       - name: "Katello {{ foreman_katello_version }} - EL8"
         label: "katello-{{ foreman_katello_version_label }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/katello/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/katello/{{ foreman_katello_version }}/katello/el8/x86_64/"
 
       - name: "Katello {{ foreman_katello_version }} Candlepin - EL8"
         label: "katello-{{ foreman_katello_version_label }}-candlepin-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/katello/{{ foreman_katello_version }}/candlepin/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/katello/{{ foreman_katello_version }}/candlepin/el8/x86_64/"
 
       - name: "Pulpcore {{ foreman_pulpcore_version }} - EL8"
         label: "pulpcore-{{ foreman_pulpcore_version_label }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/pulpcore/{{ foreman_pulpcore_version }}/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/pulpcore/{{ foreman_pulpcore_version }}/el8/x86_64/"
         gpg_key: RPM-GPG-KEY-pulpcore
 
       - name: "Puppet {{ foreman_puppet_version }} Repository EL8 - x86_64"
         label: "puppet{{ foreman_puppet_version }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) }}/puppet{{ foreman_puppet_version }}/el/8/x86_64"
+        url: "{{ foreman_repo_baseurl_puppet }}/puppet{{ foreman_puppet_version }}/el/8/x86_64"
         gpg_key: RPM-GPG-KEY-puppet
 
       - name: "Foreman Client {{ foreman_version }} - EL7"
         label: "foreman-client-{{ foreman_version_label }}-el7"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/client/{{ foreman_version }}/el7/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/client/{{ foreman_version }}/el7/x86_64/"
       - name: "Foreman Client {{ foreman_version }} - EL8"
         label: "foreman-client-{{ foreman_version_label }}-el8"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/client/{{ foreman_version }}/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/client/{{ foreman_version }}/el8/x86_64/"
       - name: "Foreman Client {{ foreman_version }} - EL9"
         label: "foreman-client-{{ foreman_version_label }}-el9"
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) }}/client/{{ foreman_version }}/el9/x86_64/"
+        url: "{{ foreman_repo_baseurl_foreman }}/client/{{ foreman_version }}/el9/x86_64/"
 
 foreman_content_views_foreman_el8:
   - name: "cv_foreman_{{ foreman_version_label }}_el8"

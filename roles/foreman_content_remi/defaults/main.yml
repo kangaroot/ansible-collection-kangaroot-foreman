@@ -7,15 +7,10 @@ foreman_enable_remi_el8: "{{ foreman_enable_remi | bool }}"
 foreman_enable_remi_el9: "{{ foreman_enable_remi | bool }}"
 
 
-# foreman_repo_baseurl_remi: https://rpms.remirepo.net
-# foreman_repo_baseurl_remi_el7: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
-# foreman_repo_baseurl_remi_el8: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
-# foreman_repo_baseurl_remi_el9: "{{ foreman_repo_baseurl_remi | default('https://rpms.remirepo.net') }}"
-
-foreman_default_repo_baseurl_remi: https://rpms.remirepo.net
-foreman_default_repo_baseurl_remi_el7: "{{ foreman_default_repo_baseurl_remi }}"
-foreman_default_repo_baseurl_remi_el8: "{{ foreman_default_repo_baseurl_remi }}"
-foreman_default_repo_baseurl_remi_el9: "{{ foreman_default_repo_baseurl_remi }}"
+foreman_repo_baseurl_remi: https://rpms.remirepo.net
+foreman_repo_baseurl_remi_el7: "{{ foreman_repo_baseurl_remi }}"
+foreman_repo_baseurl_remi_el8: "{{ foreman_repo_baseurl_remi }}"
+foreman_repo_baseurl_remi_el9: "{{ foreman_repo_baseurl_remi }}"
 
 
 foreman_content_credentials_remi_main: []

@@ -18,7 +18,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main:
   - name: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/dgoodwin/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dgoodwin/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dgoodwin-subscription-manager') }}"
 
 foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] |
@@ -32,7 +32,7 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager_ol6:
     repositories:
       - name: Fedora COPR - dgoodwin:subscription-manager - OL6
         label: copr-dgoodwin-subscription-manager-ol6
-        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dgoodwin/subscription-manager/fedora_copr-6-x86_64/"
+        url: "{{ foreman_repo_baseurl_fedora_copr }}/dgoodwin/subscription-manager/fedora_copr-6-x86_64/"
         <<: *foreman_products_defaults
         gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
 
@@ -42,7 +42,7 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager_ol7:
     repositories:
       - name: Fedora COPR - dgoodwin:subscription-manager - OL7
         label: copr-dgoodwin-subscription-manager-ol7
-        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dgoodwin/subscription-manager/fedora_copr-7-x86_64/"
+        url: "{{ foreman_repo_baseurl_fedora_copr }}/dgoodwin/subscription-manager/fedora_copr-7-x86_64/"
         <<: *foreman_products_defaults
         gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
 
@@ -76,7 +76,7 @@ foreman_content_views_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_con
 foreman_content_credentials_fedora_copr_dmann_subscription_manager_main:
   - name: RPM-GPG-KEY-copr-dmann-subscription-manager
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/dmann/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dmann/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dmann-subscription-manager') }}"
 
 foreman_content_credentials_fedora_copr_dmann_subscription_manager: "{{ foreman_content_credentials_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] |
@@ -89,7 +89,7 @@ foreman_products_fedora_copr_dmann_subscription_manager_ol8:
     repositories:
       - name: Fedora COPR - dmann:subscription-manager - OL8
         label: copr-dmann-subscription-manager-ol8
-        url: "{{ foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) }}/dmann/subscription-manager/fedora_copr-8-x86_64/"
+        url: "{{ foreman_repo_baseurl_fedora_copr }}/dmann/subscription-manager/fedora_copr-8-x86_64/"
         <<: *foreman_products_defaults
         gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
 

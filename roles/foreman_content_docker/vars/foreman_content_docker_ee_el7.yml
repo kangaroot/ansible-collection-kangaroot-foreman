@@ -21,42 +21,42 @@ foreman_products_docker_ee_el7:
     repositories:
       - name: Docker EE Stable - x86_64 - RHEL7
         label: docker-ee-stable-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 17.03 - x86_64 - RHEL7
         label: docker-ee-stable-17_03-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-17.03/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-17.03/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 17.06 - x86_64 - RHEL7
         label: docker-ee-stable-17_06-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-17.06/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-17.06/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 18.03 - x86_64 - RHEL7
         label: docker-ee-stable-18_03-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-18.03/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-18.03/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 18.09 - x86_64 - RHEL7
         label: docker-ee-stable-18_09-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-18.09/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-18.09/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 19.03 - x86_64 - RHEL7
         label: docker-ee-stable-19_03-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-19.03/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-19.03/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 20.10 - x86_64 - RHEL7
         label: docker-ee-stable-20_10-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-20.10/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-20.10/"
         <<: *foreman_products_defaults
 
       - name: Docker EE Stable 23.0 - x86_64 - RHEL7
         label: docker-ee-stable-23_0-rhel7
-        url: "{{ foreman_repo_baseurl_docker_ee | default(foreman_default_repo_baseurl_docker_ee) }}/rhel/7/x86_64/stable-23.0/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/7/x86_64/stable-23.0/"
         <<: *foreman_products_defaults
 
 foreman_content_views_docker_ee_el7:

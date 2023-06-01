@@ -22,32 +22,32 @@ foreman_products_debian10:
       - name: Debian 10 (Buster)
         label: debian-10
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}/"
+        url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster
       - name: Debian 10 (Buster) - Updates
         label: debian-10-updates
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}/"
+        url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-updates
       # - name: Debian 10 (Buster) - Proposed Updates
       #   label: debian-10-proposed-updates
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-proposed-updates
       - name: Debian 10 (Buster) - Backports
         label: debian-10-backports
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}/"
+        url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-backports
       # - name: Debian 10 (Buster) - Backports - Sloppy
       #   label: debian-10-backports-sloppy
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-backports-sloppy
       - name: Debian 10 (Buster) - Security updates
         label: debian-10-security
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian10 | default(foreman_default_repo_baseurl_debian10) }}-security/"
+        url: "{{ foreman_repo_baseurl_debian10 }}-security/"
         deb_releases: buster/updates
 
 foreman_content_views_debian10:

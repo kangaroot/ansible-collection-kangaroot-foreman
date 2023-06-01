@@ -4,7 +4,7 @@
 foreman_content_credentials_epel_el8:
   - name: RPM-GPG-KEY-EPEL-8
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) ~ '/RPM-GPG-KEY-EPEL-8', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel ~ '/RPM-GPG-KEY-EPEL-8', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-EPEL-8') }}"
 
 foreman_products_defaults: &foreman_products_defaults
@@ -27,28 +27,28 @@ foreman_products_epel_el8:
       - name: Extra Packages for Enterprise Linux 8 - x86_64
         label: epel-8
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/8/Everything/x86_64/"
+        url: "{{ foreman_repo_baseurl_epel }}/8/Everything/x86_64/"
       - name: Extra Packages for Enterprise Linux Modular 8 - x86_64
         label: epel-8-modular
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/8/Modular/x86_64/"
+        url: "{{ foreman_repo_baseurl_epel }}/8/Modular/x86_64/"
         mirroring_policy: "mirror_complete"
       - name: Extra Packages for Enterprise Linux 8 - Next - x86_64
         label: epel-8-next
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/next/8/Everything/x86_64/"
+        url: "{{ foreman_repo_baseurl_epel }}/next/8/Everything/x86_64/"
       # - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
       #   label: epel-8-playground
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/playground/8/Everything/x86_64/os/"
+      #   url: "{{ foreman_repo_baseurl_epel }}/playground/8/Everything/x86_64/os/"
       # - name: Extra Packages for Enterprise Linux 8 - Testing - x86_64
       #   label: epel-8-testing
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/8/Everything/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_epel }}/testing/8/Everything/x86_64/"
       # - name: Extra Packages for Enterprise Linux Modular 8 - Testing - x86_64
       #   label: epel-8-modular-testing
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/8/Modular/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_epel }}/testing/8/Modular/x86_64/"
       #   mirroring_policy: "mirror_complete"
 
 foreman_content_views_epel_el8:

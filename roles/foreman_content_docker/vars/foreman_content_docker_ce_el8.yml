@@ -21,7 +21,7 @@ foreman_products_docker_ce_el8:
     repositories:
       - name: Docker CE Stable - x86_64 - EL8
         label: docker-ce-stable-el8
-        url: "{{ foreman_repo_baseurl_docker_ce | default(foreman_default_repo_baseurl_docker_ce) }}/8/x86_64/stable"
+        url: "{{ foreman_repo_baseurl_docker_ce }}/8/x86_64/stable"
         <<: *foreman_products_defaults
 
 foreman_content_views_docker_ce_el8:

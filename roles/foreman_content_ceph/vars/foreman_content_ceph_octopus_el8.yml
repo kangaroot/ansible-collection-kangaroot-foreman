@@ -21,11 +21,11 @@ foreman_products_ceph_octopus_el8:
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL8
         label: ceph-octopus-el8
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 | default(foreman_default_repo_baseurl_ceph_octopus_el8) }}/rpm-octopus/el8/x86_64/"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/x86_64/"
         <<: *foreman_products_defaults
       - name: Ceph noarch packages - Octopus - EL8
         label: ceph-noarch-octopus-el8
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 | default(foreman_default_repo_baseurl_ceph_octopus_el8) }}/rpm-octopus/el8/noarch"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/noarch"
         <<: *foreman_products_defaults
 
 foreman_content_views_ceph_octopus_el8:

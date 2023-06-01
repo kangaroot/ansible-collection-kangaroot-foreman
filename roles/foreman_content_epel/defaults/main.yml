@@ -7,9 +7,7 @@ foreman_enable_epel_el8: "{{ foreman_enable_epel | bool }}"
 foreman_enable_epel_el9: "{{ foreman_enable_epel | bool }}"
 
 
-# foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
-
-foreman_default_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
+foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
 
 
 foreman_content_credentials_epel_main: []

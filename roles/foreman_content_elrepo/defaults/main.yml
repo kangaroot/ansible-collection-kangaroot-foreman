@@ -7,9 +7,7 @@ foreman_enable_elrepo_el8: "{{ foreman_enable_elrepo | bool }}"
 foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 
-# foreman_repo_baseurl_elrepo: http://elrepo.org/linux
-
-foreman_default_repo_baseurl_elrepo: http://elrepo.org/linux
+foreman_repo_baseurl_elrepo: http://elrepo.org/linux
 
 
 foreman_content_credentials_elrepo_main:

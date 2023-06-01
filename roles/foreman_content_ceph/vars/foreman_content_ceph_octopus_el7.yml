@@ -21,11 +21,11 @@ foreman_products_ceph_octopus_el7:
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL7
         label: ceph-octopus-el7
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 | default(foreman_default_repo_baseurl_ceph_octopus_el7) }}/rpm-octopus/el7/x86_64/"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/x86_64/"
         <<: *foreman_products_defaults
       - name: Ceph noarch packages - Octopus - EL7
         label: ceph-noarch-octopus-el7
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 | default(foreman_default_repo_baseurl_ceph_octopus_el7) }}/rpm-octopus/el7/noarch"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/noarch"
         <<: *foreman_products_defaults
 
 foreman_content_views_ceph_octopus_el7:

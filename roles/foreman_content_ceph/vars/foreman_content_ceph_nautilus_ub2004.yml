@@ -22,7 +22,7 @@ foreman_products_ceph_nautilus_ub2004:
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-nautilus-ubuntu-focal
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub2004 | default(foreman_default_repo_baseurl_ceph_nautilus_ub2004) }}/debian-nautilus/"
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub2004 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
         deb_releases: focal
 

@@ -22,7 +22,7 @@ foreman_products_ceph_pacific_ub1804:
     repositories:
       - name: Ceph packages for amd64 - Pacific - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-pacific-ubuntu-bionic
-        url: "{{ foreman_repo_baseurl_ceph_pacific_ub2004 | default(foreman_default_repo_baseurl_ceph_pacific_ub2004) }}/debian-pacific/"
+        url: "{{ foreman_repo_baseurl_ceph_pacific_ub2004 }}/debian-pacific/"
         <<: *foreman_products_defaults_deb
         deb_releases: bionic
 

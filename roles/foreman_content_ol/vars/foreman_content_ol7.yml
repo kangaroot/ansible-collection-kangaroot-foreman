@@ -23,569 +23,569 @@ foreman_products_ol7:
       - name: Oracle Linux 7 Latest (x86_64)
         description: All packages released for Oracle Linux 7 (x86_64) including the latest errata packages. (x86_64)
         label: ol7_x86_64_latest
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/latest/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/latest/x86_64/"
         <<: *foreman_products_defaults
 
       ### Oracle Linux 7 Latest Optional Packages (x86_64) | ol7_x86_64_optional_latest ###
       - name: Oracle Linux 7 Latest Optional Packages (x86_64)
         description: All optional packages released for Oracle Linux 7 (x86_64) including the latest errata packages. (x86_64)
         label: ol7_x86_64_optional_latest
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/optional/latest/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/optional/latest/x86_64/"
         <<: *foreman_products_defaults
 
       ### Oracle Linux 7 Addons (x86_64) | ol7_x86_64_addons ###
       - name: Oracle Linux 7 Addons (x86_64)
         description: Oracle Linux 7 Addons (x86_64).
         label: ol7_x86_64_addons
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/addons/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/addons/x86_64/"
         <<: *foreman_products_defaults
       ### Oracle Linux 7 (x86_64) Development | ol7_x86_64_developer ###
       - name: Oracle Linux 7 (x86_64) Development
         description: Latest packages for creating test and development environments - Oracle LInux 7 (x86_64)
         label: ol7_x86_64_developer
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/x86_64/"
         <<: *foreman_products_defaults
       ### EPEL Packages for creating test and development environments for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_EPEL ###
       - name: EPEL Packages for creating test and development environments for Oracle Linux 7 (x86_64)
         description: Latest EPEL packages for creating test and development environments - Oracle LInux 7 (x86_64)
         label: ol7_x86_64_developer_EPEL
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_EPEL/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_EPEL/x86_64/"
         <<: *foreman_products_defaults
       ### Oracle Software Collections for Oracle Linux 7 (x86_64) | ol7_x86_64_SoftwareCollections ###
       - name: Oracle Software Collections for Oracle Linux 7 (x86_64)
         description: Latest Oracle Software Collections 3.0 packages for Oracle Linux 7 (x86_64).
         label: ol7_x86_64_SoftwareCollections
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/SoftwareCollections/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/SoftwareCollections/x86_64/"
         <<: *foreman_products_defaults
 
       ### Unbreakable Enterprise Kernel Release 3 for Oracle Linux 7 (x86_64) - Latest | ol7_x86_64_UEKR3 ###
       - name: Unbreakable Enterprise Kernel Release 3 for Oracle Linux 7 (x86_64) - Latest
         description: Latest packages for Unbreakable Enterprise Kernel Release 3 for Oracle Linux 7 (x86_64)
         label: ol7_x86_64_UEKR3
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR3/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR3/x86_64/"
         <<: *foreman_products_defaults
       # ### OFED supporting tool packages for Unbreakable Enterprise Kernel on Oracle Linux 7 (x86_64) | ol7_x86_64_UEKR3_OFED20 ###
       # - name: OFED supporting tool packages for Unbreakable Enterprise Kernel on Oracle Linux 7 (x86_64)
       #   description: Latest OpenFabrics Enterprise Distribution (OFED) supporting tools for the Unbreakable Enterprise Kernel (UEK) on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_UEKR3_OFED20
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR3_OFED20/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR3_OFED20/x86_64/"
       #   <<: *foreman_products_defaults
       ### Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64) | ol7_x86_64_UEKR4 ###
       - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64)
         description: Latest packages for Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64)
         label: ol7_x86_64_UEKR4
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR4/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR4/x86_64/"
         <<: *foreman_products_defaults
       # ### OFED supporting tool packages for Unbreakable Enterprise Kernel Release 4 on Oracle Linux 7 (x86_64) | ol7_x86_64_UEKR4_OFED ###
       # - name: OFED supporting tool packages for Unbreakable Enterprise Kernel Release 4 on Oracle Linux 7 (x86_64)
       #   description: Latest OpenFabrics Enterprise Distribution (OFED) supporting tools for the Unbreakable Enterprise Kernel Release 4 (UEK) on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_UEKR4_OFED
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR4/OFED/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR4/OFED/x86_64/"
       #   <<: *foreman_products_defaults
       ### Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64) | ol7_x86_64_UEKR5 ###
       - name: Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
         description: Latest packages for Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
         label: ol7_x86_64_UEKR5
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR5/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR5/x86_64/"
         <<: *foreman_products_defaults
       ### Oracle Linux 7 Unbreakable Enterprise Kernel Release 5 RDMA (x86_64) | ol7_x86_64_UEKR5_RDMA ###
       - name: Oracle Linux 7 Unbreakable Enterprise Kernel Release 5 RDMA (x86_64)
         description: Userspace utilities for configuring RDMA with Unbreakable Enterprise Kernel Release 5 on Oracle Linux 7 (x86_64).
         label: ol7_x86_64_UEKR5_RDMA
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR5/RDMA/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR5/RDMA/x86_64/"
         <<: *foreman_products_defaults
       # ### Developer preview of Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_UEKR5 ###
       # - name: Developer preview of Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
       #   description: Latest developer preview of Unbreakable Enterprise Kernel Release 5 packages for creating test and development environments (not for production use) - Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_developer_UEKR5
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_UEKR5/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_UEKR5/x86_64/"
       #   <<: *foreman_products_defaults
       ### Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64) | ol7_x86_64_UEKR6 ###
       - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
         description: Latest Unbreakable Enterprise Kernel Release 6 packages for Oracle Linux 7 (x86_64)
         label: ol7_x86_64_UEKR6
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR6/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR6/x86_64/"
         <<: *foreman_products_defaults
       ### Oracle Linux 7 (x86_64) UEK Release 6 RDMA | ol7_x86_64_UEKR6_RDMA ###
       - name: Oracle Linux 7 (x86_64) UEK Release 6 RDMA
         description: Latest RDMA packages for Unbreakable Enterprise Kernel Release 6 packages on Oracle Linux 7 for the Oracle Integrated Stack.
         label: ol7_x86_64_UEKR6_RDMA
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/UEKR6/RDMA/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/UEKR6/RDMA/x86_64/"
         <<: *foreman_products_defaults
       # ### Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_UEKR6 ###
       # - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
       #   description: Latest developer preview of Unbreakable Enterprise Kernel Release 6 packages for creating test and development environments (not for production use) - Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_developer_UEKR6
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/UEKR6/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/UEKR6/x86_64/"
       #   <<: *foreman_products_defaults
       ### Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 7 (x86_64) | ol7_x86_64_MODRHCK ###
       - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 7 (x86_64)
         description: Latest Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 7 (x86_64).
         label: ol7_x86_64_MODRHCK
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MODRHCK/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MODRHCK/x86_64/"
         <<: *foreman_products_defaults
 
       # ### MySQL 5.5 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL55_community ###
       # - name: MySQL 5.5 for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 5.5 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL55_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL55/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL55/x86_64/"
       #   <<: *foreman_products_defaults
       # ### MySQL 5.6 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL56_community ###
       # - name: MySQL 5.6 for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 5.6 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL56_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL56/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL56/x86_64/"
       #   <<: *foreman_products_defaults
       # ### MySQL 5.7 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL57_community ###
       # - name: MySQL 5.7 for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 5.7 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL57_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL57_community/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL57_community/x86_64/"
       #   <<: *foreman_products_defaults
       # ### MySQL 8.0 Connectors Community for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_connectors_community ###
       # - name: MySQL 8.0 Connectors Community for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 8.0 Connectors Community packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL80_connectors_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL80/connectors/community/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL80/connectors/community/x86_64/"
       #   <<: *foreman_products_defaults
       # ### MySQL 8.0 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_community ###
       # - name: MySQL 8.0 for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 8.0 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL80_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL80_community/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL80_community/x86_64/"
       #   <<: *foreman_products_defaults
       # ### MySQL 8.0 Tools Community for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_tools_community ###
       # - name: MySQL 8.0 Tools Community for Oracle Linux 7 (x86_64)
       #   description: Latest MySQL 8.0 Tools Community packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_MySQL80_tools_community
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/MySQL80/tools/community/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/MySQL80/tools/community/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Oracle Instant Client for Oracle Linux 7 (x86_64) - License Included | ol7_x86_64_oracle_instantclient ###
       # - name: Oracle Instant Client for Oracle Linux 7 (x86_64) - License Included
       #   description: Oracle Instant Client packages for Oracle Linux 7 (x86_64) .
       #   label: ol7_x86_64_oracle_instantclient
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/oracle/instantclient/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/oracle/instantclient/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Instant Client 21 for Oracle Linux 7 (x86_64) - License Included | ol7_x86_64_oracle_instantclient21 ###
       # - name: Oracle Instant Client 21 for Oracle Linux 7 (x86_64) - License Included
       #   description: Oracle Instant Client 21 packages for Oracle Linux 7 (x86_64) .
       #   label: ol7_x86_64_oracle_instantclient21
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/oracle/instantclient21/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/oracle/instantclient21/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle ASMlib for Oracle Linux 7 (x86_64) | ol7_x86_64_oracle ###
       # - name: Oracle ASMlib for Oracle Linux 7 (x86_64)
       #   description: Oracle ASMlib for Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_oracle
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/oracle/software/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/oracle/software/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### KVM Utilities for Oracle Linux 7 (x86_64) | ol7_x86_64_kvm_utils ###
       # - name: KVM Utilities for Oracle Linux 7 (x86_64)
       #   description: Latest packages for KVM Utilities for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_kvm_utils
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/kvm/utils/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/kvm/utils/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Developer Preview of KVM Utilities for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_kvm_utils ###
       # - name: Developer Preview of KVM Utilities for Oracle Linux 7 (x86_64)
       #   description: Latest KVM Utility packages for test and development for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_kvm_utils
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/kvm/utils/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/kvm/utils/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Ceph Storage for Oracle Linux Release 1.0 (Oracle Linux 7.1 and later) | ol7_x86_64_ceph10 ###
       # - name: Ceph Storage for Oracle Linux Release 2.0 (Oracle Linux 7.2 and later)
       #   description: Latest packages for Ceph Storage for Oracle Linux Release 1.0 (Oracle Linux 7.1 and later).
       #   label: ol7_x86_64_ceph10
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ceph10/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ceph10/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Ceph Storage for Oracle Linux Release 2.0 (Oracle Linux 7.2 and later) | ol7_x86_64_ceph ###
       # - name: Ceph Storage for Oracle Linux Release 2.0 (Oracle Linux 7.2 and later)
       #   description: Latest packages for Ceph Storage for Oracle Linux Release 2.0 (Oracle Linux 7.2 and later).
       #   label: ol7_x86_64_ceph
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ceph/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ceph/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Ceph Storage for Oracle Linux Release 3.0 (Oracle Linux 7.5 and later) | ol7_x86_64_ceph30 ###
       # - name: Ceph Storage for Oracle Linux Release 3.0 (Oracle Linux 7.5 and later)
       #   description: Latest packages for Ceph Storage for Oracle Linux Release 3.0 (Oracle Linux 7.5 and later).
       #   label: ol7_x86_64_ceph30
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ceph30/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ceph30/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Glusterfs 3.12 for Oracle Linux 7 (x86_64) | ol7_x86_64_gluster312 ###
       # - name: Glusterfs 3.12 for Oracle Linux 7 (x86_64)
       #   description: Latest GlusterFs 3.12 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_gluster312
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/gluster312/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/gluster312/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Glusterfs 4.1 for Oracle Linux 7 (x86_64) | ol7_x86_64_gluster41 ###
       # - name: Glusterfs 4.1 for Oracle Linux 7 (x86_64)
       #   description: Latest GlusterFs 4.1 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_gluster41
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/gluster41/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/gluster41/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Gluster 5 for Oracle Linux 7 (x86_64) | ol7_x86_64_gluster5 ###
       # - name: Gluster 5 for Oracle Linux 7 (x86_64)
       #   description: Latest Gluster 5 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_gluster5
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/gluster5/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/gluster5/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Gluster 6 for Oracle Linux 7 (x86_64) | ol7_x86_64_gluster6 ###
       # - name: Gluster 6 for Oracle Linux 7 (x86_64)
       #   description: Latest Gluster 6 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_gluster6
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/gluster6/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/gluster6/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Gluster 8 for Oracle Linux 7 (x86_64) | ol7_x86_64_gluster8 ###
       # - name: Gluster 8 for Oracle Linux 7 (x86_64)
       #   description: Latest Gluster 8 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_gluster8
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/gluster8/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/gluster8/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Oracle OpenStack 2.0 (x86_64) | ol7_x86_64_openstack20 ###
       # - name: Oracle OpenStack 2.0 (x86_64)
       #   description: Latest for Oracle OpenStack version 2.0 .
       #   label: ol7_x86_64_openstack20
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack20/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack20/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle OpenStack 2.1 for Oracle Linux 7 (x86_64) | ol7_x86_64_openstack21 ###
       # - name: Oracle OpenStack 2.1 for Oracle Linux 7 (x86_64)
       #   description: Latest for Oracle OpenStack version 2.1 for Oracle Linux 7 (x86_64) .
       #   label: ol7_x86_64_openstack21
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack21/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack21/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle OpenStack 3.0 for Oracle Linux 7 (x86_64) | ol7_x86_64_openstack30 ###
       # - name: Oracle OpenStack 3.0 for Oracle Linux 7 (x86_64)
       #   description: Latest for Oracle OpenStack version 3.0 .
       #   label: ol7_x86_64_openstack30
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack30/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack30/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Extra development packages for Oracle OpenStack 3.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack_extras ###
       # - name: Extra development packages for Oracle OpenStack 3.0 on Oracle Linux 7 (x86_64)
       #   description: Latest Extra development packages for Oracle OpenStack version 3.0
       #   label: ol7_x86_64_openstack_extras
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack_extras/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack_extras/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle OpenStack 4.0 for Oracle Linux 7 (x86_64) | ol7_x86_64_openstack40 ###
       # - name: Oracle OpenStack 4.0 for Oracle Linux 7 (x86_64)
       #   description: Latest Packages for Oracle OpenStack version 4.0 .
       #   label: ol7_x86_64_openstack40
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack40/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack40/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Extra development packages for Oracle OpenStack 4.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack40_extras ###
       # - name: Extra development packages for Oracle OpenStack 4.0 on Oracle Linux 7 (x86_64)
       #   description: Latest Extra development packages for Oracle OpenStack version 4.0
       #   label: ol7_x86_64_openstack40_extras
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack40_extras/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack40_extras/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle OpenStack 5.0 for Oracle Linux 7 (x86_64) | ol7_x86_64_openstack50 ###
       # - name: Oracle OpenStack 5.0 for Oracle Linux 7 (x86_64)
       #   description: Latest Packages for Oracle OpenStack version 5.0 .
       #   label: ol7_x86_64_openstack50
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack50/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack50/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Extra development packages for Oracle OpenStack 5.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack50_extras ###
       # - name: Extra development packages for Oracle OpenStack 5.0 on Oracle Linux 7 (x86_64)
       #   description: Latest Extra development packages for Oracle OpenStack version 5.0
       #   label: ol7_x86_64_openstack50_extras
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/openstack50_extras/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/openstack50_extras/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### oVirt Release 4.2 on Oracle Linux 7 (x86_64) | ol7_x86_64_ovirt42 ###
       # - name: oVirt Release 4.2 on Oracle Linux 7 (x86_64)
       #   description: Latest packages for oVirt Release 4.2 on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_ovirt42
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ovirt42/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ovirt42/x86_64/"
       #   <<: *foreman_products_defaults
       # ### oVirt Release 4.2 on Oracle Linux 7 (x86_64) - Extra | ol7_x86_64_ovirt42_extras ###
       # - name: oVirt Release 4.2 on Oracle Linux 7 (x86_64) - Extra
       #   description: Latest extra packages for oVirt Release 4.2 on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_ovirt42_extras
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ovirt42/extras/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ovirt42/extras/x86_64/"
       #   <<: *foreman_products_defaults
       # ### oVirt Release 4.3 on Oracle Linux 7 (x86_64) | ol7_x86_64_ovirt43 ###
       # - name: oVirt Release 4.3 on Oracle Linux 7 (x86_64)
       #   description: Latest packages for oVirt Release 4.3 on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_ovirt43
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ovirt43/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ovirt43/x86_64/"
       #   <<: *foreman_products_defaults
       # ### oVirt Release 4.3 on Oracle Linux 7 (x86_64) - Extra | ol7_x86_64_ovirt43_extras ###
       # - name: oVirt Release 4.3 on Oracle Linux 7 (x86_64) - Extra
       #   description: Latest extra packages for oVirt Release 4.3 on Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_ovirt43_extras
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/ovirt43/extras/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/ovirt43/extras/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Oracle Linux Cloud Native Environment (x86_64) | ol7_x86_64_olcne ###
       # - name: Oracle Linux Cloud Native Environment (x86_64)
       #   description: Latest packages for components of the Oracle Linux Cloud Native environment (x86_64)
       #   label: ol7_x86_64_olcne
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Cloud Native Environment 1.1 (x86_64) | ol7_x86_64_olcne11 ###
       # - name: Oracle Linux Cloud Native Environment 1.1 (x86_64)
       #   description: Packages for components of the 1.1 release of Oracle Linux Cloud Native environment (x86_64)
       #   label: ol7_x86_64_olcne11
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne11/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne11/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Cloud Native Environment 1.2 - Oracle LInux 7 (x86_64) | ol7_x86_64_olcne12 ###
       # - name: Oracle Linux Cloud Native Environment 1.2 - Oracle LInux 7 (x86_64)
       #   description: Packages for components of the 1.2 release of Oracle Linux Cloud Native environment for Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_olcne12
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne12/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne12/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Cloud Native Environment 1.3 - Oracle LInux 7 (x86_64) | ol7_x86_64_olcne13 ###
       # - name: Oracle Linux Cloud Native Environment 1.3 - Oracle LInux 7 (x86_64)
       #   description: Packages for components of the 1.3 release of Oracle Linux Cloud Native environment for Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_olcne13
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne13/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne13/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Cloud Native Environment 1.4 - Oracle LInux 7 (x86_64) | ol7_x86_64_olcne14 ###
       # - name: Oracle Linux Cloud Native Environment 1.4 - Oracle LInux 7 (x86_64)
       #   description: Packages for components of the 1.4 release of Oracle Linux Cloud Native environment for Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_olcne14
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne14/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne14/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Cloud Native Environment 1.5 - Oracle LInux 7 (x86_64) | ol7_x86_64_olcne15 ###
       # - name: Oracle Linux Cloud Native Environment 1.5 - Oracle LInux 7 (x86_64)
       #   description: Packages for components of the 1.5 release of Oracle Linux Cloud Native environment for Oracle Linux 7 (x86_64)
       #   label: ol7_x86_64_olcne15
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/olcne15/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/olcne15/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Developer Preview for Oracle Linux Cloud Native Environment (x86_64) | ol7_x86_64_developer_olcne ###
       # - name: Developer Preview for Oracle Linux Cloud Native Environment (x86_64)
       #   description: Developer preview packages for components of the Oracle Linux Cloud Native environment (x86_64)
       #   label: ol7_x86_64_developer_olcne
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/olcne/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/olcne/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Leapp Upgrade Utilities for Oracle Linux 7 (x86_64) | ol7_x86_64_leapp ###
       # - name: Leapp Upgrade Utilities for Oracle Linux 7 (x86_64)
       #   description: Latest packages for in-place upgrade from Oracle Linux 7 to Oracle Linux 8 (x86_64) .
       #   label: ol7_x86_64_leapp
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/leapp/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/leapp/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang110 ###
       # - name: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang110
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang110/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang110/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang111 ###
       # - name: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang111
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang111/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang111/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang112 ###
       # - name: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang112
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang112/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang112/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang113 ###
       # - name: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang113
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang113/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang113/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang114 ###
       # - name: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang114
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang114/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang114/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang115 ###
       # - name: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang115
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang115/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang115/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang116 ###
       # - name: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang116
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang116/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang116/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang117 ###
       # - name: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang117
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang117/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang117/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang118 ###
       # - name: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang118
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang118/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang118/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang119 ###
       # - name: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64)
       #   description: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_golang119
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/golang119/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang119/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Latest PHP 7.4 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_php74 ###
       # - name: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64)
       #   description: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_developer_php74
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/php74/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/php74/x86_64/"
       #   <<: *foreman_products_defaults
 
       # - name: Oracle Linux 7 Node.js 4 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs4
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_nodejs4/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs4/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 6 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs6
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_nodejs6/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs6/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 8 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs8
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_nodejs8/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs8/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 10 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs10
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer_nodejs10/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs10/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 12 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs12
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/nodejs12/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs12/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 14 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs14
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/nodejs14/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs14/x86_64/"
       #   <<: *foreman_products_defaults
       # - name: Oracle Linux 7 Node.js 16 Packages for Development and test (x86_64)
       #   label: ol7_developer_nodejs16
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/developer/nodejs16/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs16/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Spacewalk Client 2.6 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk26_client ###
       # - name: Spacewalk Client 2.6 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Client 2.6 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk26_client
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk26/client/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk26/client/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Spacewalk Server 2.6 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk26_server ###
       # - name: Spacewalk Server 2.6 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Server 2.6 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk26_server
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk26/server/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk26/server/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Spacewalk Client 2.7 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk27_client ###
       # - name: Spacewalk Client 2.7 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Client 2.7 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk27_client
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk27/client/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk27/client/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Spacewalk Server 2.7 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk27_server ###
       # - name: Spacewalk Server 2.7 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Server 2.7 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk27_server
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk27/server/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk27/server/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Spacewalk Client 2.10 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk210_client ###
       # - name: Spacewalk Client 2.10 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Client 2.10 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk210_client
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk210/client/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk210/client/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Spacewalk Server 2.10 for Oracle Linux 7 (x86_64) | ol7_x86_64_spacewalk210_server ###
       # - name: Spacewalk Server 2.10 for Oracle Linux 7 (x86_64)
       #   description: All Spacewalk Server 2.10 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_spacewalk210_server
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/spacewalk210/server/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/spacewalk210/server/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Manager (formerly Spacewalk) Client 2.10 for Oracle Linux 7 (x86_64) | ol7_x86_64_oraclelinuxmanager210_client ###
       # - name: Oracle Linux Manager (formerly Spacewalk) Client 2.10 for Oracle Linux 7 (x86_64)
       #   description: All Oracle Linux Manager (formerly Spacewalk) Client 2.10 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_oraclelinuxmanager210_client
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/oraclelinuxmanager210/client/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/oraclelinuxmanager210/client/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux Manager (formerly Spacewalk) Server 2.10 for Oracle Linux 7 (x86_64) | ol7_x86_64_oraclelinuxmanager210_server ###
       # - name: Oracle Linux Manager (formerly Spacewalk) Server 2.10 for Oracle Linux 7 (x86_64)
       #   description: All Oracle Linux Manager (formerly Spacewalk) Server 2.10 packages released for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_oraclelinuxmanager210_server
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/oraclelinuxmanager210/server/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/oraclelinuxmanager210/server/x86_64/"
       #   <<: *foreman_products_defaults
 
       # ### Oracle Linux 7 GA installation media copy (x86_64) | ol7_x86_64_u0_base ###
       # - name: Oracle Linux 7 GA installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 GA (x86_64). No errata included
       #   label: ol7_x86_64_u0_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/0/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/0/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 1 installation media copy (x86_64) | ol7_x86_64_u1_base ###
       # - name: Oracle Linux 7 Update 1 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 1 (x86_64). No errata included
       #   label: ol7_x86_64_u1_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/1/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/1/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 2 installation media copy (x86_64) | ol7_x86_64_u2_base ###
       # - name: Oracle Linux 7 Update 2 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 2 (x86_64). No errata included
       #   label: ol7_x86_64_u2_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/2/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/2/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 3 installation media copy (x86_64) | ol7_x86_64_u3_base ###
       # - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 3 (x86_64). No errata included
       #   label: ol7_x86_64_u3_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/3/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/3/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 4 installation media copy (x86_64) | ol7_x86_64_u4_base ###
       # - name: Oracle Linux 7 Update 4 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 4 (x86_64). No errata included
       #   label: ol7_x86_64_u4_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/4/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/4/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 5 installation media copy (x86_64) | ol7_x86_64_u5_base ###
       # - name: Oracle Linux 7 Update 5 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 5 (x86_64). No errata included
       #   label: ol7_x86_64_u5_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/5/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/5/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 6 installation media copy (x86_64) | ol7_x86_64_u6_base ###
       # - name: Oracle Linux 7 Update 6 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 6 (x86_64). No errata included
       #   label: ol7_x86_64_u6_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/6/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/6/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 7 installation media copy (x86_64) | ol7_x86_64_u7_base ###
       # - name: Oracle Linux 7 Update 7 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 7 (x86_64). No errata included
       #   label: ol7_x86_64_u7_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/7/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/7/base/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 8 installation media copy (x86_64) | ol7_x86_64_u8_base ###
       # - name: Oracle Linux 7 Update 8 installation media copy (x86_64)
       #   description: All packages released for Oracle Linux 7 Update 8 (x86_64). No errata included
       #   label: ol7_x86_64_u8_base
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/8/base/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/8/base/x86_64/"
       #   <<: *foreman_products_defaults
       ### Oracle Linux 7 Update 9 installation media copy (x86_64) | ol7_x86_64_u9_base ###
       - name: Oracle Linux 7 Update 9 installation media copy (x86_64)
         description: All packages released for Oracle Linux 7 Update 9 (x86_64). No errata included
         label: ol7_x86_64_u9_base
-        url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/9/base/x86_64/"
+        url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/9/base/x86_64/"
         <<: *foreman_products_defaults
 
       # ### Oracle Linux 7 (x86_64) Security Validations | ol7_x86_64_security_validation ###
       # - name: Oracle Linux 7 (x86_64) Security Validations
       #   description: Packages delivered for security validations, like FIPS or common criteria for Oracle Linux 7 (x86_64).
       #   label: ol7_x86_64_security_validation
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/security/validation/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/security/validation/x86_64/"
       #   <<: *foreman_products_defaults
       # ### Oracle Linux 7 Update 8 Security Validations packages (x86_64) | ol7_x86_64_u8_security_validation ###
       # - name: Oracle Linux 7 Update 8 Security Validations packages (x86_64)
       #   description: Packages delivered for security validations, like FIPS or common criteria for Oracle Linux 7 Update 8 (x86_64).
       #   label: ol7_x86_64_u8_security_validation
-      #   url: "{{ foreman_repo_baseurl_oracle7 | default(foreman_default_repo_baseurl_oracle7) }}/OL7/8/security/validation/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/8/security/validation/x86_64/"
       #   <<: *foreman_products_defaults
 
       # - name: Oracle Linux 7 Debuginfo (x86_64)

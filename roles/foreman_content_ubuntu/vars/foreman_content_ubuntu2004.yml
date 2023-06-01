@@ -22,27 +22,27 @@ foreman_products_ubuntu2004:
       - name: Ubuntu 20.04 LTS (Focal Fossa)
         label: ubuntu-2004
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2004 | default(foreman_default_repo_baseurl_ubuntu2004) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Updates
         label: ubuntu-2004-updates
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2004 | default(foreman_default_repo_baseurl_ubuntu2004) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-updates
       # - name: Ubuntu 20.04 LTS (Focal Fossa) - Proposed Updates
       #   label: ubuntu-2004-proposed
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_ubuntu2004 | default(foreman_default_repo_baseurl_ubuntu2004) }}/"
+      #   url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
       #   deb_releases: focal-proposed
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Backports
         label: ubuntu-2004-backports
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2004 | default(foreman_default_repo_baseurl_ubuntu2004) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-backports
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Security updates
         label: ubuntu-2004-security
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2004 | default(foreman_default_repo_baseurl_ubuntu2004) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-security
 
 foreman_content_views_ubuntu2004:

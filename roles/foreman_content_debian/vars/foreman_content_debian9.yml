@@ -22,32 +22,32 @@ foreman_products_debian9:
       - name: Debian 9 (Stretch)
         label: debian-9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/"
+        url: "{{ foreman_repo_baseurl_debian9 }}/"
         deb_releases: stretch
       - name: Debian 9 (Stretch) - Updates
         label: debian-9-updates
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/"
+        url: "{{ foreman_repo_baseurl_debian9 }}/"
         deb_releases: stretch-updates
       # - name: Debian 9 (Stretch) - Proposed Updates
       #   label: debian-9-proposed-updates
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian9 }}/"
       #   deb_releases: stretch-proposed-updates
       - name: Debian 9 (Stretch) - Backports
         label: debian-9-backports
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/"
+        url: "{{ foreman_repo_baseurl_debian9 }}/"
         deb_releases: stretch-backports
       # - name: Debian 9 (Stretch) - Backports - Sloppy
       #   label: debian-9-backports-sloppy
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian9 }}/"
       #   deb_releases: stretch-backports-sloppy
       - name: Debian 9 (Stretch) - Security updates
         label: debian-9-security
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}-security/"
+        url: "{{ foreman_repo_baseurl_debian9 }}-security/"
         deb_releases: stretch/updates
 
 foreman_content_views_debian9:

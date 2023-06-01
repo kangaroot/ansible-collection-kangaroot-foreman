@@ -21,11 +21,11 @@ foreman_products_ceph_quincy_el9:
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL9
         label: ceph-quincy-el9
-        url: "{{ foreman_repo_baseurl_ceph_quincy_el9 | default(foreman_default_repo_baseurl_ceph_quincy_el9) }}/rpm-quincy/el9/x86_64/"
+        url: "{{ foreman_repo_baseurl_ceph_quincy_el9 }}/rpm-quincy/el9/x86_64/"
         <<: *foreman_products_defaults
       - name: Ceph noarch packages - Quincy - EL9
         label: ceph-noarch-quincy-el9
-        url: "{{ foreman_repo_baseurl_ceph_quincy_el9 | default(foreman_default_repo_baseurl_ceph_quincy_el9) }}/rpm-quincy/el9/noarch"
+        url: "{{ foreman_repo_baseurl_ceph_quincy_el9 }}/rpm-quincy/el9/noarch"
         <<: *foreman_products_defaults
 
 foreman_content_views_ceph_quincy_el9:

@@ -22,7 +22,7 @@ foreman_products_ceph_octopus_deb10:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
         label: ceph-octopus-debian-buster
-        url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 | default(foreman_default_repo_baseurl_ceph_octopus_deb10) }}/debian-octopus/"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 }}/debian-octopus/"
         <<: *foreman_products_defaults_deb
         deb_releases: buster
 

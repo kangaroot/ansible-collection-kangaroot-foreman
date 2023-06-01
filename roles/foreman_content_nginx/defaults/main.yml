@@ -7,21 +7,16 @@ foreman_enable_nginx_el8: "{{ foreman_enable_nginx | bool }}"
 foreman_enable_nginx_el9: "{{ foreman_enable_nginx | bool }}"
 
 
-# foreman_repo_baseurl_nginx: https://nginx.org/packages
-# foreman_repo_baseurl_nginx_el7: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
-# foreman_repo_baseurl_nginx_el8: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
-# foreman_repo_baseurl_nginx_el9: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
-
-foreman_default_repo_baseurl_nginx: https://nginx.org/packages
-foreman_default_repo_baseurl_nginx_el7: "{{ foreman_default_repo_baseurl_nginx }}"
-foreman_default_repo_baseurl_nginx_el8: "{{ foreman_default_repo_baseurl_nginx }}"
-foreman_default_repo_baseurl_nginx_el9: "{{ foreman_default_repo_baseurl_nginx }}"
+foreman_repo_baseurl_nginx: https://nginx.org/packages
+foreman_repo_baseurl_nginx_el7: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+foreman_repo_baseurl_nginx_el8: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+foreman_repo_baseurl_nginx_el9: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
 
 
 foreman_content_credentials_nginx_main:
   - name: RPM-GPG-KEY-nginx
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/nginx_signing.key') }}"
 
 foreman_content_credentials_nginx: "{{ foreman_content_credentials_nginx_main | default([]) if foreman_enable_nginx | bool else [] |

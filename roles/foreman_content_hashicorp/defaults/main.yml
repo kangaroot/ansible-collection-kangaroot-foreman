@@ -7,15 +7,13 @@ foreman_enable_hashicorp_el8: "{{ foreman_enable_hashicorp | bool }}"
 foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
 
 
-# foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
-
-foreman_default_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
+foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
 
 
 foreman_content_credentials_hashicorp_main:
   - name: RPM-GPG-KEY-Hashicorp
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_hashicorp | default(foreman_default_repo_baseurl_hashicorp) ~ '/gpg', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_hashicorp ~ '/gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-hashicorp') }}"
 
 foreman_content_credentials_hashicorp: "{{ foreman_content_credentials_hashicorp_main | default([]) if foreman_enable_hashicorp | bool else [] |

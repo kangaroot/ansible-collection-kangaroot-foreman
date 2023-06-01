@@ -9,9 +9,7 @@ foreman_enable_fedora_copr_dmann_subscription_manager: false
 foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
 
 
-# foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
-
-foreman_default_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
 
 
 foreman_content_credentials_fedora_copr_main: []

@@ -22,32 +22,32 @@ foreman_products_debian11:
       - name: Debian 11 (Bullseye)
         label: debian-11
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}/"
+        url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye
       - name: Debian 11 (Bullseye) - Updates
         label: debian-11-updates
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}/"
+        url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye-updates
       # - name: Debian 11 (Bullseye) - Proposed Updates
       #   label: debian-11-proposed-updates
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian11 }}/"
       #   deb_releases: bullseye-proposed-updates
       - name: Debian 11 (Bullseye) - Backports
         label: debian-11-backports
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}/"
+        url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye-backports
       # - name: Debian 11 (Bullseye) - Backports - Sloppy
       #   label: debian-11-backports-sloppy
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}/"
+      #   url: "{{ foreman_repo_baseurl_debian11 }}/"
       #   deb_releases: bullseye-backports-sloppy
       - name: Debian 11 (Bullseye) - Security updates
         label: debian-11-security
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_debian11 | default(foreman_default_repo_baseurl_debian11) }}-security/"
+        url: "{{ foreman_repo_baseurl_debian11 }}-security/"
         deb_releases: bullseye-security/updates
 
 foreman_content_views_debian11:

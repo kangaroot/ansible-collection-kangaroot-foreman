@@ -19,7 +19,7 @@ foreman_products_ceph_docker:
     repositories:
       - name: Ceph Docker images
         label: ceph-docker
-        url: "{{ foreman_repo_baseurl_ceph_docker | default(foreman_default_repo_baseurl_ceph_docker) }}"
+        url: "{{ foreman_repo_baseurl_ceph_docker }}"
         docker_upstream_name: ceph/ceph
         # docker_tags_whitelist:
         #   - ceph/ceph

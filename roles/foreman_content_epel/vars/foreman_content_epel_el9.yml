@@ -4,7 +4,7 @@
 foreman_content_credentials_epel_el9:
   - name: RPM-GPG-KEY-EPEL-9
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) ~ '/RPM-GPG-KEY-EPEL-9', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel ~ '/RPM-GPG-KEY-EPEL-9', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-EPEL-9') }}"
 
 foreman_products_defaults: &foreman_products_defaults
@@ -27,19 +27,19 @@ foreman_products_epel_el9:
       - name: Extra Packages for Enterprise Linux 9 - x86_64
         label: epel-9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/9/Everything/x86_64/"
+        url: "{{ foreman_repo_baseurl_epel }}/9/Everything/x86_64/"
       - name: Extra Packages for Enterprise Linux 9 - Next - x86_64
         label: epel-9-next
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/next/9/Everything/x86_64/"
+        url: "{{ foreman_repo_baseurl_epel }}/next/9/Everything/x86_64/"
       # - name: Extra Packages for Enterprise Linux 9 - Testing - x86_64
       #   label: epel-9-testing
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/9/Everything/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_epel }}/testing/9/Everything/x86_64/"
       # - name: Extra Packages for Enterprise Linux 9 - Next - Testing - x86_64
       #   label: epel-9-next-testing
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/next/9/Everything/x86_64/"
+      #   url: "{{ foreman_repo_baseurl_epel }}/testing/next/9/Everything/x86_64/"
 
 foreman_content_views_epel_el9:
   - name: cv_epel9

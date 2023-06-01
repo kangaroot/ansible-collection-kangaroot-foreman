@@ -20,21 +20,13 @@ foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
 foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
 
 
-# foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
-# foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-# foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
-# foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-# foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-# foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-# foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-
-foreman_default_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
-foreman_default_repo_baseurl_oracle5: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-foreman_default_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
-foreman_default_repo_baseurl_oracle6: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-foreman_default_repo_baseurl_oracle7: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-foreman_default_repo_baseurl_oracle8: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
-foreman_default_repo_baseurl_oracle9: "{{ foreman_default_repo_baseurl_oracle | default('https://yum.oracle.com/repo/OracleLinux') }}"
+foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
+foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
+foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle }}"
 
 
 foreman_content_credentials_ol_main:

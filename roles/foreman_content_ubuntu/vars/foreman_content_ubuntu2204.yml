@@ -22,27 +22,27 @@ foreman_products_ubuntu2204:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
         label: ubuntu-2204
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2204 | default(foreman_default_repo_baseurl_ubuntu2204) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates
         label: ubuntu-2204-updates
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2204 | default(foreman_default_repo_baseurl_ubuntu2204) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-updates
       # - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Proposed Updates
       #   label: ubuntu-2204-proposed
       #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_ubuntu2204 | default(foreman_default_repo_baseurl_ubuntu2204) }}/"
+      #   url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
       #   deb_releases: jammy-proposed
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports
         label: ubuntu-2204-backports
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2204 | default(foreman_default_repo_baseurl_ubuntu2204) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-backports
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates
         label: ubuntu-2204-security
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_ubuntu2204 | default(foreman_default_repo_baseurl_ubuntu2204) }}/"
+        url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-security
 
 foreman_content_views_ubuntu2204:

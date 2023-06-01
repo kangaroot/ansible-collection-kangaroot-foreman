@@ -22,7 +22,7 @@ foreman_products_ceph_octopus_ub1804:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-octopus-ubuntu-bionic
-        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 | default(foreman_default_repo_baseurl_ceph_octopus_ub2004) }}/debian-octopus/"
+        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         <<: *foreman_products_defaults_deb
         deb_releases: bionic
 

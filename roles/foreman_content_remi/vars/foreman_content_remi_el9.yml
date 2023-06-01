@@ -4,7 +4,7 @@
 foreman_content_credentials_remi_el9:
   - name: RPM-GPG-KEY-remi2021
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_remi | default(foreman_default_repo_baseurl_remi) ~ '/RPM-GPG-KEY-remi2021', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_remi ~ '/RPM-GPG-KEY-remi2021', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-remi2021') }}"
 
 foreman_products_defaults: &foreman_products_defaults
@@ -27,15 +27,15 @@ foreman_products_remi_el9:
       - name: Remi - EL9
         label: remi-el9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_remi_el9 | default(foreman_default_repo_baseurl_remi_el9) }}/enterprise/9/remi/x86_64/"
+        url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/remi/x86_64/"
       - name: Remi Modular - EL9
         label: remi-modular-el9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_remi_el9 | default(foreman_default_repo_baseurl_remi_el9) }}/enterprise/9/modular/x86_64/"
+        url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/modular/x86_64/"
       - name: Remi Safe - EL9
         label: remi-safe-el9
         <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_remi_el9 | default(foreman_default_repo_baseurl_remi_el9) }}/enterprise/9/safe/x86_64/"
+        url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/safe/x86_64/"
 
 foreman_content_views_remi_el9:
   - name: cv_remi_el9

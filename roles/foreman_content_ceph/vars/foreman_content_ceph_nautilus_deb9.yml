@@ -22,7 +22,7 @@ foreman_products_ceph_nautilus_deb9:
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 9 (Stretch)
         label: ceph-nautilus-debian-stretch
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb9 | default(foreman_default_repo_baseurl_ceph_nautilus_deb9) }}/debian-nautilus/"
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb9 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
         deb_releases: stretch
 

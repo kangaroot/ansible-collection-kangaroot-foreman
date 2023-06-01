@@ -19,7 +19,7 @@ foreman_products_hashicorp_el8:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 8
         label: hashicorp-el8
-        url: "{{ foreman_repo_baseurl_hashicorp | default(foreman_default_repo_baseurl_hashicorp) }}/RHEL/8/x86_64/stable"
+        url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/8/x86_64/stable"
         <<: *foreman_products_defaults
 
 foreman_products_hashicorp_el7:
@@ -28,7 +28,7 @@ foreman_products_hashicorp_el7:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 7
         label: hashicorp-el7
-        url: "{{ foreman_repo_baseurl_hashicorp | default(foreman_default_repo_baseurl_hashicorp) }}/RHEL/7/x86_64/stable"
+        url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/7/x86_64/stable"
         <<: *foreman_products_defaults
 
 foreman_products_hashicorp_el9:
@@ -37,7 +37,7 @@ foreman_products_hashicorp_el9:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 9
         label: hashicorp-el9
-        url: "{{ foreman_repo_baseurl_hashicorp | default(foreman_default_repo_baseurl_hashicorp) }}/RHEL/9/x86_64/stable"
+        url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/9/x86_64/stable"
         <<: *foreman_products_defaults
 
 

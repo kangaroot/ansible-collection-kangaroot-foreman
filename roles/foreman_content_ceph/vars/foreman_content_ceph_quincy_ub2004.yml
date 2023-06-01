@@ -22,7 +22,7 @@ foreman_products_ceph_quincy_ub2004:
     repositories:
       - name: Ceph packages for amd64 - Quincy - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-quincy-ubuntu-focal
-        url: "{{ foreman_repo_baseurl_ceph_quincy_ub2004 | default(foreman_default_repo_baseurl_ceph_quincy_ub2004) }}/debian-quincy/"
+        url: "{{ foreman_repo_baseurl_ceph_quincy_ub2004 }}/debian-quincy/"
         <<: *foreman_products_defaults_deb
         deb_releases: focal
 

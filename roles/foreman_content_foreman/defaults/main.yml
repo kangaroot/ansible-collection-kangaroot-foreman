@@ -7,35 +7,31 @@ foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
 foreman_enable_foreman_el9: false
 
 
-# foreman_repo_baseurl_foreman: https://yum.theforeman.org
-# foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
-# foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
-
-foreman_default_repo_baseurl_foreman: https://yum.theforeman.org
-foreman_default_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
-foreman_default_repo_baseurl_puppet: http://yum.puppetlabs.com
+foreman_repo_baseurl_foreman: https://yum.theforeman.org
+foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
 
 
 foreman_content_credentials_foreman_main:
   - name: RPM-GPG-KEY-foreman
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) ~ '/releases/latest/RPM-GPG-KEY-foreman', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman ~ '/releases/latest/RPM-GPG-KEY-foreman', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-foreman') }}"
   # - name: RPM-GPG-KEY-copr-qpid
   #   content_type: gpg_key
-  #   content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr | default(foreman_default_repo_baseurl_fedora_copr) ~ '/@qpid/qpid/pubkey.gpg', split_lines=False, validate_certs=False) }}"
+  #   content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/@qpid/qpid/pubkey.gpg', split_lines=False, validate_certs=False) }}"
   #   # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-qpid') }}"
   - name: RPM-GPG-KEY-pulpcore
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman | default(foreman_default_repo_baseurl_foreman) ~ '/pulpcore/3.16/GPG-RPM-KEY-pulpcore', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_foreman ~ '/pulpcore/3.16/GPG-RPM-KEY-pulpcore', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-pulpcore') }}"
   - name: RPM-GPG-KEY-puppet
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) ~ '/RPM-GPG-KEY-puppet', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet ~ '/RPM-GPG-KEY-puppet', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-puppet') }}"
   - name: RPM-GPG-KEY-puppet-20250406
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet | default(foreman_default_repo_baseurl_puppet) ~ '/RPM-GPG-KEY-puppet-20250406', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_puppet ~ '/RPM-GPG-KEY-puppet-20250406', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-puppet-20250406') }}"
 
 

@@ -19,11 +19,11 @@ foreman_products_nginx_el7:
     repositories:
       - name: nginx stable repo - EL7
         label: nginx-stable-el7
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/rhel/7/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/rhel/7/x86_64/"
         <<: *foreman_products_defaults
       - name: nginx mainline repo - EL7
         label: nginx-mainline-el7
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/mainline/rhel/7/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/7/x86_64/"
         <<: *foreman_products_defaults
 
 foreman_products_nginx_el8:
@@ -32,11 +32,11 @@ foreman_products_nginx_el8:
     repositories:
       - name: nginx stable repo - EL8
         label: nginx-stable-el8
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/rhel/8/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/rhel/8/x86_64/"
         <<: *foreman_products_defaults
       - name: nginx mainline repo - EL8
         label: nginx-mainline-el8
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/mainline/rhel/8/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/8/x86_64/"
         <<: *foreman_products_defaults
 
 foreman_products_nginx_el9:
@@ -45,11 +45,11 @@ foreman_products_nginx_el9:
     repositories:
       - name: nginx stable repo - EL9
         label: nginx-stable-el9
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/rhel/9/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/rhel/9/x86_64/"
         <<: *foreman_products_defaults
       - name: nginx mainline repo - EL9
         label: nginx-mainline-el9
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/mainline/rhel/9/x86_64/"
+        url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/9/x86_64/"
         <<: *foreman_products_defaults
 
 foreman_content_views_nginx_el7:

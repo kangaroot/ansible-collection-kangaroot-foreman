@@ -7,15 +7,10 @@ foreman_enable_template_el8: "{{ foreman_enable_template | bool }}"
 foreman_enable_template_el9: "{{ foreman_enable_template | bool }}"
 
 
-# foreman_repo_baseurl_template: https://downloads.template.com
-# foreman_repo_baseurl_template_el7: "{{ foreman_repo_baseurl_template | default('https://downloads.template.com') }}"
-# foreman_repo_baseurl_template_el8: "{{ foreman_repo_baseurl_template | default('https://downloads.template.com') }}"
-# foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template | default('https://downloads.template.com') }}"
-
-foreman_default_repo_baseurl_template: https://downloads.template.com/
-foreman_default_repo_baseurl_template_el7: "{{ foreman_default_repo_baseurl_template }}"
-foreman_default_repo_baseurl_template_el8: "{{ foreman_default_repo_baseurl_template }}"
-foreman_default_repo_baseurl_template_el9: "{{ foreman_default_repo_baseurl_template }}"
+foreman_repo_baseurl_template: https://downloads.template.com
+foreman_repo_baseurl_template_el7: "{{ foreman_repo_baseurl_template }}"
+foreman_repo_baseurl_template_el8: "{{ foreman_repo_baseurl_template }}"
+foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template }}"
 
 
 foreman_content_credentials_template_main: []

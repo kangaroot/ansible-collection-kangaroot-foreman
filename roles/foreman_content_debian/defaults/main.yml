@@ -7,16 +7,10 @@ foreman_enable_debian10: false
 foreman_enable_debian11: "{{ foreman_enable_debian | bool }}"
 
 
-# foreman_repo_baseurl_debian: http://ftp.debian.org/debian
-# foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
-# foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
-# foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian | default('http://ftp.debian.org/debian') }}"
-
-
-foreman_default_repo_baseurl_debian: http://ftp.debian.org/debian
-foreman_default_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
-foreman_default_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
-foreman_default_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian | default(foreman_default_repo_baseurl_debian) }}"
+foreman_repo_baseurl_debian: http://ftp.debian.org/debian
+foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian }}"
+foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian }}"
+foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian }}"
 
 
 foreman_content_credentials_debian_main: []

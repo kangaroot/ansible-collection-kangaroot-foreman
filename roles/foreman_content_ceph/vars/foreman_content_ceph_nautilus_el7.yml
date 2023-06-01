@@ -21,11 +21,11 @@ foreman_products_ceph_nautilus_el7:
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL7
         label: ceph-nautilus-el7
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 | default(foreman_default_repo_baseurl_ceph_nautilus_el7) }}/rpm-nautilus/el7/x86_64/"
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/x86_64/"
         <<: *foreman_products_defaults
       - name: Ceph noarch packages - Nautilus - EL7
         label: ceph-noarch-nautilus-el7
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 | default(foreman_default_repo_baseurl_ceph_nautilus_el7) }}/rpm-nautilus/el7/noarch"
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/noarch"
         <<: *foreman_products_defaults
 
 foreman_content_views_ceph_nautilus_el7:
