@@ -2,6 +2,9 @@
 # defaults file for foreman_content_foreman
 
 foreman_enable_foreman: false
+foreman_enable_foreman_el7: false
+foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
+foreman_enable_foreman_el9: false
 
 
 # foreman_repo_baseurl_foreman: https://yum.theforeman.org

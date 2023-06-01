@@ -2,6 +2,7 @@
 # defaults file for foreman_content_kubernetes
 
 foreman_enable_kubernetes: false
+foreman_enable_kubernetes_el7: "{{ foreman_enable_kubernetes | bool }}"
 
 
 # foreman_repo_baseurl_kubernetes: https://packages.cloud.google.com/yum

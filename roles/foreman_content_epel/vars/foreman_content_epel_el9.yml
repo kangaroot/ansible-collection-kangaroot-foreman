@@ -1,7 +1,7 @@
 ---
 # foreman epel 9 content group vars file for katello-main
 
-foreman_content_credentials_epel9:
+foreman_content_credentials_epel_el9:
   - name: RPM-GPG-KEY-EPEL-9
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) ~ '/RPM-GPG-KEY-EPEL-9', split_lines=False, validate_certs=False) }}"
@@ -20,7 +20,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
-foreman_products_epel9:
+foreman_products_epel_el9:
   - name: Extra Packages for Enterprise Linux
     label: EPEL
     repositories:
@@ -41,7 +41,7 @@ foreman_products_epel9:
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/next/9/Everything/x86_64/"
 
-foreman_content_views_epel9:
+foreman_content_views_epel_el9:
   - name: cv_epel9
     repositories:
       - name: Extra Packages for Enterprise Linux 9 - x86_64
@@ -63,8 +63,7 @@ foreman_content_views_epel9:
   #       product: Extra Packages for Enterprise Linux
   #   allow_promote: False
 
-foreman_activation_keys_epel9: []
+foreman_activation_keys_epel_el9: []
 
-foreman_sync_plan_products_epel9:
-  - Extra Packages for Enterprise Linux
+foreman_sync_plan_products_epel_el9: []
 

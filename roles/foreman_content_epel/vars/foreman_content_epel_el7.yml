@@ -1,7 +1,7 @@
 ---
 # epel 7 content vars file for foreman_content_epel
 
-foreman_content_credentials_epel7:
+foreman_content_credentials_epel_el7:
   - name: RPM-GPG-KEY-EPEL-7
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) ~ '/RPM-GPG-KEY-EPEL-7', split_lines=False, validate_certs=False) }}"
@@ -20,7 +20,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
-foreman_products_epel7:
+foreman_products_epel_el7:
   - name: Extra Packages for Enterprise Linux
     label: EPEL
     repositories:
@@ -33,7 +33,7 @@ foreman_products_epel7:
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_epel | default(foreman_default_repo_baseurl_epel) }}/testing/7/x86_64/"
 
-foreman_content_views_epel7:
+foreman_content_views_epel_el7:
   - name: cv_epel7
     repositories:
       - name: Extra Packages for Enterprise Linux 7 - x86_64
@@ -45,8 +45,7 @@ foreman_content_views_epel7:
   #       product: Extra Packages for Enterprise Linux
   #   allow_promote: False
 
-foreman_activation_keys_epel7: []
+foreman_activation_keys_epel_el7: []
 
-foreman_sync_plan_products_epel7:
-  - Extra Packages for Enterprise Linux
+foreman_sync_plan_products_epel_el7: []
 

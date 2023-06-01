@@ -2,6 +2,9 @@
 # defaults file for foreman_content_elrepo
 
 foreman_enable_elrepo: false
+foreman_enable_elrepo_el7: false
+foreman_enable_elrepo_el8: "{{ foreman_enable_elrepo | bool }}"
+foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 
 # foreman_repo_baseurl_elrepo: http://elrepo.org/linux

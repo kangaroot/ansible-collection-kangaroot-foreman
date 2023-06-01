@@ -2,7 +2,8 @@
 # defaults file for foreman_content_datadog
 
 foreman_enable_datadog: false
-
+foreman_enable_datadog_v6: false
+foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
 
 # foreman_repo_baseurl_datadog: https://yum.datadoghq.com
 

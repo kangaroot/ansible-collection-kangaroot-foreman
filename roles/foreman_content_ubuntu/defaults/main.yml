@@ -2,9 +2,9 @@
 # fdefaults file for foreman_content_ubuntu
 
 foreman_enable_ubuntu: false
-# foreman_enable_ubuntu1804: false
-# foreman_enable_ubuntu2004: false
-# foreman_enable_ubuntu2204: false
+foreman_enable_ubuntu1804: false
+foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
+foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
 
 # foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
@@ -19,31 +19,31 @@ foreman_default_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu | defau
 
 
 foreman_content_credentials_ubuntu_main: []
-foreman_content_credentials_ubuntu: "{{ foreman_content_credentials_ubuntu_main | default([]) |
-  union( foreman_content_credentials_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_content_credentials_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_content_credentials_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_content_credentials_ubuntu: "{{ foreman_content_credentials_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_content_credentials_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_content_credentials_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_content_credentials_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_products_ubuntu_main: []
-foreman_products_ubuntu: "{{ foreman_products_ubuntu_main | default([]) |
-  union( foreman_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_products_ubuntu: "{{ foreman_products_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_content_views_ubuntu_main: []
-foreman_content_views_ubuntu: "{{ foreman_content_views_ubuntu_main | default([]) |
-  union( foreman_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_content_views_ubuntu: "{{ foreman_content_views_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_operatingsystems_ubuntu_main: []
-foreman_operatingsystems_ubuntu: "{{ foreman_operatingsystems_ubuntu_main | default([]) |
-  union( foreman_operatingsystems_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_operatingsystems_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_operatingsystems_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_operatingsystems_ubuntu: "{{ foreman_operatingsystems_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_operatingsystems_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_operatingsystems_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_operatingsystems_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_installation_media_ubuntu_defaults: &foreman_installation_media_ubuntu_defaults
@@ -64,25 +64,25 @@ foreman_installation_media_ubuntu_main:
       - Ubuntu 20.04 LTS (Focal Fossa)
       - Ubuntu 22.04 LTS (Jammy Jellyfish)
 
-foreman_installation_media_ubuntu: "{{ foreman_installation_media_ubuntu_main | default([]) |
-  union( foreman_installation_media_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_installation_media_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_installation_media_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_installation_media_ubuntu: "{{ foreman_installation_media_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_installation_media_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_installation_media_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_installation_media_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_activation_keys_ubuntu_main: []
-foreman_activation_keys_ubuntu: "{{ foreman_activation_keys_ubuntu_main | default([]) |
-  union( foreman_activation_keys_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_activation_keys_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_activation_keys_ubuntu: "{{ foreman_activation_keys_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_activation_keys_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_activation_keys_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
 foreman_sync_plan_products_ubuntu_main:
   - Ubuntu
 
-foreman_sync_plan_products_ubuntu: "{{ foreman_sync_plan_products_ubuntu_main | default([]) |
-  union( foreman_sync_plan_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_sync_plan_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] ) |
-  union( foreman_sync_plan_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | default( foreman_enable_ubuntu | default(false) | bool ) | bool else [] )
+foreman_sync_plan_products_ubuntu: "{{ foreman_sync_plan_products_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] |
+  union( foreman_sync_plan_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
+  union( foreman_sync_plan_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
+  union( foreman_sync_plan_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
   }}"
 
