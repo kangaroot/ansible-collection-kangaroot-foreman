@@ -1,3 +1,40 @@
 ---
 # foreman kubernetes content vars file for foreman_content_kubernetes
 
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-kubernetes-pkg
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_kubernetes_el7:
+  - name: Kubernetes
+    label: Kubernetes
+    repositories:
+      - name: Kubernetes - EL7
+        label: kubernetes-el7
+        url: "{{ foreman_repo_baseurl_kubernetes | default(foreman_default_repo_baseurl_kubernetes) }}/repos/kubernetes-el7-x86_64"
+        <<: *foreman_products_defaults
+      - name: Kubernetes Unstable - EL7
+        label: kubernetes-unstable-el7
+        url: "{{ foreman_repo_baseurl_kubernetes | default(foreman_default_repo_baseurl_kubernetes) }}/repos/kubernetes-el7-x86_64-unstable"
+        <<: *foreman_products_defaults
+
+foreman_content_views_kubernetes_el7:
+  - name: cv_kubernetes_el7
+    repositories:
+      - name: Kubernetes - EL7
+        product: Kubernetes
+    allow_promote: False
+  - name: cv_kubernetes_unstable_el7
+    repositories:
+      - name: Kubernetes Unstable - EL7
+        product: Kubernetes
+    allow_promote: False
+
