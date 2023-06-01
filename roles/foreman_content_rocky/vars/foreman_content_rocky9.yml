@@ -224,6 +224,11 @@ foreman_operatingsystems_rocky9:
     minor: "1"
     description: "Rocky Linux 9.1"
     <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "9"
+    minor: "2"
+    description: "Rocky Linux 9.2"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
