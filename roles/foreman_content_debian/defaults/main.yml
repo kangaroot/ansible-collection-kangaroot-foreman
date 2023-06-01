@@ -59,7 +59,7 @@ foreman_installation_media_debian_defaults: &foreman_installation_media_debian_d
 
 foreman_installation_media_debian_main:
   - name: Debian mirror
-    path: "{{ foreman_repo_baseurl_debian9 }}/$major/os/$arch"
+    path: "{{ foreman_repo_baseurl_debian9 | default(foreman_default_repo_baseurl_debian9) }}/$major/os/$arch"
     <<: *foreman_installation_media_debian_defaults
     operatingsystems:
       - Debian 9 (Stretch)
