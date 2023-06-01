@@ -13,7 +13,7 @@ foreman_content_credentials_nginx:
   - name: RPM-GPG-KEY-nginx
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/nginx_signing.key') }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/nginx_signing.key') }}"
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum

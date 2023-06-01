@@ -27,7 +27,7 @@ foreman_content_credentials_microsoft_main:
   - name: RPM-GPG-KEY-microsoft-prod
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_microsoft | default(foreman_default_repo_baseurl_microsoft) ~ '/keys/microsoft.asc', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-microsoft-prod') }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-microsoft-prod') }}"
 
 foreman_content_credentials_microsoft: "{{ foreman_content_credentials_microsoft_main | default([]) |
   union( foreman_content_credentials_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | default( foreman_enable_microsoft | default(false) | bool ) | bool else [] ) |

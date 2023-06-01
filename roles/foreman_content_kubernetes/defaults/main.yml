@@ -13,11 +13,11 @@ foreman_content_credentials_kubernetes:
   - name: RPM-GPG-KEY-kubernetes-pkg
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_kubernetes | default(foreman_default_repo_baseurl_kubernetes) ~ '/doc/rpm-package-key.gpg', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-kubernetes-pkg') }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-kubernetes-pkg') }}"
   - name: RPM-GPG-KEY-kubernetes-yum
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_kubernetes | default(foreman_default_repo_baseurl_kubernetes) ~ '/doc/yum-key.gpg', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', ansible_parent_role_paths[0] | default(role_path) ~ '/files/RPM-GPG-KEY-kubernetes-yum') }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-kubernetes-yum') }}"
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
