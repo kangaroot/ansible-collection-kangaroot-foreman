@@ -3,145 +3,166 @@
 
 ### Ceph content data
 foreman_enable_ceph: false
-# foreman_enable_ceph_nautilus_el7: false
-# foreman_enable_ceph_nautilus_el8: false
-# foreman_enable_ceph_nautilus_deb9: false
-# foreman_enable_ceph_nautilus_deb10: false
-# foreman_enable_ceph_nautilus_ub1804: false
-# foreman_enable_ceph_nautilus_ub2004: false
-# foreman_enable_ceph_octopus_el7: false
-# foreman_enable_ceph_octopus_el8: false
-# foreman_enable_ceph_octopus_deb10: false
-# foreman_enable_ceph_octopus_ub1804: false
-# foreman_enable_ceph_octopus_ub2004: false
-# foreman_enable_ceph_pacific_el7: false
-# foreman_enable_ceph_pacific_el8: false
-# foreman_enable_ceph_pacific_el9: false
-# foreman_enable_ceph_pacific_deb10: false
-# foreman_enable_ceph_pacific_deb11: false
-# foreman_enable_ceph_pacific_ub1804: false
-# foreman_enable_ceph_pacific_ub2004: false
-# foreman_enable_ceph_quincy_el7: false
-# foreman_enable_ceph_quincy_el8: false
-# foreman_enable_ceph_quincy_el9: false
-# foreman_enable_ceph_quincy_deb11: false
-# foreman_enable_ceph_quincy_ub2004: false
-# foreman_enable_ceph_docker: false
+foreman_enable_ceph_nautilus: false
+foreman_enable_ceph_nautilus_el7: false
+foreman_enable_ceph_nautilus_el8: "{{ foreman_enable_ceph_nautilus | bool }}"
+foreman_enable_ceph_nautilus_deb9: false
+foreman_enable_ceph_nautilus_deb10: false
+foreman_enable_ceph_nautilus_ub1804: false
+foreman_enable_ceph_nautilus_ub2004: false
+foreman_enable_ceph_octopus: false
+foreman_enable_ceph_octopus_el7: false
+foreman_enable_ceph_octopus_el8: "{{ foreman_enable_ceph_octopus | bool }}"
+foreman_enable_ceph_octopus_deb10: false
+foreman_enable_ceph_octopus_ub1804: false
+foreman_enable_ceph_octopus_ub2004: false
+foreman_enable_ceph_pacific: false
+foreman_enable_ceph_pacific_el7: false
+foreman_enable_ceph_pacific_el8: "{{ foreman_enable_ceph_pacific | bool }}"
+foreman_enable_ceph_pacific_el9: "{{ foreman_enable_ceph_pacific | bool }}"
+foreman_enable_ceph_pacific_deb10: false
+foreman_enable_ceph_pacific_deb11: false
+foreman_enable_ceph_pacific_ub1804: false
+foreman_enable_ceph_pacific_ub2004: false
+foreman_enable_ceph_quincy: false
+foreman_enable_ceph_quincy_el7: false
+foreman_enable_ceph_quincy_el8: "{{ foreman_enable_ceph_quincy | bool }}"
+foreman_enable_ceph_quincy_el9: "{{ foreman_enable_ceph_quincy | bool }}"
+foreman_enable_ceph_quincy_deb11: false
+foreman_enable_ceph_quincy_ub2004: false
+foreman_enable_ceph_docker: false
 
 ### Datadog content data
 foreman_enable_datadog: false
+foreman_enable_datadog_v6: false
+foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
 
 ### Docker content data
 foreman_enable_docker: false
-# foreman_enable_docker_ce: false
-# foreman_enable_docker_ce_el7: false
-# foreman_enable_docker_ce_el8: false
-# foreman_enable_docker_ce_el9: false
-# foreman_enable_docker_ee: false
-# foreman_enable_docker_ee_el7: false
-# foreman_enable_docker_ee_el8: false
-# foreman_enable_docker_ee_el9: false
+foreman_enable_docker_ce: "{{ foreman_enable_docker | bool }}"
+foreman_enable_docker_ce_el7: false
+foreman_enable_docker_ce_el8: "{{ foreman_enable_docker_ce | bool }}"
+foreman_enable_docker_ce_el9: "{{ foreman_enable_docker_ce | bool }}"
+foreman_enable_docker_ee: false
+foreman_enable_docker_ee_el7: false
+foreman_enable_docker_ee_el8: false
+foreman_enable_docker_ee_el9: false
 
 ### ELrepo content data
 foreman_enable_elrepo: false
+foreman_enable_elrepo_el7: false
+foreman_enable_elrepo_el8: "{{ foreman_enable_elrepo | bool }}"
+foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 ### EPEL content data
 foreman_enable_epel: false
-# foreman_enable_epel7: false
-# foreman_enable_epel8: false
-# foreman_enable_epel9: false
+foreman_enable_epel_el7: false
+foreman_enable_epel_el8: "{{ foreman_enable_epel | bool }}"
+foreman_enable_epel_el9: "{{ foreman_enable_epel | bool }}"
 
 ### Fedora COPR content data
 foreman_enable_fedora_copr: false
-# foreman_enable_fedora_copr_dgoodwin_subscription_manager: false
-# foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6: false
-# foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7: false
-# foreman_enable_fedora_copr_dmann_subscription_manager: false
-# foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6: false
+foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7: false
+foreman_enable_fedora_copr_dmann_subscription_manager: false
+foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
 
 ### Foreman content data
 foreman_enable_foreman: false
+foreman_enable_foreman_el7: false
+foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
+foreman_enable_foreman_el9: false
 
 ### Hashicorp content data
 foreman_enable_hashicorp: false
-# foreman_enable_hashicorp_el7: false
-# foreman_enable_hashicorp_el8: false
-# foreman_enable_hashicorp_el9: false
+foreman_enable_hashicorp_el7: false
+foreman_enable_hashicorp_el8: "{{ foreman_enable_hashicorp | bool }}"
+foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
 
 ### Kubernetes content data
 foreman_enable_kubernetes: false
+foreman_enable_kubernetes_el7: "{{ foreman_enable_kubernetes | bool }}"
 
 ### Micorsoft content data
 foreman_enable_microsoft: false
-# foreman_enable_microsoft_azure_cli: false
-# foreman_enable_microsoft_prod: false
-# foreman_enable_microsoft_prod_el7: false
-# foreman_enable_microsoft_prod_el8: false
-# foreman_enable_microsoft_prod_el9: false
-# foreman_enable_microsoft_mssql_server_2017: false
-# foreman_enable_microsoft_mssql_server_2017_el7: false
-# foreman_enable_microsoft_mssql_server_2017_el8: false
-# foreman_enable_microsoft_mssql_server_2019: false
-# foreman_enable_microsoft_mssql_server_2019_el7: false
-# foreman_enable_microsoft_mssql_server_2019_el8: false
-# foreman_enable_microsoft_mssql_server_2022: false
-# foreman_enable_microsoft_mssql_server_2022_el8: false
-# foreman_enable_microsoft_mssql_server_2022_el9: false
+foreman_enable_microsoft_azure_cli: "{{ foreman_enable_microsoft | bool }}"
+foreman_enable_microsoft_prod: "{{ foreman_enable_microsoft | bool }}"
+foreman_enable_microsoft_prod_el7: false
+foreman_enable_microsoft_prod_el8: "{{ foreman_enable_microsoft_prod | bool }}"
+foreman_enable_microsoft_prod_el9: "{{ foreman_enable_microsoft_prod | bool }}"
+foreman_enable_microsoft_mssql_server_2017: false
+foreman_enable_microsoft_mssql_server_2017_el7: false
+foreman_enable_microsoft_mssql_server_2017_el8: "{{ foreman_enable_microsoft_mssql_server_2017 | bool }}"
+foreman_enable_microsoft_mssql_server_2019: false
+foreman_enable_microsoft_mssql_server_2019_el7: false
+foreman_enable_microsoft_mssql_server_2019_el8: "{{ foreman_enable_microsoft_mssql_server_2019 | bool }}"
+foreman_enable_microsoft_mssql_server_2022: false
+foreman_enable_microsoft_mssql_server_2022_el8: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
+foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mssql_server_2022 | bool }}"
 
 ### Nginx content data
 foreman_enable_nginx: false
+foreman_enable_nginx_el7: false
+foreman_enable_nginx_el8: "{{ foreman_enable_nginx | bool }}"
+foreman_enable_nginx_el9: "{{ foreman_enable_nginx | bool }}"
 
 ### Remi Repository content data
 foreman_enable_remi: false
-# foreman_enable_remi_el7: false
-# foreman_enable_remi_el8: false
-# foreman_enable_remi_el9: false
+foreman_enable_remi_el7: false
+foreman_enable_remi_el8: "{{ foreman_enable_remi | bool }}"
+foreman_enable_remi_el9: "{{ foreman_enable_remi | bool }}"
+
 
 ### CentOS content data
 foreman_enable_centos: false
-# foreman_enable_centos7: false
-# foreman_enable_centos8: false
-# foreman_enable_centos8_stream: false
-# foreman_enable_centos9_stream: false
+foreman_enable_centos7: false
+foreman_enable_centos8: false
+foreman_enable_centos8_stream: "{{ foreman_enable_centos | bool }}"
+foreman_enable_centos9_stream: "{{ foreman_enable_centos | bool }}"
 
 ### Debian content data
 foreman_enable_debian: false
-# foreman_enable_debian9: false
-# foreman_enable_debian10: false
-# foreman_enable_debian11: false
+foreman_enable_debian9: false
+foreman_enable_debian10: false
+foreman_enable_debian11: "{{ foreman_enable_debian | bool }}"
 
 ### Oracle Linux (ULN) content data
 foreman_enable_ol: false
-# foreman_enable_ol7: false
-# foreman_enable_ol8: false
-# foreman_enable_ol9: false
+foreman_enable_ol5: false
+foreman_enable_ol6: false
+foreman_enable_ol7: false
+foreman_enable_ol8: "{{ foreman_enable_ol | bool }}"
+foreman_enable_ol9: "{{ foreman_enable_ol | bool }}"
 foreman_enable_ol_uln: false
-# foreman_enable_ol7_uln: false
-# foreman_enable_ol8_uln: false
-# foreman_enable_ol9_uln: false
+foreman_enable_ol5_uln: false
+foreman_enable_ol6_uln: false
+foreman_enable_ol7_uln: false
+foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
+foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
 
 ### Red Hat content data
 foreman_enable_redhat: false
-# foreman_enable_redhat7: false
-# foreman_enable_redhat7_sat: false
-# foreman_enable_redhat7_aap: false
-# foreman_enable_redhat7_rhocp: false
-# foreman_enable_redhat8: false
-# foreman_enable_redhat8_sat: false
-# foreman_enable_redhat8_aap: false
-# foreman_enable_redhat8_rhocp: false
-# foreman_enable_redhat9: false
-# foreman_enable_redhat9_aap: false
-# foreman_enable_redhat9_rhocp: false
+foreman_enable_redhat7: false
+foreman_enable_redhat7_sat: false
+foreman_enable_redhat7_aap: false
+foreman_enable_redhat7_rhocp: false
+foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
+foreman_enable_redhat8_sat: false
+foreman_enable_redhat8_aap: false
+foreman_enable_redhat8_rhocp: false
+foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
+foreman_enable_redhat9_aap: false
+foreman_enable_redhat9_rhocp: false
 
 ### Rocky Linux content data
 foreman_enable_rocky: false
-# foreman_enable_rocky8: false
-# foreman_enable_rocky9: false
+foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
+foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
 
 ### Ubuntu content data
 foreman_enable_ubuntu: false
-# foreman_enable_ubuntu1804: false
-# foreman_enable_ubuntu2004: false
-# foreman_enable_ubuntu2204: false
+foreman_enable_ubuntu1804: false
+foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
+foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
