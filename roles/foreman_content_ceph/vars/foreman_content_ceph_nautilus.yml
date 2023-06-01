@@ -136,7 +136,7 @@ foreman_content_views_ceph_nautilus_ub2004:
 
 
 foreman_content_credentials_nautilus_ceph_main: []
-foreman_content_credentials_nautilus_ceph: "{{ ( foreman_content_credentials_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_content_credentials_nautilus_ceph: "{{ ( foreman_content_credentials_nautilus_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -146,7 +146,7 @@ foreman_content_credentials_nautilus_ceph: "{{ ( foreman_content_credentials_cep
   }}"
 
 foreman_products_ceph_nautilus_main: []
-foreman_products_ceph_nautilus: "{{ ( foreman_products_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_products_ceph_nautilus: "{{ ( foreman_products_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_products_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_products_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_products_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -156,7 +156,7 @@ foreman_products_ceph_nautilus: "{{ ( foreman_products_ceph_main | default([]) i
   }}"
 
 foreman_content_views_ceph_nautilus_main: []
-foreman_content_views_ceph_nautilus: "{{ ( foreman_content_views_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_content_views_ceph_nautilus: "{{ ( foreman_content_views_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -166,7 +166,7 @@ foreman_content_views_ceph_nautilus: "{{ ( foreman_content_views_ceph_main | def
   }}"
 
 foreman_operatingsystems_ceph_nautilus_main: []
-foreman_operatingsystems_ceph_nautilus: "{{ ( foreman_operatingsystems_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_operatingsystems_ceph_nautilus: "{{ ( foreman_operatingsystems_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -176,7 +176,7 @@ foreman_operatingsystems_ceph_nautilus: "{{ ( foreman_operatingsystems_ceph_main
   }}"
 
 foreman_installation_media_ceph_nautilus_main: []
-foreman_installation_media_ceph_nautilus: "{{ ( foreman_installation_media_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_installation_media_ceph_nautilus: "{{ ( foreman_installation_media_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -186,7 +186,7 @@ foreman_installation_media_ceph_nautilus: "{{ ( foreman_installation_media_ceph_
   }}"
 
 foreman_activation_keys_ceph_nautilus_main: []
-foreman_activation_keys_ceph_nautilus: "{{ ( foreman_activation_keys_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_activation_keys_ceph_nautilus: "{{ ( foreman_activation_keys_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -196,7 +196,7 @@ foreman_activation_keys_ceph_nautilus: "{{ ( foreman_activation_keys_ceph_main |
   }}"
 
 foreman_sync_plan_products_ceph_nautilus_main: []
-foreman_sync_plan_products_ceph_nautilus: "{{ ( foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
+foreman_sync_plan_products_ceph_nautilus: "{{ ( foreman_sync_plan_products_ceph_nautilus_main | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
