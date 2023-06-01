@@ -1,3 +1,117 @@
 ---
 # foreman elrepo conmtent vars file for foreman_content_elrepo
 
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-elrepo.org
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_elrepo_el7:
+  - name: ELRepo.org
+    label: ELRepo
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el7
+        label: elrepo-el7
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/elrepo/el7/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el7
+        label: elrepo-kernel-el7
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/kernel/el7/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el7
+        label: elrepo-extras-el7
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/extras/el7/x86_64/"
+
+foreman_products_elrepo_el8:
+  - name: ELRepo.org
+    label: ELRepo
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el8
+        label: elrepo-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/elrepo/el8/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el8
+        label: elrepo-kernel-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/kernel/el8/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el8
+        label: elrepo-extras-el8
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/extras/el8/x86_64/"
+
+foreman_products_elrepo_el9:
+  - name: ELRepo.org
+    label: ELRepo
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el9
+        label: elrepo-el9
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/elrepo/el9/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el9
+        label: elrepo-kernel-el9
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/kernel/el9/x86_64/"
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el9
+        label: elrepo-extras-el9
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_elrepo | default(foreman_default_repo_baseurl_elrepo) }}/extras/el9/x86_64/"
+
+foreman_content_views_elrepo_el7:
+  - name: cv_elrepo_el7
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el7
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_kernel_el7
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el7
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_extras_el7
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el7
+        product: ELRepo.org
+    allow_promote: False
+
+foreman_content_views_elrepo_el8:
+  - name: cv_elrepo_el8
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el8
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_kernel_el8
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el8
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_extras_el8
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el8
+        product: ELRepo.org
+    allow_promote: False
+
+foreman_content_views_elrepo_el9:
+  - name: cv_elrepo_el9
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Repository - el9
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_kernel_el9
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Kernel Repository - el9
+        product: ELRepo.org
+    allow_promote: False
+  - name: cv_elrepo_extras_el9
+    repositories:
+      - name: ELRepo.org Community Enterprise Linux Extras Repository - el9
+        product: ELRepo.org
+    allow_promote: False
+
