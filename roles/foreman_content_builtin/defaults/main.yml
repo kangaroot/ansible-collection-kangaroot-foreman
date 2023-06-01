@@ -1,0 +1,134 @@
+---
+# defaults file for foreman_content_builtin
+
+foreman_partition_tables_defaults: &foreman_partition_tables_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  os_family: Redhat
+  locked: yes
+
+foreman_partition_tables_osrhel: &foreman_partition_tables_osrhel
+  <<: *foreman_partition_tables_defaults
+  os_family: Redhat
+
+foreman_partition_tables_osdebian: &foreman_partition_tables_osdebian
+  <<: *foreman_partition_tables_defaults
+  os_family: Debian
+
+foreman_partition_tables_builtin:
+  - name: Kickstart custom
+    <<: *foreman_partition_tables_osrhel
+  - name: Kickstart default
+    <<: *foreman_partition_tables_osrhel
+  - name: Kickstart default thin
+    <<: *foreman_partition_tables_osrhel
+  - name: Kickstart dynamic
+    <<: *foreman_partition_tables_osrhel
+
+  - name: Preseed default
+    <<: *foreman_partition_tables_osdebian
+  - name: Preseed default autoinstall
+    <<: *foreman_partition_tables_osdebian
+  - name: Preseed default LVM
+    <<: *foreman_partition_tables_osdebian
+
+
+foreman_provisioning_templates_defaults: &foreman_provisioning_templates_defaults
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | map(attribute='description') | list }}"
+  locked: yes
+
+foreman_provisioning_templates_osrhel: &foreman_provisioning_templates_osrhel
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates_osdebian: &foreman_provisioning_templates_osdebian
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates_osubuntu: &foreman_provisioning_templates_osubuntu
+  <<: *foreman_provisioning_templates_defaults
+  operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+
+foreman_provisioning_templates_builtin:
+  - name: CloudInit default
+    <<: *foreman_provisioning_templates_defaults
+    kind: cloud-init
+
+  - name: Discovery Red Hat kexec
+    <<: *foreman_provisioning_templates_osrhel
+    kind: kexec
+  - name: Discovery Debian kexec
+    <<: *foreman_provisioning_templates_osdebian
+    kind: kexec
+  - name: Discovery Ubuntu kexec Autoinstall
+    <<: *foreman_provisioning_templates_osubuntu
+    kind: kexec
+
+  - name: Kickstart default
+    <<: *foreman_provisioning_templates_osrhel
+    kind: provision
+    locked: yes
+  - name: Kickstart default finish
+    <<: *foreman_provisioning_templates_osrhel
+    kind: finish
+    locked: yes
+  - name: Kickstart default iPXE
+    <<: *foreman_provisioning_templates_osrhel
+    kind: iPXE
+    locked: yes
+  - name: Kickstart default PXEGrub
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXEGrub
+    locked: yes
+  - name: Kickstart default PXEGrub2
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXEGrub2
+    locked: yes
+  - name: Kickstart default PXELinux
+    <<: *foreman_provisioning_templates_osrhel
+    kind: PXELinux
+    locked: yes
+  - name: Kickstart default user data
+    <<: *foreman_provisioning_templates_osrhel
+    kind: user_data
+    locked: yes
+
+  - name: Preseed default
+    <<: *foreman_provisioning_templates_osdebian
+    kind: provision
+  - name: Preseed default finish
+    <<: *foreman_provisioning_templates_osdebian
+    kind: finish
+  - name: Preseed default iPXE
+    <<: *foreman_provisioning_templates_osdebian
+    kind: iPXE
+  - name: Preseed default PXEGrub2
+    <<: *foreman_provisioning_templates_osdebian
+    kind: PXEGrub2
+  - name: Preseed default PXELinux
+    <<: *foreman_provisioning_templates_osdebian
+    kind: PXELinux
+  - name: Preseed default user data
+    <<: *foreman_provisioning_templates_osdebian
+    kind: user_data
+
+  - name: Preseed Autoinstall cloud-init user data
+    <<: *foreman_provisioning_templates_osubuntu
+    kind: user_data
+  - name: Preseed default PXEGrub2 Autoinstall
+    <<: *foreman_provisioning_templates_osubuntu
+    kind: PXEGrub2
+  - name: Preseed default PXELinux Autoinstall
+    <<: *foreman_provisioning_templates_osubuntu
+    kind: PXELinux
+

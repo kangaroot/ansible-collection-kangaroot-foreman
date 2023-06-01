@@ -1,0 +1,21 @@
+---
+# tasks file for foreman_content_builtin
+
+- name: "Vars | Include Builtin content vars"
+  ansible.builtin.include_vars:
+    dir: vars
+    ignore_files:
+      - "main.yml"
+    extensions:
+      - "yml"
+    ignore_unknown_extensions: true
+
+- name: "Vars | Append Builtin vars"
+  ansible.builtin.set_fact:
+    foreman_partition_tables: "{{ foreman_partition_tables | default([]) |
+      union( foreman_partition_tables_builtin | default([]) )
+      }}"
+    foreman_provisioning_templates: "{{ foreman_provisioning_templates | default([]) |
+      union( foreman_provisioning_templates_builtin | default([]) )
+      }}"
+

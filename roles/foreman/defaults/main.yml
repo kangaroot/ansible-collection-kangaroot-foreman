@@ -71,6 +71,8 @@ foreman_content_roles:
   - kangaroot.foreman.foreman_content_redhat
   - kangaroot.foreman.foreman_content_rocky
   - kangaroot.foreman.foreman_content_ubuntu
+  # Builtin content
+  - kangaroot.foreman.foreman_content_builtin
 
 ###############################################################################
 ### Hosts / Provisioning section
