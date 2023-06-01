@@ -49,6 +49,29 @@ foreman_sync_plans: []
 # Foreman convent view versions to keep at cleanup
 foreman_content_view_version_cleanup_keep: 5
 
+# Foreman content roles to include
+foreman_content_roles:
+  # Package only content
+  - kangaroot.foreman.foreman_content_ceph
+  - kangaroot.foreman.foreman_content_datadog
+  - kangaroot.foreman.foreman_content_docker
+  - kangaroot.foreman.foreman_content_elrepo
+  - kangaroot.foreman.foreman_content_epel
+  - kangaroot.foreman.foreman_content_fedora_copr
+  - kangaroot.foreman.foreman_content_foreman
+  - kangaroot.foreman.foreman_content_hashicorp
+  - kangaroot.foreman.foreman_content_kubernetes
+  - kangaroot.foreman.foreman_content_microsoft
+  - kangaroot.foreman.foreman_content_nginx
+  - kangaroot.foreman.foreman_content_remi
+  # OS content
+  - kangaroot.foreman.foreman_content_centos
+  - kangaroot.foreman.foreman_content_debian
+  - kangaroot.foreman.foreman_content_ol
+  - kangaroot.foreman.foreman_content_redhat
+  - kangaroot.foreman.foreman_content_rocky
+  - kangaroot.foreman.foreman_content_ubuntu
+
 ###############################################################################
 ### Hosts / Provisioning section
 ###############################################################################
