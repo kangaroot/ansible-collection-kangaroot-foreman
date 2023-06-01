@@ -56,6 +56,5 @@ foreman_content_views_remi_el9:
 
 foreman_activation_keys_remi_el9: []
 
-foreman_sync_plan_products_remi_el9:
-  - Remi Repository
+foreman_sync_plan_products_remi_el9: []
 
