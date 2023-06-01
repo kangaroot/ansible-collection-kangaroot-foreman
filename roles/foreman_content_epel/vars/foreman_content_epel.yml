@@ -1,5 +1,11 @@
 ---
-# foreman epel 8 content group vars file for katello-main
+# epel 7 content vars file for foreman_content_epel
+
+foreman_content_credentials_epel_el7:
+  - name: RPM-GPG-KEY-EPEL-7
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel ~ '/RPM-GPG-KEY-EPEL-7', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-EPEL-7') }}"
 
 foreman_content_credentials_epel_el8:
   - name: RPM-GPG-KEY-EPEL-8
@@ -7,9 +13,14 @@ foreman_content_credentials_epel_el8:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel ~ '/RPM-GPG-KEY-EPEL-8', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-EPEL-8') }}"
 
+foreman_content_credentials_epel_el9:
+  - name: RPM-GPG-KEY-EPEL-9
+    content_type: gpg_key
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_epel ~ '/RPM-GPG-KEY-EPEL-9', split_lines=False, validate_certs=False) }}"
+    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-EPEL-9') }}"
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-EPEL-8
   download_policy: on_demand
   # download_policy: immediate
   # mirror_on_sync: True
@@ -20,6 +31,17 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
+foreman_products_epel_el7:
+  - name: Extra Packages for Enterprise Linux
+    label: EPEL
+    repositories:
+      - name: Extra Packages for Enterprise Linux 7 - x86_64
+        label: epel-7
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-7
+        download_policy: immediate
+        url: "{{ foreman_repo_baseurl_epel }}/7/x86_64/"
+
 foreman_products_epel_el8:
   - name: Extra Packages for Enterprise Linux
     label: EPEL
@@ -27,29 +49,46 @@ foreman_products_epel_el8:
       - name: Extra Packages for Enterprise Linux 8 - x86_64
         label: epel-8
         <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-8
         url: "{{ foreman_repo_baseurl_epel }}/8/Everything/x86_64/"
       - name: Extra Packages for Enterprise Linux Modular 8 - x86_64
         label: epel-8-modular
         <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-8
         url: "{{ foreman_repo_baseurl_epel }}/8/Modular/x86_64/"
         mirroring_policy: "mirror_complete"
       - name: Extra Packages for Enterprise Linux 8 - Next - x86_64
         label: epel-8-next
         <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-8
         url: "{{ foreman_repo_baseurl_epel }}/next/8/Everything/x86_64/"
       # - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
       #   label: epel-8-playground
       #   <<: *foreman_products_defaults
+      #   gpg_key: RPM-GPG-KEY-EPEL-8
       #   url: "{{ foreman_repo_baseurl_epel }}/playground/8/Everything/x86_64/os/"
-      # - name: Extra Packages for Enterprise Linux 8 - Testing - x86_64
-      #   label: epel-8-testing
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel }}/testing/8/Everything/x86_64/"
-      # - name: Extra Packages for Enterprise Linux Modular 8 - Testing - x86_64
-      #   label: epel-8-modular-testing
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_epel }}/testing/8/Modular/x86_64/"
-      #   mirroring_policy: "mirror_complete"
+
+foreman_products_epel_el9:
+  - name: Extra Packages for Enterprise Linux
+    label: EPEL
+    repositories:
+      - name: Extra Packages for Enterprise Linux 9 - x86_64
+        label: epel-9
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-9
+        url: "{{ foreman_repo_baseurl_epel }}/9/Everything/x86_64/"
+      - name: Extra Packages for Enterprise Linux 9 - Next - x86_64
+        label: epel-9-next
+        <<: *foreman_products_defaults
+        gpg_key: RPM-GPG-KEY-EPEL-9
+        url: "{{ foreman_repo_baseurl_epel }}/next/9/Everything/x86_64/"
+
+foreman_content_views_epel_el7:
+  - name: cv_epel7
+    repositories:
+      - name: Extra Packages for Enterprise Linux 7 - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
 
 foreman_content_views_epel_el8:
   - name: cv_epel8
@@ -72,18 +111,16 @@ foreman_content_views_epel_el8:
   #     - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
   #       product: Extra Packages for Enterprise Linux
   #   allow_promote: False
-  # - name: cv_epel8_testing
-  #   repositories:
-  #     - name: Extra Packages for Enterprise Linux 8 - Testing - x86_64
-  #       product: Extra Packages for Enterprise Linux
-  #   allow_promote: False
-  # - name: cv_epel8_modular_testing
-  #   repositories:
-  #     - name: Extra Packages for Enterprise Linux Modular 8 - Testing - x86_64
-  #       product: Extra Packages for Enterprise Linux
-  #   allow_promote: False
 
-foreman_activation_keys_epel_el8: []
-
-foreman_sync_plan_products_epel_el8: []
+foreman_content_views_epel_el9:
+  - name: cv_epel9
+    repositories:
+      - name: Extra Packages for Enterprise Linux 9 - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
+  - name: cv_epel9_next
+    repositories:
+      - name: Extra Packages for Enterprise Linux 9 - Next - x86_64
+        product: Extra Packages for Enterprise Linux
+    allow_promote: False
 

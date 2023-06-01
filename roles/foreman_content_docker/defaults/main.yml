@@ -18,25 +18,25 @@ foreman_repo_baseurl_docker_ee: https://repos.mirantis.com
 
 
 foreman_content_credentials_docker_main: []
-foreman_content_credentials_docker: "{{ foreman_content_credentials_docker_main | default([]) if foreman_enable_docker | bool else [] |
+foreman_content_credentials_docker: "{{ ( foreman_content_credentials_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_content_credentials_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
   union( foreman_content_credentials_docker_ee | default([]) if foreman_enable_docker_ee | bool else [] )
   }}"
 
 foreman_products_docker_main: []
-foreman_products_docker: "{{ foreman_products_docker_main | default([]) if foreman_enable_docker | bool else [] |
+foreman_products_docker: "{{ ( foreman_products_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_products_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
   union( foreman_products_docker_ee | default([]) if foreman_enable_docker_ee | bool else [] )
   }}"
 
 foreman_content_views_docker_main: []
-foreman_content_views_docker: "{{ foreman_content_views_docker_main | default([]) if foreman_enable_docker | bool else [] |
+foreman_content_views_docker: "{{ ( foreman_content_views_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_content_views_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
   union( foreman_content_views_docker_ee | default([]) if foreman_enable_docker_ee | bool else [] )
   }}"
 
 foreman_activation_keys_docker_main: []
-foreman_activation_keys_docker: "{{ foreman_activation_keys_docker_main | default([]) if foreman_enable_docker | bool else [] |
+foreman_activation_keys_docker: "{{ ( foreman_activation_keys_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_activation_keys_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
   union( foreman_activation_keys_docker_ee | default([]) if foreman_enable_docker_ee | bool else [] )
   }}"
@@ -44,7 +44,7 @@ foreman_activation_keys_docker: "{{ foreman_activation_keys_docker_main | defaul
 foreman_sync_plan_products_docker_main:
   - Docker
 
-foreman_sync_plan_products_docker: "{{ foreman_sync_plan_products_docker_main | default([]) if foreman_enable_docker | bool else [] |
+foreman_sync_plan_products_docker: "{{ ( foreman_sync_plan_products_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_sync_plan_products_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
   union( foreman_sync_plan_products_docker_ee | default([]) if foreman_enable_docker_ee | bool else [] )
   }}"

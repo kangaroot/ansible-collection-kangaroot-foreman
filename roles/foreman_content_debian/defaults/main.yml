@@ -15,28 +15,28 @@ foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian }}"
 
 foreman_content_credentials_debian_main: []
 
-foreman_content_credentials_debian: "{{ foreman_content_credentials_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_content_credentials_debian: "{{ ( foreman_content_credentials_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_content_credentials_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_content_credentials_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_content_credentials_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
   }}"
 
 foreman_products_debian_main: []
-foreman_products_debian: "{{ foreman_products_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_products_debian: "{{ ( foreman_products_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_products_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_products_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_products_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
   }}"
 
 foreman_content_views_debian_main: []
-foreman_content_views_debian: "{{ foreman_content_views_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_content_views_debian: "{{ ( foreman_content_views_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_content_views_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_content_views_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_content_views_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
   }}"
 
 foreman_operatingsystems_debian_main: []
-foreman_operatingsystems_debian: "{{ foreman_operatingsystems_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_operatingsystems_debian: "{{ ( foreman_operatingsystems_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_operatingsystems_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_operatingsystems_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_operatingsystems_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
@@ -60,14 +60,14 @@ foreman_installation_media_debian_main:
       - Debian 10 (Buster)
       - Debian 11 (Bullseye)
 
-foreman_installation_media_debian: "{{ foreman_installation_media_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_installation_media_debian: "{{ ( foreman_installation_media_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_installation_media_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_installation_media_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_installation_media_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
   }}"
 
 foreman_activation_keys_debian_main: []
-foreman_activation_keys_debian: "{{ foreman_activation_keys_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_activation_keys_debian: "{{ ( foreman_activation_keys_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_activation_keys_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_activation_keys_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_activation_keys_debian11 | default([]) if foreman_enable_debian11 | bool else [] )
@@ -76,7 +76,7 @@ foreman_activation_keys_debian: "{{ foreman_activation_keys_debian_main | defaul
 foreman_sync_plan_products_debian_main:
   - Debian
 
-foreman_sync_plan_products_debian: "{{ foreman_sync_plan_products_debian_main | default([]) if foreman_enable_debian | bool else [] |
+foreman_sync_plan_products_debian: "{{ ( foreman_sync_plan_products_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_sync_plan_products_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_sync_plan_products_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_sync_plan_products_debian11 | default([]) if foreman_enable_debian11 | bool else [] )

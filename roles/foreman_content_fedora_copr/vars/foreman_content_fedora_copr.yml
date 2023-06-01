@@ -21,7 +21,7 @@ foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dgoodwin/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dgoodwin-subscription-manager') }}"
 
-foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] |
+foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] ) |
   union( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_ol6 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6 | bool else [] ) |
   union( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
@@ -47,7 +47,7 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager_ol7:
         gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
 
 foreman_products_fedora_copr_dgoodwin_subscription_manager_main: []
-foreman_products_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_products_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] |
+foreman_products_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_products_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] ) |
   union( foreman_products_fedora_copr_dgoodwin_subscription_manager_ol6 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6 | bool else [] ) |
   union( foreman_products_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
@@ -66,7 +66,7 @@ foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7:
     allow_promote: False
 
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_main: []
-foreman_content_views_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_content_views_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] |
+foreman_content_views_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_content_views_fedora_copr_dgoodwin_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] ) |
   union( foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol6 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6 | bool else [] ) |
   union( foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
@@ -79,7 +79,7 @@ foreman_content_credentials_fedora_copr_dmann_subscription_manager_main:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dmann/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dmann-subscription-manager') }}"
 
-foreman_content_credentials_fedora_copr_dmann_subscription_manager: "{{ foreman_content_credentials_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] |
+foreman_content_credentials_fedora_copr_dmann_subscription_manager: "{{ ( foreman_content_credentials_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] ) |
   union( foreman_content_credentials_fedora_copr_dmann_subscription_manager_ol8 | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager_ol8 | bool else [] )
   }}"
 
@@ -94,7 +94,7 @@ foreman_products_fedora_copr_dmann_subscription_manager_ol8:
         gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
 
 foreman_products_fedora_copr_dmann_subscription_manager_main: []
-foreman_products_fedora_copr_dmann_subscription_manager: "{{ foreman_products_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] |
+foreman_products_fedora_copr_dmann_subscription_manager: "{{ ( foreman_products_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] ) |
   union( foreman_products_fedora_copr_dmann_subscription_manager_ol8 | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager_ol8 | bool else [] )
   }}"
 
@@ -106,7 +106,7 @@ foreman_content_views_fedora_copr_dmann_subscription_manager_ol8:
     allow_promote: False
 
 foreman_content_views_fedora_copr_dmann_subscription_manager_main: []
-foreman_content_views_fedora_copr_dmann_subscription_manager: "{{ foreman_content_views_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] |
+foreman_content_views_fedora_copr_dmann_subscription_manager: "{{ ( foreman_content_views_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] ) |
   union( foreman_content_views_fedora_copr_dmann_subscription_manager_ol8 | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager_ol8 | bool else [] )
   }}"
 

@@ -14,49 +14,49 @@ foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template }}"
 
 
 foreman_content_credentials_template_main: []
-foreman_content_credentials_template: "{{ foreman_content_credentials_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_content_credentials_template: "{{ ( foreman_content_credentials_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_content_credentials_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_content_credentials_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_content_credentials_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_products_template_main: []
-foreman_products_template: "{{ foreman_products_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_products_template: "{{ ( foreman_products_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_products_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_products_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_products_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_content_views_template_main: []
-foreman_content_views_template: "{{ foreman_content_views_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_content_views_template: "{{ ( foreman_content_views_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_content_views_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_content_views_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_content_views_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_operatingsystems_template_main: []
-foreman_operatingsystems_template: "{{ foreman_operatingsystems_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_operatingsystems_template: "{{ ( foreman_operatingsystems_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_operatingsystems_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_operatingsystems_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_operatingsystems_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_installation_media_template_main: []
-foreman_installation_media_template: "{{ foreman_installation_media_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_installation_media_template: "{{ ( foreman_installation_media_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_installation_media_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_installation_media_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_installation_media_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_activation_keys_template_main: []
-foreman_activation_keys_template: "{{ foreman_activation_keys_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_activation_keys_template: "{{ ( foreman_activation_keys_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_activation_keys_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_activation_keys_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_activation_keys_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
   }}"
 
 foreman_sync_plan_products_template_main: []
-foreman_sync_plan_products_template: "{{ foreman_sync_plan_products_template_main | default([]) if foreman_enable_template | bool else [] |
+foreman_sync_plan_products_template: "{{ ( foreman_sync_plan_products_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_sync_plan_products_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_sync_plan_products_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
   union( foreman_sync_plan_products_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )

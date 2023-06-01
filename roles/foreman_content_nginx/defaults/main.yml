@@ -19,42 +19,42 @@ foreman_content_credentials_nginx_main:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/nginx_signing.key') }}"
 
-foreman_content_credentials_nginx: "{{ foreman_content_credentials_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_content_credentials_nginx: "{{ ( foreman_content_credentials_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_content_credentials_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_content_credentials_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_content_credentials_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
   }}"
 
 foreman_products_nginx_main: []
-foreman_products_nginx: "{{ foreman_products_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_products_nginx: "{{ ( foreman_products_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_products_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_products_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_products_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
   }}"
 
 foreman_content_views_nginx_main: []
-foreman_content_views_nginx: "{{ foreman_content_views_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_content_views_nginx: "{{ ( foreman_content_views_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_content_views_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_content_views_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_content_views_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
   }}"
 
 foreman_operatingsystems_nginx_main: []
-foreman_operatingsystems_nginx: "{{ foreman_operatingsystems_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_operatingsystems_nginx: "{{ ( foreman_operatingsystems_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_operatingsystems_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_operatingsystems_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_operatingsystems_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
   }}"
 
 foreman_installation_media_nginx_main: []
-foreman_installation_media_nginx: "{{ foreman_installation_media_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_installation_media_nginx: "{{ ( foreman_installation_media_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_installation_media_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_installation_media_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_installation_media_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
   }}"
 
 foreman_activation_keys_nginx_main: []
-foreman_activation_keys_nginx: "{{ foreman_activation_keys_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_activation_keys_nginx: "{{ ( foreman_activation_keys_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_activation_keys_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_activation_keys_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_activation_keys_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )
@@ -63,7 +63,7 @@ foreman_activation_keys_nginx: "{{ foreman_activation_keys_nginx_main | default(
 foreman_sync_plan_products_nginx_main:
   - Nginx
 
-foreman_sync_plan_products_nginx: "{{ foreman_sync_plan_products_nginx_main | default([]) if foreman_enable_nginx | bool else [] |
+foreman_sync_plan_products_nginx: "{{ ( foreman_sync_plan_products_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_sync_plan_products_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |
   union( foreman_sync_plan_products_nginx_el8 | default([]) if foreman_enable_nginx_el8 | bool else [] ) |
   union( foreman_sync_plan_products_nginx_el9 | default([]) if foreman_enable_nginx_el9 | bool else [] )

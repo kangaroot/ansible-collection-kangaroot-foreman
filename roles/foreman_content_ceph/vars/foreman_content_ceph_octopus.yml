@@ -1,0 +1,183 @@
+---
+# ceph content vars file for foreman_content_ceph
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-Ceph-release
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_defaults_deb: &foreman_products_defaults_deb
+  <<: *foreman_products_defaults
+  content_type: deb
+  mirroring_policy: "mirror_content_only"
+  deb_components: main
+  deb_architectures: amd64
+
+
+foreman_products_ceph_octopus_el7:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Octopus - EL7
+        label: ceph-octopus-el7
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Octopus - EL7
+        label: ceph-noarch-octopus-el7
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/noarch"
+        <<: *foreman_products_defaults
+
+foreman_products_ceph_octopus_el8:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Octopus - EL8
+        label: ceph-octopus-el8
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Octopus - EL8
+        label: ceph-noarch-octopus-el8
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/noarch"
+        <<: *foreman_products_defaults
+
+foreman_products_ceph_octopus_deb10:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
+        label: ceph-octopus-debian-buster
+        url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 }}/debian-octopus/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: buster
+
+foreman_products_ceph_octopus_ub1804:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
+        label: ceph-octopus-ubuntu-bionic
+        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: bionic
+
+foreman_products_ceph_octopus_ub2004:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
+        label: ceph-octopus-ubuntu-focal
+        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: focal
+
+
+foreman_content_views_ceph_octopus_el7:
+  - name: cv_ceph_octopus_el7
+    repositories:
+      - name: Ceph packages for x86_64 - Octopus - EL7
+        product: Ceph
+      - name: Ceph noarch packages - Octopus - EL7
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_octopus_el8:
+  - name: cv_ceph_octopus_el8
+    repositories:
+      - name: Ceph packages for x86_64 - Octopus - EL8
+        product: Ceph
+      - name: Ceph noarch packages - Octopus - EL8
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_octopus_deb10:
+  - name: cv_ceph_octopus_deb10
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_octopus_ub1804:
+  - name: cv_ceph_octopus_ub1804
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_octopus_ub2004:
+  - name: cv_ceph_octopus_ub2004
+    repositories:
+      - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
+        product: Ceph
+    allow_promote: False
+
+
+foreman_content_credentials_octopus_ceph_main: []
+foreman_content_credentials_octopus_ceph: "{{ ( foreman_content_credentials_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_content_credentials_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_content_credentials_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_content_credentials_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_content_credentials_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_content_credentials_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_products_ceph_octopus_main: []
+foreman_products_ceph_octopus: "{{ ( foreman_products_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_products_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_products_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_products_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_products_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_products_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_content_views_ceph_octopus_main: []
+foreman_content_views_ceph_octopus: "{{ ( foreman_content_views_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_content_views_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_content_views_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_content_views_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_content_views_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_content_views_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_operatingsystems_ceph_octopus_main: []
+foreman_operatingsystems_ceph_octopus: "{{ ( foreman_operatingsystems_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_operatingsystems_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_installation_media_ceph_octopus_main: []
+foreman_installation_media_ceph_octopus: "{{ ( foreman_installation_media_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_activation_keys_ceph_octopus_main: []
+foreman_activation_keys_ceph_octopus: "{{ ( foreman_activation_keys_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+
+foreman_sync_plan_products_ceph_octopus_main: []
+foreman_sync_plan_products_ceph_octopus: "{{ ( foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub1804 | default([]) if foreman_enable_ceph_octopus_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_octopus_ub2004 | default([]) if foreman_enable_ceph_octopus_ub2004 | bool else [] )
+  }}"
+

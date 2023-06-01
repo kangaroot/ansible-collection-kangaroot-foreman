@@ -111,7 +111,7 @@ foreman_content_credentials_centos_main:
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Virtualization', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Virtualization') }}"
 
-foreman_content_credentials_centos: "{{ foreman_content_credentials_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_content_credentials_centos: "{{ ( foreman_content_credentials_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_content_credentials_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_content_credentials_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_content_credentials_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -119,7 +119,7 @@ foreman_content_credentials_centos: "{{ foreman_content_credentials_centos_main 
   }}"
 
 foreman_products_centos_main: []
-foreman_products_centos: "{{ foreman_products_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_products_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_products_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -127,7 +127,7 @@ foreman_products_centos: "{{ foreman_products_centos_main | default([]) if forem
   }}"
 
 foreman_content_views_centos_main: []
-foreman_content_views_centos: "{{ foreman_content_views_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_content_views_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_content_views_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_content_views_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -135,7 +135,7 @@ foreman_content_views_centos: "{{ foreman_content_views_centos_main | default([]
   }}"
 
 foreman_operatingsystems_centos_main: []
-foreman_operatingsystems_centos: "{{ foreman_operatingsystems_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_operatingsystems_centos: "{{ ( foreman_operatingsystems_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_operatingsystems_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_operatingsystems_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_operatingsystems_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -173,7 +173,7 @@ foreman_installation_media_centos_main:
     operatingsystems:
       - CentOS 9 Stream
 
-foreman_installation_media_centos: "{{ foreman_installation_media_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_installation_media_centos: "{{ ( foreman_installation_media_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_installation_media_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_installation_media_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_installation_media_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -181,7 +181,7 @@ foreman_installation_media_centos: "{{ foreman_installation_media_centos_main | 
   }}"
 
 foreman_activation_keys_centos_main: []
-foreman_activation_keys_centos: "{{ foreman_activation_keys_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_activation_keys_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_activation_keys_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_activation_keys_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
@@ -191,7 +191,7 @@ foreman_activation_keys_centos: "{{ foreman_activation_keys_centos_main | defaul
 foreman_sync_plan_products_centos_main:
   - CentOS
 
-foreman_sync_plan_products_centos: "{{ foreman_sync_plan_products_centos_main | default([]) if foreman_enable_centos | bool else [] |
+foreman_sync_plan_products_centos: "{{ ( foreman_sync_plan_products_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_sync_plan_products_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_sync_plan_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_sync_plan_products_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |

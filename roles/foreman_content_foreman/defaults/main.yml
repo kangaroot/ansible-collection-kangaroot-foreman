@@ -35,42 +35,42 @@ foreman_content_credentials_foreman_main:
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-puppet-20250406') }}"
 
 
-foreman_content_credentials_foreman: "{{ foreman_content_credentials_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_content_credentials_foreman: "{{ ( foreman_content_credentials_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_content_credentials_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_content_credentials_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_content_credentials_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
   }}"
 
 foreman_products_foreman_main: []
-foreman_products_foreman: "{{ foreman_products_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_products_foreman: "{{ ( foreman_products_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_products_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_products_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_products_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
   }}"
 
 foreman_content_views_foreman_main: []
-foreman_content_views_foreman: "{{ foreman_content_views_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_content_views_foreman: "{{ ( foreman_content_views_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_content_views_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_content_views_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_content_views_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
   }}"
 
 foreman_operatingsystems_foreman_main: []
-foreman_operatingsystems_foreman: "{{ foreman_operatingsystems_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_operatingsystems_foreman: "{{ ( foreman_operatingsystems_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_operatingsystems_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_operatingsystems_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_operatingsystems_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
   }}"
 
 foreman_installation_media_foreman_main: []
-foreman_installation_media_foreman: "{{ foreman_installation_media_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_installation_media_foreman: "{{ ( foreman_installation_media_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_installation_media_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_installation_media_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_installation_media_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
   }}"
 
 foreman_activation_keys_foreman_main: []
-foreman_activation_keys_foreman: "{{ foreman_activation_keys_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_activation_keys_foreman: "{{ ( foreman_activation_keys_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_activation_keys_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_activation_keys_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_activation_keys_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )
@@ -79,7 +79,7 @@ foreman_activation_keys_foreman: "{{ foreman_activation_keys_foreman_main | defa
 foreman_sync_plan_products_foreman_main:
   - Foreman
 
-foreman_sync_plan_products_foreman: "{{ foreman_sync_plan_products_foreman_main | default([]) if foreman_enable_foreman | bool else [] |
+foreman_sync_plan_products_foreman: "{{ ( foreman_sync_plan_products_foreman_main | default([]) if foreman_enable_foreman | bool else [] ) |
   union( foreman_sync_plan_products_foreman_el7 | default([]) if foreman_enable_foreman_el7 | bool else [] ) |
   union( foreman_sync_plan_products_foreman_el8 | default([]) if foreman_enable_foreman_el8 | bool else [] ) |
   union( foreman_sync_plan_products_foreman_el9 | default([]) if foreman_enable_foreman_el9 | bool else [] )

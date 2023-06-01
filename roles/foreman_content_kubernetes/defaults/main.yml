@@ -18,39 +18,39 @@ foreman_content_credentials_kubernetes_main:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_kubernetes ~ '/doc/yum-key.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-kubernetes-yum') }}"
 
-foreman_content_credentials_kubernetes: "{{ foreman_content_credentials_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_content_credentials_kubernetes: "{{ ( foreman_content_credentials_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_content_credentials_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_products_kubernetes_main: []
-foreman_products_kubernetes: "{{ foreman_products_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_products_kubernetes: "{{ ( foreman_products_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_products_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_content_views_kubernetes_main: []
-foreman_content_views_kubernetes: "{{ foreman_content_views_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_content_views_kubernetes: "{{ ( foreman_content_views_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_content_views_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_operatingsystems_kubernetes_main: []
-foreman_operatingsystems_kubernetes: "{{ foreman_operatingsystems_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_operatingsystems_kubernetes: "{{ ( foreman_operatingsystems_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_operatingsystems_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_installation_media_kubernetes_main: []
-foreman_installation_media_kubernetes: "{{ foreman_installation_media_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_installation_media_kubernetes: "{{ ( foreman_installation_media_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_installation_media_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_activation_keys_kubernetes_main: []
-foreman_activation_keys_kubernetes: "{{ foreman_activation_keys_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_activation_keys_kubernetes: "{{ ( foreman_activation_keys_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_activation_keys_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 
 foreman_sync_plan_products_kubernetes_main:
   - Kubernetes
 
-foreman_sync_plan_products_kubernetes: "{{ foreman_sync_plan_products_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] |
+foreman_sync_plan_products_kubernetes: "{{ ( foreman_sync_plan_products_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_sync_plan_products_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )
   }}"
 

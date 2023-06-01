@@ -1,0 +1,236 @@
+---
+# ceph content vars file for foreman_content_ceph
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-Ceph-release
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: false
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_defaults_deb: &foreman_products_defaults_deb
+  <<: *foreman_products_defaults
+  content_type: deb
+  mirroring_policy: "mirror_content_only"
+  deb_components: main
+  deb_architectures: amd64
+
+
+foreman_products_ceph_pacific_el7:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL7
+        label: ceph-pacific-el7
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el7 }}/rpm-pacific/el7/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Pacific - EL7
+        label: ceph-noarch-pacific-el7
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el7 }}/rpm-pacific/el7/noarch"
+        <<: *foreman_products_defaults
+
+foreman_products_ceph_pacific_el8:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL8
+        label: ceph-pacific-el8
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el8 }}/rpm-pacific/el8/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Pacific - EL8
+        label: ceph-noarch-pacific-el8
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el8 }}/rpm-pacific/el8/noarch"
+        <<: *foreman_products_defaults
+
+foreman_products_ceph_pacific_el9:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL9
+        label: ceph-pacific-el9
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el9 }}/rpm-pacific/el9/x86_64/"
+        <<: *foreman_products_defaults
+      - name: Ceph noarch packages - Pacific - EL9
+        label: ceph-noarch-pacific-el9
+        url: "{{ foreman_repo_baseurl_ceph_pacific_el9 }}/rpm-pacific/el9/noarch"
+        <<: *foreman_products_defaults
+
+foreman_products_ceph_pacific_deb10:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 10 (Buster)
+        label: ceph-pacific-debian-buster
+        url: "{{ foreman_repo_baseurl_ceph_pacific_deb11 }}/debian-pacific/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: buster
+
+foreman_products_ceph_pacific_deb11:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
+        label: ceph-pacific-debian-bullseye
+        url: "{{ foreman_repo_baseurl_ceph_pacific_deb11 }}/debian-pacific/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: bullseye
+
+foreman_products_ceph_pacific_ub1804:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Ubuntu 18.04 LTS (Bionic Beaver)
+        label: ceph-pacific-ubuntu-bionic
+        url: "{{ foreman_repo_baseurl_ceph_pacific_ub2004 }}/debian-pacific/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: bionic
+
+foreman_products_ceph_pacific_ub2004:
+  - name: Ceph
+    label: Ceph
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Ubuntu 20.04 LTS (Focal Fossa)
+        label: ceph-pacific-ubuntu-focal
+        url: "{{ foreman_repo_baseurl_ceph_pacific_ub2004 }}/debian-pacific/"
+        <<: *foreman_products_defaults_deb
+        deb_releases: focal
+
+
+foreman_content_views_ceph_pacific_el7:
+  - name: cv_ceph_pacific_el7
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL7
+        product: Ceph
+      - name: Ceph noarch packages - Pacific - EL7
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_el8:
+  - name: cv_ceph_pacific_el8
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL8
+        product: Ceph
+      - name: Ceph noarch packages - Pacific - EL8
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_el9:
+  - name: cv_ceph_pacific_el9
+    repositories:
+      - name: Ceph packages for x86_64 - Pacific - EL9
+        product: Ceph
+      - name: Ceph noarch packages - Pacific - EL9
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_deb10:
+  - name: cv_ceph_pacific_deb10
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 10 (Buster)
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_deb11:
+  - name: cv_ceph_pacific_deb11
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_ub1804:
+  - name: cv_ceph_pacific_ub1804
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Ubuntu 18.04 LTS (Bionic Beaver)
+        product: Ceph
+    allow_promote: False
+
+foreman_content_views_ceph_pacific_ub2004:
+  - name: cv_ceph_pacific_ub2004
+    repositories:
+      - name: Ceph packages for amd64 - Pacific - Ubuntu 20.04 LTS (Focal Fossa)
+        product: Ceph
+    allow_promote: False
+
+
+foreman_content_credentials_pacific_ceph_main: []
+foreman_content_credentials_pacific_ceph: "{{ ( foreman_content_credentials_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_content_credentials_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_products_ceph_pacific_main: []
+foreman_products_ceph_pacific: "{{ ( foreman_products_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_products_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_products_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_products_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_products_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_products_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_products_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_products_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_content_views_ceph_pacific_main: []
+foreman_content_views_ceph_pacific: "{{ ( foreman_content_views_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_content_views_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_operatingsystems_ceph_pacific_main: []
+foreman_operatingsystems_ceph_pacific: "{{ ( foreman_operatingsystems_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_operatingsystems_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_installation_media_ceph_pacific_main: []
+foreman_installation_media_ceph_pacific: "{{ ( foreman_installation_media_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_activation_keys_ceph_pacific_main: []
+foreman_activation_keys_ceph_pacific: "{{ ( foreman_activation_keys_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+
+foreman_sync_plan_products_ceph_pacific_main: []
+foreman_sync_plan_products_ceph_pacific: "{{ ( foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb10 | default([]) if foreman_enable_ceph_pacific_deb10 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_deb11 | default([]) if foreman_enable_ceph_pacific_deb11 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub1804 | default([]) if foreman_enable_ceph_pacific_ub1804 | bool else [] ) |
+  union( foreman_installation_media_ceph_pacific_ub2004 | default([]) if foreman_enable_ceph_pacific_ub2004 | bool else [] )
+  }}"
+

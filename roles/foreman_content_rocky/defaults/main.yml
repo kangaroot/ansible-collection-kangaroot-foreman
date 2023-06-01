@@ -18,25 +18,25 @@ foreman_content_credentials_rocky_main:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky ~ '/RPM-GPG-KEY-rockyofficial', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-rockyofficial') }}"
 
-foreman_content_credentials_rocky: "{{ foreman_content_credentials_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_content_credentials_rocky: "{{ ( foreman_content_credentials_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_content_credentials_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_content_credentials_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_products_rocky_main: []
-foreman_products_rocky: "{{ foreman_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_products_rocky: "{{ ( foreman_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_content_views_rocky_main: []
-foreman_content_views_rocky: "{{ foreman_content_views_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_content_views_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_content_views_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_operatingsystems_rocky_main: []
-foreman_operatingsystems_rocky: "{{ foreman_operatingsystems_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_operatingsystems_rocky: "{{ ( foreman_operatingsystems_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_operatingsystems_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_operatingsystems_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
@@ -58,13 +58,13 @@ foreman_installation_media_rocky_main:
     path: "{{ foreman_repo_baseurl_rocky }}/$major/BaseOS/$arch/kickstart"
     <<: *foreman_installation_media_rocky_defaults
 
-foreman_installation_media_rocky: "{{ foreman_installation_media_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_installation_media_rocky: "{{ ( foreman_installation_media_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_installation_media_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_installation_media_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_activation_keys_rocky_main: []
-foreman_activation_keys_rocky: "{{ foreman_activation_keys_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_activation_keys_rocky: "{{ ( foreman_activation_keys_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_activation_keys_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_activation_keys_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
@@ -72,7 +72,7 @@ foreman_activation_keys_rocky: "{{ foreman_activation_keys_rocky_main | default(
 foreman_sync_plan_products_rocky_main:
   - Rocky Linux
 
-foreman_sync_plan_products_rocky: "{{ foreman_sync_plan_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] |
+foreman_sync_plan_products_rocky: "{{ ( foreman_sync_plan_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_sync_plan_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"

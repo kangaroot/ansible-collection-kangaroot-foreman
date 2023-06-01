@@ -28,67 +28,40 @@ foreman_enable_ceph_quincy_ub2004: false
 foreman_enable_ceph_docker: false
 
 
-# foreman_repo_baseurl_ceph: https://download.ceph.com
-# foreman_repo_baseurl_ceph_docker: https://quay.io
-# foreman_repo_baseurl_ceph_nautilus_deb9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_nautilus_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_nautilus_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_nautilus_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_nautilus_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_nautilus_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_octopus_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_octopus_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_octopus_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_octopus_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_octopus_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_deb10: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_deb11: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_el9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_ub1804: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_pacific_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_quincy_deb11: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_quincy_el7: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_quincy_el8: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_quincy_el9: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-# foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph | default('https://download.ceph.com') }}"
-
-
-foreman_default_repo_baseurl_ceph: https://download.ceph.com
-foreman_default_repo_baseurl_ceph_docker: https://quay.io
-foreman_default_repo_baseurl_ceph_nautilus_deb9: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_nautilus_deb10: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_nautilus_el7: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_nautilus_el8: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_nautilus_ub1804: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_nautilus_ub2004: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_octopus_deb10: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_octopus_el7: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_octopus_el8: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_octopus_ub1804: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_octopus_ub2004: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_deb10: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_deb11: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_el7: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_el8: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_el9: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_ub1804: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_pacific_ub2004: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_quincy_deb11: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_quincy_el7: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_quincy_el8: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_quincy_el9: "{{ foreman_default_repo_baseurl_ceph }}"
-foreman_default_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_default_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph: https://download.ceph.com
+foreman_repo_baseurl_ceph_docker: https://quay.io
+foreman_repo_baseurl_ceph_nautilus_deb9: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_nautilus_deb10: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_nautilus_el7: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_nautilus_el8: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_nautilus_ub1804: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_nautilus_ub2004: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_octopus_deb10: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_octopus_el7: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_octopus_el8: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_octopus_ub1804: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_octopus_ub2004: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_deb10: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_deb11: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_el7: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_el8: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_el9: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_ub1804: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_pacific_ub2004: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_quincy_deb11: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_quincy_el7: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_quincy_el8: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_quincy_el9: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph }}"
 
 
 foreman_content_credentials_ceph_main:
   - name: RPM-GPG-KEY-Ceph-release
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_ceph | default(foreman_default_repo_baseurl_ceph) ~ '/keys/release.asc', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_ceph ~ '/keys/release.asc', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Ceph-release') }}"
 
-foreman_content_credentials_ceph: "{{ foreman_content_credentials_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_content_credentials_ceph: "{{ ( foreman_content_credentials_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_content_credentials_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -116,7 +89,7 @@ foreman_content_credentials_ceph: "{{ foreman_content_credentials_ceph_main | de
   }}"
 
 foreman_products_ceph_main: []
-foreman_products_ceph: "{{ foreman_products_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_products_ceph: "{{ ( foreman_products_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_products_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_products_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_products_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -144,7 +117,7 @@ foreman_products_ceph: "{{ foreman_products_ceph_main | default([]) if foreman_e
   }}"
 
 foreman_content_views_ceph_main: []
-foreman_content_views_ceph: "{{ foreman_content_views_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_content_views_ceph: "{{ ( foreman_content_views_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_content_views_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -172,7 +145,7 @@ foreman_content_views_ceph: "{{ foreman_content_views_ceph_main | default([]) if
   }}"
 
 foreman_operatingsystems_ceph_main: []
-foreman_operatingsystems_ceph: "{{ foreman_operatingsystems_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_operatingsystems_ceph: "{{ ( foreman_operatingsystems_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_operatingsystems_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -200,7 +173,7 @@ foreman_operatingsystems_ceph: "{{ foreman_operatingsystems_ceph_main | default(
   }}"
 
 foreman_installation_media_ceph_main: []
-foreman_installation_media_ceph: "{{ foreman_installation_media_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_installation_media_ceph: "{{ ( foreman_installation_media_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -228,7 +201,7 @@ foreman_installation_media_ceph: "{{ foreman_installation_media_ceph_main | defa
   }}"
 
 foreman_activation_keys_ceph_main: []
-foreman_activation_keys_ceph: "{{ foreman_activation_keys_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_activation_keys_ceph: "{{ ( foreman_activation_keys_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |
@@ -258,7 +231,7 @@ foreman_activation_keys_ceph: "{{ foreman_activation_keys_ceph_main | default([]
 foreman_sync_plan_products_ceph_main:
   - Ceph
 
-foreman_sync_plan_products_ceph: "{{ foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph | bool else [] |
+foreman_sync_plan_products_ceph: "{{ ( foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el7 | default([]) if foreman_enable_ceph_nautilus_el7 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_el8 | default([]) if foreman_enable_ceph_nautilus_el8 | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus_deb9 | default([]) if foreman_enable_ceph_nautilus_deb9 | bool else [] ) |

@@ -30,9 +30,3 @@ foreman_products_ceph_docker:
         content_type: docker
         mirroring_policy: "mirror_content_only"
 
-foreman_content_views_ceph_docker: []
-
-foreman_activation_keys_ceph_docker: []
-
-foreman_sync_plan_products_ceph_docker: []
-
