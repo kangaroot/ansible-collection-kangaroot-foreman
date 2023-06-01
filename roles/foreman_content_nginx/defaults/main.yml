@@ -2,76 +2,75 @@
 # defaults file for foreman_content_nginx
 
 foreman_enable_nginx: false
+# foreman_enable_nginx_el7: false
+# foreman_enable_nginx_el8: false
+# foreman_enable_nginx_el9: false
 
 
 # foreman_repo_baseurl_nginx: https://nginx.org/packages
+# foreman_repo_baseurl_nginx_el7: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+# foreman_repo_baseurl_nginx_el8: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+# foreman_repo_baseurl_nginx_el9: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
 
 foreman_default_repo_baseurl_nginx: https://nginx.org/packages
+foreman_default_repo_baseurl_nginx_el7: "{{ foreman_default_repo_baseurl_nginx }}"
+foreman_default_repo_baseurl_nginx_el8: "{{ foreman_default_repo_baseurl_nginx }}"
+foreman_default_repo_baseurl_nginx_el9: "{{ foreman_default_repo_baseurl_nginx }}"
 
 
-foreman_content_credentials_nginx:
+foreman_content_credentials_nginx_main:
   - name: RPM-GPG-KEY-nginx
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/nginx_signing.key') }}"
 
-foreman_products_defaults: &foreman_products_defaults
-  content_type: yum
-  gpg_key: RPM-GPG-KEY-nginx
-  download_policy: on_demand
-  # mirror_on_sync: True
-  # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
-  # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
-  # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+foreman_content_credentials_nginx: "{{ foreman_content_credentials_nginx_main | default([]) |
+  union( foreman_content_credentials_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_credentials_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
 
-foreman_products_nginx:
-  - name: Nginx
-    label: Nginx
-    repositories:
-      - name: nginx stable repo - EL7
-        label: nginx-stable-el7
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/rhel/7/x86_64/"
-        <<: *foreman_products_defaults
-      - name: nginx stable repo - EL8
-        label: nginx-stable-el8
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/rhel/8/x86_64/"
-        <<: *foreman_products_defaults
-      - name: nginx mainline repo - EL7
-        label: nginx-mainline-el7
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/mainline/rhel/7/x86_64/"
-        <<: *foreman_products_defaults
-      - name: nginx mainline repo - EL8
-        label: nginx-mainline-el8
-        url: "{{ foreman_repo_baseurl_nginx | default(foreman_default_repo_baseurl_nginx) }}/mainline/rhel/8/x86_64/"
-        <<: *foreman_products_defaults
+foreman_products_nginx_main: []
+foreman_products_nginx: "{{ foreman_products_nginx_main | default([]) |
+  union( foreman_products_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_products_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
 
-foreman_content_views_nginx:
-  - name: cv_nginx_stable_el7
-    repositories:
-      - name: nginx stable repo - EL7
-        product: Nginx
-    allow_promote: False
-  - name: cv_nginx_stable_el8
-    repositories:
-      - name: nginx stable repo - EL8
-        product: Nginx
-    allow_promote: False
-  - name: cv_nginx_mainline_el7
-    repositories:
-      - name: nginx mainline repo - EL7
-        product: Nginx
-    allow_promote: False
-  - name: cv_nginx_mainline_el8
-    repositories:
-      - name: nginx mainline repo - EL8
-        product: Nginx
-    allow_promote: False
+foreman_content_views_nginx_main: []
+foreman_content_views_nginx: "{{ foreman_content_views_nginx_main | default([]) |
+  union( foreman_content_views_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_content_views_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
 
-foreman_activation_keys_nginx: []
+foreman_operatingsystems_nginx_main: []
+foreman_operatingsystems_nginx: "{{ foreman_operatingsystems_nginx_main | default([]) |
+  union( foreman_operatingsystems_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_operatingsystems_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
 
-foreman_sync_plan_products_nginx:
+foreman_installation_media_nginx_main: []
+foreman_installation_media_nginx: "{{ foreman_installation_media_nginx_main | default([]) |
+  union( foreman_installation_media_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_installation_media_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_activation_keys_nginx_main: []
+foreman_activation_keys_nginx: "{{ foreman_activation_keys_nginx_main | default([]) |
+  union( foreman_activation_keys_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_activation_keys_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
+
+foreman_sync_plan_products_nginx_main:
   - Nginx
+
+foreman_sync_plan_products_nginx: "{{ foreman_sync_plan_products_nginx_main | default([]) |
+  union( foreman_sync_plan_products_nginx_el7 | default([]) if foreman_enable_nginx_el7 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_nginx_el8 | default([]) if foreman_enable_nginx_el8 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] ) |
+  union( foreman_sync_plan_products_nginx_el9 | default([]) if foreman_enable_nginx_el9 | default( foreman_enable_nginx | default(false) | bool ) | bool else [] )
+  }}"
 
