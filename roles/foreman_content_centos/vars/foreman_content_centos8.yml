@@ -43,53 +43,21 @@ foreman_products_centos8:
         label: centos-8-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/HighAvailability/x86_64/os/"
+      - name: CentOS 8 - ContinuousRelease
+        label: centos-8-cr
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/cr/x86_64/os/"
+      - name: CentOS 8 - FastTrack
+        label: centos-8-fasttrack
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
 
-      # - name: CentOS 8 - BaseOS Kickstart 8.0
-      #   label: centos-8-baseos-kickstart-8_0
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/kickstart/"
-      # - name: CentOS 8 - AppStream Kickstart 8.0
-      #   label: centos-8-appstream-kickstart-8_0
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/kickstart/"
-      # - name: CentOS 8 - BaseOS Kickstart 8.1
-      #   label: centos-8-baseos-kickstart-8_1
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/kickstart/"
-      # - name: CentOS 8 - AppStream Kickstart 8.1
-      #   label: centos-8-appstream-kickstart-8_1
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/kickstart/"
-      # - name: CentOS 8 - BaseOS Kickstart 8.2
-      #   label: centos-8-baseos-kickstart-8_2
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/kickstart/"
-      # - name: CentOS 8 - AppStream Kickstart 8.2
-      #   label: centos-8-appstream-kickstart-8_2
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/kickstart/"
-      # - name: CentOS 8 - BaseOS Kickstart 8.3
-      #   label: centos-8-baseos-kickstart-8_3
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/kickstart/"
-      # - name: CentOS 8 - AppStream Kickstart 8.3
-      #   label: centos-8-appstream-kickstart-8_3
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/kickstart/"
-      # - name: CentOS 8 - BaseOS Kickstart 8.4
-      #   label: centos-8-baseos-kickstart-8_4
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/kickstart/"
-      # - name: CentOS 8 - AppStream Kickstart 8.4
-      #   label: centos-8-appstream-kickstart-8_4
-      #   <<: *foreman_products_defaults
-      #   url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/kickstart/"
-      - name: CentOS 8 - BaseOS Kickstart 8.5
-        label: centos-8-baseos-kickstart-8_5
+      - name: CentOS 8 - BaseOS Kickstart
+        label: centos-8-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8 - AppStream Kickstart 8.5
-        label: centos-8-appstream-kickstart-8_5
+      - name: CentOS 8 - AppStream Kickstart
+        label: centos-8-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
 
@@ -124,6 +92,16 @@ foreman_content_views_centos8:
       - name: CentOS 8 - HighAvailability
         product: CentOS
     allow_promote: False
+  - name: cv_centos8_cr
+    repositories:
+      - name: CentOS 8 - ContinuousRelease
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_fasttrack
+    repositories:
+      - name: CentOS 8 - FastTrack
+        product: CentOS
+    allow_promote: False
 
   - name: ccv_centos8
     composite: True
@@ -141,54 +119,14 @@ foreman_content_views_centos8:
         latest: true
       - content_view: cv_centos8_ha
         latest: true
+      - content_view: cv_centos8_cr
+        latest: true
+      - content_view: cv_centos8_fasttrack
+        latest: true
       - content_view: cv_epel8
         latest: true
       - content_view: cv_epel8_modular
         latest: true
-
-  # - name: ccv_centos8_foreman
-  #   composite: True
-  #   auto_publish: True
-  #   components:
-  #     - content_view: cv_centos8_baseos
-  #       latest: true
-  #     - content_view: cv_centos8_appstream
-  #       latest: true
-  #     - content_view: cv_centos8_extras
-  #       latest: true
-  #     - content_view: cv_centos8_powertools
-  #       latest: true
-  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el8"
-  #       latest: true
-
-  # - name: ccv_centos8_katello
-  #   composite: True
-  #   auto_publish: True
-  #   components:
-  #     - content_view: cv_centos8_baseos
-  #       latest: true
-  #     - content_view: cv_centos8_appstream
-  #       latest: true
-  #     - content_view: cv_centos8_extras
-  #       latest: true
-  #     - content_view: cv_centos8_powertools
-  #       latest: true
-  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_candlepin_el8"
-  #       latest: true
-  #     - content_view: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_el8"
-  #       latest: true
-  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el8"
-  #       latest: true
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
@@ -229,36 +167,6 @@ foreman_operatingsystems_centos8:
     minor: ""
     description: "CentOS 8"
     <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "0.1905"
-    description: "CentOS 8.0.1905"
-    <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "1.1911"
-    description: "CentOS 8.1.1911"
-    <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "2.2004"
-    description: "CentOS 8.2.2004"
-    <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "3.2011"
-    description: "CentOS 8.3.2011"
-    <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "4.2105"
-    description: "CentOS 8.4.2105"
-    <<: *foreman_operatingsystems_defaults
-  - name: "CentOS"
-    major: "8"
-    minor: "5.2111"
-    description: "CentOS 8.5.2111"
-    <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -270,68 +178,16 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 foreman_installation_media_centos8:
-  # - name: CentOS 8.0.1905 BaseOS
-  #   path: "https://{{ foreman_server_hostname }/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_0/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.0.1905
-  # - name: CentOS 8.0.1905 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_0/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.0.1905
-  # - name: CentOS 8.1.1911 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_1/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.1.1911
-  # - name: CentOS 8.1.1911 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_1/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.1.1911
-  # - name: CentOS 8.2.2004 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_2/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.2.2004
-  # - name: CentOS 8.2.2004 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_2/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.2.2004
-  # - name: CentOS 8.3.2011 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_3/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.3.2011
-  # - name: CentOS 8.3.2011 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_3/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.3.2011
-  # - name: CentOS 8.4.2105 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_4/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.4.2105
-  # - name: CentOS 8.4.2105 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_4/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 8.4.2105
-  - name: CentOS 8.5.2111 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart-8_5/"
+  - name: CentOS 8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 8
-      - CentOS 8.5.2111
-  - name: CentOS 8.5.2111 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart-8_5/"
+  - name: CentOS 8 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 8
-      - CentOS 8.5.2111
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -361,54 +217,14 @@ foreman_activation_keys_centos8:
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-ha"
         override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-8-cr"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-8-fasttrack"
+        override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8"
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
         override: disabled
-
-  # - name: ak_centos8_foreman
-  #   content_view: ccv_centos8_foreman
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-baseos"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-appstream"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-extras"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-powertools"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-  #       override: default
-
-  # - name: ak_centos8_katello
-  #   content_view: ccv_centos8_katello
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-baseos"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-appstream"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-extras"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_CentOS_centos-8-powertools"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-  #       override: default
 
 foreman_sync_plan_products_centos8: []
 

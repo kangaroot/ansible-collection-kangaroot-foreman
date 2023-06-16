@@ -1,0 +1,399 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  # gpg_key: RPM-GPG-KEY-centosofficial
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_centos8_sig_cloud_openstack_train:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack train
+        label: centos-8-openstack-train
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos8 }}/8/cloud/x86_64/openstack-train/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos8_sig_cloud_openstack_train_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack train Trunk Tested
+        label: centos-8-rdo-trunk-train-tested
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-train/current-passed-ci/"
+
+
+foreman_products_centos8_sig_cloud_openstack_ussuri:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri
+        label: centos-8-openstack-ussuri
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos8 }}/8/cloud/x86_64/openstack-ussuri/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos8_sig_cloud_openstack_ussuri_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component baremetal
+        label: centos-8-rdo-trunk-ussuri-tested-component-baremetal
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/baremetal/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component cinder
+        label: centos-8-rdo-trunk-ussuri-tested-component-cinder
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/cinder/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component clients
+        label: centos-8-rdo-trunk-ussuri-tested-component-clients
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/clients/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component cloudops
+        label: centos-8-rdo-trunk-ussuri-tested-component-cloudops
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/cloudops/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component common
+        label: centos-8-rdo-trunk-ussuri-tested-component-common
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/common/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component compute
+        label: centos-8-rdo-trunk-ussuri-tested-component-compute
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/compute/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component glance
+        label: centos-8-rdo-trunk-ussuri-tested-component-glance
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/glance/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component manila
+        label: centos-8-rdo-trunk-ussuri-tested-component-manila
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/manila/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component network
+        label: centos-8-rdo-trunk-ussuri-tested-component-network
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/network/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component octavia
+        label: centos-8-rdo-trunk-ussuri-tested-component-octavia
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/octavia/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component security
+        label: centos-8-rdo-trunk-ussuri-tested-component-security
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/security/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component swift
+        label: centos-8-rdo-trunk-ussuri-tested-component-swift
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/swift/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component tempest
+        label: centos-8-rdo-trunk-ussuri-tested-component-tempest
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/tempest/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component tripleo
+        label: centos-8-rdo-trunk-ussuri-tested-component-tripleo
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/tripleo/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component ui
+        label: centos-8-rdo-trunk-ussuri-tested-component-ui
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/ui/current-tripleo-rdo/"
+
+
+foreman_products_centos8_sig_cloud_openstack_victoria:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack victoria
+        label: centos-8-openstack-victoria
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos8 }}/8/cloud/x86_64/openstack-victoria/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos8_sig_cloud_openstack_victoria_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component baremetal
+        label: centos-8-rdo-trunk-victoria-tested-component-baremetal
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/baremetal/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component cinder
+        label: centos-8-rdo-trunk-victoria-tested-component-cinder
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/cinder/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component clients
+        label: centos-8-rdo-trunk-victoria-tested-component-clients
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/clients/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component cloudops
+        label: centos-8-rdo-trunk-victoria-tested-component-cloudops
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/cloudops/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component common
+        label: centos-8-rdo-trunk-victoria-tested-component-common
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/common/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component compute
+        label: centos-8-rdo-trunk-victoria-tested-component-compute
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/compute/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component glance
+        label: centos-8-rdo-trunk-victoria-tested-component-glance
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/glance/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component manila
+        label: centos-8-rdo-trunk-victoria-tested-component-manila
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/manila/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component network
+        label: centos-8-rdo-trunk-victoria-tested-component-network
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/network/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component octavia
+        label: centos-8-rdo-trunk-victoria-tested-component-octavia
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/octavia/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component security
+        label: centos-8-rdo-trunk-victoria-tested-component-security
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/security/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component swift
+        label: centos-8-rdo-trunk-victoria-tested-component-swift
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/swift/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component tempest
+        label: centos-8-rdo-trunk-victoria-tested-component-tempest
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/tempest/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component tripleo
+        label: centos-8-rdo-trunk-victoria-tested-component-tripleo
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/tripleo/current-tripleo-rdo/"
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component ui
+        label: centos-8-rdo-trunk-victoria-tested-component-ui
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/ui/current-tripleo-rdo/"
+
+
+foreman_products_centos8_sig_cloud: "{{ [] |
+  union( foreman_products_centos8_sig_cloud_openstack_train | default([]) if foreman_enable_centos8_sig_cloud_openstack_train else [] ) |
+  union( foreman_products_centos8_sig_cloud_openstack_ussuri | default([]) if foreman_enable_centos8_sig_cloud_openstack_ussuri else [] ) |
+  union( foreman_products_centos8_sig_cloud_openstack_victoria | default([]) if foreman_enable_centos8_sig_cloud_openstack_victoria else [] ) |
+  union( foreman_products_centos8_sig_cloud_openstack_train_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_train_tested else [] ) |
+  union( foreman_products_centos8_sig_cloud_openstack_ussuri_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_ussuri_tested else [] ) |
+  union( foreman_products_centos8_sig_cloud_openstack_victoria_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_victoria_tested else [] )
+  }}"
+
+
+foreman_content_views_centos8_sig_cloud_openstack_train:
+  - name: cv_centos8_openstack_train
+    repositories:
+      - name: CentOS 8 - OpenStack train
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+
+foreman_content_views_centos8_sig_cloud_openstack_train_tested:
+  - name: cv_centos8_rdo_trunk_train_tested
+    repositories:
+      - name: CentOS 8 - OpenStack train Trunk Tested
+        product: CentOS
+    allow_promote: False
+
+
+foreman_content_views_centos8_sig_cloud_openstack_ussuri:
+  - name: cv_centos8_openstack_ussuri
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos8_sig_cloud_openstack_ussuri_tested:
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_baremetal
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component baremetal
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_cinder
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component cinder
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_clients
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component clients
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_cloudops
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component cloudops
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_common
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component common
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_compute
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component compute
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_glance
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component glance
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_manila
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component manila
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_network
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component network
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_octavia
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component octavia
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_security
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component security
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_swift
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component swift
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_tempest
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component tempest
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_tripleo
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component tripleo
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_ussuri_tested_component_ui
+    repositories:
+      - name: CentOS 8 - OpenStack ussuri Trunk Tested component ui
+        product: CentOS
+    allow_promote: False
+
+
+foreman_content_views_centos8_sig_cloud_openstack_victoria:
+  - name: cv_centos8_openstack_victoria
+    repositories:
+      - name: CentOS 8 - OpenStack victoria
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos8_sig_cloud_openstack_victoria_tested:
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_baremetal
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component baremetal
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_cinder
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component cinder
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_clients
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component clients
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_cloudops
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component cloudops
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_common
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component common
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_compute
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component compute
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_glance
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component glance
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_manila
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component manila
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_network
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component network
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_octavia
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component octavia
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_security
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component security
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_swift
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component swift
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_tempest
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component tempest
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_tripleo
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component tripleo
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos8_rdo_trunk_victoria_tested_component_ui
+    repositories:
+      - name: CentOS 8 - OpenStack victoria Trunk Tested component ui
+        product: CentOS
+    allow_promote: False
+
+
+foreman_content_views_centos8_sig_cloud: "{{ [] |
+  union( foreman_content_views_centos8_sig_cloud_openstack_train | default([]) if foreman_enable_centos8_sig_cloud_openstack_train else [] ) |
+  union( foreman_content_views_centos8_sig_cloud_openstack_ussuri | default([]) if foreman_enable_centos8_sig_cloud_openstack_ussuri else [] ) |
+  union( foreman_content_views_centos8_sig_cloud_openstack_victoria | default([]) if foreman_enable_centos8_sig_cloud_openstack_victoria else [] ) |
+  union( foreman_content_views_centos8_sig_cloud_openstack_train_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_train_tested else [] ) |
+  union( foreman_content_views_centos8_sig_cloud_openstack_ussuri_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_ussuri_tested else [] ) |
+  union( foreman_content_views_centos8_sig_cloud_openstack_victoria_tested | default([]) if foreman_enable_centos8_sig_cloud_openstack_victoria_tested else [] )
+  }}"
+

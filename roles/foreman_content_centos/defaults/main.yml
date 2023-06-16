@@ -93,6 +93,67 @@ foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 
 
 foreman_enable_centos8: false
+
+foreman_enable_centos8_0: false
+foreman_enable_centos8_1: false
+foreman_enable_centos8_2: false
+foreman_enable_centos8_3: false
+foreman_enable_centos8_4: false
+foreman_enable_centos8_5: "{{ foreman_enable_centos8 | bool }}"
+
+foreman_enable_centos8_sig_opstools: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
+foreman_enable_centos8_sig_nfv: false
+foreman_enable_centos8_sig_nfv_extras: false
+foreman_enable_centos8_sig_nfv_openvswitch: "{{ foreman_enable_centos8_sig_cloud_openstack_ussuri | bool or
+                                                foreman_enable_centos8_sig_cloud_openstack_victoria | bool }}"
+
+foreman_enable_centos8_sig_configmanagement: "{{ foreman_enable_centos8 | bool }}"
+foreman_enable_centos8_sig_configmanagement_ansible29: "{{ foreman_enable_centos8_sig_configmanagement | bool }}"
+
+foreman_enable_centos8_sig_kmods: false
+foreman_enable_centos8_sig_kmods_main: "{{ foreman_enable_centos8_sig_kmods | bool or
+                                           foreman_enable_centos8_sig_kmods_rebuild | bool }}"
+foreman_enable_centos8_sig_kmods_rebuild: false
+
+foreman_enable_centos8_sig_messaging: false
+foreman_enable_centos8_sig_messaging_qpid_proton: false
+foreman_enable_centos8_sig_messaging_rabbitmq38: "{{ foreman_enable_centos8_sig_cloud_openstack_train | bool or
+                                                     foreman_enable_centos8_sig_cloud_openstack_ussuri | bool or
+                                                     foreman_enable_centos8_sig_cloud_openstack_victoria | bool }}"
+
+foreman_enable_centos8_sig_cloud: false
+foreman_enable_centos8_sig_cloud_openstack_train: false
+foreman_enable_centos8_sig_cloud_openstack_ussuri: false
+foreman_enable_centos8_sig_cloud_openstack_victoria: "{{ foreman_enable_centos8_sig_cloud | bool }}"
+foreman_enable_centos8_sig_cloud_openstack_train_tested: false
+foreman_enable_centos8_sig_cloud_openstack_ussuri_tested: false
+foreman_enable_centos8_sig_cloud_openstack_victoria_tested: false
+
+foreman_enable_centos8_sig_virtualization: false
+foreman_enable_centos8_sig_virtualization_advanced_virtualization: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool or
+                                                                       foreman_enable_centos8_sig_cloud_openstack_train | bool or
+                                                                       foreman_enable_centos8_sig_cloud_openstack_ussuri | bool or
+                                                                       foreman_enable_centos8_sig_cloud_openstack_victoria | bool }}"
+foreman_enable_centos8_sig_virtualization_ovirt44: "{{ foreman_enable_centos8_sig_virtualization | bool }}"
+
+foreman_enable_centos8_sig_storage: false
+foreman_enable_centos8_sig_storage_samba411: false
+foreman_enable_centos8_sig_storage_samba412: false
+foreman_enable_centos8_sig_storage_samba413: false
+foreman_enable_centos8_sig_storage_samba414: false
+foreman_enable_centos8_sig_storage_samba415: false
+foreman_enable_centos8_sig_storage_gluster6: false
+foreman_enable_centos8_sig_storage_gluster7: false
+foreman_enable_centos8_sig_storage_gluster8: false
+foreman_enable_centos8_sig_storage_gluster9: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
+foreman_enable_centos8_sig_storage_ceph_nautilus: "{{ foreman_enable_centos8_sig_cloud_openstack_train | bool or
+                                                      foreman_enable_centos8_sig_cloud_openstack_ussuri | bool or
+                                                      foreman_enable_centos8_sig_cloud_openstack_victoria | bool }}"
+foreman_enable_centos8_sig_storage_ceph_octopus: false
+foreman_enable_centos8_sig_storage_ceph_pacific: false
+foreman_enable_centos8_sig_storage_nfs_ganesha28: false
+foreman_enable_centos8_sig_storage_nfs_ganesha30: false
+
 foreman_enable_centos8_stream: "{{ foreman_enable_centos | bool }}"
 foreman_enable_centos9_stream: "{{ foreman_enable_centos | bool }}"
 
@@ -202,6 +263,15 @@ foreman_content_credentials_centos: "{{ ( foreman_content_credentials_centos_mai
   union( foreman_content_credentials_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_content_credentials_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_content_credentials_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_content_credentials_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_content_credentials_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_content_credentials_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_content_credentials_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_content_credentials_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_content_credentials_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_content_credentials_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_content_credentials_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_content_credentials_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -222,6 +292,15 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   union( foreman_products_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_products_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_products_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_products_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_products_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_products_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_products_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_products_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_products_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_products_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_products_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -242,6 +321,15 @@ foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default(
   union( foreman_content_views_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_content_views_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_content_views_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_content_views_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_content_views_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_content_views_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_content_views_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_content_views_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_content_views_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_content_views_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_content_views_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_content_views_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -262,6 +350,15 @@ foreman_operatingsystems_centos: "{{ ( foreman_operatingsystems_centos_main | de
   union( foreman_operatingsystems_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_operatingsystems_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_operatingsystems_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_operatingsystems_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_operatingsystems_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_operatingsystems_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_operatingsystems_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_operatingsystems_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_operatingsystems_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_operatingsystems_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_operatingsystems_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_operatingsystems_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -312,6 +409,15 @@ foreman_installation_media_centos: "{{ ( foreman_installation_media_centos_main 
   union( foreman_installation_media_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_installation_media_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_installation_media_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_installation_media_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_installation_media_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_installation_media_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_installation_media_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_installation_media_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_installation_media_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_installation_media_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_installation_media_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_installation_media_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -332,6 +438,15 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   union( foreman_activation_keys_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_activation_keys_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_activation_keys_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_activation_keys_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_activation_keys_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_activation_keys_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_activation_keys_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_activation_keys_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_activation_keys_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_activation_keys_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_activation_keys_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_activation_keys_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
@@ -354,6 +469,15 @@ foreman_sync_plan_products_centos: "{{ ( foreman_sync_plan_products_centos_main 
   union( foreman_sync_plan_products_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_sync_plan_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_sync_plan_products_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_kmods | default([]) if foreman_enable_centos8_sig_kmods else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_configmanagement | default([]) if foreman_enable_centos8_sig_configmanagement else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_cloud | default([]) if foreman_enable_centos8_sig_cloud else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
+  union( foreman_sync_plan_products_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
+
   union( foreman_sync_plan_products_centos8_stream | default([]) if foreman_enable_centos8_stream | bool else [] ) |
   union( foreman_sync_plan_products_centos9_stream | default([]) if foreman_enable_centos9_stream | bool else [] )
   }}"
