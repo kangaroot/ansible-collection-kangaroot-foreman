@@ -1,0 +1,241 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_on_demand: &foreman_products_on_demand
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_centos7_sig_virtualization_azure:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Azure
+        label: centos-7-azure
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/azure/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_ovirt42:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - oVirt 4.2
+        label: centos-7-ovirt42
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.2/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_ovirt43:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - oVirt 4.3
+        label: centos-7-ovirt43
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.3/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_qemu_ev:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - QEMU EV
+        label: centos-7-qemu-ev
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/kvm-common/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_46:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.6
+        label: centos-7-virt-xen-46
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-46"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_48:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.8
+        label: centos-7-virt-xen-48
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-48"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_410:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.10
+        label: centos-7-virt-xen-410
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-410"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_412:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.12
+        label: centos-7-virt-xen-412
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-412"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_413:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.13
+        label: centos-7-virt-xen-413
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-413"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_414:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - xen 4.14
+        label: centos-7-virt-xen-414
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-414"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+
+foreman_products_centos7_sig_virtualization_xen_epel:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
+        label: centos-7-virt-xen-epel
+        <<: *foreman_products_on_demand
+        mirroring_policy: "mirror_content_only"
+        url: "{{ foreman_repo_baseurl_epel | default('http://download.fedoraproject.org/pub/epel/') }}/7/x86_64"
+        gpg_key: RPM-GPG-KEY-EPEL-7
+
+foreman_products_centos7_sig_virtualization: "{{ [] |
+  union( foreman_products_centos7_sig_virtualization_azure | default([]) if foreman_enable_centos7_sig_virtualization_azure else [] ) |
+  union( foreman_products_centos7_sig_virtualization_ovirt42 | default([]) if foreman_enable_centos7_sig_virtualization_ovirt42 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_ovirt43 | default([]) if foreman_enable_centos7_sig_virtualization_ovirt43 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_qemu_ev | default([]) if foreman_enable_centos7_sig_virtualization_qemu_ev else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_46 | default([]) if foreman_enable_centos7_sig_virtualization_xen_46 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_48 | default([]) if foreman_enable_centos7_sig_virtualization_xen_48 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_410 | default([]) if foreman_enable_centos7_sig_virtualization_xen_410 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_412 | default([]) if foreman_enable_centos7_sig_virtualization_xen_412 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_413 | default([]) if foreman_enable_centos7_sig_virtualization_xen_413 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_414 | default([]) if foreman_enable_centos7_sig_virtualization_xen_414 else [] ) |
+  union( foreman_products_centos7_sig_virtualization_xen_epel | default([]) if foreman_enable_centos7_sig_virtualization_xen_epel else [] )
+  }}"
+
+
+foreman_content_views_centos7_sig_virtualization_azure:
+  - name: cv_centos7_azure
+    repositories:
+      - name: CentOS 7 - Azure
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_ovirt42:
+  - name: cv_centos7_ovirt42
+    repositories:
+      - name: CentOS 7 - oVirt 4.2
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_ovirt43:
+  - name: cv_centos7_ovirt43
+    repositories:
+      - name: CentOS 7 - oVirt 4.3
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_qemu_ev:
+  - name: cv_centos7_qemu_ev
+    repositories:
+      - name: CentOS 7 - QEMU EV
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_46:
+  - name: cv_centos7_virt_xen_46
+    repositories:
+      - name: CentOS 7 - xen 4.6
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_48:
+  - name: cv_centos7_virt_xen_48
+    repositories:
+      - name: CentOS 7 - xen 4.8
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_410:
+  - name: cv_centos7_virt_xen_410
+    repositories:
+      - name: CentOS 7 - xen 4.10
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_412:
+  - name: cv_centos7_virt_xen_412
+    repositories:
+      - name: CentOS 7 - xen 4.12
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_413:
+  - name: cv_centos7_virt_xen_413
+    repositories:
+      - name: CentOS 7 - xen 4.13
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_414:
+  - name: cv_centos7_virt_xen_414
+    repositories:
+      - name: CentOS 7 - xen 4.14
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_virtualization_xen_epel:
+  - name: cv_centos7_virt_xen_epel
+    repositories:
+      - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - Extra Packages from EPEL for Xen - x86_64 include filter"
+        filter_type: "rpm"
+        rule_name: xorriso
+        inclusion: yes
+
+foreman_content_views_centos7_sig_virtualization: "{{ [] |
+  union( foreman_content_views_centos7_sig_virtualization_azure | default([]) if foreman_enable_centos7_sig_virtualization_azure else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_ovirt42 | default([]) if foreman_enable_centos7_sig_virtualization_ovirt42 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_ovirt43 | default([]) if foreman_enable_centos7_sig_virtualization_ovirt43 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_qemu_ev | default([]) if foreman_enable_centos7_sig_virtualization_qemu_ev else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_46 | default([]) if foreman_enable_centos7_sig_virtualization_xen_46 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_48 | default([]) if foreman_enable_centos7_sig_virtualization_xen_48 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_410 | default([]) if foreman_enable_centos7_sig_virtualization_xen_410 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_412 | default([]) if foreman_enable_centos7_sig_virtualization_xen_412 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_413 | default([]) if foreman_enable_centos7_sig_virtualization_xen_413 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_414 | default([]) if foreman_enable_centos7_sig_virtualization_xen_414 else [] ) |
+  union( foreman_content_views_centos7_sig_virtualization_xen_epel | default([]) if foreman_enable_centos7_sig_virtualization_xen_epel else [] )
+  }}"
+

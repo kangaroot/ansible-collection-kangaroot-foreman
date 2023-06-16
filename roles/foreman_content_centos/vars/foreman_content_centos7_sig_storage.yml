@@ -1,0 +1,291 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_on_demand: &foreman_products_on_demand
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_centos7_sig_storage_samba411:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Samba 4.11
+        label: centos-7-samba411
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/samba-411/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster40:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 4.0 (Short Term Maintanance)
+        label: centos-7-gluster40
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.0/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster41:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 4.1 (Long Term Maintanance)
+        label: centos-7-gluster41
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.1/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster5:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 5
+        label: centos-7-gluster5
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-5/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster6:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 6
+        label: centos-7-gluster6
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-6/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster7:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 7
+        label: centos-7-gluster7
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-7/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster8:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 8
+        label: centos-7-gluster8
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-8/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_gluster9:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Gluster 9
+        label: centos-7-gluster9
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-9/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_ceph_jewel:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Ceph Jewel
+        label: centos-7-ceph-jewel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-jewel/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_ceph_luminous:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Ceph Luminous
+        label: centos-7-ceph-luminous
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-luminous/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_ceph_nautilus:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - Ceph Nautilus
+        label: centos-7-ceph-nautilus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-nautilus/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_nfs_ganesha28:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 2.8
+        label: centos-7-nfs-ganesha28
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-28/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage_nfs_ganesha30:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 3.0
+        label: centos-7-nfs-ganesha30
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-30/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+foreman_products_centos7_sig_storage_nfs_ganesha4:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 4
+        label: centos-7-nfs-ganesha4
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfsganesha-4/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
+foreman_products_centos7_sig_storage: "{{ [] |
+  union ( foreman_products_centos7_sig_storage_samba411 | default([]) if foreman_enable_centos7_sig_storage_samba411 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster40 | default([]) if foreman_enable_centos7_sig_storage_gluster40 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster41 | default([]) if foreman_enable_centos7_sig_storage_gluster41 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster5 | default([]) if foreman_enable_centos7_sig_storage_gluster5 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster6 | default([]) if foreman_enable_centos7_sig_storage_gluster6 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster7 | default([]) if foreman_enable_centos7_sig_storage_gluster7 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster8 | default([]) if foreman_enable_centos7_sig_storage_gluster8 else [] ) |
+  union ( foreman_products_centos7_sig_storage_gluster9 | default([]) if foreman_enable_centos7_sig_storage_gluster9 else [] ) |
+  union ( foreman_products_centos7_sig_storage_ceph_jewel | default([]) if foreman_enable_centos7_sig_storage_ceph_jewel else [] ) |
+  union ( foreman_products_centos7_sig_storage_ceph_luminous | default([]) if foreman_enable_centos7_sig_storage_ceph_luminous else [] ) |
+  union ( foreman_products_centos7_sig_storage_ceph_nautilus | default([]) if foreman_enable_centos7_sig_storage_ceph_nautilus else [] ) |
+  union ( foreman_products_centos7_sig_storage_nfs_ganesha28 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha28 else [] ) |
+  union ( foreman_products_centos7_sig_storage_nfs_ganesha30 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha30 else [] ) |
+  union ( foreman_products_centos7_sig_storage_nfs_ganesha4 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha4 else [] )
+  }}"
+
+
+foreman_content_views_centos7_sig_storage_samba411:
+  - name: cv_centos7_samba411
+    repositories:
+      - name: CentOS 7 - Samba 4.11
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster40:
+  - name: cv_centos7_gluster40
+    repositories:
+      - name: CentOS 7 - Gluster 4.0 (Short Term Maintanance)
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster41:
+  - name: cv_centos7_gluster41
+    repositories:
+      - name: CentOS 7 - Gluster 4.1 (Long Term Maintanance)
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster5:
+  - name: cv_centos7_gluster5
+    repositories:
+      - name: CentOS 7 - Gluster 5
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster6:
+  - name: cv_centos7_gluster6
+    repositories:
+      - name: CentOS 7 - Gluster 6
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster7:
+  - name: cv_centos7_gluster7
+    repositories:
+      - name: CentOS 7 - Gluster 7
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster8:
+  - name: cv_centos7_gluster8
+    repositories:
+      - name: CentOS 7 - Gluster 8
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_gluster9:
+  - name: cv_centos7_gluster9
+    repositories:
+      - name: CentOS 7 - Gluster 9
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_ceph_jewel:
+  - name: cv_centos7_ceph_jewel
+    repositories:
+      - name: CentOS 7 - Ceph Jewel
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_ceph_luminous:
+  - name: cv_centos7_ceph_luminous
+    repositories:
+      - name: CentOS 7 - Ceph Luminous
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_ceph_nautilus:
+  - name: cv_centos7_ceph_nautilus
+    repositories:
+      - name: CentOS 7 - Ceph Nautilus
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_nfs_ganesha28:
+  - name: cv_centos7_nfs_ganesha28
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 2.8
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_nfs_ganesha30:
+  - name: cv_centos7_nfs_ganesha30
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 3.0
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage_nfs_ganesha4:
+  - name: cv_centos7_nfs_ganesha4
+    repositories:
+      - name: CentOS 7 - NFS Ganesha 4
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_storage: "{{ [] |
+  union ( foreman_content_views_centos7_sig_storage_samba411 | default([]) if foreman_enable_centos7_sig_storage_samba411 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster40 | default([]) if foreman_enable_centos7_sig_storage_gluster40 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster41 | default([]) if foreman_enable_centos7_sig_storage_gluster41 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster5 | default([]) if foreman_enable_centos7_sig_storage_gluster5 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster6 | default([]) if foreman_enable_centos7_sig_storage_gluster6 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster7 | default([]) if foreman_enable_centos7_sig_storage_gluster7 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster8 | default([]) if foreman_enable_centos7_sig_storage_gluster8 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_gluster9 | default([]) if foreman_enable_centos7_sig_storage_gluster9 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_ceph_jewel | default([]) if foreman_enable_centos7_sig_storage_ceph_jewel else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_ceph_luminous | default([]) if foreman_enable_centos7_sig_storage_ceph_luminous else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_ceph_nautilus | default([]) if foreman_enable_centos7_sig_storage_ceph_nautilus else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_nfs_ganesha28 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha28 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_nfs_ganesha30 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha30 else [] ) |
+  union ( foreman_content_views_centos7_sig_storage_nfs_ganesha4 | default([]) if foreman_enable_centos7_sig_storage_nfs_ganesha4 else [] )
+  }}"
+

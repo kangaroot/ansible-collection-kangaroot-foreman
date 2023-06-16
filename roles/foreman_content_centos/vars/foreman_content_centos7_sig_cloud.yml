@@ -1,0 +1,206 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_on_demand: &foreman_products_on_demand
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_rdo: &foreman_products_rdo
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_centos7_sig_cloud_openstack_queens:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack queens
+        label: centos-7-openstack-queens
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-queens/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos7_sig_cloud_openstack_queens_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack queens Trunk Tested
+        label: centos-7-rdo-trunk-queens-tested
+        <<: *foreman_products_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-queens/current-passed-ci/"
+
+foreman_products_centos7_sig_cloud_openstack_rocky:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack rocky
+        label: centos-7-openstack-rocky
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-rocky/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos7_sig_cloud_openstack_rocky_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack rocky Trunk Tested
+        label: centos-7-rdo-trunk-rocky-tested
+        <<: *foreman_products_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-rocky/current-passed-ci/"
+
+foreman_products_centos7_sig_cloud_openstack_stein:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack stein
+        label: centos-7-openstack-stein
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-stein/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos7_sig_cloud_openstack_stein_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack stein Trunk Tested
+        label: centos-7-rdo-trunk-stein-tested
+        <<: *foreman_products_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-stein/current-passed-ci/"
+
+foreman_products_centos7_sig_cloud_openstack_train:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack train
+        label: centos-7-openstack-train
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-train/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+
+foreman_products_centos7_sig_cloud_openstack_train_tested:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpenStack train Trunk Tested
+        label: centos-7-rdo-trunk-train-tested
+        <<: *foreman_products_rdo
+        url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-train/current-passed-ci/"
+
+foreman_products_centos7_sig_cloud: "{{ [] |
+  union( foreman_products_centos7_sig_cloud_openstack_queens | default([]) if foreman_enable_centos7_sig_cloud_openstack_queens else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_rocky | default([]) if foreman_enable_centos7_sig_cloud_openstack_rocky else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_stein | default([]) if foreman_enable_centos7_sig_cloud_openstack_stein else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_train | default([]) if foreman_enable_centos7_sig_cloud_openstack_train else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_queens_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_queens_tested else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_rocky_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_rocky_tested else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_stein_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_stein_tested else [] ) |
+  union( foreman_products_centos7_sig_cloud_openstack_train_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_train_tested else [] )
+  }}"
+
+
+foreman_content_views_centos7_sig_cloud_openstack_queens:
+  - name: cv_centos7_openstack_queens
+    repositories:
+      - name: CentOS 7 - OpenStack queens
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack queens exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack queens exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+
+foreman_content_views_centos7_sig_cloud_openstack_queens_tested:
+  - name: cv_centos7_rdo_trunk_queens_tested
+    repositories:
+      - name: CentOS 7 - OpenStack queens Trunk Tested
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_cloud_openstack_rocky:
+  - name: cv_centos7_openstack_rocky
+    repositories:
+      - name: CentOS 7 - OpenStack rocky
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack rocky exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack rocky exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+
+foreman_content_views_centos7_sig_cloud_openstack_rocky_tested:
+  - name: cv_centos7_rdo_trunk_rocky_tested
+    repositories:
+      - name: CentOS 7 - OpenStack rocky Trunk Tested
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_cloud_openstack_stein:
+  - name: cv_centos7_openstack_stein
+    repositories:
+      - name: CentOS 7 - OpenStack stein
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack stein exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack stein exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+
+foreman_content_views_centos7_sig_cloud_openstack_stein_tested:
+  - name: cv_centos7_rdo_trunk_stein_tested
+    repositories:
+      - name: CentOS 7 - OpenStack stein Trunk Tested
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_cloud_openstack_train:
+  - name: cv_centos7_openstack_train
+    repositories:
+      - name: CentOS 7 - OpenStack train
+        product: CentOS
+    allow_promote: False
+    filters:
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: sip
+      - name: "CentOS 7 - OpenStack train exclude filter"
+        filter_type: "rpm"
+        rule_name: PyQt4
+
+foreman_content_views_centos7_sig_cloud_openstack_train_tested:
+  - name: cv_centos7_rdo_trunk_train_tested
+    repositories:
+      - name: CentOS 7 - OpenStack train Trunk Tested
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sig_cloud: "{{ [] |
+  union( foreman_content_views_centos7_sig_cloud_openstack_queens | default([]) if foreman_enable_centos7_sig_cloud_openstack_queens else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_rocky | default([]) if foreman_enable_centos7_sig_cloud_openstack_rocky else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_stein | default([]) if foreman_enable_centos7_sig_cloud_openstack_stein else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_train | default([]) if foreman_enable_centos7_sig_cloud_openstack_train else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_queens_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_queens_tested else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_rocky_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_rocky_tested else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_stein_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_stein_tested else [] ) |
+  union( foreman_content_views_centos7_sig_cloud_openstack_train_tested | default([]) if foreman_enable_centos7_sig_cloud_openstack_train_tested else [] )
+  }}"
+

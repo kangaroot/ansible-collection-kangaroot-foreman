@@ -1,0 +1,125 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_on_demand: &foreman_products_on_demand
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_centos7_dotnet:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - DotNet
+        label: centos-7-dotnet
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/dotnet/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_sig_sclo:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - SCLo sclo
+        label: centos-7-sclo-sclo
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/sclo/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
+      - name: CentOS 7 - SCLo rh
+        label: centos-7-sclo-rh
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/rh/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
+
+foreman_products_centos7_sig_opstools:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - OpsTools - release
+        label: centos-7-release-opstools
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/opstools/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
+
+foreman_products_centos7_sig_nfv_common:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - nfv common
+        label: centos-7-nfv-common
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/common/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+
+foreman_products_centos7_sig_nfv_fdio:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7 - fd.io
+        label: centos-7-fdio
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/fdio/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+
+foreman_products_centos7_sig_nfv: "{{ [] |
+  union( foreman_products_centos7_sig_nfv_common | default([]) if foreman_enable_centos8_sig_nfv_common else [] ) |
+  union( foreman_products_centos7_sig_nfv_fdio | default([]) if foreman_enable_centos8_sig_nfv_fdio else [] )
+  }}"
+
+
+foreman_content_views_centos7_dotnet:
+  - name: cv_centos7_dotnet
+    repositories:
+      - name: CentOS 7 - DotNet
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_sclo:
+  - name: cv_centos7_sclo_sclo
+    repositories:
+      - name: CentOS 7 - SCLo sclo
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos7_sclo_rh
+    repositories:
+      - name: CentOS 7 - SCLo rh
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_opstools:
+  - name: cv_centos7_release_opstools
+    repositories:
+      - name: CentOS 7 - OpsTools - release
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_nfv_common:
+  - name: cv_centos7_nfv_common
+    repositories:
+      - name: CentOS 7 - nfv common
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_nfv_fdio:
+  - name: cv_centos7_fdio
+    repositories:
+      - name: CentOS 7 - fd.io
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos7_nfv: "{{ [] |
+  union( foreman_content_views_centos7_nfv_common | default([]) if foreman_enable_centos8_sig_nfv_common else [] ) |
+  union( foreman_content_views_centos7_nfv_fdio | default([]) if foreman_enable_centos8_sig_nfv_fdio else [] )
+  }}"
+

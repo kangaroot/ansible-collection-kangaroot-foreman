@@ -1,0 +1,655 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: immediate
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+  unprotected: yes
+
+foreman_products_on_demand: &foreman_products_on_demand
+  <<: *foreman_products_defaults
+  download_policy: on_demand
+
+foreman_products_centos7_0:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.0.1406
+        label: centos-7_0
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/os/x86_64/"
+      - name: CentOS 7.0.1406 - Updates
+        label: centos-7_0_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/updates/x86_64/"
+      - name: CentOS 7.0.1406 - Extras
+        label: centos-7_0_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/extras/x86_64/"
+      - name: CentOS 7.0.1406 - CentOSPlus
+        label: centos-7_0_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/centosplus/x86_64/"
+      - name: CentOS 7.0.1406 - Fasttrack
+        label: centos-7_0_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/fasttrack/x86_64/"
+
+      - name: CentOS 7.0.1406 - cr
+        label: centos-7_0-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.0.1406 LTS Kernels for x86_64
+        label: centos-7_0-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.0.1406/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.0.1406 Experimental Kernels for x86_64
+        label: centos-7_0-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.0.1406/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_1:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.1.1503
+        label: centos-7_1
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/os/x86_64/"
+      - name: CentOS 7.1.1503 - Updates
+        label: centos-7_1_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/updates/x86_64/"
+      - name: CentOS 7.1.1503 - Extras
+        label: centos-7_1_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/extras/x86_64/"
+      - name: CentOS 7.1.1503 - CentOSPlus
+        label: centos-7_1_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/centosplus/x86_64/"
+      - name: CentOS 7.1.1503 - Fasttrack
+        label: centos-7_1_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/fasttrack/x86_64/"
+
+      - name: CentOS 7.1.1503 - cr
+        label: centos-7_1-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.1.1503 LTS Kernels for x86_64
+        label: centos-7_1-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.1.1503/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.1.1503 Experimental Kernels for x86_64
+        label: centos-7_1-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.1.1503/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_2:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.2.1511
+        label: centos-7_2
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/os/x86_64/"
+      - name: CentOS 7.2.1511 - Updates
+        label: centos-7_2_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/updates/x86_64/"
+      - name: CentOS 7.2.1511 - Extras
+        label: centos-7_2_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/extras/x86_64/"
+      - name: CentOS 7.2.1511 - CentOSPlus
+        label: centos-7_2_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/centosplus/x86_64/"
+      - name: CentOS 7.2.1511 - Fasttrack
+        label: centos-7_2_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/fasttrack/x86_64/"
+
+      - name: CentOS 7.2.1511 - cr
+        label: centos-7_2-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.2.1511 LTS Kernels for x86_64
+        label: centos-7_2-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.2.1511/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.2.1511 Experimental Kernels for x86_64
+        label: centos-7_2-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.2.1511/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_3:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.3.1611
+        label: centos-7_3
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/os/x86_64/"
+      - name: CentOS 7.3.1611 - Updates
+        label: centos-7_3_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/updates/x86_64/"
+      - name: CentOS 7.3.1611 - Extras
+        label: centos-7_3_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/extras/x86_64/"
+      - name: CentOS 7.3.1611 - CentOSPlus
+        label: centos-7_3_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/centosplus/x86_64/"
+      - name: CentOS 7.3.1611 - Fasttrack
+        label: centos-7_3_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/fasttrack/x86_64/"
+
+      - name: CentOS 7.3.1611 - cr
+        label: centos-7_3-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.3.1611 LTS Kernels for x86_64
+        label: centos-7_3-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.3.1611/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.3.1611 Experimental Kernels for x86_64
+        label: centos-7_3-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.3.1611/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_4:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.4.1708
+        label: centos-7_4
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/os/x86_64/"
+      - name: CentOS 7.4.1708 - Updates
+        label: centos-7_4_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/updates/x86_64/"
+      - name: CentOS 7.4.1708 - Extras
+        label: centos-7_4_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/extras/x86_64/"
+      - name: CentOS 7.4.1708 - CentOSPlus
+        label: centos-7_4_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/centosplus/x86_64/"
+      - name: CentOS 7.4.1708 - Fasttrack
+        label: centos-7_4_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/fasttrack/x86_64/"
+
+      - name: CentOS 7.4.1708 - cr
+        label: centos-7_4-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.4.1708 LTS Kernels for x86_64
+        label: centos-7_4-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.4.1708/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.4.1708 Experimental Kernels for x86_64
+        label: centos-7_4-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.4.1708/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_5:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.5.1804
+        label: centos-7_5
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/os/x86_64/"
+      - name: CentOS 7.5.1804 - Updates
+        label: centos-7_5_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/updates/x86_64/"
+      - name: CentOS 7.5.1804 - Extras
+        label: centos-7_5_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/extras/x86_64/"
+      - name: CentOS 7.5.1804 - CentOSPlus
+        label: centos-7_5_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/centosplus/x86_64/"
+      - name: CentOS 7.5.1804 - Fasttrack
+        label: centos-7_5_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/fasttrack/x86_64/"
+
+      - name: CentOS 7.5.1804 - cr
+        label: centos-7_5-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.5.1804 LTS Kernels for x86_64
+        label: centos-7_5-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.5.1804/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.5.1804 Experimental Kernels for x86_64
+        label: centos-7_5-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.5.1804/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_6:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.6.1810
+        label: centos-7_6
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/os/x86_64/"
+      - name: CentOS 7.6.1810 - Updates
+        label: centos-7_6_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/updates/x86_64/"
+      - name: CentOS 7.6.1810 - Extras
+        label: centos-7_6_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/extras/x86_64/"
+      - name: CentOS 7.6.1810 - CentOSPlus
+        label: centos-7_6_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/centosplus/x86_64/"
+      - name: CentOS 7.6.1810 - Fasttrack
+        label: centos-7_6_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/fasttrack/x86_64/"
+
+      - name: CentOS 7.6.1810 - cr
+        label: centos-7_6-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.6.1810 LTS Kernels for x86_64
+        label: centos-7_6-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.6.1810/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.6.1810 Experimental Kernels for x86_64
+        label: centos-7_6-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.6.1810/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_7:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.7.1908
+        label: centos-7_7
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/os/x86_64/"
+      - name: CentOS 7.7.1908 - Updates
+        label: centos-7_7_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/updates/x86_64/"
+      - name: CentOS 7.7.1908 - Extras
+        label: centos-7_7_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/extras/x86_64/"
+      - name: CentOS 7.7.1908 - CentOSPlus
+        label: centos-7_7_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/centosplus/x86_64/"
+      - name: CentOS 7.7.1908 - Fasttrack
+        label: centos-7_7_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/fasttrack/x86_64/"
+
+      - name: CentOS 7.7.1908 - cr
+        label: centos-7_7-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.7.1908 LTS Kernels for x86_64
+        label: centos-7_7-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.7.1908/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.7.1908 Experimental Kernels for x86_64
+        label: centos-7_7-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.7.1908/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_8:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.8.2003
+        label: centos-7_8
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/os/x86_64/"
+      - name: CentOS 7.8.2003 - Updates
+        label: centos-7_8_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/updates/x86_64/"
+      - name: CentOS 7.8.2003 - Extras
+        label: centos-7_8_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/extras/x86_64/"
+      - name: CentOS 7.8.2003 - CentOSPlus
+        label: centos-7_8_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/centosplus/x86_64/"
+      - name: CentOS 7.8.2003 - Fasttrack
+        label: centos-7_8_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/fasttrack/x86_64/"
+
+      - name: CentOS 7.8.2003 - cr
+        label: centos-7_8-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.8.2003 LTS Kernels for x86_64
+        label: centos-7_8-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.8.2003/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.8.2003 Experimental Kernels for x86_64
+        label: centos-7_8-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.8.2003/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_9:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 7.9.2009
+        label: centos-7_9
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/os/x86_64/"
+      - name: CentOS 7.9.2009 - Updates
+        label: centos-7_9_updates
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/updates/x86_64/"
+      - name: CentOS 7.9.2009 - Extras
+        label: centos-7_9_extras
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/extras/x86_64/"
+      - name: CentOS 7.9.2009 - CentOSPlus
+        label: centos-7_9_centosplus
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/centosplus/x86_64/"
+      - name: CentOS 7.9.2009 - Fasttrack
+        label: centos-7_9_fasttrack
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/fasttrack/x86_64/"
+
+      - name: CentOS 7.9.2009 - cr
+        label: centos-7_9-cr
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/cr/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+      - name: CentOS 7.9.2009 LTS Kernels for x86_64
+        label: centos-7_9-kernel
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_altarch }}/7.9.2009/kernel/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+      - name: CentOS 7.9.2009 Experimental Kernels for x86_64
+        label: centos-7_9-kernel-experimental
+        <<: *foreman_products_on_demand
+        url: "{{ foreman_repo_baseurl_centos_altarch }}/7.9.2009/experimental/x86_64/"
+        gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_products_centos7_versions: "{{ [] |
+  union( foreman_products_centos7_0 | default([]) if foreman_enable_centos7_0 else [] ) |
+  union( foreman_products_centos7_1 | default([]) if foreman_enable_centos7_1 else [] ) |
+  union( foreman_products_centos7_2 | default([]) if foreman_enable_centos7_2 else [] ) |
+  union( foreman_products_centos7_3 | default([]) if foreman_enable_centos7_3 else [] ) |
+  union( foreman_products_centos7_4 | default([]) if foreman_enable_centos7_4 else [] ) |
+  union( foreman_products_centos7_5 | default([]) if foreman_enable_centos7_5 else [] ) |
+  union( foreman_products_centos7_6 | default([]) if foreman_enable_centos7_6 else [] ) |
+  union( foreman_products_centos7_7 | default([]) if foreman_enable_centos7_7 else [] ) |
+  union( foreman_products_centos7_8 | default([]) if foreman_enable_centos7_8 else [] ) |
+  union( foreman_products_centos7_9 | default([]) if foreman_enable_centos7_9 else [] )
+  }}"
+
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    - template_kind: "cloud-init"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_cloud_init | default( foreman_operatingsystems_centos_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+    - template_kind: "finish"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_finish | default( foreman_operatingsystems_centos_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+    - template_kind: "host_init_config"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_host_init_config | default( foreman_operatingsystems_centos_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+    - template_kind: "iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_ipxe | default( foreman_operatingsystems_centos_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+    - template_kind: "provision"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_provision | default( foreman_operatingsystems_centos_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+    - template_kind: "PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxegrub | default( foreman_operatingsystems_centos_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxegrub2 | default( foreman_operatingsystems_centos_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+    - template_kind: "PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxelinux | default( foreman_operatingsystems_centos_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+    - template_kind: "user_data"
+      provisioning_template: "{{ foreman_operatingsystems_centos7_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+foreman_operatingsystems_centos7_0:
+  - name: "CentOS"
+    major: "7"
+    minor: "0.1406"
+    description: "CentOS 7.0.1406"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_1:
+  - name: "CentOS"
+    major: "7"
+    minor: "1.1503"
+    description: "CentOS 7.1.1503"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_2:
+  - name: "CentOS"
+    major: "7"
+    minor: "2.1511"
+    description: "CentOS 7.2.1511"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_3:
+  - name: "CentOS"
+    major: "7"
+    minor: "3.1611"
+    description: "CentOS 7.3.1611"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_4:
+  - name: "CentOS"
+    major: "7"
+    minor: "4.1708"
+    description: "CentOS 7.4.1708"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_5:
+  - name: "CentOS"
+    major: "7"
+    minor: "5.1804"
+    description: "CentOS 7.5.1804"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_6:
+  - name: "CentOS"
+    major: "7"
+    minor: "6.1810"
+    description: "CentOS 7.6.1810"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_7:
+  - name: "CentOS"
+    major: "7"
+    minor: "7.1908"
+    description: "CentOS 7.7.1908"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_8:
+  - name: "CentOS"
+    major: "7"
+    minor: "8.2003"
+    description: "CentOS 7.8.2003"
+    <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_centos7_9:
+  - name: "CentOS"
+    major: "7"
+    minor: "9.2009"
+    description: "CentOS 7.9.2009"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_centos7_versions: "{{ [] |
+  union( foreman_operatingsystems_centos7_0 | default([]) if foreman_enable_centos7_0 else [] ) |
+  union( foreman_operatingsystems_centos7_1 | default([]) if foreman_enable_centos7_1 else [] ) |
+  union( foreman_operatingsystems_centos7_2 | default([]) if foreman_enable_centos7_2 else [] ) |
+  union( foreman_operatingsystems_centos7_3 | default([]) if foreman_enable_centos7_3 else [] ) |
+  union( foreman_operatingsystems_centos7_4 | default([]) if foreman_enable_centos7_4 else [] ) |
+  union( foreman_operatingsystems_centos7_5 | default([]) if foreman_enable_centos7_5 else [] ) |
+  union( foreman_operatingsystems_centos7_6 | default([]) if foreman_enable_centos7_6 else [] ) |
+  union( foreman_operatingsystems_centos7_7 | default([]) if foreman_enable_centos7_7 else [] ) |
+  union( foreman_operatingsystems_centos7_8 | default([]) if foreman_enable_centos7_8 else [] ) |
+  union( foreman_operatingsystems_centos7_9 | default([]) if foreman_enable_centos7_9 else [] )
+  }}"
+
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_centos7_0:
+  - name: CentOS 7.0.1406
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_0/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.0.1406
+
+foreman_installation_media_centos7_1:
+  - name: CentOS 7.1.1503
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_1/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.1.1503
+
+foreman_installation_media_centos7_2:
+  - name: CentOS 7.2.1511
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_2/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.2.1511
+
+foreman_installation_media_centos7_3:
+  - name: CentOS 7.3.1611
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_3/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.3.1611
+
+foreman_installation_media_centos7_4:
+  - name: CentOS 7.4.1708
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_4/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.4.1708
+
+foreman_installation_media_centos7_5:
+  - name: CentOS 7.5.1804
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_5/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.5.1804
+
+foreman_installation_media_centos7_6:
+  - name: CentOS 7.6.1810
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_6/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.6.1810
+
+foreman_installation_media_centos7_7:
+  - name: CentOS 7.7.1908
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_7/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.7.1908
+
+foreman_installation_media_centos7_8:
+  - name: CentOS 7.8.2003
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_8/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7.8.2003
+
+foreman_installation_media_centos7_9:
+  - name: CentOS 7.9.2009
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_9/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS 7
+      - CentOS 7.9.2009
+
+foreman_installation_media_centos7_versions: "{{ [] |
+  union( foreman_installation_media_centos7_0 | default([]) if foreman_enable_centos7_0 else [] ) |
+  union( foreman_installation_media_centos7_1 | default([]) if foreman_enable_centos7_1 else [] ) |
+  union( foreman_installation_media_centos7_2 | default([]) if foreman_enable_centos7_2 else [] ) |
+  union( foreman_installation_media_centos7_3 | default([]) if foreman_enable_centos7_3 else [] ) |
+  union( foreman_installation_media_centos7_4 | default([]) if foreman_enable_centos7_4 else [] ) |
+  union( foreman_installation_media_centos7_5 | default([]) if foreman_enable_centos7_5 else [] ) |
+  union( foreman_installation_media_centos7_6 | default([]) if foreman_enable_centos7_6 else [] ) |
+  union( foreman_installation_media_centos7_7 | default([]) if foreman_enable_centos7_7 else [] ) |
+  union( foreman_installation_media_centos7_8 | default([]) if foreman_enable_centos7_8 else [] ) |
+  union( foreman_installation_media_centos7_9 | default([]) if foreman_enable_centos7_9 else [] )
+  }}"
+
