@@ -13,8 +13,8 @@ foreman_repo_baseurl_elrepo: http://elrepo.org/linux
 foreman_content_credentials_elrepo_main:
   - name: RPM-GPG-KEY-elrepo.org
     content_type: gpg_key
-    content: "{{ lookup('ansible.builtin.url', 'https://www.elrepo.org/RPM-GPG-KEY-elrepo.org', split_lines=False, validate_certs=False) }}"
-    # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-elrepo.org') }}"
+    # content: "{{ lookup('ansible.builtin.url', 'https://www.elrepo.org/RPM-GPG-KEY-elrepo.org', split_lines=False, validate_certs=False) }}"
+    content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-elrepo.org') }}"
 
 foreman_content_credentials_elrepo: "{{ ( foreman_content_credentials_elrepo_main | default([]) if foreman_enable_elrepo | bool else [] ) |
   union( foreman_content_credentials_elrepo_el7 | default([]) if foreman_enable_elrepo_el7 | bool else [] ) |
