@@ -12,7 +12,8 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
-  deb_components: main multiverse restricted universe
+  # deb_components: main restricted universe multiverse
+  deb_components: main restricted
   deb_architectures: amd64
 
 foreman_products_ubuntu2004:

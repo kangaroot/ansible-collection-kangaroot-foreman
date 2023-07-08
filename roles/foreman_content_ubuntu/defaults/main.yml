@@ -1,16 +1,16 @@
 ---
 # fdefaults file for foreman_content_ubuntu
 
-foreman_enable_ubuntu: false
-foreman_enable_ubuntu1804: false
-foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
-foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
-
-
 foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
 foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu }}"
+
+
+foreman_enable_ubuntu: false
+foreman_enable_ubuntu1804: false
+foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
+foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
 
 foreman_content_credentials_ubuntu_main: []
