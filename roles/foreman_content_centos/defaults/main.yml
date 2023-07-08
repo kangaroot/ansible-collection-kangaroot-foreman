@@ -455,7 +455,7 @@ foreman_content_credentials_centos: "{{ ( foreman_content_credentials_centos_mai
   union( foreman_content_credentials_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_content_credentials_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_content_credentials_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_content_credentials_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_content_credentials_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_products_centos_main: []
@@ -502,7 +502,7 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   union( foreman_products_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_products_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_products_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_products_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_products_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_content_views_centos_main: []
@@ -549,7 +549,7 @@ foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default(
   union( foreman_content_views_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_content_views_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_content_views_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_content_views_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_content_views_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_operatingsystems_centos_main: []
@@ -596,7 +596,7 @@ foreman_operatingsystems_centos: "{{ ( foreman_operatingsystems_centos_main | de
   union( foreman_operatingsystems_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_operatingsystems_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_operatingsystems_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_operatingsystems_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_operatingsystems_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
@@ -673,7 +673,7 @@ foreman_installation_media_centos: "{{ ( foreman_installation_media_centos_main 
   union( foreman_installation_media_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_installation_media_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_installation_media_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_installation_media_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_installation_media_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_activation_keys_centos_main: []
@@ -720,7 +720,7 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   union( foreman_activation_keys_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_activation_keys_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_activation_keys_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_activation_keys_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_activation_keys_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 
 foreman_sync_plan_products_centos_main:
@@ -769,6 +769,6 @@ foreman_sync_plan_products_centos: "{{ ( foreman_sync_plan_products_centos_main 
   union( foreman_sync_plan_producs_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_sync_plan_producs_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_sync_plan_producs_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_sync_plan_producs_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+  union( foreman_sync_plan_producs_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
   }}"
 

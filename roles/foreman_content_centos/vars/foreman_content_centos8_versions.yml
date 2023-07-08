@@ -25,6 +25,7 @@ foreman_products_centos8_0:
         label: centos-8_0-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/os/"
+
       - name: CentOS 8.0.1905 - Extras
         label: centos-8_0-extras
         <<: *foreman_products_defaults
@@ -71,6 +72,7 @@ foreman_products_centos8_1:
         label: centos-8_1-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/os/"
+
       - name: CentOS 8.1.1911 - Extras
         label: centos-8_1-extras
         <<: *foreman_products_defaults
@@ -117,6 +119,7 @@ foreman_products_centos8_2:
         label: centos-8_2-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/os/"
+
       - name: CentOS 8.2.2004 - Extras
         label: centos-8_2-extras
         <<: *foreman_products_defaults
@@ -163,6 +166,7 @@ foreman_products_centos8_3:
         label: centos-8_3-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/os/"
+
       - name: CentOS 8.3.2011 - Extras
         label: centos-8_3-extras
         <<: *foreman_products_defaults
@@ -209,6 +213,7 @@ foreman_products_centos8_4:
         label: centos-8_4-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/os/"
+
       - name: CentOS 8.4.2105 - Extras
         label: centos-8_4-extras
         <<: *foreman_products_defaults
@@ -255,6 +260,7 @@ foreman_products_centos8_5:
         label: centos-8_5-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/os/"
+
       - name: CentOS 8.5.2111 - Extras
         label: centos-8_5-extras
         <<: *foreman_products_defaults
