@@ -9,6 +9,9 @@
 build
 AUTHORS.TXT
 
+# Original files
+src
+
 # Emacs backup files...
 *~
 .\#*
