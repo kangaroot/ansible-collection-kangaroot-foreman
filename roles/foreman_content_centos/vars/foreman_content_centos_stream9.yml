@@ -1,0 +1,239 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_content_credentials_centos_stream9: []
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-CentOS-Official
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_openstack_rdo: &foreman_products_openstack_rdo
+  content_type: yum
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+foreman_products_centos_stream9:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS Stream 9 - BaseOS
+        label: centos-stream-9-baseos
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/BaseOS/x86_64/os/"
+      - name: CentOS Stream 9 - AppStream
+        label: centos-stream-9-appstream
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/AppStream/x86_64/os/"
+
+      - name: CentOS Stream 9 - CRB
+        label: centos-stream-9-crb
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/CRB/x86_64/os/"
+
+      - name: CentOS Stream 9 - HighAvailability
+        label: centos-stream-9-highavailability
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/HighAvailability/x86_64/os/"
+      - name: CentOS Stream 9 - NFV
+        label: centos-stream-9-nfv
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/NFV/x86_64/os/"
+      - name: CentOS Stream 9 - RealTime
+        label: centos-stream-9-rt
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/RT/x86_64/os/"
+      - name: CentOS Stream 9 - ResilientStorage
+        label: centos-stream-9-resilientstorage
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/ResilientStorage/x86_64/os/"
+
+      - name: CentOS Stream 9 - Extras packages
+        label: centos-stream-9-extras-common
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/extras/x86_64/extras-common/"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Extras
+
+foreman_content_views_centos_stream9:
+  - name: cv_centos_stream9_baseos
+    repositories:
+      - name: CentOS Stream 9 - BaseOS
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos_stream9_appstream
+    repositories:
+      - name: CentOS Stream 9 - AppStream
+        product: CentOS
+    allow_promote: False
+
+  - name: cv_centos_stream9_crb
+    repositories:
+      - name: CentOS Stream 9 - CRB
+        product: CentOS
+    allow_promote: False
+
+  - name: cv_centos_stream9_highavailability
+    repositories:
+      - name: CentOS Stream 9 - HighAvailability
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos_stream9_nfv
+    repositories:
+      - name: CentOS Stream 9 - NFV
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos_stream9_rt
+    repositories:
+      - name: CentOS Stream 9 - RealTime
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos_stream9_resilientstorage
+    repositories:
+      - name: CentOS Stream 9 - ResilientStorage
+        product: CentOS
+    allow_promote: False
+
+  - name: cv_centos_stream9_extras_common
+    repositories:
+      - name: CentOS Stream 9 - Extras packages
+        product: CentOS
+    allow_promote: False
+
+  - name: ccv_centos_stream9
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_centos_stream9_baseos
+        latest: true
+      - content_view: cv_centos_stream9_appstream
+        latest: true
+      - content_view: cv_centos_stream9_crb
+        latest: true
+      - content_view: cv_centos_stream9_highavailability
+        latest: true
+      - content_view: cv_centos_stream9_nfv
+        latest: true
+      - content_view: cv_centos_stream9_rt
+        latest: true
+      - content_view: cv_centos_stream9_resilientstorage
+        latest: true
+      - content_view: cv_centos_stream9_extras_common
+        latest: true
+      - content_view: cv_epel9
+        latest: true
+      - content_view: cv_epel9_next
+        latest: true
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    - template_kind: "cloud-init"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_cloud_init | default( foreman_operatingsystems_centos_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+    - template_kind: "finish"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_finish | default( foreman_operatingsystems_centos_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+    - template_kind: "host_init_config"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_host_init_config | default( foreman_operatingsystems_centos_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+    - template_kind: "iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_ipxe | default( foreman_operatingsystems_centos_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+    - template_kind: "provision"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_provision | default( foreman_operatingsystems_centos_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+    - template_kind: "PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_pxegrub | default( foreman_operatingsystems_centos_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_pxegrub2 | default( foreman_operatingsystems_centos_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+    - template_kind: "PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_pxelinux | default( foreman_operatingsystems_centos_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+    - template_kind: "user_data"
+      provisioning_template: "{{ foreman_operatingsystems_centos_stream9_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+foreman_operatingsystems_centos_stream9:
+  - name: "CentOS_Stream"
+    major: "9"
+    minor: ""
+    description: "CentOS Stream 9"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+foreman_installation_media_centos_stream9:
+  - name: CentOS Stream 9 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-9-baseos/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS Stream 9
+  - name: CentOS Stream 9 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-9-appstream/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - CentOS Stream 9
+
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  organization: "{{ foreman_organization }}"
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   - name: "CentOS"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
+  auto_attach: False
+  # release_version: 9
+  # service_level: Standard
+
+foreman_activation_keys_centos_stream9:
+  - name: ak_centos9stream
+    content_view: ccv_centos_stream9
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-baseos"
+        override: default
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-appstream"
+        override: default
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-crb"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-highavailability"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-nfv"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-rt"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-resilientstorage"
+        override: disabled
+      - label: "{{ foreman_organization }}_CentOS_centos-stream-9-extras-common"
+        override: disabled
+      - label: "{{ foreman_organization }}_EPEL_epel-9"
+        override: disabled
+      - label: "{{ foreman_organization }}_EPEL_epel-9-next"
+        override: disabled
+
+foreman_sync_plan_products_centos_stream9: []
+

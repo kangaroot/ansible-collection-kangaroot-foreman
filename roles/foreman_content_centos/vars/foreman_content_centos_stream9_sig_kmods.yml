@@ -1,0 +1,79 @@
+---
+# centos content group vars file for foreman_content_centos
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-centosofficial
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_centos_stream9_sig_kmods_main:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS Stream 9 - Kmods
+        label: centos-stream-9-kmods
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-main"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+
+foreman_products_centos_stream9_sig_kmods_rebuild:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS Stream 9 - Kmods - Rebuild
+        label: centos-stream-9-kmods-rebuild
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-rebuild"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+
+foreman_products_centos_stream9_sig_kmods_userspace:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS Stream 9 - Kmods - User Space
+        label: centos-stream-9-kmods-userspace
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-userspace"
+        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+
+foreman_products_centos_stream9_sig_kmods: "{{ [] |
+  union( foreman_products_centos_stream9_sig_kmods_main | default([]) if foreman_enable_centos_stream9_sig_kmods_main else [] ) |
+  union( foreman_products_centos_stream9_sig_kmods_rebuild | default([]) if foreman_enable_centos_stream9_sig_kmods_rebuild else [] ) |
+  union( foreman_products_centos_stream9_sig_kmods_userspace | default([]) if foreman_enable_centos_stream9_sig_kmods_userspace else [] )
+  }}"
+
+foreman_content_views_centos_stream9_sig_kmods_main:
+  - name: cv_centos_stream9_kmods
+    repositories:
+      - name: CentOS Stream 9 - Kmods
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos_stream9_sig_kmods_rebuild:
+  - name: cv_centos_stream9_kmods_rebuild
+    repositories:
+      - name: CentOS Stream 9 - Kmods - Rebuild
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos_stream9_sig_kmods_userspace:
+  - name: cv_centos_stream9_kmods_userspace
+    repositories:
+      - name: CentOS Stream 9 - Kmods - User Space
+        product: CentOS
+    allow_promote: False
+
+foreman_content_views_centos_stream9_sig_kmods: "{{ [] |
+  union( foreman_content_views_centos_stream9_sig_kmods_main | default([]) if foreman_enable_centos_stream9_sig_kmods_main else [] ) |
+  union( foreman_content_views_centos_stream9_sig_kmods_rebuild | default([]) if foreman_enable_centos_stream9_sig_kmods_rebuild else [] ) |
+  union( foreman_content_views_centos_stream9_sig_kmods_userspace | default([]) if foreman_enable_centos_stream9_sig_kmods_userspace else [] )
+  }}"
+

@@ -24,7 +24,7 @@ foreman_products_centos8_sig_configmanagement_ansible29:
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
 
 foreman_products_centos8_sig_configmanagement: "{{ [] |
-  union( foreman_products_centos8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos7_sig_configmanagement_ansible29 else [] )
+  union( foreman_products_centos8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos8_sig_configmanagement_ansible29 else [] )
   }}"
 
 
@@ -36,6 +36,6 @@ foreman_content_views_centos8_sig_configmanagement_ansible29:
     allow_promote: False
 
 foreman_content_views_centos8_sig_configmanagement: "{{ [] |
-  union( foreman_content_views_centos8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos7_sig_configmanagement_ansible29 else [] )
+  union( foreman_content_views_centos8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos8_sig_configmanagement_ansible29 else [] )
   }}"
 
