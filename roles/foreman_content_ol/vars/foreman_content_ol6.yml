@@ -1,5 +1,4 @@
 ---
-# foreman oracle linux content vars file for foreman_content_ol
 
 foreman_content_credentials_ol6: []
 

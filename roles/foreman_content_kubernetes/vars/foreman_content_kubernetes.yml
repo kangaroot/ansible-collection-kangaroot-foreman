@@ -1,5 +1,4 @@
 ---
-# foreman kubernetes content vars file for foreman_content_kubernetes
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum

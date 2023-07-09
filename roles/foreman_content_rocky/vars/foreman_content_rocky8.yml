@@ -1,5 +1,4 @@
 ---
-# foreman rocky linux content vars file for foreman_content_rocky
 
 foreman_content_credentials_rocky8:
   - name: RPM-GPG-KEY-Rocky-8

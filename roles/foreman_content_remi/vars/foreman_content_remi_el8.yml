@@ -1,5 +1,4 @@
 ---
-# foreman remi content group vars file for foreman_content_remi
 
 foreman_content_credentials_remi_el8:
   - name: RPM-GPG-KEY-remi2018

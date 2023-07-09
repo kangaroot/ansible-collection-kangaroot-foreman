@@ -1,5 +1,4 @@
 ---
-# foreman ubuntu content vars file for foreman_content_ubuntu
 
 foreman_content_credentials_ubuntu2004: []
 

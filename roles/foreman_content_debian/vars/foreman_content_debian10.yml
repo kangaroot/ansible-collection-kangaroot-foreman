@@ -1,5 +1,4 @@
 ---
-# foreman debian content vars file for foreman_content_debian
 
 foreman_content_credentials_debian10: []
 

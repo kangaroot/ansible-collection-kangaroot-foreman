@@ -1,5 +1,4 @@
 ---
-# centos content group vars file for foreman_content_centos
 
 foreman_content_credentials_centos_stream9: []
 

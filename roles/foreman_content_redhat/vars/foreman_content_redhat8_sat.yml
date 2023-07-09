@@ -1,5 +1,4 @@
 ---
-# foreman redhat content vars file for foreman_content_redhat
 
 foreman_content_credentials_redhat8_sat: []
 

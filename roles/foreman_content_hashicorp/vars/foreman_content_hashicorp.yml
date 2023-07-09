@@ -1,5 +1,4 @@
 ---
-# foreman hashicorp vars file for foreman_content_hashicorp
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum

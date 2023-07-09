@@ -1,5 +1,4 @@
 ---
-# foreman template content group vars file for foreman_content_template
 
 foreman_content_credentials_template_el8:
   - name: RPM-GPG-KEY-Template-8

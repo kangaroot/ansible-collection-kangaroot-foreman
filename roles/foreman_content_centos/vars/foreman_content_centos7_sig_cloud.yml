@@ -1,9 +1,8 @@
 ---
-# centos content group vars file for foreman_content_centos
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-7
+  # gpg_key: RPM-GPG-KEY-CentOS-7
   download_policy: immediate
   # mirror_on_sync: True
   # mirroring_policy: "additive"

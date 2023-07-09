@@ -1,5 +1,4 @@
 ---
-# foreman fedora copr content vars file for foreman_content_fedora_copr
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum

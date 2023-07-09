@@ -1,5 +1,4 @@
 ---
-# foreman docker ce content vars file for foreman_content_docker
 
 foreman_content_credentials_docker_ce_main:
   - name: RPM-GPG-KEY-docker-ce

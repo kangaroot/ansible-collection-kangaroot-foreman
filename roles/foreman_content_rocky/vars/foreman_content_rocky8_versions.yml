@@ -1,5 +1,4 @@
 ---
-# rocky content group vars file for foreman_content_rocky
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum

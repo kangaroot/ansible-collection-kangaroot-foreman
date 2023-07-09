@@ -1,5 +1,4 @@
 ---
-# epel 7 content vars file for foreman_content_epel
 
 foreman_content_credentials_epel_el7:
   - name: RPM-GPG-KEY-EPEL-7
