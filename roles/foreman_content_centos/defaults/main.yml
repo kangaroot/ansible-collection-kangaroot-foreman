@@ -251,6 +251,7 @@ foreman_enable_centos_stream8_sig_storage_ceph_nautilus: "{{ foreman_enable_cent
                                                              foreman_enable_centos_stream8_sig_cloud_openstack_victoria | bool }}"
 foreman_enable_centos_stream8_sig_storage_ceph_octopus: false
 foreman_enable_centos_stream8_sig_storage_ceph_pacific:  "{{ foreman_enable_centos_stream8_sig_virtualization_ovirt45 | bool }}"
+foreman_enable_centos_stream8_sig_storage_ceph_quincy: false
 foreman_enable_centos_stream8_sig_storage_nfs_ganesha28: false
 foreman_enable_centos_stream8_sig_storage_nfs_ganesha30: false
 

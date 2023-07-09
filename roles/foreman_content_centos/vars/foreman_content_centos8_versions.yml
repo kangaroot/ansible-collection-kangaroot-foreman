@@ -671,7 +671,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_centos8_0:
   - name: CentOS 8.0.1905 BaseOS
-    path: "https://{{ foreman_server_hostname }/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_0-baseos-kickstart"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_0-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 8.0.1905
