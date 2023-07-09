@@ -242,27 +242,27 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_centos7:
   - name: CentOS 7
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 7
   # - name: CentOS 7 - Updates
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_updates/"
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-updates/"
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - CentOS 7
   # - name: CentOS 7 - Extras
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_extras/"
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-extras/"
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - CentOS 7
   # - name: CentOS 7 - CentOSPlus
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_centosplus/"
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-centosplus/"
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - CentOS 7
   # - name: CentOS 7 - Fasttrack
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7_fasttrack/"
+  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-fasttrack/"
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - CentOS 7
