@@ -16,6 +16,7 @@ foreman_products_on_demand: &foreman_products_on_demand
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7_sig_virtualization_azure:
   - name: CentOS
     label: CentOS

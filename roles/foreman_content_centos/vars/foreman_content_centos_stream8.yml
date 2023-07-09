@@ -2,6 +2,7 @@
 
 foreman_content_credentials_centos_stream8: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
@@ -14,16 +15,6 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
-foreman_products_openstack_rdo: &foreman_products_openstack_rdo
-  content_type: yum
-  download_policy: on_demand
-  # mirror_on_sync: True
-  # mirroring_policy: "additive"
-  # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
-  # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
 
 foreman_products_centos_stream8:
   - name: CentOS
@@ -146,6 +137,7 @@ foreman_content_views_centos_stream8:
       - content_view: cv_epel8_next
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -179,12 +171,14 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     - template_kind: "user_data"
       provisioning_template: "{{ foreman_operatingsystems_centos_stream8_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
+
 foreman_operatingsystems_centos_stream8:
   - name: "CentOS_Stream"
     major: "8"
     minor: ""
     description: "CentOS Stream 8"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -194,6 +188,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_default_location }}"
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
+
 
 foreman_installation_media_centos_stream8:
   - name: CentOS Stream 8 BaseOS
@@ -207,6 +202,7 @@ foreman_installation_media_centos_stream8:
     operatingsystems:
       - CentOS Stream 8
 
+
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
@@ -217,6 +213,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 8
   # service_level: Standard
+
 
 foreman_activation_keys_centos_stream8:
   - name: ak_centos8stream
@@ -247,6 +244,7 @@ foreman_activation_keys_centos_stream8:
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-8-next"
         override: disabled
+
 
 foreman_sync_plan_products_centos_stream8: []
 

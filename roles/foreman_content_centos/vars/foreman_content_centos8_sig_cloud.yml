@@ -32,7 +32,6 @@ foreman_products_centos8_sig_cloud_openstack_train_tested:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-train/current-passed-ci/"
 
-
 foreman_products_centos8_sig_cloud_openstack_ussuri:
   - name: CentOS
     label: CentOS
@@ -107,7 +106,6 @@ foreman_products_centos8_sig_cloud_openstack_ussuri_tested:
         label: centos-8-rdo-trunk-ussuri-tested-component-ui
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-ussuri/component/ui/current-tripleo-rdo/"
-
 
 foreman_products_centos8_sig_cloud_openstack_victoria:
   - name: CentOS
@@ -184,7 +182,6 @@ foreman_products_centos8_sig_cloud_openstack_victoria_tested:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos8-victoria/component/ui/current-tripleo-rdo/"
 
-
 foreman_products_centos8_sig_cloud: "{{ [] |
   union( foreman_products_centos8_sig_cloud_openstack_train | default([]) if foreman_enable_centos8_sig_cloud_openstack_train else [] ) |
   union( foreman_products_centos8_sig_cloud_openstack_ussuri | default([]) if foreman_enable_centos8_sig_cloud_openstack_ussuri else [] ) |
@@ -215,7 +212,6 @@ foreman_content_views_centos8_sig_cloud_openstack_train_tested:
       - name: CentOS 8 - OpenStack train Trunk Tested
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos8_sig_cloud_openstack_ussuri:
   - name: cv_centos8_openstack_ussuri
@@ -301,7 +297,6 @@ foreman_content_views_centos8_sig_cloud_openstack_ussuri_tested:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos8_sig_cloud_openstack_victoria:
   - name: cv_centos8_openstack_victoria
     repositories:
@@ -385,7 +380,6 @@ foreman_content_views_centos8_sig_cloud_openstack_victoria_tested:
       - name: CentOS 8 - OpenStack victoria Trunk Tested component ui
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos8_sig_cloud: "{{ [] |
   union( foreman_content_views_centos8_sig_cloud_openstack_train | default([]) if foreman_enable_centos8_sig_cloud_openstack_train else [] ) |

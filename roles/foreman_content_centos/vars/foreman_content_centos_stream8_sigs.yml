@@ -12,6 +12,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
+
 foreman_products_centos_stream8_sig_opstools:
   - name: CentOS
     label: CentOS

@@ -12,6 +12,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
+
 foreman_products_centos_stream8_sig_virtualization_advanced_virtualization:
   - name: CentOS
     label: CentOS
@@ -57,6 +58,7 @@ foreman_products_centos_stream8_sig_virtualization: "{{ [] |
   union( foreman_products_centos_stream8_sig_virtualization_ovirt44 | default([]) if foreman_enable_centos_stream8_sig_virtualization_ovirt44 else [] ) |
   union( foreman_products_centos_stream8_sig_virtualization_ovirt45 | default([]) if foreman_enable_centos_stream8_sig_virtualization_ovirt45 else [] )
   }}"
+
 
 foreman_content_views_centos_stream8_sig_virtualization_advanced_virtualization:
   - name: cv_centos_stream8_advanced_virtualization

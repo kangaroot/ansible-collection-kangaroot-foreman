@@ -12,6 +12,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
+
 foreman_products_centos_stream8_sig_storage_samba411:
   - name: CentOS
     label: CentOS
@@ -92,7 +93,6 @@ foreman_products_centos_stream8_sig_storage_samba418:
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-418/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream8_sig_storage_gluster6:
   - name: CentOS
     label: CentOS
@@ -153,7 +153,6 @@ foreman_products_centos_stream8_sig_storage_gluster11:
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/gluster-11/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream8_sig_storage_ceph_nautilus:
   - name: CentOS
     label: CentOS
@@ -194,7 +193,6 @@ foreman_products_centos_stream8_sig_storage_ceph_quincy:
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/ceph-quincy/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream8_sig_storage_nfs_ganesha28:
   - name: CentOS
     label: CentOS
@@ -214,7 +212,6 @@ foreman_products_centos_stream8_sig_storage_nfs_ganesha30:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/nfs-ganesha-30/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
-
 
 foreman_products_centos_stream8_sig_storage: "{{ [] |
   union ( foreman_products_centos_stream8_sig_storage_samba411 | default([]) if foreman_enable_centos_stream8_sig_storage_samba411 else [] ) |
@@ -296,7 +293,6 @@ foreman_content_views_centos_stream8_sig_storage_samba418:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream8_sig_storage_gluster6:
   - name: cv_centos8_gluster6
     repositories:
@@ -339,7 +335,6 @@ foreman_content_views_centos_stream8_sig_storage_gluster11:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream8_sig_storage_ceph_nautilus:
   - name: cv_centos_stream8_ceph_nautilus
     repositories:
@@ -368,7 +363,6 @@ foreman_content_views_centos_stream8_sig_storage_ceph_quincy:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream8_sig_storage_nfs_ganesha28:
   - name: cv_centos_stream8_nfs_ganesha28
     repositories:
@@ -382,7 +376,6 @@ foreman_content_views_centos_stream8_sig_storage_nfs_ganesha30:
       - name: CentOS Stream 8 - NFS Ganesha 3.0
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos_stream8_sig_storage: "{{ [] |
   union ( foreman_content_views_centos_stream8_sig_storage_samba411 | default([]) if foreman_enable_centos_stream8_sig_storage_samba411 else [] ) |

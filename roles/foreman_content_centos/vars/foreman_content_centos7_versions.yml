@@ -17,6 +17,7 @@ foreman_products_on_demand: &foreman_products_on_demand
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7_0:
   - name: CentOS
     label: CentOS
@@ -484,60 +485,70 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     - template_kind: "user_data"
       provisioning_template: "{{ foreman_operatingsystems_centos7_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
+
 foreman_operatingsystems_centos7_0:
   - name: "CentOS"
     major: "7"
     minor: "0.1406"
     description: "CentOS 7.0.1406"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_1:
   - name: "CentOS"
     major: "7"
     minor: "1.1503"
     description: "CentOS 7.1.1503"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_2:
   - name: "CentOS"
     major: "7"
     minor: "2.1511"
     description: "CentOS 7.2.1511"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_3:
   - name: "CentOS"
     major: "7"
     minor: "3.1611"
     description: "CentOS 7.3.1611"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_4:
   - name: "CentOS"
     major: "7"
     minor: "4.1708"
     description: "CentOS 7.4.1708"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_5:
   - name: "CentOS"
     major: "7"
     minor: "5.1804"
     description: "CentOS 7.5.1804"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_6:
   - name: "CentOS"
     major: "7"
     minor: "6.1810"
     description: "CentOS 7.6.1810"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_7:
   - name: "CentOS"
     major: "7"
     minor: "7.1908"
     description: "CentOS 7.7.1908"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_8:
   - name: "CentOS"
     major: "7"
     minor: "8.2003"
     description: "CentOS 7.8.2003"
     <<: *foreman_operatingsystems_defaults
+
 foreman_operatingsystems_centos7_9:
   - name: "CentOS"
     major: "7"
@@ -567,6 +578,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_default_location }}"
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
+
 
 foreman_installation_media_centos7_0:
   - name: CentOS 7.0.1406

@@ -20,6 +20,7 @@ foreman_products_rdo: &foreman_products_rdo
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7_sig_cloud_openstack_queens:
   - name: CentOS
     label: CentOS

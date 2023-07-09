@@ -49,6 +49,7 @@ foreman_products_centos_stream9_sig_kmods: "{{ [] |
   union( foreman_products_centos_stream9_sig_kmods_userspace | default([]) if foreman_enable_centos_stream9_sig_kmods_userspace else [] )
   }}"
 
+
 foreman_content_views_centos_stream9_sig_kmods_main:
   - name: cv_centos_stream9_kmods
     repositories:

@@ -16,6 +16,7 @@ foreman_products_on_demand: &foreman_products_on_demand
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7_dotnet:
   - name: CentOS
     label: CentOS
@@ -25,6 +26,14 @@ foreman_products_centos7_dotnet:
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/dotnet/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
+
+foreman_content_views_centos7_dotnet:
+  - name: cv_centos7_dotnet
+    repositories:
+      - name: CentOS 7 - DotNet
+        product: CentOS
+    allow_promote: False
+
 
 foreman_products_centos7_sig_sclo:
   - name: CentOS
@@ -41,6 +50,19 @@ foreman_products_centos7_sig_sclo:
         url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/rh/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
 
+foreman_content_views_centos7_sclo:
+  - name: cv_centos7_sclo_sclo
+    repositories:
+      - name: CentOS 7 - SCLo sclo
+        product: CentOS
+    allow_promote: False
+  - name: cv_centos7_sclo_rh
+    repositories:
+      - name: CentOS 7 - SCLo rh
+        product: CentOS
+    allow_promote: False
+
+
 foreman_products_centos7_sig_opstools:
   - name: CentOS
     label: CentOS
@@ -50,6 +72,14 @@ foreman_products_centos7_sig_opstools:
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/opstools/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
+
+foreman_content_views_centos7_opstools:
+  - name: cv_centos7_release_opstools
+    repositories:
+      - name: CentOS 7 - OpsTools - release
+        product: CentOS
+    allow_promote: False
+
 
 foreman_products_centos7_sig_nfv_common:
   - name: CentOS
@@ -75,33 +105,6 @@ foreman_products_centos7_sig_nfv: "{{ [] |
   union( foreman_products_centos7_sig_nfv_common | default([]) if foreman_enable_centos8_sig_nfv_common else [] ) |
   union( foreman_products_centos7_sig_nfv_fdio | default([]) if foreman_enable_centos8_sig_nfv_fdio else [] )
   }}"
-
-
-foreman_content_views_centos7_dotnet:
-  - name: cv_centos7_dotnet
-    repositories:
-      - name: CentOS 7 - DotNet
-        product: CentOS
-    allow_promote: False
-
-foreman_content_views_centos7_sclo:
-  - name: cv_centos7_sclo_sclo
-    repositories:
-      - name: CentOS 7 - SCLo sclo
-        product: CentOS
-    allow_promote: False
-  - name: cv_centos7_sclo_rh
-    repositories:
-      - name: CentOS 7 - SCLo rh
-        product: CentOS
-    allow_promote: False
-
-foreman_content_views_centos7_opstools:
-  - name: cv_centos7_release_opstools
-    repositories:
-      - name: CentOS 7 - OpsTools - release
-        product: CentOS
-    allow_promote: False
 
 foreman_content_views_centos7_nfv_common:
   - name: cv_centos7_nfv_common

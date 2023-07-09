@@ -16,6 +16,7 @@ foreman_products_on_demand: &foreman_products_on_demand
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7_sig_paas_openshift_origin:
   - name: CentOS
     label: CentOS

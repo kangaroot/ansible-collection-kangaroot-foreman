@@ -31,6 +31,7 @@ foreman_products_on_demand: &foreman_products_on_demand
   <<: *foreman_products_defaults
   download_policy: on_demand
 
+
 foreman_products_centos7:
   - name: CentOS
     label: CentOS
@@ -186,6 +187,7 @@ foreman_content_views_centos7:
   #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
   #       latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -219,12 +221,14 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     - template_kind: "user_data"
       provisioning_template: "{{ foreman_operatingsystems_centos7_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
+
 foreman_operatingsystems_centos7:
   - name: "CentOS"
     major: "7"
     minor: ""
     description: "CentOS 7"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -234,6 +238,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_default_location }}"
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
+
 
 foreman_installation_media_centos7:
   - name: CentOS 7
@@ -262,6 +267,7 @@ foreman_installation_media_centos7:
   #   operatingsystems:
   #     - CentOS 7
 
+
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
   lifecycle_environment: "Library"
@@ -272,6 +278,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 7Server
   # service_level: Standard
+
 
 foreman_activation_keys_centos7:
   - name: ak_centos7
@@ -344,6 +351,7 @@ foreman_activation_keys_centos7:
   #       override: default
   #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}_el7"
   #       override: default
+
 
 foreman_sync_plan_products_centos7: []
 

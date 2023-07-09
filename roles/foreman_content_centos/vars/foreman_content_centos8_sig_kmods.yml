@@ -38,6 +38,7 @@ foreman_products_centos8_sig_kmods: "{{ [] |
   union( foreman_products_centos8_sig_kmods_rebuild | default([]) if foreman_enable_centos8_sig_kmods_rebuild else [] )
   }}"
 
+
 foreman_content_views_centos8_sig_kmods_main:
   - name: cv_centos8_kmods
     repositories:

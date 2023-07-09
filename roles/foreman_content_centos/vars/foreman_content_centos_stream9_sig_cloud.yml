@@ -23,7 +23,6 @@ foreman_products_centos_stream9_sig_cloud_openstack_client_xena:
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/cloud/x86_64/openstackclient-xena/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Cloud
 
-
 foreman_products_centos_stream9_sig_cloud_openstack_yoga:
   - name: CentOS
     label: CentOS
@@ -98,7 +97,6 @@ foreman_products_centos_stream9_sig_cloud_openstack_yoga_tested:
         label: centos-stream-9-rdo-trunk-yoga-tested-component-ui
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos9-yoga/component/ui/puppet-passed-ci"
-
 
 foreman_products_centos_stream9_sig_cloud_openstack_zed:
   - name: CentOS
@@ -175,7 +173,6 @@ foreman_products_centos_stream9_sig_cloud_openstack_zed_tested:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos9-zed/component/ui/puppet-passed-ci"
 
-
 foreman_products_centos_stream9_sig_cloud_openstack_antelope:
   - name: CentOS
     label: CentOS
@@ -251,7 +248,6 @@ foreman_products_centos_stream9_sig_cloud_openstack_antelope_tested:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos9-antelope/component/ui/puppet-passed-ci"
 
-
 foreman_products_centos_stream9_sig_cloud_okd413:
   - name: CentOS
     label: CentOS
@@ -272,7 +268,6 @@ foreman_products_centos_stream9_sig_cloud_okd414:
         url: "{{ foreman_repo_baseurl_centos_stream9 }}//8-stream/cloud/x86_64/okd-4.14/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Cloud
 
-
 foreman_products_centos_stream9_sig_cloud: "{{ [] |
   union( foreman_products_centos_stream9_sig_cloud_openstack_client_xena | default([]) if foreman_enable_centos_stream9_sig_cloud_openstack_client_xena else [] ) |
   union( foreman_products_centos_stream9_sig_cloud_openstack_yoga | default([]) if foreman_enable_centos_stream9_sig_cloud_openstack_yoga else [] ) |
@@ -292,7 +287,6 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_client_xena:
       - name: CentOS Stream 9 Openstack Client xena
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_yoga:
   - name: cv_centos_stream9_openstack_yoga
@@ -378,7 +372,6 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_yoga_tested:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream9_sig_cloud_openstack_zed:
   - name: cv_centos_stream9_openstack_zed
     repositories:
@@ -462,7 +455,6 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_zed_tested:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component ui
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_antelope:
   - name: cv_centos_stream9_openstack_antelope
@@ -548,7 +540,6 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_antelope_tested:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream9_sig_cloud_okd413:
   - name: cv_centos_stream9_openstack_okd413
     repositories:
@@ -562,7 +553,6 @@ foreman_content_views_centos_stream9_sig_cloud_okd414:
       - name: CentOS Stream 9 - OKD 4.14
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos_stream9_sig_cloud: "{{ [] |
   union( foreman_content_views_centos_stream9_sig_cloud_openstack_client_xena | default([]) if foreman_enable_centos_stream9_sig_cloud_openstack_client_xena else [] ) |

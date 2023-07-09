@@ -23,7 +23,6 @@ foreman_products_defaults: &foreman_products_defaults
 #         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/common/"
 #         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream9_sig_storage_samba414:
   - name: CentOS
     label: CentOS
@@ -74,7 +73,6 @@ foreman_products_centos_stream9_sig_storage_samba418:
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-418/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream9_sig_storage_gluster9:
   - name: CentOS
     label: CentOS
@@ -105,7 +103,6 @@ foreman_products_centos_stream9_sig_storage_gluster11:
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/gluster-11/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream9_sig_storage_ceph_pacific:
   - name: CentOS
     label: CentOS
@@ -126,7 +123,6 @@ foreman_products_centos_stream9_sig_storage_ceph_quincy:
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-ceph-quincy/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
 
-
 foreman_products_centos_stream9_sig_storage_nfs_ganesha4:
   - name: CentOS
     label: CentOS
@@ -146,7 +142,6 @@ foreman_products_centos_stream9_sig_storage_nfs_ganesha5:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-nfsganesha-5/"
         gpgkey: RPM-GPG-KEY-CentOS-SIG-Storage
-
 
 foreman_products_centos_stream9_sig_storage: "{{ [] |
   union ( foreman_products_centos_stream9_sig_storage_common | default([]) if foreman_enable_centos_stream9_sig_storage_common else [] ) |
@@ -171,7 +166,6 @@ foreman_products_centos_stream9_sig_storage: "{{ [] |
 #       - name: CentOS Stream 9 - Storage SIG - common
 #         product: CentOS
 #     allow_promote: False
-
 
 foreman_content_views_centos_stream9_sig_storage_samba414:
   - name: cv_centos_stream9_samba414
@@ -208,7 +202,6 @@ foreman_content_views_centos_stream9_sig_storage_samba418:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream9_sig_storage_gluster9:
   - name: cv_centos_stream9_gluster9
     repositories:
@@ -230,7 +223,6 @@ foreman_content_views_centos_stream9_sig_storage_gluster11:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream9_sig_storage_ceph_pacific:
   - name: cv_centos_stream9_ceph_pacific
     repositories:
@@ -245,7 +237,6 @@ foreman_content_views_centos_stream9_sig_storage_ceph_quincy:
         product: CentOS
     allow_promote: False
 
-
 foreman_content_views_centos_stream9_sig_storage_nfs_ganesha4:
   - name: cv_centos_stream9_nfs_ganesha4
     repositories:
@@ -259,7 +250,6 @@ foreman_content_views_centos_stream9_sig_storage_nfs_ganesha5:
       - name: CentOS Stream 9 - NFS-Ganesha 5
         product: CentOS
     allow_promote: False
-
 
 foreman_content_views_centos_stream9_sig_storage: "{{ [] |
   union ( foreman_content_views_centos_stream9_sig_storage_common | default([]) if foreman_enable_centos_stream9_sig_storage_common else [] ) |
