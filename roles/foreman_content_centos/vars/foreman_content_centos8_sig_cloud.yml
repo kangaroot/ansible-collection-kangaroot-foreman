@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  # gpg_key: RPM-GPG-KEY-centosofficial
+  # gpg_key: RPM-GPG-KEY-CentOS-Official
   download_policy: on_demand
   # mirror_on_sync: True
   # mirroring_policy: "additive"
