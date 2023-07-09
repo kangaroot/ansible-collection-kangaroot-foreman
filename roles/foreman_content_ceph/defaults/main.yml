@@ -1,41 +1,9 @@
 ---
 # defaults file for foreman_content_ceph
 
-foreman_enable_ceph: false
-
-foreman_enable_ceph_nautilus: false
-foreman_enable_ceph_nautilus_el7: false
-foreman_enable_ceph_nautilus_el8: "{{ foreman_enable_ceph_nautilus | bool }}"
-foreman_enable_ceph_nautilus_deb9: false
-foreman_enable_ceph_nautilus_deb10: false
-foreman_enable_ceph_nautilus_ub1804: false
-foreman_enable_ceph_nautilus_ub2004: false
-
-foreman_enable_ceph_octopus: false
-foreman_enable_ceph_octopus_el7: false
-foreman_enable_ceph_octopus_el8: "{{ foreman_enable_ceph_octopus | bool }}"
-foreman_enable_ceph_octopus_deb10: false
-foreman_enable_ceph_octopus_ub1804: false
-foreman_enable_ceph_octopus_ub2004: false
-
-foreman_enable_ceph_pacific: false
-foreman_enable_ceph_pacific_el7: false
-foreman_enable_ceph_pacific_el8: "{{ foreman_enable_ceph_pacific | bool }}"
-foreman_enable_ceph_pacific_el9: "{{ foreman_enable_ceph_pacific | bool }}"
-foreman_enable_ceph_pacific_deb10: false
-foreman_enable_ceph_pacific_deb11: false
-foreman_enable_ceph_pacific_ub1804: false
-foreman_enable_ceph_pacific_ub2004: false
-
-foreman_enable_ceph_quincy: false
-foreman_enable_ceph_quincy_el7: false
-foreman_enable_ceph_quincy_el8: "{{ foreman_enable_ceph_quincy | bool }}"
-foreman_enable_ceph_quincy_el9: "{{ foreman_enable_ceph_quincy | bool }}"
-foreman_enable_ceph_quincy_deb11: false
-foreman_enable_ceph_quincy_ub2004: false
-
-foreman_enable_ceph_docker: false
-
+#######################################
+### URLS
+#######################################
 
 foreman_repo_baseurl_ceph: https://download.ceph.com
 
@@ -72,6 +40,50 @@ foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph_quincy }}
 
 foreman_repo_baseurl_ceph_docker: https://quay.io
 
+
+#######################################
+### ENABLE VARS
+#######################################
+
+foreman_enable_ceph: false
+
+foreman_enable_ceph_nautilus: false
+foreman_enable_ceph_nautilus_el7: false
+foreman_enable_ceph_nautilus_el8: "{{ foreman_enable_ceph_nautilus | bool }}"
+foreman_enable_ceph_nautilus_deb9: false
+foreman_enable_ceph_nautilus_deb10: false
+foreman_enable_ceph_nautilus_ub1804: false
+foreman_enable_ceph_nautilus_ub2004: false
+
+foreman_enable_ceph_octopus: false
+foreman_enable_ceph_octopus_el7: false
+foreman_enable_ceph_octopus_el8: "{{ foreman_enable_ceph_octopus | bool }}"
+foreman_enable_ceph_octopus_deb10: false
+foreman_enable_ceph_octopus_ub1804: false
+foreman_enable_ceph_octopus_ub2004: false
+
+foreman_enable_ceph_pacific: false
+foreman_enable_ceph_pacific_el7: false
+foreman_enable_ceph_pacific_el8: "{{ foreman_enable_ceph_pacific | bool }}"
+foreman_enable_ceph_pacific_el9: "{{ foreman_enable_ceph_pacific | bool }}"
+foreman_enable_ceph_pacific_deb10: false
+foreman_enable_ceph_pacific_deb11: false
+foreman_enable_ceph_pacific_ub1804: false
+foreman_enable_ceph_pacific_ub2004: false
+
+foreman_enable_ceph_quincy: false
+foreman_enable_ceph_quincy_el7: false
+foreman_enable_ceph_quincy_el8: "{{ foreman_enable_ceph_quincy | bool }}"
+foreman_enable_ceph_quincy_el9: "{{ foreman_enable_ceph_quincy | bool }}"
+foreman_enable_ceph_quincy_deb11: false
+foreman_enable_ceph_quincy_ub2004: false
+
+foreman_enable_ceph_docker: false
+
+
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_ceph_main:
   - name: RPM-GPG-KEY-Ceph-release

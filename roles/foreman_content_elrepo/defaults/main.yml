@@ -1,14 +1,27 @@
 ---
 # defaults file for foreman_content_elrepo
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_elrepo: http://elrepo.org/linux
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_elrepo: false
+
 foreman_enable_elrepo_el7: false
 foreman_enable_elrepo_el8: "{{ foreman_enable_elrepo | bool }}"
 foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 
-foreman_repo_baseurl_elrepo: http://elrepo.org/linux
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_elrepo_main:
   - name: RPM-GPG-KEY-elrepo.org

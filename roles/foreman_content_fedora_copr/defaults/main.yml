@@ -1,6 +1,17 @@
 ---
 # defaults file for foreman_content_fedora_copr
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_fedora_copr: false
 foreman_enable_fedora_copr_dgoodwin_subscription_manager: false
 foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6: false
@@ -9,8 +20,9 @@ foreman_enable_fedora_copr_dmann_subscription_manager: false
 foreman_enable_fedora_copr_dmann_subscription_manager_ol8: false
 
 
-foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_fedora_copr_main: []
 foreman_content_credentials_fedora_copr: "{{ ( foreman_content_credentials_fedora_copr_main | default([]) if foreman_enable_fedora_copr | bool else [] ) |

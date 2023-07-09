@@ -1,9 +1,26 @@
 ---
 # defaults file for foreman_content_ol
 
+#######################################
+### URLS
+#######################################
+
 foreman_products_ol_uln_username: ""
 foreman_products_ol_uln_password: ""
 
+foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
+
+foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
+foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle }}"
+foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle }}"
+
+
+#######################################
+### ENABLE VARS
+#######################################
 
 foreman_enable_ol: false
 foreman_enable_ol5: false
@@ -20,14 +37,9 @@ foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
 foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
 
 
-foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
-foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle }}"
-foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
-foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle }}"
-foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle }}"
-foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle }}"
-foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle }}"
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_ol_main:
   - name: RPM-GPG-KEY-oracle

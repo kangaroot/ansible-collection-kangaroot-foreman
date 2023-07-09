@@ -1,19 +1,35 @@
 ---
 # defaults file for foreman_content_redhat
 
+#######################################
+### URLS
+#######################################
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_redhat: false
+
 foreman_enable_redhat7: false
 foreman_enable_redhat7_sat: false
 foreman_enable_redhat7_aap: false
 foreman_enable_redhat7_rhocp: false
+
 foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
 foreman_enable_redhat8_sat: false
 foreman_enable_redhat8_aap: false
 foreman_enable_redhat8_rhocp: false
+
 foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
 foreman_enable_redhat9_aap: false
 foreman_enable_redhat9_rhocp: false
 
+
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_redhat_main: []
 foreman_content_credentials_redhat: "{{ ( foreman_content_credentials_redhat_main | default([]) if foreman_enable_redhat | bool else [] ) |

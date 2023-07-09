@@ -12,6 +12,7 @@ foreman_products_defaults: &foreman_products_defaults
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
 
+
 foreman_products_microsoft_azure_cli:
   - name: Microsoft
     label: Microsoft
@@ -29,6 +30,7 @@ foreman_products_microsoft_prod_el7:
         label: microsoft-prod-el7
         url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/prod/"
         <<: *foreman_products_defaults
+
 foreman_products_microsoft_prod_el8:
   - name: Microsoft
     label: Microsoft
@@ -37,6 +39,7 @@ foreman_products_microsoft_prod_el8:
         label: microsoft-prod-el8
         url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/prod/"
         <<: *foreman_products_defaults
+
 foreman_products_microsoft_prod_el9:
   - name: Microsoft
     label: Microsoft
@@ -61,6 +64,7 @@ foreman_products_microsoft_mssql_server_2017_el7:
         label: mssql-server-2017-el7
         url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/mssql-server-2017/"
         <<: *foreman_products_defaults
+
 foreman_products_microsoft_mssql_server_2017_el8:
   - name: Microsoft
     label: Microsoft
@@ -84,6 +88,7 @@ foreman_products_microsoft_mssql_server_2019_el7:
         label: mssql-server-2019-el7
         url: "{{ foreman_repo_baseurl_microsoft }}/rhel/7/mssql-server-2019/"
         <<: *foreman_products_defaults
+
 foreman_products_microsoft_mssql_server_2019_el8:
   - name: Microsoft
     label: Microsoft
@@ -107,6 +112,7 @@ foreman_products_microsoft_mssql_server_2022_el8:
         label: mssql-server-2022-el8
         url: "{{ foreman_repo_baseurl_microsoft }}/rhel/8/mssql-server-2022/"
         <<: *foreman_products_defaults
+
 foreman_products_microsoft_mssql_server_2022_el9:
   - name: Microsoft
     label: Microsoft
@@ -136,12 +142,14 @@ foreman_content_views_microsoft_prod_el7:
       - name: Microsoft Linux Software Repository - PROD - RHEL 7
         product: Microsoft
     allow_promote: False
+
 foreman_content_views_microsoft_prod_el8:
   - name: cv_microsoft_prod_el8
     repositories:
       - name: Microsoft Linux Software Repository - PROD - RHEL 8
         product: Microsoft
     allow_promote: False
+
 foreman_content_views_microsoft_prod_el9:
   - name: cv_microsoft_prod_el9
     repositories:
@@ -162,6 +170,7 @@ foreman_content_views_microsoft_mssql_server_2017_el7:
       - name: Microsoft SQL Server 2017 - RHEL 7
         product: Microsoft
     allow_promote: False
+
 foreman_content_views_microsoft_mssql_server_2017_el8:
   - name: cv_mssql_server_2017_el8
     repositories:
@@ -181,6 +190,7 @@ foreman_content_views_microsoft_mssql_server_2019_el7:
       - name: Microsoft SQL Server 2019 - RHEL 7
         product: Microsoft
     allow_promote: False
+
 foreman_content_views_microsoft_mssql_server_2019_el8:
   - name: cv_mssql_server_2019_el8
     repositories:
@@ -200,6 +210,7 @@ foreman_content_views_microsoft_mssql_server_2022_el8:
       - name: Microsoft SQL Server 2022 - RHEL 8
         product: Microsoft
     allow_promote: False
+
 foreman_content_views_microsoft_mssql_server_2022_el9:
   - name: cv_mssql_server_2022_el9
     repositories:

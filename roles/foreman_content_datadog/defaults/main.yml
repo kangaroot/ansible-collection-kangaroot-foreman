@@ -1,12 +1,26 @@
 ---
 # defaults file for foreman_content_datadog
 
-foreman_enable_datadog: false
-foreman_enable_datadog_v6: false
-foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
+#######################################
+### URLS
+#######################################
 
 foreman_repo_baseurl_datadog: https://yum.datadoghq.com
 
+
+#######################################
+### ENABLE VARS
+#######################################
+
+foreman_enable_datadog: false
+
+foreman_enable_datadog_v6: false
+foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
+
+
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_datadog_main:
   - name: RPM-GPG-KEY-Datadog

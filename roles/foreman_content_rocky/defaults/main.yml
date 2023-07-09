@@ -15,15 +15,15 @@ foreman_repo_baseurl_rocky_vault: https://download.rockylinux.org/vault/rocky
 
 
 #######################################
-### ROCKY
+### ENABLE VARS
 #######################################
+
+### ROCKY
 
 foreman_enable_rocky: false
 
 
-#######################################
 ### ROCKY 8
-#######################################
 
 foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
 
@@ -42,9 +42,7 @@ foreman_enable_rocky8_sig_cloud_common: "{{ foreman_enable_rocky8_sig_cloud | bo
 foreman_enable_rocky8_sig_cloud_kernel: false
 
 
-#######################################
 ### ROCKY 9
-#######################################
 
 foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
 

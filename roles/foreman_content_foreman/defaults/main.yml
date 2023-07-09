@@ -1,16 +1,28 @@
 ---
 # defaults file for foreman_content_foreman
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_foreman: https://yum.theforeman.org
+foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_foreman: false
 foreman_enable_foreman_el7: false
 foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
 foreman_enable_foreman_el9: false
 
 
-foreman_repo_baseurl_foreman: https://yum.theforeman.org
-foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
-foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_foreman_main:
   - name: RPM-GPG-KEY-foreman

@@ -1,17 +1,30 @@
 ---
 # defaults file for foreman_content_debian
 
+#######################################
+### URLS
+#######################################
+
 foreman_repo_baseurl_debian: http://ftp.debian.org/debian
 foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian }}"
 foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian }}"
 foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian }}"
 
 
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_debian: false
+
 foreman_enable_debian9: false
 foreman_enable_debian10: false
 foreman_enable_debian11: "{{ foreman_enable_debian | bool }}"
 
+
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_debian_main: []
 

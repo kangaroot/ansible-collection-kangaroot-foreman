@@ -17,15 +17,15 @@ foreman_repo_baseurl_ovirt: https://resources.ovirt.org
 
 
 #######################################
-### CENTOS
+### ENABLE VARS
 #######################################
+
+### CENTOS
 
 foreman_enable_centos: false
 
 
-#######################################
 ### CENTOS 7
-#######################################
 
 foreman_enable_centos7: false
 
@@ -120,9 +120,7 @@ foreman_enable_centos7_sig_storage_nfs_ganesha30: false
 foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 
 
-#######################################
 ### CENTOS 8
-#######################################
 
 foreman_enable_centos8: false
 
@@ -189,9 +187,7 @@ foreman_enable_centos8_sig_storage_nfs_ganesha28: false
 foreman_enable_centos8_sig_storage_nfs_ganesha30: false
 
 
-#######################################
 ### CENTOS STREAM 8
-#######################################
 
 foreman_enable_centos_stream8: "{{ foreman_enable_centos | bool }}"
 
@@ -267,9 +263,7 @@ foreman_enable_centos_stream8_sig_hyperscale_spin: false
 foreman_enable_centos_stream8_sig_hyperscale_experimental: false
 
 
-#######################################
 ### CENTOS STREAM 9
-#######################################
 
 foreman_enable_centos_stream9: "{{ foreman_enable_centos | bool }}"
 

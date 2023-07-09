@@ -1,17 +1,31 @@
 ---
 # defaults file for foreman_content_template
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_template: https://downloads.template.com
+
+foreman_repo_baseurl_template_el7: "{{ foreman_repo_baseurl_template }}"
+foreman_repo_baseurl_template_el8: "{{ foreman_repo_baseurl_template }}"
+foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template }}"
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_template: false
+
 foreman_enable_template_el7: false
 foreman_enable_template_el8: "{{ foreman_enable_template | bool }}"
 foreman_enable_template_el9: "{{ foreman_enable_template | bool }}"
 
 
-foreman_repo_baseurl_template: https://downloads.template.com
-foreman_repo_baseurl_template_el7: "{{ foreman_repo_baseurl_template }}"
-foreman_repo_baseurl_template_el8: "{{ foreman_repo_baseurl_template }}"
-foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template }}"
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_template_main: []
 foreman_content_credentials_template: "{{ ( foreman_content_credentials_template_main | default([]) if foreman_enable_template | bool else [] ) |

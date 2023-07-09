@@ -1,14 +1,27 @@
 ---
 # defaults file for foreman_content_epel
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_epel: false
+
 foreman_enable_epel_el7: false
 foreman_enable_epel_el8: "{{ foreman_enable_epel | bool }}"
 foreman_enable_epel_el9: "{{ foreman_enable_epel | bool }}"
 
 
-foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_epel_main: []
 foreman_content_credentials_epel: "{{ ( foreman_content_credentials_epel_main | default([]) if foreman_enable_epel | bool else [] ) |

@@ -1,14 +1,26 @@
 ---
 # defaults file for foreman_content_hashicorp
 
+#######################################
+### URLS
+#######################################
+
+foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
+
+
+#######################################
+### ENABLE VARS
+#######################################
+
 foreman_enable_hashicorp: false
 foreman_enable_hashicorp_el7: false
 foreman_enable_hashicorp_el8: "{{ foreman_enable_hashicorp | bool }}"
 foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
 
 
-foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
-
+#######################################
+### CONTENT
+#######################################
 
 foreman_content_credentials_hashicorp_main:
   - name: RPM-GPG-KEY-Hashicorp
