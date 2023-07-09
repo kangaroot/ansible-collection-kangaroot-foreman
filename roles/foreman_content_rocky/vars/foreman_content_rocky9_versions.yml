@@ -313,11 +313,11 @@ foreman_products_rocky9_2:
 #         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/AppStream/x86_64/kickstart/"
 
 foreman_products_rocky9_versions: "{{ [] |
-  union( foreman_products_rocky9_0 | default([]) if foreman_enable_rocky9_0 else [] ) |
-  union( foreman_products_rocky9_1 | default([]) if foreman_enable_rocky9_1 else [] ) |
-  union( foreman_products_rocky9_2 | default([]) if foreman_enable_rocky9_2 else [] ) |
-  union( foreman_products_rocky9_3 | default([]) if foreman_enable_rocky9_3 else [] ) |
-  union( foreman_products_rocky9_4 | default([]) if foreman_enable_rocky9_4 else [] )
+  union( foreman_products_rocky9_0 | default([]) if foreman_enable_rocky9_0 | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
   }}"
 
 
@@ -607,11 +607,11 @@ foreman_content_views_rocky9_2:
 #     allow_promote: False
 
 foreman_content_views_rocky9_versions: "{{ [] |
-  union( foreman_content_views_rocky9_0 | default([]) if foreman_enable_rocky9_0 else [] ) |
-  union( foreman_content_views_rocky9_1 | default([]) if foreman_enable_rocky9_1 else [] ) |
-  union( foreman_content_views_rocky9_2 | default([]) if foreman_enable_rocky9_2 else [] ) |
-  union( foreman_content_views_rocky9_3 | default([]) if foreman_enable_rocky9_3 else [] ) |
-  union( foreman_content_views_rocky9_4 | default([]) if foreman_enable_rocky9_4 else [] )
+  union( foreman_content_views_rocky9_0 | default([]) if foreman_enable_rocky9_0 | default(false) | bool else [] ) |
+  union( foreman_content_views_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
+  union( foreman_content_views_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
+  union( foreman_content_views_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
+  union( foreman_content_views_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
   }}"
 
 
@@ -680,11 +680,11 @@ foreman_operatingsystems_rocky9_2:
 #     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_rocky9_versions: "{{ [] |
-  union( foreman_operatingsystems_rocky9_0 | default([]) if foreman_enable_rocky9_0 else [] ) |
-  union( foreman_operatingsystems_rocky9_1 | default([]) if foreman_enable_rocky9_1 else [] ) |
-  union( foreman_operatingsystems_rocky9_2 | default([]) if foreman_enable_rocky9_2 else [] ) |
-  union( foreman_operatingsystems_rocky9_3 | default([]) if foreman_enable_rocky9_3 else [] ) |
-  union( foreman_operatingsystems_rocky9_4 | default([]) if foreman_enable_rocky9_4 else [] )
+  union( foreman_operatingsystems_rocky9_0 | default([]) if foreman_enable_rocky9_0 | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
   }}"
 
 
@@ -758,10 +758,10 @@ foreman_installation_media_rocky9_2:
 #       - Rocky Linux 9.4
 
 foreman_installation_media_rocky9_versions: "{{ [] |
-  union( foreman_installation_media_rocky9_0 | default([]) if foreman_enable_rocky9_0 else [] ) |
-  union( foreman_installation_media_rocky9_1 | default([]) if foreman_enable_rocky9_1 else [] ) |
-  union( foreman_installation_media_rocky9_2 | default([]) if foreman_enable_rocky9_2 else [] ) |
-  union( foreman_installation_media_rocky9_3 | default([]) if foreman_enable_rocky9_3 else [] ) |
-  union( foreman_installation_media_rocky9_4 | default([]) if foreman_enable_rocky9_4 else [] )
+  union( foreman_installation_media_rocky9_0 | default([]) if foreman_enable_rocky9_0 | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
   }}"
 
