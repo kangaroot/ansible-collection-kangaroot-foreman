@@ -1,0 +1,139 @@
+---
+# foreman content urls for foremen group vars file for katello-main
+
+#######################################
+### URLS
+#######################################
+
+### CENTOS
+# foreman_repo_baseurl_centos: http://mirror.centos.org/centos
+# foreman_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos }}"
+# foreman_repo_baseurl_centos8: "{{ foreman_repo_baseurl_centos }}"
+# foreman_repo_baseurl_centos_stream8: "{{ foreman_repo_baseurl_centos }}"
+# foreman_repo_baseurl_centos_stream9: https://mirror.stream.centos.org
+# foreman_repo_baseurl_centos_altarch: http://mirror.centos.org/altarch
+# foreman_repo_baseurl_centos_vault: http://vault.centos.org
+# foreman_repo_baseurl_trunk_rdo: https://trunk.rdoproject.org
+# foreman_repo_baseurl_ovirt: https://resources.ovirt.org
+
+### CEPH
+# foreman_repo_baseurl_ceph: https://download.ceph.com
+
+# foreman_repo_baseurl_ceph_nautilus: "{{ foreman_repo_baseurl_ceph }}"
+# foreman_repo_baseurl_ceph_nautilus_el7: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+# foreman_repo_baseurl_ceph_nautilus_el8: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+# foreman_repo_baseurl_ceph_nautilus_deb9: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+# foreman_repo_baseurl_ceph_nautilus_deb10: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+# foreman_repo_baseurl_ceph_nautilus_ub1804: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+# foreman_repo_baseurl_ceph_nautilus_ub2004: "{{ foreman_repo_baseurl_ceph_nautilus }}"
+
+# foreman_repo_baseurl_ceph_octopus: "{{ foreman_repo_baseurl_ceph }}"
+# foreman_repo_baseurl_ceph_octopus_el7: "{{ foreman_repo_baseurl_ceph_octopus }}"
+# foreman_repo_baseurl_ceph_octopus_el8: "{{ foreman_repo_baseurl_ceph_octopus }}"
+# foreman_repo_baseurl_ceph_octopus_deb10: "{{ foreman_repo_baseurl_ceph_octopus }}"
+# foreman_repo_baseurl_ceph_octopus_ub1804: "{{ foreman_repo_baseurl_ceph_octopus }}"
+# foreman_repo_baseurl_ceph_octopus_ub2004: "{{ foreman_repo_baseurl_ceph_octopus }}"
+
+# foreman_repo_baseurl_ceph_pacific: "{{ foreman_repo_baseurl_ceph }}"
+# foreman_repo_baseurl_ceph_pacific_el7: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_el8: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_el9: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_deb10: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_deb11: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_ub1804: "{{ foreman_repo_baseurl_ceph_pacific }}"
+# foreman_repo_baseurl_ceph_pacific_ub2004: "{{ foreman_repo_baseurl_ceph_pacific }}"
+
+# foreman_repo_baseurl_ceph_quincy: "{{ foreman_repo_baseurl_ceph }}"
+# foreman_repo_baseurl_ceph_quincy_el7: "{{ foreman_repo_baseurl_ceph_quincy }}"
+# foreman_repo_baseurl_ceph_quincy_el8: "{{ foreman_repo_baseurl_ceph_quincy }}"
+# foreman_repo_baseurl_ceph_quincy_el9: "{{ foreman_repo_baseurl_ceph_quincy }}"
+# foreman_repo_baseurl_ceph_quincy_deb11: "{{ foreman_repo_baseurl_ceph_quincy }}"
+# foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph_quincy }}"
+
+# foreman_repo_baseurl_ceph_docker: https://quay.io
+
+### DATADOG
+# foreman_repo_baseurl_datadog: https://yum.datadoghq.com
+
+### DEBIAN
+# foreman_repo_baseurl_debian: http://ftp.debian.org/debian
+# foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian }}"
+# foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian }}"
+# foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian }}"
+
+### DOCKER
+# foreman_repo_baseurl_docker: https://download.docker.com/linux/centos
+
+# foreman_repo_baseurl_docker_ce: "{{ foreman_repo_baseurl_docker }}"
+# foreman_repo_baseurl_docker_ee: https://repos.mirantis.com
+
+### ELREPO
+# foreman_repo_baseurl_elrepo: http://elrepo.org/linux
+
+### EPEL
+# foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
+
+### FEDORA COPR
+# foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+
+### FOREMAN
+# foreman_repo_baseurl_foreman: https://yum.theforeman.org
+# foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
+# foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
+
+### HASHICORP
+# foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
+
+### KUBERNETES
+# foreman_repo_baseurl_kubernetes: https://packages.cloud.google.com/yum
+
+### MICROSOFT
+# foreman_repo_baseurl_microsoft: https://packages.microsoft.com
+
+### NGINX
+# foreman_repo_baseurl_nginx: https://nginx.org/packages
+
+# foreman_repo_baseurl_nginx_el7: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+# foreman_repo_baseurl_nginx_el8: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+# foreman_repo_baseurl_nginx_el9: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
+
+### ORACLE LINUX
+# foreman_products_ol_uln_username: ""
+# foreman_products_ol_uln_password: ""
+
+# foreman_repo_baseurl_oracle: https://yum.oracle.com/repo/OracleLinux
+
+# foreman_repo_baseurl_oracle5: "{{ foreman_repo_baseurl_oracle }}"
+# foreman_repo_baseurl_oracle5_el: https://yum.oracle.com/repo/EnterpriseLinux
+# foreman_repo_baseurl_oracle6: "{{ foreman_repo_baseurl_oracle }}"
+# foreman_repo_baseurl_oracle7: "{{ foreman_repo_baseurl_oracle }}"
+# foreman_repo_baseurl_oracle8: "{{ foreman_repo_baseurl_oracle }}"
+# foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle }}"
+
+### RED HAT
+
+### REMI
+# foreman_repo_baseurl_remi: https://rpms.remirepo.net
+
+# foreman_repo_baseurl_remi_el7: "{{ foreman_repo_baseurl_remi }}"
+# foreman_repo_baseurl_remi_el8: "{{ foreman_repo_baseurl_remi }}"
+# foreman_repo_baseurl_remi_el9: "{{ foreman_repo_baseurl_remi }}"
+
+### ROCKY
+# foreman_repo_baseurl_rocky: https://download.rockylinux.org/pub/rocky
+# foreman_repo_baseurl_rocky8: "{{ foreman_repo_baseurl_rocky }}"
+# foreman_repo_baseurl_rocky9: "{{ foreman_repo_baseurl_rocky }}"
+
+# foreman_repo_baseurl_rocky_sig: https://download.rockylinux.org/pub/sig
+# foreman_repo_baseurl_rocky8_sig: "{{ foreman_repo_baseurl_rocky_sig }}"
+# foreman_repo_baseurl_rocky9_sig: "{{ foreman_repo_baseurl_rocky_sig }}"
+
+# foreman_repo_baseurl_rocky_vault: https://download.rockylinux.org/vault/rocky
+
+### UBUNTU
+# foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
+
+# foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu }}"
+# foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu }}"
+# foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu }}"
+
