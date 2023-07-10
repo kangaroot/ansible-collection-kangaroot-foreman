@@ -1,0 +1,22 @@
+---
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+  gpg_key: RPM-GPG-KEY-oracle
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_ol9_uln_olcne: []
+
+
+foreman_content_views_ol9_uln_olcne: []
+

@@ -1,0 +1,126 @@
+---
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+  gpg_key: RPM-GPG-KEY-oracle
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_ol7_uln_mysql55:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### MySQL 5.5 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL55_community ###
+      - name: MySQL 5.5 for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 5.5 packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL55_community
+        url: uln://ol7_x86_64_MySQL55_community
+        <<: *foreman_products_defaults
+
+foreman_products_ol7_uln_mysql56:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### MySQL 5.6 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL56_community ###
+      - name: MySQL 5.6 for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 5.6 packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL56_community
+        url: uln://ol7_x86_64_MySQL56_community
+        <<: *foreman_products_defaults
+
+foreman_products_ol7_uln_mysql57:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### MySQL 5.7 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL57_community ###
+      - name: MySQL 5.7 for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 5.7 packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL57_community
+        url: uln://ol7_x86_64_MySQL57_community
+        <<: *foreman_products_defaults
+
+foreman_products_ol7_uln_mysql80:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### MySQL 8.0 Connectors Community for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_connectors_community ###
+      - name: MySQL 8.0 Connectors Community for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 8.0 Connectors Community packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL80_connectors_community
+        url: uln://ol7_x86_64_MySQL80_connectors_community
+        <<: *foreman_products_defaults
+      ### MySQL 8.0 for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_community ###
+      - name: MySQL 8.0 for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 8.0 packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL80_community
+        url: uln://ol7_x86_64_MySQL80_community
+        <<: *foreman_products_defaults
+      ### MySQL 8.0 Tools Community for Oracle Linux 7 (x86_64) | ol7_x86_64_MySQL80_tools_community ###
+      - name: MySQL 8.0 Tools Community for Oracle Linux 7 (x86_64)
+        description: Latest MySQL 8.0 Tools Community packages for Oracle Linux 7 (x86_64).
+        label: ol7_uln_x86_64_MySQL80_tools_community
+        url: uln://ol7_x86_64_MySQL80_tools_community
+        <<: *foreman_products_defaults
+
+foreman_products_ol7_uln_mysql: "{{ [] |
+  union( foreman_products_ol7_uln_mysql55 | default([]) if foreman_enable_ol7_uln_mysql55 else [] ) |
+  union( foreman_products_ol7_uln_mysql56 | default([]) if foreman_enable_ol7_uln_mysql56 else [] ) |
+  union( foreman_products_ol7_uln_mysql57 | default([]) if foreman_enable_ol7_uln_mysql57 else [] ) |
+  union( foreman_products_ol7_uln_mysql80 | default([]) if foreman_enable_ol7_uln_mysql80 else [] )
+  }}"
+
+
+foreman_content_views_ol7_uln_mysql55:
+  - name: cv_ol7_uln_x86_64_MySQL55_community
+    repositories:
+      - name: MySQL 5.5 for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol7_uln_mysql56:
+  - name: cv_ol7_uln_x86_64_MySQL56_community
+    repositories:
+      - name: MySQL 5.6 for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol7_uln_mysql57:
+  - name: cv_ol7_uln_x86_64_MySQL57_community
+    repositories:
+      - name: MySQL 5.7 for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol7_uln_mysql80:
+  - name: cv_ol7_uln_x86_64_MySQL80_connectors_community
+    repositories:
+      - name: MySQL 8.0 Connectors Community for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol7_uln_x86_64_MySQL80_community
+    repositories:
+      - name: MySQL 8.0 for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+  - name: cv_ol7_uln_x86_64_MySQL80_tools_community
+    repositories:
+      - name: MySQL 8.0 Tools Community for Oracle Linux 7 (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol7_uln_mysql: "{{ [] |
+  union( foreman_content_views_ol7_uln_mysql55 | default([]) if foreman_enable_ol7_uln_mysql55 else [] ) |
+  union( foreman_content_views_ol7_uln_mysql56 | default([]) if foreman_enable_ol7_uln_mysql56 else [] ) |
+  union( foreman_content_views_ol7_uln_mysql57 | default([]) if foreman_enable_ol7_uln_mysql57 else [] ) |
+  union( foreman_content_views_ol7_uln_mysql80 | default([]) if foreman_enable_ol7_uln_mysql80 else [] )
+  }}"
+

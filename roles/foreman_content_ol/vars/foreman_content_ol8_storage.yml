@@ -1,0 +1,34 @@
+---
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  gpg_key: RPM-GPG-KEY-oracle
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_ol8_storage:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8 (x86_64) Gluster AppStream | ol8_x86_64_gluster_appstream ###
+      - name: Oracle Linux 8 (x86_64) Gluster AppStream
+        description: Appstream Gluster packages for Oracle Linux 8 (x86_64)
+        label: ol8_x86_64_gluster_appstream
+        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/gluster/appstream/x86_64/"
+        <<: *foreman_products_defaults
+
+
+foreman_content_views_ol8_storage:
+  - name: cv_ol8_x86_64_gluster_appstream
+    repositories:
+      - name: Oracle Linux 8 (x86_64) Gluster AppStream
+        product: Oracle Linux
+    allow_promote: False
+

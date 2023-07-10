@@ -2,6 +2,7 @@
 
 foreman_content_credentials_ol9_uln: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
@@ -15,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
+
 
 foreman_products_ol9_uln:
   - name: Oracle Linux
@@ -83,146 +85,6 @@ foreman_products_ol9_uln:
         url: uln://ol9_x86_64_distro_builder
         <<: *foreman_products_defaults
 
-      ### Oracle Linux 9 UEK Release 7 (x86_64) | ol9_x86_64_UEKR7 ###
-      - name: Oracle Linux 9 UEK Release 7 (x86_64)
-        description: Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 9 (x86_64)
-        label: ol9_uln_x86_64_UEKR7
-        url: uln://ol9_x86_64_UEKR7
-        <<: *foreman_products_defaults
-      # ### Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64) | ol9_x86_64_developer_UEKR7 ###
-      # - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64)
-      #   description: Developer preview of Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 9 (x86_64) - (not for production use)
-      #   label: ol9_uln_x86_64_developer_UEKR7
-      #   url: uln://ol9_x86_64_developer_UEKR7
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux 9 RDMA (x86_64) | ol9_x86_64_RDMA ###
-      - name: Oracle Linux 9 RDMA (x86_64)
-        description: Latest RDMA packages for Oracle Linux 9 (x86_64)
-        label: ol9_uln_x86_64_RDMA
-        url: uln://ol9_x86_64_RDMA
-        <<: *foreman_products_defaults
-      ### Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64) | ol9_x86_64_MODRHCK ###
-      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64)
-        description: Latest Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64).
-        label: ol9_uln_x86_64_MODRHCK
-        url: uln://ol9_x86_64_MODRHCK
-        <<: *foreman_products_defaults
-
-      # ### MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64) | ol9_x86_64_MySQL80_connectors_community ###
-      # - name: MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64)
-      #   description: Latest MySQL 8.0 Connectors Community packages for Oracle Linux 9 (x86_64).
-      #   label: ol9_uln_x86_64_MySQL80_connectors_community
-      #   url: uln://ol9_x86_64_MySQL80_connectors_community
-      #   <<: *foreman_products_defaults
-      # ### MySQL 8.0 for Oracle Linux 9 (x86_64) | ol9_x86_64_MySQL80_community ###
-      # - name: MySQL 8.0 for Oracle Linux 9 (x86_64)
-      #   description: Latest MySQL 8.0 packages for Oracle Linux 9 (x86_64).
-      #   label: ol9_uln_x86_64_MySQL80_community
-      #   url: uln://ol9_x86_64_MySQL80_community
-      #   <<: *foreman_products_defaults
-      # ### MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64) | ol9_x86_64_MySQL80_tools_community ###
-      # - name: MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64)
-      #   description: Latest MySQL 8.0 Tools Community packages for Oracle Linux 9 (x86_64).
-      #   label: ol9_uln_x86_64_MySQL80_tools_community
-      #   url: uln://ol9_x86_64_MySQL80_tools_community
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Instant Client for Oracle Linux 9 (x86_64) - License Included | ol9_x86_64_oracle_instantclient ###
-      # - name: Oracle Instant Client for Oracle Linux 9 (x86_64) - License Included
-      #   description: Oracle Instant Client packages for Oracle Linux 9 (x86_64) .
-      #   label: ol9_uln_x86_64_oracle_instantclient
-      #   url: uln://ol9_x86_64_oracle_instantclient
-      #   <<: *foreman_products_defaults
-      # ### Oracle Instant Client 21 for Oracle Linux 9 (x86_64) - License Included | ol9_x86_64_oracle_instantclient21 ###
-      # - name: Oracle Instant Client 21 for Oracle Linux 9 (x86_64) - License Included
-      #   description: Oracle Instant Client 21 packages for Oracle Linux 9 (x86_64) .
-      #   label: ol9_uln_x86_64_oracle_instantclient21
-      #   url: uln://ol9_x86_64_oracle_instantclient21
-      #   <<: *foreman_products_defaults
-      # ### Oracle ASMlib for Oracle Linux 9 (x86_64) | ol9_x86_64_oracle ###
-      # - name: Oracle ASMlib for Oracle Linux 9 (x86_64)
-      #   description: Oracle ASMlib for Oracle Linux 9 (x86_64)
-      #   label: ol9_uln_x86_64_oracle
-      #   url: uln://ol9_x86_64_oracle
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux 9 OCI Included Packages (x86_64) | ol9_x86_64_oci_included ###
-      # - name: Oracle Linux 9 OCI Included Packages (x86_64)
-      #   description: Oracle Linux 9 packages specifically for use in Oracle Cloud Infrastructure (x86_64)
-      #   label: ol9_uln_x86_64_oci_included
-      #   url: uln://ol9_x86_64_oci_included
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux 9 KVM Utilities (x86_64) | ol9_x86_64_kvm_utils ###
-      # - name: Oracle Linux 9 KVM Utilities (x86_64)
-      #   description: Latest Oracle Linux 9 KVM Utilities Packages (x86_64)
-      #   label: ol9_uln_x86_64_kvm_utils
-      #   url: uln://ol9_x86_64_kvm_utils
-      #   <<: *foreman_products_defaults
-      # ### Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64) | ol9_x86_64_developer_kvm_utils ###
-      # - name: Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64)
-      #   description: Latest KVM Utility packages for test and development for Oracle Linux 9 (x86_64).
-      #   label: ol9_uln_x86_64_developer_kvm_utils
-      #   url: uln://ol9_x86_64_developer_kvm_utils
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux Manager 2.10 Client (x86_64) | ol9_x86_64_oraclelinuxmanager210_client ###
-      # - name: Oracle Linux Manager 2.10 Client (x86_64)
-      #   description: Latest Oracle Linux Manager 2.10 Client packages for Oracle Linux 9 (x86_64)
-      #   label: ol9_uln_x86_64_oraclelinuxmanager210_client
-      #   url: uln://ol9_x86_64_oraclelinuxmanager210_client
-      #   <<: *foreman_products_defaults
-
-      # ### Ksplice for Oracle Linux 9 (x86_64) | ol9_x86_64_ksplice ###
-      # - name: Ksplice for Oracle Linux 9 (x86_64)
-      #   description: Oracle Ksplice clients, updates, and dependencies for Oracle Linux 9 (x86_64)
-      #   label: ol9_uln_x86_64_ksplice
-      #   url: uln://ol9_x86_64_ksplice
-      #   <<: *foreman_products_defaults
-      # ### Ksplice aware userspace packages for Oracle Linux 9 (x86_64) | ol9_x86_64_userspace_ksplice ###
-      # - name: Ksplice aware userspace packages for Oracle Linux 9 (x86_64)
-      #   description: Latest packages for Ksplice aware userspace packages for Oracle Linux 9 (x86_64)
-      #   label: ol9_uln_x86_64_userspace_ksplice
-      #   url: uln://ol9_x86_64_userspace_ksplice
-      #   <<: *foreman_products_defaults
-
-      ### Oracle Linux 9 BaseOS GA Patch (x86_64) | ol9_x86_64_u0_baseos_patch ###
-      - name: Oracle Linux 9 BaseOS GA Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 9 BaseOS GA (x86_64).
-        label: ol9_uln_x86_64_u0_baseos_patch
-        url: uln://ol9_x86_64_u0_baseos_patch
-        <<: *foreman_products_defaults
-      ### Oracle Linux 9.1 BaseOS Patch (x86_64) | ol9_x86_64_u1_baseos_patch ###
-      - name: Oracle Linux 9.1 BaseOS Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 9.1 BaseOS GA (x86_64).
-        label: ol9_uln_x86_64_u1_baseos_patch
-        url: uln://ol9_x86_64_u1_baseos_patch
-        <<: *foreman_products_defaults
-      ### Oracle Linux 9.2 BaseOS Patch (x86_64) | ol9_x86_64_u2_baseos_patch ###
-      - name: Oracle Linux 9.2 BaseOS Patch (x86_64)
-        description: Updated packages published after release of Oracle Linux 9.2 BaseOS GA (x86_64).
-        label: ol9_uln_x86_64_u2_baseos_patch
-        url: uln://ol9_x86_64_u2_baseos_patch
-        <<: *foreman_products_defaults
-
-      ### Oracle Linux 9 BaseOS GA (x86_64) | ol9_x86_64_u0_baseos_base ###
-      - name: Oracle Linux 9 BaseOS GA (x86_64)
-        description: Base operating system packages released for Oracle Linux 9 (x86_64). No errata included
-        label: ol9_uln_x86_64_u0_baseos_base
-        url: uln://ol9_x86_64_u0_baseos_base
-        <<: *foreman_products_defaults
-      ### Oracle Linux 9.1 BaseOS (x86_64) | ol9_x86_64_u1_baseos_base ###
-      - name: Oracle Linux 9.1 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 9.1 (x86_64). No errata included
-        label: ol9_uln_x86_64_u1_baseos_base
-        url: uln://ol9_x86_64_u1_baseos_base
-        <<: *foreman_products_defaults
-      ### Oracle Linux 9.2 BaseOS (x86_64) | ol9_x86_64_u2_baseos_base ###
-      - name: Oracle Linux 9.2 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 9.2 (x86_64). No errata included
-        label: ol9_uln_x86_64_u2_baseos_base
-        url: uln://ol9_x86_64_u2_baseos_base
-        <<: *foreman_products_defaults
 
 foreman_content_views_ol9_uln:
   - name: cv_ol9_uln_x86_64_baseos_latest
@@ -267,135 +129,16 @@ foreman_content_views_ol9_uln:
       - name: Oracle Linux 9 CodeReady Builder (x86_64)
         product: Oracle Linux
     allow_promote: False
-  # - name: cv_ol9_uln_x86_64_codeready_builder_developer
-  #   repositories:
-  #     - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
+  - name: cv_ol9_uln_x86_64_codeready_builder_developer
+    repositories:
+      - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
+        product: Oracle Linux
+    allow_promote: False
   - name: cv_ol9_uln_x86_64_distro_builder
     repositories:
       - name: Oracle Linux 9 Distro Builder (x86_64)
         product: Oracle Linux
     allow_promote: False
-
-  - name: cv_ol9_uln_x86_64_UEKR7
-    repositories:
-      - name: Oracle Linux 9 UEK Release 7 (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  # - name: cv_ol9_uln_x86_64_developer_UEKR7
-  #   repositories:
-  #     - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  - name: cv_ol9_uln_x86_64_RDMA
-    repositories:
-      - name: Oracle Linux 9 RDMA (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  - name: cv_ol9_uln_x86_64_MODRHCK
-    repositories:
-      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_MySQL80_connectors_community
-  #   repositories:
-  #     - name: MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_MySQL80_community
-  #   repositories:
-  #     - name: MySQL 8.0 for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_MySQL80_tools_community
-  #   repositories:
-  #     - name: MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_oracle_instantclient
-  #   repositories:
-  #     - name: Oracle Instant Client for Oracle Linux 9 (x86_64) - License Included
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_oracle_instantclient21
-  #   repositories:
-  #     - name: Oracle Instant Client 21 for Oracle Linux 9 (x86_64) - License Included
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_oracle
-  #   repositories:
-  #     - name: Oracle ASMlib for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_oci_included
-  #   repositories:
-  #     - name: Oracle Linux 9 OCI Included Packages (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_kvm_utils
-  #   repositories:
-  #     - name: Oracle Linux 9 KVM Utilities (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_developer_kvm_utils
-  #   repositories:
-  #     - name: Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_oraclelinuxmanager210_client
-  #   repositories:
-  #     - name: Oracle Linux Manager 2.10 Client (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_ksplice
-  #   repositories:
-  #     - name: Ksplice for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_userspace_ksplice
-  #   repositories:
-  #     - name: Ksplice aware userspace packages for Oracle Linux 9 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  - name: cv_ol9_uln_x86_64_u0_baseos_patch
-    repositories:
-      - name: Oracle Linux 9 BaseOS GA Patch (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  - name: cv_ol9_uln_x86_64_u1_baseos_patch
-    repositories:
-      - name: Oracle Linux 9.1 BaseOS Patch (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  - name: cv_ol9_uln_x86_64_u2_baseos_patch
-    repositories:
-      - name: Oracle Linux 9.2 BaseOS Patch (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-
-  # - name: cv_ol9_uln_x86_64_u0_baseos_base
-  #   repositories:
-  #     - name: Oracle Linux 9 BaseOS GA (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_u1_baseos_base
-  #   repositories:
-  #     - name: Oracle Linux 9.1 BaseOS (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol9_uln_x86_64_u2_baseos_base
-  #   repositories:
-  #     - name: Oracle Linux 9.2 BaseOS (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
 
   - name: ccv_ol9
     composite: True
@@ -421,44 +164,7 @@ foreman_content_views_ol9_uln:
       #   latest: true
       - content_view: cv_ol9_uln_x86_64_distro_builder
         latest: true
-      - content_view: cv_ol9_uln_x86_64_UEKR7
-        latest: true
-      # - content_view: cv_ol9_uln_x86_64_developer_UEKR7
-      #   latest: true
-      - content_view: cv_ol9_uln_x86_64_RDMA
-        latest: true
-      - content_view: cv_ol9_uln_x86_64_MODRHCK
-        latest: true
-      # - content_view: cv_ol9_uln_x86_64_MySQL80_connectors_community
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_MySQL80_community
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_MySQL80_tools_community
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_oracle_instantclient
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_oracle_instantclient21
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_oracle
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_oci_included
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_kvm_utils
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_developer_kvm_utils
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_oraclelinuxmanager210_client
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_ksplice
-      #   latest: true
-      # - content_view: cv_ol9_uln_x86_64_userspace_ksplice
-      #   latest: true
-      - content_view: cv_ol9_uln_x86_64_u0_baseos_patch
-        latest: true
-      - content_view: cv_ol9_uln_x86_64_u1_baseos_patch
-        latest: true
-      - content_view: cv_ol9_uln_x86_64_u2_baseos_patch
-        latest: true
+
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
@@ -493,27 +199,14 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     - template_kind: "user_data"
       provisioning_template: "{{ foreman_operatingsystems_ol9_template_user_data | default( foreman_operatingsystems_ol_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
+
 foreman_operatingsystems_ol9_uln:
   - name: "OracleLinux"
     major: "9"
     minor: ""
     description: "Oracle Linux 9"
     <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "9"
-    minor: "0"
-    description: "Oracle Linux 9.0"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "9"
-    minor: "1"
-    description: "Oracle Linux 9.1"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "9"
-    minor: "2"
-    description: "Oracle Linux 9.2"
-    <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -524,23 +217,14 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
 
+
 foreman_installation_media_ol9_uln:
-  - name: Oracle Linux 9.0 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u0_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 9.0
-  - name: Oracle Linux 9.1 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u1_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 9.1
-  - name: Oracle Linux 9.2 BaseOS
+  - name: Oracle Linux 9 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u2_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 9
-      - Oracle Linux 9.2
+
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -550,6 +234,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 9
   # service_level: Standard
+
 
 foreman_activation_keys_ol9_uln:
   - name: ak_ol9
@@ -576,44 +261,7 @@ foreman_activation_keys_ol9_uln:
       #   override: disabled
       - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_distro_builder"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_UEKR7"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_developer_UEKR7"
-      #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_RDMA"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_MODRHCK"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_MySQL80_connectors_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_MySQL80_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_MySQL80_tools_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_oracle_instantclient"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_oracle_instantclient21"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_oracle"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_oci_included"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_kvm_utils"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_developer_kvm_utils"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_oraclelinuxmanager210_client"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_ksplice"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_userspace_ksplice"
-      #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u0_baseos_patch"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u1_baseos_patch"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_u2_baseos_patch"
-        override: disabled
+
 
 foreman_sync_plan_products_ol9_uln: []
 

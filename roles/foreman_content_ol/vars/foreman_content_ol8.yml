@@ -2,6 +2,7 @@
 
 foreman_content_credentials_ol8: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-oracle
@@ -13,6 +14,7 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
+
 
 foreman_products_ol8:
   - name: Oracle Linux
@@ -74,231 +76,11 @@ foreman_products_ol8:
         url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/distro/builder/x86_64/"
         <<: *foreman_products_defaults
 
-      ### Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64) | ol8_x86_64_UEKR6 ###
-      - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
-        description: Latest Unbreakable Enterprise Kernel Release 6 packages for Oracle Linux 8 (x86_64)
-        label: ol8_x86_64_UEKR6
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/UEKR6/x86_64/"
-        <<: *foreman_products_defaults
-      # ### Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64) | ol8_x86_64_developer_UEKR6 ###
-      # - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
-      #   description: Latest developer preview of Unbreakable Enterprise Kernel Release 6 packages for creating test and development environments (not for production use) - Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_developer_UEKR6
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/developer/UEKR6/x86_64/"
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux 8 (x86_64) UEK Release 6 RDMA | ol8_x86_64_UEKR6_RDMA ###
-      - name: Oracle Linux 8 (x86_64) UEK Release 6 RDMA
-        description: Latest RDMA packages for Unbreakable Enterprise Kernel Release 6 packages on Oracle Linux 8 for the Oracle Integrated Stack.
-        label: ol8_x86_64_UEKR6_RDMA
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/UEKR6/RDMA/x86_64/"
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8 UEK Release 7 (x86_64) | ol8_x86_64_UEKR7 ###
-      - name: Oracle Linux 8 UEK Release 7 (x86_64)
-        description: Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 8 (x86_64)
-        label: ol8_x86_64_UEKR7
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/UEKR7/x86_64/"
-        <<: *foreman_products_defaults
-      # ### Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 8 (x86_64) | ol8_x86_64_developer_UEKR7 ###
-      # - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 8 (x86_64)
-      #   description: Latest developer preview of Unbreakable Enterprise Kernel Release 7 packages for creating test and development environments (not for production use) - Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_developer_UEKR7
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/developer/UEKR7/x86_64/"
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux 8 (x86_64) UEK Release 7 RDMA | ol8_x86_64_UEKR7_RDMA ###
-      - name: Oracle Linux 8 (x86_64) UEK Release 7 RDMA
-        description: Latest RDMA packages for Unbreakable Enterprise Kernel Release 7 packages on Oracle Linux 8 for the Oracle Integrated Stack.
-        label: ol8_x86_64_UEKR7_RDMA
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/UEKR7/RDMA/x86_64/"
-        <<: *foreman_products_defaults
-      ### Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64) | ol8_x86_64_MODRHCK ###
-      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64)
-        description: Latest Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64).
-        label: ol8_x86_64_MODRHCK
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/MODRHCK/x86_64/"
-        <<: *foreman_products_defaults
-
-      # ### MySQL 8.0 Connectors Community for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_connectors_community ###
-      # - name: MySQL 8.0 Connectors Community for Oracle Linux 8 (x86_64)
-      #   description: Latest MySQL 8.0 Connectors Community packages for Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_MySQL80_connectors_community
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/MySQL80/connectors/community/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### MySQL 8.0 for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_community ###
-      # - name: MySQL 8.0 for Oracle Linux 8 (x86_64)
-      #   description: Latest MySQL 8.0 packages for Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_MySQL80_community
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/MySQL80/community/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### MySQL 8.0 Tools Community for Oracle Linux 8 (x86_64) | ol8_x86_64_MySQL80_tools_community ###
-      # - name: MySQL 8.0 Tools Community for Oracle Linux 8 (x86_64)
-      #   description: Latest MySQL 8.0 Tools Community packages for Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_MySQL80_tools_community
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/MySQL80/tools/community/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Instant Client for Oracle Linux 8 (x86_64) - License Included | ol8_x86_64_oracle_instantclient ###
-      # - name: Oracle Instant Client for Oracle Linux 8 (x86_64) - License Included
-      #   description: Oracle Instant Client packages for Oracle Linux 8 (x86_64) .
-      #   label: ol8_x86_64_oracle_instantclient
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/oracle/instantclient/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Instant Client 21 for Oracle Linux 8 (x86_64) - License Included | ol8_x86_64_oracle_instantclient21 ###
-      # - name: Oracle Instant Client 21 for Oracle Linux 8 (x86_64) - License Included
-      #   description: Oracle Instant Client 21 packages for Oracle Linux 8 (x86_64) .
-      #   label: ol8_x86_64_oracle_instantclient21
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/oracle/instantclient21/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle ASMlib for Oracle Linux 8 (x86_64) | ol8_x86_64_oracle ###
-      # - name: Oracle ASMlib for Oracle Linux 8 (x86_64)
-      #   description: Oracle ASMlib for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_oracle
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/oracle/software/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux 8 KVM Application Stream (x86_64) | ol8_x86_64_kvm_appstream ###
-      # - name: Oracle Linux 8 KVM Application Stream (x86_64)
-      #   description: Latest KVM Application Stream Packages for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_kvm_appstream
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/kvm/appstream/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux 8 (x86_64) Gluster AppStream | ol8_x86_64_gluster_appstream ###
-      # - name: Oracle Linux 8 (x86_64) Gluster AppStream
-      #   description: Appstream Gluster packages for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_gluster_appstream
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/gluster/appstream/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation ###
-      # - name: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX
-      #   description: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX.
-      #   label: ol8_x86_64_automation
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/automation/x86_64/"
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation2 ###
-      - name: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX
-        description: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX.
-        label: ol8_x86_64_automation2
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/automation2/x86_64/"
-        <<: *foreman_products_defaults
-
-      # ### Oracle Linux Cloud Native Environment 1.2 (x86_64) | ol8_x86_64_olcne12 ###
-      # - name: Oracle Linux Cloud Native Environment 1.2 (x86_64)
-      #   description: Packages for components of the 1.2 release of Oracle Linux Cloud Native environment for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_olcne12
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/olcne12/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux Cloud Native Environment 1.3 (x86_64) | ol8_x86_64_olcne13 ###
-      # - name: Oracle Linux Cloud Native Environment 1.3 (x86_64)
-      #   description: Packages for components of the 1.3 release of Oracle Linux Cloud Native environment for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_olcne13
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/olcne13/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux Cloud Native Environment 1.4 (x86_64) | ol8_x86_64_olcne14 ###
-      # - name: Oracle Linux Cloud Native Environment 1.4 (x86_64)
-      #   description: Packages for components of the 1.4 release of Oracle Linux Cloud Native environment for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_olcne14
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/olcne14/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux Cloud Native Environment 1.5 (x86_64) | ol8_x86_64_olcne15 ###
-      # - name: Oracle Linux Cloud Native Environment 1.5 (x86_64)
-      #   description: Packages for components of the 1.5 release of Oracle Linux Cloud Native environment for Oracle Linux 8 (x86_64)
-      #   label: ol8_x86_64_olcne15
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/olcne15/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Developer Preview for Oracle Linux Cloud Native Environment (x86_64) | ol8_x86_64_developer_olcne ###
-      # - name: Developer Preview for Oracle Linux Cloud Native Environment (x86_64)
-      #   description: Developer preview packages for components of the Oracle Linux Cloud Native environment (x86_64)
-      #   label: ol8_x86_64_developer_olcne
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/developer/olcne/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### oVirt Release 4.4 on Oracle Linux 8 (x86_64) | ol8_x86_64_ovirt44 ###
-      # - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64)
-      #   description: Latest packages for oVirt Release 4.4 on Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_ovirt44
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/ovirt44/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### oVirt Release 4.4 on Oracle Linux 8 (x86_64) - Extra | ol8_x86_64_ovirt44_extras ###
-      # - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64) - Extra
-      #   description: Latest extra packages for oVirt Release 4.4 on Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_ovirt44_extras
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/ovirt44/extras/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux Manager (formerly Spacewalk) Client 2.10 for Oracle Linux 8 (x86_64) | ol8_x86_64_oraclelinuxmanager210_client ###
-      # - name: Oracle Linux Manager (formerly Spacewalk) Client 2.10 for Oracle Linux 8 (x86_64)
-      #   description: All Oracle Linux Manager (formerly Spacewalk) Client 2.10 packages released for Oracle Linux 8 (x86_64).
-      #   label: ol8_x86_64_oraclelinuxmanager210_client
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/oraclelinuxmanager210/client/x86_64/"
-      #   <<: *foreman_products_defaults
-
-      # ### Oracle Linux 8 BaseOS GA (x86_64) | ol8_x86_64_u0_baseos_base ###
-      # - name: Oracle Linux 8 BaseOS GA (x86_64)
-      #   description: Base operating system packages released for Oracle Linux 8 GA (x86_64). No errata included
-      #   label: ol8_x86_64_u0_baseos_base
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/0/baseos/base/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.1 BaseOS (x86_64) | ol8_x86_64_u1_baseos_base ###
-      # - name: Oracle Linux 8.1 BaseOS (x86_64)
-      #   description: Base operating system packages released for Oracle Linux 8 (x86_64). No errata included
-      #   label: ol8_x86_64_u1_baseos_base
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/1/baseos/base/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.2 BaseOS (x86_64) | ol8_x86_64_u2_baseos_base ###
-      # - name: Oracle Linux 8.2 BaseOS (x86_64)
-      #   description: Base operating system packages released for Oracle Linux 8.2 (x86_64). No errata included
-      #   label: ol8_x86_64_u2_baseos_base
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/2/baseos/base/x86_64/"
-      #   <<: *foreman_products_defaults
-      # ### Oracle Linux 8.3 BaseOS (x86_64) | ol8_x86_64_u3_baseos_base ###
-      # - name: Oracle Linux 8.3 BaseOS (x86_64)
-      #   description: Base operating system packages released for Oracle Linux 8.3 (x86_64). No errata included
-      #   label: ol8_x86_64_u3_baseos_base
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/3/baseos/base/x86_64/"
-      #   <<: *foreman_products_defaults
-      ### Oracle Linux 8.4 BaseOS (x86_64) | ol8_x86_64_u4_baseos_base ###
-      - name: Oracle Linux 8.4 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 8.4 (x86_64). No errata included
-        label: ol8_x86_64_u4_baseos_base
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/4/baseos/base/x86_64/"
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.5 BaseOS (x86_64) | ol8_x86_64_u5_baseos_base ###
-      - name: Oracle Linux 8.5 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 8.5 (x86_64). No errata included
-        label: ol8_x86_64_u5_baseos_base
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/5/baseos/base/x86_64/"
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.6 BaseOS (x86_64) | ol8_x86_64_u6_baseos_base ###
-      - name: Oracle Linux 8.6 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 8.6 (x86_64). No errata included
-        label: ol8_x86_64_u6_baseos_base
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/6/baseos/base/x86_64/"
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.7 BaseOS (x86_64) | ol8_x86_64_u7_baseos_base ###
-      - name: Oracle Linux 8.7 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 8.7 (x86_64). No errata included
-        label: ol8_x86_64_u7_baseos_base
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/7/baseos/base/x86_64/"
-        <<: *foreman_products_defaults
-      ### Oracle Linux 8.8 BaseOS (x86_64) | ol8_x86_64_u8_baseos_base ###
-      - name: Oracle Linux 8.8 BaseOS (x86_64)
-        description: Base operating system packages released for Oracle Linux 8.8 (x86_64). No errata included
-        label: ol8_x86_64_u8_baseos_base
-        url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/8/baseos/base/x86_64/"
-        <<: *foreman_products_defaults
-
-      # ### Oracle Linux 8 Update 4 Security Validations packages (x86_64) | ol8_x86_64_u4_security_validation ###
-      # - name: Oracle Linux 8 Update 4 Security Validations packages (x86_64)
-      #   description: Packages delivered for security validations, like FIPS or common criteria for Oracle Linux 8 Update 4 (x86_64).
-      #   label: ol8_x86_64_u4_security_validation
-      #   url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/4/security/validation/x86_64/"
-      #   <<: *foreman_products_defaults
-
       # - name: Oracle Linux 8 Debuginfo (x86_64)
       #   label: ol8_debuginfo
       #   url: https://oss.oracle.com/ol8/debuginfo/
       #   <<: *foreman_products_defaults
+
 
 foreman_content_views_ol8:
   - name: cv_ol8_x86_64_baseos_latest
@@ -348,146 +130,6 @@ foreman_content_views_ol8:
         product: Oracle Linux
     allow_promote: False
 
-  - name: cv_ol8_x86_64_UEKR6
-    repositories:
-      - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  # - name: cv_ol8_x86_64_developer_UEKR6
-  #   repositories:
-  #     - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  - name: cv_ol8_x86_64_UEKR6_RDMA
-    repositories:
-      - name: Oracle Linux 8 (x86_64) UEK Release 6 RDMA
-        product: Oracle Linux
-    allow_promote: False
-  - name: cv_ol8_x86_64_UEKR7
-    repositories:
-      - name: Oracle Linux 8 UEK Release 7 (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-  # - name: cv_ol8_x86_64_developer_UEKR7
-  #   repositories:
-  #     - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  - name: cv_ol8_x86_64_UEKR7_RDMA
-    repositories:
-      - name: Oracle Linux 8 (x86_64) UEK Release 7 RDMA
-        product: Oracle Linux
-    allow_promote: False
-  - name: cv_ol8_x86_64_MODRHCK
-    repositories:
-      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
-    allow_promote: False
-
-  # - name: cv_ol8_x86_64_MySQL80_connectors_community
-  #   repositories:
-  #     - name: MySQL 8.0 Connectors Community for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_MySQL80_community
-  #   repositories:
-  #     - name: MySQL 8.0 for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_MySQL80_tools_community
-  #   repositories:
-  #     - name: MySQL 8.0 Tools Community for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_oracle_instantclient
-  #   repositories:
-  #     - name: Oracle Instant Client for Oracle Linux 8 (x86_64) - License Included
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_oracle_instantclient21
-  #   repositories:
-  #     - name: Oracle Instant Client 21 for Oracle Linux 8 (x86_64) - License Included
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_oracle
-  #   repositories:
-  #     - name: Oracle ASMlib for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_kvm_appstream
-  #   repositories:
-  #     - name: Oracle Linux 8 KVM Application Stream (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_gluster_appstream
-  #   repositories:
-  #     - name: Oracle Linux 8 (x86_64) Gluster AppStream
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_automation
-  #   repositories:
-  #     - name: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX
-  #       product: Oracle Linux
-  #   allow_promote: False
-  - name: cv_ol8_x86_64_automation2
-    repositories:
-      - name: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX
-        product: Oracle Linux
-    allow_promote: False
-
-  # - name: cv_ol8_x86_64_olcne12
-  #   repositories:
-  #     - name: Oracle Linux Cloud Native Environment 1.2 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_olcne13
-  #   repositories:
-  #     - name: Oracle Linux Cloud Native Environment 1.3 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_olcne14
-  #   repositories:
-  #     - name: Oracle Linux Cloud Native Environment 1.4 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_olcne15
-  #   repositories:
-  #     - name: Oracle Linux Cloud Native Environment 1.5 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_developer_olcne
-  #   repositories:
-  #     - name: Developer Preview for Oracle Linux Cloud Native Environment (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_ovirt44
-  #   repositories:
-  #     - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-  # - name: cv_ol8_x86_64_ovirt44_extras
-  #   repositories:
-  #     - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64) - Extra
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_oraclelinuxmanager210_client
-  #   repositories:
-  #     - name: Oracle Linux Manager (formerly Spacewalk) Client 2.10 for Oracle Linux 8 (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
-  # - name: cv_ol8_x86_64_u4_security_validation
-  #   repositories:
-  #     - name: Oracle Linux 8 Update 4 Security Validations packages (x86_64)
-  #       product: Oracle Linux
-  #   allow_promote: False
-
   # - name: cv_ol8_debuginfo
   #   repositories:
   #     - name: Oracle Linux 8 Debuginfo (x86_64)
@@ -516,60 +158,9 @@ foreman_content_views_ol8:
       #   latest: true
       - content_view: cv_ol8_x86_64_distro_builder
         latest: true
-      - content_view: cv_ol8_x86_64_UEKR6
-        latest: true
-      # - content_view: cv_ol8_x86_64_developer_UEKR6
-      #   latest: true
-      - content_view: cv_ol8_x86_64_UEKR6_RDMA
-        latest: true
-      - content_view: cv_ol8_x86_64_UEKR7
-        latest: true
-      # - content_view: cv_ol8_x86_64_developer_UEKR7
-      #   latest: true
-      - content_view: cv_ol8_x86_64_UEKR7_RDMA
-        latest: true
-      - content_view: cv_ol8_x86_64_MODRHCK
-        latest: true
-      # - content_view: cv_ol8_x86_64_MySQL80_connectors_community
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_MySQL80_community
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_MySQL80_tools_community
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_oracle_instantclient
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_oracle_instantclient21
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_oracle
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_kvm_appstream
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_gluster_appstream
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_automation
-      #   latest: true
-      - content_view: cv_ol8_x86_64_automation2
-        latest: true
-      # - content_view: cv_ol8_x86_64_olcne12
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_olcne13
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_olcne14
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_olcne15
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_developer_olcne
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_ovirt44
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_ovirt44_extras
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_oraclelinuxmanager210_client
-      #   latest: true
-      # - content_view: cv_ol8_x86_64_u4_security_validation
-      #   latest: true
       # - content_view: cv_ol8_debuginfo
       #   latest: true
+
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
@@ -604,57 +195,14 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     - template_kind: "user_data"
       provisioning_template: "{{ foreman_operatingsystems_ol8_template_user_data | default( foreman_operatingsystems_ol_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
+
 foreman_operatingsystems_ol8:
   - name: "OracleLinux"
     major: "8"
     minor: ""
     description: "Oracle Linux 8"
     <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "0"
-    description: "Oracle Linux 8.0"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "1"
-    description: "Oracle Linux 8.1"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "2"
-    description: "Oracle Linux 8.2"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "3"
-    description: "Oracle Linux 8.3"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "4"
-    description: "Oracle Linux 8.4"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "5"
-    description: "Oracle Linux 8.5"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "6"
-    description: "Oracle Linux 8.6"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "7"
-    description: "Oracle Linux 8.7"
-    <<: *foreman_operatingsystems_defaults
-  - name: "OracleLinux"
-    major: "8"
-    minor: "8"
-    description: "Oracle Linux 8.8"
-    <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -665,53 +213,14 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
 
+
 foreman_installation_media_ol8:
-  # - name: Oracle Linux 8.0 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_ga_baseos_base/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Oracle Linux 8.0
-  # - name: Oracle Linux 8.1 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u1_baseos_base/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Oracle Linux 8.1
-  # - name: Oracle Linux 8.2 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u2_baseos_base/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Oracle Linux 8.2
-  # - name: Oracle Linux 8.3 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u3_baseos_base/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Oracle Linux 8.3
-  - name: Oracle Linux 8.4 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u4_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 8.4
-  - name: Oracle Linux 8.5 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u5_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 8.5
-  - name: Oracle Linux 8.6 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u6_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 8.6
-  - name: Oracle Linux 8.7 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u7_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 8.7
-  - name: Oracle Linux 8.8 BaseOS
+  - name: Oracle Linux 8 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u8_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 8
-      - Oracle Linux 8.8
+
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -721,6 +230,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 8
   # service_level: Standard
+
 
 foreman_activation_keys_ol8:
   - name: ak_ol8
@@ -745,60 +255,9 @@ foreman_activation_keys_ol8:
       #   override: disabled
       - label: "{{ foreman_organization }}_OL_ol8_x86_64_distro_builder"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_UEKR6"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_UEKR6"
-      #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_UEKR6_RDMA"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_UEKR7"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_UEKR7"
-      #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_UEKR7_RDMA"
-        override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_MODRHCK"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_MySQL80_connectors_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_MySQL80_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_MySQL80_tools_community"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_oracle_instantclient"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_oracle_instantclient21"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_oracle"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_kvm_appstream"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_gluster_appstream"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_automation"
-      #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_automation2"
-        override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_olcne12"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_olcne13"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_olcne14"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_olcne15"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_olcne"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_ovirt44"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_ovirt44_extras"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_oraclelinuxmanager210_client"
-      #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_u4_security_validation"
-      #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol8_debuginfo"
       #   override: disabled
+
 
 foreman_sync_plan_products_ol8: []
 

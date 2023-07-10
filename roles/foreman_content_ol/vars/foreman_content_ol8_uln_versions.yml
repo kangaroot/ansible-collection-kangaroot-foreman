@@ -1,0 +1,582 @@
+---
+
+foreman_products_defaults: &foreman_products_defaults
+  content_type: yum
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+  gpg_key: RPM-GPG-KEY-oracle
+  download_policy: on_demand
+  # mirror_on_sync: True
+  # mirroring_policy: "additive"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
+  verify_ssl_on_sync: False
+  # http_proxy: Default Proxy
+  http_proxy_policy: global_default_http_proxy
+
+
+foreman_products_ol8_0_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8 BaseOS GA (x86_64) | ol8_x86_64_u0_baseos_base ###
+      - name: Oracle Linux 8 BaseOS GA (x86_64)
+        description: Base operating system packages released for Oracle Linux 8 GA (x86_64). No errata included
+        label: ol8_uln_x86_64_u0_baseos_base
+        url: uln://ol8_x86_64_u0_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_1_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.1 BaseOS (x86_64) | ol8_x86_64_u1_baseos_base ###
+      - name: Oracle Linux 8.1 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8 (x86_64). No errata included
+        label: ol8_uln_x86_64_u1_baseos_base
+        url: uln://ol8_x86_64_u1_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_2_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.2 BaseOS (x86_64) | ol8_x86_64_u2_baseos_base ###
+      - name: Oracle Linux 8.2 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.2 (x86_64). No errata included
+        label: ol8_uln_x86_64_u2_baseos_base
+        url: uln://ol8_x86_64_u2_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_3_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.3 BaseOS (x86_64) | ol8_x86_64_u3_baseos_base ###
+      - name: Oracle Linux 8.3 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.3 (x86_64). No errata included
+        label: ol8_uln_x86_64_u3_baseos_base
+        url: uln://ol8_x86_64_u3_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_4_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.4 BaseOS (x86_64) | ol8_x86_64_u4_baseos_base ###
+      - name: Oracle Linux 8.4 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.4 (x86_64). No errata included
+        label: ol8_uln_x86_64_u4_baseos_base
+        url: uln://ol8_x86_64_u4_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_5_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.5 BaseOS (x86_64) | ol8_x86_64_u5_baseos_base ###
+      - name: Oracle Linux 8.5 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.5 (x86_64). No errata included
+        label: ol8_uln_x86_64_u5_baseos_base
+        url: uln://ol8_x86_64_u5_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_6_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.6 BaseOS (x86_64) | ol8_x86_64_u6_baseos_base ###
+      - name: Oracle Linux 8.6 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.6 (x86_64). No errata included
+        label: ol8_uln_x86_64_u6_baseos_base
+        url: uln://ol8_x86_64_u6_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_7_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.7 BaseOS (x86_64) | ol8_x86_64_u7_baseos_base ###
+      - name: Oracle Linux 8.7 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.7 (x86_64). No errata included
+        label: ol8_uln_x86_64_u7_baseos_base
+        url: uln://ol8_x86_64_u7_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_8_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.8 BaseOS (x86_64) | ol8_x86_64_u8_baseos_base ###
+      - name: Oracle Linux 8.8 BaseOS (x86_64)
+        description: Base operating system packages released for Oracle Linux 8.8 (x86_64). No errata included
+        label: ol8_uln_x86_64_u8_baseos_base
+        url: uln://ol8_x86_64_u8_baseos_base
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_0_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8 BaseOS GA Patch (x86_64) | ol8_x86_64_u0_baseos_patch ###
+      - name: Oracle Linux 8 BaseOS GA Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8 BaseOS GA (x86_64)
+        label: ol8_uln_x86_64_u0_baseos_patch
+        url: uln://ol8_x86_64_u0_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_1_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.1 BaseOS Patch (x86_64) | ol8_x86_64_u1_baseos_patch ###
+      - name: Oracle Linux 8.1 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.1 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u1_baseos_patch
+        url: uln://ol8_x86_64_u1_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_2_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.2 BaseOS Patch (x86_64) | ol8_x86_64_u2_baseos_patch ###
+      - name: Oracle Linux 8.2 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.2 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u2_baseos_patch
+        url: uln://ol8_x86_64_u2_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_3_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.3 BaseOS Patch (x86_64) | ol8_x86_64_u3_baseos_patch ###
+      - name: Oracle Linux 8.3 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.3 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u3_baseos_patch
+        url: uln://ol8_x86_64_u3_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_4_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.4 BaseOS Patch (x86_64) | ol8_x86_64_u4_baseos_patch ###
+      - name: Oracle Linux 8.4 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.4 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u4_baseos_patch
+        url: uln://ol8_x86_64_u4_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_5_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.5 BaseOS Patch (x86_64) | ol8_x86_64_u5_baseos_patch ###
+      - name: Oracle Linux 8.5 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.5 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u5_baseos_patch
+        url: uln://ol8_x86_64_u5_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_6_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.6 BaseOS Patch (x86_64) | ol8_x86_64_u6_baseos_patch ###
+      - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.6 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u6_baseos_patch
+        url: uln://ol8_x86_64_u6_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_7_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.7 BaseOS Patch (x86_64) | ol8_x86_64_u7_baseos_patch ###
+      - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.7 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u7_baseos_patch
+        url: uln://ol8_x86_64_u7_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_8_patch_uln:
+  - name: Oracle Linux
+    label: OL
+    repositories:
+      ### Oracle Linux 8.8 BaseOS Patch (x86_64) | ol8_x86_64_u8_baseos_patch ###
+      - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
+        description: Updated packages published after release of Oracle Linux 8.8 BaseOS (x86_64)
+        label: ol8_uln_x86_64_u8_baseos_patch
+        url: uln://ol8_x86_64_u8_baseos_patch
+        <<: *foreman_products_defaults
+
+foreman_products_ol8_uln_versions: "{{ [] |
+  union( foreman_products_ol8_0_uln | default([]) if foreman_enable_ol8_0_uln else [] ) |
+  union( foreman_products_ol8_1_uln | default([]) if foreman_enable_ol8_1_uln else [] ) |
+  union( foreman_products_ol8_2_uln | default([]) if foreman_enable_ol8_2_uln else [] ) |
+  union( foreman_products_ol8_3_uln | default([]) if foreman_enable_ol8_3_uln else [] ) |
+  union( foreman_products_ol8_4_uln | default([]) if foreman_enable_ol8_4_uln else [] ) |
+  union( foreman_products_ol8_5_uln | default([]) if foreman_enable_ol8_5_uln else [] ) |
+  union( foreman_products_ol8_6_uln | default([]) if foreman_enable_ol8_6_uln else [] ) |
+  union( foreman_products_ol8_7_uln | default([]) if foreman_enable_ol8_7_uln else [] ) |
+  union( foreman_products_ol8_8_uln | default([]) if foreman_enable_ol8_8_uln else [] ) |
+
+  union( foreman_products_ol8_0_patch_uln | default([]) if foreman_enable_ol8_0_patch_uln else [] ) |
+  union( foreman_products_ol8_1_patch_uln | default([]) if foreman_enable_ol8_1_patch_uln else [] ) |
+  union( foreman_products_ol8_2_patch_uln | default([]) if foreman_enable_ol8_2_patch_uln else [] ) |
+  union( foreman_products_ol8_3_patch_uln | default([]) if foreman_enable_ol8_3_patch_uln else [] ) |
+  union( foreman_products_ol8_4_patch_uln | default([]) if foreman_enable_ol8_4_patch_uln else [] ) |
+  union( foreman_products_ol8_5_patch_uln | default([]) if foreman_enable_ol8_5_patch_uln else [] ) |
+  union( foreman_products_ol8_6_patch_uln | default([]) if foreman_enable_ol8_6_patch_uln else [] ) |
+  union( foreman_products_ol8_7_patch_uln | default([]) if foreman_enable_ol8_7_patch_uln else [] ) |
+  union( foreman_products_ol8_8_patch_uln | default([]) if foreman_enable_ol8_8_patch_uln else [] )
+  }}"
+
+
+foreman_content_views_ol8_0_uln:
+  - name: cv_ol8_x86_64_u0_baseos_base
+    repositories:
+      - name: Oracle Linux 8 BaseOS GA (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_1_uln:
+  - name: cv_ol8_x86_64_u1_baseos_base
+    repositories:
+      - name: Oracle Linux 8.1 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_2_uln:
+  - name: cv_ol8_x86_64_u2_baseos_base
+    repositories:
+      - name: Oracle Linux 8.2 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_3_uln:
+  - name: cv_ol8_x86_64_u3_baseos_base
+    repositories:
+      - name: Oracle Linux 8.3 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_4_uln:
+  - name: cv_ol8_x86_64_u4_baseos_base
+    repositories:
+      - name: Oracle Linux 8.4 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_5_uln:
+  - name: cv_ol8_x86_64_u5_baseos_base
+    repositories:
+      - name: Oracle Linux 8.5 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_6_uln:
+  - name: cv_ol8_x86_64_u6_baseos_base
+    repositories:
+      - name: Oracle Linux 8.6 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_7_uln:
+  - name: cv_ol8_x86_64_u7_baseos_base
+    repositories:
+      - name: Oracle Linux 8.7 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_8_uln:
+  - name: cv_ol8_x86_64_u8_baseos_base
+    repositories:
+      - name: Oracle Linux 8.8 BaseOS (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_0_patch_uln:
+  - name: cv_ol8_uln_x86_64_u0_baseos_patch
+    repositories:
+      - name: Oracle Linux 8 BaseOS GA Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_1_patch_uln:
+  - name: cv_ol8_uln_x86_64_u1_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.1 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_2_patch_uln:
+  - name: cv_ol8_uln_x86_64_u2_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.2 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_3_patch_uln:
+  - name: cv_ol8_uln_x86_64_u3_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.3 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_4_patch_uln:
+  - name: cv_ol8_uln_x86_64_u4_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.4 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_5_patch_uln:
+  - name: cv_ol8_uln_x86_64_u5_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.5 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_6_patch_uln:
+  - name: cv_ol8_uln_x86_64_u6_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_7_patch_uln:
+  - name: cv_ol8_uln_x86_64_u7_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_8_patch_uln:
+  - name: cv_ol8_uln_x86_64_u8_baseos_patch
+    repositories:
+      - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
+        product: Oracle Linux
+    allow_promote: False
+
+foreman_content_views_ol8_uln_versions: "{{ [] |
+  union( foreman_content_views_ol8_0_uln | default([]) if foreman_enable_ol8_0_uln else [] ) |
+  union( foreman_content_views_ol8_1_uln | default([]) if foreman_enable_ol8_1_uln else [] ) |
+  union( foreman_content_views_ol8_2_uln | default([]) if foreman_enable_ol8_2_uln else [] ) |
+  union( foreman_content_views_ol8_3_uln | default([]) if foreman_enable_ol8_3_uln else [] ) |
+  union( foreman_content_views_ol8_4_uln | default([]) if foreman_enable_ol8_4_uln else [] ) |
+  union( foreman_content_views_ol8_5_uln | default([]) if foreman_enable_ol8_5_uln else [] ) |
+  union( foreman_content_views_ol8_6_uln | default([]) if foreman_enable_ol8_6_uln else [] ) |
+  union( foreman_content_views_ol8_7_uln | default([]) if foreman_enable_ol8_7_uln else [] ) |
+  union( foreman_content_views_ol8_8_uln | default([]) if foreman_enable_ol8_8_uln else [] ) |
+
+  union( foreman_content_views_ol8_0_patch_uln | default([]) if foreman_enable_ol8_0_patch_uln else [] ) |
+  union( foreman_content_views_ol8_1_patch_uln | default([]) if foreman_enable_ol8_1_patch_uln else [] ) |
+  union( foreman_content_views_ol8_2_patch_uln | default([]) if foreman_enable_ol8_2_patch_uln else [] ) |
+  union( foreman_content_views_ol8_3_patch_uln | default([]) if foreman_enable_ol8_3_patch_uln else [] ) |
+  union( foreman_content_views_ol8_4_patch_uln | default([]) if foreman_enable_ol8_4_patch_uln else [] ) |
+  union( foreman_content_views_ol8_5_patch_uln | default([]) if foreman_enable_ol8_5_patch_uln else [] ) |
+  union( foreman_content_views_ol8_6_patch_uln | default([]) if foreman_enable_ol8_6_patch_uln else [] ) |
+  union( foreman_content_views_ol8_7_patch_uln | default([]) if foreman_enable_ol8_7_patch_uln else [] ) |
+  union( foreman_content_views_ol8_8_patch_uln | default([]) if foreman_enable_ol8_8_patch_uln else [] )
+  }}"
+
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+  default_templates:
+    - template_kind: "cloud-init"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_cloud_init | default( foreman_operatingsystems_ol_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+    - template_kind: "finish"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_finish | default( foreman_operatingsystems_ol_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+    - template_kind: "host_init_config"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_host_init_config | default( foreman_operatingsystems_ol_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+    - template_kind: "iPXE"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_ipxe | default( foreman_operatingsystems_ol_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+    - template_kind: "provision"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_provision | default( foreman_operatingsystems_ol_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+    - template_kind: "PXEGrub"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_pxegrub | default( foreman_operatingsystems_ol_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+    - template_kind: "PXEGrub2"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_pxegrub2 | default( foreman_operatingsystems_ol_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+    - template_kind: "PXELinux"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_pxelinux | default( foreman_operatingsystems_ol_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+    - template_kind: "user_data"
+      provisioning_template: "{{ foreman_operatingsystems_ol8_template_user_data | default( foreman_operatingsystems_ol_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+
+foreman_operatingsystems_ol8_0_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "0"
+    description: "Oracle Linux 8.0"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_1_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "1"
+    description: "Oracle Linux 8.1"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_2_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "2"
+    description: "Oracle Linux 8.2"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_3_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "3"
+    description: "Oracle Linux 8.3"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_4_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "4"
+    description: "Oracle Linux 8.4"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_5_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "5"
+    description: "Oracle Linux 8.5"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_6_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "6"
+    description: "Oracle Linux 8.6"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_7_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "7"
+    description: "Oracle Linux 8.7"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_8_uln:
+  - name: "OracleLinux"
+    major: "8"
+    minor: "8"
+    description: "Oracle Linux 8.8"
+    <<: *foreman_operatingsystems_defaults
+
+foreman_operatingsystems_ol8_uln_versions: "{{ [] |
+  union( foreman_operatingsystems_ol8_0_uln | default([]) if foreman_enable_ol8_0_uln else [] ) |
+  union( foreman_operatingsystems_ol8_1_uln | default([]) if foreman_enable_ol8_1_uln else [] ) |
+  union( foreman_operatingsystems_ol8_2_uln | default([]) if foreman_enable_ol8_2_uln else [] ) |
+  union( foreman_operatingsystems_ol8_3_uln | default([]) if foreman_enable_ol8_3_uln else [] ) |
+  union( foreman_operatingsystems_ol8_4_uln | default([]) if foreman_enable_ol8_4_uln else [] ) |
+  union( foreman_operatingsystems_ol8_5_uln | default([]) if foreman_enable_ol8_5_uln else [] ) |
+  union( foreman_operatingsystems_ol8_6_uln | default([]) if foreman_enable_ol8_6_uln else [] ) |
+  union( foreman_operatingsystems_ol8_7_uln | default([]) if foreman_enable_ol8_7_uln else [] ) |
+  union( foreman_operatingsystems_ol8_8_uln | default([]) if foreman_enable_ol8_8_uln else [] )
+  }}"
+
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+
+
+foreman_installation_media_ol8_0_uln:
+  - name: Oracle Linux 8.0 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u0_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.0
+
+foreman_installation_media_ol8_1_uln:
+  - name: Oracle Linux 8.1 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u1_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.1
+
+foreman_installation_media_ol8_2_uln:
+  - name: Oracle Linux 8.2 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u2_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.2
+
+foreman_installation_media_ol8_3_uln:
+  - name: Oracle Linux 8.3 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u3_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.3
+
+foreman_installation_media_ol8_4_uln:
+  - name: Oracle Linux 8.4 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u4_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.4
+
+foreman_installation_media_ol8_5_uln:
+  - name: Oracle Linux 8.5 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u5_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.5
+
+foreman_installation_media_ol8_6_uln:
+  - name: Oracle Linux 8.6 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u6_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.6
+
+foreman_installation_media_ol8_7_uln:
+  - name: Oracle Linux 8.7 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u7_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.7
+
+foreman_installation_media_ol8_8_uln:
+  - name: Oracle Linux 8.8 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u8_baseos_base/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Oracle Linux 8.8
+
+foreman_installation_media_ol8_uln_versions: "{{ [] |
+  union( foreman_installation_media_ol8_0_uln | default([]) if foreman_enable_ol8_0_uln else [] ) |
+  union( foreman_installation_media_ol8_1_uln | default([]) if foreman_enable_ol8_1_uln else [] ) |
+  union( foreman_installation_media_ol8_2_uln | default([]) if foreman_enable_ol8_2_uln else [] ) |
+  union( foreman_installation_media_ol8_3_uln | default([]) if foreman_enable_ol8_3_uln else [] ) |
+  union( foreman_installation_media_ol8_4_uln | default([]) if foreman_enable_ol8_4_uln else [] ) |
+  union( foreman_installation_media_ol8_5_uln | default([]) if foreman_enable_ol8_5_uln else [] ) |
+  union( foreman_installation_media_ol8_6_uln | default([]) if foreman_enable_ol8_6_uln else [] ) |
+  union( foreman_installation_media_ol8_7_uln | default([]) if foreman_enable_ol8_7_uln else [] ) |
+  union( foreman_installation_media_ol8_8_uln | default([]) if foreman_enable_ol8_8_uln else [] )
+  }}"
+
