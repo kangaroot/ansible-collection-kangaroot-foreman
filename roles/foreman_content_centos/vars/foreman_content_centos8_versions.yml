@@ -51,15 +51,6 @@ foreman_products_centos8_0:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/fasttrack/x86_64/os/"
 
-      - name: CentOS 8.0.1905 - BaseOS Kickstart
-        label: centos-8_0-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8.0.1905 - AppStream Kickstart
-        label: centos-8_0-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/kickstart/"
-
 foreman_products_centos8_1:
   - name: CentOS
     label: CentOS
@@ -97,15 +88,6 @@ foreman_products_centos8_1:
         label: centos-8_1-fasttrack
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/fasttrack/x86_64/os/"
-
-      - name: CentOS 8.1.1911 - BaseOS Kickstart
-        label: centos-8_1-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8.1.1911 - AppStream Kickstart
-        label: centos-8_1-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/kickstart/"
 
 foreman_products_centos8_2:
   - name: CentOS
@@ -145,15 +127,6 @@ foreman_products_centos8_2:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/fasttrack/x86_64/os/"
 
-      - name: CentOS 8.2.2004 - BaseOS Kickstart
-        label: centos-8_2-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8.2.2004 - AppStream Kickstart
-        label: centos-8_2-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/kickstart/"
-
 foreman_products_centos8_3:
   - name: CentOS
     label: CentOS
@@ -191,15 +164,6 @@ foreman_products_centos8_3:
         label: centos-8_3-fasttrack
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/fasttrack/x86_64/os/"
-
-      - name: CentOS 8.3.2011 - BaseOS Kickstart
-        label: centos-8_3-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8.3.2011 - AppStream Kickstart
-        label: centos-8_3-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/kickstart/"
 
 foreman_products_centos8_4:
   - name: CentOS
@@ -239,15 +203,6 @@ foreman_products_centos8_4:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/fasttrack/x86_64/os/"
 
-      - name: CentOS 8.4.2105 - BaseOS Kickstart
-        label: centos-8_4-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/kickstart/"
-      - name: CentOS 8.4.2105 - AppStream Kickstart
-        label: centos-8_4-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/kickstart/"
-
 foreman_products_centos8_5:
   - name: CentOS
     label: CentOS
@@ -286,6 +241,75 @@ foreman_products_centos8_5:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
 
+foreman_products_centos8_0_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8.0.1905 - BaseOS Kickstart
+        label: centos-8_0-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/kickstart/"
+      - name: CentOS 8.0.1905 - AppStream Kickstart
+        label: centos-8_0-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/kickstart/"
+
+foreman_products_centos8_1_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8.1.1911 - BaseOS Kickstart
+        label: centos-8_1-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/kickstart/"
+      - name: CentOS 8.1.1911 - AppStream Kickstart
+        label: centos-8_1-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/kickstart/"
+
+foreman_products_centos8_2_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8.2.2004 - BaseOS Kickstart
+        label: centos-8_2-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/kickstart/"
+      - name: CentOS 8.2.2004 - AppStream Kickstart
+        label: centos-8_2-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/kickstart/"
+
+foreman_products_centos8_3_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8.3.2011 - BaseOS Kickstart
+        label: centos-8_3-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/kickstart/"
+      - name: CentOS 8.3.2011 - AppStream Kickstart
+        label: centos-8_3-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/kickstart/"
+
+foreman_products_centos8_4_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
+      - name: CentOS 8.4.2105 - BaseOS Kickstart
+        label: centos-8_4-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/kickstart/"
+      - name: CentOS 8.4.2105 - AppStream Kickstart
+        label: centos-8_4-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/kickstart/"
+
+foreman_products_centos8_5_kickstart:
+  - name: CentOS
+    label: CentOS
+    repositories:
       - name: CentOS 8.5.2111 - BaseOS Kickstart
         label: centos-8_5-baseos-kickstart
         <<: *foreman_products_defaults
@@ -301,7 +325,14 @@ foreman_products_centos8_versions: "{{ [] |
   union( foreman_products_centos8_2 | default([]) if foreman_enable_centos8_2 else [] ) |
   union( foreman_products_centos8_3 | default([]) if foreman_enable_centos8_3 else [] ) |
   union( foreman_products_centos8_4 | default([]) if foreman_enable_centos8_4 else [] ) |
-  union( foreman_products_centos8_5 | default([]) if foreman_enable_centos8_5 else [] )
+  union( foreman_products_centos8_5 | default([]) if foreman_enable_centos8_5 else [] ) |
+
+  union( foreman_products_centos8_0_kickstart | default([]) if foreman_enable_centos8_0_kickstart else [] ) |
+  union( foreman_products_centos8_1_kickstart | default([]) if foreman_enable_centos8_1_kickstart else [] ) |
+  union( foreman_products_centos8_2_kickstart | default([]) if foreman_enable_centos8_2_kickstart else [] ) |
+  union( foreman_products_centos8_3_kickstart | default([]) if foreman_enable_centos8_3_kickstart else [] ) |
+  union( foreman_products_centos8_4_kickstart | default([]) if foreman_enable_centos8_4_kickstart else [] ) |
+  union( foreman_products_centos8_5_kickstart | default([]) if foreman_enable_centos8_5_kickstart else [] )
   }}"
 
 
@@ -569,7 +600,14 @@ foreman_content_views_centos8_versions: "{{ [] |
   union( foreman_content_views_centos8_2 | default([]) if foreman_enable_centos8_2 else [] ) |
   union( foreman_content_views_centos8_3 | default([]) if foreman_enable_centos8_3 else [] ) |
   union( foreman_content_views_centos8_4 | default([]) if foreman_enable_centos8_4 else [] ) |
-  union( foreman_content_views_centos8_5 | default([]) if foreman_enable_centos8_5 else [] )
+  union( foreman_content_views_centos8_5 | default([]) if foreman_enable_centos8_5 else [] ) |
+
+  union( foreman_content_views_centos8_0_kickstart | default([]) if foreman_enable_centos8_0_kickstart else [] ) |
+  union( foreman_content_views_centos8_1_kickstart | default([]) if foreman_enable_centos8_1_kickstart else [] ) |
+  union( foreman_content_views_centos8_2_kickstart | default([]) if foreman_enable_centos8_2_kickstart else [] ) |
+  union( foreman_content_views_centos8_3_kickstart | default([]) if foreman_enable_centos8_3_kickstart else [] ) |
+  union( foreman_content_views_centos8_4_kickstart | default([]) if foreman_enable_centos8_4_kickstart else [] ) |
+  union( foreman_content_views_centos8_5_kickstart | default([]) if foreman_enable_centos8_5_kickstart else [] )
   }}"
 
 
@@ -588,7 +626,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
 
 
-foreman_operatingsystems_centos8_0:
+foreman_operatingsystems_centos8_0_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "0.1905"
@@ -596,7 +634,7 @@ foreman_operatingsystems_centos8_0:
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_centos8_1:
+foreman_operatingsystems_centos8_1_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "1.1911"
@@ -604,7 +642,7 @@ foreman_operatingsystems_centos8_1:
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_centos8_2:
+foreman_operatingsystems_centos8_2_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "2.2004"
@@ -612,7 +650,7 @@ foreman_operatingsystems_centos8_2:
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_centos8_3:
+foreman_operatingsystems_centos8_3_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "3.2011"
@@ -620,7 +658,7 @@ foreman_operatingsystems_centos8_3:
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_centos8_4:
+foreman_operatingsystems_centos8_4_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "4.2105"
@@ -628,7 +666,7 @@ foreman_operatingsystems_centos8_4:
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_centos8_5:
+foreman_operatingsystems_centos8_5_kickstart:
   - name: "CentOS"
     major: "8"
     minor: "5.2111"
@@ -642,7 +680,14 @@ foreman_operatingsystems_centos8_versions: "{{ [] |
   union( foreman_operatingsystems_centos8_2 | default([]) if foreman_enable_centos8_2 else [] ) |
   union( foreman_operatingsystems_centos8_3 | default([]) if foreman_enable_centos8_3 else [] ) |
   union( foreman_operatingsystems_centos8_4 | default([]) if foreman_enable_centos8_4 else [] ) |
-  union( foreman_operatingsystems_centos8_5 | default([]) if foreman_enable_centos8_5 else [] )
+  union( foreman_operatingsystems_centos8_5 | default([]) if foreman_enable_centos8_5 else [] ) |
+
+  union( foreman_operatingsystems_centos8_0_kickstart | default([]) if foreman_enable_centos8_0_kickstart else [] ) |
+  union( foreman_operatingsystems_centos8_1_kickstart | default([]) if foreman_enable_centos8_1_kickstart else [] ) |
+  union( foreman_operatingsystems_centos8_2_kickstart | default([]) if foreman_enable_centos8_2_kickstart else [] ) |
+  union( foreman_operatingsystems_centos8_3_kickstart | default([]) if foreman_enable_centos8_3_kickstart else [] ) |
+  union( foreman_operatingsystems_centos8_4_kickstart | default([]) if foreman_enable_centos8_4_kickstart else [] ) |
+  union( foreman_operatingsystems_centos8_5_kickstart | default([]) if foreman_enable_centos8_5_kickstart else [] )
   }}"
 
 
@@ -656,7 +701,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_centos8_0:
+foreman_installation_media_centos8_0_kickstart:
   - name: CentOS 8.0.1905 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_0-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -668,7 +713,7 @@ foreman_installation_media_centos8_0:
     operatingsystems:
       - CentOS 8.0.1905
 
-foreman_installation_media_centos8_1:
+foreman_installation_media_centos8_1_kickstart:
   - name: CentOS 8.1.1911 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_1-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -680,7 +725,7 @@ foreman_installation_media_centos8_1:
     operatingsystems:
       - CentOS 8.1.1911
 
-foreman_installation_media_centos8_2:
+foreman_installation_media_centos8_2_kickstart:
   - name: CentOS 8.2.2004 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_2-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -692,7 +737,7 @@ foreman_installation_media_centos8_2:
     operatingsystems:
       - CentOS 8.2.2004
 
-foreman_installation_media_centos8_3:
+foreman_installation_media_centos8_3_kickstart:
   - name: CentOS 8.3.2011 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_3-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -704,7 +749,7 @@ foreman_installation_media_centos8_3:
     operatingsystems:
       - CentOS 8.3.2011
 
-foreman_installation_media_centos8_4:
+foreman_installation_media_centos8_4_kickstart:
   - name: CentOS 8.4.2105 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_4-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -716,7 +761,7 @@ foreman_installation_media_centos8_4:
     operatingsystems:
       - CentOS 8.4.2105
 
-foreman_installation_media_centos8_5:
+foreman_installation_media_centos8_5_kickstart:
   - name: CentOS 8.5.2111 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-8_5-baseos-kickstart"
     <<: *foreman_installation_media_defaults
@@ -734,6 +779,13 @@ foreman_installation_media_centos8_versions: "{{ [] |
   union( foreman_installation_media_centos8_2 | default([]) if foreman_enable_centos8_2 else [] ) |
   union( foreman_installation_media_centos8_3 | default([]) if foreman_enable_centos8_3 else [] ) |
   union( foreman_installation_media_centos8_4 | default([]) if foreman_enable_centos8_4 else [] ) |
-  union( foreman_installation_media_centos8_5 | default([]) if foreman_enable_centos8_5 else [] )
+  union( foreman_installation_media_centos8_5 | default([]) if foreman_enable_centos8_5 else [] ) |
+
+  union( foreman_installation_media_centos8_0_kickstart | default([]) if foreman_enable_centos8_0_kickstart else [] ) |
+  union( foreman_installation_media_centos8_1_kickstart | default([]) if foreman_enable_centos8_1_kickstart else [] ) |
+  union( foreman_installation_media_centos8_2_kickstart | default([]) if foreman_enable_centos8_2_kickstart else [] ) |
+  union( foreman_installation_media_centos8_3_kickstart | default([]) if foreman_enable_centos8_3_kickstart else [] ) |
+  union( foreman_installation_media_centos8_4_kickstart | default([]) if foreman_enable_centos8_4_kickstart else [] ) |
+  union( foreman_installation_media_centos8_5_kickstart | default([]) if foreman_enable_centos8_5_kickstart else [] )
   }}"
 

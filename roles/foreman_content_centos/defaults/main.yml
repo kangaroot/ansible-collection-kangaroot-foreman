@@ -293,6 +293,13 @@ foreman_enable_centos8_3: false
 foreman_enable_centos8_4: false
 foreman_enable_centos8_5: "{{ foreman_enable_centos8 | bool }}"
 
+foreman_enable_centos8_0_kickstart: false
+foreman_enable_centos8_1_kickstart: false
+foreman_enable_centos8_2_kickstart: false
+foreman_enable_centos8_3_kickstart: false
+foreman_enable_centos8_4_kickstart: false
+foreman_enable_centos8_5_kickstart: "{{ foreman_enable_centos8 | bool }}"
+
 foreman_enable_centos8_sig_opstools: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
 foreman_enable_centos8_sig_nfv: false
 foreman_enable_centos8_sig_nfv_extras: false
