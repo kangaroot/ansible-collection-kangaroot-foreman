@@ -110,6 +110,13 @@
 # foreman_enable_centos8_4: false
 # foreman_enable_centos8_5: "{{ foreman_enable_centos8 | bool }}"
 
+# foreman_enable_centos8_0_kickstart: false
+# foreman_enable_centos8_1_kickstart: false
+# foreman_enable_centos8_2_kickstart: false
+# foreman_enable_centos8_3_kickstart: false
+# foreman_enable_centos8_4_kickstart: false
+# foreman_enable_centos8_5_kickstart: "{{ foreman_enable_centos8 | bool }}"
+
 # foreman_enable_centos8_sig_opstools: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
 # foreman_enable_centos8_sig_nfv: false
 # foreman_enable_centos8_sig_nfv_extras: false
@@ -769,16 +776,70 @@
 # foreman_enable_redhat: false
 
 # foreman_enable_redhat7: false
+
+# foreman_enable_redhat7_0: false
+# foreman_enable_redhat7_1: false
+# foreman_enable_redhat7_2: false
+# foreman_enable_redhat7_3: false
+# foreman_enable_redhat7_4: false
+# foreman_enable_redhat7_5: false
+# foreman_enable_redhat7_6: false
+# foreman_enable_redhat7_7: false
+# foreman_enable_redhat7_8: false
+# foreman_enable_redhat7_9: false
+
+# foreman_enable_redhat7_0_kickstart: false
+# foreman_enable_redhat7_1_kickstart: false
+# foreman_enable_redhat7_2_kickstart: false
+# foreman_enable_redhat7_3_kickstart: false
+# foreman_enable_redhat7_4_kickstart: false
+# foreman_enable_redhat7_5_kickstart: false
+# foreman_enable_redhat7_6_kickstart: false
+# foreman_enable_redhat7_7_kickstart: false
+# foreman_enable_redhat7_8_kickstart: false
+# foreman_enable_redhat7_9_kickstart: "{{ foreman_enable_redhat7 | bool }}"
+
 # foreman_enable_redhat7_sat: false
 # foreman_enable_redhat7_aap: false
 # foreman_enable_redhat7_rhocp: false
 
 # foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
+
+# foreman_enable_redhat8_0: false
+# foreman_enable_redhat8_1: false
+# foreman_enable_redhat8_2: false
+# foreman_enable_redhat8_3: false
+# foreman_enable_redhat8_4: false
+# foreman_enable_redhat8_5: false
+# foreman_enable_redhat8_6: false
+# foreman_enable_redhat8_7: false
+# foreman_enable_redhat8_8: false
+# foreman_enable_redhat8_9: false
+
+# foreman_enable_redhat8_0_kickstart: false
+# foreman_enable_redhat8_1_kickstart: false
+# foreman_enable_redhat8_2_kickstart: false
+# foreman_enable_redhat8_3_kickstart: false
+# foreman_enable_redhat8_4_kickstart: false
+# foreman_enable_redhat8_5_kickstart: false
+# foreman_enable_redhat8_6_kickstart: false
+# foreman_enable_redhat8_7_kickstart: false
+# foreman_enable_redhat8_8_kickstart: "{{ foreman_enable_redhat8 | bool }}"
+
 # foreman_enable_redhat8_sat: false
 # foreman_enable_redhat8_aap: false
 # foreman_enable_redhat8_rhocp: false
 
 # foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
+
+# foreman_enable_redhat9_0: false
+# foreman_enable_redhat9_1: false
+# foreman_enable_redhat9_2: false
+
+# foreman_enable_redhat9_0_kickstart: false
+# foreman_enable_redhat9_1_kickstart: false
+# foreman_enable_redhat9_2_kickstart: "{{ foreman_enable_redhat9 | bool }}"
+
 # foreman_enable_redhat9_aap: false
 # foreman_enable_redhat9_rhocp: false
 
@@ -801,6 +862,12 @@
 # foreman_enable_rocky8_7: false
 # foreman_enable_rocky8_8: false
 
+# foreman_enable_rocky8_4_kickstart: false
+# foreman_enable_rocky8_5_kickstart: false
+# foreman_enable_rocky8_6_kickstart: false
+# foreman_enable_rocky8_7_kickstart: false
+# foreman_enable_rocky8_8_kickstart: false
+
 # foreman_enable_rocky8_sig_core: false
 # foreman_enable_rocky8_sig_core_common: "{{ foreman_enable_rocky8_sig_core | bool }}"
 # foreman_enable_rocky8_sig_core_infra: false
@@ -815,6 +882,10 @@
 # foreman_enable_rocky9_0: false
 # foreman_enable_rocky9_1: false
 # foreman_enable_rocky9_2: false
+
+# foreman_enable_rocky9_0_kickstart: false
+# foreman_enable_rocky9_1_kickstart: false
+# foreman_enable_rocky9_2_kickstart: false
 
 # foreman_enable_rocky9_sig_core: false
 # foreman_enable_rocky9_sig_core_common: "{{ foreman_enable_rocky9_sig_core | bool }}"
