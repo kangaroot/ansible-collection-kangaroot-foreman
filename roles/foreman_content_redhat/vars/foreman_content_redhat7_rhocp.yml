@@ -19,17 +19,17 @@ foreman_products_redhat7_rhocp:
       #   label: rhel-7-server-ose-4.12-rpms
 
 foreman_content_views_redhat7_rhocp:
-  - name: cv_rhel7_rhocp_4_10
+  - name: cv_rhel7_rhocp_410
     repositories:
       - name: Red Hat OpenShift Container Platform 4.10 RPMs x86_64
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel7_rhocp_4_11
+  - name: cv_rhel7_rhocp_411
     repositories:
       - name: Red Hat OpenShift Container Platform 4.11 RPMs x86_64
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  # - name: cv_rhel7_rhocp_4_12
+  # - name: cv_rhel7_rhocp_412
   #   repositories:
   #     - name: Red Hat OpenShift Container Platform 4.12 RPMs x86_64
   #       product: 'Red Hat OpenShift Container Platform'
@@ -53,13 +53,13 @@ foreman_content_views_redhat7_rhocp:
         latest: true
       - content_view: cv_rhel7_ansible_2
         latest: true
-      - content_view: cv_rhel7_ansible_2_9
+      - content_view: cv_rhel7_ansible_29
         latest: true
-      - content_view: cv_rhel7_rhocp_4_10
+      - content_view: cv_rhel7_rhocp_410
         latest: true
-      - content_view: cv_rhel7_rhocp_4_11
+      - content_view: cv_rhel7_rhocp_411
         latest: true
-      # - content_view: cv_rhel7_rhocp_4_12
+      # - content_view: cv_rhel7_rhocp_412
       #   latest: true
 
 foreman_operatingsystems_redhat7_rhocp: []

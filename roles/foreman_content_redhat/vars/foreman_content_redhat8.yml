@@ -142,7 +142,7 @@ foreman_content_views_redhat8:
       - name: Red Hat Ansible Engine 2 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Engine'
     allow_promote: False
-  - name: cv_rhel8_ansible_2_9
+  - name: cv_rhel8_ansible_29
     repositories:
       - name: Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Engine'
@@ -176,7 +176,7 @@ foreman_content_views_redhat8:
         latest: true
       - content_view: cv_rhel8_ansible_2
         latest: true
-      - content_view: cv_rhel8_ansible_2_9
+      - content_view: cv_rhel8_ansible_29
         latest: true
       - content_view: cv_epel8
         latest: true

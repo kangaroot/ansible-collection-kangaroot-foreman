@@ -191,16 +191,16 @@ foreman_enable_centos: false
 
 foreman_enable_centos7: false
 
-foreman_enable_centos7_0: false
-foreman_enable_centos7_1: false
-foreman_enable_centos7_2: false
-foreman_enable_centos7_3: false
-foreman_enable_centos7_4: false
-foreman_enable_centos7_5: false
-foreman_enable_centos7_6: false
-foreman_enable_centos7_7: false
-foreman_enable_centos7_8: false
-foreman_enable_centos7_9: "{{ foreman_enable_centos7 | bool }}"
+foreman_enable_centos70: false
+foreman_enable_centos71: false
+foreman_enable_centos72: false
+foreman_enable_centos73: false
+foreman_enable_centos74: false
+foreman_enable_centos75: false
+foreman_enable_centos76: false
+foreman_enable_centos77: false
+foreman_enable_centos78: false
+foreman_enable_centos79: "{{ foreman_enable_centos7 | bool }}"
 
 foreman_enable_centos7_dotnet: false
 foreman_enable_centos7_sig_sclo: "{{ foreman_enable_centos7 | bool }}"
@@ -286,19 +286,19 @@ foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 
 foreman_enable_centos8: false
 
-foreman_enable_centos8_0: false
-foreman_enable_centos8_1: false
-foreman_enable_centos8_2: false
-foreman_enable_centos8_3: false
-foreman_enable_centos8_4: false
-foreman_enable_centos8_5: "{{ foreman_enable_centos8 | bool }}"
+foreman_enable_centos80: false
+foreman_enable_centos81: false
+foreman_enable_centos82: false
+foreman_enable_centos83: false
+foreman_enable_centos84: false
+foreman_enable_centos85: "{{ foreman_enable_centos8 | bool }}"
 
-foreman_enable_centos8_0_kickstart: false
-foreman_enable_centos8_1_kickstart: false
-foreman_enable_centos8_2_kickstart: false
-foreman_enable_centos8_3_kickstart: false
-foreman_enable_centos8_4_kickstart: false
-foreman_enable_centos8_5_kickstart: "{{ foreman_enable_centos8 | bool }}"
+foreman_enable_centos80_kickstart: false
+foreman_enable_centos81_kickstart: false
+foreman_enable_centos82_kickstart: false
+foreman_enable_centos83_kickstart: false
+foreman_enable_centos84_kickstart: false
+foreman_enable_centos85_kickstart: "{{ foreman_enable_centos8 | bool }}"
 
 foreman_enable_centos8_sig_opstools: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
 foreman_enable_centos8_sig_nfv: false

@@ -209,12 +209,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_rocky9:
   - name: Rocky Linux 9 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_2-baseos-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-92-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9
   - name: Rocky Linux 9 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_2-appstream-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-92-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9

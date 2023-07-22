@@ -160,7 +160,7 @@ foreman_content_views_redhat7:
       - name: Red Hat Ansible Engine 2 RPMs for Red Hat Enterprise Linux 7 Server x86_64
         product: 'Red Hat Ansible Engine'
     allow_promote: False
-  - name: cv_rhel7_ansible_2_9
+  - name: cv_rhel7_ansible_29
     repositories:
       - name: Red Hat Ansible Engine 2.9 RPMs for Red Hat Enterprise Linux 7 Server x86_64
         product: 'Red Hat Ansible Engine'
@@ -186,19 +186,19 @@ foreman_content_views_redhat7:
         latest: true
       - content_view: cv_rhel7_sat_client_6
         latest: true
-      - content_view: cv_rhel7_sat_tools_6_10
+      - content_view: cv_rhel7_sat_tools_610
         latest: true
-      - content_view: cv_rhel7_sat_utils_6_11
+      - content_view: cv_rhel7_sat_utils_611
         latest: true
       - content_view: cv_rhel7_sat_maint_6
         latest: true
-      - content_view: cv_rhel7_sat_maint_6_11
+      - content_view: cv_rhel7_sat_maint_611
         latest: true
       - content_view: cv_rhel7_rhscl
         latest: true
       - content_view: cv_rhel7_ansible_2
         latest: true
-      - content_view: cv_rhel7_ansible_2_9
+      - content_view: cv_rhel7_ansible_29
         latest: true
       - content_view: cv_epel7
         latest: true
@@ -208,7 +208,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
   architectures:
-    - x86_64
+    - x8664
   # ptables:
   #   - Kickstart default
   #   - Kickstart custom
@@ -240,7 +240,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_redhat7:
   - name: Red Hat 7
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x86_64/kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x8664/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7
@@ -255,7 +255,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   #   # - pool_id: "8a88e9826db22df5016dd018abdd029b"
   #   # - name: "Red Hat Ansible Engine"
   #   # - name: "Red Hat Ansible Automation Platform"
-  #   # - name: "Red Hat Enterprise Linux for x86_64"
+  #   # - name: "Red Hat Enterprise Linux for x8664"
   #   - name: "Red Hat Enterprise Linux Server"
   #   # - name: "Red Hat Satellite"
   #   # - name: "Red Hat Satellite Capsule"

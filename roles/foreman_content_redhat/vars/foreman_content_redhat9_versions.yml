@@ -1,6 +1,6 @@
 ---
 
-foreman_products_redhat9_0:
+foreman_products_redhat90:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.0
@@ -19,7 +19,7 @@ foreman_products_redhat9_0:
         releasever: '9.0'
         # label: rhel-9-for-x86_64-supplementary-rpms
 
-foreman_products_redhat9_1:
+foreman_products_redhat91:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.1
@@ -38,7 +38,7 @@ foreman_products_redhat9_1:
         releasever: '9.1'
         # label: rhel-9-for-x86_64-supplementary-rpms
 
-foreman_products_redhat9_2:
+foreman_products_redhat92:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.2
@@ -57,7 +57,7 @@ foreman_products_redhat9_2:
         releasever: '9.2'
         # label: rhel-9-for-x86_64-supplementary-rpms
 
-foreman_products_redhat9_0_kickstart:
+foreman_products_redhat90_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.0
@@ -71,7 +71,7 @@ foreman_products_redhat9_0_kickstart:
         releasever: '9.0'
         # label: rhel-9-for-x86_64-appstream-kickstart
 
-foreman_products_redhat9_1_kickstart:
+foreman_products_redhat91_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.1
@@ -85,7 +85,7 @@ foreman_products_redhat9_1_kickstart:
         releasever: '9.1'
         # label: rhel-9-for-x86_64-appstream-kickstart
 
-foreman_products_redhat9_2_kickstart:
+foreman_products_redhat92_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.2
@@ -100,17 +100,17 @@ foreman_products_redhat9_2_kickstart:
         # label: rhel-9-for-x86_64-appstream-kickstart
 
 foreman_products_redhat9_versions: "{{ [] |
-  union( foreman_products_redhat9_0 | default([]) if foreman_enable_redhat9_0 else [] ) |
-  union( foreman_products_redhat9_1 | default([]) if foreman_enable_redhat9_1 else [] ) |
-  union( foreman_products_redhat9_2 | default([]) if foreman_enable_redhat9_2 else [] ) |
+  union( foreman_products_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
+  union( foreman_products_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
+  union( foreman_products_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
 
-  union( foreman_products_redhat9_0_kickstart | default([]) if foreman_enable_redhat9_0_kickstart else [] ) |
-  union( foreman_products_redhat9_1_kickstart | default([]) if foreman_enable_redhat9_1_kickstart else [] ) |
-  union( foreman_products_redhat9_2_kickstart | default([]) if foreman_enable_redhat9_2_kickstart else [] )
+  union( foreman_products_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
+  union( foreman_products_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
+  union( foreman_products_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
   }}"
 
 
-foreman_content_views_redhat9_0:
+foreman_content_views_redhat90:
   - name: cv_rhel9_0_baseos
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.0
@@ -127,7 +127,7 @@ foreman_content_views_redhat9_0:
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
-foreman_content_views_redhat9_1:
+foreman_content_views_redhat91:
   - name: cv_rhel9_1_baseos
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.1
@@ -144,7 +144,7 @@ foreman_content_views_redhat9_1:
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
-foreman_content_views_redhat9_2:
+foreman_content_views_redhat92:
   - name: cv_rhel9_2_baseos
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.2
@@ -162,13 +162,13 @@ foreman_content_views_redhat9_2:
     allow_promote: False
 
 foreman_content_views_redhat9_versions: "{{ [] |
-  union( foreman_content_views_redhat9_0 | default([]) if foreman_enable_redhat9_0 else [] ) |
-  union( foreman_content_views_redhat9_1 | default([]) if foreman_enable_redhat9_1 else [] ) |
-  union( foreman_content_views_redhat9_2 | default([]) if foreman_enable_redhat9_2 else [] ) |
+  union( foreman_content_views_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
+  union( foreman_content_views_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
+  union( foreman_content_views_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
 
-  union( foreman_content_views_redhat9_0_kickstart | default([]) if foreman_enable_redhat9_0_kickstart else [] ) |
-  union( foreman_content_views_redhat9_1_kickstart | default([]) if foreman_enable_redhat9_1_kickstart else [] ) |
-  union( foreman_content_views_redhat9_2_kickstart | default([]) if foreman_enable_redhat9_2_kickstart else [] )
+  union( foreman_content_views_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
+  union( foreman_content_views_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
+  union( foreman_content_views_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
   }}"
 
 
@@ -187,7 +187,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
 
 
-foreman_operatingsystems_redhat9_0_kickstart:
+foreman_operatingsystems_redhat90_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "0"
@@ -195,7 +195,7 @@ foreman_operatingsystems_redhat9_0_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat9_1_kickstart:
+foreman_operatingsystems_redhat91_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "1"
@@ -203,7 +203,7 @@ foreman_operatingsystems_redhat9_1_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat9_2_kickstart:
+foreman_operatingsystems_redhat92_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "2"
@@ -212,13 +212,13 @@ foreman_operatingsystems_redhat9_2_kickstart:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_redhat9_versions: "{{ [] |
-  union( foreman_operatingsystems_redhat9_0 | default([]) if foreman_enable_redhat9_0 else [] ) |
-  union( foreman_operatingsystems_redhat9_1 | default([]) if foreman_enable_redhat9_1 else [] ) |
-  union( foreman_operatingsystems_redhat9_2 | default([]) if foreman_enable_redhat9_2 else [] ) |
+  union( foreman_operatingsystems_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
+  union( foreman_operatingsystems_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
+  union( foreman_operatingsystems_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
 
-  union( foreman_operatingsystems_redhat9_0_kickstart | default([]) if foreman_enable_redhat9_0_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat9_1_kickstart | default([]) if foreman_enable_redhat9_1_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat9_2_kickstart | default([]) if foreman_enable_redhat9_2_kickstart else [] )
+  union( foreman_operatingsystems_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
   }}"
 
 
@@ -232,7 +232,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_redhat9_0_kickstart:
+foreman_installation_media_redhat90_kickstart:
   - name: Red Hat 9.0 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
@@ -244,7 +244,7 @@ foreman_installation_media_redhat9_0_kickstart:
     operatingsystems:
       - Red Hat 9.0
 
-foreman_installation_media_redhat9_1_kickstart:
+foreman_installation_media_redhat91_kickstart:
   - name: Red Hat 9.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
@@ -256,7 +256,7 @@ foreman_installation_media_redhat9_1_kickstart:
     operatingsystems:
       - Red Hat 9.1
 
-foreman_installation_media_redhat9_2_kickstart:
+foreman_installation_media_redhat92_kickstart:
   - name: Red Hat 9.2 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
@@ -269,12 +269,12 @@ foreman_installation_media_redhat9_2_kickstart:
       - Red Hat 9.2
 
 foreman_installation_media_redhat9_versions: "{{ [] |
-  union( foreman_installation_media_redhat9_0 | default([]) if foreman_enable_redhat9_0 else [] ) |
-  union( foreman_installation_media_redhat9_1 | default([]) if foreman_enable_redhat9_1 else [] ) |
-  union( foreman_installation_media_redhat9_2 | default([]) if foreman_enable_redhat9_2 else [] ) |
+  union( foreman_installation_media_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
+  union( foreman_installation_media_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
+  union( foreman_installation_media_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
 
-  union( foreman_installation_media_redhat9_0_kickstart | default([]) if foreman_enable_redhat9_0_kickstart else [] ) |
-  union( foreman_installation_media_redhat9_1_kickstart | default([]) if foreman_enable_redhat9_1_kickstart else [] ) |
-  union( foreman_installation_media_redhat9_2_kickstart | default([]) if foreman_enable_redhat9_2_kickstart else [] )
+  union( foreman_installation_media_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
+  union( foreman_installation_media_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
+  union( foreman_installation_media_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
   }}"
 

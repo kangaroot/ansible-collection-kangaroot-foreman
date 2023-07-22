@@ -34,33 +34,33 @@ foreman_products_redhat8_sat:
         # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
 
 foreman_content_views_redhat8_sat:
-  - name: cv_rhel8_satellite_6_11
+  - name: cv_rhel8_satellite_611
     repositories:
       - name: Red Hat Satellite 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
-  - name: cv_rhel8_satellite_6_12
+  - name: cv_rhel8_satellite_612
     repositories:
       - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
-  - name: cv_rhel8_satellite_6_13
+  - name: cv_rhel8_satellite_613
     repositories:
       - name: Red Hat Satellite 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
 
-  - name: cv_rhel8_satellite_capsule_6_11
+  - name: cv_rhel8_satellite_capsule_611
     repositories:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
-  - name: cv_rhel8_satellite_capsule_6_12
+  - name: cv_rhel8_satellite_capsule_612
     repositories:
       - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
-  - name: cv_rhel8_satellite_capsule_6_13
+  - name: cv_rhel8_satellite_capsule_613
     repositories:
       - name: Red Hat Satellite Capsule 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
@@ -78,13 +78,13 @@ foreman_content_views_redhat8_sat:
         latest: true
       - content_view: cv_rhel8_ansible_2
         latest: true
-      - content_view: cv_rhel8_ansible_2_9
+      - content_view: cv_rhel8_ansible_29
         latest: true
-      - content_view: cv_rhel8_satellite_6_11
+      - content_view: cv_rhel8_satellite_611
         latest: true
-      - content_view: cv_rhel8_satellite_6_12
+      - content_view: cv_rhel8_satellite_612
         latest: true
-      - content_view: cv_rhel8_satellite_6_13
+      - content_view: cv_rhel8_satellite_613
         latest: true
 
   - name: ccv_rhel8_capsule
@@ -99,13 +99,13 @@ foreman_content_views_redhat8_sat:
         latest: true
       - content_view: cv_rhel8_ansible_2
         latest: true
-      - content_view: cv_rhel8_ansible_2_9
+      - content_view: cv_rhel8_ansible_29
         latest: true
-      - content_view: cv_rhel8_satellite_capsule_6_11
+      - content_view: cv_rhel8_satellite_capsule_611
         latest: true
-      - content_view: cv_rhel8_satellite_capsule_6_12
+      - content_view: cv_rhel8_satellite_capsule_612
         latest: true
-      - content_view: cv_rhel8_satellite_capsule_6_13
+      - content_view: cv_rhel8_satellite_capsule_613
         latest: true
 
 foreman_operatingsystems_redhat8_sat: []

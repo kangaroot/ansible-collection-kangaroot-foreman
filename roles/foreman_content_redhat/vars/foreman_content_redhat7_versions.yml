@@ -1,6 +1,6 @@
 ---
 
-foreman_products_redhat7_0:
+foreman_products_redhat70:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.0
@@ -44,7 +44,7 @@ foreman_products_redhat7_0:
         releasever: '7.0'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_1:
+foreman_products_redhat71:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.1
@@ -88,7 +88,7 @@ foreman_products_redhat7_1:
         releasever: '7.1'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_2:
+foreman_products_redhat72:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.2
@@ -132,7 +132,7 @@ foreman_products_redhat7_2:
         releasever: '7.2'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_3:
+foreman_products_redhat73:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.3
@@ -176,7 +176,7 @@ foreman_products_redhat7_3:
         releasever: '7.3'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_4:
+foreman_products_redhat74:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.4
@@ -220,7 +220,7 @@ foreman_products_redhat7_4:
         releasever: '7.4'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_5:
+foreman_products_redhat75:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.5
@@ -264,7 +264,7 @@ foreman_products_redhat7_5:
         releasever: '7.5'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_6:
+foreman_products_redhat76:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.6
@@ -308,7 +308,7 @@ foreman_products_redhat7_6:
         releasever: '7.6'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_7:
+foreman_products_redhat77:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.7
@@ -352,7 +352,7 @@ foreman_products_redhat7_7:
         releasever: '7.7'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_8:
+foreman_products_redhat78:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.8
@@ -396,7 +396,7 @@ foreman_products_redhat7_8:
         releasever: '7.8'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_9:
+foreman_products_redhat79:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server RPMs x86_64 7.9
@@ -440,7 +440,7 @@ foreman_products_redhat7_9:
         releasever: '7.9'
         # label: rhel-server-rhscl-7-rpms
 
-foreman_products_redhat7_0_kickstart:
+foreman_products_redhat70_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.0
@@ -449,7 +449,7 @@ foreman_products_redhat7_0_kickstart:
         releasever: '7.0'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_1_kickstart:
+foreman_products_redhat71_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.1
@@ -458,7 +458,7 @@ foreman_products_redhat7_1_kickstart:
         releasever: '7.1'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_2_kickstart:
+foreman_products_redhat72_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.2
@@ -467,7 +467,7 @@ foreman_products_redhat7_2_kickstart:
         releasever: '7.2'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_3_kickstart:
+foreman_products_redhat73_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.3
@@ -476,7 +476,7 @@ foreman_products_redhat7_3_kickstart:
         releasever: '7.3'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_4_kickstart:
+foreman_products_redhat74_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.4
@@ -485,7 +485,7 @@ foreman_products_redhat7_4_kickstart:
         releasever: '7.4'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_5_kickstart:
+foreman_products_redhat75_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.5
@@ -494,7 +494,7 @@ foreman_products_redhat7_5_kickstart:
         releasever: '7.5'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_6_kickstart:
+foreman_products_redhat76_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.6
@@ -503,7 +503,7 @@ foreman_products_redhat7_6_kickstart:
         releasever: '7.6'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_7_kickstart:
+foreman_products_redhat77_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.7
@@ -512,7 +512,7 @@ foreman_products_redhat7_7_kickstart:
         releasever: '7.7'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_8_kickstart:
+foreman_products_redhat78_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.8
@@ -521,7 +521,7 @@ foreman_products_redhat7_8_kickstart:
         releasever: '7.8'
         # label: rhel-7-server-kickstart
 
-foreman_products_redhat7_9_kickstart:
+foreman_products_redhat79_kickstart:
   - name: Red Hat Enterprise Linux Server
     repository_sets:
       # Red Hat Enterprise Linux 7 Server Kickstart x86_64 7.9
@@ -531,31 +531,31 @@ foreman_products_redhat7_9_kickstart:
         # label: rhel-7-server-kickstart
 
 foreman_products_redhat7_versions: "{{ [] |
-  union( foreman_products_redhat7_0 | default([]) if foreman_enable_redhat7_0 else [] ) |
-  union( foreman_products_redhat7_1 | default([]) if foreman_enable_redhat7_1 else [] ) |
-  union( foreman_products_redhat7_2 | default([]) if foreman_enable_redhat7_2 else [] ) |
-  union( foreman_products_redhat7_3 | default([]) if foreman_enable_redhat7_3 else [] ) |
-  union( foreman_products_redhat7_4 | default([]) if foreman_enable_redhat7_4 else [] ) |
-  union( foreman_products_redhat7_5 | default([]) if foreman_enable_redhat7_5 else [] ) |
-  union( foreman_products_redhat7_6 | default([]) if foreman_enable_redhat7_6 else [] ) |
-  union( foreman_products_redhat7_7 | default([]) if foreman_enable_redhat7_7 else [] ) |
-  union( foreman_products_redhat7_8 | default([]) if foreman_enable_redhat7_8 else [] ) |
-  union( foreman_products_redhat7_9 | default([]) if foreman_enable_redhat7_9 else [] ) |
+  union( foreman_products_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
+  union( foreman_products_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
+  union( foreman_products_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
+  union( foreman_products_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
+  union( foreman_products_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
+  union( foreman_products_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
+  union( foreman_products_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
+  union( foreman_products_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
+  union( foreman_products_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_products_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
 
-  union( foreman_products_redhat7_0_kickstart | default([]) if foreman_enable_redhat7_0_kickstart else [] ) |
-  union( foreman_products_redhat7_1_kickstart | default([]) if foreman_enable_redhat7_1_kickstart else [] ) |
-  union( foreman_products_redhat7_2_kickstart | default([]) if foreman_enable_redhat7_2_kickstart else [] ) |
-  union( foreman_products_redhat7_3_kickstart | default([]) if foreman_enable_redhat7_3_kickstart else [] ) |
-  union( foreman_products_redhat7_4_kickstart | default([]) if foreman_enable_redhat7_4_kickstart else [] ) |
-  union( foreman_products_redhat7_5_kickstart | default([]) if foreman_enable_redhat7_5_kickstart else [] ) |
-  union( foreman_products_redhat7_6_kickstart | default([]) if foreman_enable_redhat7_6_kickstart else [] ) |
-  union( foreman_products_redhat7_7_kickstart | default([]) if foreman_enable_redhat7_7_kickstart else [] ) |
-  union( foreman_products_redhat7_8_kickstart | default([]) if foreman_enable_redhat7_8_kickstart else [] ) |
-  union( foreman_products_redhat7_9_kickstart | default([]) if foreman_enable_redhat7_9_kickstart else [] )
+  union( foreman_products_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
+  union( foreman_products_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
+  union( foreman_products_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
+  union( foreman_products_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
+  union( foreman_products_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
+  union( foreman_products_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
+  union( foreman_products_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
+  union( foreman_products_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
+  union( foreman_products_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
+  union( foreman_products_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
   }}"
 
 
-foreman_content_views_redhat7_0:
+foreman_content_views_redhat70:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.0
@@ -598,7 +598,7 @@ foreman_content_views_redhat7_0:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_1:
+foreman_content_views_redhat71:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.1
@@ -641,7 +641,7 @@ foreman_content_views_redhat7_1:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_2:
+foreman_content_views_redhat72:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.2
@@ -684,7 +684,7 @@ foreman_content_views_redhat7_2:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_3:
+foreman_content_views_redhat73:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.3
@@ -727,7 +727,7 @@ foreman_content_views_redhat7_3:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_4:
+foreman_content_views_redhat74:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.4
@@ -770,7 +770,7 @@ foreman_content_views_redhat7_4:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_5:
+foreman_content_views_redhat75:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.5
@@ -813,7 +813,7 @@ foreman_content_views_redhat7_5:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_6:
+foreman_content_views_redhat76:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.6
@@ -856,7 +856,7 @@ foreman_content_views_redhat7_6:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_7:
+foreman_content_views_redhat77:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.7
@@ -899,7 +899,7 @@ foreman_content_views_redhat7_7:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_8:
+foreman_content_views_redhat78:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.8
@@ -942,7 +942,7 @@ foreman_content_views_redhat7_8:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: False
 
-foreman_content_views_redhat7_9:
+foreman_content_views_redhat79:
   - name: cv_rhel7_base
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.9
@@ -986,27 +986,27 @@ foreman_content_views_redhat7_9:
     allow_promote: False
 
 foreman_content_views_redhat7_versions: "{{ [] |
-  union( foreman_content_views_redhat7_0 | default([]) if foreman_enable_redhat7_0 else [] ) |
-  union( foreman_content_views_redhat7_1 | default([]) if foreman_enable_redhat7_1 else [] ) |
-  union( foreman_content_views_redhat7_2 | default([]) if foreman_enable_redhat7_2 else [] ) |
-  union( foreman_content_views_redhat7_3 | default([]) if foreman_enable_redhat7_3 else [] ) |
-  union( foreman_content_views_redhat7_4 | default([]) if foreman_enable_redhat7_4 else [] ) |
-  union( foreman_content_views_redhat7_5 | default([]) if foreman_enable_redhat7_5 else [] ) |
-  union( foreman_content_views_redhat7_6 | default([]) if foreman_enable_redhat7_6 else [] ) |
-  union( foreman_content_views_redhat7_7 | default([]) if foreman_enable_redhat7_7 else [] ) |
-  union( foreman_content_views_redhat7_8 | default([]) if foreman_enable_redhat7_8 else [] ) |
-  union( foreman_content_views_redhat7_9 | default([]) if foreman_enable_redhat7_9 else [] ) |
+  union( foreman_content_views_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
+  union( foreman_content_views_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
+  union( foreman_content_views_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
+  union( foreman_content_views_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
+  union( foreman_content_views_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
+  union( foreman_content_views_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
+  union( foreman_content_views_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
+  union( foreman_content_views_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
+  union( foreman_content_views_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_content_views_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
 
-  union( foreman_content_views_redhat7_0_kickstart | default([]) if foreman_enable_redhat7_0_kickstart else [] ) |
-  union( foreman_content_views_redhat7_1_kickstart | default([]) if foreman_enable_redhat7_1_kickstart else [] ) |
-  union( foreman_content_views_redhat7_2_kickstart | default([]) if foreman_enable_redhat7_2_kickstart else [] ) |
-  union( foreman_content_views_redhat7_3_kickstart | default([]) if foreman_enable_redhat7_3_kickstart else [] ) |
-  union( foreman_content_views_redhat7_4_kickstart | default([]) if foreman_enable_redhat7_4_kickstart else [] ) |
-  union( foreman_content_views_redhat7_5_kickstart | default([]) if foreman_enable_redhat7_5_kickstart else [] ) |
-  union( foreman_content_views_redhat7_6_kickstart | default([]) if foreman_enable_redhat7_6_kickstart else [] ) |
-  union( foreman_content_views_redhat7_7_kickstart | default([]) if foreman_enable_redhat7_7_kickstart else [] ) |
-  union( foreman_content_views_redhat7_8_kickstart | default([]) if foreman_enable_redhat7_8_kickstart else [] ) |
-  union( foreman_content_views_redhat7_9_kickstart | default([]) if foreman_enable_redhat7_9_kickstart else [] )
+  union( foreman_content_views_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
+  union( foreman_content_views_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
+  union( foreman_content_views_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
+  union( foreman_content_views_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
+  union( foreman_content_views_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
+  union( foreman_content_views_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
+  union( foreman_content_views_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
+  union( foreman_content_views_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
+  union( foreman_content_views_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
+  union( foreman_content_views_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
   }}"
 
 
@@ -1025,7 +1025,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
 
 
-foreman_operatingsystems_redhat7_0_kickstart:
+foreman_operatingsystems_redhat70_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "0"
@@ -1033,7 +1033,7 @@ foreman_operatingsystems_redhat7_0_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_1_kickstart:
+foreman_operatingsystems_redhat71_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "1"
@@ -1041,7 +1041,7 @@ foreman_operatingsystems_redhat7_1_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_2_kickstart:
+foreman_operatingsystems_redhat72_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "2"
@@ -1049,7 +1049,7 @@ foreman_operatingsystems_redhat7_2_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_3_kickstart:
+foreman_operatingsystems_redhat73_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "3"
@@ -1057,7 +1057,7 @@ foreman_operatingsystems_redhat7_3_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_4_kickstart:
+foreman_operatingsystems_redhat74_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "4"
@@ -1065,7 +1065,7 @@ foreman_operatingsystems_redhat7_4_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_5_kickstart:
+foreman_operatingsystems_redhat75_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "5"
@@ -1073,7 +1073,7 @@ foreman_operatingsystems_redhat7_5_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_6_kickstart:
+foreman_operatingsystems_redhat76_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "6"
@@ -1081,7 +1081,7 @@ foreman_operatingsystems_redhat7_6_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_7_kickstart:
+foreman_operatingsystems_redhat77_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "7"
@@ -1089,7 +1089,7 @@ foreman_operatingsystems_redhat7_7_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_8_kickstart:
+foreman_operatingsystems_redhat78_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "8"
@@ -1097,7 +1097,7 @@ foreman_operatingsystems_redhat7_8_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat7_9_kickstart:
+foreman_operatingsystems_redhat79_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "9"
@@ -1106,27 +1106,27 @@ foreman_operatingsystems_redhat7_9_kickstart:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_redhat7_versions: "{{ [] |
-  union( foreman_operatingsystems_redhat7_0 | default([]) if foreman_enable_redhat7_0 else [] ) |
-  union( foreman_operatingsystems_redhat7_1 | default([]) if foreman_enable_redhat7_1 else [] ) |
-  union( foreman_operatingsystems_redhat7_2 | default([]) if foreman_enable_redhat7_2 else [] ) |
-  union( foreman_operatingsystems_redhat7_3 | default([]) if foreman_enable_redhat7_3 else [] ) |
-  union( foreman_operatingsystems_redhat7_4 | default([]) if foreman_enable_redhat7_4 else [] ) |
-  union( foreman_operatingsystems_redhat7_5 | default([]) if foreman_enable_redhat7_5 else [] ) |
-  union( foreman_operatingsystems_redhat7_6 | default([]) if foreman_enable_redhat7_6 else [] ) |
-  union( foreman_operatingsystems_redhat7_7 | default([]) if foreman_enable_redhat7_7 else [] ) |
-  union( foreman_operatingsystems_redhat7_8 | default([]) if foreman_enable_redhat7_8 else [] ) |
-  union( foreman_operatingsystems_redhat7_9 | default([]) if foreman_enable_redhat7_9 else [] ) |
+  union( foreman_operatingsystems_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
+  union( foreman_operatingsystems_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
+  union( foreman_operatingsystems_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
+  union( foreman_operatingsystems_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
+  union( foreman_operatingsystems_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
+  union( foreman_operatingsystems_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
+  union( foreman_operatingsystems_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
+  union( foreman_operatingsystems_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
+  union( foreman_operatingsystems_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_operatingsystems_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
 
-  union( foreman_operatingsystems_redhat7_0_kickstart | default([]) if foreman_enable_redhat7_0_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_1_kickstart | default([]) if foreman_enable_redhat7_1_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_2_kickstart | default([]) if foreman_enable_redhat7_2_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_3_kickstart | default([]) if foreman_enable_redhat7_3_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_4_kickstart | default([]) if foreman_enable_redhat7_4_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_5_kickstart | default([]) if foreman_enable_redhat7_5_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_6_kickstart | default([]) if foreman_enable_redhat7_6_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_7_kickstart | default([]) if foreman_enable_redhat7_7_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_8_kickstart | default([]) if foreman_enable_redhat7_8_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat7_9_kickstart | default([]) if foreman_enable_redhat7_9_kickstart else [] )
+  union( foreman_operatingsystems_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
   }}"
 
 
@@ -1140,70 +1140,70 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_redhat7_0_kickstart:
+foreman_installation_media_redhat70_kickstart:
   - name: Red Hat 7.0
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.0/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.0
 
-foreman_installation_media_redhat7_1_kickstart:
+foreman_installation_media_redhat71_kickstart:
   - name: Red Hat 7.1
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.1/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.1
 
-foreman_installation_media_redhat7_2_kickstart:
+foreman_installation_media_redhat72_kickstart:
   - name: Red Hat 7.2
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.2/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.2
 
-foreman_installation_media_redhat7_3_kickstart:
+foreman_installation_media_redhat73_kickstart:
   - name: Red Hat 7.3
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.3/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.3
 
-foreman_installation_media_redhat7_4_kickstart:
+foreman_installation_media_redhat74_kickstart:
   - name: Red Hat 7.4
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.4/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.4
 
-foreman_installation_media_redhat7_5_kickstart:
+foreman_installation_media_redhat75_kickstart:
   - name: Red Hat 7.5
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.5/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.5
 
-foreman_installation_media_redhat7_6_kickstart:
+foreman_installation_media_redhat76_kickstart:
   - name: Red Hat 7.6
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.6/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.6
 
-foreman_installation_media_redhat7_7_kickstart:
+foreman_installation_media_redhat77_kickstart:
   - name: Red Hat 7.7
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.7/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.7
 
-foreman_installation_media_redhat7_8_kickstart:
+foreman_installation_media_redhat78_kickstart:
   - name: Red Hat 7.8
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.8/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 7.8
 
-foreman_installation_media_redhat7_9_kickstart:
+foreman_installation_media_redhat79_kickstart:
   - name: Red Hat 7.9
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.9/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
@@ -1211,26 +1211,26 @@ foreman_installation_media_redhat7_9_kickstart:
       - Red Hat 7.9
 
 foreman_installation_media_redhat7_versions: "{{ [] |
-  union( foreman_installation_media_redhat7_0 | default([]) if foreman_enable_redhat7_0 else [] ) |
-  union( foreman_installation_media_redhat7_1 | default([]) if foreman_enable_redhat7_1 else [] ) |
-  union( foreman_installation_media_redhat7_2 | default([]) if foreman_enable_redhat7_2 else [] ) |
-  union( foreman_installation_media_redhat7_3 | default([]) if foreman_enable_redhat7_3 else [] ) |
-  union( foreman_installation_media_redhat7_4 | default([]) if foreman_enable_redhat7_4 else [] ) |
-  union( foreman_installation_media_redhat7_5 | default([]) if foreman_enable_redhat7_5 else [] ) |
-  union( foreman_installation_media_redhat7_6 | default([]) if foreman_enable_redhat7_6 else [] ) |
-  union( foreman_installation_media_redhat7_7 | default([]) if foreman_enable_redhat7_7 else [] ) |
-  union( foreman_installation_media_redhat7_8 | default([]) if foreman_enable_redhat7_8 else [] ) |
-  union( foreman_installation_media_redhat7_9 | default([]) if foreman_enable_redhat7_9 else [] ) |
+  union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
+  union( foreman_installation_media_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
+  union( foreman_installation_media_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
+  union( foreman_installation_media_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
+  union( foreman_installation_media_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
+  union( foreman_installation_media_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
+  union( foreman_installation_media_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
+  union( foreman_installation_media_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
+  union( foreman_installation_media_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_installation_media_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
 
-  union( foreman_installation_media_redhat7_0_kickstart | default([]) if foreman_enable_redhat7_0_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_1_kickstart | default([]) if foreman_enable_redhat7_1_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_2_kickstart | default([]) if foreman_enable_redhat7_2_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_3_kickstart | default([]) if foreman_enable_redhat7_3_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_4_kickstart | default([]) if foreman_enable_redhat7_4_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_5_kickstart | default([]) if foreman_enable_redhat7_5_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_6_kickstart | default([]) if foreman_enable_redhat7_6_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_7_kickstart | default([]) if foreman_enable_redhat7_7_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_8_kickstart | default([]) if foreman_enable_redhat7_8_kickstart else [] ) |
-  union( foreman_installation_media_redhat7_9_kickstart | default([]) if foreman_enable_redhat7_9_kickstart else [] )
+  union( foreman_installation_media_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
+  union( foreman_installation_media_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
+  union( foreman_installation_media_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
+  union( foreman_installation_media_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
+  union( foreman_installation_media_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
+  union( foreman_installation_media_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
+  union( foreman_installation_media_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
+  union( foreman_installation_media_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
+  union( foreman_installation_media_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
+  union( foreman_installation_media_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
   }}"
 

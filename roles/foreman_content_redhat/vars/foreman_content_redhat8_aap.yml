@@ -60,7 +60,7 @@ foreman_content_views_redhat8_aap:
         latest: true
       - content_view: cv_rhel8_ansible_2
         latest: true
-      - content_view: cv_rhel8_ansible_2_9
+      - content_view: cv_rhel8_ansible_29
         latest: true
       - content_view: cv_rhel8_ansible_automation_platform_2_1
         latest: true

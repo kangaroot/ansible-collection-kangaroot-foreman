@@ -129,17 +129,17 @@ foreman_enable_rocky: false
 
 foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
 
-foreman_enable_rocky8_4: false
-foreman_enable_rocky8_5: false
-foreman_enable_rocky8_6: false
-foreman_enable_rocky8_7: false
-foreman_enable_rocky8_8: false
+foreman_enable_rocky84: false
+foreman_enable_rocky85: false
+foreman_enable_rocky86: false
+foreman_enable_rocky87: false
+foreman_enable_rocky88: false
 
-foreman_enable_rocky8_4_kickstart: false
-foreman_enable_rocky8_5_kickstart: false
-foreman_enable_rocky8_6_kickstart: false
-foreman_enable_rocky8_7_kickstart: false
-foreman_enable_rocky8_8_kickstart: "{{ foreman_enable_rocky8 | bool }}"
+foreman_enable_rocky84_kickstart: false
+foreman_enable_rocky85_kickstart: false
+foreman_enable_rocky86_kickstart: false
+foreman_enable_rocky87_kickstart: false
+foreman_enable_rocky88_kickstart: "{{ foreman_enable_rocky8 | bool }}"
 
 foreman_enable_rocky8_sig_core: false
 foreman_enable_rocky8_sig_core_common: "{{ foreman_enable_rocky8_sig_core | bool }}"
@@ -154,13 +154,13 @@ foreman_enable_rocky8_sig_cloud_kernel: false
 
 foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
 
-foreman_enable_rocky9_0: false
-foreman_enable_rocky9_1: false
-foreman_enable_rocky9_2: false
+foreman_enable_rocky90: false
+foreman_enable_rocky91: false
+foreman_enable_rocky92: false
 
-foreman_enable_rocky9_0_kickstart: false
-foreman_enable_rocky9_1_kickstart: false
-foreman_enable_rocky9_2_kickstart: "{{ foreman_enable_rocky9 | bool }}"
+foreman_enable_rocky90_kickstart: false
+foreman_enable_rocky91_kickstart: false
+foreman_enable_rocky92_kickstart: "{{ foreman_enable_rocky9 | bool }}"
 
 foreman_enable_rocky9_sig_core: false
 foreman_enable_rocky9_sig_core_common: "{{ foreman_enable_rocky9_sig_core | bool }}"
