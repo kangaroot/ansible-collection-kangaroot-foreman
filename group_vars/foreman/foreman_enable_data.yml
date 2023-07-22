@@ -10,16 +10,16 @@
 
 ### CENTOS 7
 # foreman_enable_centos7: false
-# foreman_enable_centos7_0: false
-# foreman_enable_centos7_1: false
-# foreman_enable_centos7_2: false
-# foreman_enable_centos7_3: false
-# foreman_enable_centos7_4: false
-# foreman_enable_centos7_5: false
-# foreman_enable_centos7_6: false
-# foreman_enable_centos7_7: false
-# foreman_enable_centos7_8: false
-# foreman_enable_centos7_9: "{{ foreman_enable_centos7 | bool }}"
+# foreman_enable_centos70: false
+# foreman_enable_centos71: false
+# foreman_enable_centos72: false
+# foreman_enable_centos73: false
+# foreman_enable_centos74: false
+# foreman_enable_centos75: false
+# foreman_enable_centos76: false
+# foreman_enable_centos77: false
+# foreman_enable_centos78: false
+# foreman_enable_centos79: "{{ foreman_enable_centos7 | bool }}"
 
 # foreman_enable_centos7_dotnet: false
 # foreman_enable_centos7_sig_sclo: "{{ foreman_enable_centos7 | bool }}"
@@ -103,19 +103,19 @@
 ### CENTOS 8
 # foreman_enable_centos8: false
 
-# foreman_enable_centos8_0: false
-# foreman_enable_centos8_1: false
-# foreman_enable_centos8_2: false
-# foreman_enable_centos8_3: false
-# foreman_enable_centos8_4: false
-# foreman_enable_centos8_5: "{{ foreman_enable_centos8 | bool }}"
+# foreman_enable_centos80: false
+# foreman_enable_centos81: false
+# foreman_enable_centos82: false
+# foreman_enable_centos83: false
+# foreman_enable_centos84: false
+# foreman_enable_centos85: "{{ foreman_enable_centos8 | bool }}"
 
-# foreman_enable_centos8_0_kickstart: false
-# foreman_enable_centos8_1_kickstart: false
-# foreman_enable_centos8_2_kickstart: false
-# foreman_enable_centos8_3_kickstart: false
-# foreman_enable_centos8_4_kickstart: false
-# foreman_enable_centos8_5_kickstart: "{{ foreman_enable_centos8 | bool }}"
+# foreman_enable_centos80_kickstart: false
+# foreman_enable_centos81_kickstart: false
+# foreman_enable_centos82_kickstart: false
+# foreman_enable_centos83_kickstart: false
+# foreman_enable_centos84_kickstart: false
+# foreman_enable_centos85_kickstart: "{{ foreman_enable_centos8 | bool }}"
 
 # foreman_enable_centos8_sig_opstools: "{{ foreman_enable_centos8_sig_virtualization_ovirt44 | bool }}"
 # foreman_enable_centos8_sig_nfv: false
@@ -446,16 +446,16 @@
 ### ORACLE LINUX 7
 # foreman_enable_ol7: false
 
-# foreman_enable_ol7_0: false
-# foreman_enable_ol7_1: false
-# foreman_enable_ol7_2: false
-# foreman_enable_ol7_3: false
-# foreman_enable_ol7_4: false
-# foreman_enable_ol7_5: false
-# foreman_enable_ol7_6: false
-# foreman_enable_ol7_7: false
-# foreman_enable_ol7_8: false
-# foreman_enable_ol7_9: "{{ foreman_enable_ol7 | bool }}"
+# foreman_enable_ol70: false
+# foreman_enable_ol71: false
+# foreman_enable_ol72: false
+# foreman_enable_ol73: false
+# foreman_enable_ol74: false
+# foreman_enable_ol75: false
+# foreman_enable_ol76: false
+# foreman_enable_ol77: false
+# foreman_enable_ol78: false
+# foreman_enable_ol79: "{{ foreman_enable_ol7 | bool }}"
 
 # foreman_enable_ol7_uek: "{{ foreman_enable_ol7 | bool }}"
 # foreman_enable_ol7_uekr3: false
@@ -532,15 +532,15 @@
 ### ORACLE LINUX 8
 # foreman_enable_ol8: "{{ foreman_enable_ol | bool }}"
 
-# foreman_enable_ol8_0: false
-# foreman_enable_ol8_1: false
-# foreman_enable_ol8_2: false
-# foreman_enable_ol8_3: false
-# foreman_enable_ol8_4: false
-# foreman_enable_ol8_5: false
-# foreman_enable_ol8_6: false
-# foreman_enable_ol8_7: false
-# foreman_enable_ol8_8: "{{ foreman_enable_ol8 | bool }}"
+# foreman_enable_ol80: false
+# foreman_enable_ol81: false
+# foreman_enable_ol82: false
+# foreman_enable_ol83: false
+# foreman_enable_ol84: false
+# foreman_enable_ol85: false
+# foreman_enable_ol86: false
+# foreman_enable_ol87: false
+# foreman_enable_ol88: "{{ foreman_enable_ol8 | bool }}"
 
 # foreman_enable_ol8_uek: false
 # foreman_enable_ol8_uekr6: "{{ foreman_enable_ol8_uek | bool }}"
@@ -569,9 +569,9 @@
 ### ORACLE LINUX 9
 # foreman_enable_ol9: "{{ foreman_enable_ol | bool }}"
 
-# foreman_enable_ol9_0: false
-# foreman_enable_ol9_1: false
-# foreman_enable_ol9_2: "{{ foreman_enable_ol9 | bool }}"
+# foreman_enable_ol90: false
+# foreman_enable_ol91: false
+# foreman_enable_ol92: "{{ foreman_enable_ol9 | bool }}"
 
 # foreman_enable_ol9_uek: false
 # foreman_enable_ol9_uekr7: "{{ foreman_enable_ol9_uek | bool }}"
@@ -601,27 +601,27 @@
 ### ORACLE LINUX 7 ULN
 # foreman_enable_ol7_uln: false
 
-# foreman_enable_ol7_0_uln: false
-# foreman_enable_ol7_1_uln: false
-# foreman_enable_ol7_2_uln: false
-# foreman_enable_ol7_3_uln: false
-# foreman_enable_ol7_4_uln: false
-# foreman_enable_ol7_5_uln: false
-# foreman_enable_ol7_6_uln: false
-# foreman_enable_ol7_7_uln: false
-# foreman_enable_ol7_8_uln: false
-# foreman_enable_ol7_9_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol70_uln: false
+# foreman_enable_ol71_uln: false
+# foreman_enable_ol72_uln: false
+# foreman_enable_ol73_uln: false
+# foreman_enable_ol74_uln: false
+# foreman_enable_ol75_uln: false
+# foreman_enable_ol76_uln: false
+# foreman_enable_ol77_uln: false
+# foreman_enable_ol78_uln: false
+# foreman_enable_ol79_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
-# foreman_enable_ol7_0_patch_uln: false
-# foreman_enable_ol7_1_patch_uln: false
-# foreman_enable_ol7_2_patch_uln: false
-# foreman_enable_ol7_3_patch_uln: false
-# foreman_enable_ol7_4_patch_uln: false
-# foreman_enable_ol7_5_patch_uln: false
-# foreman_enable_ol7_6_patch_uln: false
-# foreman_enable_ol7_7_patch_uln: false
-# foreman_enable_ol7_8_patch_uln: false
-# foreman_enable_ol7_9_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol70_patch_uln: false
+# foreman_enable_ol71_patch_uln: false
+# foreman_enable_ol72_patch_uln: false
+# foreman_enable_ol73_patch_uln: false
+# foreman_enable_ol74_patch_uln: false
+# foreman_enable_ol75_patch_uln: false
+# foreman_enable_ol76_patch_uln: false
+# foreman_enable_ol77_patch_uln: false
+# foreman_enable_ol78_patch_uln: false
+# foreman_enable_ol79_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
 # foreman_enable_ol7_uln_uek: "{{ foreman_enable_ol7_uln | bool }}"
 # foreman_enable_ol7_uln_uekr3: false
@@ -695,25 +695,25 @@
 ### ORACLE LINUX 8 ULN
 # foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
 
-# foreman_enable_ol8_0_uln: false
-# foreman_enable_ol8_1_uln: false
-# foreman_enable_ol8_2_uln: false
-# foreman_enable_ol8_3_uln: false
-# foreman_enable_ol8_4_uln: false
-# foreman_enable_ol8_5_uln: false
-# foreman_enable_ol8_6_uln: false
-# foreman_enable_ol8_7_uln: false
-# foreman_enable_ol8_8_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol80_uln: false
+# foreman_enable_ol81_uln: false
+# foreman_enable_ol82_uln: false
+# foreman_enable_ol83_uln: false
+# foreman_enable_ol84_uln: false
+# foreman_enable_ol85_uln: false
+# foreman_enable_ol86_uln: false
+# foreman_enable_ol87_uln: false
+# foreman_enable_ol88_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
-# foreman_enable_ol8_0_patch_uln: false
-# foreman_enable_ol8_1_patch_uln: false
-# foreman_enable_ol8_2_patch_uln: false
-# foreman_enable_ol8_3_patch_uln: false
-# foreman_enable_ol8_4_patch_uln: false
-# foreman_enable_ol8_5_patch_uln: false
-# foreman_enable_ol8_6_patch_uln: false
-# foreman_enable_ol8_7_patch_uln: false
-# foreman_enable_ol8_8_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol80_patch_uln: false
+# foreman_enable_ol81_patch_uln: false
+# foreman_enable_ol82_patch_uln: false
+# foreman_enable_ol83_patch_uln: false
+# foreman_enable_ol84_patch_uln: false
+# foreman_enable_ol85_patch_uln: false
+# foreman_enable_ol86_patch_uln: false
+# foreman_enable_ol87_patch_uln: false
+# foreman_enable_ol88_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
 # foreman_enable_ol8_uln_uek: false
 # foreman_enable_ol8_uln_uekr6: "{{ foreman_enable_ol8_uln_uek | bool }}"
@@ -743,13 +743,13 @@
 ### ORACLE LINUX 9 ULN
 # foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
 
-# foreman_enable_ol9_0_uln: false
-# foreman_enable_ol9_1_uln: false
-# foreman_enable_ol9_2_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol90_uln: false
+# foreman_enable_ol91_uln: false
+# foreman_enable_ol92_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
-# foreman_enable_ol9_0_patch_uln: false
-# foreman_enable_ol9_1_patch_uln: false
-# foreman_enable_ol9_2_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol90_patch_uln: false
+# foreman_enable_ol91_patch_uln: false
+# foreman_enable_ol92_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
 # foreman_enable_ol9_uln_uek: false
 # foreman_enable_ol9_uln_uekr7: "{{ foreman_enable_ol9_uln_uek | bool }}"
@@ -777,27 +777,27 @@
 
 # foreman_enable_redhat7: false
 
-# foreman_enable_redhat7_0: false
-# foreman_enable_redhat7_1: false
-# foreman_enable_redhat7_2: false
-# foreman_enable_redhat7_3: false
-# foreman_enable_redhat7_4: false
-# foreman_enable_redhat7_5: false
-# foreman_enable_redhat7_6: false
-# foreman_enable_redhat7_7: false
-# foreman_enable_redhat7_8: false
-# foreman_enable_redhat7_9: false
+# foreman_enable_redhat70: false
+# foreman_enable_redhat71: false
+# foreman_enable_redhat72: false
+# foreman_enable_redhat73: false
+# foreman_enable_redhat74: false
+# foreman_enable_redhat75: false
+# foreman_enable_redhat76: false
+# foreman_enable_redhat77: false
+# foreman_enable_redhat78: false
+# foreman_enable_redhat79: false
 
-# foreman_enable_redhat7_0_kickstart: false
-# foreman_enable_redhat7_1_kickstart: false
-# foreman_enable_redhat7_2_kickstart: false
-# foreman_enable_redhat7_3_kickstart: false
-# foreman_enable_redhat7_4_kickstart: false
-# foreman_enable_redhat7_5_kickstart: false
-# foreman_enable_redhat7_6_kickstart: false
-# foreman_enable_redhat7_7_kickstart: false
-# foreman_enable_redhat7_8_kickstart: false
-# foreman_enable_redhat7_9_kickstart: "{{ foreman_enable_redhat7 | bool }}"
+# foreman_enable_redhat70_kickstart: false
+# foreman_enable_redhat71_kickstart: false
+# foreman_enable_redhat72_kickstart: false
+# foreman_enable_redhat73_kickstart: false
+# foreman_enable_redhat74_kickstart: false
+# foreman_enable_redhat75_kickstart: false
+# foreman_enable_redhat76_kickstart: false
+# foreman_enable_redhat77_kickstart: false
+# foreman_enable_redhat78_kickstart: false
+# foreman_enable_redhat79_kickstart: "{{ foreman_enable_redhat7 | bool }}"
 
 # foreman_enable_redhat7_sat: false
 # foreman_enable_redhat7_aap: false
@@ -805,26 +805,26 @@
 
 # foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
 
-# foreman_enable_redhat8_0: false
-# foreman_enable_redhat8_1: false
-# foreman_enable_redhat8_2: false
-# foreman_enable_redhat8_3: false
-# foreman_enable_redhat8_4: false
-# foreman_enable_redhat8_5: false
-# foreman_enable_redhat8_6: false
-# foreman_enable_redhat8_7: false
-# foreman_enable_redhat8_8: false
-# foreman_enable_redhat8_9: false
+# foreman_enable_redhat80: false
+# foreman_enable_redhat81: false
+# foreman_enable_redhat82: false
+# foreman_enable_redhat83: false
+# foreman_enable_redhat84: false
+# foreman_enable_redhat85: false
+# foreman_enable_redhat86: false
+# foreman_enable_redhat87: false
+# foreman_enable_redhat88: false
+# foreman_enable_redhat89: false
 
-# foreman_enable_redhat8_0_kickstart: false
-# foreman_enable_redhat8_1_kickstart: false
-# foreman_enable_redhat8_2_kickstart: false
-# foreman_enable_redhat8_3_kickstart: false
-# foreman_enable_redhat8_4_kickstart: false
-# foreman_enable_redhat8_5_kickstart: false
-# foreman_enable_redhat8_6_kickstart: false
-# foreman_enable_redhat8_7_kickstart: false
-# foreman_enable_redhat8_8_kickstart: "{{ foreman_enable_redhat8 | bool }}"
+# foreman_enable_redhat80_kickstart: false
+# foreman_enable_redhat81_kickstart: false
+# foreman_enable_redhat82_kickstart: false
+# foreman_enable_redhat83_kickstart: false
+# foreman_enable_redhat84_kickstart: false
+# foreman_enable_redhat85_kickstart: false
+# foreman_enable_redhat86_kickstart: false
+# foreman_enable_redhat87_kickstart: false
+# foreman_enable_redhat88_kickstart: "{{ foreman_enable_redhat8 | bool }}"
 
 # foreman_enable_redhat8_sat: false
 # foreman_enable_redhat8_aap: false
@@ -832,13 +832,13 @@
 
 # foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
 
-# foreman_enable_redhat9_0: false
-# foreman_enable_redhat9_1: false
-# foreman_enable_redhat9_2: false
+# foreman_enable_redhat90: false
+# foreman_enable_redhat91: false
+# foreman_enable_redhat92: false
 
-# foreman_enable_redhat9_0_kickstart: false
-# foreman_enable_redhat9_1_kickstart: false
-# foreman_enable_redhat9_2_kickstart: "{{ foreman_enable_redhat9 | bool }}"
+# foreman_enable_redhat90_kickstart: false
+# foreman_enable_redhat91_kickstart: false
+# foreman_enable_redhat92_kickstart: "{{ foreman_enable_redhat9 | bool }}"
 
 # foreman_enable_redhat9_aap: false
 # foreman_enable_redhat9_rhocp: false
@@ -856,17 +856,17 @@
 ### ROCKY 8
 # foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
 
-# foreman_enable_rocky8_4: false
-# foreman_enable_rocky8_5: false
-# foreman_enable_rocky8_6: false
-# foreman_enable_rocky8_7: false
-# foreman_enable_rocky8_8: false
+# foreman_enable_rocky84: false
+# foreman_enable_rocky85: false
+# foreman_enable_rocky86: false
+# foreman_enable_rocky87: false
+# foreman_enable_rocky88: false
 
-# foreman_enable_rocky8_4_kickstart: false
-# foreman_enable_rocky8_5_kickstart: false
-# foreman_enable_rocky8_6_kickstart: false
-# foreman_enable_rocky8_7_kickstart: false
-# foreman_enable_rocky8_8_kickstart: false
+# foreman_enable_rocky84_kickstart: false
+# foreman_enable_rocky85_kickstart: false
+# foreman_enable_rocky86_kickstart: false
+# foreman_enable_rocky87_kickstart: false
+# foreman_enable_rocky88_kickstart: false
 
 # foreman_enable_rocky8_sig_core: false
 # foreman_enable_rocky8_sig_core_common: "{{ foreman_enable_rocky8_sig_core | bool }}"
@@ -879,13 +879,13 @@
 ### ROCKY 9
 # foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
 
-# foreman_enable_rocky9_0: false
-# foreman_enable_rocky9_1: false
-# foreman_enable_rocky9_2: false
+# foreman_enable_rocky90: false
+# foreman_enable_rocky91: false
+# foreman_enable_rocky92: false
 
-# foreman_enable_rocky9_0_kickstart: false
-# foreman_enable_rocky9_1_kickstart: false
-# foreman_enable_rocky9_2_kickstart: false
+# foreman_enable_rocky90_kickstart: false
+# foreman_enable_rocky91_kickstart: false
+# foreman_enable_rocky92_kickstart: false
 
 # foreman_enable_rocky9_sig_core: false
 # foreman_enable_rocky9_sig_core_common: "{{ foreman_enable_rocky9_sig_core | bool }}"

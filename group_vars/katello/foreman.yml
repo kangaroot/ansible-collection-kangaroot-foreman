@@ -11,9 +11,9 @@ foreman_katello_version: "4.6"
 foreman_pulpcore_version: "3.18"
 foreman_puppet_version: 7
 
-foreman_version_label: "3_4"
-foreman_katello_version_label: "4_6"
-foreman_pulpcore_version_label: "3_18"
+foreman_version_label: "34"
+foreman_katello_version_label: "46"
+foreman_pulpcore_version_label: "318"
 
 # foreman_server_http_port: 80
 # foreman_server_https_port: 443
