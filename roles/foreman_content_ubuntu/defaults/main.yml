@@ -1,5 +1,5 @@
 ---
-# fdefaults file for foreman_content_ubuntu
+# defaults file for foreman_content_ubuntu
 
 #######################################
 ### URLS
@@ -10,6 +10,17 @@ foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
 foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu }}"
+
+
+#######################################
+### PRODUCTS DEFAULT DEB_COMPONENTS
+#######################################
+
+# foreman_products_ubuntu_default_deb_components: main restricted universe multiverse
+foreman_products_ubuntu_default_deb_components: main restricted
+# foreman_products_ubuntu1804_default_deb_components: "{{ foreman_products_ubuntu_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
+# foreman_products_ubuntu2004_default_deb_components: "{{ foreman_products_ubuntu_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
+# foreman_products_ubuntu2204_default_deb_components: "{{ foreman_products_ubuntu_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
 
 
 #######################################

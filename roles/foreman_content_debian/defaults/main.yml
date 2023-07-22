@@ -11,6 +11,18 @@ foreman_repo_baseurl_debian9: "{{ foreman_repo_baseurl_debian }}"
 foreman_repo_baseurl_debian10: "{{ foreman_repo_baseurl_debian }}"
 foreman_repo_baseurl_debian11: "{{ foreman_repo_baseurl_debian }}"
 
+
+#######################################
+### PRODUCTS DEFAULT DEB_COMPONENTS
+#######################################
+
+# foreman_products_debian_default_deb_components: main contrib non-free
+foreman_products_debian_default_deb_components: "{{ foreman_products_deb_default_deb_components | default('main') }}"
+# foreman_products_debian9_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
+# foreman_products_debian10_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
+# foreman_products_debian11_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
+
+
 #######################################
 ### OS DEFAULT TEMPLATES
 #######################################

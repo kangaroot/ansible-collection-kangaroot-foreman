@@ -42,6 +42,14 @@ foreman_manifest_path: ''
 foreman_lifecycle_environments: []
 foreman_content_credentials: []
 foreman_products: []
+
+### ======================================
+### DEB products default deb_components
+### ======================================
+
+# foreman_products_deb_default_deb_components: main contrib non-free
+foreman_products_deb_default_deb_components: main
+
 foreman_content_views: []
 foreman_activation_keys: []
 foreman_sync_plans: []

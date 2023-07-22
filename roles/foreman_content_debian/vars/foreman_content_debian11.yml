@@ -11,8 +11,7 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
-  # deb_components: main contrib non-free
-  deb_components: main
+  deb_components: "{{ foreman_products_debian11_default_deb_components | default( foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) ) }}"
   deb_architectures: amd64
 
 foreman_products_debian11:
@@ -161,7 +160,4 @@ foreman_activation_keys_debian11:
       #   override: disabled
       - label: "{{ foreman_organization }}_Debian_debian-11-security"
         override: disabled
-
-foreman_sync_plan_products_debian11:
-  - Debian
 
