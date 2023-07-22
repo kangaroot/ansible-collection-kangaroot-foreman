@@ -2,6 +2,7 @@
 
 foreman_content_credentials_redhat9: []
 
+
 foreman_products_redhat9:
   - name: Red Hat Enterprise Linux for x86_64
     repository_sets:
@@ -26,36 +27,6 @@ foreman_products_redhat9:
         # basearch: noarch
         # label: satellite-client-6-for-rhel-9-x86_64-rpms
 
-      # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.0
-      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
-        # basearch: noarch
-        releasever: '9.0'
-        # label: rhel-9-for-x86_64-baseos-kickstart
-      # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.0
-      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
-        # basearch: noarch
-        releasever: '9.0'
-        # label: rhel-9-for-x86_64-appstream-kickstart
-      # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.1
-      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
-        # basearch: noarch
-        releasever: '9.1'
-        # label: rhel-9-for-x86_64-baseos-kickstart
-      # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.1
-      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
-        # basearch: noarch
-        releasever: '9.1'
-        # label: rhel-9-for-x86_64-appstream-kickstart
-      # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.2
-      - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
-        # basearch: noarch
-        releasever: '9.2'
-        # label: rhel-9-for-x86_64-baseos-kickstart
-      # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.2
-      - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
-        # basearch: noarch
-        releasever: '9.2'
-        # label: rhel-9-for-x86_64-appstream-kickstart
 
 foreman_content_views_redhat9:
   - name: cv_rhel9_baseos
@@ -95,6 +66,7 @@ foreman_content_views_redhat9:
       - content_view: cv_epel9
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -117,6 +89,7 @@ foreman_operatingsystems_redhat9:
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
+
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
   # organizations:
@@ -126,39 +99,19 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
 
+
 foreman_installation_media_redhat9:
-  - name: Red Hat 9.0 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/baseos/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Red Hat 9.0
-  - name: Red at 9.0 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/appstream/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Red Hat 9.0
-  - name: Red Hat 9.1 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/baseos/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Red Hat 9.1
-  - name: Red at 9.1 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/appstream/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Red Hat 9.1
-  - name: Red Hat 9.2 BaseOS
+  - name: Red Hat 9 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 9
-      - Red Hat 9.2
-  - name: Red at 9.2 AppStream
+  - name: Red Hat 9 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Red Hat 9
-      - Red Hat 9.2
+
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
@@ -181,12 +134,14 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   release_version: 7Server
   # service_level: Standard
 
+
 foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
   <<: *foreman_activation_keys_defaults
   # subscriptions:
   #   - name: "Red Hat Enterprise Linux for x86_64"
   #   - name: "Extra Packages for Enterprise Linux"
   release_version: 9
+
 
 foreman_activation_keys_redhat9:
   - name: ak_rhel9
@@ -203,6 +158,7 @@ foreman_activation_keys_redhat9:
         override: default
       - label: "{{ foreman_organization }}_EPEL_epel-9"
         override: disabled
+
 
 foreman_sync_plan_products_redhat9:
   - Red Hat Enterprise Linux for x86_64
