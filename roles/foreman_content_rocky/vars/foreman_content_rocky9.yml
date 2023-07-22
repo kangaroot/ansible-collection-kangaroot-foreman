@@ -6,6 +6,7 @@ foreman_content_credentials_rocky9:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky9 ~ '/RPM-GPG-KEY-Rocky-9', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Rocky-9') }}"
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-rockyofficial
@@ -17,6 +18,7 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
+
 
 foreman_products_rocky9:
   - name: Rocky Linux
@@ -77,6 +79,7 @@ foreman_products_rocky9:
         label: rocky-9-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky9 }}/9/AppStream/x86_64/kickstart/"
+
 
 foreman_content_views_rocky9:
   - name: cv_rocky9_baseos
@@ -166,6 +169,7 @@ foreman_content_views_rocky9:
       - content_view: cv_epel9
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -180,6 +184,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
     }}"
 
+
 foreman_operatingsystems_rocky9:
   - name: "Rocky"
     major: "9"
@@ -187,6 +192,7 @@ foreman_operatingsystems_rocky9:
     description: "Rocky Linux 9"
     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -200,29 +206,19 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - Rocky Linux 8
   #   - Rocky Linux 9
 
+
 foreman_installation_media_rocky9:
-  # - name: Rocky Linux 9.0 BaseOS
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9-baseos-kickstart-9_0/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Rocky Linux 9.0
-  # - name: Rocky Linux 9.0 AppStream
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9-appstream-kickstart-9_0/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - Rocky Linux 9.0
-  - name: Rocky Linux 9.1 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9-baseos-kickstart-9_1/"
+  - name: Rocky Linux 9 BaseOS
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_2-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9
-      - Rocky Linux 9.1
-  - name: Rocky Linux 9.1 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9-appstream-kickstart-9_1/"
+  - name: Rocky Linux 9 AppStream
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_2-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9
-      - Rocky Linux 9.1
+
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
@@ -234,6 +230,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 7Server
   # service_level: Standard
+
 
 foreman_activation_keys_rocky9:
   - name: ak_rocky9
@@ -264,6 +261,7 @@ foreman_activation_keys_rocky9:
         override: disabled
       - label: "{{ foreman_organization }}_EPEL_epel-9"
         override: disabled
+
 
 foreman_sync_plan_products_rocky9: []
 

@@ -63,15 +63,6 @@ foreman_products_rocky9_0:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/SAPHANA/x86_64/os/"
 
-      - name: Rocky Linux 9.0 - BaseOS Kickstart
-        label: rocky-9_0-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/BaseOS/x86_64/kickstart/"
-      - name: Rocky Linux 9.0 - AppStream Kickstart
-        label: rocky-9_0-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/AppStream/x86_64/kickstart/"
-
 foreman_products_rocky9_1:
   - name: Rocky Linux
     label: Rocky
@@ -122,15 +113,6 @@ foreman_products_rocky9_1:
         label: rocky-9_1-saphana
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/SAPHANA/x86_64/os/"
-
-      - name: Rocky Linux 9.1 - BaseOS Kickstart
-        label: rocky-9_1-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/BaseOS/x86_64/kickstart/"
-      - name: Rocky Linux 9.1 - AppStream Kickstart
-        label: rocky-9_1-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/AppStream/x86_64/kickstart/"
 
 foreman_products_rocky9_2:
   - name: Rocky Linux
@@ -183,15 +165,6 @@ foreman_products_rocky9_2:
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky9 }}/9.2/SAPHANA/x86_64/os/"
 
-      - name: Rocky Linux 9.2 - BaseOS Kickstart
-        label: rocky-9_2-baseos-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.2/BaseOS/x86_64/kickstart/"
-      - name: Rocky Linux 9.2 - AppStream Kickstart
-        label: rocky-9_2-appstream-kickstart
-        <<: *foreman_products_defaults
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.2/AppStream/x86_64/kickstart/"
-
 # foreman_products_rocky9_3:
 #   - name: Rocky Linux
 #     label: Rocky
@@ -242,15 +215,6 @@ foreman_products_rocky9_2:
 #         label: rocky-9_3-saphana
 #         <<: *foreman_products_defaults
 #         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/SAPHANA/x86_64/os/"
-
-#       - name: Rocky Linux 9.3 - BaseOS Kickstart
-#         label: rocky-9_3-baseos-kickstart
-#         <<: *foreman_products_defaults
-#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/BaseOS/x86_64/kickstart/"
-#       - name: Rocky Linux 9.3 - AppStream Kickstart
-#         label: rocky-9_3-appstream-kickstart
-#         <<: *foreman_products_defaults
-#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/AppStream/x86_64/kickstart/"
 
 # foreman_products_rocky9_4:
 #   - name: Rocky Linux
@@ -303,6 +267,62 @@ foreman_products_rocky9_2:
 #         <<: *foreman_products_defaults
 #         url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAPHANA/x86_64/os/"
 
+foreman_products_rocky9_0_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    repositories:
+      - name: Rocky Linux 9.0 - BaseOS Kickstart
+        label: rocky-9_0-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 9.0 - AppStream Kickstart
+        label: rocky-9_0-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/AppStream/x86_64/kickstart/"
+
+foreman_products_rocky9_1_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    repositories:
+      - name: Rocky Linux 9.1 - BaseOS Kickstart
+        label: rocky-9_1-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 9.1 - AppStream Kickstart
+        label: rocky-9_1-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/AppStream/x86_64/kickstart/"
+
+foreman_products_rocky9_2_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    repositories:
+      - name: Rocky Linux 9.2 - BaseOS Kickstart
+        label: rocky-9_2-baseos-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.2/BaseOS/x86_64/kickstart/"
+      - name: Rocky Linux 9.2 - AppStream Kickstart
+        label: rocky-9_2-appstream-kickstart
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.2/AppStream/x86_64/kickstart/"
+
+# foreman_products_rocky9_3_kickstart:
+#   - name: Rocky Linux
+#     label: Rocky
+#     repositories:
+#       - name: Rocky Linux 9.3 - BaseOS Kickstart
+#         label: rocky-9_3-baseos-kickstart
+#         <<: *foreman_products_defaults
+#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/BaseOS/x86_64/kickstart/"
+#       - name: Rocky Linux 9.3 - AppStream Kickstart
+#         label: rocky-9_3-appstream-kickstart
+#         <<: *foreman_products_defaults
+#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/AppStream/x86_64/kickstart/"
+
+# foreman_products_rocky9_4_kickstart:
+#   - name: Rocky Linux
+#     label: Rocky
+#     repositories:
 #       - name: Rocky Linux 9.4 - BaseOS Kickstart
 #         label: rocky-9_4-baseos-kickstart
 #         <<: *foreman_products_defaults
@@ -317,7 +337,13 @@ foreman_products_rocky9_versions: "{{ [] |
   union( foreman_products_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
   union( foreman_products_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
   union( foreman_products_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
-  union( foreman_products_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
+  union( foreman_products_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] ) |
+
+  union( foreman_products_rocky9_0_kickstart | default([]) if foreman_enable_rocky9_0_kickstart | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_1_kickstart | default([]) if foreman_enable_rocky9_1_kickstart | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_2_kickstart | default([]) if foreman_enable_rocky9_2_kickstart | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_3_kickstart | default([]) if foreman_enable_rocky9_3_kickstart | default(false) | bool else [] ) |
+  union( foreman_products_rocky9_4_kickstart | default([]) if foreman_enable_rocky9_4_kickstart | default(false) | bool else [] )
   }}"
 
 
@@ -629,35 +655,35 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
     }}"
 
-foreman_operatingsystems_rocky9_0:
+foreman_operatingsystems_rocky9_0_kickstart:
   - name: "Rocky"
     major: "8"
     minor: "4"
     description: "Rocky Linux 9.0"
     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky9_1:
+foreman_operatingsystems_rocky9_1_kickstart:
   - name: "Rocky"
     major: "8"
     minor: "5"
     description: "Rocky Linux 9.1"
     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky9_2:
+foreman_operatingsystems_rocky9_2_kickstart:
   - name: "Rocky"
     major: "8"
     minor: "6"
     description: "Rocky Linux 9.2"
     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
-# foreman_operatingsystems_rocky9_3:
+# foreman_operatingsystems_rocky9_3_kickstart:
 #   - name: "Rocky"
 #     major: "8"
 #     minor: "7"
 #     description: "Rocky Linux 9.3"
 #     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
 #     <<: *foreman_operatingsystems_defaults
-# foreman_operatingsystems_rocky9_4:
+# foreman_operatingsystems_rocky9_4_kickstart:
 #   - name: "Rocky"
 #     major: "8"
 #     minor: "8"
@@ -670,7 +696,13 @@ foreman_operatingsystems_rocky9_versions: "{{ [] |
   union( foreman_operatingsystems_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
   union( foreman_operatingsystems_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
   union( foreman_operatingsystems_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
-  union( foreman_operatingsystems_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
+  union( foreman_operatingsystems_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] ) |
+
+  union( foreman_operatingsystems_rocky9_0_kickstart | default([]) if foreman_enable_rocky9_0_kickstart | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_1_kickstart | default([]) if foreman_enable_rocky9_1_kickstart | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_2_kickstart | default([]) if foreman_enable_rocky9_2_kickstart | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_3_kickstart | default([]) if foreman_enable_rocky9_3_kickstart | default(false) | bool else [] ) |
+  union( foreman_operatingsystems_rocky9_4_kickstart | default([]) if foreman_enable_rocky9_4_kickstart | default(false) | bool else [] )
   }}"
 
 
@@ -683,7 +715,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
 
-foreman_installation_media_rocky9_0:
+foreman_installation_media_rocky9_0_kickstart:
   - name: Rocky Linux 9.0 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_0-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
@@ -695,7 +727,7 @@ foreman_installation_media_rocky9_0:
     operatingsystems:
       - Rocky Linux 9.0
 
-foreman_installation_media_rocky9_1:
+foreman_installation_media_rocky9_1_kickstart:
   - name: Rocky Linux 9.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_1-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
@@ -707,7 +739,7 @@ foreman_installation_media_rocky9_1:
     operatingsystems:
       - Rocky Linux 9.1
 
-foreman_installation_media_rocky9_2:
+foreman_installation_media_rocky9_2_kickstart:
   - name: Rocky Linux 9.2 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_2-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
@@ -719,7 +751,7 @@ foreman_installation_media_rocky9_2:
     operatingsystems:
       - Rocky Linux 9.2
 
-# foreman_installation_media_rocky9_3:
+# foreman_installation_media_rocky9_3_kickstart:
 #   - name: Rocky Linux 9.3 BaseOS
 #     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_3-baseos-kickstart/"
 #     <<: *foreman_installation_media_defaults
@@ -731,7 +763,7 @@ foreman_installation_media_rocky9_2:
 #     operatingsystems:
 #       - Rocky Linux 9.3
 
-# foreman_installation_media_rocky9_4:
+# foreman_installation_media_rocky9_4_kickstart:
 #   - name: Rocky Linux 9.4 BaseOS
 #     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-9_4-baseos-kickstart/"
 #     <<: *foreman_installation_media_defaults
@@ -748,6 +780,12 @@ foreman_installation_media_rocky9_versions: "{{ [] |
   union( foreman_installation_media_rocky9_1 | default([]) if foreman_enable_rocky9_1 | default(false) | bool else [] ) |
   union( foreman_installation_media_rocky9_2 | default([]) if foreman_enable_rocky9_2 | default(false) | bool else [] ) |
   union( foreman_installation_media_rocky9_3 | default([]) if foreman_enable_rocky9_3 | default(false) | bool else [] ) |
-  union( foreman_installation_media_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] )
+  union( foreman_installation_media_rocky9_4 | default([]) if foreman_enable_rocky9_4 | default(false) | bool else [] ) |
+
+  union( foreman_installation_media_rocky9_0_kickstart | default([]) if foreman_enable_rocky9_0_kickstart | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_1_kickstart | default([]) if foreman_enable_rocky9_1_kickstart | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_2_kickstart | default([]) if foreman_enable_rocky9_2_kickstart | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_3_kickstart | default([]) if foreman_enable_rocky9_3_kickstart | default(false) | bool else [] ) |
+  union( foreman_installation_media_rocky9_4_kickstart | default([]) if foreman_enable_rocky9_4_kickstart | default(false) | bool else [] )
   }}"
 

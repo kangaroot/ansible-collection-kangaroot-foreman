@@ -6,6 +6,7 @@ foreman_content_credentials_rocky8:
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky ~ '/RPM-GPG-KEY-Rocky-8', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Rocky-8') }}"
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-rockyofficial
@@ -17,6 +18,7 @@ foreman_products_defaults: &foreman_products_defaults
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
+
 
 foreman_products_rocky8:
   - name: Rocky Linux
@@ -68,6 +70,7 @@ foreman_products_rocky8:
         label: rocky-8-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/AppStream/x86_64/kickstart/"
+
 
 foreman_content_views_rocky8:
   - name: cv_rocky8_baseos
@@ -143,6 +146,7 @@ foreman_content_views_rocky8:
       - content_view: cv_epel8_modular
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Redhat"
   password_hash: "SHA512"
@@ -157,6 +161,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
     }}"
 
+
 foreman_operatingsystems_rocky8:
   - name: "Rocky"
     major: "8"
@@ -164,6 +169,7 @@ foreman_operatingsystems_rocky8:
     description: "Rocky Linux 8"
     default_templates: "{{ foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Redhat
@@ -175,6 +181,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
   # operatingsystems:
   #   - Rocky Linux 8
+
 
 foreman_installation_media_rocky8:
   - name: Rocky Linux 8 BaseOS
@@ -188,6 +195,7 @@ foreman_installation_media_rocky8:
     operatingsystems:
       - Rocky Linux 8
 
+
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
@@ -198,6 +206,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   auto_attach: False
   # release_version: 8
   # service_level: Standard
+
 
 foreman_activation_keys_rocky8:
   - name: ak_rocky8
@@ -227,6 +236,7 @@ foreman_activation_keys_rocky8:
       - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
         override: disabled
 
+
   - name: ak_rocky8_foreman
     content_view: ccv_rocky8_foreman
     <<: *foreman_activation_keys_defaults
@@ -245,6 +255,7 @@ foreman_activation_keys_rocky8:
         override: default
       - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
         override: default
+
 
   - name: ak_rocky8_katello
     content_view: ccv_rocky8_katello
@@ -270,6 +281,7 @@ foreman_activation_keys_rocky8:
         override: default
       - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
         override: default
+
 
 foreman_sync_plan_products_rocky8: []
 
