@@ -465,25 +465,6 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       'Kickstart custom' ] |
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
     }}"
-  default_templates:
-    - template_kind: "cloud-init"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_cloud_init | default( foreman_operatingsystems_centos_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
-    - template_kind: "finish"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_finish | default( foreman_operatingsystems_centos_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
-    - template_kind: "host_init_config"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_host_init_config | default( foreman_operatingsystems_centos_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
-    - template_kind: "iPXE"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_ipxe | default( foreman_operatingsystems_centos_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
-    - template_kind: "provision"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_provision | default( foreman_operatingsystems_centos_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
-    - template_kind: "PXEGrub"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxegrub | default( foreman_operatingsystems_centos_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
-    - template_kind: "PXEGrub2"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxegrub2 | default( foreman_operatingsystems_centos_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
-    - template_kind: "PXELinux"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_pxelinux | default( foreman_operatingsystems_centos_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
-    - template_kind: "user_data"
-      provisioning_template: "{{ foreman_operatingsystems_centos7_template_user_data | default( foreman_operatingsystems_centos_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
 
 foreman_operatingsystems_centos7_0:
@@ -491,6 +472,7 @@ foreman_operatingsystems_centos7_0:
     major: "7"
     minor: "0.1406"
     description: "CentOS 7.0.1406"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_1:
@@ -498,6 +480,7 @@ foreman_operatingsystems_centos7_1:
     major: "7"
     minor: "1.1503"
     description: "CentOS 7.1.1503"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_2:
@@ -505,6 +488,7 @@ foreman_operatingsystems_centos7_2:
     major: "7"
     minor: "2.1511"
     description: "CentOS 7.2.1511"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_3:
@@ -512,6 +496,7 @@ foreman_operatingsystems_centos7_3:
     major: "7"
     minor: "3.1611"
     description: "CentOS 7.3.1611"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_4:
@@ -519,6 +504,7 @@ foreman_operatingsystems_centos7_4:
     major: "7"
     minor: "4.1708"
     description: "CentOS 7.4.1708"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_5:
@@ -526,6 +512,7 @@ foreman_operatingsystems_centos7_5:
     major: "7"
     minor: "5.1804"
     description: "CentOS 7.5.1804"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_6:
@@ -533,6 +520,7 @@ foreman_operatingsystems_centos7_6:
     major: "7"
     minor: "6.1810"
     description: "CentOS 7.6.1810"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_7:
@@ -540,6 +528,7 @@ foreman_operatingsystems_centos7_7:
     major: "7"
     minor: "7.1908"
     description: "CentOS 7.7.1908"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_8:
@@ -547,6 +536,7 @@ foreman_operatingsystems_centos7_8:
     major: "7"
     minor: "8.2003"
     description: "CentOS 7.8.2003"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_9:
@@ -554,6 +544,7 @@ foreman_operatingsystems_centos7_9:
     major: "7"
     minor: "9.2009"
     description: "CentOS 7.9.2009"
+    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_versions: "{{ [] |

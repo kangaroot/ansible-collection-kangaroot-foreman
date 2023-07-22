@@ -425,36 +425,19 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       'Kickstart custom' ] |
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
     }}"
-  default_templates:
-    - template_kind: "cloud-init"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_cloud_init | default( foreman_operatingsystems_ol_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
-    - template_kind: "finish"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_finish | default( foreman_operatingsystems_ol_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
-    - template_kind: "host_init_config"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_host_init_config | default( foreman_operatingsystems_ol_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
-    - template_kind: "iPXE"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_ipxe | default( foreman_operatingsystems_ol_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
-    - template_kind: "provision"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_provision | default( foreman_operatingsystems_ol_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
-    - template_kind: "PXEGrub"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_pxegrub | default( foreman_operatingsystems_ol_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
-    - template_kind: "PXEGrub2"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_pxegrub2 | default( foreman_operatingsystems_ol_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
-    - template_kind: "PXELinux"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_pxelinux | default( foreman_operatingsystems_ol_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
-    - template_kind: "user_data"
-      provisioning_template: "{{ foreman_operatingsystems_ol5_template_user_data | default( foreman_operatingsystems_ol_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
 
 foreman_operatingsystems_ol5:
   - name: "OracleLinux"
     major: "5"
     minor: ""
     description: "Oracle Linux 5"
+    default_templates: "{{ foreman_operatingsystems_ol5_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
   - name: "OracleLinux"
     major: "5"
     minor: "11"
     description: "Oracle Linux 5.11"
+    default_templates: "{{ foreman_operatingsystems_ol5_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults

@@ -13,6 +13,135 @@ foreman_repo_baseurl_template_el9: "{{ foreman_repo_baseurl_template }}"
 
 
 #######################################
+### OS DEFAULT TEMPLATES
+#######################################
+
+### Template operating system default templates
+# foreman_operatingsystems_template_template_cloud_init: "{{ foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') }}"
+# foreman_operatingsystems_template_template_finish: "{{ foreman_operatingsystems_el_template_finish | default('Kickstart default finish') }}"
+# foreman_operatingsystems_template_template_host_init_config: "{{ foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_template_template_ipxe: "{{ foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') }}"
+# foreman_operatingsystems_template_template_provision: "{{ foreman_operatingsystems_el_template_provision | default('Kickstart default') }}"
+# foreman_operatingsystems_template_template_pxegrub: "{{ foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') }}"
+# foreman_operatingsystems_template_template_pxegrub2: "{{ foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') }}"
+# foreman_operatingsystems_template_template_pxelinux: "{{ foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') }}"
+# foreman_operatingsystems_template_template_user_data: "{{ foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') }}"
+
+# foreman_operatingsystems_template_default_templates:
+#   - template_kind: "cloud-init"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) }}"
+#   - template_kind: "finish"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) }}"
+#   - template_kind: "host_init_config"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+#   - template_kind: "iPXE"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) }}"
+#   - template_kind: "provision"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) }}"
+#   - template_kind: "PXEGrub"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) }}"
+#   - template_kind: "PXEGrub2"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) }}"
+#   - template_kind: "PXELinux"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) }}"
+#   - template_kind: "user_data"
+#     provisioning_template: "{{ foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) }}"
+
+### Template 7 operating system default templates
+# foreman_operatingsystems_template7_template_cloud_init: "{{ foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) }}"
+# foreman_operatingsystems_template7_template_finish: "{{ foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) }}"
+# foreman_operatingsystems_template7_template_host_init_config: "{{ foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_template7_template_ipxe: "{{ foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) }}"
+# foreman_operatingsystems_template7_template_provision: "{{ foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) }}"
+# foreman_operatingsystems_template7_template_pxegrub: "{{ foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) }}"
+# foreman_operatingsystems_template7_template_pxegrub2: "{{ foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) }}"
+# foreman_operatingsystems_template7_template_pxelinux: "{{ foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) }}"
+# foreman_operatingsystems_template7_template_user_data: "{{ foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) }}"
+
+# foreman_operatingsystems_template7_default_templates:
+#   - template_kind: "cloud-init"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_cloud_init | default( foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+#   - template_kind: "finish"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_finish | default( foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+#   - template_kind: "host_init_config"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_host_init_config | default( foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+#   - template_kind: "iPXE"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_ipxe | default( foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+#   - template_kind: "provision"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_provision | default( foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+#   - template_kind: "PXEGrub"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_pxegrub | default( foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+#   - template_kind: "PXEGrub2"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_pxegrub2 | default( foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+#   - template_kind: "PXELinux"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_pxelinux | default( foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+#   - template_kind: "user_data"
+#     provisioning_template: "{{ foreman_operatingsystems_template7_template_user_data | default( foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+### Template 8 operating system default templates
+# foreman_operatingsystems_template8_template_cloud_init: "{{ foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) }}"
+# foreman_operatingsystems_template8_template_finish: "{{ foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) }}"
+# foreman_operatingsystems_template8_template_host_init_config: "{{ foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_template8_template_ipxe: "{{ foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) }}"
+# foreman_operatingsystems_template8_template_provision: "{{ foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) }}"
+# foreman_operatingsystems_template8_template_pxegrub: "{{ foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) }}"
+# foreman_operatingsystems_template8_template_pxegrub2: "{{ foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) }}"
+# foreman_operatingsystems_template8_template_pxelinux: "{{ foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) }}"
+# foreman_operatingsystems_template8_template_user_data: "{{ foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) }}"
+
+# foreman_operatingsystems_template8_default_templates:
+#   - template_kind: "cloud-init"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_cloud_init | default( foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+#   - template_kind: "finish"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_finish | default( foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+#   - template_kind: "host_init_config"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_host_init_config | default( foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+#   - template_kind: "iPXE"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_ipxe | default( foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+#   - template_kind: "provision"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_provision | default( foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+#   - template_kind: "PXEGrub"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_pxegrub | default( foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+#   - template_kind: "PXEGrub2"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_pxegrub2 | default( foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+#   - template_kind: "PXELinux"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_pxelinux | default( foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+#   - template_kind: "user_data"
+#     provisioning_template: "{{ foreman_operatingsystems_template8_template_user_data | default( foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+### Template 9 operating system default templates
+# foreman_operatingsystems_template9_template_cloud_init: "{{ foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) }}"
+# foreman_operatingsystems_template9_template_finish: "{{ foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) }}"
+# foreman_operatingsystems_template9_template_host_init_config: "{{ foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_template9_template_ipxe: "{{ foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) }}"
+# foreman_operatingsystems_template9_template_provision: "{{ foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) }}"
+# foreman_operatingsystems_template9_template_pxegrub: "{{ foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) }}"
+# foreman_operatingsystems_template9_template_pxegrub2: "{{ foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) }}"
+# foreman_operatingsystems_template9_template_pxelinux: "{{ foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) }}"
+# foreman_operatingsystems_template9_template_user_data: "{{ foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) }}"
+
+# foreman_operatingsystems_template9_default_templates:
+#   - template_kind: "cloud-init"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_cloud_init | default( foreman_operatingsystems_template_template_cloud_init | default( foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') ) ) }}"
+#   - template_kind: "finish"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_finish | default( foreman_operatingsystems_template_template_finish | default( foreman_operatingsystems_el_template_finish | default('Kickstart default finish') ) ) }}"
+#   - template_kind: "host_init_config"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_host_init_config | default( foreman_operatingsystems_template_template_host_init_config | default( foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+#   - template_kind: "iPXE"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_ipxe | default( foreman_operatingsystems_template_template_ipxe | default( foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') ) ) }}"
+#   - template_kind: "provision"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_provision | default( foreman_operatingsystems_template_template_provision | default( foreman_operatingsystems_el_template_provision | default('Kickstart default') ) ) }}"
+#   - template_kind: "PXEGrub"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_pxegrub | default( foreman_operatingsystems_template_template_pxegrub | default( foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
+#   - template_kind: "PXEGrub2"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_pxegrub2 | default( foreman_operatingsystems_template_template_pxegrub2 | default( foreman_operatingsystems_el_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
+#   - template_kind: "PXELinux"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_pxelinux | default( foreman_operatingsystems_template_template_pxelinux | default( foreman_operatingsystems_el_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
+#   - template_kind: "user_data"
+#     provisioning_template: "{{ foreman_operatingsystems_template9_template_user_data | default( foreman_operatingsystems_template_template_user_data | default( foreman_operatingsystems_el_template_user_data | default('Kickstart default user data') ) ) }}"
+
+
+#######################################
 ### ENABLE VARS
 #######################################
 

@@ -100,30 +100,12 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       'Preseed default LVM' ] |
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
     }}"
-  default_templates:
-    # - template_kind: "cloud-init"
-    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_cloud_init | default( foreman_operatingsystems_ub_template_cloud_init | default( foreman_operatingsystems_deb_template_cloud_init | default('CloudInit default') ) ) }}"
-    - template_kind: "finish"
-      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_finish | default( foreman_operatingsystems_ub_template_finish | default( foreman_operatingsystems_deb_template_finish | default('Kickstart default finish') ) ) }}"
-    # - template_kind: "host_init_config"
-    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_host_init_config | default( foreman_operatingsystems_ub_template_host_init_config | default( foreman_operatingsystems_deb_template_host_init_config | default('Linux host_init_config default') ) ) }}"
-    # - template_kind: "iPXE"
-    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_ipxe | default( foreman_operatingsystems_ub_template_ipxe | default( foreman_operatingsystems_deb_template_ipxe | default('Kickstart default iPXE') ) ) }}"
-    - template_kind: "provision"
-      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_provision | default( foreman_operatingsystems_ub_template_provision | default( foreman_operatingsystems_deb_template_provision | default('Kickstart default') ) ) }}"
-    # - template_kind: "PXEGrub"
-    #   provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxegrub | default( foreman_operatingsystems_ub_template_pxegrub | default( foreman_operatingsystems_deb_template_pxegrub | default('Kickstart default PXEGrub') ) ) }}"
-    - template_kind: "PXEGrub2"
-      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxegrub2 | default( foreman_operatingsystems_ub_template_pxegrub2 | default( foreman_operatingsystems_deb_template_pxegrub2 | default('Kickstart default PXEGrub2') ) ) }}"
-    - template_kind: "PXELinux"
-      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_pxelinux | default( foreman_operatingsystems_ub_template_pxelinux | default( foreman_operatingsystems_deb_template_pxelinux | default('Kickstart default PXELinux') ) ) }}"
-    - template_kind: "user_data"
-      provisioning_template: "{{ foreman_operatingsystems_ub1804_template_user_data | default( foreman_operatingsystems_ub_template_user_data | default( foreman_operatingsystems_deb_template_user_data | default('Kickstart default user data') ) ) }}"
 
 foreman_operatingsystems_ubuntu1804:
   - name: "Ubuntu"
     release_name: bionic
     description: "Ubuntu 18.04 LTS (Bionic Beaver)"
+    default_templates: "{{ foreman_operatingsystems_ubuntu1804_default_templates | default( foreman_operatingsystems_ubuntu_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
