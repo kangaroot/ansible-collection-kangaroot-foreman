@@ -61,11 +61,11 @@ foreman_products_centos_stream9_sig_messaging_rabbitmq38:
   - name: CentOS
     label: CentOS
     repositories:
-  - name: cv_centos_stream9_rabbitmq_38
-    repositories:
       - name: CentOS Stream 9 - RabbitMQ 38
-        product: CentOS
-    allow_promote: False
+        label: centos-stream-9-rabbitmq38
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/messaging/x86_64/rabbitmq-38/"
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
 
 foreman_products_centos_stream9_sig_messaging: "{{ [] |
   union( foreman_products_centos_stream9_sig_messaging_rabbitmq38 | default([]) if foreman_enable_centos_stream9_sig_messaging_rabbitmq38 else [] )
