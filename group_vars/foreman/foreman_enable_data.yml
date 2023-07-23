@@ -814,7 +814,6 @@
 # foreman_enable_redhat86: false
 # foreman_enable_redhat87: false
 # foreman_enable_redhat88: false
-# foreman_enable_redhat89: false
 
 # foreman_enable_redhat80_kickstart: false
 # foreman_enable_redhat81_kickstart: false

@@ -298,25 +298,25 @@ foreman_products_redhat88_kickstart:
         # label: rhel-8-for-x86_64-appstream-kickstart
 
 foreman_products_redhat8_versions: "{{ [] |
-  union( foreman_products_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_products_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_products_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_products_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_products_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_products_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_products_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_products_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_products_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_products_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |
+  union( foreman_products_redhat81 | default([]) if foreman_enable_redhat81 else [] ) |
+  union( foreman_products_redhat82 | default([]) if foreman_enable_redhat82 else [] ) |
+  union( foreman_products_redhat83 | default([]) if foreman_enable_redhat83 else [] ) |
+  union( foreman_products_redhat84 | default([]) if foreman_enable_redhat84 else [] ) |
+  union( foreman_products_redhat85 | default([]) if foreman_enable_redhat85 else [] ) |
+  union( foreman_products_redhat86 | default([]) if foreman_enable_redhat86 else [] ) |
+  union( foreman_products_redhat87 | default([]) if foreman_enable_redhat87 else [] ) |
+  union( foreman_products_redhat88 | default([]) if foreman_enable_redhat88 else [] ) |
 
-  union( foreman_products_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_products_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_products_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_products_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_products_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_products_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_products_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_products_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_products_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] )
+  union( foreman_products_redhat80_kickstart | default([]) if foreman_enable_redhat80_kickstart else [] ) |
+  union( foreman_products_redhat81_kickstart | default([]) if foreman_enable_redhat81_kickstart else [] ) |
+  union( foreman_products_redhat82_kickstart | default([]) if foreman_enable_redhat82_kickstart else [] ) |
+  union( foreman_products_redhat83_kickstart | default([]) if foreman_enable_redhat83_kickstart else [] ) |
+  union( foreman_products_redhat84_kickstart | default([]) if foreman_enable_redhat84_kickstart else [] ) |
+  union( foreman_products_redhat85_kickstart | default([]) if foreman_enable_redhat85_kickstart else [] ) |
+  union( foreman_products_redhat86_kickstart | default([]) if foreman_enable_redhat86_kickstart else [] ) |
+  union( foreman_products_redhat87_kickstart | default([]) if foreman_enable_redhat87_kickstart else [] ) |
+  union( foreman_products_redhat88_kickstart | default([]) if foreman_enable_redhat88_kickstart else [] )
   }}"
 
 
@@ -474,25 +474,25 @@ foreman_content_views_redhat88:
     allow_promote: False
 
 foreman_content_views_redhat8_versions: "{{ [] |
-  union( foreman_content_views_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_content_views_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_content_views_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_content_views_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_content_views_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_content_views_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_content_views_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_content_views_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_content_views_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_content_views_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |
+  union( foreman_content_views_redhat81 | default([]) if foreman_enable_redhat81 else [] ) |
+  union( foreman_content_views_redhat82 | default([]) if foreman_enable_redhat82 else [] ) |
+  union( foreman_content_views_redhat83 | default([]) if foreman_enable_redhat83 else [] ) |
+  union( foreman_content_views_redhat84 | default([]) if foreman_enable_redhat84 else [] ) |
+  union( foreman_content_views_redhat85 | default([]) if foreman_enable_redhat85 else [] ) |
+  union( foreman_content_views_redhat86 | default([]) if foreman_enable_redhat86 else [] ) |
+  union( foreman_content_views_redhat87 | default([]) if foreman_enable_redhat87 else [] ) |
+  union( foreman_content_views_redhat88 | default([]) if foreman_enable_redhat88 else [] ) |
 
-  union( foreman_content_views_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_content_views_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_content_views_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_content_views_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_content_views_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_content_views_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_content_views_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_content_views_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_content_views_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] )
+  union( foreman_content_views_redhat80_kickstart | default([]) if foreman_enable_redhat80_kickstart else [] ) |
+  union( foreman_content_views_redhat81_kickstart | default([]) if foreman_enable_redhat81_kickstart else [] ) |
+  union( foreman_content_views_redhat82_kickstart | default([]) if foreman_enable_redhat82_kickstart else [] ) |
+  union( foreman_content_views_redhat83_kickstart | default([]) if foreman_enable_redhat83_kickstart else [] ) |
+  union( foreman_content_views_redhat84_kickstart | default([]) if foreman_enable_redhat84_kickstart else [] ) |
+  union( foreman_content_views_redhat85_kickstart | default([]) if foreman_enable_redhat85_kickstart else [] ) |
+  union( foreman_content_views_redhat86_kickstart | default([]) if foreman_enable_redhat86_kickstart else [] ) |
+  union( foreman_content_views_redhat87_kickstart | default([]) if foreman_enable_redhat87_kickstart else [] ) |
+  union( foreman_content_views_redhat88_kickstart | default([]) if foreman_enable_redhat88_kickstart else [] )
   }}"
 
 
@@ -584,25 +584,25 @@ foreman_operatingsystems_redhat88_kickstart:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_redhat8_versions: "{{ [] |
-  union( foreman_operatingsystems_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_operatingsystems_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_operatingsystems_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_operatingsystems_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_operatingsystems_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_operatingsystems_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_operatingsystems_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_operatingsystems_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_operatingsystems_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_operatingsystems_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |
+  union( foreman_operatingsystems_redhat81 | default([]) if foreman_enable_redhat81 else [] ) |
+  union( foreman_operatingsystems_redhat82 | default([]) if foreman_enable_redhat82 else [] ) |
+  union( foreman_operatingsystems_redhat83 | default([]) if foreman_enable_redhat83 else [] ) |
+  union( foreman_operatingsystems_redhat84 | default([]) if foreman_enable_redhat84 else [] ) |
+  union( foreman_operatingsystems_redhat85 | default([]) if foreman_enable_redhat85 else [] ) |
+  union( foreman_operatingsystems_redhat86 | default([]) if foreman_enable_redhat86 else [] ) |
+  union( foreman_operatingsystems_redhat87 | default([]) if foreman_enable_redhat87 else [] ) |
+  union( foreman_operatingsystems_redhat88 | default([]) if foreman_enable_redhat88 else [] ) |
 
-  union( foreman_operatingsystems_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] )
+  union( foreman_operatingsystems_redhat80_kickstart | default([]) if foreman_enable_redhat80_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat81_kickstart | default([]) if foreman_enable_redhat81_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat82_kickstart | default([]) if foreman_enable_redhat82_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat83_kickstart | default([]) if foreman_enable_redhat83_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat84_kickstart | default([]) if foreman_enable_redhat84_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat85_kickstart | default([]) if foreman_enable_redhat85_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat86_kickstart | default([]) if foreman_enable_redhat86_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat87_kickstart | default([]) if foreman_enable_redhat87_kickstart else [] ) |
+  union( foreman_operatingsystems_redhat88_kickstart | default([]) if foreman_enable_redhat88_kickstart else [] )
   }}"
 
 
@@ -725,24 +725,24 @@ foreman_installation_media_redhat88_kickstart:
       - Red Hat 8.8
 
 foreman_installation_media_redhat8_versions: "{{ [] |
-  union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_installation_media_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_installation_media_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_installation_media_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_installation_media_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_installation_media_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_installation_media_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_installation_media_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_installation_media_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
+  union( foreman_installation_media_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |
+  union( foreman_installation_media_redhat81 | default([]) if foreman_enable_redhat81 else [] ) |
+  union( foreman_installation_media_redhat82 | default([]) if foreman_enable_redhat82 else [] ) |
+  union( foreman_installation_media_redhat83 | default([]) if foreman_enable_redhat83 else [] ) |
+  union( foreman_installation_media_redhat84 | default([]) if foreman_enable_redhat84 else [] ) |
+  union( foreman_installation_media_redhat85 | default([]) if foreman_enable_redhat85 else [] ) |
+  union( foreman_installation_media_redhat86 | default([]) if foreman_enable_redhat86 else [] ) |
+  union( foreman_installation_media_redhat87 | default([]) if foreman_enable_redhat87 else [] ) |
+  union( foreman_installation_media_redhat88 | default([]) if foreman_enable_redhat88 else [] ) |
 
-  union( foreman_installation_media_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_installation_media_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_installation_media_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_installation_media_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_installation_media_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_installation_media_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_installation_media_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_installation_media_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_installation_media_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] )
+  union( foreman_installation_media_redhat80_kickstart | default([]) if foreman_enable_redhat80_kickstart else [] ) |
+  union( foreman_installation_media_redhat81_kickstart | default([]) if foreman_enable_redhat81_kickstart else [] ) |
+  union( foreman_installation_media_redhat82_kickstart | default([]) if foreman_enable_redhat82_kickstart else [] ) |
+  union( foreman_installation_media_redhat83_kickstart | default([]) if foreman_enable_redhat83_kickstart else [] ) |
+  union( foreman_installation_media_redhat84_kickstart | default([]) if foreman_enable_redhat84_kickstart else [] ) |
+  union( foreman_installation_media_redhat85_kickstart | default([]) if foreman_enable_redhat85_kickstart else [] ) |
+  union( foreman_installation_media_redhat86_kickstart | default([]) if foreman_enable_redhat86_kickstart else [] ) |
+  union( foreman_installation_media_redhat87_kickstart | default([]) if foreman_enable_redhat87_kickstart else [] ) |
+  union( foreman_installation_media_redhat88_kickstart | default([]) if foreman_enable_redhat88_kickstart else [] )
   }}"
 
