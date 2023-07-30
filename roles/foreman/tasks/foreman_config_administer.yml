@@ -1,27 +1,9 @@
 ---
 # administer section configuration tasks file for foreman
 
-# Disabled - collection role does not support attributes:
-#            - parameters
-# - name: "Configuration | Include theforeman.foreman.organizations role"
-#   ansible.builtin.include_role:
-#     name: theforeman.foreman.organizations
-#   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
-
-- name: "Configuration | Create organizations"
-  theforeman.foreman.organization:
-    username: "{{ foreman_username | default(omit) }}"
-    password: "{{ foreman_password | default(omit) }}"
-    server_url: "{{ foreman_server_url | default(omit) }}"
-    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
-    name: "{{ foreman_organizations_item.name }}"
-    label: "{{ foreman_organizations_item.label }}"
-    parameters: "{{ foreman_organizations_item.parameters | default(omit) }}"
-    state: "{{ foreman_organizations_item.state | default('present') }}"
-  loop: "{{ foreman_organizations | default([]) }}"
-  loop_control:
-    loop_var: "foreman_organizations_item"
-    label: "{{ foreman_organizations_item.name }}"
+- name: "Configuration | Include theforeman.foreman.organizations role"
+  ansible.builtin.include_role:
+    name: theforeman.foreman.organizations
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Create locations"
