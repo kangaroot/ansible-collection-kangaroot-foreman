@@ -6,21 +6,9 @@
     name: theforeman.foreman.organizations
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
-- name: "Configuration | Create locations"
-  theforeman.foreman.location:
-    username: "{{ foreman_username | default(omit) }}"
-    password: "{{ foreman_password | default(omit) }}"
-    server_url: "{{ foreman_server_url | default(omit) }}"
-    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
-    name: "{{ foreman_locations_item.name }}"
-    organizations: "{{ foreman_locations_item.organizations | default(omit) }}"
-    parameters: "{{ foreman_locations_item.parameters | default(omit) }}"
-    parent: "{{ foreman_locations_item.parent | default(omit) }}"
-    state: "{{ foreman_locations_item.state | default('present') }}"
-  loop: "{{ foreman_locations | default([]) }}"
-  loop_control:
-    loop_var: "foreman_locations_item"
-    label: "{{ foreman_locations_item.name }}"
+- name: "Configuration | Include theforeman.foreman.locations role"
+  ansible.builtin.include_role:
+    name: theforeman.foreman.locations
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Include theforeman.foreman.settings role"
