@@ -6,8 +6,8 @@ foreman_products_defaults: &foreman_products_defaults
   download_policy: immediate
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
+  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_complete"
   verify_ssl_on_sync: False
   # http_proxy: Default Proxy
   http_proxy_policy: global_default_http_proxy
