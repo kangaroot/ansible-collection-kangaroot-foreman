@@ -8,28 +8,28 @@ foreman_products_redhat8_rhocp:
       # # Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
       # - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 (RPMs)
       #   # basearch: noarch
-      #   label: rhocp-4.10-for-rhel-8-x86_64-rpms
+      #   # label: rhocp-4.10-for-rhel-8-x86_64-rpms
       # # Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
       # - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 (RPMs)
       #   # basearch: noarch
-      #   label: rhocp-4.11-for-rhel-8-x86_64-rpms
+      #   # label: rhocp-4.11-for-rhel-8-x86_64-rpms
       # # Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
       # - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 (RPMs)
       #   # basearch: noarch
-      #   label: rhocp-4.12-for-rhel-8-x86_64-rpms
+      #   # label: rhocp-4.12-for-rhel-8-x86_64-rpms
       # # Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
       # - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 (RPMs)
       #   # basearch: noarch
-      #   label: rhocp-4.13-for-rhel-8-x86_64-rpms
+      #   # label: rhocp-4.13-for-rhel-8-x86_64-rpms
 
-      # Logical Volume Manager Storage RPMs
-      - name: Logical Volume Manager Storage (RPMs)
-        # basearch: noarch
-        label: lvms-4.12-for-rhel-8-x86_64-rpms
-      # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
-      - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 (RPMs)
-        # basearch: noarch
-        label: lvms-4.13-for-rhel-8-x86_64-rpms
+      # # Logical Volume Manager Storage RPMs
+      # - name: Logical Volume Manager Storage (RPMs)
+      #   # basearch: noarch
+      #   # label: lvms-4.12-for-rhel-8-x86_64-rpms
+      # # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
+      # - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 (RPMs)
+      #   # basearch: noarch
+      #   # label: lvms-4.13-for-rhel-8-x86_64-rpms
 
   - name: Red Hat OpenShift Container Platform
     all_repositories: true
@@ -46,6 +46,13 @@ foreman_products_redhat8_rhocp:
       # Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
       # Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 (RPMs)
       - rhocp-4.13-for-rhel-8-x86_64-rpms
+
+      # Logical Volume Manager Storage RPMs
+      # Logical Volume Manager Storage (RPMs)
+      - lvms-4.12-for-rhel-8-x86_64-rpms
+      # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
+      # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 (RPMs)
+      - lvms-4.13-for-rhel-8-x86_64-rpms
 
 foreman_content_views_redhat8_rhocp:
   - name: cv_rhel8_rhocp_410

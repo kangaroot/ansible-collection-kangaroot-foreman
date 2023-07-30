@@ -8,11 +8,11 @@ foreman_products_redhat9_rhocp:
   #     # Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
   #     - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 (RPMs)
   #       # basearch: noarch
-  #       label: rhocp-4.12-for-rhel-9-x86_64-rpms
+  #       # label: rhocp-4.12-for-rhel-9-x86_64-rpms
   #     # Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs
   #     - name: Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 (RPMs)
   #       # basearch: noarch
-  #       label: rhocp-4.13-for-rhel-9-x86_64-rpms
+  #       # label: rhocp-4.13-for-rhel-9-x86_64-rpms
 
   - name: Red Hat OpenShift Container Platform
     all_repositories: true
