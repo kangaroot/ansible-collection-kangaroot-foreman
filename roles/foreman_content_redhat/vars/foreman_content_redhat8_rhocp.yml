@@ -48,33 +48,33 @@ foreman_products_redhat8_rhocp:
       - rhocp-4.13-for-rhel-8-x86_64-rpms
 
 foreman_content_views_redhat8_rhocp:
-  - name: cv_rhel8_rhocp_4_10
+  - name: cv_rhel8_rhocp_410
     repositories:
       - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel8_rhocp_4_11
+  - name: cv_rhel8_rhocp_411
     repositories:
       - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel8_rhocp_4_12
+  - name: cv_rhel8_rhocp_412
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel8_rhocp_4_13
+  - name: cv_rhel8_rhocp_413
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
 
-  - name: cv_rhel8_rhocp_lvms_4_12
+  - name: cv_rhel8_rhocp_lvms_412
     repositories:
       - name: Logical Volume Manager Storage RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel8_rhocp_lvms_4_13
+  - name: cv_rhel8_rhocp_lvms_413
     repositories:
       - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
@@ -96,17 +96,17 @@ foreman_content_views_redhat8_rhocp:
         latest: true
       - content_view: cv_rhel8_ansible_29
         latest: true
-      - content_view: cv_rhel8_rhocp_4_10
+      - content_view: cv_rhel8_rhocp_410
         latest: true
-      - content_view: cv_rhel8_rhocp_4_11
+      - content_view: cv_rhel8_rhocp_411
         latest: true
-      - content_view: cv_rhel8_rhocp_4_12
+      - content_view: cv_rhel8_rhocp_412
         latest: true
-      - content_view: cv_rhel8_rhocp_4_13
+      - content_view: cv_rhel8_rhocp_413
         latest: true
-      - content_view: cv_rhel8_rhocp_lvms_4_12
+      - content_view: cv_rhel8_rhocp_lvms_412
         latest: true
-      - content_view: cv_rhel8_rhocp_lvms_4_13
+      - content_view: cv_rhel8_rhocp_lvms_413
         latest: true
 
 foreman_operatingsystems_redhat8_rhocp: []

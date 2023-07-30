@@ -24,23 +24,23 @@ foreman_products_redhat8_aap:
         label: automation-hub-4.2-for-rhel-8-x86_64-rpms
 
 foreman_content_views_redhat8_aap:
-  - name: cv_rhel8_ansible_automation_platform_2_1
+  - name: cv_rhel8_ansible_automation_platform_21
     repositories:
       - name: Red Hat Ansible Automation Platform 2.1 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
-  - name: cv_rhel8_ansible_automation_platform_2_2
+  - name: cv_rhel8_ansible_automation_platform_22
     repositories:
       - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
-  - name: cv_rhel8_ansible_automation_platform_2_3
+  - name: cv_rhel8_ansible_automation_platform_23
     repositories:
       - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
 
-  - name: cv_rhel8_automation_hub_4_2
+  - name: cv_rhel8_automation_hub_42
     repositories:
       - name: Red Hat Automation Hub 4.2 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
@@ -62,13 +62,13 @@ foreman_content_views_redhat8_aap:
         latest: true
       - content_view: cv_rhel8_ansible_29
         latest: true
-      - content_view: cv_rhel8_ansible_automation_platform_2_1
+      - content_view: cv_rhel8_ansible_automation_platform_21
         latest: true
-      - content_view: cv_rhel8_ansible_automation_platform_2_2
+      - content_view: cv_rhel8_ansible_automation_platform_22
         latest: true
-      - content_view: cv_rhel8_ansible_automation_platform_2_3
+      - content_view: cv_rhel8_ansible_automation_platform_23
         latest: true
-      - content_view: cv_rhel8_automation_hub_4_2
+      - content_view: cv_rhel8_automation_hub_42
         latest: true
 
 foreman_operatingsystems_redhat8_aap: []

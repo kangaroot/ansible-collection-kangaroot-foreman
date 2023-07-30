@@ -25,12 +25,12 @@ foreman_products_redhat9_rhocp:
       - rhocp-4.13-for-rhel-9-x86_64-rpms
 
 foreman_content_views_redhat9_rhocp:
-  - name: cv_rhel9_rhocp_4_12
+  - name: cv_rhel9_rhocp_412
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
-  - name: cv_rhel9_rhocp_4_13
+  - name: cv_rhel9_rhocp_413
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
@@ -48,7 +48,9 @@ foreman_content_views_redhat9_rhocp:
         latest: true
       - content_view: cv_rhel9_sat_client_6
         latest: true
-      - content_view: cv_epel9
+      - content_View: cv_rhel9_rhocp_412
+        latest: true
+      - content_View: cv_rhel9_rhocp_413
         latest: true
 
 foreman_operatingsystems_redhat9_rhocp: []
