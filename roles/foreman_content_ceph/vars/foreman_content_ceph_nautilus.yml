@@ -23,72 +23,87 @@ foreman_products_defaults_deb: &foreman_products_defaults_deb
 foreman_products_ceph_nautilus_el7:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL7
         label: ceph-nautilus-el7
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/x86_64/"
+        organization: "{{ foreman_organization_ceph_nautilus_el7 }}"
       - name: Ceph noarch packages - Nautilus - EL7
         label: ceph-noarch-nautilus-el7
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/noarch"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el7 }}/rpm-nautilus/el7/noarch"
+        organization: "{{ foreman_organization_ceph_nautilus_el7 }}"
 
 foreman_products_ceph_nautilus_el8:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL8
         label: ceph-nautilus-el8
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el8 }}/rpm-nautilus/el8/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el8 }}/rpm-nautilus/el8/x86_64/"
+        organization: "{{ foreman_organization_ceph_nautilus_el8 }}"
       - name: Ceph noarch packages - Nautilus - EL8
         label: ceph-noarch-nautilus-el8
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_el8 }}/rpm-nautilus/el8/noarch"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_el8 }}/rpm-nautilus/el8/noarch"
+        organization: "{{ foreman_organization_ceph_nautilus_el8 }}"
 
 foreman_products_ceph_nautilus_deb9:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_deb9 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 9 (Stretch)
         label: ceph-nautilus-debian-stretch
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb9 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb9 }}/debian-nautilus/"
         deb_releases: stretch
+        organization: "{{ foreman_organization_ceph_nautilus_deb9 }}"
 
 foreman_products_ceph_nautilus_deb10:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 10 (Buster)
         label: ceph-nautilus-debian-buster
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb10 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_deb10 }}/debian-nautilus/"
         deb_releases: buster
+        organization: "{{ foreman_organization_ceph_nautilus_deb10 }}"
 
 foreman_products_ceph_nautilus_ub1804:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-nautilus-ubuntu-bionic
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub1804 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub1804 }}/debian-nautilus/"
         deb_releases: bionic
+        organization: "{{ foreman_organization_ceph_nautilus_ub1804 }}"
 
 foreman_products_ceph_nautilus_ub2004:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_nautilus_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-nautilus-ubuntu-focal
-        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub2004 }}/debian-nautilus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_nautilus_ub2004 }}/debian-nautilus/"
         deb_releases: focal
+        organization: "{{ foreman_organization_ceph_nautilus_ub2004 }}"
 
 
 foreman_content_views_ceph_nautilus_el7:
   - name: cv_ceph_nautilus_el7
+    organization: "{{ foreman_organization_ceph_nautilus_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL7
         product: Ceph
@@ -98,6 +113,7 @@ foreman_content_views_ceph_nautilus_el7:
 
 foreman_content_views_ceph_nautilus_el8:
   - name: cv_ceph_nautilus_el8
+    organization: "{{ foreman_organization_ceph_nautilus_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL8
         product: Ceph
@@ -107,6 +123,7 @@ foreman_content_views_ceph_nautilus_el8:
 
 foreman_content_views_ceph_nautilus_deb9:
   - name: cv_ceph_nautilus_deb9
+    organization: "{{ foreman_organization_ceph_nautilus_deb9 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 9 (Stretch)
         product: Ceph
@@ -114,6 +131,7 @@ foreman_content_views_ceph_nautilus_deb9:
 
 foreman_content_views_ceph_nautilus_deb10:
   - name: cv_ceph_nautilus_deb10
+    organization: "{{ foreman_organization_ceph_nautilus_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 10 (Buster)
         product: Ceph
@@ -121,6 +139,7 @@ foreman_content_views_ceph_nautilus_deb10:
 
 foreman_content_views_ceph_nautilus_ub1804:
   - name: cv_ceph_nautilus_ub1804
+    organization: "{{ foreman_organization_ceph_nautilus_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 18.04 LTS (Bionic Beaver)
         product: Ceph
@@ -128,6 +147,7 @@ foreman_content_views_ceph_nautilus_ub1804:
 
 foreman_content_views_ceph_nautilus_ub2004:
   - name: cv_ceph_nautilus_ub2004
+    organization: "{{ foreman_organization_ceph_nautilus_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 20.04 LTS (Focal Fossa)
         product: Ceph

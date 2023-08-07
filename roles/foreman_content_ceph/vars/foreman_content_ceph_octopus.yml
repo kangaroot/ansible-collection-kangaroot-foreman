@@ -23,62 +23,75 @@ foreman_products_defaults_deb: &foreman_products_defaults_deb
 foreman_products_ceph_octopus_el7:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_octopus_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL7
         label: ceph-octopus-el7
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/x86_64/"
+        organization: "{{ foreman_organization_ceph_octopus_el7 }}"
       - name: Ceph noarch packages - Octopus - EL7
         label: ceph-noarch-octopus-el7
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/noarch"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/noarch"
+        organization: "{{ foreman_organization_ceph_octopus_el7 }}"
 
 foreman_products_ceph_octopus_el8:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_octopus_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL8
         label: ceph-octopus-el8
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/x86_64/"
+        organization: "{{ foreman_organization_ceph_octopus_el8 }}"
       - name: Ceph noarch packages - Octopus - EL8
         label: ceph-noarch-octopus-el8
-        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/noarch"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/noarch"
+        organization: "{{ foreman_organization_ceph_octopus_el8 }}"
 
 foreman_products_ceph_octopus_deb10:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_octopus_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
         label: ceph-octopus-debian-buster
-        url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 }}/debian-octopus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 }}/debian-octopus/"
         deb_releases: buster
+        organization: "{{ foreman_organization_ceph_octopus_deb10 }}"
 
 foreman_products_ceph_octopus_ub1804:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_octopus_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-octopus-ubuntu-bionic
-        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         deb_releases: bionic
+        organization: "{{ foreman_organization_ceph_octopus_ub1804 }}"
 
 foreman_products_ceph_octopus_ub2004:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_octopus_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-octopus-ubuntu-focal
-        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         <<: *foreman_products_defaults_deb
+        url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         deb_releases: focal
+        organization: "{{ foreman_organization_ceph_octopus_ub2004 }}"
 
 
 foreman_content_views_ceph_octopus_el7:
   - name: cv_ceph_octopus_el7
+    organization: "{{ foreman_organization_ceph_octopus_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL7
         product: Ceph
@@ -88,6 +101,7 @@ foreman_content_views_ceph_octopus_el7:
 
 foreman_content_views_ceph_octopus_el8:
   - name: cv_ceph_octopus_el8
+    organization: "{{ foreman_organization_ceph_octopus_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL8
         product: Ceph
@@ -97,6 +111,7 @@ foreman_content_views_ceph_octopus_el8:
 
 foreman_content_views_ceph_octopus_deb10:
   - name: cv_ceph_octopus_deb10
+    organization: "{{ foreman_organization_ceph_octopus_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
         product: Ceph
@@ -104,6 +119,7 @@ foreman_content_views_ceph_octopus_deb10:
 
 foreman_content_views_ceph_octopus_ub1804:
   - name: cv_ceph_octopus_ub1804
+    organization: "{{ foreman_organization_ceph_octopus_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
         product: Ceph
@@ -111,6 +127,7 @@ foreman_content_views_ceph_octopus_ub1804:
 
 foreman_content_views_ceph_octopus_ub2004:
   - name: cv_ceph_octopus_ub2004
+    organization: "{{ foreman_organization_ceph_octopus_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
         product: Ceph

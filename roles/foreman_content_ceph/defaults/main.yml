@@ -82,6 +82,46 @@ foreman_enable_ceph_docker: false
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_ceph: "{{ foreman_organization }}"
+
+foreman_organization_ceph_nautilus: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_nautilus_el7: "{{ foreman_organization_ceph_nautilus }}"
+foreman_organization_ceph_nautilus_el8: "{{ foreman_organization_ceph_nautilus }}"
+foreman_organization_ceph_nautilus_deb9: "{{ foreman_organization_ceph_nautilus }}"
+foreman_organization_ceph_nautilus_deb10: "{{ foreman_organization_ceph_nautilus }}"
+foreman_organization_ceph_nautilus_ub1804: "{{ foreman_organization_ceph_nautilus }}"
+foreman_organization_ceph_nautilus_ub2004: "{{ foreman_organization_ceph_nautilus }}"
+
+foreman_organization_ceph_octopus: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_octopus_el7: "{{ foreman_organization_ceph_octopus }}"
+foreman_organization_ceph_octopus_el8: "{{ foreman_organization_ceph_octopus }}"
+foreman_organization_ceph_octopus_deb10: "{{ foreman_organization_ceph_octopus }}"
+foreman_organization_ceph_octopus_ub1804: "{{ foreman_organization_ceph_octopus }}"
+foreman_organization_ceph_octopus_ub2004: "{{ foreman_organization_ceph_octopus }}"
+
+foreman_organization_ceph_pacific: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_pacific_el7: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_el8: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_el9: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_deb10: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_deb11: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_ub1804: "{{ foreman_organization_ceph_pacific }}"
+foreman_organization_ceph_pacific_ub2004: "{{ foreman_organization_ceph_pacific }}"
+
+foreman_organization_ceph_quincy: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_quincy_el7: "{{ foreman_organization_ceph_quincy }}"
+foreman_organization_ceph_quincy_el8: "{{ foreman_organization_ceph_quincy }}"
+foreman_organization_ceph_quincy_el9: "{{ foreman_organization_ceph_quincy }}"
+foreman_organization_ceph_quincy_deb11: "{{ foreman_organization_ceph_quincy }}"
+foreman_organization_ceph_quincy_ub2004: "{{ foreman_organization_ceph_quincy }}"
+
+foreman_organization_ceph_docker: "{{ foreman_organization_ceph }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

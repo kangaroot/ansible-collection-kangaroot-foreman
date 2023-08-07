@@ -15,6 +15,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ceph_docker:
   - name: Ceph
     label: Ceph
+    organization: "{{ foreman_organization_ceph_docker }}"
     repositories:
       - name: Ceph Docker images
         label: ceph-docker
@@ -28,4 +29,5 @@ foreman_products_ceph_docker:
         <<: *foreman_products_defaults
         content_type: docker
         mirroring_policy: "mirror_content_only"
+        organization: "{{ foreman_organization_ceph_docker }}"
 
