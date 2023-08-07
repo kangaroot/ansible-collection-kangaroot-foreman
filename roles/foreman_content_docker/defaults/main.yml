@@ -31,6 +31,25 @@ foreman_enable_docker_ee_el9: false
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_docker: "{{ foreman_organization }}"
+
+foreman_organization_docker_ce: "{{ foreman_organization_docker }}"
+
+foreman_organization_docker_ce_el7: "{{ foreman_organization_docker_ce }}"
+foreman_organization_docker_ce_el8: "{{ foreman_organization_docker_ce }}"
+foreman_organization_docker_ce_el9: "{{ foreman_organization_docker_ce }}"
+
+foreman_organization_docker_ee: "{{ foreman_organization_docker }}"
+
+foreman_organization_docker_ee_el7: "{{ foreman_organization_docker_ee }}"
+foreman_organization_docker_ee_el8: "{{ foreman_organization_docker_ee }}"
+foreman_organization_docker_ee_el9: "{{ foreman_organization_docker_ee }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
