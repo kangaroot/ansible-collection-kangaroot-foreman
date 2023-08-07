@@ -36,6 +36,33 @@ foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mss
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_microsoft: "{{ foreman_organization }}"
+
+foreman_organization_microsoft_azure_cli: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_prod: "{{ foreman_organization_microsoft }}"
+
+foreman_organization_microsoft_prod_el7: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_el8: "{{ foreman_organization_microsoft_prod }}"
+foreman_organization_microsoft_prod_el9: "{{ foreman_organization_microsoft_prod }}"
+
+foreman_organization_microsoft_mssql_server_2017: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2017_el7: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+foreman_organization_microsoft_mssql_server_2017_el8: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+
+foreman_organization_microsoft_mssql_server_2019: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2019_el7: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+foreman_organization_microsoft_mssql_server_2019_el8: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+
+foreman_organization_microsoft_mssql_server_2022: "{{ foreman_organization_microsoft }}"
+foreman_organization_microsoft_mssql_server_2022_el8: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
