@@ -19,6 +19,16 @@ foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_datadog: "{{ foreman_organization }}"
+
+foreman_organization_datadog_v6: "{{ foreman_organization_datadog }}"
+foreman_organization_datadog_v7: "{{ foreman_organization_datadog }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

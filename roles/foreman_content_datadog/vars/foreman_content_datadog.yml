@@ -15,23 +15,28 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_datadog_v6:
   - name: Datadog
     label: Datadog
+    organization: "{{ foreman_organization_datadog_v6 }}"
     repositories:
       - name: Datadog Agent v6
         label: datadog-v6
-        url: "{{ foreman_repo_baseurl_datadog }}/stable/6/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_datadog }}/stable/6/x86_64/"
+        organization: "{{ foreman_organization_datadog_v6 }}"
 
 foreman_products_datadog_v7:
   - name: Datadog
     label: Datadog
+    organization: "{{ foreman_organization_datadog_v7 }}"
     repositories:
       - name: Datadog Agent v7
         label: datadog-v7
-        url: "{{ foreman_repo_baseurl_datadog }}/stable/7/x86_64/"
         <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_datadog }}/stable/7/x86_64/"
+        organization: "{{ foreman_organization_datadog_v7 }}"
 
 foreman_content_views_datadog_v6:
   - name: cv_datadog_v6
+    organization: "{{ foreman_organization_datadog_v6 }}"
     repositories:
       - name: Datadog Agent v6
         product: Datadog
@@ -39,6 +44,7 @@ foreman_content_views_datadog_v6:
 
 foreman_content_views_datadog_v7:
   - name: cv_datadog_v7
+    organization: "{{ foreman_organization_datadog_v7 }}"
     repositories:
       - name: Datadog Agent v7
         product: Datadog
