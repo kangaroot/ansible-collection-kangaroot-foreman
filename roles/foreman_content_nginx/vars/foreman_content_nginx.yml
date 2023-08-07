@@ -16,50 +16,61 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_nginx_el7:
   - name: Nginx
     label: Nginx
+    organization: "{{ foreman_organization_nginx_el7 }}"
     repositories:
       - name: nginx stable repo - EL7
         label: nginx-stable-el7
         url: "{{ foreman_repo_baseurl_nginx }}/rhel/7/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el7 }}"
       - name: nginx mainline repo - EL7
         label: nginx-mainline-el7
         url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/7/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el7 }}"
 
 foreman_products_nginx_el8:
   - name: Nginx
     label: Nginx
+    organization: "{{ foreman_organization_nginx_el8 }}"
     repositories:
       - name: nginx stable repo - EL8
         label: nginx-stable-el8
         url: "{{ foreman_repo_baseurl_nginx }}/rhel/8/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el8 }}"
       - name: nginx mainline repo - EL8
         label: nginx-mainline-el8
         url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/8/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el8 }}"
 
 foreman_products_nginx_el9:
   - name: Nginx
     label: Nginx
+    organization: "{{ foreman_organization_nginx_el9 }}"
     repositories:
       - name: nginx stable repo - EL9
         label: nginx-stable-el9
         url: "{{ foreman_repo_baseurl_nginx }}/rhel/9/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el9 }}"
       - name: nginx mainline repo - EL9
         label: nginx-mainline-el9
         url: "{{ foreman_repo_baseurl_nginx }}/mainline/rhel/9/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_nginx_el9 }}"
 
 
 foreman_content_views_nginx_el7:
   - name: cv_nginx_stable_el7
+    organization: "{{ foreman_organization_nginx_el7 }}"
     repositories:
       - name: nginx stable repo - EL7
         product: Nginx
     allow_promote: False
   - name: cv_nginx_mainline_el7
+    organization: "{{ foreman_organization_nginx_el7 }}"
     repositories:
       - name: nginx mainline repo - EL7
         product: Nginx
@@ -67,11 +78,13 @@ foreman_content_views_nginx_el7:
 
 foreman_content_views_nginx_el8:
   - name: cv_nginx_stable_el8
+    organization: "{{ foreman_organization_nginx_el8 }}"
     repositories:
       - name: nginx stable repo - EL8
         product: Nginx
     allow_promote: False
   - name: cv_nginx_mainline_el8
+    organization: "{{ foreman_organization_nginx_el8 }}"
     repositories:
       - name: nginx mainline repo - EL8
         product: Nginx
@@ -79,11 +92,13 @@ foreman_content_views_nginx_el8:
 
 foreman_content_views_nginx_el9:
   - name: cv_nginx_stable_el9
+    organization: "{{ foreman_organization_nginx_el9 }}"
     repositories:
       - name: nginx stable repo - EL9
         product: Nginx
     allow_promote: False
   - name: cv_nginx_mainline_el9
+    organization: "{{ foreman_organization_nginx_el9 }}"
     repositories:
       - name: nginx mainline repo - EL9
         product: Nginx

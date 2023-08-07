@@ -24,6 +24,17 @@ foreman_enable_nginx_el9: "{{ foreman_enable_nginx | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_nginx: "{{ foreman_organization }}"
+
+foreman_organization_nginx_el7: "{{ foreman_organization_nginx }}"
+foreman_organization_nginx_el8: "{{ foreman_organization_nginx }}"
+foreman_organization_nginx_el9: "{{ foreman_organization_nginx }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
