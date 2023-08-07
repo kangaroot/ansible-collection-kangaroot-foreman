@@ -15,9 +15,21 @@ foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
 #######################################
 
 foreman_enable_foreman: false
+
 foreman_enable_foreman_el7: false
 foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
 foreman_enable_foreman_el9: false
+
+
+#######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_foreman: "{{ foreman_organization }}"
+
+foreman_organization_foreman_el7: "{{ foreman_organization_foreman }}"
+foreman_organization_foreman_el8: "{{ foreman_organization_foreman }}"
+foreman_organization_foreman_el9: "{{ foreman_organization_foreman }}"
 
 
 #######################################
