@@ -20,6 +20,17 @@ foreman_enable_epel_el9: "{{ foreman_enable_epel | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_epel: "{{ foreman_organization }}"
+
+foreman_organization_epel_el7: "{{ foreman_organization_epel }}"
+foreman_organization_epel_el8: "{{ foreman_organization_epel }}"
+foreman_organization_epel_el9: "{{ foreman_organization_epel }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
