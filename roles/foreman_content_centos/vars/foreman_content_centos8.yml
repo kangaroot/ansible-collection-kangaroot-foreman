@@ -19,94 +19,114 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos8:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - BaseOS
         label: centos-8-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream
         label: centos-8-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - Extras
         label: centos-8-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/extras/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - Plus
         label: centos-8-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/centosplus/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - PowerTools
         label: centos-8-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - HighAvailability
         label: centos-8-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - ContinuousRelease
         label: centos-8-cr
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/cr/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - FastTrack
         label: centos-8-fasttrack
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
+        organization: "{{ foreman_organization_centos8 }}"
 
       - name: CentOS 8 - BaseOS Kickstart
         label: centos-8-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream Kickstart
         label: centos-8-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_centos8 }}"
 
 
 foreman_content_views_centos8:
   - name: cv_centos8_baseos
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - BaseOS
         product: CentOS
     allow_promote: False
   - name: cv_centos8_appstream
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - AppStream
         product: CentOS
     allow_promote: False
 
   - name: cv_centos8_extras
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - Extras
         product: CentOS
     allow_promote: False
   - name: cv_centos8_plus
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - Plus
         product: CentOS
     allow_promote: False
   - name: cv_centos8_powertools
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - PowerTools
         product: CentOS
     allow_promote: False
   - name: cv_centos8_ha
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - HighAvailability
         product: CentOS
     allow_promote: False
   - name: cv_centos8_cr
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - ContinuousRelease
         product: CentOS
     allow_promote: False
   - name: cv_centos8_fasttrack
+    organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - FastTrack
         product: CentOS
     allow_promote: False
 
   - name: ccv_centos8
+    organization: "{{ foreman_organization_centos8 }}"
     composite: True
     auto_publish: True
     components:
@@ -180,7 +200,6 @@ foreman_installation_media_centos8:
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "CentOS"
@@ -193,6 +212,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_centos8:
   - name: ak_centos8
+    organization: "{{ foreman_organization_centos8 }}"
     content_view: ccv_centos8
     <<: *foreman_activation_keys_defaults
     content_overrides:

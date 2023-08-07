@@ -16,22 +16,26 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos8_sig_virtualization_advanced_virtualization:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos8_sig_virtualization_advanced_virtualization }}"
     repositories:
       - name: CentOS 8 - Advanced Virtualization
         label: centos-8-advanced-virtualization
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8/virt/x86_64/advanced-virtualization/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos8_sig_virtualization_advanced_virtualization }}"
 
 foreman_products_centos8_sig_virtualization_ovirt44:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos8_sig_virtualization_ovirt44 }}"
     repositories:
       - name: CentOS 8 - oVirt 4.4
         label: centos-8-ovirt44
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8/virt/x86_64/ovirt-44/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos8_sig_virtualization_ovirt44 }}"
 
 foreman_products_centos8_sig_virtualization: "{{ [] |
   union( foreman_products_centos8_sig_virtualization_advanced_virtualization | default([]) if foreman_enable_centos8_sig_virtualization_advanced_virtualization else [] ) |
@@ -41,6 +45,7 @@ foreman_products_centos8_sig_virtualization: "{{ [] |
 
 foreman_content_views_centos8_sig_virtualization_advanced_virtualization:
   - name: cv_centos8_advanced_virtualization
+    organization: "{{ foreman_organization_centos8_sig_virtualization_advanced_virtualization }}"
     repositories:
       - name: CentOS 8 - Advanced Virtualization
         product: CentOS
@@ -48,6 +53,7 @@ foreman_content_views_centos8_sig_virtualization_advanced_virtualization:
 
 foreman_content_views_centos8_sig_virtualization_ovirt44:
   - name: cv_centos8_ovirt44
+    organization: "{{ foreman_organization_centos8_sig_virtualization_ovirt44 }}"
     repositories:
       - name: CentOS 8 - oVirt 4.4
         product: CentOS

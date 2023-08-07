@@ -16,202 +16,242 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream8_sig_storage_samba411:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba411 }}"
     repositories:
       - name: CentOS 8 - Samba 4.11
         label: centos-8-samba411
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8/storage/x86_64/samba-411/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba411 }}"
 
 foreman_products_centos_stream8_sig_storage_samba412:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba412 }}"
     repositories:
       - name: CentOS 8 - Samba 4.12
         label: centos-8-samba412
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8/storage/x86_64/samba-412/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba412 }}"
 
 foreman_products_centos_stream8_sig_storage_samba413:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba413 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.13
         label: centos-stream-8-samba413
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-413/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba413 }}"
 
 foreman_products_centos_stream8_sig_storage_samba414:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba414 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.14
         label: centos-stream-8-samba414
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-414/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba414 }}"
 
 foreman_products_centos_stream8_sig_storage_samba415:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba415 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.15
         label: centos-stream-8-samba415
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-415/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba415 }}"
 
 foreman_products_centos_stream8_sig_storage_samba416:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba416 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.16
         label: centos-stream-8-samba416
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-416/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba416 }}"
 
 foreman_products_centos_stream8_sig_storage_samba417:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba417 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.17
         label: centos-stream-8-samba417
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-417/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba417 }}"
 
 foreman_products_centos_stream8_sig_storage_samba418:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba418 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.18
         label: centos-stream-8-samba418
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/samba-418/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_samba418 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster6:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster6 }}"
     repositories:
       - name: CentOS 8 - Gluster 6
         label: centos-8-gluster6
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8/storage/x86_64/gluster-6/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster6 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster7:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster7 }}"
     repositories:
       - name: CentOS 8 - Gluster 7
         label: centos-8-gluster7
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8/storage/x86_64/gluster-7/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster7 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster8:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster8 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 8
         label: centos-stream-8-gluster8
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/gluster-8/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster8 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster9:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster9 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 9
         label: centos-stream-8-gluster9
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/gluster-9/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster9 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster10:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster10 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 10
         label: centos-stream-8-gluster10
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/gluster-10/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster10 }}"
 
 foreman_products_centos_stream8_sig_storage_gluster11:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster11 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 11
         label: centos-stream-8-gluster9
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/gluster-11/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster11 }}"
 
 foreman_products_centos_stream8_sig_storage_ceph_nautilus:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_nautilus }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Nautilus
         label: centos-stream-8-ceph-nautilus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/ceph-nautilus/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_nautilus }}"
 
 foreman_products_centos_stream8_sig_storage_ceph_octopus:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_octopus }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Octopus
         label: centos-stream-8-ceph-octopus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/ceph-octopus/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_octopus }}"
 
 foreman_products_centos_stream8_sig_storage_ceph_pacific:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_pacific }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Pacific
         label: centos-stream-8-ceph-pacific
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/ceph-pacific/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_pacific }}"
 
 foreman_products_centos_stream8_sig_storage_ceph_quincy:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_quincy }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Quincy
         label: centos-stream-8-ceph-quincy
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/ceph-quincy/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_quincy }}"
 
 foreman_products_centos_stream8_sig_storage_nfs_ganesha28:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha28 }}"
     repositories:
       - name: CentOS Stream 8 - NFS Ganesha 2.8
         label: centos-8-nfs-ganesha28
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/nfs-ganesha-28/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha28 }}"
 
 foreman_products_centos_stream8_sig_storage_nfs_ganesha30:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha30 }}"
     repositories:
       - name: CentOS Stream 8 - NFS Ganesha 3.0
         label: centos-8-nfs-ganesha30
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/storage/x86_64/nfs-ganesha-30/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+        organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha30 }}"
 
 foreman_products_centos_stream8_sig_storage: "{{ [] |
   union ( foreman_products_centos_stream8_sig_storage_samba411 | default([]) if foreman_enable_centos_stream8_sig_storage_samba411 else [] ) |
@@ -239,6 +279,7 @@ foreman_products_centos_stream8_sig_storage: "{{ [] |
 
 foreman_content_views_centos_stream8_sig_storage_samba411:
   - name: cv_centos8_samba411
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba411 }}"
     repositories:
       - name: CentOS 8 - Samba 4.11
         product: CentOS
@@ -246,6 +287,7 @@ foreman_content_views_centos_stream8_sig_storage_samba411:
 
 foreman_content_views_centos_stream8_sig_storage_samba412:
   - name: cv_centos8_samba412
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba412 }}"
     repositories:
       - name: CentOS 8 - Samba 4.12
         product: CentOS
@@ -253,6 +295,7 @@ foreman_content_views_centos_stream8_sig_storage_samba412:
 
 foreman_content_views_centos_stream8_sig_storage_samba413:
   - name: cv_centos_stream8_samba413
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba413 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.13
         product: CentOS
@@ -260,6 +303,7 @@ foreman_content_views_centos_stream8_sig_storage_samba413:
 
 foreman_content_views_centos_stream8_sig_storage_samba414:
   - name: cv_centos_stream8_samba414
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba414 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.14
         product: CentOS
@@ -267,6 +311,7 @@ foreman_content_views_centos_stream8_sig_storage_samba414:
 
 foreman_content_views_centos_stream8_sig_storage_samba415:
   - name: cv_centos_stream8_samba415
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba415 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.15
         product: CentOS
@@ -274,6 +319,7 @@ foreman_content_views_centos_stream8_sig_storage_samba415:
 
 foreman_content_views_centos_stream8_sig_storage_samba416:
   - name: cv_centos_stream8_samba416
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba416 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.16
         product: CentOS
@@ -281,6 +327,7 @@ foreman_content_views_centos_stream8_sig_storage_samba416:
 
 foreman_content_views_centos_stream8_sig_storage_samba417:
   - name: cv_centos_stream8_samba417
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba417 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.17
         product: CentOS
@@ -288,6 +335,7 @@ foreman_content_views_centos_stream8_sig_storage_samba417:
 
 foreman_content_views_centos_stream8_sig_storage_samba418:
   - name: cv_centos_stream8_samba418
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_samba418 }}"
     repositories:
       - name: CentOS Stream 8 - Samba 4.18
         product: CentOS
@@ -295,6 +343,7 @@ foreman_content_views_centos_stream8_sig_storage_samba418:
 
 foreman_content_views_centos_stream8_sig_storage_gluster6:
   - name: cv_centos8_gluster6
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster6 }}"
     repositories:
       - name: CentOS 8 - Gluster 6
         product: CentOS
@@ -302,6 +351,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster6:
 
 foreman_content_views_centos_stream8_sig_storage_gluster7:
   - name: cv_centos8_gluster7
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster7 }}"
     repositories:
       - name: CentOS 8 - Gluster 7
         product: CentOS
@@ -309,6 +359,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster7:
 
 foreman_content_views_centos_stream8_sig_storage_gluster8:
   - name: cv_centos_stream8_gluster8
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster8 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 8
         product: CentOS
@@ -316,6 +367,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster8:
 
 foreman_content_views_centos_stream8_sig_storage_gluster9:
   - name: cv_centos_stream8_gluster9
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster9 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 9
         product: CentOS
@@ -323,6 +375,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster9:
 
 foreman_content_views_centos_stream8_sig_storage_gluster10:
   - name: cv_centos_stream8_gluster10
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster10 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 10
         product: CentOS
@@ -330,6 +383,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster10:
 
 foreman_content_views_centos_stream8_sig_storage_gluster11:
   - name: cv_centos_stream8_gluster11
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_gluster11 }}"
     repositories:
       - name: CentOS Stream 8 - Gluster 11
         product: CentOS
@@ -337,6 +391,7 @@ foreman_content_views_centos_stream8_sig_storage_gluster11:
 
 foreman_content_views_centos_stream8_sig_storage_ceph_nautilus:
   - name: cv_centos_stream8_ceph_nautilus
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_nautilus }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Nautilus
         product: CentOS
@@ -344,6 +399,7 @@ foreman_content_views_centos_stream8_sig_storage_ceph_nautilus:
 
 foreman_content_views_centos_stream8_sig_storage_ceph_octopus:
   - name: cv_centos_stream8_ceph_octopus
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_octopus }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Octopus
         product: CentOS
@@ -351,6 +407,7 @@ foreman_content_views_centos_stream8_sig_storage_ceph_octopus:
 
 foreman_content_views_centos_stream8_sig_storage_ceph_pacific:
   - name: cv_centos_stream8_ceph_pacific
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_pacific }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Pacific
         product: CentOS
@@ -358,6 +415,7 @@ foreman_content_views_centos_stream8_sig_storage_ceph_pacific:
 
 foreman_content_views_centos_stream8_sig_storage_ceph_quincy:
   - name: cv_centos_stream8_ceph_quincy
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_ceph_quincy }}"
     repositories:
       - name: CentOS Stream 8 - Ceph Quincy
         product: CentOS
@@ -365,6 +423,7 @@ foreman_content_views_centos_stream8_sig_storage_ceph_quincy:
 
 foreman_content_views_centos_stream8_sig_storage_nfs_ganesha28:
   - name: cv_centos_stream8_nfs_ganesha28
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha28 }}"
     repositories:
       - name: CentOS Stream 8 - NFS Ganesha 2.8
         product: CentOS
@@ -372,6 +431,7 @@ foreman_content_views_centos_stream8_sig_storage_nfs_ganesha28:
 
 foreman_content_views_centos_stream8_sig_storage_nfs_ganesha30:
   - name: cv_centos_stream8_nfs_ganesha30
+    organization: "{{ foreman_organization_centos_stream8_sig_storage_nfs_ganesha30 }}"
     repositories:
       - name: CentOS Stream 8 - NFS Ganesha 3.0
         product: CentOS

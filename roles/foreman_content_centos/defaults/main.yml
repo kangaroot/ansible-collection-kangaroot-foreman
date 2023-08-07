@@ -186,7 +186,6 @@ foreman_repo_baseurl_ovirt: https://resources.ovirt.org
 
 foreman_enable_centos: false
 
-
 ### CENTOS 7
 
 foreman_enable_centos7: false
@@ -281,7 +280,6 @@ foreman_enable_centos7_sig_storage_nfs_ganesha28: "{{ foreman_enable_centos7_sig
 foreman_enable_centos7_sig_storage_nfs_ganesha30: false
 foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 
-
 ### CENTOS 8
 
 foreman_enable_centos8: false
@@ -354,7 +352,6 @@ foreman_enable_centos8_sig_storage_ceph_octopus: false
 foreman_enable_centos8_sig_storage_ceph_pacific: false
 foreman_enable_centos8_sig_storage_nfs_ganesha28: false
 foreman_enable_centos8_sig_storage_nfs_ganesha30: false
-
 
 ### CENTOS STREAM 8
 
@@ -432,7 +429,6 @@ foreman_enable_centos_stream8_sig_hyperscale_hotfixes: false
 foreman_enable_centos_stream8_sig_hyperscale_spin: false
 foreman_enable_centos_stream8_sig_hyperscale_experimental: false
 
-
 ### CENTOS STREAM 9
 
 foreman_enable_centos_stream9: "{{ foreman_enable_centos | bool }}"
@@ -490,6 +486,270 @@ foreman_enable_centos_stream9_sig_hyperscale_main: "{{ foreman_enable_centos_str
                                                        foreman_enable_centos_stream9_sig_hyperscale_spin | bool }}"
 foreman_enable_centos_stream9_sig_hyperscale_spin: false
 foreman_enable_centos_stream9_sig_hyperscale_experimental: false
+
+
+#######################################
+### ORGANIZATION VARS
+#######################################
+
+### CENTOS
+
+foreman_organization_centos: "{{ foreman_organization }}"
+
+### CENTOS 7
+
+foreman_organization_centos7: "{{ foreman_organization_centos }}"
+
+foreman_organization_centos70: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos71: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos72: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos73: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos74: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos75: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos76: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos77: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos78: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos79: "{{ foreman_organization_centos7 }}"
+
+foreman_organization_centos7_dotnet: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_sclo: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_opstools: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_nfv: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_nfv_common: "{{ foreman_organization_centos7_sig_nfv }}"
+foreman_organization_centos7_sig_nfv_fdio: "{{ foreman_organization_centos7_sig_nfv }}"
+
+foreman_organization_centos7_sig_configmanagement: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_configmanagement_ansible26: "{{ foreman_organization_centos7_sig_configmanagement }}"
+foreman_organization_centos7_sig_configmanagement_ansible27: "{{ foreman_organization_centos7_sig_configmanagement }}"
+foreman_organization_centos7_sig_configmanagement_ansible28: "{{ foreman_organization_centos7_sig_configmanagement }}"
+foreman_organization_centos7_sig_configmanagement_ansible29: "{{ foreman_organization_centos7_sig_configmanagement }}"
+
+foreman_organization_centos7_sig_paas: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_paas_openshift_origin: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin13: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin14: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin15: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin36: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin37: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin39: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin310: "{{ foreman_organization_centos7_sig_paas }}"
+foreman_organization_centos7_sig_paas_openshift_origin311: "{{ foreman_organization_centos7_sig_paas }}"
+
+foreman_organization_centos7_sig_cloud: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_cloud_openstack_queens: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_rocky: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_stein: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_train: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_queens_tested: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_rocky_tested: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_stein_tested: "{{ foreman_organization_centos7_sig_cloud }}"
+foreman_organization_centos7_sig_cloud_openstack_train_tested: "{{ foreman_organization_centos7_sig_cloud }}"
+
+foreman_organization_centos7_sig_virtualization: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_virtualization_azure: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_ovirt42: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_ovirt43: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_qemu_ev: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_46: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_48: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_410: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_412: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_413: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_414: "{{ foreman_organization_centos7_sig_virtualization }}"
+foreman_organization_centos7_sig_virtualization_xen_epel: "{{ foreman_organization_centos7_sig_virtualization }}"
+
+foreman_organization_centos7_sig_storage: "{{ foreman_organization_centos7 }}"
+foreman_organization_centos7_sig_storage_samba411: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster40: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster41: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster5: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster6: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster7: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster8: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_gluster9: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_ceph_jewel: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_ceph_luminous: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_ceph_nautilus: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_nfs_ganesha28: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_nfs_ganesha30: "{{ foreman_organization_centos7_sig_storage }}"
+foreman_organization_centos7_sig_storage_nfs_ganesha4: "{{ foreman_organization_centos7_sig_storage }}"
+
+### CENTOS 8
+
+foreman_organization_centos8: "{{ foreman_organization_centos }}"
+
+foreman_organization_centos80: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos81: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos82: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos83: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos84: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos85: "{{ foreman_organization_centos8 }}"
+
+foreman_organization_centos80_kickstart: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos81_kickstart: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos82_kickstart: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos83_kickstart: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos84_kickstart: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos85_kickstart: "{{ foreman_organization_centos8 }}"
+
+foreman_organization_centos8_sig_opstools: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_nfv: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_nfv_extras: "{{ foreman_organization_centos8_sig_nfv }}"
+foreman_organization_centos8_sig_nfv_openvswitch: "{{ foreman_organization_centos8_sig_nfv }}"
+
+foreman_organization_centos8_sig_configmanagement: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_configmanagement_ansible29: "{{ foreman_organization_centos8_sig_configmanagement }}"
+
+foreman_organization_centos8_sig_kmods: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_kmods_main: "{{ foreman_organization_centos8_sig_kmods }}"
+foreman_organization_centos8_sig_kmods_rebuild: "{{ foreman_organization_centos8_sig_kmods }}"
+
+foreman_organization_centos8_sig_messaging: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_messaging_qpid_proton: "{{ foreman_organization_centos8_sig_messaging }}"
+foreman_organization_centos8_sig_messaging_rabbitmq38: "{{ foreman_organization_centos8_sig_messaging }}"
+
+foreman_organization_centos8_sig_cloud: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_cloud_openstack_train: "{{ foreman_organization_centos8_sig_cloud }}"
+foreman_organization_centos8_sig_cloud_openstack_ussuri: "{{ foreman_organization_centos8_sig_cloud }}"
+foreman_organization_centos8_sig_cloud_openstack_victoria: "{{ foreman_organization_centos8_sig_cloud }}"
+foreman_organization_centos8_sig_cloud_openstack_train_tested: "{{ foreman_organization_centos8_sig_cloud }}"
+foreman_organization_centos8_sig_cloud_openstack_ussuri_tested: "{{ foreman_organization_centos8_sig_cloud }}"
+foreman_organization_centos8_sig_cloud_openstack_victoria_tested: "{{ foreman_organization_centos8_sig_cloud }}"
+
+foreman_organization_centos8_sig_virtualization: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_virtualization_advanced_virtualization: "{{ foreman_organization_centos8_sig_virtualization }}"
+foreman_organization_centos8_sig_virtualization_ovirt44: "{{ foreman_organization_centos8_sig_virtualization }}"
+foreman_organization_centos8_sig_virtualization_ovirt45: "{{ foreman_organization_centos8_sig_virtualization }}"
+
+foreman_organization_centos8_sig_storage: "{{ foreman_organization_centos8 }}"
+foreman_organization_centos8_sig_storage_samba411: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_samba412: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_samba413: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_samba414: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_samba415: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_gluster6: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_gluster7: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_gluster8: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_gluster9: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_ceph_nautilus: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_ceph_octopus: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_ceph_pacific: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_nfs_ganesha28: "{{ foreman_organization_centos8_sig_storage }}"
+foreman_organization_centos8_sig_storage_nfs_ganesha30: "{{ foreman_organization_centos8_sig_storage }}"
+
+### CENTOS STREAM 8
+
+foreman_organization_centos_stream8: "{{ foreman_organization_centos }}"
+
+foreman_organization_centos_stream8_sig_opstools: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_plus: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_nfv: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_nfv_extras: "{{ foreman_organization_centos_stream8_sig_nfv }}"
+foreman_organization_centos_stream8_sig_nfv_openvswitch: "{{ foreman_organization_centos_stream8_sig_nfv }}"
+
+foreman_organization_centos_stream8_sig_configmanagement: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_configmanagement_ansible29: "{{ foreman_organization_centos_stream8_sig_configmanagement }}"
+foreman_organization_centos_stream8_sig_configmanagement_ansible5: "{{ foreman_organization_centos_stream8_sig_configmanagement }}"
+
+foreman_organization_centos_stream8_sig_kmods: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_kmods_main: "{{ foreman_organization_centos_stream8_sig_kmods }}"
+foreman_organization_centos_stream8_sig_kmods_rebuild: "{{ foreman_organization_centos_stream8_sig_kmods }}"
+foreman_organization_centos_stream8_sig_kmods_userspace: "{{ foreman_organization_centos_stream8_sig_kmods }}"
+
+foreman_organization_centos_stream8_sig_messaging: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_messaging_qpid_proton: "{{ foreman_organization_centos_stream8_sig_messaging }}"
+foreman_organization_centos_stream8_sig_messaging_rabbitmq38: "{{ foreman_organization_centos_stream8_sig_messaging }}"
+
+foreman_organization_centos_stream8_sig_cloud: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_train: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_ussuri: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_victoria: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_train_tested: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_ussuri_tested: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+foreman_organization_centos_stream8_sig_cloud_openstack_victoria_tested: "{{ foreman_organization_centos_stream8_sig_cloud }}"
+
+foreman_organization_centos_stream8_sig_virtualization: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_virtualization_advanced_virtualization: "{{ foreman_organization_centos_stream8_sig_virtualization }}"
+foreman_organization_centos_stream8_sig_virtualization_ovirt44: "{{ foreman_organization_centos_stream8_sig_virtualization }}"
+foreman_organization_centos_stream8_sig_virtualization_ovirt45: "{{ foreman_organization_centos_stream8_sig_virtualization }}"
+
+foreman_organization_centos_stream8_sig_storage: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_storage_samba411: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba412: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba413: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba414: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba415: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba416: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba417: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_samba418: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster6: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster7: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster8: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster9: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster10: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_gluster11: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_ceph_nautilus: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_ceph_octopus: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_ceph_pacific: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_ceph_quincy: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_nfs_ganesha28: "{{ foreman_organization_centos_stream8_sig_storage }}"
+foreman_organization_centos_stream8_sig_storage_nfs_ganesha30: "{{ foreman_organization_centos_stream8_sig_storage }}"
+
+foreman_organization_centos_stream8_sig_hyperscale: "{{ foreman_organization_centos_stream8 }}"
+foreman_organization_centos_stream8_sig_hyperscale_main: "{{ foreman_organization_centos_stream8_sig_hyperscale }}"
+foreman_organization_centos_stream8_sig_hyperscale_hotfixes: "{{ foreman_organization_centos_stream8_sig_hyperscale }}"
+foreman_organization_centos_stream8_sig_hyperscale_spin: "{{ foreman_organization_centos_stream8_sig_hyperscale }}"
+foreman_organization_centos_stream8_sig_hyperscale_experimental: "{{ foreman_organization_centos_stream8_sig_hyperscale }}"
+
+### CENTOS STREAM 9
+
+foreman_organization_centos_stream9: "{{ foreman_organization_centos }}"
+
+foreman_organization_centos_stream9_sig_opstools: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_nfv: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_nfv_openvswitch: "{{ foreman_organization_centos_stream9_sig_nfv }}"
+
+foreman_organization_centos_stream9_sig_kmods: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_kmods_main: "{{ foreman_organization_centos_stream9_sig_kmods }}"
+foreman_organization_centos_stream9_sig_kmods_rebuild: "{{ foreman_organization_centos_stream9_sig_kmods }}"
+foreman_organization_centos_stream9_sig_kmods_userspace: "{{ foreman_organization_centos_stream9_sig_kmods }}"
+
+foreman_organization_centos_stream9_sig_messaging: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_messaging_rabbitmq38: "{{ foreman_organization_centos_stream9_sig_messaging }}"
+
+foreman_organization_centos_stream9_sig_cloud: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_client_xena: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_yoga: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_zed: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_antelope: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_okd413: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+foreman_organization_centos_stream9_sig_cloud_okd414: "{{ foreman_organization_centos_stream9_sig_cloud }}"
+
+foreman_organization_centos_stream9_sig_virtualization: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_virtualization_ovirt45: "{{ foreman_organization_centos_stream9_sig_virtualization }}"
+
+foreman_organization_centos_stream9_sig_storage: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_storage_common: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_samba414: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_samba415: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_samba416: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_samba417: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_samba418: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_gluster9: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_gluster10: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_gluster11: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_ceph_pacific: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_ceph_quincy: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_nfs_ganesha4: "{{ foreman_organization_centos_stream9_sig_storage }}"
+foreman_organization_centos_stream9_sig_storage_nfs_ganesha5: "{{ foreman_organization_centos_stream9_sig_storage }}"
+
+foreman_organization_centos_stream9_sig_hyperscale: "{{ foreman_organization_centos_stream9 }}"
+foreman_organization_centos_stream9_sig_hyperscale_main: "{{ foreman_organization_centos_stream9_sig_hyperscale }}"
+foreman_organization_centos_stream9_sig_hyperscale_spin: "{{ foreman_organization_centos_stream9_sig_hyperscale }}"
+foreman_organization_centos_stream9_sig_hyperscale_experimental: "{{ foreman_organization_centos_stream9_sig_hyperscale }}"
 
 
 #######################################

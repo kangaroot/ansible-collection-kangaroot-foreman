@@ -18,91 +18,109 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream9:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - BaseOS
         label: centos-stream-9-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
       - name: CentOS Stream 9 - AppStream
         label: centos-stream-9-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
 
       - name: CentOS Stream 9 - CRB
         label: centos-stream-9-crb
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/CRB/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
 
       - name: CentOS Stream 9 - HighAvailability
         label: centos-stream-9-highavailability
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
       - name: CentOS Stream 9 - NFV
         label: centos-stream-9-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/NFV/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
       - name: CentOS Stream 9 - RealTime
         label: centos-stream-9-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/RT/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
       - name: CentOS Stream 9 - ResilientStorage
         label: centos-stream-9-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
 
       - name: CentOS Stream 9 - Extras packages
         label: centos-stream-9-extras-common
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/extras/x86_64/extras-common/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-Extras
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Extras
+        organization: "{{ foreman_organization_centos_stream9 }}"
 
 
 foreman_content_views_centos_stream9:
   - name: cv_centos_stream9_baseos
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - BaseOS
         product: CentOS
     allow_promote: False
   - name: cv_centos_stream9_appstream
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - AppStream
         product: CentOS
     allow_promote: False
 
   - name: cv_centos_stream9_crb
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - CRB
         product: CentOS
     allow_promote: False
 
   - name: cv_centos_stream9_highavailability
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - HighAvailability
         product: CentOS
     allow_promote: False
   - name: cv_centos_stream9_nfv
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - NFV
         product: CentOS
     allow_promote: False
   - name: cv_centos_stream9_rt
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - RealTime
         product: CentOS
     allow_promote: False
   - name: cv_centos_stream9_resilientstorage
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - ResilientStorage
         product: CentOS
     allow_promote: False
 
   - name: cv_centos_stream9_extras_common
+    organization: "{{ foreman_organization_centos_stream9 }}"
     repositories:
       - name: CentOS Stream 9 - Extras packages
         product: CentOS
     allow_promote: False
 
   - name: ccv_centos_stream9
+    organization: "{{ foreman_organization_centos_stream9 }}"
     composite: True
     auto_publish: True
     components:
@@ -176,7 +194,6 @@ foreman_installation_media_centos_stream9:
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "CentOS"
@@ -189,6 +206,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_centos_stream9:
   - name: ak_centos9stream
+    organization: "{{ foreman_organization_centos_stream9 }}"
     content_view: ccv_centos_stream9
     <<: *foreman_activation_keys_defaults
     content_overrides:

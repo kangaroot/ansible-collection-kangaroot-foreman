@@ -20,106 +20,127 @@ foreman_products_on_demand: &foreman_products_on_demand
 foreman_products_centos7_sig_virtualization_azure:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_azure }}"
     repositories:
       - name: CentOS 7 - Azure
         label: centos-7-azure
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/azure/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_azure }}"
 
 foreman_products_centos7_sig_virtualization_ovirt42:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt42 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.2
         label: centos-7-ovirt42
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.2/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt42 }}"
 
 foreman_products_centos7_sig_virtualization_ovirt43:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt43 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.3
         label: centos-7-ovirt43
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.3/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt43 }}"
 
 foreman_products_centos7_sig_virtualization_qemu_ev:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_qemu_ev }}"
     repositories:
       - name: CentOS 7 - QEMU EV
         label: centos-7-qemu-ev
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/kvm-common/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_qemu_ev }}"
 
 foreman_products_centos7_sig_virtualization_xen_46:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_46 }}"
     repositories:
       - name: CentOS 7 - xen 4.6
         label: centos-7-virt-xen-46
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-46"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_46 }}"
 
 foreman_products_centos7_sig_virtualization_xen_48:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_48 }}"
     repositories:
       - name: CentOS 7 - xen 4.8
         label: centos-7-virt-xen-48
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-48"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_48 }}"
 
 foreman_products_centos7_sig_virtualization_xen_410:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_410 }}"
     repositories:
       - name: CentOS 7 - xen 4.10
         label: centos-7-virt-xen-410
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-410"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_410 }}"
 
 foreman_products_centos7_sig_virtualization_xen_412:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_412 }}"
     repositories:
       - name: CentOS 7 - xen 4.12
         label: centos-7-virt-xen-412
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-412"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_412 }}"
 
 foreman_products_centos7_sig_virtualization_xen_413:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_413 }}"
     repositories:
       - name: CentOS 7 - xen 4.13
         label: centos-7-virt-xen-413
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-413"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_413 }}"
 
 foreman_products_centos7_sig_virtualization_xen_414:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_414 }}"
     repositories:
       - name: CentOS 7 - xen 4.14
         label: centos-7-virt-xen-414
         <<: *foreman_products_on_demand
         url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-414"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_414 }}"
 
 foreman_products_centos7_sig_virtualization_xen_epel:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_epel }}"
     repositories:
       - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
         label: centos-7-virt-xen-epel
@@ -127,6 +148,7 @@ foreman_products_centos7_sig_virtualization_xen_epel:
         mirroring_policy: "mirror_content_only"
         url: "{{ foreman_repo_baseurl_epel | default('http://download.fedoraproject.org/pub/epel/') }}/7/x86_64"
         gpg_key: RPM-GPG-KEY-EPEL-7
+        organization: "{{ foreman_organization_centos7_sig_virtualization_xen_epel }}"
 
 foreman_products_centos7_sig_virtualization: "{{ [] |
   union( foreman_products_centos7_sig_virtualization_azure | default([]) if foreman_enable_centos7_sig_virtualization_azure else [] ) |
@@ -145,6 +167,7 @@ foreman_products_centos7_sig_virtualization: "{{ [] |
 
 foreman_content_views_centos7_sig_virtualization_azure:
   - name: cv_centos7_azure
+    organization: "{{ foreman_organization_centos7_sig_virtualization_azure }}"
     repositories:
       - name: CentOS 7 - Azure
         product: CentOS
@@ -152,6 +175,7 @@ foreman_content_views_centos7_sig_virtualization_azure:
 
 foreman_content_views_centos7_sig_virtualization_ovirt42:
   - name: cv_centos7_ovirt42
+    organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt42 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.2
         product: CentOS
@@ -159,6 +183,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt42:
 
 foreman_content_views_centos7_sig_virtualization_ovirt43:
   - name: cv_centos7_ovirt43
+    organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt43 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.3
         product: CentOS
@@ -166,6 +191,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt43:
 
 foreman_content_views_centos7_sig_virtualization_qemu_ev:
   - name: cv_centos7_qemu_ev
+    organization: "{{ foreman_organization_centos7_sig_virtualization_qemu_ev }}"
     repositories:
       - name: CentOS 7 - QEMU EV
         product: CentOS
@@ -173,6 +199,7 @@ foreman_content_views_centos7_sig_virtualization_qemu_ev:
 
 foreman_content_views_centos7_sig_virtualization_xen_46:
   - name: cv_centos7_virt_xen_46
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_46 }}"
     repositories:
       - name: CentOS 7 - xen 4.6
         product: CentOS
@@ -180,6 +207,7 @@ foreman_content_views_centos7_sig_virtualization_xen_46:
 
 foreman_content_views_centos7_sig_virtualization_xen_48:
   - name: cv_centos7_virt_xen_48
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_48 }}"
     repositories:
       - name: CentOS 7 - xen 4.8
         product: CentOS
@@ -187,6 +215,7 @@ foreman_content_views_centos7_sig_virtualization_xen_48:
 
 foreman_content_views_centos7_sig_virtualization_xen_410:
   - name: cv_centos7_virt_xen_410
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_410 }}"
     repositories:
       - name: CentOS 7 - xen 4.10
         product: CentOS
@@ -194,6 +223,7 @@ foreman_content_views_centos7_sig_virtualization_xen_410:
 
 foreman_content_views_centos7_sig_virtualization_xen_412:
   - name: cv_centos7_virt_xen_412
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_412 }}"
     repositories:
       - name: CentOS 7 - xen 4.12
         product: CentOS
@@ -201,6 +231,7 @@ foreman_content_views_centos7_sig_virtualization_xen_412:
 
 foreman_content_views_centos7_sig_virtualization_xen_413:
   - name: cv_centos7_virt_xen_413
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_413 }}"
     repositories:
       - name: CentOS 7 - xen 4.13
         product: CentOS
@@ -208,6 +239,7 @@ foreman_content_views_centos7_sig_virtualization_xen_413:
 
 foreman_content_views_centos7_sig_virtualization_xen_414:
   - name: cv_centos7_virt_xen_414
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_414 }}"
     repositories:
       - name: CentOS 7 - xen 4.14
         product: CentOS
@@ -215,6 +247,7 @@ foreman_content_views_centos7_sig_virtualization_xen_414:
 
 foreman_content_views_centos7_sig_virtualization_xen_epel:
   - name: cv_centos7_virt_xen_epel
+    organization: "{{ foreman_organization_centos7_sig_virtualization_xen_epel }}"
     repositories:
       - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
         product: CentOS

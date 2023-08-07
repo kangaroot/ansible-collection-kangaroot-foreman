@@ -16,15 +16,18 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream9_sig_opstools:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_opstools }}"
     repositories:
       - name: CentOS Stream 9 - OpsTools - collectd
         label: centos-stream-9-opstools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/opstools/x86_64/collectd-5/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-OpsTools
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
+        organization: "{{ foreman_organization_centos_stream9_sig_opstools }}"
 
-foreman_content_views_centos_stream9_opstools:
+foreman_content_views_centos_stream9_sig_opstools:
   - name: cv_centos_stream9_opstools
+    organization: "{{ foreman_organization_centos_stream9_sig_opstools }}"
     repositories:
       - name: CentOS Stream 9 - OpsTools - collectd
         product: CentOS
@@ -34,38 +37,43 @@ foreman_content_views_centos_stream9_opstools:
 foreman_products_centos_stream9_sig_nfv_openvswitch:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_nfv_openvswitch }}"
     repositories:
       - name: CentOS Stream 9 - NFV OpenvSwitch
         label: centos-stream-9-nfv-openvswitch
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/nfv/x86_64/openvswitch-2/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-NFV
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+        organization: "{{ foreman_organization_centos_stream9_sig_nfv_openvswitch }}"
 
 foreman_products_centos_stream9_sig_nfv: "{{ [] |
   union( foreman_products_centos_stream9_sig_nfv_openvswitch | default([]) if foreman_enable_centos_stream9_sig_nfv_openvswitch else [] )
   }}"
 
-foreman_content_views_centos_stream9_nfv_openvswitch:
+foreman_content_views_centos_stream9_sig_nfv_openvswitch:
   - name: cv_centos_stream9_nfv_openvswitch
+    organization: "{{ foreman_organization_centos_stream9_sig_nfv_openvswitch }}"
     repositories:
       - name: CentOS Stream 9 - NFV OpenvSwitch
         product: CentOS
     allow_promote: False
 
 foreman_content_views_centos_stream9_nfv: "{{ [] |
-  union( foreman_content_views_centos_stream9_nfv_openvswitch | default([]) if foreman_enable_centos_stream9_sig_nfv_openvswitch else [] )
+  union( foreman_content_views_centos_stream9_sig_nfv_openvswitch | default([]) if foreman_enable_centos_stream9_sig_nfv_openvswitch else [] )
   }}"
 
 
 foreman_products_centos_stream9_sig_messaging_rabbitmq38:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_messaging_rabbitmq38 }}"
     repositories:
       - name: CentOS Stream 9 - RabbitMQ 38
         label: centos-stream-9-rabbitmq38
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/messaging/x86_64/rabbitmq-38/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
+        organization: "{{ foreman_organization_centos_stream9_sig_messaging_rabbitmq38 }}"
 
 foreman_products_centos_stream9_sig_messaging: "{{ [] |
   union( foreman_products_centos_stream9_sig_messaging_rabbitmq38 | default([]) if foreman_enable_centos_stream9_sig_messaging_rabbitmq38 else [] )
@@ -73,6 +81,7 @@ foreman_products_centos_stream9_sig_messaging: "{{ [] |
 
 foreman_content_views_centos_stream9_sig_messaging_rabbitmq38:
   - name: cv_centos_stream9_rabbitmq38
+    organization: "{{ foreman_organization_centos_stream9_sig_messaging_rabbitmq38 }}"
     repositories:
       - name: CentOS Stream 9 - RabbitMQ 38
         product: CentOS

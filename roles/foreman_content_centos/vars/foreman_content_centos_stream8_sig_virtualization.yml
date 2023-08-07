@@ -16,42 +16,50 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream8_sig_virtualization_advanced_virtualization:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_advanced_virtualization }}"
     repositories:
       - name: CentOS Stream 8 - Advanced Virtualization
         label: centos-stream-8-advanced-virtualization
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/virt/x86_64/advancedvirt-common/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos_stream8_sig_virtualization_advanced_virtualization }}"
 
 foreman_products_centos_stream8_sig_virtualization_ovirt44:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt44 }}"
     repositories:
       - name: CentOS 8 - oVirt 4.4
         label: centos-8-ovirt44
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8/virt/x86_64/ovirt-44/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt44 }}"
 
 foreman_products_centos_stream8_sig_virtualization_ovirt45:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
     repositories:
       - name: CentOS Stream 8 - oVirt 4.5
         label: centos-stream-8-ovirt45
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/virt/x86_64/ovirt-45/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
       - name: CentOS Stream 8 - oVirt 4.5 - OpenStack Yoga Repository
         label: centos-stream-8-ovirt45-openstack-yoga
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/cloud/x86_64/openstack-yoga/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+        organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
       - name: CentOS Stream 8 - oVirt 4.5 - upstream
         label: centos-stream-8-ovirt45-upstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ovirt }}/pub/ovirt-4.5/rpm/el8/"
         gpg_key: RPM-GPG-KEY-oVirt-4.5
+        organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
 
 foreman_products_centos_stream8_sig_virtualization: "{{ [] |
   union( foreman_products_centos_stream8_sig_virtualization_advanced_virtualization | default([]) if foreman_enable_centos_stream8_sig_virtualization_advanced_virtualization else [] ) |
@@ -62,6 +70,7 @@ foreman_products_centos_stream8_sig_virtualization: "{{ [] |
 
 foreman_content_views_centos_stream8_sig_virtualization_advanced_virtualization:
   - name: cv_centos_stream8_advanced_virtualization
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_advanced_virtualization }}"
     repositories:
       - name: CentOS Stream 8 - Advanced Virtualization
         product: CentOS
@@ -69,6 +78,7 @@ foreman_content_views_centos_stream8_sig_virtualization_advanced_virtualization:
 
 foreman_content_views_centos_stream8_sig_virtualization_ovirt44:
   - name: cv_centos_stream8_ovirt44
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt44 }}"
     repositories:
       - name: CentOS 8 - oVirt 4.4
         product: CentOS
@@ -76,11 +86,13 @@ foreman_content_views_centos_stream8_sig_virtualization_ovirt44:
 
 foreman_content_views_centos_stream8_sig_virtualization_ovirt45:
   - name: cv_centos_stream8_ovirt45
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
     repositories:
       - name: CentOS Stream 8 - oVirt 4.5
         product: CentOS
     allow_promote: False
   - name: cv_centos_stream8_ovirt45
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
     repositories:
       - name: CentOS Stream 8 - oVirt 4.5 - OpenStack Yoga Repository
         product: CentOS
@@ -111,6 +123,7 @@ foreman_content_views_centos_stream8_sig_virtualization_ovirt45:
         filter_type: "rpm"
         rule_name: rdo-ovn-host
   - name: cv_centos_stream8_ovirt45_upstream
+    organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
     repositories:
       - name: CentOS Stream 8 - oVirt 4.5 - upstream
         product: CentOS

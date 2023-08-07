@@ -16,15 +16,18 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream8_sig_opstools:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_opstools }}"
     repositories:
       - name: CentOS Stream 8 - OpsTools - collectd
         label: centos-stream-8-opstools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/opstools/x86_64/collectd-5/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
+        organization: "{{ foreman_organization_centos_stream8_sig_opstools }}"
 
-foreman_content_views_centos_stream8_opstools:
+foreman_content_views_centos_stream8_sig_opstools:
   - name: cv_centos_stream8_opstools
+    organization: "{{ foreman_organization_centos_stream8_sig_opstools }}"
     repositories:
       - name: CentOS Stream 8 - OpsTools - collectd
         product: CentOS
@@ -34,15 +37,18 @@ foreman_content_views_centos_stream8_opstools:
 foreman_products_centos_stream8_sig_plus:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_plus }}"
     repositories:
       - name: CentOS Stream 8 - Plus
         label: centos-stream-8-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/core/x86_64/centos-plus/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Core
+        organization: "{{ foreman_organization_centos_stream8_sig_plus }}"
 
-foreman_content_views_centos_stream8_plus:
+foreman_content_views_centos_stream8_sig_plus:
   - name: cv_centos_stream8_plus
+    organization: "{{ foreman_organization_centos_stream8_sig_plus }}"
     repositories:
       - name: CentOS Stream 8 - Plus
         product: CentOS
@@ -52,67 +58,77 @@ foreman_content_views_centos_stream8_plus:
 foreman_products_centos_stream8_sig_nfv_extras:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_nfv_extras }}"
     repositories:
       - name: CentOS Stream 8 - NFV extras
         label: centos-stream-8-nfv-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/nfv/x86_64/network-extras/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+        organization: "{{ foreman_organization_centos_stream8_sig_nfv_extras }}"
 
 foreman_products_centos_stream8_sig_nfv_openvswitch:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_nfv_openvswitch }}"
     repositories:
       - name: CentOS Stream 8 - NFV OpenvSwitch
         label: centos-stream-8-nfv-openvswitch
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/nfv/x86_64/openvswitch-2/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+        organization: "{{ foreman_organization_centos_stream8_sig_nfv_openvswitch }}"
 
 foreman_products_centos_stream8_sig_nfv: "{{ [] |
   union( foreman_products_centos_stream8_sig_nfv_extras | default([]) if foreman_enable_centos_stream8_sig_nfv_extras else [] ) |
   union( foreman_products_centos_stream8_sig_nfv_openvswitch | default([]) if foreman_enable_centos_stream8_sig_nfv_openvswitch else [] )
   }}"
 
-foreman_content_views_centos_stream8_nfv_extras:
+foreman_content_views_centos_stream8_sig_nfv_extras:
   - name: cv_centos_stream8_nfv_extras
+    organization: "{{ foreman_organization_centos_stream8_sig_nfv_extras }}"
     repositories:
       - name: CentOS Stream 8 - NFV extras
         product: CentOS
     allow_promote: False
 
-foreman_content_views_centos_stream8_nfv_openvswitch:
+foreman_content_views_centos_stream8_sig_nfv_openvswitch:
   - name: cv_centos_stream8_nfv_openvswitch
+    organization: "{{ foreman_organization_centos_stream8_sig_nfv_openvswitch }}"
     repositories:
       - name: CentOS Stream 8 - NFV OpenvSwitch
         product: CentOS
     allow_promote: False
 
 foreman_content_views_centos_stream8_nfv: "{{ [] |
-  union( foreman_content_views_centos_stream8_nfv_extras | default([]) if foreman_enable_centos_stream8_sig_nfv_extras else [] ) |
-  union( foreman_content_views_centos_stream8_nfv_openvswitch | default([]) if foreman_enable_centos_stream8_sig_nfv_openvswitch else [] )
+  union( foreman_content_views_centos_stream8_sig_nfv_extras | default([]) if foreman_enable_centos_stream8_sig_nfv_extras else [] ) |
+  union( foreman_content_views_centos_stream8_sig_nfv_openvswitch | default([]) if foreman_enable_centos_stream8_sig_nfv_openvswitch else [] )
   }}"
 
 
 foreman_products_centos_stream8_sig_messaging_qpid_proton:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_messaging_qpid_proton }}"
     repositories:
       - name: CentOS Stream 8 - QPID Proton
         label: centos-stream-8-qpid-proton
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/messaging/x86_64/qpid-proton/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
+        organization: "{{ foreman_organization_centos_stream8_sig_messaging_qpid_proton }}"
 
 foreman_products_centos_stream8_sig_messaging_rabbitmq38:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_messaging_rabbitmq38 }}"
     repositories:
       - name: CentOS Stream 8 - RabbitMQ 38
         label: centos-stream-8-rabbitmq38
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/messaging/x86_64/rabbitmq-38/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
+        organization: "{{ foreman_organization_centos_stream8_sig_messaging_rabbitmq38 }}"
 
 
 foreman_products_centos_stream8_sig_messaging: "{{ [] |
@@ -122,6 +138,7 @@ foreman_products_centos_stream8_sig_messaging: "{{ [] |
 
 foreman_content_views_centos_stream8_sig_messaging_qpid_proton:
   - name: cv_centos_stream8_qpid_proton
+    organization: "{{ foreman_organization_centos_stream8_sig_messaging_qpid_proton }}"
     repositories:
       - name: CentOS Stream 8 - QPID Proton
         product: CentOS
@@ -129,6 +146,7 @@ foreman_content_views_centos_stream8_sig_messaging_qpid_proton:
 
 foreman_content_views_centos_stream8_sig_messaging_rabbitmq38:
   - name: cv_centos_stream8_rabbitmq38
+    organization: "{{ foreman_organization_centos_stream8_sig_messaging_rabbitmq38 }}"
     repositories:
       - name: CentOS Stream 8 - RabbitMQ 38
         product: CentOS

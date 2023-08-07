@@ -16,32 +16,38 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream9_sig_hyperscale_main:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_main }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale
         label: centos-stream-9-hyperscale
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-main/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_main }}"
 
 foreman_products_centos_stream9_sig_hyperscale_spin:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_spin }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale Spin
         label: centos-stream-9-hyperscale-spin
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_spin }}"
 
 foreman_products_centos_stream9_sig_hyperscale_experimental:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_experimental }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale Experimental
         label: centos-stream-9-hyperscale-experimental
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
+        organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_experimental }}"
 
 foreman_products_centos_stream9_sig_virtualization: "{{ [] |
   union( foreman_products_centos_stream9_sig_hyperscale_main | default([]) if foreman_enable_centos_stream9_sig_hyperscale_main else [] ) |
@@ -52,6 +58,7 @@ foreman_products_centos_stream9_sig_virtualization: "{{ [] |
 
 foreman_content_views_centos_stream9_sig_hyperscale_main:
   - name: cv_centos_stream9_hyperscale
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_main }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale
         product: CentOS
@@ -59,6 +66,7 @@ foreman_content_views_centos_stream9_sig_hyperscale_main:
 
 foreman_content_views_centos_stream9_sig_hyperscale_spin:
   - name: cv_centos_stream9_hyperscale_spin
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_spin }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale Spin
         product: CentOS
@@ -66,6 +74,7 @@ foreman_content_views_centos_stream9_sig_hyperscale_spin:
 
 foreman_content_views_centos_stream9_sig_hyperscale_experimental:
   - name: cv_centos_stream9_hyperscale_experimental
+    organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_experimental }}"
     repositories:
       - name: CentOS Stream 9 - Hyperscale Experimental
         product: CentOS

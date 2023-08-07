@@ -16,32 +16,38 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream9_sig_kmods_main:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_main }}"
     repositories:
       - name: CentOS Stream 9 - Kmods
         label: centos-stream-9-kmods
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-main"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream9_sig_kmods_main }}"
 
 foreman_products_centos_stream9_sig_kmods_rebuild:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_rebuild }}"
     repositories:
       - name: CentOS Stream 9 - Kmods - Rebuild
         label: centos-stream-9-kmods-rebuild
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-rebuild"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream9_sig_kmods_rebuild }}"
 
 foreman_products_centos_stream9_sig_kmods_userspace:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_userspace }}"
     repositories:
       - name: CentOS Stream 9 - Kmods - User Space
         label: centos-stream-9-kmods-userspace
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/kmods/x86_64/packages-userspace"
-        gpgkey: RPM-GPG-KEY-CentOS-SIG-Kmods
+        gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream9_sig_kmods_userspace }}"
 
 foreman_products_centos_stream9_sig_kmods: "{{ [] |
   union( foreman_products_centos_stream9_sig_kmods_main | default([]) if foreman_enable_centos_stream9_sig_kmods_main else [] ) |
@@ -52,6 +58,7 @@ foreman_products_centos_stream9_sig_kmods: "{{ [] |
 
 foreman_content_views_centos_stream9_sig_kmods_main:
   - name: cv_centos_stream9_kmods
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_main }}"
     repositories:
       - name: CentOS Stream 9 - Kmods
         product: CentOS
@@ -59,6 +66,7 @@ foreman_content_views_centos_stream9_sig_kmods_main:
 
 foreman_content_views_centos_stream9_sig_kmods_rebuild:
   - name: cv_centos_stream9_kmods_rebuild
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_rebuild }}"
     repositories:
       - name: CentOS Stream 9 - Kmods - Rebuild
         product: CentOS
@@ -66,6 +74,7 @@ foreman_content_views_centos_stream9_sig_kmods_rebuild:
 
 foreman_content_views_centos_stream9_sig_kmods_userspace:
   - name: cv_centos_stream9_kmods_userspace
+    organization: "{{ foreman_organization_centos_stream9_sig_kmods_userspace }}"
     repositories:
       - name: CentOS Stream 9 - Kmods - User Space
         product: CentOS

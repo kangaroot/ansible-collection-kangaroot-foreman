@@ -16,32 +16,38 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_centos_stream8_sig_kmods_main:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_main }}"
     repositories:
       - name: CentOS Stream 8 - Kmods
         label: centos-stream-8-kmods
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/kmods/x86_64/packages-main/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream8_sig_kmods_main }}"
 
 foreman_products_centos_stream8_sig_kmods_rebuild:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_rebuild }}"
     repositories:
       - name: CentOS Stream 8 - Kmods - Rebuild
         label: centos-stream-8-kmods-rebuild
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8-stream/kmods/x86_64/packages-rebuild/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream8_sig_kmods_rebuild }}"
 
 foreman_products_centos_stream8_sig_kmods_userspace:
   - name: CentOS
     label: CentOS
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_userspace }}"
     repositories:
       - name: CentOS Stream 8 - Kmods - User Space
         label: centos-stream-8-kmods-userspace
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos8 }}/8-stream/kmods/x86_64/packages-userspace/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        organization: "{{ foreman_organization_centos_stream8_sig_kmods_userspace }}"
 
 foreman_products_centos_stream8_sig_kmods: "{{ [] |
   union( foreman_products_centos_stream8_sig_kmods_main | default([]) if foreman_enable_centos_stream8_sig_kmods_main else [] ) |
@@ -52,6 +58,7 @@ foreman_products_centos_stream8_sig_kmods: "{{ [] |
 
 foreman_content_views_centos_stream8_sig_kmods_main:
   - name: cv_centos_stream8_kmods
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_main }}"
     repositories:
       - name: CentOS Stream 8 - Kmods
         product: CentOS
@@ -59,6 +66,7 @@ foreman_content_views_centos_stream8_sig_kmods_main:
 
 foreman_content_views_centos_stream8_sig_kmods_rebuild:
   - name: cv_centos_stream8_kmods_rebuild
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_rebuild }}"
     repositories:
       - name: CentOS Stream 8 - Kmods - Rebuild
         product: CentOS
@@ -66,6 +74,7 @@ foreman_content_views_centos_stream8_sig_kmods_rebuild:
 
 foreman_content_views_centos_stream8_sig_kmods_userspace:
   - name: cv_centos_stream8_kmods_userspace
+    organization: "{{ foreman_organization_centos_stream8_sig_kmods_userspace }}"
     repositories:
       - name: CentOS Stream 8 - Kmods - User Space
         product: CentOS
