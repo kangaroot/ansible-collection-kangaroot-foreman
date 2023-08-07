@@ -15,277 +15,342 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_rocky84:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - BaseOS
         label: rocky-84-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - AppStream
         label: rocky-84-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
 
       - name: Rocky Linux 8.4 - Extras
         label: rocky-84-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - Plus
         label: rocky-84-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - PowerTools
         label: rocky-84-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - HighAvailability
         label: rocky-84-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - NFV
         label: rocky-84-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - ResilientStorage
         label: rocky-84-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
       - name: Rocky Linux 8.4 - Realtime
         label: rocky-84-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky84 }}"
 
 foreman_products_rocky85:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - BaseOS
         label: rocky-85-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - AppStream
         label: rocky-85-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
 
       - name: Rocky Linux 8.5 - Extras
         label: rocky-85-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - Plus
         label: rocky-85-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - PowerTools
         label: rocky-85-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - HighAvailability
         label: rocky-85-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - NFV
         label: rocky-85-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - ResilientStorage
         label: rocky-85-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
       - name: Rocky Linux 8.5 - Realtime
         label: rocky-85-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky85 }}"
 
 foreman_products_rocky86:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - BaseOS
         label: rocky-86-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - AppStream
         label: rocky-86-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
 
       - name: Rocky Linux 8.6 - Extras
         label: rocky-86-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - Plus
         label: rocky-86-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - PowerTools
         label: rocky-86-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - HighAvailability
         label: rocky-86-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - NFV
         label: rocky-86-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - ResilientStorage
         label: rocky-86-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
       - name: Rocky Linux 8.6 - Realtime
         label: rocky-86-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky86 }}"
 
 foreman_products_rocky87:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - BaseOS
         label: rocky-87-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - AppStream
         label: rocky-87-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
 
       - name: Rocky Linux 8.7 - Extras
         label: rocky-87-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - Plus
         label: rocky-87-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - PowerTools
         label: rocky-87-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - HighAvailability
         label: rocky-87-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - NFV
         label: rocky-87-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - ResilientStorage
         label: rocky-87-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
       - name: Rocky Linux 8.7 - Realtime
         label: rocky-87-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky87 }}"
 
 foreman_products_rocky88:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - BaseOS
         label: rocky-88-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - AppStream
         label: rocky-88-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
 
       - name: Rocky Linux 8.8 - Extras
         label: rocky-88-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - Plus
         label: rocky-88-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - PowerTools
         label: rocky-88-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - HighAvailability
         label: rocky-88-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - NFV
         label: rocky-88-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - ResilientStorage
         label: rocky-88-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
       - name: Rocky Linux 8.8 - Realtime
         label: rocky-88-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky88 }}"
 
 foreman_products_rocky84_kickstart:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky84_kickstart }}"
     repositories:
       - name: Rocky Linux 8.4 - BaseOS Kickstart
         label: rocky-84-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky84_kickstart }}"
       - name: Rocky Linux 8.4 - AppStream Kickstart
         label: rocky-84-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky84_kickstart }}"
 
 foreman_products_rocky85_kickstart:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky85_kickstart }}"
     repositories:
       - name: Rocky Linux 8.5 - BaseOS Kickstart
         label: rocky-85-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky85_kickstart }}"
       - name: Rocky Linux 8.5 - AppStream Kickstart
         label: rocky-85-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky85_kickstart }}"
 
 foreman_products_rocky86_kickstart:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky86_kickstart }}"
     repositories:
       - name: Rocky Linux 8.6 - BaseOS Kickstart
         label: rocky-86-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky86_kickstart }}"
       - name: Rocky Linux 8.6 - AppStream Kickstart
         label: rocky-86-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky86_kickstart }}"
 
 foreman_products_rocky87_kickstart:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky87_kickstart }}"
     repositories:
       - name: Rocky Linux 8.7 - BaseOS Kickstart
         label: rocky-87-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky87_kickstart }}"
       - name: Rocky Linux 8.7 - AppStream Kickstart
         label: rocky-87-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky87_kickstart }}"
 
 foreman_products_rocky88_kickstart:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky88_kickstart }}"
     repositories:
       - name: Rocky Linux 8.8 - BaseOS Kickstart
         label: rocky-88-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky88_kickstart }}"
       - name: Rocky Linux 8.8 - AppStream Kickstart
         label: rocky-88-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.8/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky88_kickstart }}"
 
 foreman_products_rocky8_versions: "{{ [] |
   union( foreman_products_rocky84 | default([]) if foreman_enable_rocky84 | default(false) | bool else [] ) |
@@ -304,46 +369,55 @@ foreman_products_rocky8_versions: "{{ [] |
 
 foreman_content_views_rocky84:
   - name: cv_rocky84_baseos
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_appstream
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_extras
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_plus
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_powertools
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_ha
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_nfv
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_resilientstorage
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky84_rt
+    organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Realtime
         product: Rocky Linux
@@ -351,46 +425,55 @@ foreman_content_views_rocky84:
 
 foreman_content_views_rocky85:
   - name: cv_rocky85_baseos
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_appstream
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_extras
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_plus
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_powertools
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_ha
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_nfv
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_resilientstorage
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky85_rt
+    organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Realtime
         product: Rocky Linux
@@ -398,46 +481,55 @@ foreman_content_views_rocky85:
 
 foreman_content_views_rocky86:
   - name: cv_rocky86_baseos
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_appstream
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_extras
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_plus
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_powertools
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_ha
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_nfv
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_resilientstorage
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky86_rt
+    organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Realtime
         product: Rocky Linux
@@ -445,46 +537,55 @@ foreman_content_views_rocky86:
 
 foreman_content_views_rocky87:
   - name: cv_rocky87_baseos
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_appstream
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_extras
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_plus
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_powertools
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_ha
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_nfv
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_resilientstorage
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky87_rt
+    organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Realtime
         product: Rocky Linux
@@ -492,46 +593,55 @@ foreman_content_views_rocky87:
 
 foreman_content_views_rocky88:
   - name: cv_rocky88_baseos
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_appstream
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_extras
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_plus
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_powertools
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_ha
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_nfv
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_resilientstorage
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky88_rt
+    organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Realtime
         product: Rocky Linux

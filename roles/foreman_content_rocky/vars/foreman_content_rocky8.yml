@@ -23,103 +23,125 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_rocky8:
   - name: Rocky Linux
     label: Rocky
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - BaseOS
         label: rocky-8-baseos
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - AppStream
         label: rocky-8-appstream
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
 
       - name: Rocky Linux 8 - Extras
         label: rocky-8-extras
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - Plus
         label: rocky-8-plus
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - PowerTools
         label: rocky-8-powertools
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - HighAvailability
         label: rocky-8-ha
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - NFV
         label: rocky-8-nfv
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - ResilientStorage
         label: rocky-8-resilientstorage
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - Realtime
         label: rocky-8-rt
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky8 }}"
 
       - name: Rocky Linux 8 - BaseOS Kickstart
         label: rocky-8-baseos-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - AppStream Kickstart
         label: rocky-8-appstream-kickstart
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky8 }}"
 
 
 foreman_content_views_rocky8:
   - name: cv_rocky8_baseos
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - BaseOS
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_appstream
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - AppStream
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_extras
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Extras
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_plus
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Plus
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_powertools
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - PowerTools
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_ha
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - HighAvailability
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_nfv
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - NFV
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_resilientstorage
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
   - name: cv_rocky8_rt
+    organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Realtime
         product: Rocky Linux
     allow_promote: False
 
   - name: ccv_rocky8
+    organization: "{{ foreman_organization_rocky8 }}"
     composite: True
     auto_publish: True
     components:
@@ -197,7 +219,6 @@ foreman_installation_media_rocky8:
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Rocky Linux"
@@ -210,6 +231,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_rocky8:
   - name: ak_rocky8
+    organization: "{{ foreman_organization_rocky8 }}"
     content_view: ccv_rocky8
     <<: *foreman_activation_keys_defaults
     content_overrides:
@@ -237,50 +259,52 @@ foreman_activation_keys_rocky8:
         override: disabled
 
 
-  - name: ak_rocky8_foreman
-    content_view: ccv_rocky8_foreman
-    <<: *foreman_activation_keys_defaults
-    content_overrides:
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
-        override: default
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
-        override: default
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
-        override: disabled
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
-        override: disabled
-      - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-        override: default
+  # - name: ak_rocky8_foreman
+  #   organization: "{{ foreman_organization_rocky8 }}"
+  #   content_view: ccv_rocky8_foreman
+  #   <<: *foreman_activation_keys_defaults
+  #   content_overrides:
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
+  #       override: disabled
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
+  #       override: disabled
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
+  #       override: default
 
 
-  - name: ak_rocky8_katello
-    content_view: ccv_rocky8_katello
-    <<: *foreman_activation_keys_defaults
-    content_overrides:
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
-        override: default
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
-        override: default
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
-        override: disabled
-      - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
-        override: disabled
-      - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el8"
-        override: default
-      - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-        override: default
+  # - name: ak_rocky8_katello
+  #   organization: "{{ foreman_organization_rocky8 }}"
+  #   content_view: ccv_rocky8_katello
+  #   <<: *foreman_activation_keys_defaults
+  #   content_overrides:
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
+  #       override: disabled
+  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
+  #       override: disabled
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el8"
+  #       override: default
+  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
+  #       override: default
 
 
 foreman_sync_plan_products_rocky8: []

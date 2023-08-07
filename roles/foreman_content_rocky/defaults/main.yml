@@ -124,7 +124,6 @@ foreman_repo_baseurl_rocky_vault: https://download.rockylinux.org/vault/rocky
 
 foreman_enable_rocky: false
 
-
 ### ROCKY 8
 
 foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
@@ -149,7 +148,6 @@ foreman_enable_rocky8_sig_cloud: false
 foreman_enable_rocky8_sig_cloud_common: "{{ foreman_enable_rocky8_sig_cloud | bool }}"
 foreman_enable_rocky8_sig_cloud_kernel: false
 
-
 ### ROCKY 9
 
 foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
@@ -169,6 +167,59 @@ foreman_enable_rocky9_sig_core_infra: false
 foreman_enable_rocky9_sig_cloud: false
 foreman_enable_rocky9_sig_cloud_common: "{{ foreman_enable_rocky9_sig_cloud | bool }}"
 foreman_enable_rocky9_sig_cloud_kernel: false
+
+
+#######################################
+### ORGANIZATION VARS
+#######################################
+
+### ROCKY
+
+foreman_organization_rocky: false
+
+### ROCKY 8
+
+foreman_organization_rocky8: "{{ foreman_organization_rocky }}"
+
+foreman_organization_rocky84: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky85: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky86: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky87: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky88: "{{ foreman_organization_rocky8 }}"
+
+foreman_organization_rocky84_kickstart: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky85_kickstart: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky86_kickstart: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky87_kickstart: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky88_kickstart: "{{ foreman_organization_rocky8 }}"
+
+foreman_organization_rocky8_sig_core: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky8_sig_core_common: "{{ foreman_organization_rocky8_sig_core }}"
+foreman_organization_rocky8_sig_core_infra: "{{ foreman_organization_rocky8_sig_core }}"
+
+foreman_organization_rocky8_sig_cloud: "{{ foreman_organization_rocky8 }}"
+foreman_organization_rocky8_sig_cloud_common: "{{ foreman_organization_rocky8_sig_cloud }}"
+foreman_organization_rocky8_sig_cloud_kernel: "{{ foreman_organization_rocky8_sig_cloud }}"
+
+### ROCKY 9
+
+foreman_organization_rocky9: "{{ foreman_organization_rocky }}"
+
+foreman_organization_rocky90: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky91: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky92: "{{ foreman_organization_rocky9 }}"
+
+foreman_organization_rocky90_kickstart: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky91_kickstart: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky92_kickstart: "{{ foreman_organization_rocky9 }}"
+
+foreman_organization_rocky9_sig_core: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky9_sig_core_common: "{{ foreman_organization_rocky9_sig_core }}"
+foreman_organization_rocky9_sig_core_infra: "{{ foreman_organization_rocky9_sig_core }}"
+
+foreman_organization_rocky9_sig_cloud: "{{ foreman_organization_rocky9 }}"
+foreman_organization_rocky9_sig_cloud_common: "{{ foreman_organization_rocky9_sig_cloud }}"
+foreman_organization_rocky9_sig_cloud_kernel: "{{ foreman_organization_rocky9_sig_cloud }}"
 
 
 #######################################
