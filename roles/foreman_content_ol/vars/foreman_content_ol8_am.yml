@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol8_am10:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol8_am10 }}"
     repositories:
       ### Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation ###
       - name: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX
@@ -23,10 +24,12 @@ foreman_products_ol8_am10:
         label: ol8_x86_64_automation
         url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/automation/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_am10 }}"
 
 foreman_products_ol8_am20:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol8_am20 }}"
     repositories:
       ### Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation2 ###
       - name: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX
@@ -34,6 +37,7 @@ foreman_products_ol8_am20:
         label: ol8_x86_64_automation2
         url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/automation2/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_am20 }}"
 
 foreman_products_ol8_am: "{{ [] |
   union( foreman_products_ol8_am10 | default([]) if foreman_enable_ol8_am10 else [] ) |
@@ -43,6 +47,7 @@ foreman_products_ol8_am: "{{ [] |
 
 foreman_content_views_ol8_am10:
   - name: cv_ol8_x86_64_automation
+    organization: "{{ foreman_organization_ol8_am10 }}"
     repositories:
       - name: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX
         product: Oracle Linux
@@ -50,6 +55,7 @@ foreman_content_views_ol8_am10:
 
 foreman_content_views_ol8_am20:
   - name: cv_ol8_x86_64_automation2
+    organization: "{{ foreman_organization_ol8_am20 }}"
     repositories:
       - name: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX
         product: Oracle Linux

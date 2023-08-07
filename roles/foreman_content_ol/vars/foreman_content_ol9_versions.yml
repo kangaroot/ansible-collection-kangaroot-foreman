@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol90:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol90 }}"
     repositories:
       ### Oracle Linux 9 BaseOS GA (x86_64) | ol9_x86_64_u0_baseos_base ###
       - name: Oracle Linux 9 BaseOS GA (x86_64)
@@ -23,10 +24,12 @@ foreman_products_ol90:
         label: ol9_x86_64_u0_baseos_base
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/0/baseos/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol90 }}"
 
 foreman_products_ol91:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol91 }}"
     repositories:
       ### Oracle Linux 9.1 BaseOS (x86_64) | ol9_x86_64_u1_baseos_base ###
       - name: Oracle Linux 9.1 BaseOS (x86_64)
@@ -34,10 +37,12 @@ foreman_products_ol91:
         label: ol9_x86_64_u1_baseos_base
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/1/baseos/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol91 }}"
 
 foreman_products_ol92:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol92 }}"
     repositories:
       ### Oracle Linux 9.2 BaseOS (x86_64) | ol9_x86_64_u2_baseos_base ###
       - name: Oracle Linux 9.2 BaseOS (x86_64)
@@ -45,6 +50,7 @@ foreman_products_ol92:
         label: ol9_x86_64_u2_baseos_base
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/2/baseos/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol92 }}"
 
 foreman_products_ol9_versions: "{{ [] |
   union( foreman_products_ol90 | default([]) if foreman_enable_ol90 else [] ) |
@@ -55,6 +61,7 @@ foreman_products_ol9_versions: "{{ [] |
 
 foreman_content_views_ol90:
   - name: cv_ol9_x86_64_u0_baseos_base
+    organization: "{{ foreman_organization_ol90 }}"
     repositories:
       - name: Oracle Linux 9 BaseOS GA (x86_64)
         product: Oracle Linux
@@ -62,6 +69,7 @@ foreman_content_views_ol90:
 
 foreman_content_views_ol91:
   - name: cv_ol9_x86_64_u1_baseos_base
+    organization: "{{ foreman_organization_ol91 }}"
     repositories:
       - name: Oracle Linux 9.1 BaseOS (x86_64)
         product: Oracle Linux
@@ -69,6 +77,7 @@ foreman_content_views_ol91:
 
 foreman_content_views_ol92:
   - name: cv_ol9_x86_64_u2_baseos_base
+    organization: "{{ foreman_organization_ol92 }}"
     repositories:
       - name: Oracle Linux 9.2 BaseOS (x86_64)
         product: Oracle Linux

@@ -18,6 +18,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol80_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol80_uln }}"
     repositories:
       ### Oracle Linux 8 BaseOS GA (x86_64) | ol8_x86_64_u0_baseos_base ###
       - name: Oracle Linux 8 BaseOS GA (x86_64)
@@ -25,10 +26,12 @@ foreman_products_ol80_uln:
         label: ol8_uln_x86_64_u0_baseos_base
         url: uln://ol8_x86_64_u0_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol80_uln }}"
 
 foreman_products_ol81_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol81_uln }}"
     repositories:
       ### Oracle Linux 8.1 BaseOS (x86_64) | ol8_x86_64_u1_baseos_base ###
       - name: Oracle Linux 8.1 BaseOS (x86_64)
@@ -36,10 +39,12 @@ foreman_products_ol81_uln:
         label: ol8_uln_x86_64_u1_baseos_base
         url: uln://ol8_x86_64_u1_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol81_uln }}"
 
 foreman_products_ol82_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol82_uln }}"
     repositories:
       ### Oracle Linux 8.2 BaseOS (x86_64) | ol8_x86_64_u2_baseos_base ###
       - name: Oracle Linux 8.2 BaseOS (x86_64)
@@ -47,10 +52,12 @@ foreman_products_ol82_uln:
         label: ol8_uln_x86_64_u2_baseos_base
         url: uln://ol8_x86_64_u2_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol82_uln }}"
 
 foreman_products_ol83_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol83_uln }}"
     repositories:
       ### Oracle Linux 8.3 BaseOS (x86_64) | ol8_x86_64_u3_baseos_base ###
       - name: Oracle Linux 8.3 BaseOS (x86_64)
@@ -58,10 +65,12 @@ foreman_products_ol83_uln:
         label: ol8_uln_x86_64_u3_baseos_base
         url: uln://ol8_x86_64_u3_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol83_uln }}"
 
 foreman_products_ol84_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol84_uln }}"
     repositories:
       ### Oracle Linux 8.4 BaseOS (x86_64) | ol8_x86_64_u4_baseos_base ###
       - name: Oracle Linux 8.4 BaseOS (x86_64)
@@ -69,10 +78,12 @@ foreman_products_ol84_uln:
         label: ol8_uln_x86_64_u4_baseos_base
         url: uln://ol8_x86_64_u4_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol84_uln }}"
 
 foreman_products_ol85_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol85_uln }}"
     repositories:
       ### Oracle Linux 8.5 BaseOS (x86_64) | ol8_x86_64_u5_baseos_base ###
       - name: Oracle Linux 8.5 BaseOS (x86_64)
@@ -80,10 +91,12 @@ foreman_products_ol85_uln:
         label: ol8_uln_x86_64_u5_baseos_base
         url: uln://ol8_x86_64_u5_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol85_uln }}"
 
 foreman_products_ol86_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol86_uln }}"
     repositories:
       ### Oracle Linux 8.6 BaseOS (x86_64) | ol8_x86_64_u6_baseos_base ###
       - name: Oracle Linux 8.6 BaseOS (x86_64)
@@ -91,10 +104,12 @@ foreman_products_ol86_uln:
         label: ol8_uln_x86_64_u6_baseos_base
         url: uln://ol8_x86_64_u6_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol86_uln }}"
 
 foreman_products_ol87_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol87_uln }}"
     repositories:
       ### Oracle Linux 8.7 BaseOS (x86_64) | ol8_x86_64_u7_baseos_base ###
       - name: Oracle Linux 8.7 BaseOS (x86_64)
@@ -102,10 +117,12 @@ foreman_products_ol87_uln:
         label: ol8_uln_x86_64_u7_baseos_base
         url: uln://ol8_x86_64_u7_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol87_uln }}"
 
 foreman_products_ol88_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol88_uln }}"
     repositories:
       ### Oracle Linux 8.8 BaseOS (x86_64) | ol8_x86_64_u8_baseos_base ###
       - name: Oracle Linux 8.8 BaseOS (x86_64)
@@ -113,10 +130,12 @@ foreman_products_ol88_uln:
         label: ol8_uln_x86_64_u8_baseos_base
         url: uln://ol8_x86_64_u8_baseos_base
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol88_uln }}"
 
 foreman_products_ol80_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol80_patch_uln }}"
     repositories:
       ### Oracle Linux 8 BaseOS GA Patch (x86_64) | ol8_x86_64_u0_baseos_patch ###
       - name: Oracle Linux 8 BaseOS GA Patch (x86_64)
@@ -124,10 +143,12 @@ foreman_products_ol80_patch_uln:
         label: ol8_uln_x86_64_u0_baseos_patch
         url: uln://ol8_x86_64_u0_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol80_patch_uln }}"
 
 foreman_products_ol81_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol81_patch_uln }}"
     repositories:
       ### Oracle Linux 8.1 BaseOS Patch (x86_64) | ol8_x86_64_u1_baseos_patch ###
       - name: Oracle Linux 8.1 BaseOS Patch (x86_64)
@@ -135,10 +156,12 @@ foreman_products_ol81_patch_uln:
         label: ol8_uln_x86_64_u1_baseos_patch
         url: uln://ol8_x86_64_u1_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol81_patch_uln }}"
 
 foreman_products_ol82_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol82_patch_uln }}"
     repositories:
       ### Oracle Linux 8.2 BaseOS Patch (x86_64) | ol8_x86_64_u2_baseos_patch ###
       - name: Oracle Linux 8.2 BaseOS Patch (x86_64)
@@ -146,10 +169,12 @@ foreman_products_ol82_patch_uln:
         label: ol8_uln_x86_64_u2_baseos_patch
         url: uln://ol8_x86_64_u2_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol82_patch_uln }}"
 
 foreman_products_ol83_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol83_patch_uln }}"
     repositories:
       ### Oracle Linux 8.3 BaseOS Patch (x86_64) | ol8_x86_64_u3_baseos_patch ###
       - name: Oracle Linux 8.3 BaseOS Patch (x86_64)
@@ -157,10 +182,12 @@ foreman_products_ol83_patch_uln:
         label: ol8_uln_x86_64_u3_baseos_patch
         url: uln://ol8_x86_64_u3_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol83_patch_uln }}"
 
 foreman_products_ol84_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol84_patch_uln }}"
     repositories:
       ### Oracle Linux 8.4 BaseOS Patch (x86_64) | ol8_x86_64_u4_baseos_patch ###
       - name: Oracle Linux 8.4 BaseOS Patch (x86_64)
@@ -168,10 +195,12 @@ foreman_products_ol84_patch_uln:
         label: ol8_uln_x86_64_u4_baseos_patch
         url: uln://ol8_x86_64_u4_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol84_patch_uln }}"
 
 foreman_products_ol85_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol85_patch_uln }}"
     repositories:
       ### Oracle Linux 8.5 BaseOS Patch (x86_64) | ol8_x86_64_u5_baseos_patch ###
       - name: Oracle Linux 8.5 BaseOS Patch (x86_64)
@@ -179,10 +208,12 @@ foreman_products_ol85_patch_uln:
         label: ol8_uln_x86_64_u5_baseos_patch
         url: uln://ol8_x86_64_u5_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol85_patch_uln }}"
 
 foreman_products_ol86_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol86_patch_uln }}"
     repositories:
       ### Oracle Linux 8.6 BaseOS Patch (x86_64) | ol8_x86_64_u6_baseos_patch ###
       - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
@@ -190,10 +221,12 @@ foreman_products_ol86_patch_uln:
         label: ol8_uln_x86_64_u6_baseos_patch
         url: uln://ol8_x86_64_u6_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol86_patch_uln }}"
 
 foreman_products_ol87_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol87_patch_uln }}"
     repositories:
       ### Oracle Linux 8.7 BaseOS Patch (x86_64) | ol8_x86_64_u7_baseos_patch ###
       - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
@@ -201,10 +234,12 @@ foreman_products_ol87_patch_uln:
         label: ol8_uln_x86_64_u7_baseos_patch
         url: uln://ol8_x86_64_u7_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol87_patch_uln }}"
 
 foreman_products_ol88_patch_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol88_patch_uln }}"
     repositories:
       ### Oracle Linux 8.8 BaseOS Patch (x86_64) | ol8_x86_64_u8_baseos_patch ###
       - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
@@ -212,6 +247,7 @@ foreman_products_ol88_patch_uln:
         label: ol8_uln_x86_64_u8_baseos_patch
         url: uln://ol8_x86_64_u8_baseos_patch
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol88_patch_uln }}"
 
 foreman_products_ol8_uln_versions: "{{ [] |
   union( foreman_products_ol80_uln | default([]) if foreman_enable_ol80_uln else [] ) |
@@ -238,6 +274,7 @@ foreman_products_ol8_uln_versions: "{{ [] |
 
 foreman_content_views_ol80_uln:
   - name: cv_ol8_x86_64_u0_baseos_base
+    organization: "{{ foreman_organization_ol80_uln }}"
     repositories:
       - name: Oracle Linux 8 BaseOS GA (x86_64)
         product: Oracle Linux
@@ -245,6 +282,7 @@ foreman_content_views_ol80_uln:
 
 foreman_content_views_ol81_uln:
   - name: cv_ol8_x86_64_u1_baseos_base
+    organization: "{{ foreman_organization_ol81_uln }}"
     repositories:
       - name: Oracle Linux 8.1 BaseOS (x86_64)
         product: Oracle Linux
@@ -252,6 +290,7 @@ foreman_content_views_ol81_uln:
 
 foreman_content_views_ol82_uln:
   - name: cv_ol8_x86_64_u2_baseos_base
+    organization: "{{ foreman_organization_ol82_uln }}"
     repositories:
       - name: Oracle Linux 8.2 BaseOS (x86_64)
         product: Oracle Linux
@@ -259,6 +298,7 @@ foreman_content_views_ol82_uln:
 
 foreman_content_views_ol83_uln:
   - name: cv_ol8_x86_64_u3_baseos_base
+    organization: "{{ foreman_organization_ol83_uln }}"
     repositories:
       - name: Oracle Linux 8.3 BaseOS (x86_64)
         product: Oracle Linux
@@ -266,6 +306,7 @@ foreman_content_views_ol83_uln:
 
 foreman_content_views_ol84_uln:
   - name: cv_ol8_x86_64_u4_baseos_base
+    organization: "{{ foreman_organization_ol84_uln }}"
     repositories:
       - name: Oracle Linux 8.4 BaseOS (x86_64)
         product: Oracle Linux
@@ -273,6 +314,7 @@ foreman_content_views_ol84_uln:
 
 foreman_content_views_ol85_uln:
   - name: cv_ol8_x86_64_u5_baseos_base
+    organization: "{{ foreman_organization_ol85_uln }}"
     repositories:
       - name: Oracle Linux 8.5 BaseOS (x86_64)
         product: Oracle Linux
@@ -280,6 +322,7 @@ foreman_content_views_ol85_uln:
 
 foreman_content_views_ol86_uln:
   - name: cv_ol8_x86_64_u6_baseos_base
+    organization: "{{ foreman_organization_ol86_uln }}"
     repositories:
       - name: Oracle Linux 8.6 BaseOS (x86_64)
         product: Oracle Linux
@@ -287,6 +330,7 @@ foreman_content_views_ol86_uln:
 
 foreman_content_views_ol87_uln:
   - name: cv_ol8_x86_64_u7_baseos_base
+    organization: "{{ foreman_organization_ol87_uln }}"
     repositories:
       - name: Oracle Linux 8.7 BaseOS (x86_64)
         product: Oracle Linux
@@ -294,6 +338,7 @@ foreman_content_views_ol87_uln:
 
 foreman_content_views_ol88_uln:
   - name: cv_ol8_x86_64_u8_baseos_base
+    organization: "{{ foreman_organization_ol88_uln }}"
     repositories:
       - name: Oracle Linux 8.8 BaseOS (x86_64)
         product: Oracle Linux
@@ -301,6 +346,7 @@ foreman_content_views_ol88_uln:
 
 foreman_content_views_ol80_patch_uln:
   - name: cv_ol8_uln_x86_64_u0_baseos_patch
+    organization: "{{ foreman_organization_ol80_patch_uln }}"
     repositories:
       - name: Oracle Linux 8 BaseOS GA Patch (x86_64)
         product: Oracle Linux
@@ -308,6 +354,7 @@ foreman_content_views_ol80_patch_uln:
 
 foreman_content_views_ol81_patch_uln:
   - name: cv_ol8_uln_x86_64_u1_baseos_patch
+    organization: "{{ foreman_organization_ol81_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.1 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -315,6 +362,7 @@ foreman_content_views_ol81_patch_uln:
 
 foreman_content_views_ol82_patch_uln:
   - name: cv_ol8_uln_x86_64_u2_baseos_patch
+    organization: "{{ foreman_organization_ol82_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.2 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -322,6 +370,7 @@ foreman_content_views_ol82_patch_uln:
 
 foreman_content_views_ol83_patch_uln:
   - name: cv_ol8_uln_x86_64_u3_baseos_patch
+    organization: "{{ foreman_organization_ol83_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.3 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -329,6 +378,7 @@ foreman_content_views_ol83_patch_uln:
 
 foreman_content_views_ol84_patch_uln:
   - name: cv_ol8_uln_x86_64_u4_baseos_patch
+    organization: "{{ foreman_organization_ol84_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.4 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -336,6 +386,7 @@ foreman_content_views_ol84_patch_uln:
 
 foreman_content_views_ol85_patch_uln:
   - name: cv_ol8_uln_x86_64_u5_baseos_patch
+    organization: "{{ foreman_organization_ol85_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.5 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -343,6 +394,7 @@ foreman_content_views_ol85_patch_uln:
 
 foreman_content_views_ol86_patch_uln:
   - name: cv_ol8_uln_x86_64_u6_baseos_patch
+    organization: "{{ foreman_organization_ol86_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.6 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -350,6 +402,7 @@ foreman_content_views_ol86_patch_uln:
 
 foreman_content_views_ol87_patch_uln:
   - name: cv_ol8_uln_x86_64_u7_baseos_patch
+    organization: "{{ foreman_organization_ol87_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.7 BaseOS Patch (x86_64)
         product: Oracle Linux
@@ -357,6 +410,7 @@ foreman_content_views_ol87_patch_uln:
 
 foreman_content_views_ol88_patch_uln:
   - name: cv_ol8_uln_x86_64_u8_baseos_patch
+    organization: "{{ foreman_organization_ol88_patch_uln }}"
     repositories:
       - name: Oracle Linux 8.8 BaseOS Patch (x86_64)
         product: Oracle Linux

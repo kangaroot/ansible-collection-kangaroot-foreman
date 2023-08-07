@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol7_developer_go110:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go110 }}"
     repositories:
       ### Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang110 ###
       - name: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64)
@@ -23,10 +24,12 @@ foreman_products_ol7_developer_go110:
         label: ol7_x86_64_developer_golang110
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang110/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go110 }}"
 
 foreman_products_ol7_developer_go111:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go111 }}"
     repositories:
       ### Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang111 ###
       - name: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64)
@@ -34,10 +37,12 @@ foreman_products_ol7_developer_go111:
         label: ol7_x86_64_developer_golang111
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang111/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go111 }}"
 
 foreman_products_ol7_developer_go112:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go112 }}"
     repositories:
       ### Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang112 ###
       - name: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64)
@@ -45,10 +50,12 @@ foreman_products_ol7_developer_go112:
         label: ol7_x86_64_developer_golang112
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang112/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go112 }}"
 
 foreman_products_ol7_developer_go113:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go113 }}"
     repositories:
       ### Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang113 ###
       - name: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64)
@@ -56,10 +63,12 @@ foreman_products_ol7_developer_go113:
         label: ol7_x86_64_developer_golang113
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang113/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go113 }}"
 
 foreman_products_ol7_developer_go114:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go114 }}"
     repositories:
       ### Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang114 ###
       - name: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64)
@@ -67,10 +76,12 @@ foreman_products_ol7_developer_go114:
         label: ol7_x86_64_developer_golang114
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang114/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go114 }}"
 
 foreman_products_ol7_developer_go115:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go115 }}"
     repositories:
       ### Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang115 ###
       - name: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64)
@@ -78,10 +89,12 @@ foreman_products_ol7_developer_go115:
         label: ol7_x86_64_developer_golang115
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang115/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go115 }}"
 
 foreman_products_ol7_developer_go116:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go116 }}"
     repositories:
       ### Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang116 ###
       - name: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64)
@@ -89,10 +102,12 @@ foreman_products_ol7_developer_go116:
         label: ol7_x86_64_developer_golang116
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang116/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go116 }}"
 
 foreman_products_ol7_developer_go117:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go117 }}"
     repositories:
       ### Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang117 ###
       - name: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64)
@@ -100,10 +115,12 @@ foreman_products_ol7_developer_go117:
         label: ol7_x86_64_developer_golang117
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang117/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go117 }}"
 
 foreman_products_ol7_developer_go118:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go118 }}"
     repositories:
       ### Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang118 ###
       - name: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64)
@@ -111,10 +128,12 @@ foreman_products_ol7_developer_go118:
         label: ol7_x86_64_developer_golang118
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang118/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go118 }}"
 
 foreman_products_ol7_developer_go119:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_go119 }}"
     repositories:
       ### Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_golang119 ###
       - name: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64)
@@ -122,10 +141,12 @@ foreman_products_ol7_developer_go119:
         label: ol7_x86_64_developer_golang119
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/golang119/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_go119 }}"
 
 foreman_products_ol7_developer_php74:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_php74 }}"
     repositories:
       ### Latest PHP 7.4 packages for Oracle Linux 7 (x86_64) | ol7_x86_64_developer_php74 ###
       - name: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64)
@@ -133,69 +154,84 @@ foreman_products_ol7_developer_php74:
         label: ol7_x86_64_developer_php74
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/php74/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_php74 }}"
 
 foreman_products_ol7_developer_nodejs4:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs4 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 4 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs4
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs4/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs4 }}"
 
 foreman_products_ol7_developer_nodejs6:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs6 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 6 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs6
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs6/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs6 }}"
 
 foreman_products_ol7_developer_nodejs8:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs8 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 8 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs8
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs8/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs8 }}"
 
 foreman_products_ol7_developer_nodejs10:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs10 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 10 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs10
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer_nodejs10/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs10 }}"
 
 foreman_products_ol7_developer_nodejs12:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs12 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 12 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs12
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs12/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs12 }}"
 
 foreman_products_ol7_developer_nodejs14:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs14 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 14 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs14
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs14/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs14 }}"
 
 foreman_products_ol7_developer_nodejs16:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol7_developer_nodejs16 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 16 Packages for Development and test (x86_64)
         label: ol7_developer_nodejs16
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/developer/nodejs16/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol7_developer_nodejs16 }}"
 
 foreman_products_ol7_developer: "{{ [] |
   union( foreman_products_ol7_developer_go110 | default([]) if foreman_enable_ol7_developer_go110 else [] ) |
@@ -221,6 +257,7 @@ foreman_products_ol7_developer: "{{ [] |
 
 foreman_content_views_ol7_developer_go110:
   - name: cv_ol7_x86_64_developer_golang110
+    organization: "{{ foreman_organization_ol7_developer_go110 }}"
     repositories:
       - name: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -228,6 +265,7 @@ foreman_content_views_ol7_developer_go110:
 
 foreman_content_views_ol7_developer_go111:
   - name: cv_ol7_x86_64_developer_golang111
+    organization: "{{ foreman_organization_ol7_developer_go111 }}"
     repositories:
       - name: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -235,6 +273,7 @@ foreman_content_views_ol7_developer_go111:
 
 foreman_content_views_ol7_developer_go112:
   - name: cv_ol7_x86_64_developer_golang112
+    organization: "{{ foreman_organization_ol7_developer_go112 }}"
     repositories:
       - name: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -242,6 +281,7 @@ foreman_content_views_ol7_developer_go112:
 
 foreman_content_views_ol7_developer_go113:
   - name: cv_ol7_x86_64_developer_golang113
+    organization: "{{ foreman_organization_ol7_developer_go113 }}"
     repositories:
       - name: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -249,6 +289,7 @@ foreman_content_views_ol7_developer_go113:
 
 foreman_content_views_ol7_developer_go114:
   - name: cv_ol7_x86_64_developer_golang114
+    organization: "{{ foreman_organization_ol7_developer_go114 }}"
     repositories:
       - name: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -256,6 +297,7 @@ foreman_content_views_ol7_developer_go114:
 
 foreman_content_views_ol7_developer_go115:
   - name: cv_ol7_x86_64_developer_golang115
+    organization: "{{ foreman_organization_ol7_developer_go115 }}"
     repositories:
       - name: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -263,6 +305,7 @@ foreman_content_views_ol7_developer_go115:
 
 foreman_content_views_ol7_developer_go116:
   - name: cv_ol7_x86_64_developer_golang116
+    organization: "{{ foreman_organization_ol7_developer_go116 }}"
     repositories:
       - name: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -270,6 +313,7 @@ foreman_content_views_ol7_developer_go116:
 
 foreman_content_views_ol7_developer_go117:
   - name: cv_ol7_x86_64_developer_golang117
+    organization: "{{ foreman_organization_ol7_developer_go117 }}"
     repositories:
       - name: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -277,6 +321,7 @@ foreman_content_views_ol7_developer_go117:
 
 foreman_content_views_ol7_developer_go118:
   - name: cv_ol7_x86_64_developer_golang118
+    organization: "{{ foreman_organization_ol7_developer_go118 }}"
     repositories:
       - name: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -284,6 +329,7 @@ foreman_content_views_ol7_developer_go118:
 
 foreman_content_views_ol7_developer_go119:
   - name: cv_ol7_x86_64_developer_golang119
+    organization: "{{ foreman_organization_ol7_developer_go119 }}"
     repositories:
       - name: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -291,6 +337,7 @@ foreman_content_views_ol7_developer_go119:
 
 foreman_content_views_ol7_developer_php74:
   - name: cv_ol7_x86_64_developer_php74
+    organization: "{{ foreman_organization_ol7_developer_php74 }}"
     repositories:
       - name: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64)
         product: Oracle Linux
@@ -298,6 +345,7 @@ foreman_content_views_ol7_developer_php74:
 
 foreman_content_views_ol7_developer_nodejs4:
   - name: cv_ol7_developer_nodejs4
+    organization: "{{ foreman_organization_ol7_developer_nodejs4 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 4 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -305,6 +353,7 @@ foreman_content_views_ol7_developer_nodejs4:
 
 foreman_content_views_ol7_developer_nodejs6:
   - name: cv_ol7_developer_nodejs6
+    organization: "{{ foreman_organization_ol7_developer_nodejs6 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 6 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -312,6 +361,7 @@ foreman_content_views_ol7_developer_nodejs6:
 
 foreman_content_views_ol7_developer_nodejs8:
   - name: cv_ol7_developer_nodejs8
+    organization: "{{ foreman_organization_ol7_developer_nodejs8 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 8 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -319,6 +369,7 @@ foreman_content_views_ol7_developer_nodejs8:
 
 foreman_content_views_ol7_developer_nodejs10:
   - name: cv_ol7_developer_nodejs10
+    organization: "{{ foreman_organization_ol7_developer_nodejs10 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 10 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -326,6 +377,7 @@ foreman_content_views_ol7_developer_nodejs10:
 
 foreman_content_views_ol7_developer_nodejs12:
   - name: cv_ol7_developer_nodejs12
+    organization: "{{ foreman_organization_ol7_developer_nodejs12 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 12 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -333,6 +385,7 @@ foreman_content_views_ol7_developer_nodejs12:
 
 foreman_content_views_ol7_developer_nodejs14:
   - name: cv_ol7_developer_nodejs14
+    organization: "{{ foreman_organization_ol7_developer_nodejs14 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 14 Packages for Development and test (x86_64)
         product: Oracle Linux
@@ -340,6 +393,7 @@ foreman_content_views_ol7_developer_nodejs14:
 
 foreman_content_views_ol7_developer_nodejs16:
   - name: cv_ol7_developer_nodejs16
+    organization: "{{ foreman_organization_ol7_developer_nodejs16 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 16 Packages for Development and test (x86_64)
         product: Oracle Linux

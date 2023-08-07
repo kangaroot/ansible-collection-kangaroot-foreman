@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol70:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol70 }}"
     repositories:
       ### Oracle Linux 7 GA installation media copy (x86_64) | ol7_x86_64_u0_base ###
       - name: Oracle Linux 7 GA installation media copy (x86_64)
@@ -23,10 +24,12 @@ foreman_products_ol70:
         label: ol7_x86_64_u0_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/0/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol70 }}"
 
 foreman_products_ol71:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol71 }}"
     repositories:
       ### Oracle Linux 7 Update 1 installation media copy (x86_64) | ol7_x86_64_u1_base ###
       - name: Oracle Linux 7 Update 1 installation media copy (x86_64)
@@ -34,10 +37,12 @@ foreman_products_ol71:
         label: ol7_x86_64_u1_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/1/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol71 }}"
 
 foreman_products_ol72:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol72 }}"
     repositories:
       ### Oracle Linux 7 Update 2 installation media copy (x86_64) | ol7_x86_64_u2_base ###
       - name: Oracle Linux 7 Update 2 installation media copy (x86_64)
@@ -45,10 +50,12 @@ foreman_products_ol72:
         label: ol7_x86_64_u2_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/2/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol72 }}"
 
 foreman_products_ol73:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol73 }}"
     repositories:
       ### Oracle Linux 7 Update 3 installation media copy (x86_64) | ol7_x86_64_u3_base ###
       - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
@@ -56,10 +63,12 @@ foreman_products_ol73:
         label: ol7_x86_64_u3_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/3/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol73 }}"
 
 foreman_products_ol74:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol74 }}"
     repositories:
       ### Oracle Linux 7 Update 4 installation media copy (x86_64) | ol7_x86_64_u4_base ###
       - name: Oracle Linux 7 Update 4 installation media copy (x86_64)
@@ -67,10 +76,12 @@ foreman_products_ol74:
         label: ol7_x86_64_u4_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/4/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol74 }}"
 
 foreman_products_ol75:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol75 }}"
     repositories:
       ### Oracle Linux 7 Update 5 installation media copy (x86_64) | ol7_x86_64_u5_base ###
       - name: Oracle Linux 7 Update 5 installation media copy (x86_64)
@@ -78,10 +89,12 @@ foreman_products_ol75:
         label: ol7_x86_64_u5_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/5/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol75 }}"
 
 foreman_products_ol76:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol76 }}"
     repositories:
       ### Oracle Linux 7 Update 6 installation media copy (x86_64) | ol7_x86_64_u6_base ###
       - name: Oracle Linux 7 Update 6 installation media copy (x86_64)
@@ -89,10 +102,12 @@ foreman_products_ol76:
         label: ol7_x86_64_u6_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/6/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol76 }}"
 
 foreman_products_ol77:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol77 }}"
     repositories:
       ### Oracle Linux 7 Update 7 installation media copy (x86_64) | ol7_x86_64_u7_base ###
       - name: Oracle Linux 7 Update 7 installation media copy (x86_64)
@@ -100,10 +115,12 @@ foreman_products_ol77:
         label: ol7_x86_64_u7_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/7/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol77 }}"
 
 foreman_products_ol78:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol78 }}"
     repositories:
       ### Oracle Linux 7 Update 8 installation media copy (x86_64) | ol7_x86_64_u8_base ###
       - name: Oracle Linux 7 Update 8 installation media copy (x86_64)
@@ -111,10 +128,12 @@ foreman_products_ol78:
         label: ol7_x86_64_u8_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/8/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol78 }}"
 
 foreman_products_ol79:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol79 }}"
     repositories:
       ### Oracle Linux 7 Update 9 installation media copy (x86_64) | ol7_x86_64_u9_base ###
       - name: Oracle Linux 7 Update 9 installation media copy (x86_64)
@@ -122,6 +141,7 @@ foreman_products_ol79:
         label: ol7_x86_64_u9_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/9/base/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol79 }}"
 
 foreman_products_ol7_versions: "{{ [] |
   union( foreman_products_ol70 | default([]) if foreman_enable_ol70 else [] ) |
@@ -139,6 +159,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol70:
 #   - name: cv_ol7_x86_64_u0_base
+#     organization: "{{ foreman_organization_ol70 }}"
 #     repositories:
 #       - name: Oracle Linux 7 GA installation media copy (x86_64)
 #         product: Oracle Linux
@@ -146,6 +167,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol71:
 #   - name: cv_ol7_x86_64_u1_base
+#     organization: "{{ foreman_organization_ol71 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 1 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -153,6 +175,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol72:
 #   - name: cv_ol7_x86_64_u2_base
+#     organization: "{{ foreman_organization_ol72 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 2 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -160,6 +183,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol73:
 #   - name: ol7_x86_64_u3_base
+#     organization: "{{ foreman_organization_ol73 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -167,6 +191,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol74:
 #   - name: cv_ol7_x86_64_u4_base
+#     organization: "{{ foreman_organization_ol74 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 4 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -174,6 +199,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol75:
 #   - name: cv_ol7_x86_64_u5_base
+#     organization: "{{ foreman_organization_ol75 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 5 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -181,6 +207,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol76:
 #   - name: cv_ol7_x86_64_u6_base
+#     organization: "{{ foreman_organization_ol76 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 6 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -188,6 +215,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol77:
 #   - name: cv_ol7_x86_64_u7_base
+#     organization: "{{ foreman_organization_ol77 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 7 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -195,6 +223,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol78:
 #   - name: cv_ol7_x86_64_u8_base
+#     organization: "{{ foreman_organization_ol78 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 8 installation media copy (x86_64)
 #         product: Oracle Linux
@@ -202,6 +231,7 @@ foreman_products_ol7_versions: "{{ [] |
 
 # foreman_content_views_ol79:
 #   - name: cv_ol7_x86_64_u9_base
+#     organization: "{{ foreman_organization_ol79 }}"
 #     repositories:
 #       - name: Oracle Linux 7 Update 9 installation media copy (x86_64)
 #         product: Oracle Linux

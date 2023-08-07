@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol9_olm:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol9_olm }}"
     repositories:
       ### Oracle Linux Manager 2.10 Client (x86_64) | ol9_x86_64_oraclelinuxmanager210_client ###
       - name: Oracle Linux Manager 2.10 Client (x86_64)
@@ -23,10 +24,12 @@ foreman_products_ol9_olm:
         label: ol9_x86_64_oraclelinuxmanager210_client
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/oraclelinuxmanager210/client/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9_olm }}"
 
 
 foreman_content_views_ol9_olm:
   - name: cv_ol9_x86_64_oraclelinuxmanager210_client
+    organization: "{{ foreman_organization_ol9_olm }}"
     repositories:
       - name: Oracle Linux Manager 2.10 Client (x86_64)
         product: Oracle Linux

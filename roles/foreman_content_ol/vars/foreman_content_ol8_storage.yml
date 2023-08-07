@@ -16,6 +16,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol8_storage:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol8_storage }}"
     repositories:
       ### Oracle Linux 8 (x86_64) Gluster AppStream | ol8_x86_64_gluster_appstream ###
       - name: Oracle Linux 8 (x86_64) Gluster AppStream
@@ -23,10 +24,12 @@ foreman_products_ol8_storage:
         label: ol8_x86_64_gluster_appstream
         url: "{{ foreman_repo_baseurl_oracle8 }}/OL8/gluster/appstream/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_storage }}"
 
 
 foreman_content_views_ol8_storage:
   - name: cv_ol8_x86_64_gluster_appstream
+    organization: "{{ foreman_organization_ol8_storage }}"
     repositories:
       - name: Oracle Linux 8 (x86_64) Gluster AppStream
         product: Oracle Linux

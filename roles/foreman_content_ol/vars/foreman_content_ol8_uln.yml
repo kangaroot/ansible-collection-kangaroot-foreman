@@ -21,6 +21,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol8_uln:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       ### Oracle Linux 8 BaseOS Latest (x86_64) | ol8_x86_64_baseos_latest ###
       - name: Oracle Linux 8 BaseOS Latest (x86_64)
@@ -28,12 +29,14 @@ foreman_products_ol8_uln:
         label: ol8_uln_x86_64_baseos_latest
         url: uln://ol8_x86_64_baseos_latest
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### Oracle Linux 8 Application Stream Packages (x86_64) | ol8_x86_64_appstream ###
       - name: Oracle Linux 8 Application Stream Packages (x86_64)
         description: Application packages released for Oracle Linux 8 (x86_64) including the latest errata packages. (x86_64)
         label: ol8_uln_x86_64_appstream
         url: uln://ol8_x86_64_appstream
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
 
       ### Oracle Linux 8 Addons (x86_64) | ol8_x86_64_addons ###
       - name: Oracle Linux 8 Addons (x86_64)
@@ -41,82 +44,97 @@ foreman_products_ol8_uln:
         label: ol8_uln_x86_64_addons
         url: uln://ol8_x86_64_addons
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### Packages for creating test and development environments for Oracle Linux 8 (x86_64) | ol8_x86_64_developer ###
       - name: Packages for creating test and development environments for Oracle Linux 8 (x86_64)
         description: Latest packages for creating test and development environments - Oracle LInux 8 (x86_64)
         label: ol8_uln_x86_64_developer
         url: uln://ol8_x86_64_developer
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### EPEL Packages for creating test and development environments for Oracle Linux 8 (x86_64) | ol8_x86_64_developer_EPEL ###
       - name: EPEL Packages for creating test and development environments for Oracle Linux 8 (x86_64)
         description: Latest EPEL packages for creating test and development environments - Oracle LInux 8 (x86_64)
         label: ol8_uln_x86_64_developer_EPEL
         url: uln://ol8_x86_64_developer_EPEL
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### EPEL Modular Packages for Oracle Linux 8 (x86_64) | ol8_x86_64_developer_EPEL_modular ###
       - name: EPEL Modular Packages for Oracle Linux 8 (x86_64)
         description: Latest EPEL Modular packages for creating test and development environments - Oracle LInux 8 (x86_64)
         label: ol8_uln_x86_64_developer_EPEL_modular
         url: uln://ol8_x86_64_developer_EPEL_modular
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### CodeReady Linux Builder for Oracle Linux 8 (x86_64) | ol8_x86_64_codeready_builder ###
       - name: CodeReady Linux Builder for Oracle Linux 8 (x86_64)
         description: Repository of additional development and build tools for Oracle Linux 8 (x86_64) - (unsupported).
         label: ol8_uln_x86_64_codeready_builder
         url: uln://ol8_x86_64_codeready_builder
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
       ### Oracle Linux 8 Distro Builder (x86_64) - Unsupported | ol8_x86_64_distro_builder ###
       - name: Oracle Linux 8 Distro Builder (x86_64) - Unsupported
         description: Latest packages for Oracle Linux 8 Distro Builder (x86_64) - Unsupported.
         label: ol8_uln_x86_64_distro_builder
         url: uln://ol8_x86_64_distro_builder
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol8_uln }}"
 
 
 foreman_content_views_ol8_uln:
   - name: cv_ol8_uln_x86_64_baseos_latest
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: Oracle Linux 8 BaseOS Latest (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_appstream
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: Oracle Linux 8 Application Stream Packages (x86_64)
         product: Oracle Linux
     allow_promote: False
 
   - name: cv_ol8_uln_x86_64_addons
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: Oracle Linux 8 Addons (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_developer
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: Packages for creating test and development environments for Oracle Linux 8 (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_developer_EPEL
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: EPEL Packages for creating test and development environments for Oracle Linux 8 (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_developer_EPEL_modular
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: EPEL Modular Packages for Oracle Linux 8 (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_codeready_builder
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: CodeReady Linux Builder for Oracle Linux 8 (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol8_uln_x86_64_distro_builder
+    organization: "{{ foreman_organization_ol8_uln }}"
     repositories:
       - name: Oracle Linux 8 Distro Builder (x86_64) - Unsupported
         product: Oracle Linux
     allow_promote: False
 
   - name: ccv_ol8
+    organization: "{{ foreman_organization_ol8_uln }}"
     composite: True
     auto_publish: True
     components:
@@ -181,7 +199,6 @@ foreman_installation_media_ol8_uln:
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Oracle Linux"
@@ -192,6 +209,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_ol8_uln:
   - name: ak_ol8
+    organization: "{{ foreman_organization_ol8_uln }}"
     content_view: ccv_ol8
     <<: *foreman_activation_keys_defaults
     content_overrides:

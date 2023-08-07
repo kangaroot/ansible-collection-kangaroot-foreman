@@ -19,6 +19,7 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ol9:
   - name: Oracle Linux
     label: OL
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       ### Oracle Linux 9 BaseOS Latest (x86_64) | ol9_x86_64_baseos_latest ###
       - name: Oracle Linux 9 BaseOS Latest (x86_64)
@@ -26,12 +27,14 @@ foreman_products_ol9:
         label: ol9_x86_64_baseos_latest
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/baseos/latest/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
       ### Oracle Linux 9 Application Stream Packages (x86_64) | ol9_x86_64_appstream ###
       - name: Oracle Linux 9 Application Stream Packages (x86_64)
         description: Application Stream packages released for Oracle Linux 9 including the latest errata packages. (x86_64)
         label: ol9_x86_64_appstream
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/appstream/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
 
       ### Oracle Linux 9 Addons (x86_64) | ol9_x86_64_addons ###
       - name: Oracle Linux 9 Addons (x86_64)
@@ -39,82 +42,97 @@ foreman_products_ol9:
         label: ol9_x86_64_addons
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/addons/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
       ### Packages for creating test and development environments for Oracle Linux 9 (x86_64) | ol9_x86_64_developer ###
       - name: Packages for creating test and development environments for Oracle Linux 9 (x86_64)
         description: Latest packages for creating test and development environments - Oracle LInux 9 (x86_64)
         label: ol9_x86_64_developer
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/developer/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
       ### Oracle Linux 9 EPEL Packages (x86_64) | ol9_x86_64_developer_EPEL ###
       - name: Oracle Linux 9 EPEL Packages (x86_64)
         description: EPEL packages for Oracle Linux 9 (x86_64)
         label: ol9_x86_64_developer_EPEL
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/developer/EPEL/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
       ### Oracle Linux 9 CodeReady Builder (x86_64) | ol9_x86_64_codeready_builder ###
       - name: Oracle Linux 9 CodeReady Builder (x86_64)
         description: Repository of additional development and build tools for Oracle Linux 9 (x86_64) - (Unsupported)
         label: ol9_x86_64_codeready_builder
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/codeready/builder/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
       # ### Oracle Linux 9 CodeReady Builder Developer Preview (x86_64) | ol9_x86_64_codeready_builder_developer ###
       # - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
       #   description: Developer preview of Oracle Linux 9 CodeReady Builder Packages (x86_64) - (Unsupported)
       #   label: ol9_x86_64_codeready_builder_developer
       #   url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/codeready/builder/developer/x86_64/"
       #   <<: *foreman_products_defaults
+      #   organization: "{{ foreman_organization_ol9 }}"
       ### Oracle Linux 9 Distro Builder (x86_64) | ol9_x86_64_distro_builder ###
       - name: Oracle Linux 9 Distro Builder (x86_64)
         description: Oracle Linux 9 Distro Builder Packages (x86_64) - (Unsupported)
         label: ol9_x86_64_distro_builder
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/distro/builder/x86_64/"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_ol9 }}"
 
 
 foreman_content_views_ol9:
   - name: cv_ol9_x86_64_baseos_latest
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 BaseOS Latest (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol9_x86_64_appstream
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 Application Stream Packages (x86_64)
         product: Oracle Linux
     allow_promote: False
 
   - name: cv_ol9_x86_64_addons
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 Addons (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol9_x86_64_developer
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Packages for creating test and development environments for Oracle Linux 9 (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol9_x86_64_developer_EPEL
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 EPEL Packages (x86_64)
         product: Oracle Linux
     allow_promote: False
   - name: cv_ol9_x86_64_codeready_builder
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 CodeReady Builder (x86_64)
         product: Oracle Linux
     allow_promote: False
   # - name: cv_ol9_x86_64_codeready_builder_developer
+  #   organization: "{{ foreman_organization_ol9 }}"
   #   repositories:
   #     - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
   #       product: Oracle Linux
   #   allow_promote: False
   - name: cv_ol9_x86_64_distro_builder
+    organization: "{{ foreman_organization_ol9 }}"
     repositories:
       - name: Oracle Linux 9 Distro Builder (x86_64)
         product: Oracle Linux
     allow_promote: False
 
   - name: ccv_ol9
+    organization: "{{ foreman_organization_ol9 }}"
     composite: True
     auto_publish: True
     components:
@@ -190,6 +208,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_ol9:
   - name: ak_ol9
+    organization: "{{ foreman_organization_ol9 }}"
     content_view: ccv_ol9
     <<: *foreman_activation_keys_defaults
     content_overrides:
