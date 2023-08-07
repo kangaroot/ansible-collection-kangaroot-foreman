@@ -15,33 +15,40 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_hashicorp_el8:
   - name: Hashicorp
     label: Hashicorp
+    organization: "{{ foreman_organization_hashicorp_el8 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 8
         label: hashicorp-el8
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/8/x86_64/stable"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_hashicorp_el8 }}"
 
 foreman_products_hashicorp_el7:
   - name: Hashicorp
     label: Hashicorp
+    organization: "{{ foreman_organization_hashicorp_el7 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 7
         label: hashicorp-el7
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/7/x86_64/stable"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_hashicorp_el7 }}"
 
 foreman_products_hashicorp_el9:
   - name: Hashicorp
     label: Hashicorp
+    organization: "{{ foreman_organization_hashicorp_el9 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 9
         label: hashicorp-el9
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/9/x86_64/stable"
         <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_hashicorp_el9 }}"
 
 
 foreman_content_views_hashicorp_el7:
   - name: cv_hashicorp_el7
+    organization: "{{ foreman_organization_hashicorp_el7 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 7
         product: Hashicorp
@@ -49,6 +56,7 @@ foreman_content_views_hashicorp_el7:
 
 foreman_content_views_hashicorp_el8:
   - name: cv_hashicorp_el8
+    organization: "{{ foreman_organization_hashicorp_el8 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 8
         product: Hashicorp
@@ -56,6 +64,7 @@ foreman_content_views_hashicorp_el8:
 
 foreman_content_views_hashicorp_el9:
   - name: cv_hashicorp_el9
+    organization: "{{ foreman_organization_hashicorp_el9 }}"
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 9
         product: Hashicorp

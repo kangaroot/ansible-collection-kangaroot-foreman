@@ -13,9 +13,21 @@ foreman_repo_baseurl_hashicorp: https://rpm.releases.hashicorp.com
 #######################################
 
 foreman_enable_hashicorp: false
+
 foreman_enable_hashicorp_el7: false
 foreman_enable_hashicorp_el8: "{{ foreman_enable_hashicorp | bool }}"
 foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
+
+
+#######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_hashicorp: "{{ foreman_organization }}"
+
+foreman_organization_hashicorp_el7: "{{ foreman_organization_hashicorp }}"
+foreman_organization_hashicorp_el8: "{{ foreman_organization_hashicorp }}"
+foreman_organization_hashicorp_el9: "{{ foreman_organization_hashicorp }}"
 
 
 #######################################
