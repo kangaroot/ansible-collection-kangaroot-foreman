@@ -4,29 +4,35 @@ foreman_content_credentials_redhat9: []
 
 foreman_products_redhat9_aap:
   - name: Red Hat Ansible Automation Platform
+    organization: "{{ foreman_organization_redhat9_aap }}"
     repository_sets:
       # Red Hat Ansible Automation Platform 2.2 for RHEL 9 x86_64
       - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         label: ansible-automation-platform-2.2-for-rhel-9-x86_64-rpms
+        organization: "{{ foreman_organization_redhat9_aap }}"
       # Red Hat Ansible Automation Platform 2.3 for RHEL 9 x86_64
       - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         label: ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms
+        organization: "{{ foreman_organization_redhat9_aap }}"
 
 foreman_content_views_redhat9_aap:
   - name: cv_rhel8_ansible_automation_platform_22
+    organization: "{{ foreman_organization_redhat9_aap }}"
     repositories:
       - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
   - name: cv_rhel8_ansible_automation_platform_23
+    organization: "{{ foreman_organization_redhat9_aap }}"
     repositories:
       - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Automation Platform'
     allow_promote: False
 
   - name: ccv_rhel9_aap
+    organization: "{{ foreman_organization_redhat9_aap }}"
     composite: True
     auto_publish: True
     components:
@@ -49,7 +55,6 @@ foreman_installation_media_redhat9_aap: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to uyse a pool id
@@ -77,6 +82,7 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
 
 foreman_activation_keys_redhat9_aap:
   - name: ak_rhel9_aap
+    organization: "{{ foreman_organization_redhat9_aap }}"
     content_view: ccv_rhel9_aap
     <<: *foreman_activation_keys_defaults_el9
     # subscriptions:

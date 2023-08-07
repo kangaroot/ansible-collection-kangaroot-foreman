@@ -2,300 +2,363 @@
 
 foreman_products_redhat80:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat80 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.0
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.0'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat80 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.0
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.0'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat80 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.0
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.0'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat80 }}"
 
 foreman_products_redhat81:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat81 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.1
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.1'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat81 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.1
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.1'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat81 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.1
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.1'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat81 }}"
 
 foreman_products_redhat82:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat82 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.2
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.2'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat82 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.2
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.2'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat82 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.2
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.2'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat82 }}"
 
 foreman_products_redhat83:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat83 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.3
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.3'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat83 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.3
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.3'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat83 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.3
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.3'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat83 }}"
 
 foreman_products_redhat84:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat84 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.4
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.4'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat84 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.4
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.4'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat84 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.4
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.4'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat84 }}"
 
 foreman_products_redhat85:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat85 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.5
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.5'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat85 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.5
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.5'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat85 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.5
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.5'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat85 }}"
 
 foreman_products_redhat86:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat86 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.6
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.6'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat86 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.6
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.6'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat86 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.6
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.6'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat86 }}"
 
 foreman_products_redhat87:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat87 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat87 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat87 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat87 }}"
 
 foreman_products_redhat88:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat88 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.8
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8.8'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat88 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.8
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8.8'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat88 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.8
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8.8'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat88 }}"
 
 foreman_products_redhat80_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat80_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.0
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.0'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat80_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.0
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.0'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat80_kickstart }}"
 
 foreman_products_redhat81_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat81_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.1
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.1'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat81_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.1
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.1'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat81_kickstart }}"
 
 foreman_products_redhat82_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat82_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.2
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.2'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat82_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.2
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.2'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat82_kickstart }}"
 
 foreman_products_redhat83_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat83_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.3
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.3'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat83_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.3
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.3'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat83_kickstart }}"
 
 foreman_products_redhat84_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat84_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.4
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.4'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat84_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.4
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.4'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat84_kickstart }}"
 
 foreman_products_redhat85_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat85_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.5
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.5'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat85_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.5
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.5'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat85_kickstart }}"
 
 foreman_products_redhat86_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat86_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.6
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.6'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat86_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.6
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.6'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat86_kickstart }}"
 
 foreman_products_redhat87_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat87_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat87_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.7
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.7'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat87_kickstart }}"
 
 foreman_products_redhat88_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat88_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart 8.8
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '8.8'
         # label: rhel-8-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat88_kickstart }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream Kickstart 8.8
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '8.8'
         # label: rhel-8-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat88_kickstart }}"
 
 foreman_products_redhat8_versions: "{{ [] |
   union( foreman_products_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |
@@ -322,16 +385,19 @@ foreman_products_redhat8_versions: "{{ [] |
 
 foreman_content_views_redhat80:
   - name: cv_rhel8_0_baseos
+    organization: "{{ foreman_organization_redhat80 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.0
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_0_appstream
+    organization: "{{ foreman_organization_redhat80 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.0
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_0_supplementary
+    organization: "{{ foreman_organization_redhat80 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.0
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -339,16 +405,19 @@ foreman_content_views_redhat80:
 
 foreman_content_views_redhat81:
   - name: cv_rhel8_1_baseos
+    organization: "{{ foreman_organization_redhat81 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.1
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_1_appstream
+    organization: "{{ foreman_organization_redhat81 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.1
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_1_supplementary
+    organization: "{{ foreman_organization_redhat81 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.1
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -356,16 +425,19 @@ foreman_content_views_redhat81:
 
 foreman_content_views_redhat82:
   - name: cv_rhel8_2_baseos
+    organization: "{{ foreman_organization_redhat82 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.2
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_2_appstream
+    organization: "{{ foreman_organization_redhat82 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.2
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_2_supplementary
+    organization: "{{ foreman_organization_redhat82 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.2
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -373,16 +445,19 @@ foreman_content_views_redhat82:
 
 foreman_content_views_redhat83:
   - name: cv_rhel8_3_baseos
+    organization: "{{ foreman_organization_redhat83 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.3
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_3_appstream
+    organization: "{{ foreman_organization_redhat83 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.3
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_3_supplementary
+    organization: "{{ foreman_organization_redhat83 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.3
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -390,16 +465,19 @@ foreman_content_views_redhat83:
 
 foreman_content_views_redhat84:
   - name: cv_rhel8_4_baseos
+    organization: "{{ foreman_organization_redhat84 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.4
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_4_appstream
+    organization: "{{ foreman_organization_redhat84 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.4
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_4_supplementary
+    organization: "{{ foreman_organization_redhat84 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.4
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -407,16 +485,19 @@ foreman_content_views_redhat84:
 
 foreman_content_views_redhat85:
   - name: cv_rhel8_5_baseos
+    organization: "{{ foreman_organization_redhat85 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.5
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_5_appstream
+    organization: "{{ foreman_organization_redhat85 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.5
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_5_supplementary
+    organization: "{{ foreman_organization_redhat85 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.5
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -424,16 +505,19 @@ foreman_content_views_redhat85:
 
 foreman_content_views_redhat86:
   - name: cv_rhel8_6_baseos
+    organization: "{{ foreman_organization_redhat86 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.6
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_6_appstream
+    organization: "{{ foreman_organization_redhat86 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.6
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_6_supplementary
+    organization: "{{ foreman_organization_redhat86 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.6
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -441,16 +525,19 @@ foreman_content_views_redhat86:
 
 foreman_content_views_redhat87:
   - name: cv_rhel8_7_baseos
+    organization: "{{ foreman_organization_redhat87 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.7
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_7_appstream
+    organization: "{{ foreman_organization_redhat87 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.7
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_7_supplementary
+    organization: "{{ foreman_organization_redhat87 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.7
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -458,16 +545,19 @@ foreman_content_views_redhat87:
 
 foreman_content_views_redhat88:
   - name: cv_rhel8_8_baseos
+    organization: "{{ foreman_organization_redhat88 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_8_appstream
+    organization: "{{ foreman_organization_redhat88 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_8_supplementary
+    organization: "{{ foreman_organization_redhat88 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8.8
         product: 'Red Hat Enterprise Linux for x86_64'

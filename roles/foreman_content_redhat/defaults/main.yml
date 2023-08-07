@@ -210,6 +210,80 @@ foreman_enable_redhat9_rhocp: false
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_redhat: "{{ foreman_organization }}"
+
+foreman_organization_redhat7: "{{ foreman_organization_redhat }}"
+
+foreman_organization_redhat70: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat71: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat72: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat73: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat74: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat75: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat76: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat77: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat78: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat79: "{{ foreman_organization_redhat7 }}"
+
+foreman_organization_redhat70_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat71_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat72_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat73_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat74_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat75_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat76_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat77_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat78_kickstart: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat79_kickstart: "{{ foreman_organization_redhat7 }}"
+
+foreman_organization_redhat7_sat: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat7_aap: "{{ foreman_organization_redhat7 }}"
+foreman_organization_redhat7_rhocp: "{{ foreman_organization_redhat7 }}"
+
+foreman_organization_redhat8: "{{ foreman_organization_redhat }}"
+
+foreman_organization_redhat80: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat81: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat82: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat83: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat84: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat85: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat86: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat87: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat88: "{{ foreman_organization_redhat8 }}"
+
+foreman_organization_redhat80_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat81_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat82_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat83_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat84_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat85_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat86_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat87_kickstart: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat88_kickstart: "{{ foreman_organization_redhat8 }}"
+
+foreman_organization_redhat8_sat: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat8_aap: "{{ foreman_organization_redhat8 }}"
+foreman_organization_redhat8_rhocp: "{{ foreman_organization_redhat8 }}"
+
+foreman_organization_redhat9: "{{ foreman_organization_redhat }}"
+
+foreman_organization_redhat90: "{{ foreman_organization_redhat9 }}"
+foreman_organization_redhat91: "{{ foreman_organization_redhat9 }}"
+foreman_organization_redhat92: "{{ foreman_organization_redhat9 }}"
+
+foreman_organization_redhat90_kickstart: "{{ foreman_organization_redhat9 }}"
+foreman_organization_redhat91_kickstart: "{{ foreman_organization_redhat9 }}"
+foreman_organization_redhat92_kickstart: "{{ foreman_organization_redhat9 }}"
+
+foreman_organization_redhat9_aap: "{{ foreman_organization_redhat9 }}"
+foreman_organization_redhat9_rhocp: "{{ foreman_organization_redhat9 }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

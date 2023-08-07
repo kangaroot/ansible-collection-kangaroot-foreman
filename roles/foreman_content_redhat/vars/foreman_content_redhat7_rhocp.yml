@@ -4,38 +4,46 @@ foreman_content_credentials_redhat7_rhocp: []
 
 foreman_products_redhat7_rhocp:
   - name: Red Hat OpenShift Container Platform
+    organization: "{{ foreman_organization_redhat7_rhocp }}"
     repository_sets:
       # Red Hat OpenShift Container Platform 4.10 RPMs x86_64
       - name: Red Hat OpenShift Container Platform 4.10 (RPMs)
         basearch: x86_64
         label: rhel-7-server-ose-4.10-rpms
+        organization: "{{ foreman_organization_redhat7_rhocp }}"
       # Red Hat OpenShift Container Platform 4.11 RPMs x86_64
       - name: Red Hat OpenShift Container Platform 4.11 (RPMs)
         basearch: x86_64
         label: rhel-7-server-ose-4.11-rpms
+        organization: "{{ foreman_organization_redhat7_rhocp }}"
       # # Red Hat OpenShift Container Platform 4.12 RPMs x86_64
       # - name: Red Hat OpenShift Container Platform 4.12 (RPMs)
       #   basearch: x86_64
       #   label: rhel-7-server-ose-4.12-rpms
+      #   organization: "{{ foreman_organization_redhat7_rhocp }}"
 
 foreman_content_views_redhat7_rhocp:
   - name: cv_rhel7_rhocp_410
+    organization: "{{ foreman_organization_redhat7_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.10 RPMs x86_64
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel7_rhocp_411
+    organization: "{{ foreman_organization_redhat7_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.11 RPMs x86_64
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   # - name: cv_rhel7_rhocp_412
+  #   organization: "{{ foreman_organization_redhat7_rhocp }}"
   #   repositories:
   #     - name: Red Hat OpenShift Container Platform 4.12 RPMs x86_64
   #       product: 'Red Hat OpenShift Container Platform'
   #   allow_promote: False
 
   - name: ccv_rhel7_rhocp
+    organization: "{{ foreman_organization_redhat7_rhocp }}"
     composite: True
     auto_publish: True
     components:
@@ -68,7 +76,6 @@ foreman_installation_media_redhat7_rhocp: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to uyse a pool id
@@ -98,6 +105,7 @@ foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
 
 foreman_activation_keys_redhat7_rhocp:
   - name: ak_rhel7_rhocp
+    organization: "{{ foreman_organization_redhat7_rhocp }}"
     content_view: ccv_rhel7_rhocp
     <<: *foreman_activation_keys_defaults_el7
     # subscriptions:

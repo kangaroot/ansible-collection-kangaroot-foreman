@@ -4,6 +4,7 @@ foreman_content_credentials_redhat9_rhocp: []
 
 foreman_products_redhat9_rhocp:
   # - name: Red Hat OpenShift Container Platform
+  #   organization: "{{ foreman_organization_redhat9_rhocp }}"
   #   repository_sets:
   #     # Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
   #     - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 (RPMs)
@@ -15,6 +16,7 @@ foreman_products_redhat9_rhocp:
   #       # label: rhocp-4.13-for-rhel-9-x86_64-rpms
 
   - name: Red Hat OpenShift Container Platform
+    organization: "{{ foreman_organization_redhat9_rhocp }}"
     all_repositories: true
     labels:
       # Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
@@ -26,17 +28,20 @@ foreman_products_redhat9_rhocp:
 
 foreman_content_views_redhat9_rhocp:
   - name: cv_rhel9_rhocp_412
+    organization: "{{ foreman_organization_redhat9_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel9_rhocp_413
+    organization: "{{ foreman_organization_redhat9_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
 
   - name: ccv_rhel9_rhocp
+    organization: "{{ foreman_organization_redhat9_rhocp }}"
     composite: True
     auto_publish: True
     components:
@@ -59,7 +64,6 @@ foreman_installation_media_redhat9_rhocp: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to uyse a pool id
@@ -87,6 +91,7 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
 
 foreman_activation_keys_redhat9_rhocp:
   - name: ak_rhel9_rhocp
+    organization: "{{ foreman_organization_redhat9_rhocp }}"
     content_view: ccv_rhel9_rhocp
     <<: *foreman_activation_keys_defaults_el9
     # subscriptions:

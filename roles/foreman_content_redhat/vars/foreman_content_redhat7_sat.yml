@@ -4,51 +4,62 @@ foreman_content_credentials_redhat7_sat: []
 
 foreman_products_redhat7_sat:
   - name: Red Hat Satellite
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repository_sets:
       # Red Hat Satellite 6.10 for RHEL 7 Server RPMs x86_64
       - name: Red Hat Satellite 6.10 (for RHEL 7 Server) (RPMs)
         basearch: x86_64
         # label: rhel-7-server-satellite-6.10-rpms
+        organization: "{{ foreman_organization_redhat7_sat }}"
       # Red Hat Satellite 6.11 for RHEL 7 Server RPMs x86_64
       - name: Red Hat Satellite 6.11 (for RHEL 7 Server) (RPMs)
         basearch: x86_64
         # label: rhel-7-server-satellite-6.11-rpms
+        organization: "{{ foreman_organization_redhat7_sat }}"
 
   - name: Red Hat Satellite Capsule
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repository_sets:
       # Red Hat Satellite Capsule 6.10 for RHEL 7 Server RPMs x86_64
       - name: Red Hat Satellite Capsule 6.10 (for RHEL 7 Server) (RPMs)
         basearch: x86_64
         # label: rhel-7-server-satellite-capsule-6.10-rpms
+        organization: "{{ foreman_organization_redhat7_sat }}"
       # Red Hat Satellite Capsule 6.11 for RHEL 7 Server RPMs x86_64
       - name: Red Hat Satellite Capsule 6.11 (for RHEL 7 Server) (RPMs)
         basearch: x86_64
         # label: rhel-7-server-satellite-capsule-6.11-rpms
+        organization: "{{ foreman_organization_redhat7_sat }}"
 
 foreman_content_views_redhat7_sat:
   - name: cv_rhel7_satellite_610
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite 6.10 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite'
     allow_promote: False
   - name: cv_rhel7_satellite_611
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite'
     allow_promote: False
 
   - name: cv_rhel7_satellite_capsule_610
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.10 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
   - name: cv_rhel7_satellite_capsule_611
+    organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
 
   - name: ccv_rhel7_satellite
+    organization: "{{ foreman_organization_redhat7_sat }}"
     composite: True
     auto_publish: True
     components:
@@ -72,6 +83,7 @@ foreman_content_views_redhat7_sat:
         latest: true
 
   - name: ccv_rhel7_capsule
+    organization: "{{ foreman_organization_redhat7_sat }}"
     composite: True
     auto_publish: True
     components:
@@ -100,7 +112,6 @@ foreman_installation_media_redhat7_sat: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to uyse a pool id
@@ -128,6 +139,7 @@ foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
 
 foreman_activation_keys_redhat7_sat:
   - name: ak_rhel7_satellite
+    organization: "{{ foreman_organization_redhat7_sat }}"
     content_view: ccv_rhel7_satellite
     <<: *foreman_activation_keys_defaults_el7
     # subscriptions:
@@ -156,6 +168,7 @@ foreman_activation_keys_redhat7_sat:
         override: default
 
   - name: ak_rhel7_capsule
+    organization: "{{ foreman_organization_redhat7_sat }}"
     content_view: ccv_rhel7_capsule
     <<: *foreman_activation_keys_defaults_el7
     # subscriptions:

@@ -2,102 +2,123 @@
 
 foreman_products_redhat90:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat90 }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.0
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '9.0'
         # label: rhel-9-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat90 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.0
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '9.0'
         # label: rhel-9-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat90 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.0
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '9.0'
         # label: rhel-9-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat90 }}"
 
 foreman_products_redhat91:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat91 }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat91 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat91 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat91 }}"
 
 foreman_products_redhat92:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat92 }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.2
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '9.2'
         # label: rhel-9-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat92 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.2
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '9.2'
         # label: rhel-9-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat92 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.2
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '9.2'
         # label: rhel-9-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat92 }}"
 
 foreman_products_redhat90_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat90_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.0
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '9.0'
         # label: rhel-9-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat90_kickstart }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.0
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '9.0'
         # label: rhel-9-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat90_kickstart }}"
 
 foreman_products_redhat91_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat91_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat91_kickstart }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.1
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '9.1'
         # label: rhel-9-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat91_kickstart }}"
 
 foreman_products_redhat92_kickstart:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat92_kickstart }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS Kickstart 9.2
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (Kickstart)
         # basearch: noarch
         releasever: '9.2'
         # label: rhel-9-for-x86_64-baseos-kickstart
+        organization: "{{ foreman_organization_redhat92_kickstart }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream Kickstart 9.2
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (Kickstart)
         # basearch: noarch
         releasever: '9.2'
         # label: rhel-9-for-x86_64-appstream-kickstart
+        organization: "{{ foreman_organization_redhat92_kickstart }}"
 
 foreman_products_redhat9_versions: "{{ [] |
   union( foreman_products_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
@@ -112,16 +133,19 @@ foreman_products_redhat9_versions: "{{ [] |
 
 foreman_content_views_redhat90:
   - name: cv_rhel9_0_baseos
+    organization: "{{ foreman_organization_redhat90 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_0_appstream
+    organization: "{{ foreman_organization_redhat90 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_0_supplementary
+    organization: "{{ foreman_organization_redhat90 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -129,16 +153,19 @@ foreman_content_views_redhat90:
 
 foreman_content_views_redhat91:
   - name: cv_rhel9_1_baseos
+    organization: "{{ foreman_organization_redhat91 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_1_appstream
+    organization: "{{ foreman_organization_redhat91 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_1_supplementary
+    organization: "{{ foreman_organization_redhat91 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
@@ -146,16 +173,19 @@ foreman_content_views_redhat91:
 
 foreman_content_views_redhat92:
   - name: cv_rhel9_2_baseos
+    organization: "{{ foreman_organization_redhat92 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_2_appstream
+    organization: "{{ foreman_organization_redhat92 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_2_supplementary
+    organization: "{{ foreman_organization_redhat92 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'

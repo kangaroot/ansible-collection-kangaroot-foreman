@@ -5,53 +5,63 @@ foreman_content_credentials_redhat9: []
 
 foreman_products_redhat9:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat9 }}"
     repository_sets:
       # Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat9 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat9 }}"
       # Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '9'
         # label: rhel-9-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat9 }}"
 
       # Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs
       - name: Red Hat Satellite Client 6 for RHEL 9 x86_64 (RPMs)
         # basearch: noarch
         # label: satellite-client-6-for-rhel-9-x86_64-rpms
+        organization: "{{ foreman_organization_redhat9 }}"
 
 
 foreman_content_views_redhat9:
   - name: cv_rhel9_baseos
+    organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_appstream
+    organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel9_supplementary
+    organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: cv_rhel9_sat_client_6
+    organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: ccv_rhel9
+    organization: "{{ foreman_organization_redhat9 }}"
     composite: True
     auto_publish: True
     components:
@@ -115,7 +125,6 @@ foreman_installation_media_redhat9:
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to uyse a pool id
@@ -145,6 +154,7 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
 
 foreman_activation_keys_redhat9:
   - name: ak_rhel9
+    organization: "{{ foreman_organization_redhat9 }}"
     content_view: ccv_rhel9
     <<: *foreman_activation_keys_defaults_el9
     content_overrides:

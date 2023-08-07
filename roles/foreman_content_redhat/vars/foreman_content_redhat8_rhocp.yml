@@ -3,35 +3,43 @@
 foreman_content_credentials_redhat8_rhocp: []
 
 foreman_products_redhat8_rhocp:
-  - name: Red Hat OpenShift Container Platform
-    repository_sets:
-      # # Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: noarch
-      #   # label: rhocp-4.10-for-rhel-8-x86_64-rpms
-      # # Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: noarch
-      #   # label: rhocp-4.11-for-rhel-8-x86_64-rpms
-      # # Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: noarch
-      #   # label: rhocp-4.12-for-rhel-8-x86_64-rpms
-      # # Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
-      # - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: noarch
-      #   # label: rhocp-4.13-for-rhel-8-x86_64-rpms
+  # - name: Red Hat OpenShift Container Platform
+  #   organization: "{{ foreman_organization_redhat8_rhocp }}"
+  #   repository_sets:
+  #     # Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
+  #     - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 (RPMs)
+  #       # basearch: noarch
+  #       # label: rhocp-4.10-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
+  #     # Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
+  #     - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 (RPMs)
+  #       # basearch: noarch
+  #       # label: rhocp-4.11-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
+  #     # Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
+  #     - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 (RPMs)
+  #       # basearch: noarch
+  #       # label: rhocp-4.12-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
+  #     # Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
+  #     - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 (RPMs)
+  #       # basearch: noarch
+  #       # label: rhocp-4.13-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
 
-      # # Logical Volume Manager Storage RPMs
-      # - name: Logical Volume Manager Storage (RPMs)
-      #   # basearch: noarch
-      #   # label: lvms-4.12-for-rhel-8-x86_64-rpms
-      # # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
-      # - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 (RPMs)
-      #   # basearch: noarch
-      #   # label: lvms-4.13-for-rhel-8-x86_64-rpms
+  #     # Logical Volume Manager Storage RPMs
+  #     - name: Logical Volume Manager Storage (RPMs)
+  #       # basearch: noarch
+  #       # label: lvms-4.12-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
+  #     # Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
+  #     - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 (RPMs)
+  #       # basearch: noarch
+  #       # label: lvms-4.13-for-rhel-8-x86_64-rpms
+  #       organization: "{{ foreman_organization_redhat8_rhocp }}"
 
   - name: Red Hat OpenShift Container Platform
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     all_repositories: true
     labels:
       # Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
@@ -56,38 +64,45 @@ foreman_products_redhat8_rhocp:
 
 foreman_content_views_redhat8_rhocp:
   - name: cv_rhel8_rhocp_410
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel8_rhocp_411
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel8_rhocp_412
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel8_rhocp_413
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
 
   - name: cv_rhel8_rhocp_lvms_412
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Logical Volume Manager Storage RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
   - name: cv_rhel8_rhocp_lvms_413
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
     allow_promote: False
 
   - name: ccv_rhel8_rhocp
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     composite: True
     auto_publish: True
     components:
@@ -122,7 +137,6 @@ foreman_installation_media_redhat8_rhocp: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to use a pool id
@@ -151,6 +165,7 @@ foreman_activation_keys_defaults_el8: &foreman_activation_keys_defaults_el8
 
 foreman_activation_keys_redhat8_rhocp:
   - name: ak_rhel8_rhocp
+    organization: "{{ foreman_organization_redhat8_rhocp }}"
     content_view: ccv_rhel8_rhocp
     <<: *foreman_activation_keys_defaults_el8
     # subscriptions:

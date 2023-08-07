@@ -5,150 +5,179 @@ foreman_content_credentials_redhat8: []
 
 foreman_products_redhat8:
   - name: Red Hat Enterprise Linux for x86_64
+    organization: "{{ foreman_organization_redhat8 }}"
     repository_sets:
       # Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS (RPMs)
         # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-baseos-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
         # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-appstream-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary (RPMs)
         # basearch: noarch
         releasever: '8'
         # label: rhel-8-for-x86_64-supplementary-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
 
       # Red Hat Satellite Client 6 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Client 6 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-client-6-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
 
       # Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-tools-6.10-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-utils-6.11-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-utils-6.12-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-utils-6.13-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
 
       # Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-maintenance-6.11-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         # releasever: '8'
         # label: satellite-maintenance-6.12-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # releasever: '8'
         # label: satellite-maintenance-6.13-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
 
   - name: Red Hat Ansible Engine
+    organization: "{{ foreman_organization_redhat8 }}"
     repository_sets:
       # Red Hat Ansible Engine 2 for RHEL 8 x86_64 RPMs
       - name: Red Hat Ansible Engine 2 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         label: ansible-2-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
       # Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 RPMs
       - name: Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 (RPMs)
         # basearch: noarch
         label: ansible-2.9-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8 }}"
   
 
 foreman_content_views_redhat8:
   - name: cv_rhel8_baseos
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_appstream
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_supplementary
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Enterprise Linux 8 for x86_64 - Supplementary RPMs 8
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: cv_rhel8_sat_client_6
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: cv_rhel8_sat_tools_6_10
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Tools 6.10 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_sat_utils_6_11
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Utils 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_sat_utils_6_12
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Utils 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_sat_utils_6_13
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Utils 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: cv_rhel8_sat_maint_6_11
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Maintenance 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_sat_maint_6_12
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Maintenance 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
   - name: cv_rhel8_sat_maint_6_13
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Satellite Maintenance 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
   - name: cv_rhel8_ansible_2
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Ansible Engine 2 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Engine'
     allow_promote: False
   - name: cv_rhel8_ansible_29
+    organization: "{{ foreman_organization_redhat8 }}"
     repositories:
       - name: Red Hat Ansible Engine 2.9 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Ansible Engine'
     allow_promote: False
 
   - name: ccv_rhel8
+    organization: "{{ foreman_organization_redhat8 }}"
     composite: True
     auto_publish: True
     components:
@@ -233,7 +262,6 @@ foreman_installation_media_redhat8:
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to use a pool id
@@ -264,6 +292,7 @@ foreman_activation_keys_defaults_el8: &foreman_activation_keys_defaults_el8
 
 foreman_activation_keys_redhat8:
   - name: ak_rhel8
+    organization: "{{ foreman_organization_redhat8 }}"
     content_view: ccv_rhel8
     <<: *foreman_activation_keys_defaults_el8
     content_overrides:

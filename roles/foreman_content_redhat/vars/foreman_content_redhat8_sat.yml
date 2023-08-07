@@ -4,69 +4,84 @@ foreman_content_credentials_redhat8_sat: []
 
 foreman_products_redhat8_sat:
   - name: Red Hat Satellite
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repository_sets:
       # Red Hat Satellite 6.11 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-6.11-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
       # Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-6.12-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
       # Red Hat Satellite 6.13 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite 6.13 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-6.13-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
 
   - name: Red Hat Satellite Capsule
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repository_sets:
       # Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-capsule-6.11-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
       # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
       # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
       - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
         # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+        organization: "{{ foreman_organization_redhat8_sat }}"
 
 foreman_content_views_redhat8_sat:
   - name: cv_rhel8_satellite_611
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
   - name: cv_rhel8_satellite_612
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
   - name: cv_rhel8_satellite_613
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite'
     allow_promote: False
 
   - name: cv_rhel8_satellite_capsule_611
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
   - name: cv_rhel8_satellite_capsule_612
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
   - name: cv_rhel8_satellite_capsule_613
+    organization: "{{ foreman_organization_redhat8_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
 
   - name: ccv_rhel8_satellite
+    organization: "{{ foreman_organization_redhat8_sat }}"
     composite: True
     auto_publish: True
     components:
@@ -88,6 +103,7 @@ foreman_content_views_redhat8_sat:
         latest: true
 
   - name: ccv_rhel8_capsule
+    organization: "{{ foreman_organization_redhat8_sat }}"
     composite: True
     auto_publish: True
     components:
@@ -114,7 +130,6 @@ foreman_installation_media_redhat8_sat: []
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   # Example to use a pool id
@@ -143,6 +158,7 @@ foreman_activation_keys_defaults_el8: &foreman_activation_keys_defaults_el8
 
 foreman_activation_keys_redhat8_sat:
   - name: ak_rhel8_satellite
+    organization: "{{ foreman_organization_redhat8_sat }}"
     content_view: ccv_rhel8_satellite
     <<: *foreman_activation_keys_defaults_el8
     # subscriptions:
@@ -168,6 +184,7 @@ foreman_activation_keys_redhat8_sat:
         override: default
 
   - name: ak_rhel8_capsule
+    organization: "{{ foreman_organization_redhat8_sat }}"
     content_view: ccv_rhel8_capsule
     <<: *foreman_activation_keys_defaults_el8
     # subscriptions:
