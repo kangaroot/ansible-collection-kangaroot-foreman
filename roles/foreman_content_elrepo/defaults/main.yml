@@ -20,6 +20,17 @@ foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_elrepo: "{{ foreman_organization }}"
+
+foreman_organization_elrepo_el7: "{{ foreman_organization_elrepo }}"
+foreman_organization_elrepo_el8: "{{ foreman_organization_elrepo }}"
+foreman_organization_elrepo_el9: "{{ foreman_organization_elrepo }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
