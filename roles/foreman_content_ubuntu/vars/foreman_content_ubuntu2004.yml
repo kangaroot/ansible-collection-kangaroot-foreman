@@ -17,61 +17,73 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ubuntu2004:
   - name: Ubuntu
     label: Ubuntu
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     repositories:
       - name: Ubuntu 20.04 LTS (Focal Fossa)
         label: ubuntu-2004
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal
+        organization: "{{ foreman_organization_ubuntu2004 }}"
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Updates
         label: ubuntu-2004-updates
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-updates
+        organization: "{{ foreman_organization_ubuntu2004 }}"
       # - name: Ubuntu 20.04 LTS (Focal Fossa) - Proposed Updates
       #   label: ubuntu-2004-proposed
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
       #   deb_releases: focal-proposed
+      #   organization: "{{ foreman_organization_ubuntu2004 }}"
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Backports
         label: ubuntu-2004-backports
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-backports
+        organization: "{{ foreman_organization_ubuntu2004 }}"
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Security updates
         label: ubuntu-2004-security
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2004 }}/"
         deb_releases: focal-security
+        organization: "{{ foreman_organization_ubuntu2004 }}"
 
 foreman_content_views_ubuntu2004:
   - name: cv_ubuntu2004
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     repositories:
       - name: Ubuntu 20.04 LTS (Focal Fossa)
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu2004_updates
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     repositories:
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Updates
         product: Ubuntu
     allow_promote: False
   # - name: cv_ubuntu2004_proposed
+  #   organization: "{{ foreman_organization_ubuntu2004 }}"
   #   repositories:
   #     - name: Ubuntu 20.04 LTS (Focal Fossa) - Proposed Updates
   #       product: Ubuntu
   #   allow_promote: False
   - name: cv_ubuntu2004_backports
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     repositories:
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Backports
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu2004_security
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     repositories:
       - name: Ubuntu 20.04 LTS (Focal Fossa) - Security updates
         product: Ubuntu
     allow_promote: False
 
   - name: ccv_ubuntu2004
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     composite: True
     auto_publish: True
     components:
@@ -122,7 +134,6 @@ foreman_installation_media_ubuntu2004:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Ubuntu"
@@ -130,6 +141,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_ubuntu2004:
   - name: ak_ubuntu2004
+    organization: "{{ foreman_organization_ubuntu2004 }}"
     content_view: ccv_ubuntu2004
     <<: *foreman_activation_keys_defaults
     content_overrides:

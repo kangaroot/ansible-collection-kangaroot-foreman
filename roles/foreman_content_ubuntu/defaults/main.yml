@@ -195,6 +195,17 @@ foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_ubuntu: "{{ foreman_organization }}"
+
+foreman_organization_ubuntu1804: "{{ foreman_organization_ubuntu }}"
+foreman_organization_ubuntu2004: "{{ foreman_organization_ubuntu }}"
+foreman_organization_ubuntu2204: "{{ foreman_organization_ubuntu }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
@@ -237,7 +248,7 @@ foreman_installation_media_ubuntu_defaults: &foreman_installation_media_ubuntu_d
 
 foreman_installation_media_ubuntu_main:
   - name: Ubuntu mirror
-    path: "{{ foreman_repo_baseurl_ubuntu | default(foreman_default_repo_baseurl_ubuntu) }}/"
+    path: "{{ foreman_repo_baseurl_ubuntu }}"
     <<: *foreman_installation_media_ubuntu_defaults
     operatingsystems:
       - Ubuntu 18.04 LTS (Bionic Beaver)

@@ -17,61 +17,73 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ubuntu1804:
   - name: Ubuntu
     label: Ubuntu
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     repositories:
       - name: Ubuntu 18.04 LTS (Bionic Beaver)
         label: ubuntu-1804
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu1804 }}/"
         deb_releases: bionic
+        organization: "{{ foreman_organization_ubuntu1804 }}"
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Updates
         label: ubuntu-1804-updates
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu1804 }}/"
         deb_releases: bionic-updates
+        organization: "{{ foreman_organization_ubuntu1804 }}"
       # - name: Ubuntu 18.04 LTS (Bionic Beaver) - Proposed Updates
       #   label: ubuntu-1804-proposed
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_ubuntu1804 }}/"
       #   deb_releases: bionic-proposed
+      #   organization: "{{ foreman_organization_ubuntu1804 }}"
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Backports
         label: ubuntu-1804-backports
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu1804 }}/"
         deb_releases: bionic-backports
+        organization: "{{ foreman_organization_ubuntu1804 }}"
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Security updates
         label: ubuntu-1804-security
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu1804 }}/"
         deb_releases: bionic-security
+        organization: "{{ foreman_organization_ubuntu1804 }}"
 
 foreman_content_views_ubuntu1804:
   - name: cv_ubuntu1804
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     repositories:
       - name: Ubuntu 18.04 LTS (Bionic Beaver)
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu1804_updates
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     repositories:
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Updates
         product: Ubuntu
     allow_promote: False
   # - name: cv_ubuntu1804_proposed
+  #   organization: "{{ foreman_organization_ubuntu1804 }}"
   #   repositories:
   #     - name: Ubuntu 18.04 LTS (Bionic Beaver) - Proposed Updates
   #       product: Ubuntu
   #   allow_promote: False
   - name: cv_ubuntu1804_backports
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     repositories:
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Backports
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu1804_security
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     repositories:
       - name: Ubuntu 18.04 LTS (Bionic Beaver) - Security updates
         product: Ubuntu
     allow_promote: False
 
   - name: ccv_ubuntu1804
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     composite: True
     auto_publish: True
     components:
@@ -124,7 +136,6 @@ foreman_installation_media_ubuntu1804:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Ubuntu"
@@ -132,6 +143,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_ubuntu1804:
   - name: ak_ubuntu1804
+    organization: "{{ foreman_organization_ubuntu1804 }}"
     content_view: ccv_ubuntu1804
     <<: *foreman_activation_keys_defaults
     content_overrides:

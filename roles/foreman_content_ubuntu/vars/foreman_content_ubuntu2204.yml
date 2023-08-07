@@ -17,61 +17,73 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_ubuntu2204:
   - name: Ubuntu
     label: Ubuntu
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
         label: ubuntu-2204
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy
+        organization: "{{ foreman_organization_ubuntu2204 }}"
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates
         label: ubuntu-2204-updates
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-updates
+        organization: "{{ foreman_organization_ubuntu2204 }}"
       # - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Proposed Updates
       #   label: ubuntu-2204-proposed
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
       #   deb_releases: jammy-proposed
+      #   organization: "{{ foreman_organization_ubuntu2204 }}"
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports
         label: ubuntu-2204-backports
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-backports
+        organization: "{{ foreman_organization_ubuntu2204 }}"
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates
         label: ubuntu-2204-security
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-security
+        organization: "{{ foreman_organization_ubuntu2204 }}"
 
 foreman_content_views_ubuntu2204:
   - name: cv_ubuntu2204
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu2204_updates
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates
         product: Ubuntu
     allow_promote: False
   # - name: cv_ubuntu2204_proposed
+  #   organization: "{{ foreman_organization_ubuntu2204 }}"
   #   repositories:
   #     - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Proposed Updates
   #       product: Ubuntu
   #   allow_promote: False
   - name: cv_ubuntu2204_backports
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports
         product: Ubuntu
     allow_promote: False
   - name: cv_ubuntu2204_security
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
       - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates
         product: Ubuntu
     allow_promote: False
 
   - name: ccv_ubuntu2204
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     composite: True
     auto_publish: True
     components:
@@ -122,7 +134,6 @@ foreman_installation_media_ubuntu2204:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Ubuntu"
@@ -130,6 +141,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_ubuntu2204:
   - name: ak_ubuntu2204
+    organization: "{{ foreman_organization_ubuntu2204 }}"
     content_view: ccv_ubuntu2204
     <<: *foreman_activation_keys_defaults
     content_overrides:
