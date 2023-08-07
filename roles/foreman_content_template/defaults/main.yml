@@ -153,6 +153,17 @@ foreman_enable_template_el9: "{{ foreman_enable_template | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_template: "{{ foreman_organization }}"
+
+foreman_organization_template_el7: "{{ foreman_organization_template }}"
+foreman_organization_template_el8: "{{ foreman_organization_template }}"
+foreman_organization_template_el9: "{{ foreman_organization_template }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

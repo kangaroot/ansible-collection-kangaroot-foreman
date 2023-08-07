@@ -22,20 +22,95 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_template_el8:
   - name: Template Product
     label: Template
+    organization: "{{ foreman_organization_template_el8 }}"
     repositories:
       - name: Template Product EL8
         label: template-el8
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_template_el8 }}/8/x86_64/"
+        organization: "{{ foreman_organization_template_el8 }}"
 
 foreman_content_views_template_el8:
   - name: cv_template_el8
+    organization: "{{ foreman_organization_template_el8 }}"
     repositories:
       - name: Template Product EL8
         product: Template Product
     allow_promote: False
 
-foreman_activation_keys_template_el8: []
+  - name: ccv_template_el8
+    organization: "{{ foreman_organization_template_el8 }}"
+    composite: True
+    auto_publish: True
+    components:
+      - content_view: cv_template_el8
+        latest: true
+
+
+foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
+  os_family: "Redhat"
+  password_hash: "SHA512"
+  architectures:
+    - x86_64
+  # ptables:
+  #   - Kickstart default
+  #   - Kickstart custom
+  ptables: "{{
+    [ 'Kickstart default',
+      'Kickstart custom' ] |
+      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    }}"
+
+
+foreman_operatingsystems_template7:
+  - name: "Template"
+    major: "8"
+    minor: ""
+    description: "Template 8"
+    default_templates: "{{ foreman_operatingsystems_template8_default_templates | default( foreman_operatingsystems_template_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+
+
+foreman_installation_media_defaults: &foreman_installation_media_defaults
+  os_family: Redhat
+  # organizations:
+  #   - "{{ foreman_organization }}"
+  # locations:
+  #   - "{{ foreman_default_location }}"
+  organizations: "{{ foreman_all_organizations_namelist }}"
+  locations: "{{ foreman_all_locations_namelist }}"
+  # operatingsystems:
+  #   - Template 8
+
+
+foreman_installation_media_template7:
+  - name: Template EL8
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Template/template-el8/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Template 8
+
+
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   - name: "Rocky Linux"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
+  auto_attach: False
+  # release_version: 8
+  # service_level: Standard
+
+
+foreman_activation_keys_template_el8:
+  - name: ak_template_el8
+    organization: "{{ foreman_organization_template_el8 }}"
+    content_view: ccv_template_el8
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_Template_template_el8"
+        override: default
+
 
 foreman_sync_plan_products_template_el8:
   - Template Product

@@ -24,21 +24,25 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_template_el7:
   - name: Template Product
     label: Template
+    organization: "{{ foreman_organization_template_el7 }}"
     repositories:
       - name: Template Product EL7
         label: template-el7
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_template_el7 }}/7/x86_64/"
+        organization: "{{ foreman_organization_template_el7 }}"
 
 
 foreman_content_views_template_el7:
   - name: cv_template_el7
+    organization: "{{ foreman_organization_template_el7 }}"
     repositories:
       - name: Template Product EL7
         product: Template Product
     allow_promote: False
 
   - name: ccv_template_el7
+    organization: "{{ foreman_organization_template_el7 }}"
     composite: True
     auto_publish: True
     components:
@@ -91,7 +95,6 @@ foreman_installation_media_template7:
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Rocky Linux"
@@ -104,6 +107,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_template_el7:
   - name: ak_template_el7
+    organization: "{{ foreman_organization_template_el7 }}"
     content_view: ccv_template_el7
     <<: *foreman_activation_keys_defaults
     content_overrides:
