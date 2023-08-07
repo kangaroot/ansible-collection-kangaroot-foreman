@@ -17,71 +17,85 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_debian11:
   - name: Debian
     label: Debian
+    organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye)
         label: debian-11
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye
+        organization: "{{ foreman_organization_debian11 }}"
       - name: Debian 11 (Bullseye) - Updates
         label: debian-11-updates
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye-updates
+        organization: "{{ foreman_organization_debian11 }}"
       # - name: Debian 11 (Bullseye) - Proposed Updates
       #   label: debian-11-proposed-updates
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_debian11 }}/"
       #   deb_releases: bullseye-proposed-updates
+      #   organization: "{{ foreman_organization_debian11 }}"
       - name: Debian 11 (Bullseye) - Backports
         label: debian-11-backports
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian11 }}/"
         deb_releases: bullseye-backports
+        organization: "{{ foreman_organization_debian11 }}"
       # - name: Debian 11 (Bullseye) - Backports - Sloppy
       #   label: debian-11-backports-sloppy
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_debian11 }}/"
       #   deb_releases: bullseye-backports-sloppy
+      #   organization: "{{ foreman_organization_debian11 }}"
       - name: Debian 11 (Bullseye) - Security updates
         label: debian-11-security
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian11 }}-security/"
         deb_releases: bullseye-security/updates
+        organization: "{{ foreman_organization_debian11 }}"
 
 foreman_content_views_debian11:
   - name: cv_debian11
+    organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye)
         product: Debian
     allow_promote: False
   - name: cv_debian11_updates
+    organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Updates
         product: Debian
     allow_promote: False
   # - name: cv_debian11_proposed_updates
+  #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Proposed Updates
   #       product: Debian
   #   allow_promote: False
   - name: cv_debian11_backports
+    organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Backports
         product: Debian
     allow_promote: False
   # - name: cv_debian11_backports_sloppy
+  #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Backports - Sloppy
   #       product: Debian
   #   allow_promote: False
   - name: cv_debian11_security
+    organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Security updates
         product: Debian
     allow_promote: False
 
   - name: ccv_debian11
+    organization: "{{ foreman_organization_debian11 }}"
     composite: True
     auto_publish: True
     components:
@@ -137,7 +151,6 @@ foreman_installation_media_debian11:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Debian"
@@ -145,6 +158,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_debian11:
   - name: ak_debian11
+    organization: "{{ foreman_organization_debian11 }}"
     content_view: ccv_debian11
     <<: *foreman_activation_keys_defaults
     content_overrides:

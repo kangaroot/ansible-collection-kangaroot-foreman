@@ -17,71 +17,85 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_debian10:
   - name: Debian
     label: Debian
+    organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster)
         label: debian-10
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster
+        organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Updates
         label: debian-10-updates
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-updates
+        organization: "{{ foreman_organization_debian10 }}"
       # - name: Debian 10 (Buster) - Proposed Updates
       #   label: debian-10-proposed-updates
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-proposed-updates
+      #   organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Backports
         label: debian-10-backports
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-backports
+        organization: "{{ foreman_organization_debian10 }}"
       # - name: Debian 10 (Buster) - Backports - Sloppy
       #   label: debian-10-backports-sloppy
       #   <<: *foreman_products_defaults
       #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-backports-sloppy
+      #   organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Security updates
         label: debian-10-security
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_debian10 }}-security/"
         deb_releases: buster/updates
+        organization: "{{ foreman_organization_debian10 }}"
 
 foreman_content_views_debian10:
   - name: cv_debian10
+    organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster)
         product: Debian
     allow_promote: False
   - name: cv_debian10_updates
+    organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Updates
         product: Debian
     allow_promote: False
   # - name: cv_debian10_proposed_updates
+  #   organization: "{{ foreman_organization_debian10 }}"
   #   repositories:
   #     - name: Debian 10 (Buster) - Proposed Updates
   #       product: Debian
   #   allow_promote: False
   - name: cv_debian10_backports
+    organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Backports
         product: Debian
     allow_promote: False
   # - name: cv_debian10_backports_sloppy
+  #   organization: "{{ foreman_organization_debian10 }}"
   #   repositories:
   #     - name: Debian 10 (Buster) - Backports - Sloppy
   #       product: Debian
   #   allow_promote: False
   - name: cv_debian10_security
+    organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Security updates
         product: Debian
     allow_promote: False
 
   - name: ccv_debian10
+    organization: "{{ foreman_organization_debian10 }}"
     composite: True
     auto_publish: True
     components:
@@ -137,7 +151,6 @@ foreman_installation_media_debian10:
     <<: *foreman_installation_media_defaults
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
-  organization: "{{ foreman_organization }}"
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Debian"
@@ -145,6 +158,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 foreman_activation_keys_debian10:
   - name: ak_debian10
+    organization: "{{ foreman_organization_debian10 }}"
     content_view: ccv_debian10
     <<: *foreman_activation_keys_defaults
     content_overrides:
