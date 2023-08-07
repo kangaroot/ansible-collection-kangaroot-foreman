@@ -24,6 +24,17 @@ foreman_enable_remi_el9: "{{ foreman_enable_remi | bool }}"
 
 
 #######################################
+### ORGANIZATION VARS
+#######################################
+
+foreman_organization_remi: "{{ foreman_organization }}"
+
+foreman_organization_remi_el7: "{{ foreman_organization_remi }}"
+foreman_organization_remi_el8: "{{ foreman_organization_remi }}"
+foreman_organization_remi_el9: "{{ foreman_organization_remi }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

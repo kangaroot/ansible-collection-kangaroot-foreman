@@ -22,32 +22,39 @@ foreman_products_defaults: &foreman_products_defaults
 foreman_products_remi_el8:
   - name: Remi Repository
     label: Remi
+    organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi - EL8
         label: remi-el8
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el8 }}/enterprise/8/remi/x86_64/"
+        organization: "{{ foreman_organization_remi_el8 }}"
       - name: Remi Modular - EL8
         label: remi-modular-el8
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el8 }}/enterprise/8/modular/x86_64/"
+        organization: "{{ foreman_organization_remi_el8 }}"
       - name: Remi Safe - EL8
         label: remi-safe-el8
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el8 }}/enterprise/8/safe/x86_64/"
+        organization: "{{ foreman_organization_remi_el8 }}"
 
 foreman_content_views_remi_el8:
   - name: cv_remi_el8
+    organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi - EL8
         product: Remi Repository
     allow_promote: False
   - name: cv_remi_modular_el8
+    organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi Modular - EL8
         product: Remi Repository
     allow_promote: False
   - name: cv_remi_safe_el8
+    organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi Safe - EL8
         product: Remi Repository
