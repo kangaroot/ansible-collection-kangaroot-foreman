@@ -37,13 +37,13 @@ foreman_products_centos_stream9_sig_virtualization: "{{ [] |
 
 
 foreman_content_views_centos_stream9_sig_virtualization_ovirt45:
-  - name: cv_centos_stream9_ovirt45
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_ovirt45"
     organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
     repositories:
       - name: CentOS Stream 9 - oVirt 4.5
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_ovirt_45_upstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_ovirt_45_upstream"
     organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
     repositories:
       - name: oVirt upstream for CentOS Stream 9 - oVirt 4.5

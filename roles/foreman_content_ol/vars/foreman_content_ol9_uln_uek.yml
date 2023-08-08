@@ -76,7 +76,7 @@ foreman_products_ol9_uln_uek: "{{ [] |
 
 
 foreman_content_views_ol9_uln_uekr7:
-  - name: cv_ol9_uln_x86_64_UEKR7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_UEKR7"
     organization: "{{ foreman_organization_ol9_uln_uekr7 }}"
     repositories:
       - name: Oracle Linux 9 UEK Release 7 (x86_64)
@@ -84,7 +84,7 @@ foreman_content_views_ol9_uln_uekr7:
     allow_promote: False
 
 foreman_content_views_ol9_uln_uekr7_developer:
-  - name: cv_ol9_uln_x86_64_developer_UEKR7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_developer_UEKR7"
     organization: "{{ foreman_organization_ol9_uln_uekr7_developer }}"
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 9 (x86_64)
@@ -92,7 +92,7 @@ foreman_content_views_ol9_uln_uekr7_developer:
     allow_promote: False
 
 foreman_content_views_ol9_uln_rdma:
-  - name: cv_ol9_uln_x86_64_RDMA
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_RDMA"
     organization: "{{ foreman_organization_ol9_uln_rdma }}"
     repositories:
       - name: Oracle Linux 9 RDMA (x86_64)
@@ -100,7 +100,7 @@ foreman_content_views_ol9_uln_rdma:
     allow_promote: False
 
 foreman_content_views_ol9_uln_modrhck:
-  - name: cv_ol9_uln_x86_64_MODRHCK
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_MODRHCK"
     organization: "{{ foreman_organization_ol9_uln_modrhck }}"
     repositories:
       - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 9 (x86_64)

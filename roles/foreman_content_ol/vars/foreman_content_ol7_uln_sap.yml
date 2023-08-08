@@ -30,7 +30,7 @@ foreman_products_ol7_uln_sap:
 
 
 foreman_content_views_ol7_uln_sap:
-  - name: cv_ol7_uln_x86_64_SAP_addons
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_SAP_addons"
     organization: "{{ foreman_organization_ol7_uln_sap }}"
     repositories:
       - name: Oracle Linux 7 software for SAP

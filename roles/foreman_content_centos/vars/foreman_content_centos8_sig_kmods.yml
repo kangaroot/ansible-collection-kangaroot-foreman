@@ -44,7 +44,7 @@ foreman_products_centos8_sig_kmods: "{{ [] |
 
 
 foreman_content_views_centos8_sig_kmods_main:
-  - name: cv_centos8_kmods
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_kmods"
     organization: "{{ foreman_organization_centos8_sig_kmods_main }}"
     repositories:
       - name: CentOS 8 - Kmods
@@ -52,7 +52,7 @@ foreman_content_views_centos8_sig_kmods_main:
     allow_promote: False
 
 foreman_content_views_centos8_sig_kmods_rebuild:
-  - name: cv_centos8_kmods_rebuild
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_kmods_rebuild"
     organization: "{{ foreman_organization_centos8_sig_kmods_rebuild }}"
     repositories:
       - name: CentOS 8 - Kmods - Rebuild

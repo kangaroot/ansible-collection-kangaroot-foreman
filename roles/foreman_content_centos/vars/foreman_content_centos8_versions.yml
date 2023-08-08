@@ -409,50 +409,50 @@ foreman_products_centos8_versions: "{{ [] |
 
 
 foreman_content_views_centos80:
-  - name: cv_centos80_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_baseos"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_appstream"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos80_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_extras"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_plus"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_powertools"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_ha"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_cr"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos80_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_fasttrack"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
       - name: CentOS 8.0.1905 - FastTrack
@@ -460,50 +460,50 @@ foreman_content_views_centos80:
     allow_promote: False
 
 foreman_content_views_centos81:
-  - name: cv_centos81_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_baseos"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_appstream"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos81_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_extras"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_plus"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_powertools"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_ha"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_cr"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos81_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_fasttrack"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
       - name: CentOS 8.1.1911 - FastTrack
@@ -511,50 +511,50 @@ foreman_content_views_centos81:
     allow_promote: False
 
 foreman_content_views_centos82:
-  - name: cv_centos82_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_baseos"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_appstream"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos82_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_extras"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_plus"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_powertools"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_ha"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_cr"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos82_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_fasttrack"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
       - name: CentOS 8.2.2004 - FastTrack
@@ -562,50 +562,50 @@ foreman_content_views_centos82:
     allow_promote: False
 
 foreman_content_views_centos83:
-  - name: cv_centos83_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_baseos"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_appstream"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos83_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_extras"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_plus"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_powertools"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_ha"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_cr"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos83_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_fasttrack"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
       - name: CentOS 8.3.2011 - FastTrack
@@ -613,50 +613,50 @@ foreman_content_views_centos83:
     allow_promote: False
 
 foreman_content_views_centos84:
-  - name: cv_centos84_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_baseos"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_appstream"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos84_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_extras"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_plus"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_powertools"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_ha"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_cr"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos84_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_fasttrack"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
       - name: CentOS 8.4.2105 - FastTrack
@@ -664,50 +664,50 @@ foreman_content_views_centos84:
     allow_promote: False
 
 foreman_content_views_centos85:
-  - name: cv_centos85_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_baseos"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_appstream"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos85_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_extras"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_plus"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_powertools"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_ha"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_cr"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos85_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_fasttrack"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
       - name: CentOS 8.5.2111 - FastTrack

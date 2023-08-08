@@ -56,14 +56,14 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_produc
   }}"
 
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol6:
-  - name: cv_copr_dgoodwin_subscription_manager_ol6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol6"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
     repositories:
       - name: Fedora COPR - dgoodwin:subscription-manager - OL6
         product: Fedora COPR
     allow_promote: False
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7:
-  - name: cv_copr_dgoodwin_subscription_manager_ol7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol7"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
     repositories:
       - name: Fedora COPR - dgoodwin:subscription-manager - OL7
@@ -106,7 +106,7 @@ foreman_products_fedora_copr_dmann_subscription_manager: "{{ ( foreman_products_
   }}"
 
 foreman_content_views_fedora_copr_dmann_subscription_manager_ol8:
-  - name: cv_copr_dmann_subscription_manager_ol8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dmann_subscription_manager_ol8"
     organization: "{{ foreman_organization_fedora_copr_dmann_subscription_manager_ol8 }}"
     repositories:
       - name: Fedora COPR - dmann:subscription-manager - OL8

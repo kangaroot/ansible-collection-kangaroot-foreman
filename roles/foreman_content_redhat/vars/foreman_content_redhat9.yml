@@ -34,46 +34,46 @@ foreman_products_redhat9:
 
 
 foreman_content_views_redhat9:
-  - name: cv_rhel9_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_baseos"
     organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
-  - name: cv_rhel9_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_appstream"
     organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
-  - name: cv_rhel9_supplementary
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_supplementary"
     organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
-  - name: cv_rhel9_sat_client_6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_sat_client_6"
     organization: "{{ foreman_organization_redhat9 }}"
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 9 x86_64 RPMs
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: False
 
-  - name: ccv_rhel9
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9"
     organization: "{{ foreman_organization_redhat9 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_rhel9_baseos
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_baseos"
         latest: true
-      - content_view: cv_rhel9_appstream
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_appstream"
         latest: true
-      - content_view: cv_rhel9_supplementary
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_supplementary"
         latest: true
-      - content_view: cv_rhel9_sat_client_6
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_sat_client_6"
         latest: true
-      - content_view: cv_epel9
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9"
         latest: true
 
 
@@ -155,7 +155,7 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
 foreman_activation_keys_redhat9:
   - name: ak_rhel9
     organization: "{{ foreman_organization_redhat9 }}"
-    content_view: ccv_rhel9
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9"
     <<: *foreman_activation_keys_defaults_el9
     content_overrides:
       - label: rhel-9-for-x86_64-baseos-rpms

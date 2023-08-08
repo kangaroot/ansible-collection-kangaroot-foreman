@@ -74,7 +74,7 @@ foreman_products_centos7_sig_configmanagement: "{{ [] |
 
 
 foreman_content_views_centos7_sig_configmanagement_ansible26:
-  - name: cv_centos7_ansible_26
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ansible_26"
     organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible26 }}"
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible26
@@ -82,7 +82,7 @@ foreman_content_views_centos7_sig_configmanagement_ansible26:
     allow_promote: False
 
 foreman_content_views_centos7_sig_configmanagement_ansible27:
-  - name: cv_centos7_ansible_27
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ansible_27"
     organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible27 }}"
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-27
@@ -90,7 +90,7 @@ foreman_content_views_centos7_sig_configmanagement_ansible27:
     allow_promote: False
 
 foreman_content_views_centos7_sig_configmanagement_ansible28:
-  - name: cv_centos7_ansible_28
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ansible_28"
     organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible28 }}"
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-28
@@ -98,7 +98,7 @@ foreman_content_views_centos7_sig_configmanagement_ansible28:
     allow_promote: False
 
 foreman_content_views_centos7_sig_configmanagement_ansible29:
-  - name: cv_centos7_ansible_29
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ansible_29"
     organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible29 }}"
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-29

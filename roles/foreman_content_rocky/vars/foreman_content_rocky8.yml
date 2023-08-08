@@ -85,87 +85,87 @@ foreman_products_rocky8:
 
 
 foreman_content_views_rocky8:
-  - name: cv_rocky8_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_baseos"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_appstream"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_extras"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_plus"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_powertools"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_ha"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_nfv"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_resilientstorage"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky8_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_rt"
     organization: "{{ foreman_organization_rocky8 }}"
     repositories:
       - name: Rocky Linux 8 - Realtime
         product: Rocky Linux
     allow_promote: False
 
-  - name: ccv_rocky8
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8"
     organization: "{{ foreman_organization_rocky8 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_rocky8_baseos
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_baseos"
         latest: true
-      - content_view: cv_rocky8_appstream
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_appstream"
         latest: true
-      - content_view: cv_rocky8_extras
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_extras"
         latest: true
-      - content_view: cv_rocky8_plus
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_plus"
         latest: true
-      - content_view: cv_rocky8_powertools
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_powertools"
         latest: true
-      - content_view: cv_rocky8_ha
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_ha"
         latest: true
-      - content_view: cv_rocky8_nfv
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_nfv"
         latest: true
-      - content_view: cv_rocky8_resilientstorage
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_resilientstorage"
         latest: true
-      - content_view: cv_rocky8_rt
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_rt"
         latest: true
-      - content_view: cv_epel8
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
         latest: true
-      - content_view: cv_epel8_modular
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
         latest: true
 
 
@@ -232,7 +232,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_rocky8:
   - name: ak_rocky8
     organization: "{{ foreman_organization_rocky8 }}"
-    content_view: ccv_rocky8
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
@@ -261,7 +261,7 @@ foreman_activation_keys_rocky8:
 
   # - name: ak_rocky8_foreman
   #   organization: "{{ foreman_organization_rocky8 }}"
-  #   content_view: ccv_rocky8_foreman
+  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8_foreman"
   #   <<: *foreman_activation_keys_defaults
   #   content_overrides:
   #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
@@ -282,7 +282,7 @@ foreman_activation_keys_rocky8:
 
   # - name: ak_rocky8_katello
   #   organization: "{{ foreman_organization_rocky8 }}"
-  #   content_view: ccv_rocky8_katello
+  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8_katello"
   #   <<: *foreman_activation_keys_defaults
   #   content_overrides:
   #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"

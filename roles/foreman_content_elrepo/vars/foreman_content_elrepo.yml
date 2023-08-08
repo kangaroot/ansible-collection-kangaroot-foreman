@@ -76,19 +76,19 @@ foreman_products_elrepo_el9:
         organization: "{{ foreman_organization_elrepo_el9 }}"
 
 foreman_content_views_elrepo_el7:
-  - name: cv_elrepo_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_el7"
     organization: "{{ foreman_organization_elrepo_el7 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Repository - el7
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_kernel_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_kernel_el7"
     organization: "{{ foreman_organization_elrepo_el7 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Kernel Repository - el7
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_extras_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_extras_el7"
     organization: "{{ foreman_organization_elrepo_el7 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Extras Repository - el7
@@ -96,19 +96,19 @@ foreman_content_views_elrepo_el7:
     allow_promote: False
 
 foreman_content_views_elrepo_el8:
-  - name: cv_elrepo_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_el8"
     organization: "{{ foreman_organization_elrepo_el8 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Repository - el8
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_kernel_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_kernel_el8"
     organization: "{{ foreman_organization_elrepo_el8 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Kernel Repository - el8
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_extras_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_extras_el8"
     organization: "{{ foreman_organization_elrepo_el8 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Extras Repository - el8
@@ -116,19 +116,19 @@ foreman_content_views_elrepo_el8:
     allow_promote: False
 
 foreman_content_views_elrepo_el9:
-  - name: cv_elrepo_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_el9"
     organization: "{{ foreman_organization_elrepo_el9 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Repository - el9
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_kernel_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_kernel_el9"
     organization: "{{ foreman_organization_elrepo_el9 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Kernel Repository - el9
         product: ELRepo.org
     allow_promote: False
-  - name: cv_elrepo_extras_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}elrepo_extras_el9"
     organization: "{{ foreman_organization_elrepo_el9 }}"
     repositories:
       - name: ELRepo.org Community Enterprise Linux Extras Repository - el9

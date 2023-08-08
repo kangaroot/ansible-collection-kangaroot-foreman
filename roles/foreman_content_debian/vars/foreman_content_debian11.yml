@@ -57,59 +57,59 @@ foreman_products_debian11:
         organization: "{{ foreman_organization_debian11 }}"
 
 foreman_content_views_debian11:
-  - name: cv_debian11
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian11"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye)
         product: Debian
     allow_promote: False
-  - name: cv_debian11_updates
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_updates"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Updates
         product: Debian
     allow_promote: False
-  # - name: cv_debian11_proposed_updates
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_proposed_updates"
   #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Proposed Updates
   #       product: Debian
   #   allow_promote: False
-  - name: cv_debian11_backports
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Backports
         product: Debian
     allow_promote: False
-  # - name: cv_debian11_backports_sloppy
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports_sloppy"
   #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Backports - Sloppy
   #       product: Debian
   #   allow_promote: False
-  - name: cv_debian11_security
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_security"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Security updates
         product: Debian
     allow_promote: False
 
-  - name: ccv_debian11
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}debian11"
     organization: "{{ foreman_organization_debian11 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_debian11
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11"
         latest: true
-      - content_view: cv_debian11_updates
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11_updates"
         latest: true
-      # - content_view: cv_debian11_proposed_updates
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11_proposed_updates"
       #   latest: true
-      - content_view: cv_debian11_backports
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports"
         latest: true
-      # - content_view: cv_debian11_backports_sloppy
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports_sloppy"
       #   latest: true
-      - content_view: cv_debian11_security
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11_security"
         latest: true
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -159,7 +159,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_debian11:
   - name: ak_debian11
     organization: "{{ foreman_organization_debian11 }}"
-    content_view: ccv_debian11
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}debian11"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Debian_debian-11"

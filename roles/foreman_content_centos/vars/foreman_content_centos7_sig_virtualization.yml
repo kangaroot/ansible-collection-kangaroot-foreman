@@ -166,7 +166,7 @@ foreman_products_centos7_sig_virtualization: "{{ [] |
 
 
 foreman_content_views_centos7_sig_virtualization_azure:
-  - name: cv_centos7_azure
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_azure"
     organization: "{{ foreman_organization_centos7_sig_virtualization_azure }}"
     repositories:
       - name: CentOS 7 - Azure
@@ -174,7 +174,7 @@ foreman_content_views_centos7_sig_virtualization_azure:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_ovirt42:
-  - name: cv_centos7_ovirt42
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ovirt42"
     organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt42 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.2
@@ -182,7 +182,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt42:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_ovirt43:
-  - name: cv_centos7_ovirt43
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ovirt43"
     organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt43 }}"
     repositories:
       - name: CentOS 7 - oVirt 4.3
@@ -190,7 +190,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt43:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_qemu_ev:
-  - name: cv_centos7_qemu_ev
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_qemu_ev"
     organization: "{{ foreman_organization_centos7_sig_virtualization_qemu_ev }}"
     repositories:
       - name: CentOS 7 - QEMU EV
@@ -198,7 +198,7 @@ foreman_content_views_centos7_sig_virtualization_qemu_ev:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_46:
-  - name: cv_centos7_virt_xen_46
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_46"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_46 }}"
     repositories:
       - name: CentOS 7 - xen 4.6
@@ -206,7 +206,7 @@ foreman_content_views_centos7_sig_virtualization_xen_46:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_48:
-  - name: cv_centos7_virt_xen_48
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_48"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_48 }}"
     repositories:
       - name: CentOS 7 - xen 4.8
@@ -214,7 +214,7 @@ foreman_content_views_centos7_sig_virtualization_xen_48:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_410:
-  - name: cv_centos7_virt_xen_410
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_410"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_410 }}"
     repositories:
       - name: CentOS 7 - xen 4.10
@@ -222,7 +222,7 @@ foreman_content_views_centos7_sig_virtualization_xen_410:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_412:
-  - name: cv_centos7_virt_xen_412
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_412"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_412 }}"
     repositories:
       - name: CentOS 7 - xen 4.12
@@ -230,7 +230,7 @@ foreman_content_views_centos7_sig_virtualization_xen_412:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_413:
-  - name: cv_centos7_virt_xen_413
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_413"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_413 }}"
     repositories:
       - name: CentOS 7 - xen 4.13
@@ -238,7 +238,7 @@ foreman_content_views_centos7_sig_virtualization_xen_413:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_414:
-  - name: cv_centos7_virt_xen_414
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_414"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_414 }}"
     repositories:
       - name: CentOS 7 - xen 4.14
@@ -246,7 +246,7 @@ foreman_content_views_centos7_sig_virtualization_xen_414:
     allow_promote: False
 
 foreman_content_views_centos7_sig_virtualization_xen_epel:
-  - name: cv_centos7_virt_xen_epel
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_epel"
     organization: "{{ foreman_organization_centos7_sig_virtualization_xen_epel }}"
     repositories:
       - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64

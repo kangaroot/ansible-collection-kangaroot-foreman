@@ -30,7 +30,7 @@ foreman_products_ol8_uln_storage:
 
 
 foreman_content_views_ol8_uln_storage:
-  - name: cv_ol8_uln_x86_64_gluster_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_gluster_appstream"
     organization: "{{ foreman_organization_ol8_uln_storage }}"
     repositories:
       - name: Oracle Linux 8 (x86_64) Gluster AppStream

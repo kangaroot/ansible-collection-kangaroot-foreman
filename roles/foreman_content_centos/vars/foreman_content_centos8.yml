@@ -75,80 +75,80 @@ foreman_products_centos8:
 
 
 foreman_content_views_centos8:
-  - name: cv_centos8_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_baseos"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - BaseOS
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_appstream"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - AppStream
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos8_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_extras"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_plus"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_powertools"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - PowerTools
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ha"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - HighAvailability
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_cr"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - ContinuousRelease
         product: CentOS
     allow_promote: False
-  - name: cv_centos8_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_fasttrack"
     organization: "{{ foreman_organization_centos8 }}"
     repositories:
       - name: CentOS 8 - FastTrack
         product: CentOS
     allow_promote: False
 
-  - name: ccv_centos8
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos8"
     organization: "{{ foreman_organization_centos8 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_centos8_baseos
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_baseos"
         latest: true
-      - content_view: cv_centos8_appstream
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_appstream"
         latest: true
-      - content_view: cv_centos8_extras
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_extras"
         latest: true
-      - content_view: cv_centos8_plus
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_plus"
         latest: true
-      - content_view: cv_centos8_powertools
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_powertools"
         latest: true
-      - content_view: cv_centos8_ha
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_ha"
         latest: true
-      - content_view: cv_centos8_cr
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_cr"
         latest: true
-      - content_view: cv_centos8_fasttrack
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_fasttrack"
         latest: true
-      - content_view: cv_epel8
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
         latest: true
-      - content_view: cv_epel8_modular
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
         latest: true
 
 
@@ -213,7 +213,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_centos8:
   - name: ak_centos8
     organization: "{{ foreman_organization_centos8 }}"
-    content_view: ccv_centos8
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos8"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-8-baseos"

@@ -57,59 +57,59 @@ foreman_products_debian10:
         organization: "{{ foreman_organization_debian10 }}"
 
 foreman_content_views_debian10:
-  - name: cv_debian10
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian10"
     organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster)
         product: Debian
     allow_promote: False
-  - name: cv_debian10_updates
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian10_updates"
     organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Updates
         product: Debian
     allow_promote: False
-  # - name: cv_debian10_proposed_updates
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}debian10_proposed_updates"
   #   organization: "{{ foreman_organization_debian10 }}"
   #   repositories:
   #     - name: Debian 10 (Buster) - Proposed Updates
   #       product: Debian
   #   allow_promote: False
-  - name: cv_debian10_backports
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian10_backports"
     organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Backports
         product: Debian
     allow_promote: False
-  # - name: cv_debian10_backports_sloppy
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}debian10_backports_sloppy"
   #   organization: "{{ foreman_organization_debian10 }}"
   #   repositories:
   #     - name: Debian 10 (Buster) - Backports - Sloppy
   #       product: Debian
   #   allow_promote: False
-  - name: cv_debian10_security
+  - name: "{{ foreman_cv_prefix | default('cv_') }}debian10_security"
     organization: "{{ foreman_organization_debian10 }}"
     repositories:
       - name: Debian 10 (Buster) - Security updates
         product: Debian
     allow_promote: False
 
-  - name: ccv_debian10
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}debian10"
     organization: "{{ foreman_organization_debian10 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_debian10
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10"
         latest: true
-      - content_view: cv_debian10_updates
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_updates"
         latest: true
-      # - content_view: cv_debian10_proposed_updates
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_proposed_updates"
       #   latest: true
-      - content_view: cv_debian10_backports
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_backports"
         latest: true
-      # - content_view: cv_debian10_backports_sloppy
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_backports_sloppy"
       #   latest: true
-      - content_view: cv_debian10_security
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_security"
         latest: true
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -159,7 +159,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_debian10:
   - name: ak_debian10
     organization: "{{ foreman_organization_debian10 }}"
-    content_view: ccv_debian10
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}debian10"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Debian_debian-10"

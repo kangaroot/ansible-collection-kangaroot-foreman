@@ -102,7 +102,7 @@ foreman_products_ceph_nautilus_ub2004:
 
 
 foreman_content_views_ceph_nautilus_el7:
-  - name: cv_ceph_nautilus_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_el7"
     organization: "{{ foreman_organization_ceph_nautilus_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL7
@@ -112,7 +112,7 @@ foreman_content_views_ceph_nautilus_el7:
     allow_promote: False
 
 foreman_content_views_ceph_nautilus_el8:
-  - name: cv_ceph_nautilus_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_el8"
     organization: "{{ foreman_organization_ceph_nautilus_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Nautilus - EL8
@@ -122,7 +122,7 @@ foreman_content_views_ceph_nautilus_el8:
     allow_promote: False
 
 foreman_content_views_ceph_nautilus_deb9:
-  - name: cv_ceph_nautilus_deb9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_deb9"
     organization: "{{ foreman_organization_ceph_nautilus_deb9 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 9 (Stretch)
@@ -130,7 +130,7 @@ foreman_content_views_ceph_nautilus_deb9:
     allow_promote: False
 
 foreman_content_views_ceph_nautilus_deb10:
-  - name: cv_ceph_nautilus_deb10
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_deb10"
     organization: "{{ foreman_organization_ceph_nautilus_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Debian 10 (Buster)
@@ -138,7 +138,7 @@ foreman_content_views_ceph_nautilus_deb10:
     allow_promote: False
 
 foreman_content_views_ceph_nautilus_ub1804:
-  - name: cv_ceph_nautilus_ub1804
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_ub1804"
     organization: "{{ foreman_organization_ceph_nautilus_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 18.04 LTS (Bionic Beaver)
@@ -146,7 +146,7 @@ foreman_content_views_ceph_nautilus_ub1804:
     allow_promote: False
 
 foreman_content_views_ceph_nautilus_ub2004:
-  - name: cv_ceph_nautilus_ub2004
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_nautilus_ub2004"
     organization: "{{ foreman_organization_ceph_nautilus_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Nautilus - Ubuntu 20.04 LTS (Focal Fossa)

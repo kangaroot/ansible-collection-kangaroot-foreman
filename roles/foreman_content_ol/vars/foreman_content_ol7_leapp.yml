@@ -28,7 +28,7 @@ foreman_products_ol7_leapp:
 
 
 foreman_content_views_ol7_leapp:
-  - name: cv_ol7_x86_64_leapp
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_leapp"
     organization: "{{ foreman_organization_ol7_leapp }}"
     repositories:
       - name: Leapp Upgrade Utilities for Oracle Linux 7 (x86_64)

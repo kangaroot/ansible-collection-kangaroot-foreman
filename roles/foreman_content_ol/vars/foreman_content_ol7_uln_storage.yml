@@ -132,7 +132,7 @@ foreman_products_ol7_uln_storage: "{{ [] |
 
 
 foreman_content_views_ol7_uln_storage_ceph10:
-  - name: cv_ol7_uln_x86_64_ceph10
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_ceph10"
     organization: "{{ foreman_organization_ol7_uln_storage_ceph10 }}"
     repositories:
       - name: Ceph Storage for Oracle Linux Release 1.0 (Oracle Linux 7.1 and later)
@@ -140,7 +140,7 @@ foreman_content_views_ol7_uln_storage_ceph10:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_ceph20:
-  - name: cv_ol7_uln_x86_64_ceph
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_ceph"
     organization: "{{ foreman_organization_ol7_uln_storage_ceph20 }}"
     repositories:
       - name: Ceph Storage for Oracle Linux Release 2.0 (Oracle Linux 7.2 and later)
@@ -148,7 +148,7 @@ foreman_content_views_ol7_uln_storage_ceph20:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_ceph30:
-  - name: cv_ol7_uln_x86_64_ceph30
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_ceph30"
     organization: "{{ foreman_organization_ol7_uln_storage_ceph30 }}"
     repositories:
       - name: Ceph Storage for Oracle Linux Release 3.0 (Oracle Linux 7.5 and later)
@@ -156,7 +156,7 @@ foreman_content_views_ol7_uln_storage_ceph30:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_gluster312:
-  - name: cv_ol7_uln_x86_64_gluster312
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_gluster312"
     organization: "{{ foreman_organization_ol7_uln_storage_gluster312 }}"
     repositories:
       - name: Glusterfs 3.12 for Oracle Linux 7 (x86_64)
@@ -164,7 +164,7 @@ foreman_content_views_ol7_uln_storage_gluster312:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_gluster41:
-  - name: cv_ol7_uln_x86_64_gluster41
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_gluster41"
     organization: "{{ foreman_organization_ol7_uln_storage_gluster41 }}"
     repositories:
       - name: Glusterfs 4.1 for Oracle Linux 7 (x86_64)
@@ -172,7 +172,7 @@ foreman_content_views_ol7_uln_storage_gluster41:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_gluster5:
-  - name: cv_ol7_uln_x86_64_gluster5
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_gluster5"
     organization: "{{ foreman_organization_ol7_uln_storage_gluster5 }}"
     repositories:
       - name: Gluster 5 for Oracle Linux 7 (x86_64)
@@ -180,7 +180,7 @@ foreman_content_views_ol7_uln_storage_gluster5:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_gluster6:
-  - name: cv_ol7_uln_x86_64_gluster6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_gluster6"
     organization: "{{ foreman_organization_ol7_uln_storage_gluster6 }}"
     repositories:
       - name: Gluster 6 for Oracle Linux 7 (x86_64)
@@ -188,7 +188,7 @@ foreman_content_views_ol7_uln_storage_gluster6:
     allow_promote: False
 
 foreman_content_views_ol7_uln_storage_gluster8:
-  - name: cv_ol7_uln_x86_64_gluster8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_gluster8"
     organization: "{{ foreman_organization_ol7_uln_storage_gluster8 }}"
     repositories:
       - name: Gluster 8 for Oracle Linux 7 (x86_64)

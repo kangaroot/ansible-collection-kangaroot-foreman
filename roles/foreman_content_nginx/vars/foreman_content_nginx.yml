@@ -63,13 +63,13 @@ foreman_products_nginx_el9:
 
 
 foreman_content_views_nginx_el7:
-  - name: cv_nginx_stable_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_stable_el7"
     organization: "{{ foreman_organization_nginx_el7 }}"
     repositories:
       - name: nginx stable repo - EL7
         product: Nginx
     allow_promote: False
-  - name: cv_nginx_mainline_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_mainline_el7"
     organization: "{{ foreman_organization_nginx_el7 }}"
     repositories:
       - name: nginx mainline repo - EL7
@@ -77,13 +77,13 @@ foreman_content_views_nginx_el7:
     allow_promote: False
 
 foreman_content_views_nginx_el8:
-  - name: cv_nginx_stable_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_stable_el8"
     organization: "{{ foreman_organization_nginx_el8 }}"
     repositories:
       - name: nginx stable repo - EL8
         product: Nginx
     allow_promote: False
-  - name: cv_nginx_mainline_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_mainline_el8"
     organization: "{{ foreman_organization_nginx_el8 }}"
     repositories:
       - name: nginx mainline repo - EL8
@@ -91,13 +91,13 @@ foreman_content_views_nginx_el8:
     allow_promote: False
 
 foreman_content_views_nginx_el9:
-  - name: cv_nginx_stable_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_stable_el9"
     organization: "{{ foreman_organization_nginx_el9 }}"
     repositories:
       - name: nginx stable repo - EL9
         product: Nginx
     allow_promote: False
-  - name: cv_nginx_mainline_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}nginx_mainline_el9"
     organization: "{{ foreman_organization_nginx_el9 }}"
     repositories:
       - name: nginx mainline repo - EL9

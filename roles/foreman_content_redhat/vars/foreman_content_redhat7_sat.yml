@@ -32,78 +32,78 @@ foreman_products_redhat7_sat:
         organization: "{{ foreman_organization_redhat7_sat }}"
 
 foreman_content_views_redhat7_sat:
-  - name: cv_rhel7_satellite_610
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_610"
     organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite 6.10 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite'
     allow_promote: False
-  - name: cv_rhel7_satellite_611
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_611"
     organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite'
     allow_promote: False
 
-  - name: cv_rhel7_satellite_capsule_610
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_capsule_610"
     organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.10 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
-  - name: cv_rhel7_satellite_capsule_611
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_capsule_611"
     organization: "{{ foreman_organization_redhat7_sat }}"
     repositories:
       - name: Red Hat Satellite Capsule 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Satellite Capsule'
     allow_promote: False
 
-  - name: ccv_rhel7_satellite
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel7_satellite"
     organization: "{{ foreman_organization_redhat7_sat }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_rhel7_base
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_base"
         latest: true
-      - content_view: cv_rhel7_extras
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_extras"
         latest: true
-      - content_view: cv_rhel7_optional
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_optional"
         latest: true
-      - content_view: cv_rhel7_supplementary
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_supplementary"
         latest: true
-      - content_view: cv_rhel7_rhscl
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_rhscl"
         latest: true
-      - content_view: cv_rhel7_ansible_2
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_2"
         latest: true
-      - content_view: cv_rhel7_ansible_29
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_29"
         latest: true
-      - content_view: cv_rhel7_satellite_610
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_610"
         latest: true
-      - content_view: cv_rhel7_satellite_611
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_611"
         latest: true
 
-  - name: ccv_rhel7_capsule
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel7_capsule"
     organization: "{{ foreman_organization_redhat7_sat }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_rhel7_base
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_base"
         latest: true
-      - content_view: cv_rhel7_extras
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_extras"
         latest: true
-      - content_view: cv_rhel7_optional
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_optional"
         latest: true
-      - content_view: cv_rhel7_supplementary
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_supplementary"
         latest: true
-      - content_view: cv_rhel7_rhscl
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_rhscl"
         latest: true
-      - content_view: cv_rhel7_ansible_2
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_2"
         latest: true
-      - content_view: cv_rhel7_ansible_29
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_29"
         latest: true
-      - content_view: cv_rhel7_satellite_capsule_610
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_capsule_610"
         latest: true
-      - content_view: cv_rhel7_satellite_capsule_611
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_satellite_capsule_611"
         latest: true
 
 foreman_operatingsystems_redhat7_sat: []
@@ -140,7 +140,7 @@ foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
 foreman_activation_keys_redhat7_sat:
   - name: ak_rhel7_satellite
     organization: "{{ foreman_organization_redhat7_sat }}"
-    content_view: ccv_rhel7_satellite
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel7_satellite"
     <<: *foreman_activation_keys_defaults_el7
     # subscriptions:
     #   - name: "Red Hat Ansible Engine"
@@ -169,7 +169,7 @@ foreman_activation_keys_redhat7_sat:
 
   - name: ak_rhel7_capsule
     organization: "{{ foreman_organization_redhat7_sat }}"
-    content_view: ccv_rhel7_capsule
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel7_capsule"
     <<: *foreman_activation_keys_defaults_el7
     # subscriptions:
     #   - name: "Red Hat Ansible Engine"

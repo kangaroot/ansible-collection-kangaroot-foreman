@@ -39,13 +39,13 @@ foreman_products_ol9_virtualization: "{{ [] |
 
 
 foreman_content_views_ol9_virtualization_kvm_utils:
-  - name: cv_ol9_x86_64_kvm_utils
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_kvm_utils"
     organization: "{{ foreman_organization_ol9_virtualization_kvm_utils }}"
     repositories:
       - name: Oracle Linux 9 KVM Utilities (x86_64)
         product: Oracle Linux
     allow_promote: False
-  # - name: cv_ol9_x86_64_developer_kvm_utils
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_developer_kvm_utils"
   #   organization: "{{ foreman_organization_ol9_virtualization_kvm_utils }}"
   #   repositories:
   #     - name: Developer Preview of KVM Utilities for Oracle Linux 9 (x86_64)

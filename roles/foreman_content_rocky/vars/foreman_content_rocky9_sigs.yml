@@ -43,7 +43,7 @@ foreman_products_rocky9_sig_core: "{{ [] |
   }}"
 
 foreman_content_views_rocky9_sig_core_common:
-  - name: cv_rocky9_core_common
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky9_core_common"
     organization: "{{ foreman_organization_rocky9_sig_core_common }}"
     repositories:
       - name: Rocky Linux 9 - SIG Core Common
@@ -51,7 +51,7 @@ foreman_content_views_rocky9_sig_core_common:
     allow_promote: False
 
 foreman_content_views_rocky9_sig_core_infra:
-  - name: cv_rocky9_core_infra
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky9_core_infra"
     organization: "{{ foreman_organization_rocky9_sig_core_infra }}"
     repositories:
       - name: Rocky Linux 9 - SIG Core Infrastructure
@@ -94,7 +94,7 @@ foreman_products_rocky9_sig_cloud: "{{ [] |
   }}"
 
 foreman_content_views_rocky9_cloud_common:
-  - name: cv_rocky9_cloud_common
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky9_cloud_common"
     organization: "{{ foreman_organization_rocky9_sig_cloud_common }}"
     repositories:
       - name: Rocky Linux 9 - SIG Cloud Common
@@ -102,7 +102,7 @@ foreman_content_views_rocky9_cloud_common:
     allow_promote: False
 
 foreman_content_views_rocky9_cloud_kernel:
-  - name: cv_rocky9_cloud_kernel
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky9_cloud_kernel"
     organization: "{{ foreman_organization_rocky9_sig_cloud_kernel }}"
     repositories:
       - name: Rocky Linux 9 - SIG Cloud Kernel

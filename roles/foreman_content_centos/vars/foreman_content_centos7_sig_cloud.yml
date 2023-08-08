@@ -126,7 +126,7 @@ foreman_products_centos7_sig_cloud: "{{ [] |
 
 
 foreman_content_views_centos7_sig_cloud_openstack_queens:
-  - name: cv_centos7_openstack_queens
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_queens"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
     repositories:
       - name: CentOS 7 - OpenStack queens
@@ -141,7 +141,7 @@ foreman_content_views_centos7_sig_cloud_openstack_queens:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_queens_tested:
-  - name: cv_centos7_rdo_trunk_queens_tested
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_queens_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens_tested }}"
     repositories:
       - name: CentOS 7 - OpenStack queens Trunk Tested
@@ -149,7 +149,7 @@ foreman_content_views_centos7_sig_cloud_openstack_queens_tested:
     allow_promote: False
 
 foreman_content_views_centos7_sig_cloud_openstack_rocky:
-  - name: cv_centos7_openstack_rocky
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_rocky"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
     repositories:
       - name: CentOS 7 - OpenStack rocky
@@ -164,7 +164,7 @@ foreman_content_views_centos7_sig_cloud_openstack_rocky:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_rocky_tested:
-  - name: cv_centos7_rdo_trunk_rocky_tested
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_rocky_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky_tested }}"
     repositories:
       - name: CentOS 7 - OpenStack rocky Trunk Tested
@@ -172,7 +172,7 @@ foreman_content_views_centos7_sig_cloud_openstack_rocky_tested:
     allow_promote: False
 
 foreman_content_views_centos7_sig_cloud_openstack_stein:
-  - name: cv_centos7_openstack_stein
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_stein"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
     repositories:
       - name: CentOS 7 - OpenStack stein
@@ -187,7 +187,7 @@ foreman_content_views_centos7_sig_cloud_openstack_stein:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_stein_tested:
-  - name: cv_centos7_rdo_trunk_stein_tested
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_stein_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein_tested }}"
     repositories:
       - name: CentOS 7 - OpenStack stein Trunk Tested
@@ -195,7 +195,7 @@ foreman_content_views_centos7_sig_cloud_openstack_stein_tested:
     allow_promote: False
 
 foreman_content_views_centos7_sig_cloud_openstack_train:
-  - name: cv_centos7_openstack_train
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_train"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
     repositories:
       - name: CentOS 7 - OpenStack train
@@ -210,7 +210,7 @@ foreman_content_views_centos7_sig_cloud_openstack_train:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_train_tested:
-  - name: cv_centos7_rdo_trunk_train_tested
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_train_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train_tested }}"
     repositories:
       - name: CentOS 7 - OpenStack train Trunk Tested

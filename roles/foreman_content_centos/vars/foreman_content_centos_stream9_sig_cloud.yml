@@ -342,7 +342,7 @@ foreman_products_centos_stream9_sig_cloud: "{{ [] |
 
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_client_xena:
-  - name: cv_centos_stream9_openstack_client_xena
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_client_xena"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_client_xena }}"
     repositories:
       - name: CentOS Stream 9 Openstack Client xena
@@ -350,7 +350,7 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_client_xena:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_yoga:
-  - name: cv_centos_stream9_openstack_yoga
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_yoga"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga
@@ -358,91 +358,91 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_yoga:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_yoga_tested:
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_baremetal
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_baremetal"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component baremetal
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_cinder
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_cinder"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component cinder
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_clients
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_clients"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component clients
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_cloudops
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_cloudops"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component cloudops
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_common
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_common"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component common
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_compute
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_compute"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component compute
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_glance
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_glance"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component glance
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_manila
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_manila"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component manila
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_network
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_network"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component network
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_octavia
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_octavia"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component octavia
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_security
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_security"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component security
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_swift
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_swift"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component swift
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_tempest
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_tempest"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component tempest
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_tripleo
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_tripleo"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component tripleo
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_yoga_tested_component_ui
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_yoga_tested_component_ui"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_yoga_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack yoga Trunk Tested - component ui
@@ -450,7 +450,7 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_yoga_tested:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_zed:
-  - name: cv_centos_stream9_openstack_zed
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_zed"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed
@@ -458,91 +458,91 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_zed:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_zed_tested:
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_baremetal
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_baremetal"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component baremetal
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_cinder
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_cinder"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component cinder
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_clients
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_clients"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component clients
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_cloudops
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_cloudops"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component cloudops
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_common
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_common"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component common
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_compute
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_compute"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component compute
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_glance
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_glance"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component glance
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_manila
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_manila"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component manila
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_network
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_network"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component network
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_octavia
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_octavia"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component octavia
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_security
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_security"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component security
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_swift
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_swift"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component swift
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_tempest
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_tempest"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component tempest
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_tripleo
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_tripleo"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component tripleo
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_zed_tested_component_ui
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_zed_tested_component_ui"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_zed_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack zed Trunk Tested - component ui
@@ -550,7 +550,7 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_zed_tested:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_antelope:
-  - name: cv_centos_stream9_openstack_antelope
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_antelope"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope
@@ -558,91 +558,91 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_antelope:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_openstack_antelope_tested:
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_baremetal
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_baremetal"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component baremetal
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_cinder
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_cinder"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component cinder
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_clients
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_clients"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component clients
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_cloudops
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_cloudops"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component cloudops
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_common
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_common"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component common
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_compute
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_compute"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component compute
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_glance
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_glance"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component glance
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_manila
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_manila"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component manila
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_network
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_network"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component network
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_octavia
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_octavia"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component octavia
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_security
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_security"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component security
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_swift
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_swift"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component swift
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_tempest
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_tempest"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component tempest
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_tripleo
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_tripleo"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component tripleo
         product: CentOS
     allow_promote: False
-  - name: cv_centos_stream9_rdo_trunk_antelope_tested_component_ui
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_rdo_trunk_antelope_tested_component_ui"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_openstack_antelope_tested }}"
     repositories:
       - name: CentOS Stream 9 Openstack antelope Trunk Tested - component ui
@@ -650,7 +650,7 @@ foreman_content_views_centos_stream9_sig_cloud_openstack_antelope_tested:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_okd413:
-  - name: cv_centos_stream9_openstack_okd413
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_okd413"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_okd413 }}"
     repositories:
       - name: CentOS Stream 9 - OKD 4.13
@@ -658,7 +658,7 @@ foreman_content_views_centos_stream9_sig_cloud_okd413:
     allow_promote: False
 
 foreman_content_views_centos_stream9_sig_cloud_okd414:
-  - name: cv_centos_stream9_openstack_okd414
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_openstack_okd414"
     organization: "{{ foreman_organization_centos_stream9_sig_cloud_okd414 }}"
     repositories:
       - name: CentOS Stream 9 - OKD 4.14

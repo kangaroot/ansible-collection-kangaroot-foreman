@@ -53,7 +53,7 @@ foreman_products_ol8_virtualization: "{{ [] |
 
 
 foreman_content_views_ol8_virtualization_kvm_utils:
-  - name: cv_ol8_x86_64_kvm_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_kvm_appstream"
     organization: "{{ foreman_organization_ol8_virtualization_kvm_utils }}"
     repositories:
       - name: Oracle Linux 8 KVM Application Stream (x86_64)
@@ -61,13 +61,13 @@ foreman_content_views_ol8_virtualization_kvm_utils:
     allow_promote: False
 
 foreman_content_views_ol8_virtualization_ovirt44:
-  - name: cv_ol8_x86_64_ovirt44
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_ovirt44"
     organization: "{{ foreman_organization_ol8_virtualization_ovirt44 }}"
     repositories:
       - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64)
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_ovirt44_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_ovirt44_extras"
     organization: "{{ foreman_organization_ol8_virtualization_ovirt44 }}"
     repositories:
       - name: oVirt Release 4.4 on Oracle Linux 8 (x86_64) - Extra

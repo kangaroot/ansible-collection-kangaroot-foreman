@@ -31,19 +31,19 @@ foreman_products_template_el9:
         organization: "{{ foreman_organization_template_el9 }}"
 
 foreman_content_views_template_el9:
-  - name: cv_template_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}template_el9"
     organization: "{{ foreman_organization_template_el9 }}"
     repositories:
       - name: Template Product EL9
         product: Template Product
     allow_promote: False
 
-  - name: ccv_template_el9
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}template_el9"
     organization: "{{ foreman_organization_template_el9 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_template_el9
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}template_el9"
         latest: true
 
 
@@ -105,7 +105,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_template_el7:
   - name: ak_template_el9
     organization: "{{ foreman_organization_template_el9 }}"
-    content_view: ccv_template_el9
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}template_el9"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Template_template_el9"

@@ -35,13 +35,13 @@ foreman_products_ol7_security_validation:
 
 
 foreman_content_views_ol7_security_validation:
-  - name: cv_ol7_x86_64_security_validation
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_security_validation"
     organization: "{{ foreman_organization_ol7_security_validation }}"
     repositories:
       - name: Oracle Linux 7 (x86_64) Security Validations
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol7_x86_64_u8_security_validation
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_u8_security_validation"
     organization: "{{ foreman_organization_ol7_security_validation }}"
     repositories:
       - name: Oracle Linux 7 Update 8 Security Validations packages (x86_64)

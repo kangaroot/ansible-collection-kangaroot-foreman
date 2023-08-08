@@ -41,19 +41,19 @@ foreman_products_remi_el8:
         organization: "{{ foreman_organization_remi_el8 }}"
 
 foreman_content_views_remi_el8:
-  - name: cv_remi_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_el8"
     organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi - EL8
         product: Remi Repository
     allow_promote: False
-  - name: cv_remi_modular_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_modular_el8"
     organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi Modular - EL8
         product: Remi Repository
     allow_promote: False
-  - name: cv_remi_safe_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_safe_el8"
     organization: "{{ foreman_organization_remi_el8 }}"
     repositories:
       - name: Remi Safe - EL8

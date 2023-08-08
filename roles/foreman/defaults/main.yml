@@ -50,6 +50,8 @@ foreman_products: []
 # foreman_products_deb_default_deb_components: main contrib non-free
 foreman_products_deb_default_deb_components: main
 
+foreman_cv_prefix: cv_
+foreman_ccv_prefix: ccv_
 foreman_content_views: []
 foreman_activation_keys: []
 foreman_sync_plans: []

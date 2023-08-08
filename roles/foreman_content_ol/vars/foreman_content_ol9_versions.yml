@@ -60,7 +60,7 @@ foreman_products_ol9_versions: "{{ [] |
 
 
 foreman_content_views_ol90:
-  - name: cv_ol9_x86_64_u0_baseos_base
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_u0_baseos_base"
     organization: "{{ foreman_organization_ol90 }}"
     repositories:
       - name: Oracle Linux 9 BaseOS GA (x86_64)
@@ -68,7 +68,7 @@ foreman_content_views_ol90:
     allow_promote: False
 
 foreman_content_views_ol91:
-  - name: cv_ol9_x86_64_u1_baseos_base
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_u1_baseos_base"
     organization: "{{ foreman_organization_ol91 }}"
     repositories:
       - name: Oracle Linux 9.1 BaseOS (x86_64)
@@ -76,7 +76,7 @@ foreman_content_views_ol91:
     allow_promote: False
 
 foreman_content_views_ol92:
-  - name: cv_ol9_x86_64_u2_baseos_base
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_u2_baseos_base"
     organization: "{{ foreman_organization_ol92 }}"
     repositories:
       - name: Oracle Linux 9.2 BaseOS (x86_64)

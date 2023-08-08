@@ -30,7 +30,7 @@ foreman_products_ol8_uln_security_validation:
 
 
 foreman_content_views_ol8_uln_security_validation:
-  - name: cv_ol8_uln_x86_64_u4_security_validation
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_u4_security_validation"
     organization: "{{ foreman_organization_ol8_uln_security_validation }}"
     repositories:
       - name: Oracle Linux 8 Update 4 Security Validations packages (x86_64)

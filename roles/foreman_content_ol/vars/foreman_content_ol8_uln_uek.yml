@@ -118,7 +118,7 @@ foreman_products_ol8_uln_uek: "{{ [] |
 
 
 foreman_content_views_ol8_uln_uekr6:
-  - name: cv_ol8_uln_x86_64_UEKR6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_UEKR6"
     organization: "{{ foreman_organization_ol8_uln_uekr6 }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
@@ -126,7 +126,7 @@ foreman_content_views_ol8_uln_uekr6:
     allow_promote: False
 
 foreman_content_views_ol8_uln_uekr6_developer:
-  - name: cv_ol8_uln_x86_64_developer_UEKR6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_developer_UEKR6"
     organization: "{{ foreman_organization_ol8_uln_uekr6_developer }}"
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 8 (x86_64)
@@ -134,7 +134,7 @@ foreman_content_views_ol8_uln_uekr6_developer:
     allow_promote: False
 
 foreman_content_views_ol8_uln_uekr6_rdma:
-  - name: cv_ol8_uln_x86_64_UEKR6_RDMA
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_UEKR6_RDMA"
     organization: "{{ foreman_organization_ol8_uln_uekr6_rdma }}"
     repositories:
       - name: Oracle Linux 8 (x86_64) UEK Release 6 RDMA
@@ -142,7 +142,7 @@ foreman_content_views_ol8_uln_uekr6_rdma:
     allow_promote: False
 
 foreman_content_views_ol8_uln_uekr7:
-  - name: cv_ol8_uln_x86_64_UEKR7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_UEKR7"
     organization: "{{ foreman_organization_ol8_uln_uekr7 }}"
     repositories:
       - name: Oracle Linux 8 UEK Release 7 (x86_64)
@@ -150,7 +150,7 @@ foreman_content_views_ol8_uln_uekr7:
     allow_promote: False
 
 foreman_content_views_ol8_uln_uekr7_developer:
-  - name: cv_ol8_uln_x86_64_developer_UEKR7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_developer_UEKR7"
     organization: "{{ foreman_organization_ol8_uln_uekr7_developer }}"
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 7 for Oracle Linux 8 (x86_64)
@@ -158,7 +158,7 @@ foreman_content_views_ol8_uln_uekr7_developer:
     allow_promote: False
 
 foreman_content_views_ol8_uln_uekr7_rdma:
-  - name: cv_ol8_uln_x86_64_UEKR7_RDMA
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_UEKR7_RDMA"
     organization: "{{ foreman_organization_ol8_uln_uekr7_rdma }}"
     repositories:
       - name: Oracle Linux 8 (x86_64) UEK Release 7 RDMA
@@ -166,7 +166,7 @@ foreman_content_views_ol8_uln_uekr7_rdma:
     allow_promote: False
 
 foreman_content_views_ol8_uln_modrhck:
-  - name: cv_ol8_uln_x86_64_MODRHCK
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_MODRHCK"
     organization: "{{ foreman_organization_ol8_uln_modrhck }}"
     repositories:
       - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64)

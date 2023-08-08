@@ -49,25 +49,25 @@ foreman_products_ol8_olcne:
 
 
 foreman_content_views_ol8_olcne:
-  - name: cv_ol8_x86_64_olcne12
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_olcne12"
     organization: "{{ foreman_organization_ol8_olcne }}"
     repositories:
       - name: Oracle Linux Cloud Native Environment 1.2 (x86_64)
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_olcne13
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_olcne13"
     organization: "{{ foreman_organization_ol8_olcne }}"
     repositories:
       - name: Oracle Linux Cloud Native Environment 1.3 (x86_64)
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_olcne14
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_olcne14"
     organization: "{{ foreman_organization_ol8_olcne }}"
     repositories:
       - name: Oracle Linux Cloud Native Environment 1.4 (x86_64)
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_olcne15
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_olcne15"
     organization: "{{ foreman_organization_ol8_olcne }}"
     repositories:
       - name: Oracle Linux Cloud Native Environment 1.5 (x86_64)

@@ -256,7 +256,7 @@ foreman_products_ol7_developer: "{{ [] |
 
 
 foreman_content_views_ol7_developer_go110:
-  - name: cv_ol7_x86_64_developer_golang110
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang110"
     organization: "{{ foreman_organization_ol7_developer_go110 }}"
     repositories:
       - name: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64)
@@ -264,7 +264,7 @@ foreman_content_views_ol7_developer_go110:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go111:
-  - name: cv_ol7_x86_64_developer_golang111
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang111"
     organization: "{{ foreman_organization_ol7_developer_go111 }}"
     repositories:
       - name: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64)
@@ -272,7 +272,7 @@ foreman_content_views_ol7_developer_go111:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go112:
-  - name: cv_ol7_x86_64_developer_golang112
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang112"
     organization: "{{ foreman_organization_ol7_developer_go112 }}"
     repositories:
       - name: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64)
@@ -280,7 +280,7 @@ foreman_content_views_ol7_developer_go112:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go113:
-  - name: cv_ol7_x86_64_developer_golang113
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang113"
     organization: "{{ foreman_organization_ol7_developer_go113 }}"
     repositories:
       - name: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64)
@@ -288,7 +288,7 @@ foreman_content_views_ol7_developer_go113:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go114:
-  - name: cv_ol7_x86_64_developer_golang114
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang114"
     organization: "{{ foreman_organization_ol7_developer_go114 }}"
     repositories:
       - name: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64)
@@ -296,7 +296,7 @@ foreman_content_views_ol7_developer_go114:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go115:
-  - name: cv_ol7_x86_64_developer_golang115
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang115"
     organization: "{{ foreman_organization_ol7_developer_go115 }}"
     repositories:
       - name: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64)
@@ -304,7 +304,7 @@ foreman_content_views_ol7_developer_go115:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go116:
-  - name: cv_ol7_x86_64_developer_golang116
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang116"
     organization: "{{ foreman_organization_ol7_developer_go116 }}"
     repositories:
       - name: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64)
@@ -312,7 +312,7 @@ foreman_content_views_ol7_developer_go116:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go117:
-  - name: cv_ol7_x86_64_developer_golang117
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang117"
     organization: "{{ foreman_organization_ol7_developer_go117 }}"
     repositories:
       - name: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64)
@@ -320,7 +320,7 @@ foreman_content_views_ol7_developer_go117:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go118:
-  - name: cv_ol7_x86_64_developer_golang118
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang118"
     organization: "{{ foreman_organization_ol7_developer_go118 }}"
     repositories:
       - name: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64)
@@ -328,7 +328,7 @@ foreman_content_views_ol7_developer_go118:
     allow_promote: False
 
 foreman_content_views_ol7_developer_go119:
-  - name: cv_ol7_x86_64_developer_golang119
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_golang119"
     organization: "{{ foreman_organization_ol7_developer_go119 }}"
     repositories:
       - name: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64)
@@ -336,7 +336,7 @@ foreman_content_views_ol7_developer_go119:
     allow_promote: False
 
 foreman_content_views_ol7_developer_php74:
-  - name: cv_ol7_x86_64_developer_php74
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_php74"
     organization: "{{ foreman_organization_ol7_developer_php74 }}"
     repositories:
       - name: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64)
@@ -344,7 +344,7 @@ foreman_content_views_ol7_developer_php74:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs4:
-  - name: cv_ol7_developer_nodejs4
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs4"
     organization: "{{ foreman_organization_ol7_developer_nodejs4 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 4 Packages for Development and test (x86_64)
@@ -352,7 +352,7 @@ foreman_content_views_ol7_developer_nodejs4:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs6:
-  - name: cv_ol7_developer_nodejs6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs6"
     organization: "{{ foreman_organization_ol7_developer_nodejs6 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 6 Packages for Development and test (x86_64)
@@ -360,7 +360,7 @@ foreman_content_views_ol7_developer_nodejs6:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs8:
-  - name: cv_ol7_developer_nodejs8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs8"
     organization: "{{ foreman_organization_ol7_developer_nodejs8 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 8 Packages for Development and test (x86_64)
@@ -368,7 +368,7 @@ foreman_content_views_ol7_developer_nodejs8:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs10:
-  - name: cv_ol7_developer_nodejs10
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs10"
     organization: "{{ foreman_organization_ol7_developer_nodejs10 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 10 Packages for Development and test (x86_64)
@@ -376,7 +376,7 @@ foreman_content_views_ol7_developer_nodejs10:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs12:
-  - name: cv_ol7_developer_nodejs12
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs12"
     organization: "{{ foreman_organization_ol7_developer_nodejs12 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 12 Packages for Development and test (x86_64)
@@ -384,7 +384,7 @@ foreman_content_views_ol7_developer_nodejs12:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs14:
-  - name: cv_ol7_developer_nodejs14
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs14"
     organization: "{{ foreman_organization_ol7_developer_nodejs14 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 14 Packages for Development and test (x86_64)
@@ -392,7 +392,7 @@ foreman_content_views_ol7_developer_nodejs14:
     allow_promote: False
 
 foreman_content_views_ol7_developer_nodejs16:
-  - name: cv_ol7_developer_nodejs16
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_developer_nodejs16"
     organization: "{{ foreman_organization_ol7_developer_nodejs16 }}"
     repositories:
       - name: Oracle Linux 7 Node.js 16 Packages for Development and test (x86_64)

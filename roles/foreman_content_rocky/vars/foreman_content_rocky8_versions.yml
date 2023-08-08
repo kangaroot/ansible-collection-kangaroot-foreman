@@ -368,55 +368,55 @@ foreman_products_rocky8_versions: "{{ [] |
 
 
 foreman_content_views_rocky84:
-  - name: cv_rocky84_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_baseos"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_appstream"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_extras"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_plus"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_powertools"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_ha"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_nfv"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_resilientstorage"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky84_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky84_rt"
     organization: "{{ foreman_organization_rocky84 }}"
     repositories:
       - name: Rocky Linux 8.4 - Realtime
@@ -424,55 +424,55 @@ foreman_content_views_rocky84:
     allow_promote: False
 
 foreman_content_views_rocky85:
-  - name: cv_rocky85_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_baseos"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_appstream"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_extras"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_plus"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_powertools"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_ha"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_nfv"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_resilientstorage"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky85_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky85_rt"
     organization: "{{ foreman_organization_rocky85 }}"
     repositories:
       - name: Rocky Linux 8.5 - Realtime
@@ -480,55 +480,55 @@ foreman_content_views_rocky85:
     allow_promote: False
 
 foreman_content_views_rocky86:
-  - name: cv_rocky86_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_baseos"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_appstream"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_extras"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_plus"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_powertools"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_ha"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_nfv"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_resilientstorage"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky86_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky86_rt"
     organization: "{{ foreman_organization_rocky86 }}"
     repositories:
       - name: Rocky Linux 8.6 - Realtime
@@ -536,55 +536,55 @@ foreman_content_views_rocky86:
     allow_promote: False
 
 foreman_content_views_rocky87:
-  - name: cv_rocky87_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_baseos"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_appstream"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_extras"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_plus"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_powertools"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_ha"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_nfv"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_resilientstorage"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky87_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky87_rt"
     organization: "{{ foreman_organization_rocky87 }}"
     repositories:
       - name: Rocky Linux 8.7 - Realtime
@@ -592,55 +592,55 @@ foreman_content_views_rocky87:
     allow_promote: False
 
 foreman_content_views_rocky88:
-  - name: cv_rocky88_baseos
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_baseos"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - BaseOS
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_appstream
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_appstream"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - AppStream
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_extras"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Extras
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_plus"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Plus
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_powertools
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_powertools"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - PowerTools
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_ha
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_ha"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - HighAvailability
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_nfv
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_nfv"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - NFV
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_resilientstorage
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_resilientstorage"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - ResilientStorage
         product: Rocky Linux
     allow_promote: False
-  - name: cv_rocky88_rt
+  - name: "{{ foreman_cv_prefix | default('cv_') }}rocky88_rt"
     organization: "{{ foreman_organization_rocky88 }}"
     repositories:
       - name: Rocky Linux 8.8 - Realtime

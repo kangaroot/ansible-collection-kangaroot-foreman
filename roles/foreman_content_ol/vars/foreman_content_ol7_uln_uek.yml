@@ -230,7 +230,7 @@ foreman_products_ol7_uln_uek: "{{ [] |
 
 
 foreman_content_views_ol7_uln_uekr3:
-  - name: cv_ol7_uln_x86_64_UEKR3
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR3"
     organization: "{{ foreman_organization_ol7_uln_uekr3 }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 3 for Oracle Linux 7 (x86_64) - Latest
@@ -238,7 +238,7 @@ foreman_content_views_ol7_uln_uekr3:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr3_ofed:
-  - name: cv_ol7_uln_x86_64_UEKR3_OFED20
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR3_OFED20"
     organization: "{{ foreman_organization_ol7_uln_uekr3_ofed }}"
     repositories:
       - name: OFED supporting tool packages for Unbreakable Enterprise Kernel on Oracle Linux 7 (x86_64)
@@ -246,7 +246,7 @@ foreman_content_views_ol7_uln_uekr3_ofed:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr3_dtrace:
-  - name: cv_ol7_uln_x86_64_Dtrace_userspace
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_Dtrace_userspace"
     organization: "{{ foreman_organization_ol7_uln_uekr3_dtrace }}"
     repositories:
       - name: Oracle Linux 7 Dtrace Userspace Tools (x86_64) - Latest
@@ -254,7 +254,7 @@ foreman_content_views_ol7_uln_uekr3_dtrace:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr4:
-  - name: cv_ol7_uln_x86_64_UEKR4
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4"
     organization: "{{ foreman_organization_ol7_uln_uekr4 }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64)
@@ -262,7 +262,7 @@ foreman_content_views_ol7_uln_uekr4:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr4_ofed:
-  - name: cv_ol7_uln_x86_64_UEKR4_OFED
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_OFED"
     organization: "{{ foreman_organization_ol7_uln_uekr4_ofed }}"
     repositories:
       - name: OFED supporting tool packages for Unbreakable Enterprise Kernel Release 4 on Oracle Linux 7 (x86_64)
@@ -270,7 +270,7 @@ foreman_content_views_ol7_uln_uekr4_ofed:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr4_dtrace:
-  - name: cv_ol7_uln_x86_64_UEKR4_DTrace_userspace
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_DTrace_userspace"
     organization: "{{ foreman_organization_ol7_uln_uekr4_dtrace }}"
     repositories:
       - name: Dtrace Userspace Tools (x86_64) for UEKR4 on Oracle Linux 7
@@ -278,7 +278,7 @@ foreman_content_views_ol7_uln_uekr4_dtrace:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr4_archive:
-  - name: cv_ol7_uln_x86_64_UEKR4_archive
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_archive"
     organization: "{{ foreman_organization_ol7_uln_uekr4_archive }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64) -Archive
@@ -286,7 +286,7 @@ foreman_content_views_ol7_uln_uekr4_archive:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr5:
-  - name: cv_ol7_uln_x86_64_UEKR5
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5"
     organization: "{{ foreman_organization_ol7_uln_uekr5 }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
@@ -294,7 +294,7 @@ foreman_content_views_ol7_uln_uekr5:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr5_archive:
-  - name: cv_ol7_uln_x86_64_UEKR5_archive
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5_archive"
     organization: "{{ foreman_organization_ol7_uln_uekr5_archive }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64) -Archive
@@ -302,7 +302,7 @@ foreman_content_views_ol7_uln_uekr5_archive:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr5_rdma:
-  - name: cv_ol7_uln_x86_64_UEKR5_RDMA
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5_RDMA"
     organization: "{{ foreman_organization_ol7_uln_uekr5_rdma }}"
     repositories:
       - name: Oracle Linux 7 Unbreakable Enterprise Kernel Release 5 RDMA (x86_64)
@@ -310,7 +310,7 @@ foreman_content_views_ol7_uln_uekr5_rdma:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr5_developer:
-  - name: cv_ol7_uln_x86_64_developer_UEKR5
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_developer_UEKR5"
     organization: "{{ foreman_organization_ol7_uln_uekr5_developer }}"
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
@@ -318,7 +318,7 @@ foreman_content_views_ol7_uln_uekr5_developer:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr6:
-  - name: cv_ol7_uln_x86_64_UEKR6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR6"
     organization: "{{ foreman_organization_ol7_uln_uekr6 }}"
     repositories:
       - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
@@ -326,7 +326,7 @@ foreman_content_views_ol7_uln_uekr6:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr6_rdma:
-  - name: cv_ol7_uln_x86_64_UEKR6_RDMA
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR6_RDMA"
     organization: "{{ foreman_organization_ol7_uln_uekr6_rdma }}"
     repositories:
       - name: Oracle Linux 7 (x86_64) UEK Release 6 RDMA
@@ -334,7 +334,7 @@ foreman_content_views_ol7_uln_uekr6_rdma:
     allow_promote: False
 
 foreman_content_views_ol7_uln_uekr6_developer:
-  - name: cv_ol7_uln_x86_64_developer_UEKR6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_developer_UEKR6"
     organization: "{{ foreman_organization_ol7_uln_uekr6_developer }}"
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
@@ -342,7 +342,7 @@ foreman_content_views_ol7_uln_uekr6_developer:
     allow_promote: False
 
 foreman_content_views_ol7_uln_modrhck:
-  - name: cv_ol7_uln_x86_64_MODRHCK
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_MODRHCK"
     organization: "{{ foreman_organization_ol7_uln_modrhck }}"
     repositories:
       - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 7 (x86_64)

@@ -94,7 +94,7 @@ foreman_products_ceph_quincy_ub2004:
 
 
 foreman_content_views_ceph_quincy_el7:
-  - name: cv_ceph_quincy_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_quincy_el7"
     organization: "{{ foreman_organization_ceph_quincy_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL7
@@ -104,7 +104,7 @@ foreman_content_views_ceph_quincy_el7:
     allow_promote: False
 
 foreman_content_views_ceph_quincy_el8:
-  - name: cv_ceph_quincy_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_quincy_el8"
     organization: "{{ foreman_organization_ceph_quincy_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL8
@@ -114,7 +114,7 @@ foreman_content_views_ceph_quincy_el8:
     allow_promote: False
 
 foreman_content_views_ceph_quincy_el9:
-  - name: cv_ceph_quincy_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_quincy_el9"
     organization: "{{ foreman_organization_ceph_quincy_el9 }}"
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL9
@@ -124,7 +124,7 @@ foreman_content_views_ceph_quincy_el9:
     allow_promote: False
 
 foreman_content_views_ceph_quincy_deb11:
-  - name: cv_ceph_quincy_deb11
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_quincy_deb11"
     organization: "{{ foreman_organization_ceph_quincy_deb11 }}"
     repositories:
       - name: Ceph packages for amd64 - Quincy - Debian 11 (Bullseye)
@@ -132,7 +132,7 @@ foreman_content_views_ceph_quincy_deb11:
     allow_promote: False
 
 foreman_content_views_ceph_quincy_ub2004:
-  - name: cv_ceph_quincy_ub2004
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_quincy_ub2004"
     organization: "{{ foreman_organization_ceph_quincy_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Quincy - Ubuntu 20.04 LTS (Focal Fossa)

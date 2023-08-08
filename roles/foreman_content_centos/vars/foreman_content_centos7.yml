@@ -82,95 +82,95 @@ foreman_products_centos7:
 
 
 foreman_content_views_centos7:
-  - name: cv_centos7_base
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - Base
         product: CentOS
     allow_promote: False
-  - name: cv_centos7_updates
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - Updates
         product: CentOS
     allow_promote: False
-  - name: cv_centos7_extras
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - Extras
         product: CentOS
     allow_promote: False
-  - name: cv_centos7_plus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_plus"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - Plus
         product: CentOS
     allow_promote: False
-  - name: cv_centos7_fasttrack
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_fasttrack"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - fasttrack
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos7_cr
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_cr"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 - cr
         product: CentOS
     allow_promote: False
 
-  - name: cv_centos7_kernel
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 LTS Kernels for x86_64
         product: CentOS
     allow_promote: False
-  - name: cv_centos7_kernel_experimental
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel_experimental"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
       - name: CentOS 7 Experimental Kernels for x86_64
         product: CentOS
     allow_promote: False
 
-  - name: ccv_centos7
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
     organization: "{{ foreman_organization_centos7 }}"
     composite: True
     auto_publish: True
     components:
-      - content_view: cv_centos7_base
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
         latest: true
-      - content_view: cv_centos7_updates
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
         latest: true
-      - content_view: cv_centos7_extras
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
         latest: true
-      - content_view: cv_centos7_plus
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_plus"
         latest: true
-      - content_view: cv_centos7_fasttrack
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_fasttrack"
         latest: true
-      - content_view: cv_centos7_cr
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_cr"
         latest: true
-      - content_view: cv_centos7_kernel
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel"
         latest: true
-      - content_view: cv_centos7_kernel_experimental
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel_experimental"
         latest: true
-      - content_view: cv_epel7
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel7"
         latest: true
 
-  # - name: ccv_centos7_foreman
+  # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_foreman"
   #   organization: "{{ foreman_organization_centos7 }}"
   #   composite: True
   #   auto_publish: True
   #   components:
-  #     - content_view: cv_centos7_base
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
   #       latest: true
-  #     - content_view: cv_centos7_updates
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
   #       latest: true
-  #     - content_view: cv_centos7_extras
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
   #       latest: true
-  #     - content_view: cv_centos7_sclo_sclo
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_sclo"
   #       latest: true
-  #     - content_view: cv_centos7_sclo_rh
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
   #       latest: true
   #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
   #       latest: true
@@ -179,20 +179,20 @@ foreman_content_views_centos7:
   #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
   #       latest: true
 
-  # - name: ccv_centos7_katello
+  # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_katello"
   #   organization: "{{ foreman_organization_centos7 }}"
   #   composite: True
   #   auto_publish: True
   #   components:
-  #     - content_view: cv_centos7_base
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
   #       latest: true
-  #     - content_view: cv_centos7_updates
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
   #       latest: true
-  #     - content_view: cv_centos7_extras
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
   #       latest: true
-  #     - content_view: cv_centos7_sclo_sclo
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_sclo"
   #       latest: true
-  #     - content_view: cv_centos7_sclo_rh
+  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
   #       latest: true
   #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
   #       latest: true
@@ -284,7 +284,7 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 foreman_activation_keys_centos7:
   - name: ak_centos7
     organization: "{{ foreman_organization_centos7 }}"
-    content_view: ccv_centos7
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-7-base"
@@ -308,7 +308,7 @@ foreman_activation_keys_centos7:
 
   # - name: ak_centos7_foreman
   #   organization: "{{ foreman_organization_centos7 }}"
-  #   content_view: ccv_centos7_foreman
+  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_foreman"
   #   <<: *foreman_activation_keys_defaults
   #   content_overrides:
   #     - label: "{{ foreman_organization }}_CentOS_centos-7-base"
@@ -330,7 +330,7 @@ foreman_activation_keys_centos7:
 
   # - name: ak_centos7_katello
   #   organization: "{{ foreman_organization_centos7 }}"
-  #   content_view: ccv_centos7_katello
+  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_katello"
   #   <<: *foreman_activation_keys_defaults
   #   content_overrides:
   #     - label: "{{ foreman_organization }}_CentOS_centos-7-base"

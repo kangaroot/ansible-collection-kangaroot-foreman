@@ -70,7 +70,7 @@ foreman_products_centos_stream8_sig_virtualization: "{{ [] |
 
 
 foreman_content_views_centos_stream8_sig_hyperscale_main:
-  - name: cv_centos_stream8_hyperscale
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_hyperscale"
     organization: "{{ foreman_organization_centos_stream8_sig_hyperscale_main }}"
     repositories:
       - name: CentOS Stream 8 - Hyperscale
@@ -78,7 +78,7 @@ foreman_content_views_centos_stream8_sig_hyperscale_main:
     allow_promote: False
 
 foreman_content_views_centos_stream8_sig_hyperscale_hotfixes:
-  - name: cv_centos_stream8_hyperscale_hotfixes
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_hyperscale_hotfixes"
     organization: "{{ foreman_organization_centos_stream8_sig_hyperscale_hotfixes }}"
     repositories:
       - name: CentOS Stream 8 - Hyperscale Hotfixes
@@ -86,7 +86,7 @@ foreman_content_views_centos_stream8_sig_hyperscale_hotfixes:
     allow_promote: False
 
 foreman_content_views_centos_stream8_sig_hyperscale_spin:
-  - name: cv_centos_stream8_hyperscale_spin
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_hyperscale_spin"
     organization: "{{ foreman_organization_centos_stream8_sig_hyperscale_spin }}"
     repositories:
       - name: CentOS Stream 8 - Hyperscale Spin
@@ -94,7 +94,7 @@ foreman_content_views_centos_stream8_sig_hyperscale_spin:
     allow_promote: False
 
 foreman_content_views_centos_stream8_sig_hyperscale_experimental:
-  - name: cv_centos_stream8_hyperscale_experimental
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_hyperscale_experimental"
     organization: "{{ foreman_organization_centos_stream8_sig_hyperscale_experimental }}"
     repositories:
       - name: CentOS Stream 8 - Hyperscale Experimental

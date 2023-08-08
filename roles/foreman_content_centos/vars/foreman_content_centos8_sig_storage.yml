@@ -199,7 +199,7 @@ foreman_products_centos8_sig_storage: "{{ [] |
 
 
 foreman_content_views_centos8_sig_storage_samba411:
-  - name: cv_centos8_samba411
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_samba411"
     organization: "{{ foreman_organization_centos8_sig_storage_samba411 }}"
     repositories:
       - name: CentOS 8 - Samba 4.11
@@ -207,7 +207,7 @@ foreman_content_views_centos8_sig_storage_samba411:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_samba412:
-  - name: cv_centos8_samba412
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_samba412"
     organization: "{{ foreman_organization_centos8_sig_storage_samba412 }}"
     repositories:
       - name: CentOS 8 - Samba 4.12
@@ -215,7 +215,7 @@ foreman_content_views_centos8_sig_storage_samba412:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_samba413:
-  - name: cv_centos8_samba413
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_samba413"
     organization: "{{ foreman_organization_centos8_sig_storage_samba413 }}"
     repositories:
       - name: CentOS 8 - Samba 4.13
@@ -223,7 +223,7 @@ foreman_content_views_centos8_sig_storage_samba413:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_samba414:
-  - name: cv_centos8_samba414
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_samba414"
     organization: "{{ foreman_organization_centos8_sig_storage_samba414 }}"
     repositories:
       - name: CentOS 8 - Samba 4.14
@@ -231,7 +231,7 @@ foreman_content_views_centos8_sig_storage_samba414:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_samba415:
-  - name: cv_centos8_samba415
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_samba415"
     organization: "{{ foreman_organization_centos8_sig_storage_samba415 }}"
     repositories:
       - name: CentOS 8 - Samba 4.15
@@ -239,7 +239,7 @@ foreman_content_views_centos8_sig_storage_samba415:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_gluster6:
-  - name: cv_centos8_gluster6
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_gluster6"
     organization: "{{ foreman_organization_centos8_sig_storage_gluster6 }}"
     repositories:
       - name: CentOS 8 - Gluster 6
@@ -247,7 +247,7 @@ foreman_content_views_centos8_sig_storage_gluster6:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_gluster7:
-  - name: cv_centos8_gluster7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_gluster7"
     organization: "{{ foreman_organization_centos8_sig_storage_gluster7 }}"
     repositories:
       - name: CentOS 8 - Gluster 7
@@ -255,7 +255,7 @@ foreman_content_views_centos8_sig_storage_gluster7:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_gluster8:
-  - name: cv_centos8_gluster8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_gluster8"
     organization: "{{ foreman_organization_centos8_sig_storage_gluster8 }}"
     repositories:
       - name: CentOS 8 - Gluster 8
@@ -263,7 +263,7 @@ foreman_content_views_centos8_sig_storage_gluster8:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_gluster9:
-  - name: cv_centos8_gluster9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_gluster9"
     organization: "{{ foreman_organization_centos8_sig_storage_gluster9 }}"
     repositories:
       - name: CentOS 8 - Gluster 9
@@ -271,7 +271,7 @@ foreman_content_views_centos8_sig_storage_gluster9:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_ceph_nautilus:
-  - name: cv_centos8_ceph_nautilus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ceph_nautilus"
     organization: "{{ foreman_organization_centos8_sig_storage_ceph_nautilus }}"
     repositories:
       - name: CentOS 8 - Ceph Nautilus
@@ -279,7 +279,7 @@ foreman_content_views_centos8_sig_storage_ceph_nautilus:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_ceph_octopus:
-  - name: cv_centos8_ceph_octopus
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ceph_octopus"
     organization: "{{ foreman_organization_centos8_sig_storage_ceph_octopus }}"
     repositories:
       - name: CentOS 8 - Ceph Octopus
@@ -287,7 +287,7 @@ foreman_content_views_centos8_sig_storage_ceph_octopus:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_ceph_pacific:
-  - name: cv_centos8_ceph_pacific
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ceph_pacific"
     organization: "{{ foreman_organization_centos8_sig_storage_ceph_pacific }}"
     repositories:
       - name: CentOS 8 - Ceph Pacific
@@ -295,7 +295,7 @@ foreman_content_views_centos8_sig_storage_ceph_pacific:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_nfs_ganesha28:
-  - name: cv_centos8_nfs_ganesha28
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_nfs_ganesha28"
     organization: "{{ foreman_organization_centos8_sig_storage_nfs_ganesha28 }}"
     repositories:
       - name: CentOS 8 - NFS Ganesha 2.8
@@ -303,7 +303,7 @@ foreman_content_views_centos8_sig_storage_nfs_ganesha28:
     allow_promote: False
 
 foreman_content_views_centos8_sig_storage_nfs_ganesha30:
-  - name: cv_centos8_nfs_ganesha30
+  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_nfs_ganesha30"
     organization: "{{ foreman_organization_centos8_sig_storage_nfs_ganesha30 }}"
     repositories:
       - name: CentOS 8 - NFS Ganesha 3.0

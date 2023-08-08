@@ -118,7 +118,7 @@ foreman_products_ceph_pacific_ub2004:
 
 
 foreman_content_views_ceph_pacific_el7:
-  - name: cv_ceph_pacific_el7
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_el7"
     organization: "{{ foreman_organization_ceph_pacific_el7 }}"
     repositories:
       - name: Ceph packages for x86_64 - Pacific - EL7
@@ -128,7 +128,7 @@ foreman_content_views_ceph_pacific_el7:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_el8:
-  - name: cv_ceph_pacific_el8
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_el8"
     organization: "{{ foreman_organization_ceph_pacific_el8 }}"
     repositories:
       - name: Ceph packages for x86_64 - Pacific - EL8
@@ -138,7 +138,7 @@ foreman_content_views_ceph_pacific_el8:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_el9:
-  - name: cv_ceph_pacific_el9
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_el9"
     organization: "{{ foreman_organization_ceph_pacific_el9 }}"
     repositories:
       - name: Ceph packages for x86_64 - Pacific - EL9
@@ -148,7 +148,7 @@ foreman_content_views_ceph_pacific_el9:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_deb10:
-  - name: cv_ceph_pacific_deb10
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_deb10"
     organization: "{{ foreman_organization_ceph_pacific_deb10 }}"
     repositories:
       - name: Ceph packages for amd64 - Pacific - Debian 10 (Buster)
@@ -156,7 +156,7 @@ foreman_content_views_ceph_pacific_deb10:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_deb11:
-  - name: cv_ceph_pacific_deb11
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_deb11"
     organization: "{{ foreman_organization_ceph_pacific_deb11 }}"
     repositories:
       - name: Ceph packages for amd64 - Pacific - Debian 11 (Bullseye)
@@ -164,7 +164,7 @@ foreman_content_views_ceph_pacific_deb11:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_ub1804:
-  - name: cv_ceph_pacific_ub1804
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_ub1804"
     organization: "{{ foreman_organization_ceph_pacific_ub1804 }}"
     repositories:
       - name: Ceph packages for amd64 - Pacific - Ubuntu 18.04 LTS (Bionic Beaver)
@@ -172,7 +172,7 @@ foreman_content_views_ceph_pacific_ub1804:
     allow_promote: False
 
 foreman_content_views_ceph_pacific_ub2004:
-  - name: cv_ceph_pacific_ub2004
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_ub2004"
     organization: "{{ foreman_organization_ceph_pacific_ub2004 }}"
     repositories:
       - name: Ceph packages for amd64 - Pacific - Ubuntu 20.04 LTS (Focal Fossa)

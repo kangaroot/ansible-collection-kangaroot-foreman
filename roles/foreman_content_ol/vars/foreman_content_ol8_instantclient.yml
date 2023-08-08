@@ -42,19 +42,19 @@ foreman_products_ol8_instantclient:
 
 
 foreman_content_views_ol8_instantclient:
-  - name: cv_ol8_x86_64_oracle_instantclient
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_oracle_instantclient"
     organization: "{{ foreman_organization_ol8_instantclient }}"
     repositories:
       - name: Oracle Instant Client for Oracle Linux 8 (x86_64) - License Included
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_oracle_instantclient21
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_oracle_instantclient21"
     organization: "{{ foreman_organization_ol8_instantclient }}"
     repositories:
       - name: Oracle Instant Client 21 for Oracle Linux 8 (x86_64) - License Included
         product: Oracle Linux
     allow_promote: False
-  - name: cv_ol8_x86_64_oracle
+  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_oracle"
     organization: "{{ foreman_organization_ol8_instantclient }}"
     repositories:
       - name: Oracle ASMlib for Oracle Linux 8 (x86_64)
