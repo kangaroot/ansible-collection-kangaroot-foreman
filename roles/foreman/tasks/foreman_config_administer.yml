@@ -123,3 +123,20 @@
     label: "{{ foreman_usergroups_item.name }}"
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
+- name: "Configuration | Create external user group links"
+  theforeman.foreman.external_usergroup:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_external_usergroups_item.name }}"
+    # updated_name: "{{ foreman_external_usergroups_item.updated_name | default(omit) }}"
+    usergroup: "{{ foreman_external_usergroups_item.usergroup | default(omit) }}"
+    auth_source: "{{ foreman_external_usergroups_item.auth_source | default(omit) }}"
+    state: "{{ foreman_external_usergroups_item.state | default('present') }}"
+  loop: "{{ foreman_external_usergroups | default([]) }}"
+  loop_control:
+    loop_var: "foreman_external_usergroups_item"
+    label: "{{ foreman_external_usergroups_item.name }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
+
