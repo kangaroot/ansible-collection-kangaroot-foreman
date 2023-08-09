@@ -76,25 +76,6 @@
     label: "{{ foreman_roles_item.name }}"
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
-- name: "Configuration | Create user groups"
-  theforeman.foreman.usergroup:
-    username: "{{ foreman_username | default(omit) }}"
-    password: "{{ foreman_password | default(omit) }}"
-    server_url: "{{ foreman_server_url | default(omit) }}"
-    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
-    name: "{{ foreman_usergroups_item.name }}"
-    updated_name: "{{ foreman_usergroups_item.updated_name | default(omit) }}"
-    admin: "{{ foreman_usergroups_item.admin | default(false) | bool }}"
-    roles: "{{ foreman_usergroups_item.roles | default(omit) }}"
-    usergroups: "{{ foreman_usergroups_item.usergroups | default(omit) }}"
-    users: "{{ foreman_usergroups_item.attr_usersphoto | default(omit) }}"
-    state: "{{ foreman_usergroups_item.state | default('present') }}"
-  loop: "{{ foreman_usergroups | default([]) }}"
-  loop_control:
-    loop_var: "foreman_usergroups_item"
-    label: "{{ foreman_usergroups_item.name }}"
-  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
-
 - name: "Configuration | Create users"
   theforeman.foreman.user:
     username: "{{ foreman_username | default(omit) }}"
@@ -121,5 +102,24 @@
   loop_control:
     loop_var: "foreman_users_item"
     label: "{{ foreman_users_item.login }}"
+  tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
+
+- name: "Configuration | Create user groups"
+  theforeman.foreman.usergroup:
+    username: "{{ foreman_username | default(omit) }}"
+    password: "{{ foreman_password | default(omit) }}"
+    server_url: "{{ foreman_server_url | default(omit) }}"
+    validate_certs: "{{ foreman_validate_certs | default(omit) }}"
+    name: "{{ foreman_usergroups_item.name }}"
+    updated_name: "{{ foreman_usergroups_item.updated_name | default(omit) }}"
+    admin: "{{ foreman_usergroups_item.admin | default(false) | bool }}"
+    roles: "{{ foreman_usergroups_item.roles | default(omit) }}"
+    usergroups: "{{ foreman_usergroups_item.usergroups | default(omit) }}"
+    users: "{{ foreman_usergroups_item.users | default(omit) }}"
+    state: "{{ foreman_usergroups_item.state | default('present') }}"
+  loop: "{{ foreman_usergroups | default([]) }}"
+  loop_control:
+    loop_var: "foreman_usergroups_item"
+    label: "{{ foreman_usergroups_item.name }}"
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
