@@ -17,5 +17,5 @@
   loop_control:
     loop_var: "foreman_global_parameters_item"
     label: "{{ foreman_global_parameters_item.name }}"
-  tags: [ "foreman", "katello", "configuration" ]
+  tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
 
