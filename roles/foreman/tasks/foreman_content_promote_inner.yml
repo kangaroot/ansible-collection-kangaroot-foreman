@@ -16,6 +16,13 @@
   loop_control:
     loop_var: "content_view"
   when:
+    ( ( foreman_promote_content_view | default("") == "" and
+        foreman_promote_content_views | default([]) == [] ) or
+      ( foreman_promote_content_view | default("") != "" and 
+        foreman_promote_content_view | default("") == content_view.name ) or
+      ( foreman_promote_content_views | default([]) != [] and 
+        content_view.name in foreman_promote_content_views | default([]) )
+    ) and
     not content_view.composite | default(false) | bool and
     content_view.allow_promote | default(true) | bool
   tags: [ "katello_promote" ]
@@ -35,6 +42,13 @@
   loop_control:
     loop_var: "content_view"
   when:
+    ( ( foreman_promote_content_view | default("") == "" and
+        foreman_promote_content_views | default([]) == [] ) or
+      ( foreman_promote_content_view | default("") != "" and 
+        foreman_promote_content_view | default("") == content_view.name ) or
+      ( foreman_promote_content_views | default([]) != [] and 
+        content_view.name in foreman_promote_content_views | default([]) )
+    ) and
     content_view.composite | default(false) | bool and
     content_view.allow_promote | default(true) | bool
   tags: [ "katello_promote" ]

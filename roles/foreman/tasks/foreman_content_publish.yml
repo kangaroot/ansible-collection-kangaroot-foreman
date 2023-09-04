@@ -15,6 +15,13 @@
   loop_control:
     loop_var: "content_view"
   when:
+    ( ( foreman_publish_content_view | default("") == "" and
+        foreman_publish_content_views | default([]) == [] ) or
+      ( foreman_publish_content_view | default("") != "" and 
+        foreman_publish_content_view | default("") == content_view.name ) or
+      ( foreman_publish_content_views | default([]) != [] and 
+        content_view.name in foreman_publish_content_views | default([]) )
+    ) and
     not content_view.composite | default(false)
   register: content_view_publish_result
   tags: [ "katello_publish" ]
@@ -38,6 +45,13 @@
   loop_control:
     loop_var: "content_view"
   when:
+    ( ( foreman_publish_content_view | default("") == "" and
+        foreman_publish_content_views | default([]) == [] ) or
+      ( foreman_publish_content_view | default("") != "" and 
+        foreman_publish_content_view | default("") == content_view.name ) or
+      ( foreman_publish_content_views | default([]) != [] and 
+        content_view.name in foreman_publish_content_views | default([]) )
+    ) and
     content_view.composite | default(false) | bool and
     not content_view.auto_publish | default(false) | bool
   register: composite_content_view_publish_result

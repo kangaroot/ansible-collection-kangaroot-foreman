@@ -84,6 +84,24 @@ foreman_content_roles:
   # Builtin content
   - kangaroot.foreman.foreman_content_builtin
 
+### ======================================
+### Content publish, promote and cleanup
+### ======================================
+
+### Content publishing
+foreman_publish_content: false
+foreman_publish_content_view: ""
+foreman_publish_content_views: []
+
+### Content promoting
+foreman_promote_content: false
+foreman_promote_content_view: ""
+foreman_promote_content_views: []
+foreman_promote_lifecycle_environments: []
+
+### Content Cleanup
+foreman_cleanup_content: false
+
 ###############################################################################
 ### Hosts / Provisioning section
 ###############################################################################

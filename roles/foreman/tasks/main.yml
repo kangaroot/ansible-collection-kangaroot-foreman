@@ -29,22 +29,32 @@
 
 - name: "Debug | Content Publish | Include Content publish debug tasks"
   ansible.builtin.include_tasks: foreman_content_publish_debug.yml
+  when:
+    foreman_publish_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_publish_debug" ]
 
 - name: "Content Publish | Include Content publish tasks"
   ansible.builtin.include_tasks: foreman_content_publish.yml
+  when:
+    foreman_publish_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_publish" ]
 
 - name: "Debug | Content Promote | Include Content promote debug tasks"
   ansible.builtin.include_tasks: foreman_content_promote_debug.yml
+  when:
+    foreman_promote_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_promote_debug" ]
 
 - name: "Content Promote | Include Content promote tasks"
   ansible.builtin.include_tasks: foreman_content_promote.yml
+  when:
+    foreman_promote_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_promote" ]
 
 - name: "Content Cleanup | Include Content cleanup tasks"
   ansible.builtin.include_tasks: foreman_content_cleanup.yml
+  when:
+    foreman_cleanup_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_cleanup" ]
 
 

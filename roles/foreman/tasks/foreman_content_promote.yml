@@ -7,6 +7,6 @@
   loop_control:
     loop_var: lifecycle_environment
   when:
-    lifecycle_environment.name | default(lifecycle_environment) in promote_lifecycle_environments | default([])
+    lifecycle_environment.name | default(lifecycle_environment) in foreman_promote_lifecycle_environments | default([])
   tags: [ "katello_promote" ]
 
