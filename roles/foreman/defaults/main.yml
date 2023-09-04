@@ -32,32 +32,10 @@ foreman_compute_profiles: []
 ###############################################################################
 ### Foreman Content section
 ###############################################################################
-# foreman_manifest_download: false
-foreman_manifest_uuid: ''
-foreman_rhsm_username: ''
-foreman_rhsm_password: ''
-foreman_manifest_path: ''
-# foreman_manifest_state: present
-
-foreman_lifecycle_environments: []
-foreman_content_credentials: []
-foreman_products: []
 
 ### ======================================
-### DEB products default deb_components
+### Content include selection
 ### ======================================
-
-# foreman_products_deb_default_deb_components: main contrib non-free
-foreman_products_deb_default_deb_components: main
-
-foreman_cv_prefix: cv_
-foreman_ccv_prefix: ccv_
-foreman_content_views: []
-foreman_activation_keys: []
-foreman_sync_plans: []
-
-# Foreman convent view versions to keep at cleanup
-foreman_content_view_version_cleanup_keep: 5
 
 # Foreman content roles to include
 foreman_content_roles:
@@ -101,6 +79,36 @@ foreman_promote_lifecycle_environments: []
 
 ### Content Cleanup
 foreman_cleanup_content: false
+# Foreman convent view versions to keep at cleanup
+foreman_content_view_version_cleanup_keep: 5
+
+### ======================================
+### Main content vars
+### ======================================
+
+# foreman_manifest_download: false
+foreman_manifest_uuid: ""
+foreman_rhsm_username: ""
+foreman_rhsm_password: ""
+foreman_manifest_path: ""
+# foreman_manifest_state: present
+
+foreman_lifecycle_environments: []
+foreman_content_credentials: []
+foreman_products: []
+
+### ======================================
+### DEB products default deb_components
+### ======================================
+
+# foreman_products_deb_default_deb_components: main contrib non-free
+foreman_products_deb_default_deb_components: main
+
+foreman_cv_prefix: cv_
+foreman_ccv_prefix: ccv_
+foreman_content_views: []
+foreman_activation_keys: []
+foreman_sync_plans: []
 
 ###############################################################################
 ### Hosts / Provisioning section
