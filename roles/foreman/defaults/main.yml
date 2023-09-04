@@ -164,4 +164,5 @@ foreman_operatingsystems_deb_default_templates: []
 ### Foreman Configuration section
 ###############################################################################
 foreman_global_parameters: []
+foreman_hostgroups: []
 

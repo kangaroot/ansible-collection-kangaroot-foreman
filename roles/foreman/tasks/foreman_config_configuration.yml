@@ -19,3 +19,8 @@
     label: "{{ foreman_global_parameters_item.name }}"
   tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
 
+- name: "Configuration | Include theforeman.foreman.hostgroups role"
+  ansible.builtin.import_role:
+    name: theforeman.foreman.hostgroups
+  tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
+
