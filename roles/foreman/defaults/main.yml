@@ -100,9 +100,6 @@ foreman_content_views: []
 foreman_activation_keys: []
 foreman_sync_plans: []
 
-foreman_cv_prefix: cv_
-foreman_ccv_prefix: ccv_
-
 ### ======================================
 ### DEB products default deb_components
 ### ======================================
@@ -120,6 +117,12 @@ foreman_products_defaults_verify_ssl_on_sync: false
 foreman_products_defaults_http_proxy_policy: global_default_http_proxy
 foreman_products_defaults_unprotected: false
 
+### ======================================
+### Content View Defaults
+### ======================================
+
+foreman_cv_prefix: cv_
+foreman_ccv_prefix: ccv_
 
 ###############################################################################
 ### Hosts / Provisioning section
