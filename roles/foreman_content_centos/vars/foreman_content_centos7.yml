@@ -18,18 +18,16 @@ foreman_content_credentials_centos7:
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: immediate
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
-
-foreman_products_on_demand: &foreman_products_on_demand
-  <<: *foreman_products_defaults
-  download_policy: on_demand
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
 
 
 foreman_products_centos7:
@@ -65,18 +63,18 @@ foreman_products_centos7:
 
       - name: CentOS 7 - cr
         label: centos-7-cr
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cr/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
       - name: CentOS 7 LTS Kernels for x86_64
         label: centos-7-kernel
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_altarch }}/7/kernel/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
       - name: CentOS 7 Experimental Kernels for x86_64
         label: centos-7-kernel-experimental
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_altarch }}/7/experimental/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 

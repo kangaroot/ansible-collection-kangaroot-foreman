@@ -6,14 +6,33 @@ foreman_content_credentials_centos8: []
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+
+
+foreman_products_defaults_centos8: &foreman_products_defaults_centos8
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+
+foreman_products_defaults_centos8_kickstart: &foreman_products_defaults_centos8_kickstart
+  <<: *foreman_products_defaults_centos8
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8_kickstart | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_kickstart | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_kickstart | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_kickstart | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(false) | bool }}"
 
 
 foreman_products_centos8:
@@ -23,53 +42,53 @@ foreman_products_centos8:
     repositories:
       - name: CentOS 8 - BaseOS
         label: centos-8-baseos
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream
         label: centos-8-appstream
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - Extras
         label: centos-8-extras
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - Plus
         label: centos-8-plus
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - PowerTools
         label: centos-8-powertools
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - HighAvailability
         label: centos-8-ha
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - ContinuousRelease
         label: centos-8-cr
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - FastTrack
         label: centos-8-fasttrack
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
 
       - name: CentOS 8 - BaseOS Kickstart
         label: centos-8-baseos-kickstart
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8_kickstart
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream Kickstart
         label: centos-8-appstream-kickstart
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos8_kickstart
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
 

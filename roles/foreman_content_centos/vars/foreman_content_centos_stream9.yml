@@ -2,17 +2,20 @@
 
 foreman_content_credentials_centos_stream9: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream9 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream9 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream9 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream9 | default(false) | bool }}"
 
 
 foreman_products_centos_stream9:

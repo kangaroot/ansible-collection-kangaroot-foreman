@@ -489,6 +489,202 @@ foreman_enable_centos_stream9_sig_hyperscale_experimental: false
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### CENTOS
+
+foreman_products_defaults_download_policy_centos: "{{ foreman_products_defaults_download_policy | default('on_demand') }}"
+foreman_products_defaults_mirroring_policy_centos: "{{ foreman_products_defaults_mirroring_policy | default('mirror_complete') }}"
+foreman_products_defaults_verify_ssl_on_sync_centos: "{{ foreman_products_defaults_verify_ssl_on_sync | default(false) | bool }}"
+foreman_products_defaults_http_proxy_policy_centos: "{{ foreman_products_defaults_http_proxy_policy | default('global_default_http_proxy') }}"
+foreman_products_defaults_unprotected_centos: "{{ foreman_products_defaults_unprotected | default(false) | bool }}"
+
+### CENTOS 7
+
+foreman_products_defaults_download_policy_centos7: immediate
+
+foreman_products_defaults_download_policy_centos70: on_demand
+foreman_products_defaults_download_policy_centos71: on_demand
+foreman_products_defaults_download_policy_centos72: on_demand
+foreman_products_defaults_download_policy_centos73: on_demand
+foreman_products_defaults_download_policy_centos74: on_demand
+foreman_products_defaults_download_policy_centos75: on_demand
+foreman_products_defaults_download_policy_centos76: on_demand
+foreman_products_defaults_download_policy_centos77: on_demand
+foreman_products_defaults_download_policy_centos78: on_demand
+foreman_products_defaults_download_policy_centos79: on_demand
+
+foreman_products_defaults_mirroring_policy_centos7: "{{ foreman_products_defaults_mirroring_policy_centos | default('mirror_complete') }}"
+
+foreman_products_defaults_mirroring_policy_centos70: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos71: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos72: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos73: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos74: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos75: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos76: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos77: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos78: mirror_content_only
+foreman_products_defaults_mirroring_policy_centos79: mirror_content_only
+
+foreman_products_defaults_verify_ssl_on_sync_centos7: "{{ foreman_products_defaults_verify_ssl_on_sync_centos | default(false) | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos70: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos71: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos72: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos73: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos74: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos75: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos76: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos77: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos78: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos79: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) | bool }}"
+
+foreman_products_defaults_http_proxy_policy_centos7: "{{ foreman_products_defaults_http_proxy_policy_centos | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_http_proxy_policy_centos70: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos71: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos72: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos73: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos74: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos75: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos76: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos77: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos78: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos79: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_unprotected_centos7: "{{ foreman_products_defaults_unprotected_centos | default(false) | bool }}"
+
+foreman_products_defaults_unprotected_centos70: true
+foreman_products_defaults_unprotected_centos71: true
+foreman_products_defaults_unprotected_centos72: true
+foreman_products_defaults_unprotected_centos73: true
+foreman_products_defaults_unprotected_centos74: true
+foreman_products_defaults_unprotected_centos75: true
+foreman_products_defaults_unprotected_centos76: true
+foreman_products_defaults_unprotected_centos77: true
+foreman_products_defaults_unprotected_centos78: true
+foreman_products_defaults_unprotected_centos79: true
+
+### CENTOS 8
+
+foreman_products_defaults_download_policy_centos8: "{{ foreman_products_defaults_download_policy_centos | default('on_demand') }}"
+
+foreman_products_defaults_download_policy_centos80: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos81: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos82: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos83: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos84: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos85: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+
+foreman_products_defaults_download_policy_centos8_kickstart: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+
+foreman_products_defaults_download_policy_centos80_kickstart: "{{ foreman_products_defaults_download_policy_centos80 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos81_kickstart: "{{ foreman_products_defaults_download_policy_centos81 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos82_kickstart: "{{ foreman_products_defaults_download_policy_centos82 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos83_kickstart: "{{ foreman_products_defaults_download_policy_centos83 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos84_kickstart: "{{ foreman_products_defaults_download_policy_centos84 | default('on_demand') }}"
+foreman_products_defaults_download_policy_centos85_kickstart: "{{ foreman_products_defaults_download_policy_centos85 | default('on_demand') }}"
+
+foreman_products_defaults_mirroring_policy_centos8: "{{ foreman_products_defaults_mirroring_policy_centos | default('mirror_complete') }}"
+
+foreman_products_defaults_mirroring_policy_centos80: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos81: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos82: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos83: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos84: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos85: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+
+foreman_products_defaults_mirroring_policy_centos8_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
+
+foreman_products_defaults_mirroring_policy_centos80_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos80 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos81_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos81 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos82_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos82 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos83_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos83 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos84_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos84 | default('mirror_complete') }}"
+foreman_products_defaults_mirroring_policy_centos85_kickstart: "{{ foreman_products_defaults_mirroring_policy_centos85 | default('mirror_complete') }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos8: "{{ foreman_products_defaults_verify_ssl_on_sync_centos | default(false) | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos80: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos81: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos82: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos83: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos84: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos85: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos8_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos80_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos80 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos81_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos81 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos82_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos82 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos83_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos83 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos84_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos84 | default(false) | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_centos85_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_centos85 | default(false) | bool }}"
+
+foreman_products_defaults_http_proxy_policy_centos8: "{{ foreman_products_defaults_http_proxy_policy_centos | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_http_proxy_policy_centos80: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos81: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos82: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos83: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos84: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos85: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_http_proxy_policy_centos8_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_http_proxy_policy_centos80_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos80 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos81_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos81 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos82_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos82 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos83_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos83 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos84_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos84 | default('global_default_http_proxy') }}"
+foreman_products_defaults_http_proxy_policy_centos85_kickstart: "{{ foreman_products_defaults_http_proxy_policy_centos85 | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_unprotected_centos8: "{{ foreman_products_defaults_unprotected_centos | default(false) | bool }}"
+
+foreman_products_defaults_unprotected_centos80: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+foreman_products_defaults_unprotected_centos81: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+foreman_products_defaults_unprotected_centos82: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+foreman_products_defaults_unprotected_centos83: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+foreman_products_defaults_unprotected_centos84: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+foreman_products_defaults_unprotected_centos85: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+
+foreman_products_defaults_unprotected_centos8_kickstart: true
+
+foreman_products_defaults_unprotected_centos80_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+foreman_products_defaults_unprotected_centos81_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+foreman_products_defaults_unprotected_centos82_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+foreman_products_defaults_unprotected_centos83_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+foreman_products_defaults_unprotected_centos84_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+foreman_products_defaults_unprotected_centos85_kickstart: "{{ foreman_products_defaults_unprotected_centos8_kickstart | default(true) | bool }}"
+
+### CENTOS STEAM 8
+
+foreman_products_defaults_download_policy_centos_stream8: "{{ foreman_products_defaults_download_policy_centos | default('on_demand') }}"
+
+foreman_products_defaults_mirroring_policy_centos_stream8: "{{ foreman_products_defaults_mirroring_policy_centos | default('mirror_complete') }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos_stream8: "{{ foreman_products_defaults_verify_ssl_on_sync_centos | default(false) | bool }}"
+
+foreman_products_defaults_http_proxy_policy_centos_stream8: "{{ foreman_products_defaults_http_proxy_policy_centos | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_unprotected_centos_stream8: "{{ foreman_products_defaults_unprotected_centos | default(false) | bool }}"
+
+### CENTOS STEAM 9
+
+foreman_products_defaults_download_policy_centos_stream9: "{{ foreman_products_defaults_download_policy_centos | default('on_demand') }}"
+
+foreman_products_defaults_mirroring_policy_centos_stream9: "{{ foreman_products_defaults_mirroring_policy_centos | default('mirror_complete') }}"
+
+foreman_products_defaults_verify_ssl_on_sync_centos_stream9: "{{ foreman_products_defaults_verify_ssl_on_sync_centos | default(false) | bool }}"
+
+foreman_products_defaults_http_proxy_policy_centos_stream9: "{{ foreman_products_defaults_http_proxy_policy_centos | default('global_default_http_proxy') }}"
+
+foreman_products_defaults_unprotected_centos_stream9: "{{ foreman_products_defaults_unprotected_centos | default(false) | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
