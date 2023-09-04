@@ -561,7 +561,7 @@ foreman_operatingsystems_centos70:
   - name: "CentOS"
     major: "7"
     minor: "0.1406"
-    description: "CentOS 7.0.1406"
+    description: "CentOS Linux release 7.0.1406 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -569,7 +569,7 @@ foreman_operatingsystems_centos71:
   - name: "CentOS"
     major: "7"
     minor: "1.1503"
-    description: "CentOS 7.1.1503"
+    description: "CentOS Linux release 7.1.1503 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -577,7 +577,7 @@ foreman_operatingsystems_centos72:
   - name: "CentOS"
     major: "7"
     minor: "2.1511"
-    description: "CentOS 7.2.1511"
+    description: "CentOS Linux release 7.2.1511 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -585,7 +585,7 @@ foreman_operatingsystems_centos73:
   - name: "CentOS"
     major: "7"
     minor: "3.1611"
-    description: "CentOS 7.3.1611"
+    description: "CentOS Linux release 7.3.1611 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -593,7 +593,7 @@ foreman_operatingsystems_centos74:
   - name: "CentOS"
     major: "7"
     minor: "4.1708"
-    description: "CentOS 7.4.1708"
+    description: "CentOS Linux release 7.4.1708 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -601,7 +601,7 @@ foreman_operatingsystems_centos75:
   - name: "CentOS"
     major: "7"
     minor: "5.1804"
-    description: "CentOS 7.5.1804"
+    description: "CentOS Linux release 7.5.1804"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -609,7 +609,7 @@ foreman_operatingsystems_centos76:
   - name: "CentOS"
     major: "7"
     minor: "6.1810"
-    description: "CentOS 7.6.1810"
+    description: "CentOS Linux release 7.6.1810 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -617,7 +617,7 @@ foreman_operatingsystems_centos77:
   - name: "CentOS"
     major: "7"
     minor: "7.1908"
-    description: "CentOS 7.7.1908"
+    description: "CentOS Linux release 7.7.1908 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -625,7 +625,7 @@ foreman_operatingsystems_centos78:
   - name: "CentOS"
     major: "7"
     minor: "8.2003"
-    description: "CentOS 7.8.2003"
+    description: "CentOS Linux release 7.8.2003 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -633,7 +633,7 @@ foreman_operatingsystems_centos79:
   - name: "CentOS"
     major: "7"
     minor: "9.2009"
-    description: "CentOS 7.9.2009"
+    description: "CentO Linux releaseS 7.9.2009 (Core)"
     default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -666,63 +666,63 @@ foreman_installation_media_centos70:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-70/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.0.1406
+      - CentOS Linux release 7.0.1406 (Core)
 
 foreman_installation_media_centos71:
   - name: CentOS 7.1.1503
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-71/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.1.1503
+      - CentOS Linux release 7.1.1503 (Core)
 
 foreman_installation_media_centos72:
   - name: CentOS 7.2.1511
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-72/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.2.1511
+      - CentOS Linux release 7.2.1511 (Core)
 
 foreman_installation_media_centos73:
   - name: CentOS 7.3.1611
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-73/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.3.1611
+      - CentOS Linux release 7.3.1611 (Core)
 
 foreman_installation_media_centos74:
   - name: CentOS 7.4.1708
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-74/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.4.1708
+      - CentOS Linux release 7.4.1708 (Core)
 
 foreman_installation_media_centos75:
   - name: CentOS 7.5.1804
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-75/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.5.1804
+      - CentOS Linux release 7.5.1804 (Core)
 
 foreman_installation_media_centos76:
   - name: CentOS 7.6.1810
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-76/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.6.1810
+      - CentOS Linux release 7.6.1810 (Core)
 
 foreman_installation_media_centos77:
   - name: CentOS 7.7.1908
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-77/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.7.1908
+      - CentOS Linux release 7.7.1908 (Core)
 
 foreman_installation_media_centos78:
   - name: CentOS 7.8.2003
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-78/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7.8.2003
+      - CentOS Linux release 7.8.2003 (Core)
 
 foreman_installation_media_centos79:
   - name: CentOS 7.9.2009
@@ -730,7 +730,7 @@ foreman_installation_media_centos79:
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 7
-      - CentOS 7.9.2009
+      - CentOS Linux release 7.9.2009 (Core)
 
 foreman_installation_media_centos7_versions: "{{ [] |
   union( foreman_installation_media_centos70 | default([]) if foreman_enable_centos70 else [] ) |

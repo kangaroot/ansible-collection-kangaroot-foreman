@@ -165,7 +165,7 @@ foreman_operatingsystems_centos_stream9:
   - name: "CentOS_Stream"
     major: "9"
     minor: ""
-    description: "CentOS Stream 9"
+    description: "CentOS Stream release 9"
     default_templates: "{{ foreman_operatingsystems_centos_stream9_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -185,12 +185,12 @@ foreman_installation_media_centos_stream9:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-9-baseos/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS Stream 9
+      - CentOS Stream release 9
   - name: CentOS Stream 9 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-9-appstream/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS Stream 9
+      - CentOS Stream release 9
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults

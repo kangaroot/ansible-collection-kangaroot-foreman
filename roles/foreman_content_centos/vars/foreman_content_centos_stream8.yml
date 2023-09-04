@@ -174,10 +174,10 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 
 
 foreman_operatingsystems_centos_stream8:
-  - name: "CentOS_Stream"
+  - name: "CentOSStream"
     major: "8"
     minor: ""
-    description: "CentOS Stream 8"
+    description: "CentOS Stream release 8"
     default_templates: "{{ foreman_operatingsystems_centos_stream8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -197,12 +197,12 @@ foreman_installation_media_centos_stream8:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-8-baseos/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS Stream 8
+      - CentOS Stream release 8
   - name: CentOS Stream 8 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-8-appstream/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS Stream 8
+      - CentOS Stream release 8
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
