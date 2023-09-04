@@ -110,6 +110,17 @@ foreman_ccv_prefix: ccv_
 # foreman_products_deb_default_deb_components: main contrib non-free
 foreman_products_deb_default_deb_components: main
 
+### ======================================
+### Product Defaults
+### ======================================
+
+foreman_products_defaults_download_policy: on_demand
+foreman_products_defaults_mirroring_policy: mirror_complete
+foreman_products_defaults_verify_ssl_on_sync: false
+foreman_products_defaults_http_proxy_policy: global_default_http_proxy
+foreman_products_defaults_unprotected: false
+
+
 ###############################################################################
 ### Hosts / Provisioning section
 ###############################################################################
