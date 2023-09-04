@@ -1229,7 +1229,7 @@ foreman_operatingsystems_redhat70_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "0"
-    description: "Red Hat 7.0"
+    description: "RHEL 7.0"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1237,7 +1237,7 @@ foreman_operatingsystems_redhat71_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "1"
-    description: "Red Hat 7.1"
+    description: "RHEL 7.1"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1245,7 +1245,7 @@ foreman_operatingsystems_redhat72_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "2"
-    description: "Red Hat 7.2"
+    description: "RHEL 7.2"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1253,7 +1253,7 @@ foreman_operatingsystems_redhat73_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "3"
-    description: "Red Hat 7.3"
+    description: "RHEL 7.3"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1261,7 +1261,7 @@ foreman_operatingsystems_redhat74_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "4"
-    description: "Red Hat 7.4"
+    description: "RHEL 7.4"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1269,7 +1269,7 @@ foreman_operatingsystems_redhat75_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "5"
-    description: "Red Hat 7.5"
+    description: "RHEL 7.5"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1277,7 +1277,7 @@ foreman_operatingsystems_redhat76_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "6"
-    description: "Red Hat 7.6"
+    description: "RHEL 7.6"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1285,7 +1285,7 @@ foreman_operatingsystems_redhat77_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "7"
-    description: "Red Hat 7.7"
+    description: "RHEL 7.7"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1293,7 +1293,7 @@ foreman_operatingsystems_redhat78_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "8"
-    description: "Red Hat 7.8"
+    description: "RHEL 7.8"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1301,7 +1301,7 @@ foreman_operatingsystems_redhat79_kickstart:
   - name: "RedHat"
     major: "7"
     minor: "9"
-    description: "Red Hat 7.9"
+    description: "RHEL 7.9"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -1341,74 +1341,74 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_redhat70_kickstart:
-  - name: Red Hat 7.0
+  - name: RHEL 7.0
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.0/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.0
+      - RHEL 7.0
 
 foreman_installation_media_redhat71_kickstart:
-  - name: Red Hat 7.1
+  - name: RHEL 7.1
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.1/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.1
+      - RHEL 7.1
 
 foreman_installation_media_redhat72_kickstart:
-  - name: Red Hat 7.2
+  - name: RHEL 7.2
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.2/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.2
+      - RHEL 7.2
 
 foreman_installation_media_redhat73_kickstart:
-  - name: Red Hat 7.3
+  - name: RHEL 7.3
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.3/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.3
+      - RHEL 7.3
 
 foreman_installation_media_redhat74_kickstart:
-  - name: Red Hat 7.4
+  - name: RHEL 7.4
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.4/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.4
+      - RHEL 7.4
 
 foreman_installation_media_redhat75_kickstart:
-  - name: Red Hat 7.5
+  - name: RHEL 7.5
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.5/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.5
+      - RHEL 7.5
 
 foreman_installation_media_redhat76_kickstart:
-  - name: Red Hat 7.6
+  - name: RHEL 7.6
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.6/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.6
+      - RHEL 7.6
 
 foreman_installation_media_redhat77_kickstart:
-  - name: Red Hat 7.7
+  - name: RHEL 7.7
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.7/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.7
+      - RHEL 7.7
 
 foreman_installation_media_redhat78_kickstart:
-  - name: Red Hat 7.8
+  - name: RHEL 7.8
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.8/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.8
+      - RHEL 7.8
 
 foreman_installation_media_redhat79_kickstart:
-  - name: Red Hat 7.9
+  - name: RHEL 7.9
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.9/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7.9
+      - RHEL 7.9
 
 foreman_installation_media_redhat7_versions: "{{ [] |
   union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |

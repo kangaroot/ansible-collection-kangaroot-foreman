@@ -257,7 +257,7 @@ foreman_operatingsystems_redhat7:
   - name: "RedHat"
     major: "7"
     minor: ""
-    description: "Red Hat 7"
+    description: "RHEL 7"
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -277,7 +277,7 @@ foreman_installation_media_redhat7:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x8664/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 7
+      - RHEL 7
 
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids

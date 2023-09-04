@@ -605,7 +605,7 @@ foreman_operatingsystems_redhat80_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "0"
-    description: "Red Hat 8.0"
+    description: "RHEL 8.0"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -613,7 +613,7 @@ foreman_operatingsystems_redhat81_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "1"
-    description: "Red Hat 8.1"
+    description: "RHEL 8.1"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -621,7 +621,7 @@ foreman_operatingsystems_redhat82_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "2"
-    description: "Red Hat 8.2"
+    description: "RHEL 8.2"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -629,7 +629,7 @@ foreman_operatingsystems_redhat83_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "3"
-    description: "Red Hat 8.3"
+    description: "RHEL 8.3"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -637,7 +637,7 @@ foreman_operatingsystems_redhat84_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "4"
-    description: "Red Hat 8.4"
+    description: "RHEL 8.4"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -645,7 +645,7 @@ foreman_operatingsystems_redhat85_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "5"
-    description: "Red Hat 8.5"
+    description: "RHEL 8.5"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -653,7 +653,7 @@ foreman_operatingsystems_redhat86_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "6"
-    description: "Red Hat 8.6"
+    description: "RHEL 8.6"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -661,7 +661,7 @@ foreman_operatingsystems_redhat87_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "7"
-    description: "Red Hat 8.7"
+    description: "RHEL 8.7"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -669,7 +669,7 @@ foreman_operatingsystems_redhat88_kickstart:
   - name: "RedHat"
     major: "8"
     minor: "8"
-    description: "Red Hat 8.8"
+    description: "RHEL 8.8"
     default_templates: "{{ foreman_operatingsystems_redhat8_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -711,108 +711,108 @@ foreman_installation_media_redhat80_kickstart:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.0/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.0
+      - RHEL 8.0
   - name: Red Hat 8.0 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.0/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.0
+      - RHEL 8.0
 
 foreman_installation_media_redhat81_kickstart:
   - name: Red Hat 8.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.1/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.1
+      - RHEL 8.1
   - name: Red Hat 8.1 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.1/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.1
+      - RHEL 8.1
 
 foreman_installation_media_redhat82_kickstart:
   - name: Red Hat 8.2 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.2
+      - RHEL 8.2
   - name: Red Hat 8.2 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.2/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.2
+      - RHEL 8.2
 
 foreman_installation_media_redhat83_kickstart:
   - name: Red Hat 8.3 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.3/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.3
+      - RHEL 8.3
   - name: Red Hat 8.3 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.3/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.3
+      - RHEL 8.3
 
 foreman_installation_media_redhat84_kickstart:
   - name: Red Hat 8.4 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.4/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.4
+      - RHEL 8.4
   - name: Red Hat 8.4 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.4/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.4
+      - RHEL 8.4
 
 foreman_installation_media_redhat85_kickstart:
   - name: Red Hat 8.5 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.5/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.5
+      - RHEL 8.5
   - name: Red Hat 8.5 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.5/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.5
+      - RHEL 8.5
 
 foreman_installation_media_redhat86_kickstart:
   - name: Red Hat 8.6 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.6
+      - RHEL 8.6
   - name: Red Hat 8.6 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.6
+      - RHEL 8.6
 
 foreman_installation_media_redhat87_kickstart:
   - name: Red Hat 8.7 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.7
+      - RHEL 8.7
   - name: Red Hat 8.7 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.7
+      - RHEL 8.7
 
 foreman_installation_media_redhat88_kickstart:
   - name: Red Hat 8.8 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.8
+      - RHEL 8.8
   - name: Red Hat 8.8 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 8.8
+      - RHEL 8.8
 
 foreman_installation_media_redhat8_versions: "{{ [] |
   union( foreman_installation_media_redhat80 | default([]) if foreman_enable_redhat80 else [] ) |

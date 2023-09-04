@@ -221,7 +221,7 @@ foreman_operatingsystems_redhat90_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "0"
-    description: "Red Hat 9.0"
+    description: "RHEL 9.0"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -229,7 +229,7 @@ foreman_operatingsystems_redhat91_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "1"
-    description: "Red Hat 9.1"
+    description: "RHEL 9.1"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -237,7 +237,7 @@ foreman_operatingsystems_redhat92_kickstart:
   - name: "RedHat"
     major: "9"
     minor: "2"
-    description: "Red Hat 9.2"
+    description: "RHEL 9.2"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -267,36 +267,36 @@ foreman_installation_media_redhat90_kickstart:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.0
+      - RHEL 9.0
   - name: Red Hat 9.0 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.0/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.0
+      - RHEL 9.0
 
 foreman_installation_media_redhat91_kickstart:
   - name: Red Hat 9.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.1
+      - RHEL 9.1
   - name: Red Hat 9.1 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.1/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.1
+      - RHEL 9.1
 
 foreman_installation_media_redhat92_kickstart:
   - name: Red Hat 9.2 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.2
+      - RHEL 9.2
   - name: Red Hat 9.2 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9.2
+      - RHEL 9.2
 
 foreman_installation_media_redhat9_versions: "{{ [] |
   union( foreman_installation_media_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |

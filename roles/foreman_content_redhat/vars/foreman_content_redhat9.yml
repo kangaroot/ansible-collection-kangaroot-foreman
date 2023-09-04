@@ -95,7 +95,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_redhat9:
   - name: "RedHat"
     major: "9"
-    description: "Red Hat 9"
+    description: "RHEL 9"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
@@ -115,12 +115,12 @@ foreman_installation_media_redhat9:
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9
+      - RHEL 9
   - name: Red Hat 9 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - Red Hat 9
+      - RHEL 9
 
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
