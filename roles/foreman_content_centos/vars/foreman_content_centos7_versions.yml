@@ -3,97 +3,97 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | bool }}"
 
 
 foreman_products_defaults_centos70: &foreman_products_defaults_centos70
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos70 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos70 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos70 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos70 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos70 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos70 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos70 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos70 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos70 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos70 | bool }}"
 
 foreman_products_defaults_centos71: &foreman_products_defaults_centos71
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos71 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos71 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos71 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos71 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos71 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos71 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos71 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos71 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos71 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos71 | bool }}"
 
 foreman_products_defaults_centos72: &foreman_products_defaults_centos72
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos72 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos72 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos72 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos72 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos72 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos72 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos72 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos72 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos72 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos72 | bool }}"
 
 foreman_products_defaults_centos73: &foreman_products_defaults_centos73
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos73 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos73 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos73 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos73 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos73 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos73 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos73 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos73 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos73 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos73 | bool }}"
 
 foreman_products_defaults_centos74: &foreman_products_defaults_centos74
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos74 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos74 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos74 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos74 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos74 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos74 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos74 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos74 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos74 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos74 | bool }}"
 
 foreman_products_defaults_centos75: &foreman_products_defaults_centos75
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos75 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos75 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos75 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos75 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos75 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos75 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos75 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos75 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos75 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos75 | bool }}"
 
 foreman_products_defaults_centos76: &foreman_products_defaults_centos76
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos76 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos76 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos76 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos76 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos76 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos76 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos76 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos76 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos76 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos76 | bool }}"
 
 foreman_products_defaults_centos77: &foreman_products_defaults_centos77
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos77 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos77 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos77 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos77 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos77 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos77 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos77 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos77 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos77 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos77 | bool }}"
 
 foreman_products_defaults_centos78: &foreman_products_defaults_centos78
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos78 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos78 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos78 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos78 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos78 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos78 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos78 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos78 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos78 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos78 | bool }}"
 
 foreman_products_defaults_centos79: &foreman_products_defaults_centos79
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos79 | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos79 | default('mirror_content_only') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos79 | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos79 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos79 | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos79 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos79 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos79 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos79 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos79 | bool }}"
 
 
 foreman_products_centos70:

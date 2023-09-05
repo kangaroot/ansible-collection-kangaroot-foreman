@@ -3,25 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | bool }}"
 
 
 foreman_products_defaults_centos7_sig_paas: &foreman_products_defaults_centos7_sig_paas
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_paas | default('immediate') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_paas | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_paas | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_paas | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_paas | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_paas }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_paas }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_paas | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_paas }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_paas | bool }}"
 
 
 foreman_products_centos7_sig_paas_openshift_origin:

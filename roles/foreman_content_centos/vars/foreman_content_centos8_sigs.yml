@@ -3,41 +3,41 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: "{{ foreman_products_defaults_download_policy_centos8 | default('on_demand') }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8 | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | default(false) }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8 | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos8 | default(false) | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8 | bool }}"
 
 
 foreman_products_defaults_centos8_sig_opstools: &foreman_products_defaults_centos8_sig_opstools
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_opstools | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_opstools | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_opstools | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_opstools | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_opstools | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_opstools }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_opstools }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_opstools | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_opstools }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_opstools | bool }}"
 
 foreman_products_defaults_centos8_sig_nfv: &foreman_products_defaults_centos8_sig_nfv
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_nfv | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_nfv | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_nfv | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_nfv | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_nfv | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_nfv }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_nfv }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_nfv | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_nfv }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_nfv | bool }}"
 
 foreman_products_defaults_centos8_sig_messaging: &foreman_products_defaults_centos8_sig_messaging
   <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_messaging | default('on_demand') }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_messaging | default('mirror_complete') }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_messaging | default(false) }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_messaging | default('global_default_http_proxy') }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_messaging | default(false) | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos8_sig_messaging }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_sig_messaging }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_sig_messaging | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_sig_messaging }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos8_sig_messaging | bool }}"
 
 
 foreman_products_centos8_sig_opstools:
