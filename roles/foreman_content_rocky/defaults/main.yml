@@ -352,7 +352,7 @@ foreman_products_defaults_unprotected_rocky9_sig_cloud: "{{ foreman_products_def
 
 ### ROCKY
 
-foreman_organization_rocky: false
+foreman_organization_rocky: "{{ foreman_organization }}"
 
 ### ROCKY 8
 

@@ -862,7 +862,7 @@
 
 ### ROCKY
 
-# foreman_organization_rocky: false
+# foreman_organization_rocky: "{{ foreman_organization }}"
 
 ### ROCKY 8
 
