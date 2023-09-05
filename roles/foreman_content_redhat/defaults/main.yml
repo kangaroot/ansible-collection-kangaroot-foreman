@@ -13,7 +13,7 @@
 ### Red Hat operating system default templates
 # foreman_operatingsystems_redhat_template_cloud_init: "{{ foreman_operatingsystems_el_template_cloud_init | default('CloudInit default') }}"
 # foreman_operatingsystems_redhat_template_finish: "{{ foreman_operatingsystems_el_template_finish | default('Kickstart default finish') }}"
-# foreman_operatingsystems_redhat_template_host_init_config: "{{ foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_redhat_template_host_init_config: "{{ foreman_operatingsystems_el_template_host_init_config | default('Linux host_init_config default') }}"
 # foreman_operatingsystems_redhat_template_ipxe: "{{ foreman_operatingsystems_el_template_ipxe | default('Kickstart default iPXE') }}"
 # foreman_operatingsystems_redhat_template_provision: "{{ foreman_operatingsystems_el_template_provision | default('Kickstart default') }}"
 # foreman_operatingsystems_redhat_template_pxegrub: "{{ foreman_operatingsystems_el_template_pxegrub | default('Kickstart default PXEGrub') }}"
