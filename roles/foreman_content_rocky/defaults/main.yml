@@ -170,6 +170,183 @@ foreman_enable_rocky9_sig_cloud_kernel: false
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### ROCKY
+
+foreman_products_defaults_download_policy_rocky: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_rocky: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_rocky: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_rocky: "{{ foreman_products_defaults_unprotected | bool }}"
+
+### ROCKY 8
+
+foreman_products_defaults_download_policy_rocky8: "{{ foreman_products_defaults_download_policy_rocky }}"
+
+foreman_products_defaults_download_policy_rocky84: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky85: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky86: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky87: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky88: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+
+foreman_products_defaults_download_policy_rocky8_kickstart: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky84_kickstart: "{{ foreman_products_defaults_download_policy_rocky84 }}"
+foreman_products_defaults_download_policy_rocky85_kickstart: "{{ foreman_products_defaults_download_policy_rocky85 }}"
+foreman_products_defaults_download_policy_rocky86_kickstart: "{{ foreman_products_defaults_download_policy_rocky86 }}"
+foreman_products_defaults_download_policy_rocky87_kickstart: "{{ foreman_products_defaults_download_policy_rocky87 }}"
+foreman_products_defaults_download_policy_rocky88_kickstart: "{{ foreman_products_defaults_download_policy_rocky88 }}"
+
+foreman_products_defaults_download_policy_rocky8_sig_core: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+foreman_products_defaults_download_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_download_policy_rocky8 }}"
+
+foreman_products_defaults_mirroring_policy_rocky8: "{{ foreman_products_defaults_mirroring_policy_rocky }}"
+
+foreman_products_defaults_mirroring_policy_rocky84: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky85: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky86: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky87: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky88: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+
+foreman_products_defaults_mirroring_policy_rocky8_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky84_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky84 }}"
+foreman_products_defaults_mirroring_policy_rocky85_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky85 }}"
+foreman_products_defaults_mirroring_policy_rocky86_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky86 }}"
+foreman_products_defaults_mirroring_policy_rocky87_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky87 }}"
+foreman_products_defaults_mirroring_policy_rocky88_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky88 }}"
+
+foreman_products_defaults_mirroring_policy_rocky8_sig_core: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+foreman_products_defaults_mirroring_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky8: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky84: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky85: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky86: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky87: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky88: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky8_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky84_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky84 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky85_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky85 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky86_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky86 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky87_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky87 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky88_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky88 | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky8_sig_core: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky8_sig_cloud: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
+
+foreman_products_defaults_http_proxy_policy_rocky8: "{{ foreman_products_defaults_http_proxy_policy_rocky }}"
+
+foreman_products_defaults_http_proxy_policy_rocky84: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky85: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky86: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky87: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky88: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+
+foreman_products_defaults_http_proxy_policy_rocky8_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky84_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky84 }}"
+foreman_products_defaults_http_proxy_policy_rocky85_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky85 }}"
+foreman_products_defaults_http_proxy_policy_rocky86_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky86 }}"
+foreman_products_defaults_http_proxy_policy_rocky87_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky87 }}"
+foreman_products_defaults_http_proxy_policy_rocky88_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky88 }}"
+
+foreman_products_defaults_http_proxy_policy_rocky8_sig_core: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+foreman_products_defaults_http_proxy_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+
+foreman_products_defaults_unprotected_rocky8: "{{ foreman_products_defaults_unprotected_rocky | bool }}"
+
+foreman_products_defaults_unprotected_rocky84: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky85: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky86: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky87: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky88: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+
+foreman_products_defaults_unprotected_rocky8_kickstart: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky84_kickstart: "{{ foreman_products_defaults_unprotected_rocky84 | bool }}"
+foreman_products_defaults_unprotected_rocky85_kickstart: "{{ foreman_products_defaults_unprotected_rocky85 | bool }}"
+foreman_products_defaults_unprotected_rocky86_kickstart: "{{ foreman_products_defaults_unprotected_rocky86 | bool }}"
+foreman_products_defaults_unprotected_rocky87_kickstart: "{{ foreman_products_defaults_unprotected_rocky87 | bool }}"
+foreman_products_defaults_unprotected_rocky88_kickstart: "{{ foreman_products_defaults_unprotected_rocky88 | bool }}"
+
+foreman_products_defaults_unprotected_rocky8_sig_core: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+foreman_products_defaults_unprotected_rocky8_sig_cloud: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+
+### ROCKY 9
+
+foreman_products_defaults_download_policy_rocky9: "{{ foreman_products_defaults_download_policy_rocky }}"
+
+foreman_products_defaults_download_policy_rocky90: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+foreman_products_defaults_download_policy_rocky91: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+foreman_products_defaults_download_policy_rocky92: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+
+foreman_products_defaults_download_policy_rocky9_kickstart: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+foreman_products_defaults_download_policy_rocky90_kickstart: "{{ foreman_products_defaults_download_policy_rocky90 }}"
+foreman_products_defaults_download_policy_rocky91_kickstart: "{{ foreman_products_defaults_download_policy_rocky91 }}"
+foreman_products_defaults_download_policy_rocky92_kickstart: "{{ foreman_products_defaults_download_policy_rocky92 }}"
+
+foreman_products_defaults_download_policy_rocky9_sig_core: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+foreman_products_defaults_download_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_download_policy_rocky9 }}"
+
+foreman_products_defaults_mirroring_policy_rocky9: "{{ foreman_products_defaults_mirroring_policy_rocky }}"
+
+foreman_products_defaults_mirroring_policy_rocky90: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+foreman_products_defaults_mirroring_policy_rocky91: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+foreman_products_defaults_mirroring_policy_rocky92: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+
+foreman_products_defaults_mirroring_policy_rocky9_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+foreman_products_defaults_mirroring_policy_rocky90_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky90 }}"
+foreman_products_defaults_mirroring_policy_rocky91_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky91 }}"
+foreman_products_defaults_mirroring_policy_rocky92_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky92 }}"
+
+foreman_products_defaults_mirroring_policy_rocky9_sig_core: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+foreman_products_defaults_mirroring_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky9: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky90: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky91: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky92: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky9_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky90_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky90 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky91_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky91 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky92_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky92 | bool }}"
+
+foreman_products_defaults_verify_ssl_on_sync_rocky9_sig_core: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_rocky9_sig_cloud: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
+
+foreman_products_defaults_http_proxy_policy_rocky9: "{{ foreman_products_defaults_http_proxy_policy_rocky }}"
+
+foreman_products_defaults_http_proxy_policy_rocky90: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+foreman_products_defaults_http_proxy_policy_rocky91: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+foreman_products_defaults_http_proxy_policy_rocky92: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+
+foreman_products_defaults_http_proxy_policy_rocky9_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+foreman_products_defaults_http_proxy_policy_rocky90_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky90 }}"
+foreman_products_defaults_http_proxy_policy_rocky91_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky91 }}"
+foreman_products_defaults_http_proxy_policy_rocky92_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky92 }}"
+
+foreman_products_defaults_http_proxy_policy_rocky9_sig_core: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+foreman_products_defaults_http_proxy_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
+
+foreman_products_defaults_unprotected_rocky9: "{{ foreman_products_defaults_unprotected_rocky | bool }}"
+
+foreman_products_defaults_unprotected_rocky90: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+foreman_products_defaults_unprotected_rocky91: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+foreman_products_defaults_unprotected_rocky92: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+
+foreman_products_defaults_unprotected_rocky9_kickstart: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+foreman_products_defaults_unprotected_rocky90_kickstart: "{{ foreman_products_defaults_unprotected_rocky90 | bool }}"
+foreman_products_defaults_unprotected_rocky91_kickstart: "{{ foreman_products_defaults_unprotected_rocky91 | bool }}"
+foreman_products_defaults_unprotected_rocky92_kickstart: "{{ foreman_products_defaults_unprotected_rocky92 | bool }}"
+
+foreman_products_defaults_unprotected_rocky9_sig_core: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+foreman_products_defaults_unprotected_rocky9_sig_cloud: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

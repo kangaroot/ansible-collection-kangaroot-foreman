@@ -10,14 +10,25 @@ foreman_content_credentials_rocky8:
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-rockyofficial
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_rocky8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
+
+
+foreman_products_defaults_rocky8_kickstart: &foreman_products_defaults_rocky8_kickstart
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_rocky8_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky8_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky8_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_rocky8_kickstart | bool }}"
 
 
 foreman_products_rocky8:
@@ -74,12 +85,12 @@ foreman_products_rocky8:
 
       - name: Rocky Linux 8 - BaseOS Kickstart
         label: rocky-8-baseos-kickstart
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_rocky8_kickstart
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - AppStream Kickstart
         label: rocky-8-appstream-kickstart
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_rocky8_kickstart
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky8 }}"
 
