@@ -3,14 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8 | default(false) | bool }}"
+
+
+foreman_products_defaults_centos_stream8_sig_virtualization: &foreman_products_defaults_centos_stream8_sig_virtualization
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8_sig_virtualization | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8_sig_virtualization | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8_sig_virtualization | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8_sig_virtualization | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8_sig_virtualization | default(false) | bool }}"
 
 
 foreman_products_centos_stream8_sig_virtualization_advanced_virtualization:
@@ -20,7 +31,7 @@ foreman_products_centos_stream8_sig_virtualization_advanced_virtualization:
     repositories:
       - name: CentOS Stream 8 - Advanced Virtualization
         label: centos-stream-8-advanced-virtualization
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_virtualization
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/virt/x86_64/advancedvirt-common/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
         organization: "{{ foreman_organization_centos_stream8_sig_virtualization_advanced_virtualization }}"
@@ -32,7 +43,7 @@ foreman_products_centos_stream8_sig_virtualization_ovirt44:
     repositories:
       - name: CentOS 8 - oVirt 4.4
         label: centos-8-ovirt44
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_virtualization
         url: "{{ foreman_repo_baseurl_centos8 }}/8/virt/x86_64/ovirt-44/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
         organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt44 }}"
@@ -44,19 +55,19 @@ foreman_products_centos_stream8_sig_virtualization_ovirt45:
     repositories:
       - name: CentOS Stream 8 - oVirt 4.5
         label: centos-stream-8-ovirt45
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_virtualization
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/virt/x86_64/ovirt-45/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
         organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
       - name: CentOS Stream 8 - oVirt 4.5 - OpenStack Yoga Repository
         label: centos-stream-8-ovirt45-openstack-yoga
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_virtualization
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/cloud/x86_64/openstack-yoga/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
         organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"
       - name: CentOS Stream 8 - oVirt 4.5 - upstream
         label: centos-stream-8-ovirt45-upstream
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_virtualization
         url: "{{ foreman_repo_baseurl_ovirt }}/pub/ovirt-4.5/rpm/el8/"
         gpg_key: RPM-GPG-KEY-oVirt-4.5
         organization: "{{ foreman_organization_centos_stream8_sig_virtualization_ovirt45 }}"

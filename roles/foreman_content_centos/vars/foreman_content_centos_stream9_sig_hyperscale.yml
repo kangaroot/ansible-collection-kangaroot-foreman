@@ -3,14 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream9 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream9 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream9 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream9 | default(false) | bool }}"
+
+
+foreman_products_defaults_centos_stream9_sig_hyperscale: &foreman_products_defaults_centos_stream9_sig_hyperscale
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9_sig_hyperscale | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream9_sig_hyperscale | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream9_sig_hyperscale | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream9_sig_hyperscale | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream9_sig_hyperscale | default(false) | bool }}"
 
 
 foreman_products_centos_stream9_sig_hyperscale_main:
@@ -20,7 +31,7 @@ foreman_products_centos_stream9_sig_hyperscale_main:
     repositories:
       - name: CentOS Stream 9 - Hyperscale
         label: centos-stream-9-hyperscale
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_hyperscale
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-main/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
         organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_main }}"
@@ -32,7 +43,7 @@ foreman_products_centos_stream9_sig_hyperscale_spin:
     repositories:
       - name: CentOS Stream 9 - Hyperscale Spin
         label: centos-stream-9-hyperscale-spin
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_hyperscale
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-spin/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
         organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_spin }}"
@@ -44,7 +55,7 @@ foreman_products_centos_stream9_sig_hyperscale_experimental:
     repositories:
       - name: CentOS Stream 9 - Hyperscale Experimental
         label: centos-stream-9-hyperscale-experimental
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_hyperscale
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/hyperscale/x86_64/packages-experimental/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-HyperScale
         organization: "{{ foreman_organization_centos_stream9_sig_hyperscale_experimental }}"

@@ -3,18 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: immediate
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
 
-foreman_products_on_demand: &foreman_products_on_demand
+
+foreman_products_defaults_centos7_sig_configmanagement: &foreman_products_defaults_centos7_sig_configmanagement
   <<: *foreman_products_defaults
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_configmanagement | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_configmanagement | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_configmanagement | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_configmanagement | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_configmanagement | default(false) | bool }}"
 
 
 foreman_products_centos7_sig_configmanagement_ansible26:
@@ -24,7 +31,7 @@ foreman_products_centos7_sig_configmanagement_ansible26:
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible26
         label: centos-7-ansible-26
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_configmanagement
         url: "{{ foreman_repo_baseurl_centos7 }}/7/configmanagement/x86_64/ansible26/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
         organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible26 }}"
@@ -36,7 +43,7 @@ foreman_products_centos7_sig_configmanagement_ansible27:
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-27
         label: centos-7-ansible-27
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_configmanagement
         url: "{{ foreman_repo_baseurl_centos7 }}/7/configmanagement/x86_64/ansible-27/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
         organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible27 }}"
@@ -48,7 +55,7 @@ foreman_products_centos7_sig_configmanagement_ansible28:
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-28
         label: centos-7-ansible-28
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_configmanagement
         url: "{{ foreman_repo_baseurl_centos7 }}/7/configmanagement/x86_64/ansible-28/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
         organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible28 }}"
@@ -60,7 +67,7 @@ foreman_products_centos7_sig_configmanagement_ansible29:
     repositories:
       - name: CentOS 7 - Configmanagement SIG - ansible-29
         label: centos-7-ansible-29
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_configmanagement
         url: "{{ foreman_repo_baseurl_centos7 }}/7/configmanagement/x86_64/ansible-29/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
         organization: "{{ foreman_organization_centos7_sig_configmanagement_ansible29 }}"

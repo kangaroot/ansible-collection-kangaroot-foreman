@@ -3,14 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream9 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream9 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream9 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream9 | default(false) | bool }}"
+
+
+foreman_products_defaults_centos_stream9_sig_storage: &foreman_products_defaults_centos_stream9_sig_storage
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9_sig_storage | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream9_sig_storage | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream9_sig_storage | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream9_sig_storage | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream9_sig_storage | default(false) | bool }}"
 
 
 # foreman_products_centos_stream9_sig_storage_common:
@@ -19,7 +30,7 @@ foreman_products_defaults: &foreman_products_defaults
 #     repositories:
 #       - name: CentOS Stream 9 - Storage SIG - common
 #         label: centos-stream-9-storage-common
-#         <<: *foreman_products_defaults
+#         <<: *foreman_products_defaults_centos_stream9_sig_storage
 #         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/common/"
 #         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 
@@ -30,7 +41,7 @@ foreman_products_centos_stream9_sig_storage_samba414:
     repositories:
       - name: CentOS Stream 9 - Samba 4.14
         label: centos-stream-9-samba414
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-414/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_samba414 }}"
@@ -42,7 +53,7 @@ foreman_products_centos_stream9_sig_storage_samba415:
     repositories:
       - name: CentOS Stream 9 - Samba 4.15
         label: centos-stream-9-samba415
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-415/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_samba415 }}"
@@ -54,7 +65,7 @@ foreman_products_centos_stream9_sig_storage_samba416:
     repositories:
       - name: CentOS Stream 9 - Samba 4.16
         label: centos-stream-9-samba416
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-416/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_samba416 }}"
@@ -66,7 +77,7 @@ foreman_products_centos_stream9_sig_storage_samba417:
     repositories:
       - name: CentOS Stream 9 - Samba 4.17
         label: centos-stream-9-samba417
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-417/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_samba417 }}"
@@ -78,7 +89,7 @@ foreman_products_centos_stream9_sig_storage_samba418:
     repositories:
       - name: CentOS Stream 9 - Samba 4.18
         label: centos-stream-9-samba418
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/samba-418/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_samba418 }}"
@@ -90,7 +101,7 @@ foreman_products_centos_stream9_sig_storage_gluster9:
     repositories:
       - name: CentOS Stream 9 - Gluster 9
         label: centos-stream-9-gluster9
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/gluster-9/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_gluster9 }}"
@@ -102,7 +113,7 @@ foreman_products_centos_stream9_sig_storage_gluster10:
     repositories:
       - name: CentOS Stream 9 - Gluster 10
         label: centos-stream-9-gluster10
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/gluster-10/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_gluster10 }}"
@@ -114,7 +125,7 @@ foreman_products_centos_stream9_sig_storage_gluster11:
     repositories:
       - name: CentOS Stream 9 - Gluster 11
         label: centos-stream-9-gluster11
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/storage/x86_64/gluster-11/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_gluster11 }}"
@@ -126,7 +137,7 @@ foreman_products_centos_stream9_sig_storage_ceph_pacific:
     repositories:
       - name: CentOS Stream 9 - Ceph Pacific
         label: centos-stream-9-ceph-pacific
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-ceph-pacific/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_ceph_pacific }}"
@@ -138,7 +149,7 @@ foreman_products_centos_stream9_sig_storage_ceph_quincy:
     repositories:
       - name: CentOS Stream 9 - Ceph Quincy
         label: centos-stream-9-ceph-quincy
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-ceph-quincy/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_ceph_quincy }}"
@@ -150,7 +161,7 @@ foreman_products_centos_stream9_sig_storage_nfs_ganesha4:
     repositories:
       - name: CentOS Stream 9 - NFS-Ganesha 4
         label: centos-stream-9-nfs-ganesha-4
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-nfsganesha-4/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_nfs_ganesha4 }}"
@@ -162,7 +173,7 @@ foreman_products_centos_stream9_sig_storage_nfs_ganesha5:
     repositories:
       - name: CentOS Stream 9 - NFS-Ganesha 5
         label: centos-stream-9-nfs-ganesha-5
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream9_sig_storage
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/x86_64/storage-nfsganesha-5/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos_stream9_sig_storage_nfs_ganesha5 }}"

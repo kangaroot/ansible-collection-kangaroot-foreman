@@ -3,18 +3,49 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: immediate
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
 
-foreman_products_on_demand: &foreman_products_on_demand
+
+foreman_products_defaults_centos7_dotnet: &foreman_products_defaults_centos7_dotnet
   <<: *foreman_products_defaults
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_dotnet | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_dotnet | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_dotnet | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_dotnet | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_dotnet | default(false) | bool }}"
+
+foreman_products_defaults_centos7_sig_sclo: &foreman_products_defaults_centos7_sig_sclo
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_sclo | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_sclo | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_sclo | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_sclo | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_sclo | default(false) | bool }}"
+
+foreman_products_defaults_centos7_sig_opstools: &foreman_products_defaults_centos7_sig_opstools
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_opstools | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_opstools | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_opstools | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_opstools | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_opstools | default(false) | bool }}"
+
+foreman_products_defaults_centos7_sig_nfv: &foreman_products_defaults_centos7_sig_nfv
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_nfv | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_nfv | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_nfv | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_nfv | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_nfv | default(false) | bool }}"
 
 
 foreman_products_centos7_dotnet:
@@ -24,7 +55,7 @@ foreman_products_centos7_dotnet:
     repositories:
       - name: CentOS 7 - DotNet
         label: centos-7-dotnet
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_dotnet
         url: "{{ foreman_repo_baseurl_centos7 }}/7/dotnet/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos7_dotnet }}"
@@ -45,13 +76,13 @@ foreman_products_centos7_sig_sclo:
     repositories:
       - name: CentOS 7 - SCLo sclo
         label: centos-7-sclo-sclo
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_sclo
         url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/sclo/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
       - name: CentOS 7 - SCLo rh
         label: centos-7-sclo-rh
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_sclo
         url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/rh/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
@@ -78,7 +109,7 @@ foreman_products_centos7_sig_opstools:
     repositories:
       - name: CentOS 7 - OpsTools - release
         label: centos-7-release-opstools
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_opstools
         url: "{{ foreman_repo_baseurl_centos7 }}/7/opstools/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
         organization: "{{ foreman_organization_centos7_sig_opstools }}"
@@ -99,7 +130,7 @@ foreman_products_centos7_sig_nfv_common:
     repositories:
       - name: CentOS 7 - nfv common
         label: centos-7-nfv-common
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_nfv
         url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/common/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
         organization: "{{ foreman_organization_centos7_sig_nfv_common }}"
@@ -111,7 +142,7 @@ foreman_products_centos7_sig_nfv_fdio:
     repositories:
       - name: CentOS 7 - fd.io
         label: centos-7-fdio
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_nfv
         url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/fdio/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
         organization: "{{ foreman_organization_centos7_sig_nfv_fdio }}"

@@ -3,18 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: immediate
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
 
-foreman_products_on_demand: &foreman_products_on_demand
+
+foreman_products_defaults_centos7_sig_storage: &foreman_products_defaults_centos7_sig_storage
   <<: *foreman_products_defaults
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_storage | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_storage | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_storage | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_storage | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_storage | default(false) | bool }}"
 
 
 foreman_products_centos7_sig_storage_samba411:
@@ -24,7 +31,7 @@ foreman_products_centos7_sig_storage_samba411:
     repositories:
       - name: CentOS 7 - Samba 4.11
         label: centos-7-samba411
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/samba-411/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_samba411 }}"
@@ -36,7 +43,7 @@ foreman_products_centos7_sig_storage_gluster40:
     repositories:
       - name: CentOS 7 - Gluster 4.0 (Short Term Maintanance)
         label: centos-7-gluster40
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.0/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster40 }}"
@@ -48,7 +55,7 @@ foreman_products_centos7_sig_storage_gluster41:
     repositories:
       - name: CentOS 7 - Gluster 4.1 (Long Term Maintanance)
         label: centos-7-gluster41
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.1/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster41 }}"
@@ -60,7 +67,7 @@ foreman_products_centos7_sig_storage_gluster5:
     repositories:
       - name: CentOS 7 - Gluster 5
         label: centos-7-gluster5
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-5/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster5 }}"
@@ -72,7 +79,7 @@ foreman_products_centos7_sig_storage_gluster6:
     repositories:
       - name: CentOS 7 - Gluster 6
         label: centos-7-gluster6
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-6/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster6 }}"
@@ -84,7 +91,7 @@ foreman_products_centos7_sig_storage_gluster7:
     repositories:
       - name: CentOS 7 - Gluster 7
         label: centos-7-gluster7
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-7/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster7 }}"
@@ -96,7 +103,7 @@ foreman_products_centos7_sig_storage_gluster8:
     repositories:
       - name: CentOS 7 - Gluster 8
         label: centos-7-gluster8
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-8/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster8 }}"
@@ -108,7 +115,7 @@ foreman_products_centos7_sig_storage_gluster9:
     repositories:
       - name: CentOS 7 - Gluster 9
         label: centos-7-gluster9
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-9/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_gluster9 }}"
@@ -120,7 +127,7 @@ foreman_products_centos7_sig_storage_ceph_jewel:
     repositories:
       - name: CentOS 7 - Ceph Jewel
         label: centos-7-ceph-jewel
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-jewel/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_jewel }}"
@@ -132,7 +139,7 @@ foreman_products_centos7_sig_storage_ceph_luminous:
     repositories:
       - name: CentOS 7 - Ceph Luminous
         label: centos-7-ceph-luminous
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-luminous/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_luminous }}"
@@ -144,7 +151,7 @@ foreman_products_centos7_sig_storage_ceph_nautilus:
     repositories:
       - name: CentOS 7 - Ceph Nautilus
         label: centos-7-ceph-nautilus
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-nautilus/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_nautilus }}"
@@ -156,7 +163,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha28:
     repositories:
       - name: CentOS 7 - NFS Ganesha 2.8
         label: centos-7-nfs-ganesha28
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-28/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_nfs_ganesha28 }}"
@@ -168,7 +175,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha30:
     repositories:
       - name: CentOS 7 - NFS Ganesha 3.0
         label: centos-7-nfs-ganesha30
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-30/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
 foreman_products_centos7_sig_storage_nfs_ganesha4:
@@ -178,7 +185,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha4:
     repositories:
       - name: CentOS 7 - NFS Ganesha 4
         label: centos-7-nfs-ganesha4
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfsganesha-4/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
         organization: "{{ foreman_organization_centos7_sig_storage_nfs_ganesha4 }}"

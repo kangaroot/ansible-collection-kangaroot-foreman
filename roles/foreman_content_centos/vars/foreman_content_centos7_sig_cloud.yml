@@ -2,23 +2,26 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  # gpg_key: RPM-GPG-KEY-CentOS-7
-  download_policy: immediate
+  gpg_key: RPM-GPG-KEY-CentOS-7
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7 | default('immediate') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7 | default(false) | bool }}"
 
-foreman_products_on_demand: &foreman_products_on_demand
-  <<: *foreman_products_defaults
-  download_policy: on_demand
 
-foreman_products_rdo: &foreman_products_rdo
+foreman_products_defaults_centos7_sig_cloud: &foreman_products_defaults_centos7_sig_cloud
   <<: *foreman_products_defaults
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos7_sig_cloud | default('immediate') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos7_sig_cloud | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos7_sig_cloud | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos7_sig_cloud | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos7_sig_cloud | default(false) | bool }}"
 
 
 foreman_products_centos7_sig_cloud_openstack_queens:
@@ -28,7 +31,7 @@ foreman_products_centos7_sig_cloud_openstack_queens:
     repositories:
       - name: CentOS 7 - OpenStack queens
         label: centos-7-openstack-queens
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-queens/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
@@ -40,7 +43,7 @@ foreman_products_centos7_sig_cloud_openstack_queens_tested:
     repositories:
       - name: CentOS 7 - OpenStack queens Trunk Tested
         label: centos-7-rdo-trunk-queens-tested
-        <<: *foreman_products_rdo
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-queens/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens_tested }}"
 
@@ -51,7 +54,7 @@ foreman_products_centos7_sig_cloud_openstack_rocky:
     repositories:
       - name: CentOS 7 - OpenStack rocky
         label: centos-7-openstack-rocky
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-rocky/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
@@ -63,7 +66,7 @@ foreman_products_centos7_sig_cloud_openstack_rocky_tested:
     repositories:
       - name: CentOS 7 - OpenStack rocky Trunk Tested
         label: centos-7-rdo-trunk-rocky-tested
-        <<: *foreman_products_rdo
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-rocky/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky_tested }}"
 
@@ -74,7 +77,7 @@ foreman_products_centos7_sig_cloud_openstack_stein:
     repositories:
       - name: CentOS 7 - OpenStack stein
         label: centos-7-openstack-stein
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-stein/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
@@ -86,7 +89,7 @@ foreman_products_centos7_sig_cloud_openstack_stein_tested:
     repositories:
       - name: CentOS 7 - OpenStack stein Trunk Tested
         label: centos-7-rdo-trunk-stein-tested
-        <<: *foreman_products_rdo
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-stein/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein_tested }}"
 
@@ -97,7 +100,7 @@ foreman_products_centos7_sig_cloud_openstack_train:
     repositories:
       - name: CentOS 7 - OpenStack train
         label: centos-7-openstack-train
-        <<: *foreman_products_on_demand
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-train/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
@@ -109,7 +112,7 @@ foreman_products_centos7_sig_cloud_openstack_train_tested:
     repositories:
       - name: CentOS 7 - OpenStack train Trunk Tested
         label: centos-7-rdo-trunk-train-tested
-        <<: *foreman_products_rdo
+        <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-train/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train_tested }}"
 

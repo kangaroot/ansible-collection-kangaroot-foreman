@@ -3,14 +3,49 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-CentOS-Official
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8 | default('on_demand') }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8 | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8 | default(false) }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8 | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8 | default(false) | bool }}"
+
+
+foreman_products_defaults_centos_stream8_sig_opstools: &foreman_products_defaults_centos_stream8_sig_opstools
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8_sig_opstools | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8_sig_opstools | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8_sig_opstools | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8_sig_opstools | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8_sig_opstools | default(false) | bool }}"
+
+foreman_products_defaults_centos_stream8_sig_plus: &foreman_products_defaults_centos_stream8_sig_plus
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8_sig_plus | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8_sig_plus | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8_sig_plus | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8_sig_plus | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8_sig_plus | default(false) | bool }}"
+
+foreman_products_defaults_centos_stream8_sig_nfv: &foreman_products_defaults_centos_stream8_sig_nfv
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8_sig_nfv | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8_sig_nfv | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8_sig_nfv | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8_sig_nfv | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8_sig_nfv | default(false) | bool }}"
+
+foreman_products_defaults_centos_stream8_sig_messaging: &foreman_products_defaults_centos_stream8_sig_messaging
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8_sig_messaging | default('on_demand') }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos_stream8_sig_messaging | default('mirror_complete') }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos_stream8_sig_messaging | default(false) }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos_stream8_sig_messaging | default('global_default_http_proxy') }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos_stream8_sig_messaging | default(false) | bool }}"
 
 
 foreman_products_centos_stream8_sig_opstools:
@@ -20,7 +55,7 @@ foreman_products_centos_stream8_sig_opstools:
     repositories:
       - name: CentOS Stream 8 - OpsTools - collectd
         label: centos-stream-8-opstools
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_opstools
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/opstools/x86_64/collectd-5/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
         organization: "{{ foreman_organization_centos_stream8_sig_opstools }}"
@@ -41,7 +76,7 @@ foreman_products_centos_stream8_sig_plus:
     repositories:
       - name: CentOS Stream 8 - Plus
         label: centos-stream-8-plus
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_plus
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/core/x86_64/centos-plus/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Core
         organization: "{{ foreman_organization_centos_stream8_sig_plus }}"
@@ -62,7 +97,7 @@ foreman_products_centos_stream8_sig_nfv_extras:
     repositories:
       - name: CentOS Stream 8 - NFV extras
         label: centos-stream-8-nfv-extras
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_nfv
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/nfv/x86_64/network-extras/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
         organization: "{{ foreman_organization_centos_stream8_sig_nfv_extras }}"
@@ -74,7 +109,7 @@ foreman_products_centos_stream8_sig_nfv_openvswitch:
     repositories:
       - name: CentOS Stream 8 - NFV OpenvSwitch
         label: centos-stream-8-nfv-openvswitch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_nfv
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/nfv/x86_64/openvswitch-2/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
         organization: "{{ foreman_organization_centos_stream8_sig_nfv_openvswitch }}"
@@ -113,7 +148,7 @@ foreman_products_centos_stream8_sig_messaging_qpid_proton:
     repositories:
       - name: CentOS Stream 8 - QPID Proton
         label: centos-stream-8-qpid-proton
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_messaging
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/messaging/x86_64/qpid-proton/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
         organization: "{{ foreman_organization_centos_stream8_sig_messaging_qpid_proton }}"
@@ -125,7 +160,7 @@ foreman_products_centos_stream8_sig_messaging_rabbitmq38:
     repositories:
       - name: CentOS Stream 8 - RabbitMQ 38
         label: centos-stream-8-rabbitmq38
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_centos_stream8_sig_messaging
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/messaging/x86_64/rabbitmq-38/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Messaging
         organization: "{{ foreman_organization_centos_stream8_sig_messaging_rabbitmq38 }}"
