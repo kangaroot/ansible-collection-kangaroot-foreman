@@ -2,17 +2,165 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
-  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+
+
+foreman_products_defaults_ol80_uln: &foreman_products_defaults_ol80_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol80_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol80_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol80_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol80_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol80_uln | bool }}"
+
+foreman_products_defaults_ol81_uln: &foreman_products_defaults_ol81_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol81_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol81_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol81_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol81_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol81_uln | bool }}"
+
+foreman_products_defaults_ol82_uln: &foreman_products_defaults_ol82_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol82_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol82_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol82_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol82_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol82_uln | bool }}"
+
+foreman_products_defaults_ol83_uln: &foreman_products_defaults_ol83_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol83_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol83_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol83_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol83_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol83_uln | bool }}"
+
+foreman_products_defaults_ol84_uln: &foreman_products_defaults_ol84_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol84_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol84_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol84_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol84_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol84_uln | bool }}"
+
+foreman_products_defaults_ol85_uln: &foreman_products_defaults_ol85_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol85_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol85_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol85_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol85_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol85_uln | bool }}"
+
+foreman_products_defaults_ol86_uln: &foreman_products_defaults_ol86_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol86_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol86_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol86_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol86_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol86_uln | bool }}"
+
+foreman_products_defaults_ol87_uln: &foreman_products_defaults_ol87_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol87_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol87_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol87_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol87_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol87_uln | bool }}"
+
+foreman_products_defaults_ol88_uln: &foreman_products_defaults_ol88_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol88_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol88_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol88_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol88_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol88_uln | bool }}"
+
+
+foreman_products_defaults_ol80_patch_uln: &foreman_products_defaults_ol80_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol80_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol80_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol80_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol80_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol80_patch_uln | bool }}"
+
+foreman_products_defaults_ol81_patch_uln: &foreman_products_defaults_ol81_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol81_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol81_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol81_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol81_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol81_patch_uln | bool }}"
+
+foreman_products_defaults_ol82_patch_uln: &foreman_products_defaults_ol82_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol82_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol82_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol82_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol82_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol82_patch_uln | bool }}"
+
+foreman_products_defaults_ol83_patch_uln: &foreman_products_defaults_ol83_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol83_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol83_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol83_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol83_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol83_patch_uln | bool }}"
+
+foreman_products_defaults_ol84_patch_uln: &foreman_products_defaults_ol84_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol84_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol84_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol84_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol84_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol84_patch_uln | bool }}"
+
+foreman_products_defaults_ol85_patch_uln: &foreman_products_defaults_ol85_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol85_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol85_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol85_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol85_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol85_patch_uln | bool }}"
+
+foreman_products_defaults_ol86_patch_uln: &foreman_products_defaults_ol86_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol86_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol86_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol86_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol86_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol86_patch_uln | bool }}"
+
+foreman_products_defaults_ol87_patch_uln: &foreman_products_defaults_ol87_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol87_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol87_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol87_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol87_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol87_patch_uln | bool }}"
+
+foreman_products_defaults_ol88_patch_uln: &foreman_products_defaults_ol88_patch_uln
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol88_patch_uln }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol88_patch_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol88_patch_uln | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol88_patch_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol88_patch_uln | bool }}"
 
 
 foreman_products_ol80_uln:
@@ -25,7 +173,7 @@ foreman_products_ol80_uln:
         description: Base operating system packages released for Oracle Linux 8 GA (x86_64). No errata included
         label: ol8_uln_x86_64_u0_baseos_base
         url: uln://ol8_x86_64_u0_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol80_uln
         organization: "{{ foreman_organization_ol80_uln }}"
 
 foreman_products_ol81_uln:
@@ -38,7 +186,7 @@ foreman_products_ol81_uln:
         description: Base operating system packages released for Oracle Linux 8 (x86_64). No errata included
         label: ol8_uln_x86_64_u1_baseos_base
         url: uln://ol8_x86_64_u1_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol81_uln
         organization: "{{ foreman_organization_ol81_uln }}"
 
 foreman_products_ol82_uln:
@@ -51,7 +199,7 @@ foreman_products_ol82_uln:
         description: Base operating system packages released for Oracle Linux 8.2 (x86_64). No errata included
         label: ol8_uln_x86_64_u2_baseos_base
         url: uln://ol8_x86_64_u2_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol82_uln
         organization: "{{ foreman_organization_ol82_uln }}"
 
 foreman_products_ol83_uln:
@@ -64,7 +212,7 @@ foreman_products_ol83_uln:
         description: Base operating system packages released for Oracle Linux 8.3 (x86_64). No errata included
         label: ol8_uln_x86_64_u3_baseos_base
         url: uln://ol8_x86_64_u3_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol83_uln
         organization: "{{ foreman_organization_ol83_uln }}"
 
 foreman_products_ol84_uln:
@@ -77,7 +225,7 @@ foreman_products_ol84_uln:
         description: Base operating system packages released for Oracle Linux 8.4 (x86_64). No errata included
         label: ol8_uln_x86_64_u4_baseos_base
         url: uln://ol8_x86_64_u4_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol84_uln
         organization: "{{ foreman_organization_ol84_uln }}"
 
 foreman_products_ol85_uln:
@@ -90,7 +238,7 @@ foreman_products_ol85_uln:
         description: Base operating system packages released for Oracle Linux 8.5 (x86_64). No errata included
         label: ol8_uln_x86_64_u5_baseos_base
         url: uln://ol8_x86_64_u5_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol85_uln
         organization: "{{ foreman_organization_ol85_uln }}"
 
 foreman_products_ol86_uln:
@@ -103,7 +251,7 @@ foreman_products_ol86_uln:
         description: Base operating system packages released for Oracle Linux 8.6 (x86_64). No errata included
         label: ol8_uln_x86_64_u6_baseos_base
         url: uln://ol8_x86_64_u6_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol86_uln
         organization: "{{ foreman_organization_ol86_uln }}"
 
 foreman_products_ol87_uln:
@@ -116,7 +264,7 @@ foreman_products_ol87_uln:
         description: Base operating system packages released for Oracle Linux 8.7 (x86_64). No errata included
         label: ol8_uln_x86_64_u7_baseos_base
         url: uln://ol8_x86_64_u7_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol87_uln
         organization: "{{ foreman_organization_ol87_uln }}"
 
 foreman_products_ol88_uln:
@@ -129,7 +277,7 @@ foreman_products_ol88_uln:
         description: Base operating system packages released for Oracle Linux 8.8 (x86_64). No errata included
         label: ol8_uln_x86_64_u8_baseos_base
         url: uln://ol8_x86_64_u8_baseos_base
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol88_uln
         organization: "{{ foreman_organization_ol88_uln }}"
 
 foreman_products_ol80_patch_uln:
@@ -142,7 +290,7 @@ foreman_products_ol80_patch_uln:
         description: Updated packages published after release of Oracle Linux 8 BaseOS GA (x86_64)
         label: ol8_uln_x86_64_u0_baseos_patch
         url: uln://ol8_x86_64_u0_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol80_patch_uln
         organization: "{{ foreman_organization_ol80_patch_uln }}"
 
 foreman_products_ol81_patch_uln:
@@ -155,7 +303,7 @@ foreman_products_ol81_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.1 BaseOS (x86_64)
         label: ol8_uln_x86_64_u1_baseos_patch
         url: uln://ol8_x86_64_u1_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol81_patch_uln
         organization: "{{ foreman_organization_ol81_patch_uln }}"
 
 foreman_products_ol82_patch_uln:
@@ -168,7 +316,7 @@ foreman_products_ol82_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.2 BaseOS (x86_64)
         label: ol8_uln_x86_64_u2_baseos_patch
         url: uln://ol8_x86_64_u2_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol82_patch_uln
         organization: "{{ foreman_organization_ol82_patch_uln }}"
 
 foreman_products_ol83_patch_uln:
@@ -181,7 +329,7 @@ foreman_products_ol83_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.3 BaseOS (x86_64)
         label: ol8_uln_x86_64_u3_baseos_patch
         url: uln://ol8_x86_64_u3_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol83_patch_uln
         organization: "{{ foreman_organization_ol83_patch_uln }}"
 
 foreman_products_ol84_patch_uln:
@@ -194,7 +342,7 @@ foreman_products_ol84_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.4 BaseOS (x86_64)
         label: ol8_uln_x86_64_u4_baseos_patch
         url: uln://ol8_x86_64_u4_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol84_patch_uln
         organization: "{{ foreman_organization_ol84_patch_uln }}"
 
 foreman_products_ol85_patch_uln:
@@ -207,7 +355,7 @@ foreman_products_ol85_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.5 BaseOS (x86_64)
         label: ol8_uln_x86_64_u5_baseos_patch
         url: uln://ol8_x86_64_u5_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol85_patch_uln
         organization: "{{ foreman_organization_ol85_patch_uln }}"
 
 foreman_products_ol86_patch_uln:
@@ -220,7 +368,7 @@ foreman_products_ol86_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.6 BaseOS (x86_64)
         label: ol8_uln_x86_64_u6_baseos_patch
         url: uln://ol8_x86_64_u6_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol86_patch_uln
         organization: "{{ foreman_organization_ol86_patch_uln }}"
 
 foreman_products_ol87_patch_uln:
@@ -233,7 +381,7 @@ foreman_products_ol87_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.7 BaseOS (x86_64)
         label: ol8_uln_x86_64_u7_baseos_patch
         url: uln://ol8_x86_64_u7_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol87_patch_uln
         organization: "{{ foreman_organization_ol87_patch_uln }}"
 
 foreman_products_ol88_patch_uln:
@@ -246,7 +394,7 @@ foreman_products_ol88_patch_uln:
         description: Updated packages published after release of Oracle Linux 8.8 BaseOS (x86_64)
         label: ol8_uln_x86_64_u8_baseos_patch
         url: uln://ol8_x86_64_u8_baseos_patch
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol88_patch_uln
         organization: "{{ foreman_organization_ol88_patch_uln }}"
 
 foreman_products_ol8_uln_versions: "{{ [] |

@@ -2,17 +2,28 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
-  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+
+
+foreman_products_defaults_ol7_uln_cloud: &foreman_products_defaults_ol7_uln_cloud
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln_cloud }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln_cloud }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln_cloud | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln_cloud }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln_cloud | bool }}"
 
 
 foreman_products_ol7_uln_cloud_openstack20:
@@ -25,7 +36,7 @@ foreman_products_ol7_uln_cloud_openstack20:
         description: Latest for Oracle OpenStack version 2.0 .
         label: ol7_uln_x86_64_openstack20
         url: uln://ol7_x86_64_openstack20
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack20 }}"
 
 foreman_products_ol7_uln_cloud_openstack21:
@@ -38,7 +49,7 @@ foreman_products_ol7_uln_cloud_openstack21:
         description: Latest for Oracle OpenStack version 2.1 for Oracle Linux 7 (x86_64) .
         label: ol7_uln_x86_64_openstack21
         url: uln://ol7_x86_64_openstack21
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack21 }}"
 
 foreman_products_ol7_uln_cloud_openstack30:
@@ -51,14 +62,14 @@ foreman_products_ol7_uln_cloud_openstack30:
         description: Latest for Oracle OpenStack version 3.0 .
         label: ol7_uln_x86_64_openstack30
         url: uln://ol7_x86_64_openstack30
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack30 }}"
       ### Extra development packages for Oracle OpenStack 3.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack_extras ###
       - name: Extra development packages for Oracle OpenStack 3.0 on Oracle Linux 7 (x86_64)
         description: Latest Extra development packages for Oracle OpenStack version 3.0
         label: ol7_uln_x86_64_openstack_extras
         url: uln://ol7_x86_64_openstack_extras
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack30 }}"
 
 foreman_products_ol7_uln_cloud_openstack40:
@@ -71,14 +82,14 @@ foreman_products_ol7_uln_cloud_openstack40:
         description: Latest Packages for Oracle OpenStack version 4.0 .
         label: ol7_uln_x86_64_openstack40
         url: uln://ol7_x86_64_openstack40
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack40 }}"
       ### Extra development packages for Oracle OpenStack 4.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack40_extras ###
       - name: Extra development packages for Oracle OpenStack 4.0 on Oracle Linux 7 (x86_64)
         description: Latest Extra development packages for Oracle OpenStack version 4.0
         label: ol7_uln_x86_64_openstack40_extras
         url: uln://ol7_x86_64_openstack40_extras
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack40 }}"
 
 foreman_products_ol7_uln_cloud_openstack50:
@@ -91,14 +102,14 @@ foreman_products_ol7_uln_cloud_openstack50:
         description: Latest Packages for Oracle OpenStack version 5.0 .
         label: ol7_uln_x86_64_openstack50
         url: uln://ol7_x86_64_openstack50
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack50 }}"
       ### Extra development packages for Oracle OpenStack 5.0 on Oracle Linux 7 (x86_64) | ol7_x86_64_openstack50_extras ###
       - name: Extra development packages for Oracle OpenStack 5.0 on Oracle Linux 7 (x86_64)
         description: Latest Extra development packages for Oracle OpenStack version 5.0
         label: ol7_uln_x86_64_openstack50_extras
         url: uln://ol7_x86_64_openstack50_extras
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_cloud
         organization: "{{ foreman_organization_ol7_uln_cloud_openstack50 }}"
 
 foreman_products_ol7_uln_cloud: "{{ [] |

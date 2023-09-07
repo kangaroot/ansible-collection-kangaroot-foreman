@@ -3,14 +3,97 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7 | bool }}"
+
+
+foreman_products_defaults_ol70: &foreman_products_defaults_ol70
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol70 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol70 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol70 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol70 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol70 | bool }}"
+
+foreman_products_defaults_ol71: &foreman_products_defaults_ol71
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol71 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol71 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol71 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol71 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol71 | bool }}"
+
+foreman_products_defaults_ol72: &foreman_products_defaults_ol72
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol72 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol72 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol72 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol72 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol72 | bool }}"
+
+foreman_products_defaults_ol73: &foreman_products_defaults_ol73
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol73 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol73 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol73 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol73 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol73 | bool }}"
+
+foreman_products_defaults_ol74: &foreman_products_defaults_ol74
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol74 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol74 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol74 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol74 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol74 | bool }}"
+
+foreman_products_defaults_ol75: &foreman_products_defaults_ol75
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol75 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol75 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol75 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol75 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol75 | bool }}"
+
+foreman_products_defaults_ol76: &foreman_products_defaults_ol76
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol76 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol76 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol76 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol76 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol76 | bool }}"
+
+foreman_products_defaults_ol77: &foreman_products_defaults_ol77
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol77 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol77 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol77 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol77 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol77 | bool }}"
+
+foreman_products_defaults_ol78: &foreman_products_defaults_ol78
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol78 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol78 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol78 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol78 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol78 | bool }}"
+
+foreman_products_defaults_ol79: &foreman_products_defaults_ol79
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol79 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol79 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol79 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol79 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol79 | bool }}"
 
 
 foreman_products_ol70:
@@ -23,7 +106,7 @@ foreman_products_ol70:
         description: All packages released for Oracle Linux 7 GA (x86_64). No errata included
         label: ol7_x86_64_u0_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/0/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol70
         organization: "{{ foreman_organization_ol70 }}"
 
 foreman_products_ol71:
@@ -36,7 +119,7 @@ foreman_products_ol71:
         description: All packages released for Oracle Linux 7 Update 1 (x86_64). No errata included
         label: ol7_x86_64_u1_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/1/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol71
         organization: "{{ foreman_organization_ol71 }}"
 
 foreman_products_ol72:
@@ -49,7 +132,7 @@ foreman_products_ol72:
         description: All packages released for Oracle Linux 7 Update 2 (x86_64). No errata included
         label: ol7_x86_64_u2_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/2/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol72
         organization: "{{ foreman_organization_ol72 }}"
 
 foreman_products_ol73:
@@ -62,7 +145,7 @@ foreman_products_ol73:
         description: All packages released for Oracle Linux 7 Update 3 (x86_64). No errata included
         label: ol7_x86_64_u3_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/3/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol73
         organization: "{{ foreman_organization_ol73 }}"
 
 foreman_products_ol74:
@@ -75,7 +158,7 @@ foreman_products_ol74:
         description: All packages released for Oracle Linux 7 Update 4 (x86_64). No errata included
         label: ol7_x86_64_u4_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/4/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol74
         organization: "{{ foreman_organization_ol74 }}"
 
 foreman_products_ol75:
@@ -88,7 +171,7 @@ foreman_products_ol75:
         description: All packages released for Oracle Linux 7 Update 5 (x86_64). No errata included
         label: ol7_x86_64_u5_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/5/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol75
         organization: "{{ foreman_organization_ol75 }}"
 
 foreman_products_ol76:
@@ -101,7 +184,7 @@ foreman_products_ol76:
         description: All packages released for Oracle Linux 7 Update 6 (x86_64). No errata included
         label: ol7_x86_64_u6_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/6/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol76
         organization: "{{ foreman_organization_ol76 }}"
 
 foreman_products_ol77:
@@ -114,7 +197,7 @@ foreman_products_ol77:
         description: All packages released for Oracle Linux 7 Update 7 (x86_64). No errata included
         label: ol7_x86_64_u7_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/7/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol77
         organization: "{{ foreman_organization_ol77 }}"
 
 foreman_products_ol78:
@@ -127,7 +210,7 @@ foreman_products_ol78:
         description: All packages released for Oracle Linux 7 Update 8 (x86_64). No errata included
         label: ol7_x86_64_u8_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/8/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol78
         organization: "{{ foreman_organization_ol78 }}"
 
 foreman_products_ol79:
@@ -140,7 +223,7 @@ foreman_products_ol79:
         description: All packages released for Oracle Linux 7 Update 9 (x86_64). No errata included
         label: ol7_x86_64_u9_base
         url: "{{ foreman_repo_baseurl_oracle7 }}/OL7/9/base/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol79
         organization: "{{ foreman_organization_ol79 }}"
 
 foreman_products_ol7_versions: "{{ [] |

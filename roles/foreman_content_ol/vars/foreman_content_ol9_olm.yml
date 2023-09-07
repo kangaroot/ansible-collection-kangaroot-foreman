@@ -3,14 +3,25 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7 | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7 | bool }}"
+
+
+foreman_products_defaults_ol9_olm: &foreman_products_defaults_ol9_olm
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol9_olm }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol9_olm }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_olm | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol9_olm }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol9_olm | bool }}"
 
 
 foreman_products_ol9_olm:
@@ -23,7 +34,7 @@ foreman_products_ol9_olm:
         description: Latest Oracle Linux Manager 2.10 Client packages for Oracle Linux 9 (x86_64)
         label: ol9_x86_64_oraclelinuxmanager210_client
         url: "{{ foreman_repo_baseurl_oracle9 }}/OL9/oraclelinuxmanager210/client/x86_64/"
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol9_olm
         organization: "{{ foreman_organization_ol9_olm }}"
 
 

@@ -2,17 +2,28 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
-  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+
+
+foreman_products_defaults_ol7_uln_developer: &foreman_products_defaults_ol7_uln_developer
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln_developer }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln_developer }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln_developer | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln_developer }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln_developer | bool }}"
 
 
 foreman_products_ol7_uln_developer_go110:
@@ -25,7 +36,7 @@ foreman_products_ol7_uln_developer_go110:
         description: Latest Go Programming Language 1.10 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang110
         url: uln://ol7_x86_64_developer_golang110
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go110 }}"
 
 foreman_products_ol7_uln_developer_go111:
@@ -38,7 +49,7 @@ foreman_products_ol7_uln_developer_go111:
         description: Latest Go Programming Language 1.11 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang111
         url: uln://ol7_x86_64_developer_golang111
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go111 }}"
 
 foreman_products_ol7_uln_developer_go112:
@@ -51,7 +62,7 @@ foreman_products_ol7_uln_developer_go112:
         description: Latest Go Programming Language 1.12 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang112
         url: uln://ol7_x86_64_developer_golang112
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go112 }}"
 
 foreman_products_ol7_uln_developer_go113:
@@ -64,7 +75,7 @@ foreman_products_ol7_uln_developer_go113:
         description: Latest Go Programming Language 1.13 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang113
         url: uln://ol7_x86_64_developer_golang113
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go113 }}"
 
 foreman_products_ol7_uln_developer_go114:
@@ -77,7 +88,7 @@ foreman_products_ol7_uln_developer_go114:
         description: Latest Go Programming Language 1.14 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang114
         url: uln://ol7_x86_64_developer_golang114
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go114 }}"
 
 foreman_products_ol7_uln_developer_go115:
@@ -90,7 +101,7 @@ foreman_products_ol7_uln_developer_go115:
         description: Latest Go Programming Language 1.15 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang115
         url: uln://ol7_x86_64_developer_golang115
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go115 }}"
 
 foreman_products_ol7_uln_developer_go116:
@@ -103,7 +114,7 @@ foreman_products_ol7_uln_developer_go116:
         description: Latest Go Programming Language 1.16 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang116
         url: uln://ol7_x86_64_developer_golang116
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go116 }}"
 
 foreman_products_ol7_uln_developer_go117:
@@ -116,7 +127,7 @@ foreman_products_ol7_uln_developer_go117:
         description: Latest Go Programming Language 1.17 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang117
         url: uln://ol7_x86_64_developer_golang117
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go117 }}"
 
 foreman_products_ol7_uln_developer_go118:
@@ -129,7 +140,7 @@ foreman_products_ol7_uln_developer_go118:
         description: Latest Go Programming Language 1.18 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang118
         url: uln://ol7_x86_64_developer_golang118
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go118 }}"
 
 foreman_products_ol7_uln_developer_go119:
@@ -142,7 +153,7 @@ foreman_products_ol7_uln_developer_go119:
         description: Latest Go Programming Language 1.19 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_golang119
         url: uln://ol7_x86_64_developer_golang119
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_go119 }}"
 
 foreman_products_ol7_uln_developer_php74:
@@ -155,7 +166,7 @@ foreman_products_ol7_uln_developer_php74:
         description: Latest PHP 7.4 packages for Oracle Linux 7 (x86_64).
         label: ol7_uln_x86_64_developer_php74
         url: uln://ol7_x86_64_developer_php74
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol7_uln_developer
         organization: "{{ foreman_organization_ol7_uln_developer_php74 }}"
 
 foreman_products_ol7_uln_developer: "{{ [] |

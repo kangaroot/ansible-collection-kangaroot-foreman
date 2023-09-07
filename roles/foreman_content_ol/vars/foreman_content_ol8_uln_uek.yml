@@ -2,17 +2,28 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
-  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
   gpg_key: RPM-GPG-KEY-oracle
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol7_uln }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol7_uln | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol7_uln }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
+  upstream_username: "{{ foreman_products_ol_uln_username | default('') }}"
+  upstream_password: "{{ foreman_products_ol_uln_password | default('') }}"
+
+
+foreman_products_defaults_ol8_uln_uek: &foreman_products_defaults_ol8_uln_uek
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ol8_uln_uek }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ol8_uln_uek }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln_uek | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln_uek }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ol8_uln_uek | bool }}"
 
 
 foreman_products_ol8_uln_uekr6:
@@ -25,7 +36,7 @@ foreman_products_ol8_uln_uekr6:
         description: Latest Unbreakable Enterprise Kernel Release 6 packages for Oracle Linux 8 (x86_64)
         label: ol8_uln_x86_64_UEKR6
         url: uln://ol8_x86_64_UEKR6
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr6 }}"
 
 foreman_products_ol8_uln_uekr6_developer:
@@ -38,7 +49,7 @@ foreman_products_ol8_uln_uekr6_developer:
         description: Latest developer preview of Unbreakable Enterprise Kernel Release 6 packages for creating test and development environments (not for production use) - Oracle Linux 8 (x86_64)
         label: ol8_uln_x86_64_developer_UEKR6
         url: uln://ol8_x86_64_developer_UEKR6
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr6_developer }}"
 
 foreman_products_ol8_uln_uekr6_rdma:
@@ -51,7 +62,7 @@ foreman_products_ol8_uln_uekr6_rdma:
         description: Latest RDMA packages for Unbreakable Enterprise Kernel Release 6 packages on Oracle Linux 8 for the Oracle Integrated Stack.
         label: ol8_uln_x86_64_UEKR6_RDMA
         url: uln://ol8_x86_64_UEKR6_RDMA
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr6_rdma }}"
 
 foreman_products_ol8_uln_uekr7:
@@ -64,7 +75,7 @@ foreman_products_ol8_uln_uekr7:
         description: Unbreakable Enterprise Kernel Release 7 packages for Oracle Linux 8 (x86_64)
         label: ol8_uln_x86_64_UEKR7
         url: uln://ol8_x86_64_UEKR7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr7 }}"
 
 foreman_products_ol8_uln_uekr7_developer:
@@ -77,7 +88,7 @@ foreman_products_ol8_uln_uekr7_developer:
         description: Latest developer preview of Unbreakable Enterprise Kernel Release 7 packages for creating test and development environments (not for production use) - Oracle Linux 8 (x86_64)
         label: ol8_uln_x86_64_developer_UEKR7
         url: uln://ol8_x86_64_developer_UEKR7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr7_developer }}"
 
 foreman_products_ol8_uln_uekr7_rdma:
@@ -90,7 +101,7 @@ foreman_products_ol8_uln_uekr7_rdma:
         description: Latest RDMA packages for Unbreakable Enterprise Kernel Release 7 packages on Oracle Linux 8 for the Oracle Integrated Stack.
         label: ol8_uln_x86_64_UEKR7_RDMA
         url: uln://ol8_x86_64_UEKR7_RDMA
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_uekr7_rdma }}"
 
 foreman_products_ol8_uln_modrhck:
@@ -103,7 +114,7 @@ foreman_products_ol8_uln_modrhck:
         description: Latest Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 8 (x86_64).
         label: ol8_uln_x86_64_MODRHCK
         url: uln://ol8_x86_64_MODRHCK
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ol8_uln_uek
         organization: "{{ foreman_organization_ol8_uln_modrhck }}"
 
 foreman_products_ol8_uln_uek: "{{ [] |
