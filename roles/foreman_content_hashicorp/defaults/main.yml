@@ -20,6 +20,19 @@ foreman_enable_hashicorp_el9: "{{ foreman_enable_hashicorp | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### HASHICORP
+
+foreman_products_defaults_download_policy_hashicorp: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_hashicorp: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_hashicorp: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_hashicorp: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_hashicorp: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
