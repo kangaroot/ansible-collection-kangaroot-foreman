@@ -20,6 +20,37 @@ foreman_enable_epel_el9: "{{ foreman_enable_epel | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### EPEL
+
+foreman_products_defaults_download_policy_epel: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_epel: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_epel: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_epel: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_epel: "{{ foreman_products_defaults_unprotected | bool }}"
+
+foreman_products_defaults_download_policy_epel_el7: immediate
+foreman_products_defaults_mirroring_policy_epel_el7: "{{ foreman_products_defaults_mirroring_policy_epel }}"
+foreman_products_defaults_verify_ssl_on_sync_epel_el7: "{{ foreman_products_defaults_verify_ssl_on_sync_epel | bool }}"
+foreman_products_defaults_http_proxy_policy_epel_el7: "{{ foreman_products_defaults_http_proxy_policy_epel }}"
+foreman_products_defaults_unprotected_epel_el7: "{{ foreman_products_defaults_unprotected_epel | bool }}"
+
+foreman_products_defaults_download_policy_epel_el8: "{{ foreman_products_defaults_download_policy_epel }}"
+foreman_products_defaults_mirroring_policy_epel_el8: "{{ foreman_products_defaults_mirroring_policy_epel }}"
+foreman_products_defaults_verify_ssl_on_sync_epel_el8: "{{ foreman_products_defaults_verify_ssl_on_sync_epel | bool }}"
+foreman_products_defaults_http_proxy_policy_epel_el8: "{{ foreman_products_defaults_http_proxy_policy_epel }}"
+foreman_products_defaults_unprotected_epel_el8: "{{ foreman_products_defaults_unprotected_epel | bool }}"
+
+foreman_products_defaults_download_policy_epel_el9: "{{ foreman_products_defaults_download_policy_epel }}"
+foreman_products_defaults_mirroring_policy_epel_el9: "{{ foreman_products_defaults_mirroring_policy_epel }}"
+foreman_products_defaults_verify_ssl_on_sync_epel_el9: "{{ foreman_products_defaults_verify_ssl_on_sync_epel | bool }}"
+foreman_products_defaults_http_proxy_policy_epel_el9: "{{ foreman_products_defaults_http_proxy_policy_epel }}"
+foreman_products_defaults_unprotected_epel_el9: "{{ foreman_products_defaults_unprotected_epel | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
