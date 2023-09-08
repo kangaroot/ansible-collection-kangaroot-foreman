@@ -19,6 +19,19 @@ foreman_enable_datadog_v7: "{{ foreman_enable_datadog | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### DATADOG
+
+foreman_products_defaults_download_policy_datadog: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_datadog: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_datadog: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_datadog: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_datadog: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
