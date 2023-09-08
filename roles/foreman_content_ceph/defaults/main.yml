@@ -82,6 +82,49 @@ foreman_enable_ceph_docker: false
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### CEPH
+
+foreman_products_defaults_download_policy_ceph: mirror_content_only
+foreman_products_defaults_mirroring_policy_ceph: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_ceph: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_ceph: "{{ foreman_products_defaults_unprotected | bool }}"
+
+foreman_products_defaults_download_policy_ceph_nautilus: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_octopus: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_pacific: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_quincy: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_docker: "{{ foreman_products_defaults_download_policy_ceph }}"
+
+foreman_products_defaults_mirroring_policy_ceph_nautilus: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_octopus: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_pacific: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_quincy: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_docker: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+
+foreman_products_defaults_verify_ssl_on_sync_ceph_nautilus: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_octopus: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_pacific: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_quincy: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_docker: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+
+foreman_products_defaults_http_proxy_policy_ceph_nautilus: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_octopus: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_pacific: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_quincy: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_docker: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+
+foreman_products_defaults_unprotected_ceph_nautilus: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_octopus: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_pacific: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_quincy: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_docker: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

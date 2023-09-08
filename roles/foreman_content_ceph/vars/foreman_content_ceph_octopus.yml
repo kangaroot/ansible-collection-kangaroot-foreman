@@ -3,19 +3,41 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-Ceph-release
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: false
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 
 foreman_products_defaults_deb: &foreman_products_defaults_deb
   <<: *foreman_products_defaults
   content_type: deb
   mirroring_policy: "mirror_content_only"
+  deb_components: main
+  deb_architectures: amd64
+
+
+foreman_products_defaults_ceph_octopus: &foreman_products_defaults_ceph_octopus
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph_octopus }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ceph_octopus }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph_octopus | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph_octopus }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph_octopus | bool }}"
+
+foreman_products_defaults_ceph_octopus_deb: &foreman_products_defaults_ceph_octopus_deb
+  <<: *foreman_products_defaults_deb
+  content_type: deb
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph_octopus }}"
+  mirroring_policy: "mirror_content_only"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph_octopus | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph_octopus }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph_octopus | bool }}"
   deb_components: main
   deb_architectures: amd64
 
@@ -27,12 +49,12 @@ foreman_products_ceph_octopus_el7:
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL7
         label: ceph-octopus-el7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_octopus
         url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/x86_64/"
         organization: "{{ foreman_organization_ceph_octopus_el7 }}"
       - name: Ceph noarch packages - Octopus - EL7
         label: ceph-noarch-octopus-el7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_octopus
         url: "{{ foreman_repo_baseurl_ceph_octopus_el7 }}/rpm-octopus/el7/noarch"
         organization: "{{ foreman_organization_ceph_octopus_el7 }}"
 
@@ -43,12 +65,12 @@ foreman_products_ceph_octopus_el8:
     repositories:
       - name: Ceph packages for x86_64 - Octopus - EL8
         label: ceph-octopus-el8
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_octopus
         url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/x86_64/"
         organization: "{{ foreman_organization_ceph_octopus_el8 }}"
       - name: Ceph noarch packages - Octopus - EL8
         label: ceph-noarch-octopus-el8
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_octopus
         url: "{{ foreman_repo_baseurl_ceph_octopus_el8 }}/rpm-octopus/el8/noarch"
         organization: "{{ foreman_organization_ceph_octopus_el8 }}"
 
@@ -59,7 +81,7 @@ foreman_products_ceph_octopus_deb10:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
         label: ceph-octopus-debian-buster
-        <<: *foreman_products_defaults_deb
+        <<: *foreman_products_defaults_ceph_octopus_deb
         url: "{{ foreman_repo_baseurl_ceph_octopus_deb10 }}/debian-octopus/"
         deb_releases: buster
         organization: "{{ foreman_organization_ceph_octopus_deb10 }}"
@@ -71,7 +93,7 @@ foreman_products_ceph_octopus_ub1804:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
         label: ceph-octopus-ubuntu-bionic
-        <<: *foreman_products_defaults_deb
+        <<: *foreman_products_defaults_ceph_octopus_deb
         url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         deb_releases: bionic
         organization: "{{ foreman_organization_ceph_octopus_ub1804 }}"
@@ -83,7 +105,7 @@ foreman_products_ceph_octopus_ub2004:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-octopus-ubuntu-focal
-        <<: *foreman_products_defaults_deb
+        <<: *foreman_products_defaults_ceph_octopus_deb
         url: "{{ foreman_repo_baseurl_ceph_octopus_ub2004 }}/debian-octopus/"
         deb_releases: focal
         organization: "{{ foreman_organization_ceph_octopus_ub2004 }}"

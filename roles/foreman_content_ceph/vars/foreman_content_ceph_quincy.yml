@@ -3,19 +3,41 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-Ceph-release
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: false
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 
 foreman_products_defaults_deb: &foreman_products_defaults_deb
   <<: *foreman_products_defaults
   content_type: deb
   mirroring_policy: "mirror_content_only"
+  deb_components: main
+  deb_architectures: amd64
+
+
+foreman_products_defaults_ceph_quincy: &foreman_products_defaults_ceph_quincy
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph_quincy }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_ceph_quincy }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph_quincy | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph_quincy }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph_quincy | bool }}"
+
+foreman_products_defaults_ceph_quincy_deb: &foreman_products_defaults_ceph_quincy_deb
+  <<: *foreman_products_defaults_deb
+  content_type: deb
+  download_policy: "{{ foreman_products_defaults_download_policy_ceph_quincy }}"
+  mirroring_policy: "mirror_content_only"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph_quincy | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_ceph_quincy }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_ceph_quincy | bool }}"
   deb_components: main
   deb_architectures: amd64
 
@@ -27,12 +49,12 @@ foreman_products_ceph_quincy_el7:
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL7
         label: ceph-quincy-el7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy
         url: "{{ foreman_repo_baseurl_ceph_quincy_el7 }}/rpm-quincy/el7/x86_64/"
         organization: "{{ foreman_organization_ceph_quincy_el7 }}"
       - name: Ceph noarch packages - Quincy - EL7
         label: ceph-noarch-quincy-el7
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy
         url: "{{ foreman_repo_baseurl_ceph_quincy_el7 }}/rpm-quincy/el7/noarch"
         organization: "{{ foreman_organization_ceph_quincy_el7 }}"
 
@@ -43,12 +65,12 @@ foreman_products_ceph_quincy_el8:
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL8
         label: ceph-quincy-el8
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy
         url: "{{ foreman_repo_baseurl_ceph_quincy_el8 }}/rpm-quincy/el8/x86_64/"
         organization: "{{ foreman_organization_ceph_quincy_el8 }}"
       - name: Ceph noarch packages - Quincy - EL8
         label: ceph-noarch-quincy-el8
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy
         url: "{{ foreman_repo_baseurl_ceph_quincy_el8 }}/rpm-quincy/el8/noarch"
         organization: "{{ foreman_organization_ceph_quincy_el8 }}"
 
@@ -59,7 +81,7 @@ foreman_products_ceph_quincy_el9:
     repositories:
       - name: Ceph packages for x86_64 - Quincy - EL9
         label: ceph-quincy-el9
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy
         url: "{{ foreman_repo_baseurl_ceph_quincy_el9 }}/rpm-quincy/el9/x86_64/"
         organization: "{{ foreman_organization_ceph_quincy_el9 }}"
       - name: Ceph noarch packages - Quincy - EL9
@@ -75,7 +97,7 @@ foreman_products_ceph_quincy_deb11:
     repositories:
       - name: Ceph packages for amd64 - Quincy - Debian 11 (Bullseye)
         label: ceph-quincy-debian-bullseye
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy_deb
         url: "{{ foreman_repo_baseurl_ceph_quincy_deb11 }}/debian-quincy/"
         deb_releases: bullseye
         organization: "{{ foreman_organization_ceph_quincy_deb11 }}"
@@ -87,7 +109,7 @@ foreman_products_ceph_quincy_ub2004:
     repositories:
       - name: Ceph packages for amd64 - Quincy - Ubuntu 20.04 LTS (Focal Fossa)
         label: ceph-quincy-ubuntu-focal
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_ceph_quincy_deb
         url: "{{ foreman_repo_baseurl_ceph_quincy_ub2004 }}/debian-quincy/"
         deb_releases: focal
         organization: "{{ foreman_organization_ceph_quincy_ub2004 }}"
