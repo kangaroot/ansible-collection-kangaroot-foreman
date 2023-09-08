@@ -20,6 +20,19 @@ foreman_enable_elrepo_el9: "{{ foreman_enable_elrepo | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### ELREPO
+
+foreman_products_defaults_download_policy_elrepo: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_elrepo: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_elrepo: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_elrepo: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_elrepo: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

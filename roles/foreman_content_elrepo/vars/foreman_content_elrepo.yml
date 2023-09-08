@@ -3,14 +3,17 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   gpg_key: RPM-GPG-KEY-elrepo.org
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_elrepo }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
   # mirroring_policy: "mirror_content_only"
-  mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_complete"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_elrepo }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_elrepo | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_elrepo }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_elrepo | bool }}"
+
 
 foreman_products_elrepo_el7:
   - name: ELRepo.org
