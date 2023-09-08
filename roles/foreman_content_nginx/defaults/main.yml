@@ -24,6 +24,19 @@ foreman_enable_nginx_el9: "{{ foreman_enable_nginx | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### NGINX
+
+foreman_products_defaults_download_policy_nginx: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_nginx: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_nginx: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_nginx: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_nginx: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
