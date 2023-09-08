@@ -18,6 +18,19 @@ foreman_enable_kubernetes_el7: "{{ foreman_enable_kubernetes | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### KUBERNETES
+
+foreman_products_defaults_download_policy_kubernetes: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_kubernetes: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_kubernetes: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_kubernetes: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_kubernetes: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
