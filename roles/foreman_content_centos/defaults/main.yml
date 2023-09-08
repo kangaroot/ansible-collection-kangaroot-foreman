@@ -749,7 +749,7 @@ foreman_products_defaults_unprotected_centos8_sig_cloud: "{{ foreman_products_de
 foreman_products_defaults_unprotected_centos8_sig_virtualization: "{{ foreman_products_defaults_unprotected_centos8 | bool }}"
 foreman_products_defaults_unprotected_centos8_sig_storage: "{{ foreman_products_defaults_unprotected_centos8 | bool }}"
 
-### CENTOS STEAM 8
+### CENTOS STREAM 8
 
 foreman_products_defaults_download_policy_centos_stream8: "{{ foreman_products_defaults_download_policy_centos }}"
 
@@ -816,7 +816,7 @@ foreman_products_defaults_unprotected_centos_stream8_sig_virtualization: "{{ for
 foreman_products_defaults_unprotected_centos_stream8_sig_storage: "{{ foreman_products_defaults_unprotected_centos_stream8 | bool }}"
 foreman_products_defaults_unprotected_centos_stream8_sig_hyperscale: "{{ foreman_products_defaults_unprotected_centos_stream8 | bool }}"
 
-### CENTOS STEAM 9
+### CENTOS STREAM 9
 
 foreman_products_defaults_download_policy_centos_stream9: "{{ foreman_products_defaults_download_policy_centos }}"
 
