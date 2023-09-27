@@ -31,6 +31,31 @@ foreman_enable_docker_ee_el9: false
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### DOCKER
+
+foreman_products_defaults_download_policy_docker: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_docker: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_docker: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_docker: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_docker: "{{ foreman_products_defaults_unprotected | bool }}"
+
+foreman_products_defaults_download_policy_docker_ce: "{{ foreman_products_defaults_download_policy_docker }}"
+foreman_products_defaults_mirroring_policy_docker_ce: "{{ foreman_products_defaults_mirroring_policy_docker }}"
+foreman_products_defaults_verify_ssl_on_sync_docker_ce: "{{ foreman_products_defaults_verify_ssl_on_sync_docker | bool }}"
+foreman_products_defaults_http_proxy_policy_docker_ce: "{{ foreman_products_defaults_http_proxy_policy_docker }}"
+foreman_products_defaults_unprotected_docker_ce: "{{ foreman_products_defaults_unprotected_docker | bool }}"
+
+foreman_products_defaults_download_policy_docker_ee: "{{ foreman_products_defaults_download_policy_docker }}"
+foreman_products_defaults_mirroring_policy_docker_ee: "{{ foreman_products_defaults_mirroring_policy_docker }}"
+foreman_products_defaults_verify_ssl_on_sync_docker_ee: "{{ foreman_products_defaults_verify_ssl_on_sync_docker | bool }}"
+foreman_products_defaults_http_proxy_policy_docker_ee: "{{ foreman_products_defaults_http_proxy_policy_docker }}"
+foreman_products_defaults_unprotected_docker_ee: "{{ foreman_products_defaults_unprotected_docker | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

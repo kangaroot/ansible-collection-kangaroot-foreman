@@ -88,7 +88,7 @@ foreman_enable_ceph_docker: false
 ### CEPH
 
 foreman_products_defaults_download_policy_ceph: "{{ foreman_products_defaults_download_policy }}"
-foreman_products_defaults_mirroring_policy_ceph: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_mirroring_policy_ceph: mirror_content_only
 foreman_products_defaults_verify_ssl_on_sync_ceph: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
 foreman_products_defaults_http_proxy_policy_ceph: "{{ foreman_products_defaults_http_proxy_policy }}"
 foreman_products_defaults_unprotected_ceph: "{{ foreman_products_defaults_unprotected | bool }}"

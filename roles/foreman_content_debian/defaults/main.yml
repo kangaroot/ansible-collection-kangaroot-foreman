@@ -14,18 +14,6 @@ foreman_repo_baseurl_debian12: "{{ foreman_repo_baseurl_debian }}"
 
 
 #######################################
-### PRODUCTS DEFAULT DEB_COMPONENTS
-#######################################
-
-# foreman_products_debian_default_deb_components: main contrib non-free
-foreman_products_debian_default_deb_components: "{{ foreman_products_deb_default_deb_components | default('main') }}"
-# foreman_products_debian9_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
-# foreman_products_debian10_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
-# foreman_products_debian11_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
-# foreman_products_debian12_default_deb_components: "{{ foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) }}"
-
-
-#######################################
 ### OS DEFAULT TEMPLATES
 #######################################
 
@@ -195,6 +183,53 @@ foreman_enable_debian9: false
 foreman_enable_debian10: false
 foreman_enable_debian11: "{{ foreman_enable_debian | bool }}"
 foreman_enable_debian12: "{{ foreman_enable_debian | bool }}"
+
+
+#######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### DEBIAN
+
+foreman_products_defaults_download_policy_debian: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_debian: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_debian: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_debian: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_debian: "{{ foreman_products_defaults_unprotected | bool }}"
+foreman_products_defaults_deb_components_debian: "{{ foreman_products_defaults_deb_components }}"
+foreman_products_defaults_deb_architectures_debian: "{{ foreman_products_defaults_deb_architectures }}"
+
+foreman_products_defaults_download_policy_debian9: "{{ foreman_products_defaults_download_policy_debian }}"
+foreman_products_defaults_mirroring_policy_debian9: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+foreman_products_defaults_verify_ssl_on_sync_debian9: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
+foreman_products_defaults_http_proxy_policy_debian9: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+foreman_products_defaults_unprotected_debian9: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+foreman_products_defaults_deb_components_debian9: "{{ foreman_products_defaults_deb_components_debian }}"
+foreman_products_defaults_deb_architectures_debian9: "{{ foreman_products_defaults_deb_architectures_debian }}"
+
+foreman_products_defaults_download_policy_debian10: "{{ foreman_products_defaults_download_policy_debian }}"
+foreman_products_defaults_mirroring_policy_debian10: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+foreman_products_defaults_verify_ssl_on_sync_debian10: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
+foreman_products_defaults_http_proxy_policy_debian10: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+foreman_products_defaults_unprotected_debian10: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+foreman_products_defaults_deb_components_debian10: "{{ foreman_products_defaults_deb_components_debian }}"
+foreman_products_defaults_deb_architectures_debian10: "{{ foreman_products_defaults_deb_architectures_debian }}"
+
+foreman_products_defaults_download_policy_debian11: "{{ foreman_products_defaults_download_policy_debian }}"
+foreman_products_defaults_mirroring_policy_debian11: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+foreman_products_defaults_verify_ssl_on_sync_debian11: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
+foreman_products_defaults_http_proxy_policy_debian11: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+foreman_products_defaults_unprotected_debian11: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+foreman_products_defaults_deb_components_debian11: "{{ foreman_products_defaults_deb_components_debian }}"
+foreman_products_defaults_deb_architectures_debian11: "{{ foreman_products_defaults_deb_architectures_debian }}"
+
+foreman_products_defaults_download_policy_debian12: "{{ foreman_products_defaults_download_policy_debian }}"
+foreman_products_defaults_mirroring_policy_debian12: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+foreman_products_defaults_verify_ssl_on_sync_debian12: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
+foreman_products_defaults_http_proxy_policy_debian12: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+foreman_products_defaults_unprotected_debian12: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+foreman_products_defaults_deb_components_debian12: "{{ foreman_products_defaults_deb_components_debian }}"
+foreman_products_defaults_deb_architectures_debian12: "{{ foreman_products_defaults_deb_architectures_debian }}"
 
 
 #######################################

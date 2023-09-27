@@ -36,6 +36,19 @@ foreman_enable_microsoft_mssql_server_2022_el9: "{{ foreman_enable_microsoft_mss
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### MICROSOFT
+
+foreman_products_defaults_download_policy_microsoft: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_microsoft: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_microsoft: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_microsoft: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_microsoft: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

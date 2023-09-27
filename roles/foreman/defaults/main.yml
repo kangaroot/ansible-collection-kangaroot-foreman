@@ -101,13 +101,6 @@ foreman_activation_keys: []
 foreman_sync_plans: []
 
 ### ======================================
-### DEB products default deb_components
-### ======================================
-
-# foreman_products_deb_default_deb_components: main contrib non-free
-foreman_products_deb_default_deb_components: main
-
-### ======================================
 ### Product Defaults
 ### ======================================
 
@@ -116,13 +109,20 @@ foreman_products_defaults_mirroring_policy: mirror_complete
 foreman_products_defaults_verify_ssl_on_sync: false
 foreman_products_defaults_http_proxy_policy: global_default_http_proxy
 foreman_products_defaults_unprotected: false
+# foreman_products_defaults_deb_components: main contrib non-free
+foreman_products_defaults_deb_components: main
+foreman_products_defaults_deb_architectures: amd64
 
 ### ======================================
 ### Content View Defaults
 ### ======================================
 
 foreman_cv_prefix: cv_
+foreman_cv_allow_promote: false
+
 foreman_ccv_prefix: ccv_
+foreman_ccv_allow_promote: true
+foreman_ccv_auto_publish: true
 
 ###############################################################################
 ### Hosts / Provisioning section

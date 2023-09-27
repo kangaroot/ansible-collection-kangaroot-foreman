@@ -24,6 +24,19 @@ foreman_enable_remi_el9: "{{ foreman_enable_remi | bool }}"
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### REMI
+
+foreman_products_defaults_download_policy_remi: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_remi: "{{ foreman_products_defaults_mirroring_policy }}"
+foreman_products_defaults_verify_ssl_on_sync_remi: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_remi: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_remi: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
