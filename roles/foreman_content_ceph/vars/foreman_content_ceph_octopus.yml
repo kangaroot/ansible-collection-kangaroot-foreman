@@ -137,7 +137,7 @@ foreman_content_views_ceph_octopus_deb10:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Debian 10 (Buster)
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_deb10 }}"
 
 foreman_content_views_ceph_octopus_ub1804:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_octopus_ub1804"
@@ -145,7 +145,7 @@ foreman_content_views_ceph_octopus_ub1804:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 18.04 LTS (Bionic Beaver)
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_ub1804 }}"
 
 foreman_content_views_ceph_octopus_ub2004:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_octopus_ub2004"
@@ -153,7 +153,7 @@ foreman_content_views_ceph_octopus_ub2004:
     repositories:
       - name: Ceph packages for amd64 - Octopus - Ubuntu 20.04 LTS (Focal Fossa)
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_ub2004 }}"
 
 
 foreman_content_credentials_octopus_ceph_main: []
