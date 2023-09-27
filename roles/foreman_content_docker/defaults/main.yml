@@ -75,6 +75,53 @@ foreman_organization_docker_ee_el9: "{{ foreman_organization_docker_ee }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### DOCKER
+
+foreman_cv_allow_promote_docker: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_docker: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_docker: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_docker_ce: "{{ foreman_cv_allow_promote_docker | bool }}"
+foreman_ccv_allow_promote_docker_ce: "{{ foreman_ccv_allow_promote_docker | bool }}"
+foreman_ccv_auto_publish_docker_ce: "{{ foreman_ccv_auto_publish_docker | bool }}"
+
+
+foreman_cv_allow_promote_docker_ce_el7: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
+foreman_ccv_allow_promote_docker_ce_el7: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
+foreman_ccv_auto_publish_docker_ce_el7: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
+
+foreman_cv_allow_promote_docker_ce_el8: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
+foreman_ccv_allow_promote_docker_ce_el8: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
+foreman_ccv_auto_publish_docker_ce_el8: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
+
+foreman_cv_allow_promote_docker_ce_el9: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
+foreman_ccv_allow_promote_docker_ce_el9: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
+foreman_ccv_auto_publish_docker_ce_el9: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
+
+
+foreman_cv_allow_promote_docker_ee: "{{ foreman_cv_allow_promote_docker | bool }}"
+foreman_ccv_allow_promote_docker_ee: "{{ foreman_ccv_allow_promote_docker | bool }}"
+foreman_ccv_auto_publish_docker_ee: "{{ foreman_ccv_auto_publish_docker | bool }}"
+
+
+foreman_cv_allow_promote_docker_ee_el7: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
+foreman_ccv_allow_promote_docker_ee_el7: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
+foreman_ccv_auto_publish_docker_ee_el7: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
+
+foreman_cv_allow_promote_docker_ee_el8: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
+foreman_ccv_allow_promote_docker_ee_el8: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
+foreman_ccv_auto_publish_docker_ee_el8: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
+
+foreman_cv_allow_promote_docker_ee_el9: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
+foreman_ccv_allow_promote_docker_ee_el9: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
+foreman_ccv_auto_publish_docker_ee_el9: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
