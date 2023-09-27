@@ -66,51 +66,51 @@ foreman_products_defaults_centos85: &foreman_products_defaults_centos85
 
 foreman_products_defaults_centos80_kickstart: &foreman_products_defaults_centos80_kickstart
   <<: *foreman_products_defaults_centos80
-  download_policy: "{{ foreman_products_defaults_download_policycentos80_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos80_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos80_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos80_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos80_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos80_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos80_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos80_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos80_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos80_kickstart | bool }}"
 
 foreman_products_defaults_centos81_kickstart: &foreman_products_defaults_centos81_kickstart
   <<: *foreman_products_defaults_centos81
-  download_policy: "{{ foreman_products_defaults_download_policycentos81_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos81_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos81_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos81_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos81_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos81_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos81_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos81_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos81_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos81_kickstart | bool }}"
 
 foreman_products_defaults_centos82_kickstart: &foreman_products_defaults_centos82_kickstart
   <<: *foreman_products_defaults_centos82
-  download_policy: "{{ foreman_products_defaults_download_policycentos82_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos82_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos82_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos82_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos82_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos82_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos82_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos82_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos82_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos82_kickstart | bool }}"
 
 foreman_products_defaults_centos83_kickstart: &foreman_products_defaults_centos83_kickstart
   <<: *foreman_products_defaults_centos83
-  download_policy: "{{ foreman_products_defaults_download_policycentos83_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos83_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos83_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos83_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos83_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos83_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos83_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos83_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos83_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos83_kickstart | bool }}"
 
 foreman_products_defaults_centos84_kickstart: &foreman_products_defaults_centos84_kickstart
   <<: *foreman_products_defaults_centos84
-  download_policy: "{{ foreman_products_defaults_download_policycentos84_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos84_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos84_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos84_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos84_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos84_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos84_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos84_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos84_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos84_kickstart | bool }}"
 
 foreman_products_defaults_centos85_kickstart: &foreman_products_defaults_centos85_kickstart
   <<: *foreman_products_defaults_centos85
-  download_policy: "{{ foreman_products_defaults_download_policycentos85_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policycentos85_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_synccentos85_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policycentos85_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotectedcentos85_kickstart | bool }}"
+  download_policy: "{{ foreman_products_defaults_download_policy_centos85_kickstart }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos85_kickstart }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos85_kickstart | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos85_kickstart }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_centos85_kickstart | bool }}"
 
 
 foreman_products_centos80:
