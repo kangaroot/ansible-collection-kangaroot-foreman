@@ -23,6 +23,19 @@ foreman_enable_fedora_copr_dmann_subscription_manager_ol8: "{{ foreman_enable_fe
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### FEDORA COPR
+
+foreman_products_defaults_download_policy_fedora_copr: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_fedora_copr: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_fedora_copr: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_fedora_copr: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_fedora_copr: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 

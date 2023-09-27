@@ -3,14 +3,17 @@
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
   # gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_fedora_copr }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
+  # mirroring_policy: "mirror_content_only"
   # mirroring_policy: "mirror_complete"
-  verify_ssl_on_sync: False
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_fedora_copr }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_fedora_copr | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_fedora_copr }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_fedora_copr | bool }}"
+
 
 ### dgoodwin/subscription-manager OL 6/7
 
@@ -24,6 +27,7 @@ foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager: "{{ ( for
   union( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_ol6 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol6 | bool else [] ) |
   union( foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
+
 
 foreman_products_fedora_copr_dgoodwin_subscription_manager_ol6:
   - name: Fedora COPR
@@ -55,6 +59,7 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_produc
   union( foreman_products_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
 
+
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol6:
   - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol6"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
@@ -62,6 +67,7 @@ foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol6:
       - name: Fedora COPR - dgoodwin:subscription-manager - OL6
         product: Fedora COPR
     allow_promote: False
+
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7:
   - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol7"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
@@ -76,6 +82,7 @@ foreman_content_views_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_c
   union( foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7 | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager_ol7 | bool else [] )
   }}"
 
+
 ### dmann/subscription-manager OL 8
 
 foreman_content_credentials_fedora_copr_dmann_subscription_manager_main:
@@ -87,6 +94,7 @@ foreman_content_credentials_fedora_copr_dmann_subscription_manager_main:
 foreman_content_credentials_fedora_copr_dmann_subscription_manager: "{{ ( foreman_content_credentials_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] ) |
   union( foreman_content_credentials_fedora_copr_dmann_subscription_manager_ol8 | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager_ol8 | bool else [] )
   }}"
+
 
 foreman_products_fedora_copr_dmann_subscription_manager_ol8:
   - name: Fedora COPR
@@ -104,6 +112,7 @@ foreman_products_fedora_copr_dmann_subscription_manager_main: []
 foreman_products_fedora_copr_dmann_subscription_manager: "{{ ( foreman_products_fedora_copr_dmann_subscription_manager_main | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager | bool else [] ) |
   union( foreman_products_fedora_copr_dmann_subscription_manager_ol8 | default([]) if foreman_enable_fedora_copr_dmann_subscription_manager_ol8 | bool else [] )
   }}"
+
 
 foreman_content_views_fedora_copr_dmann_subscription_manager_ol8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dmann_subscription_manager_ol8"
