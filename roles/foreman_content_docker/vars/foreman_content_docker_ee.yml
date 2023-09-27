@@ -161,56 +161,56 @@ foreman_content_views_docker_ee_el7:
     repositories:
       - name: Docker EE Stable - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_17_03_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 17.03 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_17_06_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 17.06 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_18_03_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 18.03 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_18_09_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 18.09 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_19_03_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 19.03 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_20_10_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 20.10 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_23_0_rhel7"
     organization: "{{ foreman_organization_docker_ee_el7 }}"
     repositories:
       - name: Docker EE Stable 23.0 - x86_64 - RHEL7
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el7 }}"
 
 foreman_content_views_docker_ee_el8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_rhel8"
@@ -218,35 +218,35 @@ foreman_content_views_docker_ee_el8:
     repositories:
       - name: Docker EE Stable - x86_64 - RHEL8
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el8 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_18_09_rhel8"
     organization: "{{ foreman_organization_docker_ee_el8 }}"
     repositories:
       - name: Docker EE Stable 18.09 - x86_64 - RHEL8
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el8 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_19_03_rhel8"
     organization: "{{ foreman_organization_docker_ee_el8 }}"
     repositories:
       - name: Docker EE Stable 19.03 - x86_64 - RHEL8
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el8 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_20_10_rhel8"
     organization: "{{ foreman_organization_docker_ee_el8 }}"
     repositories:
       - name: Docker EE Stable 20.10 - x86_64 - RHEL8
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el8 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_23_0_rhel8"
     organization: "{{ foreman_organization_docker_ee_el8 }}"
     repositories:
       - name: Docker EE Stable 23.0 - x86_64 - RHEL8
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el8 }}"
 
 foreman_content_views_docker_ee_el9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_rhel9"
@@ -254,21 +254,21 @@ foreman_content_views_docker_ee_el9:
     repositories:
       - name: Docker EE Stable - x86_64 - RHEL9
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el9 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_20_10_rhel9"
     organization: "{{ foreman_organization_docker_ee_el9 }}"
     repositories:
       - name: Docker EE Stable 20.10 - x86_64 - RHEL9
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el9 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}docker_ee_stable_23_0_rhel9"
     organization: "{{ foreman_organization_docker_ee_el9 }}"
     repositories:
       - name: Docker EE Stable 23.0 - x86_64 - RHEL9
         product: Docker
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_docker_ee_el9 }}"
 
 foreman_content_views_docker_ee_main: []
 foreman_content_views_docker_ee: "{{ ( foreman_content_views_docker_ee_main | default([]) if foreman_enable_docker_ee | bool else [] ) |
