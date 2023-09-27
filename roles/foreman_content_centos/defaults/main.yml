@@ -1139,6 +1139,908 @@ foreman_organization_centos_stream9_sig_hyperscale_experimental: "{{ foreman_org
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### CENTOS
+
+foreman_cv_allow_promote_centos: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_centos: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_centos: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+### CENTOS 7
+
+foreman_cv_allow_promote_centos7: "{{ foreman_cv_allow_promote_centos | bool }}"
+foreman_ccv_allow_promote_centos7: "{{ foreman_ccv_allow_promote_centos | bool }}"
+foreman_ccv_auto_publish_centos7: "{{ foreman_ccv_auto_publish_centos | bool }}"
+
+
+foreman_cv_allow_promote_centos70: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos70: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos70: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos71: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos71: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos71: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos72: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos72: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos72: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos73: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos73: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos73: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos74: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos74: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos74: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos75: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos75: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos75: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos76: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos76: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos76: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos77: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos77: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos77: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos78: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos78: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos78: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos79: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos79: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos79: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+
+foreman_cv_allow_promote_centos7_dotnet: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_dotnet: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_dotnet: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_sclo: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_sclo: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_sclo: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_opstools: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_opstools: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_opstools: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_nfv: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_nfv: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_nfv: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_nfv_common: "{{ foreman_cv_allow_promote_centos7_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos7_sig_nfv_common: "{{ foreman_ccv_allow_promote_centos7_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos7_sig_nfv_common: "{{ foreman_ccv_auto_publish_centos7_sig_nfv | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_nfv_fdio: "{{ foreman_cv_allow_promote_centos7_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos7_sig_nfv_fdio: "{{ foreman_ccv_allow_promote_centos7_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos7_sig_nfv_fdio: "{{ foreman_ccv_auto_publish_centos7_sig_nfv | bool }}"
+
+
+foreman_cv_allow_promote_centos7_sig_configmanagement: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_configmanagement: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_configmanagement: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_configmanagement_ansible26: "{{ foreman_cv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos7_sig_configmanagement_ansible26: "{{ foreman_ccv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos7_sig_configmanagement_ansible26: "{{ foreman_ccv_auto_publish_centos7_sig_configmanagement | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_configmanagement_ansible27: "{{ foreman_cv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos7_sig_configmanagement_ansible27: "{{ foreman_ccv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos7_sig_configmanagement_ansible27: "{{ foreman_ccv_auto_publish_centos7_sig_configmanagement | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_configmanagement_ansible28: "{{ foreman_cv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos7_sig_configmanagement_ansible28: "{{ foreman_ccv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos7_sig_configmanagement_ansible28: "{{ foreman_ccv_auto_publish_centos7_sig_configmanagement | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_configmanagement_ansible29: "{{ foreman_cv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos7_sig_configmanagement_ansible29: "{{ foreman_ccv_allow_promote_centos7_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos7_sig_configmanagement_ansible29: "{{ foreman_ccv_auto_publish_centos7_sig_configmanagement | bool }}"
+
+
+foreman_cv_allow_promote_centos7_sig_paas: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin13: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin13: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin13: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin14: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin14: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin14: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin15: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin15: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin15: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin36: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin36: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin36: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin37: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin37: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin37: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin39: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin39: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin39: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin310: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin310: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin310: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_paas_openshift_origin311: "{{ foreman_cv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_allow_promote_centos7_sig_paas_openshift_origin311: "{{ foreman_ccv_allow_promote_centos7_sig_paas | bool }}"
+foreman_ccv_auto_publish_centos7_sig_paas_openshift_origin311: "{{ foreman_ccv_auto_publish_centos7_sig_paas | bool }}"
+
+
+foreman_cv_allow_promote_centos7_sig_cloud: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_queens: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_queens: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_rocky: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_rocky: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_stein: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_stein: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_train: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_train: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_train: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens_tested: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_queens_tested: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_queens_tested: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky_tested: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_rocky_tested: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_rocky_tested: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein_tested: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_stein_tested: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_stein_tested: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_cloud_openstack_train_tested: "{{ foreman_cv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos7_sig_cloud_openstack_train_tested: "{{ foreman_ccv_allow_promote_centos7_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos7_sig_cloud_openstack_train_tested: "{{ foreman_ccv_auto_publish_centos7_sig_cloud | bool }}"
+
+
+foreman_cv_allow_promote_centos7_sig_virtualization: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_azure: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_azure: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_azure: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_ovirt42: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_ovirt42: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_ovirt42: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_ovirt43: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_ovirt43: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_ovirt43: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_qemu_ev: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_qemu_ev: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_qemu_ev: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_46: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_46: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_46: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_48: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_48: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_48: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_410: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_410: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_410: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_412: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_412: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_412: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_413: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_413: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_413: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_414: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_414: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_414: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_virtualization_xen_epel: "{{ foreman_cv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos7_sig_virtualization_xen_epel: "{{ foreman_ccv_allow_promote_centos7_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos7_sig_virtualization_xen_epel: "{{ foreman_ccv_auto_publish_centos7_sig_virtualization | bool }}"
+
+
+foreman_cv_allow_promote_centos7_sig_storage: "{{ foreman_cv_allow_promote_centos7 | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage: "{{ foreman_ccv_allow_promote_centos7 | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage: "{{ foreman_ccv_auto_publish_centos7 | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_samba411: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_samba411: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_samba411: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster40: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster40: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster40: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster41: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster41: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster41: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster5: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster5: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster5: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster6: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster6: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster6: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster7: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster7: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster7: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster8: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster8: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster8: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_gluster9: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_gluster9: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_gluster9: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_ceph_jewel: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_ceph_jewel: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_ceph_jewel: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_ceph_luminous: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_ceph_luminous: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_ceph_luminous: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_ceph_nautilus: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_ceph_nautilus: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_ceph_nautilus: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha28: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_nfs_ganesha28: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_nfs_ganesha28: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha30: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_nfs_ganesha30: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_nfs_ganesha30: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha4: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos7_sig_storage_nfs_ganesha4: "{{ foreman_ccv_allow_promote_centos7_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos7_sig_storage_nfs_ganesha4: "{{ foreman_ccv_auto_publish_centos7_sig_storage | bool }}"
+
+
+### CENTOS 8
+
+foreman_cv_allow_promote_centos8: "{{ foreman_cv_allow_promote_centos | bool }}"
+foreman_ccv_allow_promote_centos8: "{{ foreman_ccv_allow_promote_centos | bool }}"
+foreman_ccv_auto_publish_centos8: "{{ foreman_ccv_auto_publish_centos | bool }}"
+
+
+foreman_cv_allow_promote_centos80: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos80: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos80: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos81: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos81: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos81: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos82: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos82: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos82: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos83: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos83: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos83: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos84: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos84: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos84: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos85: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos85: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos85: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+
+foreman_cv_allow_promote_centos80_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos80_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos80_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos81_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos81_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos81_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos82_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos82_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos82_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos83_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos83_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos83_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos84_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos84_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos84_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos85_kickstart: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos85_kickstart: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos85_kickstart: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_opstools: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_opstools: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_opstools: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_nfv: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_nfv: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_nfv: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_nfv_extras: "{{ foreman_cv_allow_promote_centos8_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos8_sig_nfv_extras: "{{ foreman_ccv_allow_promote_centos8_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos8_sig_nfv_extras: "{{ foreman_ccv_auto_publish_centos8_sig_nfv | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_nfv_openvswitch: "{{ foreman_cv_allow_promote_centos8_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos8_sig_nfv_openvswitch: "{{ foreman_ccv_allow_promote_centos8_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos8_sig_nfv_openvswitch: "{{ foreman_ccv_auto_publish_centos8_sig_nfv | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_configmanagement: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_configmanagement: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_configmanagement: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_configmanagement_ansible29: "{{ foreman_cv_allow_promote_centos8_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos8_sig_configmanagement_ansible29: "{{ foreman_ccv_allow_promote_centos8_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos8_sig_configmanagement_ansible29: "{{ foreman_ccv_auto_publish_centos8_sig_configmanagement | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_kmods: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_kmods: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_kmods: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_kmods_main: "{{ foreman_cv_allow_promote_centos8_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos8_sig_kmods_main: "{{ foreman_ccv_allow_promote_centos8_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos8_sig_kmods_main: "{{ foreman_ccv_auto_publish_centos8_sig_kmods | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_kmods_rebuild: "{{ foreman_cv_allow_promote_centos8_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos8_sig_kmods_rebuild: "{{ foreman_ccv_allow_promote_centos8_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos8_sig_kmods_rebuild: "{{ foreman_ccv_auto_publish_centos8_sig_kmods | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_messaging: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_messaging: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_messaging: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_messaging_qpid_proton: "{{ foreman_cv_allow_promote_centos8_sig_messaging | bool }}"
+foreman_ccv_allow_promote_centos8_sig_messaging_qpid_proton: "{{ foreman_ccv_allow_promote_centos8_sig_messaging | bool }}"
+foreman_ccv_auto_publish_centos8_sig_messaging_qpid_proton: "{{ foreman_ccv_auto_publish_centos8_sig_messaging | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_messaging_rabbitmq38: "{{ foreman_cv_allow_promote_centos8_sig_messaging | bool }}"
+foreman_ccv_allow_promote_centos8_sig_messaging_rabbitmq38: "{{ foreman_ccv_allow_promote_centos8_sig_messaging | bool }}"
+foreman_ccv_auto_publish_centos8_sig_messaging_rabbitmq38: "{{ foreman_ccv_auto_publish_centos8_sig_messaging | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_cloud: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_train: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_train: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_train: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_ussuri: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_ussuri: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_ussuri: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_victoria: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_victoria: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_victoria: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_train_tested: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_train_tested: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_train_tested: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_ussuri_tested: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_ussuri_tested: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_ussuri_tested: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_cloud_openstack_victoria_tested: "{{ foreman_cv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos8_sig_cloud_openstack_victoria_tested: "{{ foreman_ccv_allow_promote_centos8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos8_sig_cloud_openstack_victoria_tested: "{{ foreman_ccv_auto_publish_centos8_sig_cloud | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_virtualization: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_virtualization: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_virtualization: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_virtualization_advanced_virtualization: "{{ foreman_cv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos8_sig_virtualization_advanced_virtualization: "{{ foreman_ccv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos8_sig_virtualization_advanced_virtualization: "{{ foreman_ccv_auto_publish_centos8_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_virtualization_ovirt44: "{{ foreman_cv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos8_sig_virtualization_ovirt44: "{{ foreman_ccv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos8_sig_virtualization_ovirt44: "{{ foreman_ccv_auto_publish_centos8_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_virtualization_ovirt45: "{{ foreman_cv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos8_sig_virtualization_ovirt45: "{{ foreman_ccv_allow_promote_centos8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos8_sig_virtualization_ovirt45: "{{ foreman_ccv_auto_publish_centos8_sig_virtualization | bool }}"
+
+
+foreman_cv_allow_promote_centos8_sig_storage: "{{ foreman_cv_allow_promote_centos8 | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage: "{{ foreman_ccv_allow_promote_centos8 | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage: "{{ foreman_ccv_auto_publish_centos8 | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_samba411: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_samba411: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_samba411: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_samba412: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_samba412: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_samba412: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_samba413: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_samba413: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_samba413: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_samba414: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_samba414: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_samba414: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_samba415: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_samba415: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_samba415: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_gluster6: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_gluster6: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_gluster6: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_gluster7: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_gluster7: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_gluster7: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_gluster8: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_gluster8: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_gluster8: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_gluster9: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_gluster9: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_gluster9: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_ceph_nautilus: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_ceph_nautilus: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_ceph_nautilus: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_ceph_octopus: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_ceph_octopus: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_ceph_octopus: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_ceph_pacific: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_ceph_pacific: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_ceph_pacific: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_nfs_ganesha28: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_nfs_ganesha28: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_nfs_ganesha28: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos8_sig_storage_nfs_ganesha30: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos8_sig_storage_nfs_ganesha30: "{{ foreman_ccv_allow_promote_centos8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos8_sig_storage_nfs_ganesha30: "{{ foreman_ccv_auto_publish_centos8_sig_storage | bool }}"
+
+
+### CENTOS STREAM 8
+
+foreman_cv_allow_promote_centos_stream8: "{{ foreman_cv_allow_promote_centos | bool }}"
+foreman_ccv_allow_promote_centos_stream8: "{{ foreman_ccv_allow_promote_centos | bool }}"
+foreman_ccv_auto_publish_centos_stream8: "{{ foreman_ccv_auto_publish_centos | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_opstools: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_opstools: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_opstools: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_plus: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_plus: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_plus: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_nfv: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_nfv: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_nfv: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_nfv_extras: "{{ foreman_cv_allow_promote_centos_stream8_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_nfv_extras: "{{ foreman_ccv_allow_promote_centos_stream8_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_nfv_extras: "{{ foreman_ccv_auto_publish_centos_stream8_sig_nfv | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_nfv_openvswitch: "{{ foreman_cv_allow_promote_centos_stream8_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_nfv_openvswitch: "{{ foreman_ccv_allow_promote_centos_stream8_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_nfv_openvswitch: "{{ foreman_ccv_auto_publish_centos_stream8_sig_nfv | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_configmanagement: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_configmanagement: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_configmanagement: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_configmanagement_ansible29: "{{ foreman_cv_allow_promote_centos_stream8_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_configmanagement_ansible29: "{{ foreman_ccv_allow_promote_centos_stream8_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_configmanagement_ansible29: "{{ foreman_ccv_auto_publish_centos_stream8_sig_configmanagement | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_configmanagement_ansible5: "{{ foreman_cv_allow_promote_centos_stream8_sig_configmanagement | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_configmanagement_ansible5: "{{ foreman_ccv_allow_promote_centos_stream8_sig_configmanagement | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_configmanagement_ansible5: "{{ foreman_ccv_auto_publish_centos_stream8_sig_configmanagement | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_kmods: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_kmods: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_kmods: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_kmods_main: "{{ foreman_cv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_kmods_main: "{{ foreman_ccv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_kmods_main: "{{ foreman_ccv_auto_publish_centos_stream8_sig_kmods | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_kmods_rebuild: "{{ foreman_cv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_kmods_rebuild: "{{ foreman_ccv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_kmods_rebuild: "{{ foreman_ccv_auto_publish_centos_stream8_sig_kmods | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_kmods_userspace: "{{ foreman_cv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_kmods_userspace: "{{ foreman_ccv_allow_promote_centos_stream8_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_kmods_userspace: "{{ foreman_ccv_auto_publish_centos_stream8_sig_kmods | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_messaging: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_messaging: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_messaging: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_messaging_qpid_proton: "{{ foreman_cv_allow_promote_centos_stream8_sig_messaging | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_messaging_qpid_proton: "{{ foreman_ccv_allow_promote_centos_stream8_sig_messaging | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_messaging_qpid_proton: "{{ foreman_ccv_auto_publish_centos_stream8_sig_messaging | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_messaging_rabbitmq38: "{{ foreman_cv_allow_promote_centos_stream8_sig_messaging | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_messaging_rabbitmq38: "{{ foreman_ccv_allow_promote_centos_stream8_sig_messaging | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_messaging_rabbitmq38: "{{ foreman_ccv_auto_publish_centos_stream8_sig_messaging | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_train: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_train: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_train: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_ussuri: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_ussuri: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_ussuri: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_victoria: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_victoria: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_victoria: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_train_tested: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_train_tested: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_train_tested: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_ussuri_tested: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_ussuri_tested: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_ussuri_tested: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_cloud_openstack_victoria_tested: "{{ foreman_cv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_cloud_openstack_victoria_tested: "{{ foreman_ccv_allow_promote_centos_stream8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_cloud_openstack_victoria_tested: "{{ foreman_ccv_auto_publish_centos_stream8_sig_cloud | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_virtualization: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_virtualization: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_virtualization: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_virtualization_advanced_virtualization: "{{ foreman_cv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_virtualization_advanced_virtualization: "{{ foreman_ccv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_virtualization_advanced_virtualization: "{{ foreman_ccv_auto_publish_centos_stream8_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_virtualization_ovirt44: "{{ foreman_cv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_virtualization_ovirt44: "{{ foreman_ccv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_virtualization_ovirt44: "{{ foreman_ccv_auto_publish_centos_stream8_sig_virtualization | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_virtualization_ovirt45: "{{ foreman_cv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_virtualization_ovirt45: "{{ foreman_ccv_allow_promote_centos_stream8_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_virtualization_ovirt45: "{{ foreman_ccv_auto_publish_centos_stream8_sig_virtualization | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_storage: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba411: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba411: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba411: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba412: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba412: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba412: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba413: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba413: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba413: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba414: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba414: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba414: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba415: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba415: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba415: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba416: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba416: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba416: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba417: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba417: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba417: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_samba418: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_samba418: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_samba418: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster6: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster6: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster6: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster7: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster7: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster7: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster8: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster8: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster8: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster9: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster9: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster9: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster10: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster10: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster10: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_gluster11: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_gluster11: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_gluster11: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_ceph_nautilus: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_ceph_nautilus: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_ceph_nautilus: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_ceph_octopus: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_ceph_octopus: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_ceph_octopus: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_ceph_pacific: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_ceph_pacific: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_ceph_pacific: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_ceph_quincy: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_ceph_quincy: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_ceph_quincy: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_nfs_ganesha28: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_nfs_ganesha28: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_nfs_ganesha28: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_storage_nfs_ganesha30: "{{ foreman_cv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_storage_nfs_ganesha30: "{{ foreman_ccv_allow_promote_centos_stream8_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_storage_nfs_ganesha30: "{{ foreman_ccv_auto_publish_centos_stream8_sig_storage | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream8_sig_hyperscale: "{{ foreman_cv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_hyperscale: "{{ foreman_ccv_allow_promote_centos_stream8 | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_hyperscale: "{{ foreman_ccv_auto_publish_centos_stream8 | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_hyperscale_main: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_hyperscale_main: "{{ foreman_ccv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_hyperscale_main: "{{ foreman_ccv_auto_publish_centos_stream8_sig_hyperscale | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_hyperscale_hotfixes: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_hyperscale_hotfixes: "{{ foreman_ccv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_hyperscale_hotfixes: "{{ foreman_ccv_auto_publish_centos_stream8_sig_hyperscale | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_hyperscale_spin: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_hyperscale_spin: "{{ foreman_ccv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_hyperscale_spin: "{{ foreman_ccv_auto_publish_centos_stream8_sig_hyperscale | bool }}"
+
+foreman_cv_allow_promote_centos_stream8_sig_hyperscale_experimental: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream8_sig_hyperscale_experimental: "{{ foreman_ccv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream8_sig_hyperscale_experimental: "{{ foreman_ccv_auto_publish_centos_stream8_sig_hyperscale | bool }}"
+
+
+### CENTOS STREAM 9
+
+foreman_cv_allow_promote_centos_stream9: "{{ foreman_cv_allow_promote_centos | bool }}"
+foreman_ccv_allow_promote_centos_stream9: "{{ foreman_ccv_allow_promote_centos | bool }}"
+foreman_ccv_auto_publish_centos_stream9: "{{ foreman_ccv_auto_publish_centos | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_opstools: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_opstools: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_opstools: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_nfv: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_nfv: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_nfv: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_nfv_openvswitch: "{{ foreman_cv_allow_promote_centos_stream9_sig_nfv | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_nfv_openvswitch: "{{ foreman_ccv_allow_promote_centos_stream9_sig_nfv | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_nfv_openvswitch: "{{ foreman_ccv_auto_publish_centos_stream9_sig_nfv | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_kmods: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_kmods: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_kmods: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_kmods_main: "{{ foreman_cv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_kmods_main: "{{ foreman_ccv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_kmods_main: "{{ foreman_ccv_auto_publish_centos_stream9_sig_kmods | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_kmods_rebuild: "{{ foreman_cv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_kmods_rebuild: "{{ foreman_ccv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_kmods_rebuild: "{{ foreman_ccv_auto_publish_centos_stream9_sig_kmods | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_kmods_userspace: "{{ foreman_cv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_kmods_userspace: "{{ foreman_ccv_allow_promote_centos_stream9_sig_kmods | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_kmods_userspace: "{{ foreman_ccv_auto_publish_centos_stream9_sig_kmods | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_messaging: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_messaging: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_messaging: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_messaging_rabbitmq38: "{{ foreman_cv_allow_promote_centos_stream9_sig_messaging | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_messaging_rabbitmq38: "{{ foreman_ccv_allow_promote_centos_stream9_sig_messaging | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_messaging_rabbitmq38: "{{ foreman_ccv_auto_publish_centos_stream9_sig_messaging | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_client_xena: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_client_xena: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_client_xena: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_yoga: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_yoga: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_yoga: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_zed: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_zed: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_zed: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_antelope: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_antelope: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_antelope: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_yoga_tested: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_yoga_tested: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_yoga_tested: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_zed_tested: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_zed_tested: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_zed_tested: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_openstack_antelope_tested: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_openstack_antelope_tested: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_openstack_antelope_tested: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_okd413: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_okd413: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_okd413: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_cloud_okd414: "{{ foreman_cv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_cloud_okd414: "{{ foreman_ccv_allow_promote_centos_stream9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_cloud_okd414: "{{ foreman_ccv_auto_publish_centos_stream9_sig_cloud | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_virtualization: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_virtualization: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_virtualization: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_virtualization_ovirt45: "{{ foreman_cv_allow_promote_centos_stream9_sig_virtualization | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_virtualization_ovirt45: "{{ foreman_ccv_allow_promote_centos_stream9_sig_virtualization | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_virtualization_ovirt45: "{{ foreman_ccv_auto_publish_centos_stream9_sig_virtualization | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_storage: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_common: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_common: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_common: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_samba414: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_samba414: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_samba414: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_samba415: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_samba415: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_samba415: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_samba416: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_samba416: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_samba416: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_samba417: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_samba417: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_samba417: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_samba418: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_samba418: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_samba418: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_gluster9: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_gluster9: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_gluster9: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_gluster10: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_gluster10: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_gluster10: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_gluster11: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_gluster11: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_gluster11: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_ceph_pacific: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_ceph_pacific: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_ceph_pacific: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_ceph_quincy: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_ceph_quincy: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_ceph_quincy: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_nfs_ganesha4: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_nfs_ganesha4: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_nfs_ganesha4: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_storage_nfs_ganesha5: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_storage_nfs_ganesha5: "{{ foreman_ccv_allow_promote_centos_stream9_sig_storage | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_storage_nfs_ganesha5: "{{ foreman_ccv_auto_publish_centos_stream9_sig_storage | bool }}"
+
+
+foreman_cv_allow_promote_centos_stream9_sig_hyperscale: "{{ foreman_cv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_hyperscale: "{{ foreman_ccv_allow_promote_centos_stream9 | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_hyperscale: "{{ foreman_ccv_auto_publish_centos_stream9 | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_hyperscale_main: "{{ foreman_cv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_hyperscale_main: "{{ foreman_ccv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_hyperscale_main: "{{ foreman_ccv_auto_publish_centos_stream9_sig_hyperscale | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_hyperscale_spin: "{{ foreman_cv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_hyperscale_spin: "{{ foreman_ccv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_hyperscale_spin: "{{ foreman_ccv_auto_publish_centos_stream9_sig_hyperscale | bool }}"
+
+foreman_cv_allow_promote_centos_stream9_sig_hyperscale_experimental: "{{ foreman_cv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_allow_promote_centos_stream9_sig_hyperscale_experimental: "{{ foreman_ccv_allow_promote_centos_stream9_sig_hyperscale | bool }}"
+foreman_ccv_auto_publish_centos_stream9_sig_hyperscale_experimental: "{{ foreman_ccv_auto_publish_centos_stream9_sig_hyperscale | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
