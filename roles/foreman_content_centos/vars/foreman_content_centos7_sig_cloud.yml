@@ -134,7 +134,7 @@ foreman_content_views_centos7_sig_cloud_openstack_queens:
     repositories:
       - name: CentOS 7 - OpenStack queens
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens }}"
     filters:
       - name: "CentOS 7 - OpenStack queens exclude filter"
         filter_type: "rpm"
@@ -149,7 +149,7 @@ foreman_content_views_centos7_sig_cloud_openstack_queens_tested:
     repositories:
       - name: CentOS 7 - OpenStack queens Trunk Tested
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_rocky:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_rocky"
@@ -157,7 +157,7 @@ foreman_content_views_centos7_sig_cloud_openstack_rocky:
     repositories:
       - name: CentOS 7 - OpenStack rocky
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky }}"
     filters:
       - name: "CentOS 7 - OpenStack rocky exclude filter"
         filter_type: "rpm"
@@ -172,7 +172,7 @@ foreman_content_views_centos7_sig_cloud_openstack_rocky_tested:
     repositories:
       - name: CentOS 7 - OpenStack rocky Trunk Tested
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_stein:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_stein"
@@ -180,7 +180,7 @@ foreman_content_views_centos7_sig_cloud_openstack_stein:
     repositories:
       - name: CentOS 7 - OpenStack stein
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein }}"
     filters:
       - name: "CentOS 7 - OpenStack stein exclude filter"
         filter_type: "rpm"
@@ -195,7 +195,7 @@ foreman_content_views_centos7_sig_cloud_openstack_stein_tested:
     repositories:
       - name: CentOS 7 - OpenStack stein Trunk Tested
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_train:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_train"
@@ -203,7 +203,7 @@ foreman_content_views_centos7_sig_cloud_openstack_train:
     repositories:
       - name: CentOS 7 - OpenStack train
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_train }}"
     filters:
       - name: "CentOS 7 - OpenStack train exclude filter"
         filter_type: "rpm"
@@ -218,7 +218,7 @@ foreman_content_views_centos7_sig_cloud_openstack_train_tested:
     repositories:
       - name: CentOS 7 - OpenStack train Trunk Tested
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_train_tested }}"
 
 foreman_content_views_centos7_sig_cloud: "{{ [] |
   union( foreman_content_views_centos7_sig_cloud_openstack_queens | default([]) if foreman_enable_centos7_sig_cloud_openstack_queens else [] ) |

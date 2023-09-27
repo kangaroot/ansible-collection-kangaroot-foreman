@@ -55,7 +55,7 @@ foreman_content_views_hashicorp_el7:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 7
         product: Hashicorp
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el7 }}"
 
 foreman_content_views_hashicorp_el8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}hashicorp_el8"
@@ -63,7 +63,7 @@ foreman_content_views_hashicorp_el8:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 8
         product: Hashicorp
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el8 }}"
 
 foreman_content_views_hashicorp_el9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}hashicorp_el9"
@@ -71,6 +71,6 @@ foreman_content_views_hashicorp_el9:
     repositories:
       - name: Hashicorp Stable - x86_64 - RHEL 9
         product: Hashicorp
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el9 }}"
 
 

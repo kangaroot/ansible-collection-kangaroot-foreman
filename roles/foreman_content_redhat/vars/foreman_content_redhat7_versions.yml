@@ -681,50 +681,50 @@ foreman_content_views_redhat70:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.0
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_extras"
   #   organization: "{{ foreman_organization_redhat70 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_optional"
     organization: "{{ foreman_organization_redhat70 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.0
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_supplementary"
     organization: "{{ foreman_organization_redhat70 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.0
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_fastrack"
   #   organization: "{{ foreman_organization_redhat70 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat70 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_rh_common"
     organization: "{{ foreman_organization_redhat70 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.0
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel70_rhscl"
     organization: "{{ foreman_organization_redhat70 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.0
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat70 }}"
 
 foreman_content_views_redhat71:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_base"
@@ -732,50 +732,50 @@ foreman_content_views_redhat71:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.1
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_extras"
   #   organization: "{{ foreman_organization_redhat71 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_optional"
     organization: "{{ foreman_organization_redhat71 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.1
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_supplementary"
     organization: "{{ foreman_organization_redhat71 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.1
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_fastrack"
   #   organization: "{{ foreman_organization_redhat71 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat71 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_rh_common"
     organization: "{{ foreman_organization_redhat71 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.1
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel71_rhscl"
     organization: "{{ foreman_organization_redhat71 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.1
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat71 }}"
 
 foreman_content_views_redhat72:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_base"
@@ -783,50 +783,50 @@ foreman_content_views_redhat72:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.2
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_extras"
   #   organization: "{{ foreman_organization_redhat72 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_optional"
     organization: "{{ foreman_organization_redhat72 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.2
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_supplementary"
     organization: "{{ foreman_organization_redhat72 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.2
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_fastrack"
   #   organization: "{{ foreman_organization_redhat72 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat72 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_rh_common"
     organization: "{{ foreman_organization_redhat72 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.2
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel72_rhscl"
     organization: "{{ foreman_organization_redhat72 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.2
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat72 }}"
 
 foreman_content_views_redhat73:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_base"
@@ -834,50 +834,50 @@ foreman_content_views_redhat73:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.3
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_extras"
   #   organization: "{{ foreman_organization_redhat73 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_optional"
     organization: "{{ foreman_organization_redhat73 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.3
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_supplementary"
     organization: "{{ foreman_organization_redhat73 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.3
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_fastrack"
   #   organization: "{{ foreman_organization_redhat73 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat73 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_rh_common"
     organization: "{{ foreman_organization_redhat73 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.3
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel73_rhscl"
     organization: "{{ foreman_organization_redhat73 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.3
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat73 }}"
 
 foreman_content_views_redhat74:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_base"
@@ -885,50 +885,50 @@ foreman_content_views_redhat74:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.4
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_extras"
   #   organization: "{{ foreman_organization_redhat74 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_optional"
     organization: "{{ foreman_organization_redhat74 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.4
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_supplementary"
     organization: "{{ foreman_organization_redhat74 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.4
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_fastrack"
   #   organization: "{{ foreman_organization_redhat74 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat74 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_rh_common"
     organization: "{{ foreman_organization_redhat74 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.4
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel74_rhscl"
     organization: "{{ foreman_organization_redhat74 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.4
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat74 }}"
 
 foreman_content_views_redhat75:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_base"
@@ -936,50 +936,50 @@ foreman_content_views_redhat75:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.5
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_extras"
   #   organization: "{{ foreman_organization_redhat75 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_optional"
     organization: "{{ foreman_organization_redhat75 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.5
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_supplementary"
     organization: "{{ foreman_organization_redhat75 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.5
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_fastrack"
   #   organization: "{{ foreman_organization_redhat75 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat75 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_rh_common"
     organization: "{{ foreman_organization_redhat75 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.5
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel75_rhscl"
     organization: "{{ foreman_organization_redhat75 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.5
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat75 }}"
 
 foreman_content_views_redhat76:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_base"
@@ -987,50 +987,50 @@ foreman_content_views_redhat76:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.6
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_extras"
   #   organization: "{{ foreman_organization_redhat76 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_optional"
     organization: "{{ foreman_organization_redhat76 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.6
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_supplementary"
     organization: "{{ foreman_organization_redhat76 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.6
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_fastrack"
   #   organization: "{{ foreman_organization_redhat76 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat76 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_rh_common"
     organization: "{{ foreman_organization_redhat76 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.6
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel76_rhscl"
     organization: "{{ foreman_organization_redhat76 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.6
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat76 }}"
 
 foreman_content_views_redhat77:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_base"
@@ -1038,50 +1038,50 @@ foreman_content_views_redhat77:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.7
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_extras"
   #   organization: "{{ foreman_organization_redhat77 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_optional"
     organization: "{{ foreman_organization_redhat77 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.7
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_supplementary"
     organization: "{{ foreman_organization_redhat77 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.7
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_fastrack"
   #   organization: "{{ foreman_organization_redhat77 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat77 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_rh_common"
     organization: "{{ foreman_organization_redhat77 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.7
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel77_rhscl"
     organization: "{{ foreman_organization_redhat77 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.7
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat77 }}"
 
 foreman_content_views_redhat78:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_base"
@@ -1089,50 +1089,50 @@ foreman_content_views_redhat78:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.8
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_extras"
   #   organization: "{{ foreman_organization_redhat78 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_optional"
     organization: "{{ foreman_organization_redhat78 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.8
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_supplementary"
     organization: "{{ foreman_organization_redhat78 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.8
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_fastrack"
   #   organization: "{{ foreman_organization_redhat78 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat78 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_rh_common"
     organization: "{{ foreman_organization_redhat78 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.8
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel78_rhscl"
     organization: "{{ foreman_organization_redhat78 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.8
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat78 }}"
 
 foreman_content_views_redhat79:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_base"
@@ -1140,50 +1140,50 @@ foreman_content_views_redhat79:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7.9
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_extras"
   #   organization: "{{ foreman_organization_redhat79 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_optional"
     organization: "{{ foreman_organization_redhat79 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7.9
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_supplementary"
     organization: "{{ foreman_organization_redhat79 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7.9
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_fastrack"
   #   organization: "{{ foreman_organization_redhat79 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_optional_fastrack"
   #   organization: "{{ foreman_organization_redhat79 }}"
   #   repositories:
   #     - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
   #       product: 'Red Hat Enterprise Linux Server'
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_rh_common"
     organization: "{{ foreman_organization_redhat79 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7.9
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel79_rhscl"
     organization: "{{ foreman_organization_redhat79 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7.9
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
 
 foreman_content_views_redhat7_versions: "{{ [] |
   union( foreman_content_views_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |

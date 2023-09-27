@@ -36,12 +36,13 @@ foreman_content_views_template_el8:
     repositories:
       - name: Template Product EL8
         product: Template Product
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_template_el8 }}"
 
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}template_el8"
     organization: "{{ foreman_organization_template_el8 }}"
     composite: True
-    auto_publish: True
+    allow_promote: "{{ foreman_ccv_allow_promote_template_el8 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_template_el8 }}"
     components:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}template_el8"
         latest: true

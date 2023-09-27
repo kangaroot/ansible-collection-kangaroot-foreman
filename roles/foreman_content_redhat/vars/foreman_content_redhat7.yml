@@ -108,101 +108,102 @@ foreman_content_views_redhat7:
     repositories:
       - name: Red Hat Enterprise Linux 7 Server RPMs x86_64 7Server
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_extras"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Extras RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_optional"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional RPMs x86_64 7Server
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_supplementary"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Supplementary RPMs x86_64 7Server
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_fastrack"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Fastrack RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_optional_fastrack"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - Optional Fastrack RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_rh_common"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Enterprise Linux 7 Server - RH Common RPMs x86_64 7Server
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_sat_client_6"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Satellite Client 6 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_sat_maint_6"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Satellite Maintenance 6 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_sat_maint_6_11"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Satellite Maintenance 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_sat_tools_6_10"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Satellite Tools 6.10 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_sat_utils_6_11"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Satellite Utils 6.11 for RHEL 7 Server RPMs x86_64
         product: 'Red Hat Enterprise Linux Server'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_rhscl"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Software Collections RPMs for Red Hat Enterprise Linux 7 Server x86_64 7Server
         product: 'Red Hat Software Collections (for RHEL Server)'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_2"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Ansible Engine 2 RPMs for Red Hat Enterprise Linux 7 Server x86_64
         product: 'Red Hat Ansible Engine'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_29"
     organization: "{{ foreman_organization_redhat7 }}"
     repositories:
       - name: Red Hat Ansible Engine 2.9 RPMs for Red Hat Enterprise Linux 7 Server x86_64
         product: 'Red Hat Ansible Engine'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat7 }}"
 
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel7"
     organization: "{{ foreman_organization_redhat7 }}"
     composite: True
-    auto_publish: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat7 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat7 }}"
     components:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_base"
         latest: true

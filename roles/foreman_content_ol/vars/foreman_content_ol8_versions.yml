@@ -224,7 +224,7 @@ foreman_content_views_ol80:
     repositories:
       - name: Oracle Linux 8 BaseOS GA (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol80 }}"
 
 foreman_content_views_ol81:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u1_baseos_base"
@@ -232,7 +232,7 @@ foreman_content_views_ol81:
     repositories:
       - name: Oracle Linux 8.1 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol81 }}"
 
 foreman_content_views_ol82:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u2_baseos_base"
@@ -240,7 +240,7 @@ foreman_content_views_ol82:
     repositories:
       - name: Oracle Linux 8.2 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol82 }}"
 
 foreman_content_views_ol83:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u3_baseos_base"
@@ -248,7 +248,7 @@ foreman_content_views_ol83:
     repositories:
       - name: Oracle Linux 8.3 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol83 }}"
 
 foreman_content_views_ol84:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u4_baseos_base"
@@ -256,7 +256,7 @@ foreman_content_views_ol84:
     repositories:
       - name: Oracle Linux 8.4 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol84 }}"
 
 foreman_content_views_ol85:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u5_baseos_base"
@@ -264,7 +264,7 @@ foreman_content_views_ol85:
     repositories:
       - name: Oracle Linux 8.5 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol85 }}"
 
 foreman_content_views_ol86:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u6_baseos_base"
@@ -272,7 +272,7 @@ foreman_content_views_ol86:
     repositories:
       - name: Oracle Linux 8.6 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol86 }}"
 
 foreman_content_views_ol87:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u7_baseos_base"
@@ -280,7 +280,7 @@ foreman_content_views_ol87:
     repositories:
       - name: Oracle Linux 8.7 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol87 }}"
 
 foreman_content_views_ol88:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_u8_baseos_base"
@@ -288,7 +288,7 @@ foreman_content_views_ol88:
     repositories:
       - name: Oracle Linux 8.8 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol88 }}"
 
 foreman_content_views_ol8_versions: "{{ [] |
   union( foreman_content_views_ol80 | default([]) if foreman_enable_ol80 else [] ) |

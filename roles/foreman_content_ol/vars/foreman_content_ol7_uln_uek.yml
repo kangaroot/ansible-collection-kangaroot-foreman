@@ -246,7 +246,7 @@ foreman_content_views_ol7_uln_uekr3:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 3 for Oracle Linux 7 (x86_64) - Latest
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr3 }}"
 
 foreman_content_views_ol7_uln_uekr3_ofed:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR3_OFED20"
@@ -254,7 +254,7 @@ foreman_content_views_ol7_uln_uekr3_ofed:
     repositories:
       - name: OFED supporting tool packages for Unbreakable Enterprise Kernel on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr3_ofed }}"
 
 foreman_content_views_ol7_uln_uekr3_dtrace:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_Dtrace_userspace"
@@ -262,7 +262,7 @@ foreman_content_views_ol7_uln_uekr3_dtrace:
     repositories:
       - name: Oracle Linux 7 Dtrace Userspace Tools (x86_64) - Latest
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr3_dtrace }}"
 
 foreman_content_views_ol7_uln_uekr4:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4"
@@ -270,7 +270,7 @@ foreman_content_views_ol7_uln_uekr4:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr4 }}"
 
 foreman_content_views_ol7_uln_uekr4_ofed:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_OFED"
@@ -278,7 +278,7 @@ foreman_content_views_ol7_uln_uekr4_ofed:
     repositories:
       - name: OFED supporting tool packages for Unbreakable Enterprise Kernel Release 4 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr4_ofed }}"
 
 foreman_content_views_ol7_uln_uekr4_dtrace:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_DTrace_userspace"
@@ -286,7 +286,7 @@ foreman_content_views_ol7_uln_uekr4_dtrace:
     repositories:
       - name: Dtrace Userspace Tools (x86_64) for UEKR4 on Oracle Linux 7
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr4_dtrace }}"
 
 foreman_content_views_ol7_uln_uekr4_archive:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR4_archive"
@@ -294,7 +294,7 @@ foreman_content_views_ol7_uln_uekr4_archive:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 7 (x86_64) -Archive
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr4_archive }}"
 
 foreman_content_views_ol7_uln_uekr5:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5"
@@ -302,7 +302,7 @@ foreman_content_views_ol7_uln_uekr5:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr5 }}"
 
 foreman_content_views_ol7_uln_uekr5_archive:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5_archive"
@@ -310,7 +310,7 @@ foreman_content_views_ol7_uln_uekr5_archive:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64) -Archive
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr5_archive }}"
 
 foreman_content_views_ol7_uln_uekr5_rdma:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR5_RDMA"
@@ -318,7 +318,7 @@ foreman_content_views_ol7_uln_uekr5_rdma:
     repositories:
       - name: Oracle Linux 7 Unbreakable Enterprise Kernel Release 5 RDMA (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr5_rdma }}"
 
 foreman_content_views_ol7_uln_uekr5_developer:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_developer_UEKR5"
@@ -326,7 +326,7 @@ foreman_content_views_ol7_uln_uekr5_developer:
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 5 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr5_developer }}"
 
 foreman_content_views_ol7_uln_uekr6:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR6"
@@ -334,7 +334,7 @@ foreman_content_views_ol7_uln_uekr6:
     repositories:
       - name: Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr6 }}"
 
 foreman_content_views_ol7_uln_uekr6_rdma:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_UEKR6_RDMA"
@@ -342,7 +342,7 @@ foreman_content_views_ol7_uln_uekr6_rdma:
     repositories:
       - name: Oracle Linux 7 (x86_64) UEK Release 6 RDMA
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr6_rdma }}"
 
 foreman_content_views_ol7_uln_uekr6_developer:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_developer_UEKR6"
@@ -350,7 +350,7 @@ foreman_content_views_ol7_uln_uekr6_developer:
     repositories:
       - name: Developer preview of Unbreakable Enterprise Kernel Release 6 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_uekr6_developer }}"
 
 foreman_content_views_ol7_uln_modrhck:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_MODRHCK"
@@ -358,7 +358,7 @@ foreman_content_views_ol7_uln_modrhck:
     repositories:
       - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_modrhck }}"
 
 foreman_content_views_ol7_uln_uek: "{{ [] |
   union( foreman_content_views_ol7_uln_uekr3 | default([]) if foreman_enable_ol7_uln_uekr3 else [] ) |

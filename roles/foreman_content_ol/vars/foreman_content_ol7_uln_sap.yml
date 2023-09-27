@@ -46,5 +46,5 @@ foreman_content_views_ol7_uln_sap:
     repositories:
       - name: Oracle Linux 7 software for SAP
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_sap }}"
 

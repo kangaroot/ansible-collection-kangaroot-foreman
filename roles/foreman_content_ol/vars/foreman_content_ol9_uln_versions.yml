@@ -162,7 +162,7 @@ foreman_content_views_ol90_uln:
     repositories:
       - name: Oracle Linux 9 BaseOS GA (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol90_uln }}"
 
 foreman_content_views_ol91_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_u1_baseos_base"
@@ -170,7 +170,7 @@ foreman_content_views_ol91_uln:
     repositories:
       - name: Oracle Linux 9.1 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol91_uln }}"
 
 foreman_content_views_ol92_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_u2_baseos_base"
@@ -178,7 +178,7 @@ foreman_content_views_ol92_uln:
     repositories:
       - name: Oracle Linux 9.2 BaseOS (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol92_uln }}"
 
 foreman_content_views_ol90_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_u0_baseos_patch"
@@ -186,7 +186,7 @@ foreman_content_views_ol90_patch_uln:
     repositories:
       - name: Oracle Linux 9 BaseOS GA Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol90_patch_uln }}"
 
 foreman_content_views_ol91_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_u1_baseos_patch"
@@ -194,7 +194,7 @@ foreman_content_views_ol91_patch_uln:
     repositories:
       - name: Oracle Linux 9.1 BaseOS Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol91_patch_uln }}"
 
 foreman_content_views_ol92_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_u2_baseos_patch"
@@ -202,7 +202,7 @@ foreman_content_views_ol92_patch_uln:
     repositories:
       - name: Oracle Linux 9.2 BaseOS Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol92_patch_uln }}"
 
 foreman_content_views_ol9_uln_versions: "{{ [] |
   union( foreman_content_views_ol90_uln | default([]) if foreman_enable_ol90_uln else [] ) |

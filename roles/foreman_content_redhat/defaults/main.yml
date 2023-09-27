@@ -284,6 +284,249 @@ foreman_organization_redhat9_rhocp: "{{ foreman_organization_redhat9 }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### REDHAT
+
+foreman_cv_allow_promote_redhat: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_redhat: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_redhat: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_redhat7: "{{ foreman_cv_allow_promote_redhat | bool }}"
+foreman_ccv_allow_promote_redhat7: "{{ foreman_ccv_allow_promote_redhat | bool }}"
+foreman_ccv_auto_publish_redhat7: "{{ foreman_ccv_auto_publish_redhat | bool }}"
+
+
+foreman_cv_allow_promote_redhat70: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat70: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat70: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat71: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat71: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat71: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat72: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat72: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat72: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat73: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat73: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat73: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat74: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat74: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat74: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat75: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat75: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat75: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat76: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat76: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat76: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat77: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat77: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat77: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat78: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat78: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat78: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat79: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat79: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat79: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+
+foreman_cv_allow_promote_redhat70_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat70_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat70_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat71_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat71_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat71_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat72_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat72_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat72_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat73_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat73_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat73_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat74_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat74_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat74_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat75_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat75_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat75_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat76_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat76_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat76_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat77_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat77_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat77_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat78_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat78_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat78_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat79_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat79_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat79_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+
+foreman_cv_allow_promote_redhat7_sat: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat7_sat: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat7_sat: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat7_aap: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat7_aap: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat7_aap: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+foreman_cv_allow_promote_redhat7_rhocp: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
+foreman_ccv_allow_promote_redhat7_rhocp: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
+foreman_ccv_auto_publish_redhat7_rhocp: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
+
+
+foreman_cv_allow_promote_redhat8: "{{ foreman_cv_allow_promote_redhat | bool }}"
+foreman_ccv_allow_promote_redhat8: "{{ foreman_ccv_allow_promote_redhat | bool }}"
+foreman_ccv_auto_publish_redhat8: "{{ foreman_ccv_auto_publish_redhat | bool }}"
+
+
+foreman_cv_allow_promote_redhat80: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat80: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat80: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat81: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat81: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat81: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat82: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat82: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat82: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat83: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat83: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat83: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat84: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat84: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat84: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat85: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat85: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat85: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat86: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat86: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat86: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat87: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat87: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat87: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat88: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat88: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat88: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+
+foreman_cv_allow_promote_redhat80_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat80_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat80_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat81_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat81_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat81_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat82_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat82_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat82_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat83_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat83_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat83_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat84_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat84_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat84_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat85_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat85_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat85_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat86_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat86_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat86_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat87_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat87_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat87_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat88_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat88_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat88_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+
+foreman_cv_allow_promote_redhat8_sat: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat8_sat: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat8_sat: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat8_aap: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat8_aap: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat8_aap: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+foreman_cv_allow_promote_redhat8_rhocp: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+foreman_ccv_allow_promote_redhat8_rhocp: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+foreman_ccv_auto_publish_redhat8_rhocp: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
+
+foreman_cv_allow_promote_redhat9: "{{ foreman_cv_allow_promote_redhat | bool }}"
+foreman_ccv_allow_promote_redhat9: "{{ foreman_ccv_allow_promote_redhat | bool }}"
+foreman_ccv_auto_publish_redhat9: "{{ foreman_ccv_auto_publish_redhat | bool }}"
+
+
+foreman_cv_allow_promote_redhat90: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat90: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat90: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+foreman_cv_allow_promote_redhat91: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat91: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat91: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+foreman_cv_allow_promote_redhat92: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat92: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat92: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+
+foreman_cv_allow_promote_redhat90_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat90_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat90_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+foreman_cv_allow_promote_redhat91_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat91_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat91_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+foreman_cv_allow_promote_redhat92_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat92_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat92_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+
+foreman_cv_allow_promote_redhat9_aap: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat9_aap: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat9_aap: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+foreman_cv_allow_promote_redhat9_rhocp: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+foreman_ccv_allow_promote_redhat9_rhocp: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+foreman_ccv_auto_publish_redhat9_rhocp: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

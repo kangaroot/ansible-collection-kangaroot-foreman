@@ -178,7 +178,7 @@ foreman_content_views_centos7_sig_virtualization_azure:
     repositories:
       - name: CentOS 7 - Azure
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_azure }}"
 
 foreman_content_views_centos7_sig_virtualization_ovirt42:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ovirt42"
@@ -186,7 +186,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt42:
     repositories:
       - name: CentOS 7 - oVirt 4.2
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_ovirt42 }}"
 
 foreman_content_views_centos7_sig_virtualization_ovirt43:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_ovirt43"
@@ -194,7 +194,7 @@ foreman_content_views_centos7_sig_virtualization_ovirt43:
     repositories:
       - name: CentOS 7 - oVirt 4.3
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_ovirt43 }}"
 
 foreman_content_views_centos7_sig_virtualization_qemu_ev:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_qemu_ev"
@@ -202,7 +202,7 @@ foreman_content_views_centos7_sig_virtualization_qemu_ev:
     repositories:
       - name: CentOS 7 - QEMU EV
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_qemu_ev }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_46:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_46"
@@ -210,7 +210,7 @@ foreman_content_views_centos7_sig_virtualization_xen_46:
     repositories:
       - name: CentOS 7 - xen 4.6
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_46 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_48:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_48"
@@ -218,7 +218,7 @@ foreman_content_views_centos7_sig_virtualization_xen_48:
     repositories:
       - name: CentOS 7 - xen 4.8
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_48 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_410:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_410"
@@ -226,7 +226,7 @@ foreman_content_views_centos7_sig_virtualization_xen_410:
     repositories:
       - name: CentOS 7 - xen 4.10
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_410 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_412:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_412"
@@ -234,7 +234,7 @@ foreman_content_views_centos7_sig_virtualization_xen_412:
     repositories:
       - name: CentOS 7 - xen 4.12
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_412 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_413:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_413"
@@ -242,7 +242,7 @@ foreman_content_views_centos7_sig_virtualization_xen_413:
     repositories:
       - name: CentOS 7 - xen 4.13
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_413 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_414:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_414"
@@ -250,7 +250,7 @@ foreman_content_views_centos7_sig_virtualization_xen_414:
     repositories:
       - name: CentOS 7 - xen 4.14
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_414 }}"
 
 foreman_content_views_centos7_sig_virtualization_xen_epel:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_virt_xen_epel"
@@ -258,7 +258,7 @@ foreman_content_views_centos7_sig_virtualization_xen_epel:
     repositories:
       - name: CentOS 7 - Extra Packages from EPEL for Xen - x86_64
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_virtualization_xen_epel }}"
     filters:
       - name: "CentOS 7 - Extra Packages from EPEL for Xen - x86_64 include filter"
         filter_type: "rpm"

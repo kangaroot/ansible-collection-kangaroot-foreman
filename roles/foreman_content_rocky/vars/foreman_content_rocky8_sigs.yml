@@ -67,7 +67,7 @@ foreman_content_views_rocky8_sig_core_common:
     repositories:
       - name: Rocky Linux 8 - SIG Core Common
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky8_sig_core_common }}"
 
 foreman_content_views_rocky8_sig_core_infra:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_core_infra"
@@ -75,7 +75,7 @@ foreman_content_views_rocky8_sig_core_infra:
     repositories:
       - name: Rocky Linux 8 - SIG Core Infrastructure
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky8_sig_core_infra }}"
 
 foreman_content_views_rocky8_sig_core: "{{ [] |
   union( foreman_content_views_rocky8_sig_core_common | default([]) if foreman_enable_rocky8_sig_core_common else [] ) |
@@ -118,7 +118,7 @@ foreman_content_views_rocky8_sig_cloud_common:
     repositories:
       - name: Rocky Linux 8 - SIG Cloud Common
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky8_sig_cloud_common }}"
 
 foreman_content_views_rocky8_sig_cloud_kernel:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky8_cloud_kernel"
@@ -126,7 +126,7 @@ foreman_content_views_rocky8_sig_cloud_kernel:
     repositories:
       - name: Rocky Linux 8 - SIG Cloud Kernel
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky8_sig_cloud_kernel }}"
 
 foreman_content_views_rocky8_cloud: "{{ [] |
   union( foreman_content_views_rocky8_sig_cloud_common | default([]) if foreman_enable_rocky8_sig_cloud_common else [] ) |

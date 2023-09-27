@@ -53,11 +53,11 @@ foreman_content_views_ol8_uln_ksplice:
     repositories:
       - name: Ksplice for Oracle Linux 8 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_ksplice }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_userspace_ksplice"
     organization: "{{ foreman_organization_ol8_uln_ksplice }}"
     repositories:
       - name: Ksplice aware userspace packages for Oracle Linux 8 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_ksplice }}"
 

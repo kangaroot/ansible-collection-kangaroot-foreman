@@ -66,7 +66,7 @@ foreman_content_views_centos_stream8_sig_opstools:
     repositories:
       - name: CentOS Stream 8 - OpsTools - collectd
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_opstools }}"
 
 
 foreman_products_centos_stream8_sig_plus:
@@ -87,7 +87,7 @@ foreman_content_views_centos_stream8_sig_plus:
     repositories:
       - name: CentOS Stream 8 - Plus
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_plus }}"
 
 
 foreman_products_centos_stream8_sig_nfv_extras:
@@ -125,7 +125,7 @@ foreman_content_views_centos_stream8_sig_nfv_extras:
     repositories:
       - name: CentOS Stream 8 - NFV extras
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_nfv_extras }}"
 
 foreman_content_views_centos_stream8_sig_nfv_openvswitch:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_nfv_openvswitch"
@@ -133,7 +133,7 @@ foreman_content_views_centos_stream8_sig_nfv_openvswitch:
     repositories:
       - name: CentOS Stream 8 - NFV OpenvSwitch
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_nfv_openvswitch }}"
 
 foreman_content_views_centos_stream8_nfv: "{{ [] |
   union( foreman_content_views_centos_stream8_sig_nfv_extras | default([]) if foreman_enable_centos_stream8_sig_nfv_extras else [] ) |
@@ -177,7 +177,7 @@ foreman_content_views_centos_stream8_sig_messaging_qpid_proton:
     repositories:
       - name: CentOS Stream 8 - QPID Proton
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_messaging_qpid_proton }}"
 
 foreman_content_views_centos_stream8_sig_messaging_rabbitmq38:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_rabbitmq38"
@@ -185,7 +185,7 @@ foreman_content_views_centos_stream8_sig_messaging_rabbitmq38:
     repositories:
       - name: CentOS Stream 8 - RabbitMQ 38
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_messaging_rabbitmq38 }}"
 
 foreman_content_views_centos_stream8_sig_messaging: "{{ [] |
   union( foreman_content_views_centos_stream8_sig_messaging_qpid_proton | default([]) if foreman_enable_centos_stream8_sig_messaging_qpid_proton else [] ) |

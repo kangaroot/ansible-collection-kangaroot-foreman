@@ -137,19 +137,19 @@ foreman_content_views_redhat90:
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_0_appstream"
     organization: "{{ foreman_organization_redhat90 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_0_supplementary"
     organization: "{{ foreman_organization_redhat90 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.0
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat90 }}"
 
 foreman_content_views_redhat91:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_1_baseos"
@@ -157,19 +157,19 @@ foreman_content_views_redhat91:
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_1_appstream"
     organization: "{{ foreman_organization_redhat91 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_1_supplementary"
     organization: "{{ foreman_organization_redhat91 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.1
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat91 }}"
 
 foreman_content_views_redhat92:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_2_baseos"
@@ -177,19 +177,19 @@ foreman_content_views_redhat92:
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - BaseOS RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_2_appstream"
     organization: "{{ foreman_organization_redhat92 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - AppStream RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_2_supplementary"
     organization: "{{ foreman_organization_redhat92 }}"
     repositories:
       - name: Red Hat Enterprise Linux 9 for x86_64 - Supplementary RPMs 9.2
         product: 'Red Hat Enterprise Linux for x86_64'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat92 }}"
 
 foreman_content_views_redhat9_versions: "{{ [] |
   union( foreman_content_views_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |

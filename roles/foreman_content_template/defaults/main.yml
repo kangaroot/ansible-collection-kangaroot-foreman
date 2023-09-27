@@ -164,6 +164,28 @@ foreman_organization_template_el9: "{{ foreman_organization_template }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+foreman_cv_allow_promote_template: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_template: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_template: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_template_el7: "{{ foreman_cv_allow_promote_template | bool }}"
+foreman_ccv_allow_promote_template_el7: "{{ foreman_ccv_allow_promote_template | bool }}"
+foreman_ccv_auto_publish_template_el7: "{{ foreman_ccv_auto_publish_template | bool }}"
+
+foreman_cv_allow_promote_template_el8: "{{ foreman_cv_allow_promote_template | bool }}"
+foreman_ccv_allow_promote_template_el8: "{{ foreman_ccv_allow_promote_template | bool }}"
+foreman_ccv_auto_publish_template_el8: "{{ foreman_ccv_auto_publish_template | bool }}"
+
+foreman_cv_allow_promote_template_el9: "{{ foreman_cv_allow_promote_template | bool }}"
+foreman_ccv_allow_promote_template_el9: "{{ foreman_ccv_allow_promote_template | bool }}"
+foreman_ccv_auto_publish_template_el9: "{{ foreman_ccv_auto_publish_template | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

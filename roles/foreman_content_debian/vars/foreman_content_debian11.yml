@@ -78,42 +78,43 @@ foreman_content_views_debian11:
     repositories:
       - name: Debian 11 (Bullseye)
         product: Debian
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_updates"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Updates
         product: Debian
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_proposed_updates"
   #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Proposed Updates
   #       product: Debian
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Backports
         product: Debian
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_backports_sloppy"
   #   organization: "{{ foreman_organization_debian11 }}"
   #   repositories:
   #     - name: Debian 11 (Bullseye) - Backports - Sloppy
   #       product: Debian
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}debian11_security"
     organization: "{{ foreman_organization_debian11 }}"
     repositories:
       - name: Debian 11 (Bullseye) - Security updates
         product: Debian
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_debian11 }}"
 
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}debian11"
     organization: "{{ foreman_organization_debian11 }}"
     composite: True
-    auto_publish: True
+    allow_promote: "{{ foreman_ccv_allow_promote_debian11 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_debian11 }}"
     components:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian11"
         latest: true

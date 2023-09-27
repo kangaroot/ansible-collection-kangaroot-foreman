@@ -44,5 +44,5 @@ foreman_content_views_ol8_storage:
     repositories:
       - name: Oracle Linux 8 (x86_64) Gluster AppStream
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol8_storage }}"
 

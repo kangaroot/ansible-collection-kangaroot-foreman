@@ -44,6 +44,30 @@ foreman_organization_elrepo_el9: "{{ foreman_organization_elrepo }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### ELREPO
+
+foreman_cv_allow_promote_elrepo: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_elrepo: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_elrepo: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_elrepo_el7: "{{ foreman_cv_allow_promote_elrepo | bool }}"
+foreman_ccv_allow_promote_elrepo_el7: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
+foreman_ccv_auto_publish_elrepo_el7: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
+
+foreman_cv_allow_promote_elrepo_el8: "{{ foreman_cv_allow_promote_elrepo | bool }}"
+foreman_ccv_allow_promote_elrepo_el8: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
+foreman_ccv_auto_publish_elrepo_el8: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
+
+foreman_cv_allow_promote_elrepo_el9: "{{ foreman_cv_allow_promote_elrepo | bool }}"
+foreman_ccv_allow_promote_elrepo_el9: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
+foreman_ccv_auto_publish_elrepo_el9: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

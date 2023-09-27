@@ -32,18 +32,19 @@ foreman_content_views_redhat9_rhocp:
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat9_rhocp }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_rhocp_413"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat9_rhocp }}"
 
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9_rhocp"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
     composite: True
-    auto_publish: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat9_rhocp }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat9_rhocp }}"
     components:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_baseos"
         latest: true

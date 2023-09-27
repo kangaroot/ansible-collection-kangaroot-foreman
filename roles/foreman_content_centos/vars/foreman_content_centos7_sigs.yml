@@ -66,7 +66,7 @@ foreman_content_views_centos7_dotnet:
     repositories:
       - name: CentOS 7 - DotNet
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_dotnet }}"
 
 
 foreman_products_centos7_sig_sclo:
@@ -93,13 +93,13 @@ foreman_content_views_centos7_sig_sclo:
     repositories:
       - name: CentOS 7 - SCLo sclo
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_sclo }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
     organization: "{{ foreman_organization_centos7_sig_sclo }}"
     repositories:
       - name: CentOS 7 - SCLo rh
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_sclo }}"
 
 
 foreman_products_centos7_sig_opstools:
@@ -120,7 +120,7 @@ foreman_content_views_centos7_sig_opstools:
     repositories:
       - name: CentOS 7 - OpsTools - release
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_opstools }}"
 
 
 foreman_products_centos7_sig_nfv_common:
@@ -158,7 +158,7 @@ foreman_content_views_centos7_sig_nfv_common:
     repositories:
       - name: CentOS 7 - nfv common
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_nfv_common }}"
 
 foreman_content_views_centos7_sig_nfv_fdio:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_fdio"
@@ -166,7 +166,7 @@ foreman_content_views_centos7_sig_nfv_fdio:
     repositories:
       - name: CentOS 7 - fd.io
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_nfv_fdio }}"
 
 foreman_content_views_centos7_nfv: "{{ [] |
   union( foreman_content_views_centos7_sig_nfv_common | default([]) if foreman_enable_centos7_sig_nfv_common else [] ) |

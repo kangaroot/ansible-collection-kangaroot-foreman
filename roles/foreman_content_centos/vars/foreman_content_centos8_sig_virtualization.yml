@@ -60,7 +60,7 @@ foreman_content_views_centos8_sig_virtualization_advanced_virtualization:
     repositories:
       - name: CentOS 8 - Advanced Virtualization
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos8_sig_virtualization_advanced_virtualization }}"
 
 foreman_content_views_centos8_sig_virtualization_ovirt44:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ovirt44"
@@ -68,7 +68,7 @@ foreman_content_views_centos8_sig_virtualization_ovirt44:
     repositories:
       - name: CentOS 8 - oVirt 4.4
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos8_sig_virtualization_ovirt44 }}"
 
 foreman_content_views_centos8_sig_virtualization: "{{ [] |
   union( foreman_content_views_centos8_sig_virtualization_advanced_virtualization | default([]) if foreman_enable_centos8_sig_virtualization_advanced_virtualization else [] ) |

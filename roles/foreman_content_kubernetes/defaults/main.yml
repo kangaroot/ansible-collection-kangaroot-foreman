@@ -40,6 +40,22 @@ foreman_organization_kubernetes_el7: "{{ foreman_organization_kubernetes }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### KUBERNETES
+
+foreman_cv_allow_promote_kubernetes: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_kubernetes: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_kubernetes: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_kubernetes_el7: "{{ foreman_cv_allow_promote_kubernetes | bool }}"
+foreman_ccv_allow_promote_kubernetes_el7: "{{ foreman_ccv_allow_promote_kubernetes | bool }}"
+foreman_ccv_auto_publish_kubernetes_el7: "{{ foreman_ccv_auto_publish_kubernetes | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 

@@ -127,7 +127,7 @@ foreman_content_views_ol7_uln_cloud_openstack20:
     repositories:
       - name: Oracle OpenStack 2.0 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack20 }}"
 
 foreman_content_views_ol7_uln_cloud_openstack21:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack21"
@@ -135,7 +135,7 @@ foreman_content_views_ol7_uln_cloud_openstack21:
     repositories:
       - name: Oracle OpenStack 2.1 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack21 }}"
 
 foreman_content_views_ol7_uln_cloud_openstack30:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack30"
@@ -143,13 +143,13 @@ foreman_content_views_ol7_uln_cloud_openstack30:
     repositories:
       - name: Oracle OpenStack 3.0 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack30 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack_extras"
     organization: "{{ foreman_organization_ol7_uln_cloud_openstack30 }}"
     repositories:
       - name: Extra development packages for Oracle OpenStack 3.0 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack30 }}"
 
 foreman_content_views_ol7_uln_cloud_openstack40:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack40"
@@ -157,13 +157,13 @@ foreman_content_views_ol7_uln_cloud_openstack40:
     repositories:
       - name: Oracle OpenStack 4.0 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack40 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack40_extras"
     organization: "{{ foreman_organization_ol7_uln_cloud_openstack40 }}"
     repositories:
       - name: Extra development packages for Oracle OpenStack 4.0 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack40 }}"
 
 foreman_content_views_ol7_uln_cloud_openstack50:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack50"
@@ -171,13 +171,13 @@ foreman_content_views_ol7_uln_cloud_openstack50:
     repositories:
       - name: Oracle OpenStack 5.0 for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack50 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_openstack50_extras"
     organization: "{{ foreman_organization_ol7_uln_cloud_openstack50 }}"
     repositories:
       - name: Extra development packages for Oracle OpenStack 5.0 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_cloud_openstack50 }}"
 
 foreman_content_views_ol7_uln_cloud: "{{ [] |
   union( foreman_content_views_ol7_uln_cloud_openstack20 | default([]) if foreman_enable_ol7_uln_cloud_openstack20 else [] ) |

@@ -97,13 +97,13 @@ foreman_content_views_ol7_virtualization_kvm_utils:
     repositories:
       - name: KVM Utilities for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_kvm_utils }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_developer_kvm_utils"
     organization: "{{ foreman_organization_ol7_virtualization_kvm_utils }}"
     repositories:
       - name: Developer Preview of KVM Utilities for Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_kvm_utils }}"
 
 foreman_content_views_ol7_virtualization_ovirt42:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_ovirt42"
@@ -111,13 +111,13 @@ foreman_content_views_ol7_virtualization_ovirt42:
     repositories:
       - name: oVirt Release 4.2 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_ovirt42 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_ovirt42_extras"
     organization: "{{ foreman_organization_ol7_virtualization_ovirt42 }}"
     repositories:
       - name: oVirt Release 4.2 on Oracle Linux 7 (x86_64) - Extra
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_ovirt42 }}"
 
 foreman_content_views_ol7_virtualization_ovirt43:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_ovirt43"
@@ -125,13 +125,13 @@ foreman_content_views_ol7_virtualization_ovirt43:
     repositories:
       - name: oVirt Release 4.3 on Oracle Linux 7 (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_ovirt43 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_ovirt43_extras"
     organization: "{{ foreman_organization_ol7_virtualization_ovirt43 }}"
     repositories:
       - name: oVirt Release 4.3 on Oracle Linux 7 (x86_64) - Extra
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_virtualization_ovirt43 }}"
 
 foreman_content_views_ol7_virtualization: "{{ [] |
   union( foreman_content_views_ol7_virtualization_kvm_utils | default([]) if foreman_enable_ol7_virtualization_kvm_utils else [] ) |

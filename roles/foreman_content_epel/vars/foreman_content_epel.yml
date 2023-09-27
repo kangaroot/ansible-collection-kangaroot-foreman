@@ -121,7 +121,7 @@ foreman_content_views_epel_el7:
     repositories:
       - name: Extra Packages for Enterprise Linux 7 - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el7 }}"
 
 foreman_content_views_epel_el8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}epel8"
@@ -129,25 +129,25 @@ foreman_content_views_epel_el8:
     repositories:
       - name: Extra Packages for Enterprise Linux 8 - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el8 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
     organization: "{{ foreman_organization_epel_el8 }}"
     repositories:
       - name: Extra Packages for Enterprise Linux Modular 8 - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el8 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}epel8_next"
     organization: "{{ foreman_organization_epel_el8 }}"
     repositories:
       - name: Extra Packages for Enterprise Linux 8 - Next - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el8 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}epel8_playground"
   #   organization: "{{ foreman_organization_epel_el8 }}"
   #   repositories:
   #     - name: Extra Packages for Enterprise Linux 8 - Playground - x86_64
   #       product: Extra Packages for Enterprise Linux
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_epel_el8 }}"
 
 foreman_content_views_epel_el9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}epel9"
@@ -155,11 +155,11 @@ foreman_content_views_epel_el9:
     repositories:
       - name: Extra Packages for Enterprise Linux 9 - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el9 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}epel9_next"
     organization: "{{ foreman_organization_epel_el9 }}"
     repositories:
       - name: Extra Packages for Enterprise Linux 9 - Next - x86_64
         product: Extra Packages for Enterprise Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_epel_el9 }}"
 

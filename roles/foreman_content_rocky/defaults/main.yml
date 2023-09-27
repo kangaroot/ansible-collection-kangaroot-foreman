@@ -400,6 +400,151 @@ foreman_organization_rocky9_sig_cloud_kernel: "{{ foreman_organization_rocky9_si
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### ROCKY
+
+foreman_cv_allow_promote_rocky: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_rocky: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_rocky: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+### ROCKY 8
+
+foreman_cv_allow_promote_rocky8: "{{ foreman_cv_allow_promote_rocky | bool }}"
+foreman_ccv_allow_promote_rocky8: "{{ foreman_ccv_allow_promote_rocky | bool }}"
+foreman_ccv_auto_publish_rocky8: "{{ foreman_ccv_auto_publish_rocky | bool }}"
+
+
+foreman_cv_allow_promote_rocky84: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky84: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky84: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky85: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky85: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky85: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky86: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky86: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky86: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky87: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky87: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky87: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky88: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky88: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky88: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+
+foreman_cv_allow_promote_rocky84_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky84_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky84_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky85_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky85_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky85_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky86_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky86_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky86_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky87_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky87_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky87_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky88_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky88_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky88_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+
+foreman_cv_allow_promote_rocky8_sig_core: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_core: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_core: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky8_sig_core_common: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_core_common: "{{ foreman_ccv_allow_promote_rocky8_sig_core | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_core_common: "{{ foreman_ccv_auto_publish_rocky8_sig_core | bool }}"
+
+foreman_cv_allow_promote_rocky8_sig_core_infra: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_core_infra: "{{ foreman_ccv_allow_promote_rocky8_sig_core | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_core_infra: "{{ foreman_ccv_auto_publish_rocky8_sig_core | bool }}"
+
+
+foreman_cv_allow_promote_rocky8_sig_cloud: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_cloud: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_cloud: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
+foreman_cv_allow_promote_rocky8_sig_cloud_common: "{{ foreman_cv_allow_promote_rocky8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_cloud_common: "{{ foreman_ccv_allow_promote_rocky8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_cloud_common: "{{ foreman_ccv_auto_publish_rocky8_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_rocky8_sig_cloud_kernel: "{{ foreman_cv_allow_promote_rocky8_sig_cloud | bool }}"
+foreman_ccv_allow_promote_rocky8_sig_cloud_kernel: "{{ foreman_ccv_allow_promote_rocky8_sig_cloud | bool }}"
+foreman_ccv_auto_publish_rocky8_sig_cloud_kernel: "{{ foreman_ccv_auto_publish_rocky8_sig_cloud | bool }}"
+
+
+### ROCKY 9
+
+foreman_cv_allow_promote_rocky9: "{{ foreman_cv_allow_promote_rocky | bool }}"
+foreman_ccv_allow_promote_rocky9: "{{ foreman_ccv_allow_promote_rocky | bool }}"
+foreman_ccv_auto_publish_rocky9: "{{ foreman_ccv_auto_publish_rocky | bool }}"
+
+
+foreman_cv_allow_promote_rocky90: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky90: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky90: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky91: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky91: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky91: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky92: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky92: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky92: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+
+foreman_cv_allow_promote_rocky90_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky90_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky90_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky91_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky91_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky91_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky92_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky92_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky92_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+
+foreman_cv_allow_promote_rocky9_sig_core: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_core: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_core: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky9_sig_core_common: "{{ foreman_cv_allow_promote_rocky9_sig_core | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_core_common: "{{ foreman_ccv_allow_promote_rocky9_sig_core | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_core_common: "{{ foreman_ccv_auto_publish_rocky9_sig_core | bool }}"
+
+foreman_cv_allow_promote_rocky9_sig_core_infra: "{{ foreman_cv_allow_promote_rocky9_sig_core | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_core_infra: "{{ foreman_ccv_allow_promote_rocky9_sig_core | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_core_infra: "{{ foreman_ccv_auto_publish_rocky9_sig_core | bool }}"
+
+
+foreman_cv_allow_promote_rocky9_sig_cloud: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_cloud: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_cloud: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+foreman_cv_allow_promote_rocky9_sig_cloud_common: "{{ foreman_cv_allow_promote_rocky9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_cloud_common: "{{ foreman_ccv_allow_promote_rocky9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_cloud_common: "{{ foreman_ccv_auto_publish_rocky9_sig_cloud | bool }}"
+
+foreman_cv_allow_promote_rocky9_sig_cloud_kernel: "{{ foreman_cv_allow_promote_rocky9_sig_cloud | bool }}"
+foreman_ccv_allow_promote_rocky9_sig_cloud_kernel: "{{ foreman_ccv_allow_promote_rocky9_sig_cloud | bool }}"
+foreman_ccv_auto_publish_rocky9_sig_cloud_kernel: "{{ foreman_ccv_auto_publish_rocky9_sig_cloud | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
