@@ -43,7 +43,7 @@ foreman_content_views_datadog_v6:
     repositories:
       - name: Datadog Agent v6
         product: Datadog
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_datadog_v6 }}"
 
 foreman_content_views_datadog_v7:
   - name: "{{ foreman_cv_prefix | default('cv_') }}datadog_v7"
@@ -51,5 +51,5 @@ foreman_content_views_datadog_v7:
     repositories:
       - name: Datadog Agent v7
         product: Datadog
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_datadog_v7 }}"
 
