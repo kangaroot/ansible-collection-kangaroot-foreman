@@ -68,38 +68,38 @@ foreman_content_views_redhat8_rhocp:
     repositories:
       - name: Red Hat OpenShift Container Platform 4.10 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_rhocp_411"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.11 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_rhocp_412"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.12 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_rhocp_413"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Red Hat OpenShift Container Platform 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
 
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_rhocp_lvms_412"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Logical Volume Manager Storage RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_rhocp_lvms_413"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
     repositories:
       - name: Logical Volume Manager Storage 4.13 for RHEL 8 x86_64 RPMs
         product: 'Red Hat OpenShift Container Platform'
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_redhat8_rhocp }}"
 
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel8_rhocp"
     organization: "{{ foreman_organization_redhat8_rhocp }}"
