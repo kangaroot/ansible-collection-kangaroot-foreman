@@ -2,17 +2,32 @@
 
 foreman_content_credentials_debian10: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: deb
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_debian }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
-  deb_components: "{{ foreman_products_debian10_default_deb_components | default( foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) ) }}"
-  deb_architectures: amd64
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+  deb_components: "{{ foreman_products_defaults_deb_components_debian }}"
+  deb_architectures: "{{ foreman_products_defaults_deb_architectures_debian }}"
+
+
+foreman_products_defaults_debian10: &foreman_products_defaults_debian10
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_debian10 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_debian10 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_debian10 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_debian10 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_debian10 | bool }}"
+  deb_components: "{{ foreman_products_defaults_deb_components_debian10 }}"
+  deb_architectures: "{{ foreman_products_defaults_deb_architectures_debian10 }}"
+
 
 foreman_products_debian10:
   - name: Debian
@@ -21,40 +36,41 @@ foreman_products_debian10:
     repositories:
       - name: Debian 10 (Buster)
         label: debian-10
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian10
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster
         organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Updates
         label: debian-10-updates
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian10
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-updates
         organization: "{{ foreman_organization_debian10 }}"
       # - name: Debian 10 (Buster) - Proposed Updates
       #   label: debian-10-proposed-updates
-      #   <<: *foreman_products_defaults
+      #   <<: *foreman_products_defaults_debian10
       #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-proposed-updates
       #   organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Backports
         label: debian-10-backports
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian10
         url: "{{ foreman_repo_baseurl_debian10 }}/"
         deb_releases: buster-backports
         organization: "{{ foreman_organization_debian10 }}"
       # - name: Debian 10 (Buster) - Backports - Sloppy
       #   label: debian-10-backports-sloppy
-      #   <<: *foreman_products_defaults
+      #   <<: *foreman_products_defaults_debian10
       #   url: "{{ foreman_repo_baseurl_debian10 }}/"
       #   deb_releases: buster-backports-sloppy
       #   organization: "{{ foreman_organization_debian10 }}"
       - name: Debian 10 (Buster) - Security updates
         label: debian-10-security
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian10
         url: "{{ foreman_repo_baseurl_debian10 }}-security/"
         deb_releases: buster/updates
         organization: "{{ foreman_organization_debian10 }}"
+
 
 foreman_content_views_debian10:
   - name: "{{ foreman_cv_prefix | default('cv_') }}debian10"
@@ -112,6 +128,7 @@ foreman_content_views_debian10:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian10_security"
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Debian"
   password_hash: "SHA512"
@@ -126,6 +143,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
     }}"
 
+
 foreman_operatingsystems_debian10:
   - name: "Debian"
     major: "10"
@@ -133,6 +151,7 @@ foreman_operatingsystems_debian10:
     description: "Debian 10 (Buster)"
     default_templates: "{{ foreman_operatingsystems_debian10_default_templates | default( foreman_operatingsystems_debian_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Debian
@@ -145,16 +164,19 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   operatingsystems:
     - Debian 10 (Buster)
 
+
 foreman_installation_media_debian10:
   - name: Debian 10 (Buster)
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Debian/debian-10/"
     <<: *foreman_installation_media_defaults
+
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Debian"
   auto_attach: False
+
 
 foreman_activation_keys_debian10:
   - name: ak_debian10

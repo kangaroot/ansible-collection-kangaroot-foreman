@@ -2,17 +2,32 @@
 
 foreman_content_credentials_debian12: []
 
+
 foreman_products_defaults: &foreman_products_defaults
   content_type: deb
-  download_policy: on_demand
+  download_policy: "{{ foreman_products_defaults_download_policy_debian }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
-  mirroring_policy: "mirror_content_only"
-  verify_ssl_on_sync: False
+  # mirroring_policy: "mirror_content_only"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_debian }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_debian | bool }}"
   # http_proxy: Default Proxy
-  http_proxy_policy: global_default_http_proxy
-  deb_components: "{{ foreman_products_debian12_default_deb_components | default( foreman_products_debian_default_deb_components | default( foreman_products_deb_default_deb_components | default('main') ) ) }}"
-  deb_architectures: amd64
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_debian }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_debian | bool }}"
+  deb_components: "{{ foreman_products_defaults_deb_components_debian }}"
+  deb_architectures: "{{ foreman_products_defaults_deb_architectures_debian }}"
+
+
+foreman_products_defaults_debian12: &foreman_products_defaults_debian12
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_debian12 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_debian12 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_debian12 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_debian12 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_debian12 | bool }}"
+  deb_components: "{{ foreman_products_defaults_deb_components_debian12 }}"
+  deb_architectures: "{{ foreman_products_defaults_deb_architectures_debian12 }}"
+
 
 foreman_products_debian12:
   - name: Debian
@@ -21,40 +36,41 @@ foreman_products_debian12:
     repositories:
       - name: Debian 11 (Bookworm)
         label: debian-11
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian12
         url: "{{ foreman_repo_baseurl_debian12 }}/"
         deb_releases: bookworm
         organization: "{{ foreman_organization_debian12 }}"
       - name: Debian 11 (Bookworm) - Updates
         label: debian-11-updates
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian12
         url: "{{ foreman_repo_baseurl_debian12 }}/"
         deb_releases: bookworm-updates
         organization: "{{ foreman_organization_debian12 }}"
       # - name: Debian 11 (Bookworm) - Proposed Updates
       #   label: debian-11-proposed-updates
-      #   <<: *foreman_products_defaults
+      #   <<: *foreman_products_defaults_debian12
       #   url: "{{ foreman_repo_baseurl_debian12 }}/"
       #   deb_releases: bookworm-proposed-updates
       #   organization: "{{ foreman_organization_debian12 }}"
       - name: Debian 11 (Bookworm) - Backports
         label: debian-11-backports
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian12
         url: "{{ foreman_repo_baseurl_debian12 }}/"
         deb_releases: bookworm-backports
         organization: "{{ foreman_organization_debian12 }}"
       # - name: Debian 11 (Bookworm) - Backports - Sloppy
       #   label: debian-11-backports-sloppy
-      #   <<: *foreman_products_defaults
+      #   <<: *foreman_products_defaults_debian12
       #   url: "{{ foreman_repo_baseurl_debian12 }}/"
       #   deb_releases: bookworm-backports-sloppy
       #   organization: "{{ foreman_organization_debian12 }}"
       - name: Debian 11 (Bookworm) - Security updates
         label: debian-11-security
-        <<: *foreman_products_defaults
+        <<: *foreman_products_defaults_debian12
         url: "{{ foreman_repo_baseurl_debian12 }}-security/"
         deb_releases: bookworm-security/updates
         organization: "{{ foreman_organization_debian12 }}"
+
 
 foreman_content_views_debian12:
   - name: "{{ foreman_cv_prefix | default('cv_') }}debian12"
@@ -112,6 +128,7 @@ foreman_content_views_debian12:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}debian12_security"
         latest: true
 
+
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Debian"
   password_hash: "SHA512"
@@ -126,6 +143,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
       union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
     }}"
 
+
 foreman_operatingsystems_debian12:
   - name: "Debian"
     major: "11"
@@ -133,6 +151,7 @@ foreman_operatingsystems_debian12:
     description: "Debian 11 (Bookworm)"
     default_templates: "{{ foreman_operatingsystems_debian12_default_templates | default( foreman_operatingsystems_debian_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
+
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
   os_family: Debian
@@ -145,16 +164,19 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   operatingsystems:
     - Debian 11 (Bookworm)
 
+
 foreman_installation_media_debian12:
   - name: Debian 11 (Bookworm)
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Debian/debian-11/"
     <<: *foreman_installation_media_defaults
+
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   # lifecycle_environment: "Library"
   # subscriptions:
   #   - name: "Debian"
   auto_attach: False
+
 
 foreman_activation_keys_debian12:
   - name: ak_debian12
