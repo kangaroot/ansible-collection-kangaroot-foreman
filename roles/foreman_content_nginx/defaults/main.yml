@@ -48,6 +48,30 @@ foreman_organization_nginx_el9: "{{ foreman_organization_nginx }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### NGINX
+
+foreman_cv_allow_promote_nginx: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_nginx: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_nginx: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_nginx_el7: "{{ foreman_cv_allow_promote_nginx | bool }}"
+foreman_ccv_allow_promote_nginx_el7: "{{ foreman_ccv_allow_promote_nginx | bool }}"
+foreman_ccv_auto_publish_nginx_el7: "{{ foreman_ccv_auto_publish_nginx | bool }}"
+
+foreman_cv_allow_promote_nginx_el8: "{{ foreman_cv_allow_promote_nginx | bool }}"
+foreman_ccv_allow_promote_nginx_el8: "{{ foreman_ccv_allow_promote_nginx | bool }}"
+foreman_ccv_auto_publish_nginx_el8: "{{ foreman_ccv_auto_publish_nginx | bool }}"
+
+foreman_cv_allow_promote_nginx_el9: "{{ foreman_cv_allow_promote_nginx | bool }}"
+foreman_ccv_allow_promote_nginx_el9: "{{ foreman_ccv_allow_promote_nginx | bool }}"
+foreman_ccv_auto_publish_nginx_el9: "{{ foreman_ccv_auto_publish_nginx | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
