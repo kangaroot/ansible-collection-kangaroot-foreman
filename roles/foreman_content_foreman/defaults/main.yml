@@ -22,6 +22,19 @@ foreman_enable_foreman_el9: false
 
 
 #######################################
+### PRODUCT DEFAULTS
+#######################################
+
+### FOREMAN
+
+foreman_products_defaults_download_policy_foreman: "{{ foreman_products_defaults_download_policy }}"
+foreman_products_defaults_mirroring_policy_foreman: mirror_content_only
+foreman_products_defaults_verify_ssl_on_sync_foreman: "{{ foreman_products_defaults_verify_ssl_on_sync | bool }}"
+foreman_products_defaults_http_proxy_policy_foreman: "{{ foreman_products_defaults_http_proxy_policy }}"
+foreman_products_defaults_unprotected_foreman: "{{ foreman_products_defaults_unprotected | bool }}"
+
+
+#######################################
 ### ORGANIZATION VARS
 #######################################
 
