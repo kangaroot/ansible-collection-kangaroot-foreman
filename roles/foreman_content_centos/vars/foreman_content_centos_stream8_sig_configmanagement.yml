@@ -60,7 +60,7 @@ foreman_content_views_centos_stream8_sig_configmanagement_ansible29:
     repositories:
       - name: CentOS 8 - Configmanagement SIG - ansible-29
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_configmanagement_ansible29 }}"
 
 foreman_content_views_centos_stream8_sig_configmanagement_ansible5:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_ansible_5"
@@ -68,7 +68,7 @@ foreman_content_views_centos_stream8_sig_configmanagement_ansible5:
     repositories:
       - name: CentOS 8 - Configmanagement SIG - ansible-5
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream8_sig_configmanagement_ansible5 }}"
 
 foreman_content_views_centos_stream8_sig_configmanagement: "{{ [] |
   union( foreman_content_views_centos_stream8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos_stream8_sig_configmanagement_ansible29 else [] ) |

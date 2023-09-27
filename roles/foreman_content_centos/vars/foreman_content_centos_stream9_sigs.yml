@@ -58,7 +58,7 @@ foreman_content_views_centos_stream9_sig_opstools:
     repositories:
       - name: CentOS Stream 9 - OpsTools - collectd
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_opstools }}"
 
 
 foreman_products_centos_stream9_sig_nfv_openvswitch:
@@ -83,7 +83,7 @@ foreman_content_views_centos_stream9_sig_nfv_openvswitch:
     repositories:
       - name: CentOS Stream 9 - NFV OpenvSwitch
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_nfv_openvswitch }}"
 
 foreman_content_views_centos_stream9_nfv: "{{ [] |
   union( foreman_content_views_centos_stream9_sig_nfv_openvswitch | default([]) if foreman_enable_centos_stream9_sig_nfv_openvswitch else [] )
@@ -112,7 +112,7 @@ foreman_content_views_centos_stream9_sig_messaging_rabbitmq38:
     repositories:
       - name: CentOS Stream 9 - RabbitMQ 38
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_messaging_rabbitmq38 }}"
 
 foreman_content_views_centos_stream9_sig_messaging: "{{ [] |
   union( foreman_content_views_centos_stream9_sig_messaging_rabbitmq38 | default([]) if foreman_enable_centos_stream9_sig_messaging_rabbitmq38 else [] )

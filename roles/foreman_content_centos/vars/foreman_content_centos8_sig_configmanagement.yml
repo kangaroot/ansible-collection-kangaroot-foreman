@@ -47,7 +47,7 @@ foreman_content_views_centos8_sig_configmanagement_ansible29:
     repositories:
       - name: CentOS 8 - Configmanagement SIG - ansible-29
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos8_sig_configmanagement_ansible29 }}"
 
 foreman_content_views_centos8_sig_configmanagement: "{{ [] |
   union( foreman_content_views_centos8_sig_configmanagement_ansible29 | default([]) if foreman_enable_centos8_sig_configmanagement_ansible29 else [] )
