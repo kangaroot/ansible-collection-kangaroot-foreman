@@ -513,67 +513,67 @@ foreman_content_views_rocky90:
     repositories:
       - name: Rocky Linux 9.0 - BaseOS
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_appstream"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - AppStream
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_extras"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - Extras
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_plus"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - Plus
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_powertools"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - PowerTools
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_ha"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - HighAvailability
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_nfv"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - NFV
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_resilientstorage"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - ResilientStorage
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_rt"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - Realtime
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_sap"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - SAP
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky90_saphana"
     organization: "{{ foreman_organization_rocky90 }}"
     repositories:
       - name: Rocky Linux 9.0 - SAPHANA
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky90 }}"
 
 foreman_content_views_rocky91:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_baseos"
@@ -581,67 +581,67 @@ foreman_content_views_rocky91:
     repositories:
       - name: Rocky Linux 9.1 - BaseOS
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_appstream"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - AppStream
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_extras"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - Extras
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_plus"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - Plus
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_powertools"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - PowerTools
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_ha"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - HighAvailability
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_nfv"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - NFV
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_resilientstorage"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - ResilientStorage
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_rt"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - Realtime
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_sap"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - SAP
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky91_saphana"
     organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: Rocky Linux 9.1 - SAPHANA
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky91 }}"
 
 foreman_content_views_rocky92:
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_baseos"
@@ -649,67 +649,67 @@ foreman_content_views_rocky92:
     repositories:
       - name: Rocky Linux 9.2 - BaseOS
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_appstream"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - AppStream
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_extras"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - Extras
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_plus"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - Plus
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_powertools"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - PowerTools
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_ha"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - HighAvailability
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_nfv"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - NFV
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_resilientstorage"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - ResilientStorage
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_rt"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - Realtime
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_sap"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - SAP
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky92_saphana"
     organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: Rocky Linux 9.2 - SAPHANA
         product: Rocky Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_rocky92 }}"
 
 # foreman_content_views_rocky93:
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_baseos"
@@ -717,67 +717,67 @@ foreman_content_views_rocky92:
 #     repositories:
 #       - name: Rocky Linux 9.3 - BaseOS
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_appstream"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - AppStream
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_extras"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - Extras
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_plus"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - Plus
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_powertools"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - PowerTools
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_ha"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - HighAvailability
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_nfv"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - NFV
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_resilientstorage"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - ResilientStorage
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_rt"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - Realtime
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_sap"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - SAP
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky93_saphana"
 #     organization: "{{ foreman_organization_rocky93 }}"
 #     repositories:
 #       - name: Rocky Linux 9.3 - SAPHANA
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 
 # foreman_content_views_rocky94:
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_baseos"
@@ -785,67 +785,67 @@ foreman_content_views_rocky92:
 #     repositories:
 #       - name: Rocky Linux 9.4 - BaseOS
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_appstream"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - AppStream
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_extras"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - Extras
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_plus"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - Plus
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_powertools"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - PowerTools
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_ha"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - HighAvailability
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_nfv"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - NFV
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_resilientstorage"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - ResilientStorage
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_rt"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - Realtime
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_sap"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - SAP
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 #   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_saphana"
 #     organization: "{{ foreman_organization_rocky94 }}"
 #     repositories:
 #       - name: Rocky Linux 9.4 - SAPHANA
 #         product: Rocky Linux
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 
 foreman_content_views_rocky9_versions: "{{ [] |
   union( foreman_content_views_rocky90 | default([]) if foreman_enable_rocky90 | default(false) | bool else [] ) |
