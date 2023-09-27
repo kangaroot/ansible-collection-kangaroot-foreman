@@ -37,11 +37,11 @@ foreman_content_views_kubernetes_el7:
     repositories:
       - name: Kubernetes - EL7
         product: Kubernetes
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_kubernetes_el7 }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}kubernetes_unstable_el7"
     organization: "{{ foreman_organization_kubernetes_el7 }}"
     repositories:
       - name: Kubernetes Unstable - EL7
         product: Kubernetes
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_kubernetes_el7 }}"
 
