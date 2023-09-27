@@ -134,7 +134,8 @@ foreman_content_views_centos7:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
     organization: "{{ foreman_organization_centos7 }}"
     composite: True
-    auto_publish: True
+    allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
     components:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
         latest: true
@@ -158,7 +159,8 @@ foreman_content_views_centos7:
   # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_foreman"
   #   organization: "{{ foreman_organization_centos7 }}"
   #   composite: True
-  #   auto_publish: True
+  #   allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
+  #   auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
   #   components:
   #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
   #       latest: true
@@ -180,7 +182,8 @@ foreman_content_views_centos7:
   # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_katello"
   #   organization: "{{ foreman_organization_centos7 }}"
   #   composite: True
-  #   auto_publish: True
+  #   allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
+  #   auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
   #   components:
   #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
   #       latest: true
