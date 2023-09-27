@@ -42,6 +42,26 @@ foreman_organization_datadog_v7: "{{ foreman_organization_datadog }}"
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### DATADOG
+
+foreman_cv_allow_promote_datadog: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_datadog: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_datadog: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_datadog_v6: "{{ foreman_cv_allow_promote_datadog | bool }}"
+foreman_ccv_allow_promote_datadog_v6: "{{ foreman_ccv_allow_promote_datadog | bool }}"
+foreman_ccv_auto_publish_datadog_v6: "{{ foreman_ccv_auto_publish_datadog | bool }}"
+
+foreman_cv_allow_promote_datadog_v7: "{{ foreman_cv_allow_promote_datadog | bool }}"
+foreman_ccv_allow_promote_datadog_v7: "{{ foreman_ccv_allow_promote_datadog | bool }}"
+foreman_ccv_auto_publish_datadog_v7: "{{ foreman_ccv_auto_publish_datadog | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
