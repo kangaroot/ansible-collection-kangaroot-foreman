@@ -46,5 +46,5 @@ foreman_content_views_ol8_uln_security_validation:
     repositories:
       - name: Oracle Linux 8 Update 4 Security Validations packages (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_security_validation }}"
 

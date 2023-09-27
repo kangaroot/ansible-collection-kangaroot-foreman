@@ -46,5 +46,5 @@ foreman_content_views_ol9_uln_oci:
     repositories:
       - name: Oracle Linux 9 OCI Included Packages (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol9_uln_oci }}"
 

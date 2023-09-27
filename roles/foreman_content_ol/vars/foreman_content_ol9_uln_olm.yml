@@ -46,5 +46,5 @@ foreman_content_views_ol9_uln_olm:
     repositories:
       - name: Oracle Linux Manager 2.10 Client (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol9_uln_olm }}"
 

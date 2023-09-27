@@ -53,11 +53,11 @@ foreman_content_views_ol7_uln_security_validation:
     repositories:
       - name: Oracle Linux 7 (x86_64) Security Validations
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_security_validation }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u8_security_validation"
     organization: "{{ foreman_organization_ol7_uln_security_validation }}"
     repositories:
       - name: Oracle Linux 7 Update 8 Security Validations packages (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol7_uln_security_validation }}"
 

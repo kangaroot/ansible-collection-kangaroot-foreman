@@ -470,7 +470,7 @@ foreman_content_views_ol70_uln:
     repositories:
       - name: Oracle Linux 7 GA installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol70_uln }}"
 
 foreman_content_views_ol71_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u1_base"
@@ -478,7 +478,7 @@ foreman_content_views_ol71_uln:
     repositories:
       - name: Oracle Linux 7 Update 1 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol71_uln }}"
 
 foreman_content_views_ol72_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u2_base"
@@ -486,7 +486,7 @@ foreman_content_views_ol72_uln:
     repositories:
       - name: Oracle Linux 7 Update 2 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol72_uln }}"
 
 foreman_content_views_ol73_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u3_base"
@@ -494,7 +494,7 @@ foreman_content_views_ol73_uln:
     repositories:
       - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol73_uln }}"
 
 foreman_content_views_ol74_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u4_base"
@@ -502,7 +502,7 @@ foreman_content_views_ol74_uln:
     repositories:
       - name: Oracle Linux 7 Update 4 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol74_uln }}"
 
 foreman_content_views_ol75_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u5_base"
@@ -510,7 +510,7 @@ foreman_content_views_ol75_uln:
     repositories:
       - name: Oracle Linux 7 Update 5 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol75_uln }}"
 
 foreman_content_views_ol76_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u6_base"
@@ -518,7 +518,7 @@ foreman_content_views_ol76_uln:
     repositories:
       - name: Oracle Linux 7 Update 6 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol76_uln }}"
 
 foreman_content_views_ol77_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u7_base"
@@ -526,7 +526,7 @@ foreman_content_views_ol77_uln:
     repositories:
       - name: Oracle Linux 7 Update 7 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol77_uln }}"
 
 foreman_content_views_ol78_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u8_base"
@@ -534,7 +534,7 @@ foreman_content_views_ol78_uln:
     repositories:
       - name: Oracle Linux 7 Update 8 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol78_uln }}"
 
 foreman_content_views_ol79_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u9_base"
@@ -542,7 +542,7 @@ foreman_content_views_ol79_uln:
     repositories:
       - name: Oracle Linux 7 Update 9 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol79_uln }}"
 
 foreman_content_views_ol70_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u0_patch"
@@ -550,7 +550,7 @@ foreman_content_views_ol70_patch_uln:
     repositories:
       - name: Oracle Linux 7 GA Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol70_patch_uln }}"
 
 foreman_content_views_ol71_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u1_patch"
@@ -558,7 +558,7 @@ foreman_content_views_ol71_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 1 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol71_patch_uln }}"
 
 foreman_content_views_ol72_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u2_patch"
@@ -566,7 +566,7 @@ foreman_content_views_ol72_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 2 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol72_patch_uln }}"
 
 foreman_content_views_ol73_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u3_patch"
@@ -574,7 +574,7 @@ foreman_content_views_ol73_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 3 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol73_patch_uln }}"
 
 foreman_content_views_ol74_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u4_patch"
@@ -582,7 +582,7 @@ foreman_content_views_ol74_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 4 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol74_patch_uln }}"
 
 foreman_content_views_ol75_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u5_patch"
@@ -590,7 +590,7 @@ foreman_content_views_ol75_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 5 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol75_patch_uln }}"
 
 foreman_content_views_ol76_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u6_patch"
@@ -598,7 +598,7 @@ foreman_content_views_ol76_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 6 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol76_patch_uln }}"
 
 foreman_content_views_ol77_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u7_patch"
@@ -606,7 +606,7 @@ foreman_content_views_ol77_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 7 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol77_patch_uln }}"
 
 foreman_content_views_ol78_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u8_patch"
@@ -614,7 +614,7 @@ foreman_content_views_ol78_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 8 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol78_patch_uln }}"
 
 foreman_content_views_ol79_patch_uln:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u9_patch"
@@ -622,7 +622,7 @@ foreman_content_views_ol79_patch_uln:
     repositories:
       - name: Oracle Linux 7 Update 9 Patch (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol79_patch_uln }}"
 
 foreman_content_views_ol7_uln_versions: "{{ [] |
   union( foreman_content_views_ol70_uln | default([]) if foreman_enable_ol70_uln else [] ) |
