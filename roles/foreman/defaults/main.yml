@@ -118,7 +118,11 @@ foreman_products_defaults_deb_architectures: amd64
 ### ======================================
 
 foreman_cv_prefix: cv_
+foreman_cv_allow_promote: false
+
 foreman_ccv_prefix: ccv_
+foreman_ccv_allow_promote: true
+foreman_ccv_auto_publish: true
 
 ###############################################################################
 ### Hosts / Provisioning section
