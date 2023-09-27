@@ -76,6 +76,79 @@ foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_m
 
 
 #######################################
+### CONTENT VIEW DEFAULTS
+#######################################
+
+### MICROSOFT
+
+foreman_cv_allow_promote_microsoft: "{{ foreman_cv_allow_promote | bool }}"
+foreman_ccv_allow_promote_microsoft: "{{ foreman_ccv_allow_promote | bool }}"
+foreman_ccv_auto_publish_microsoft: "{{ foreman_ccv_auto_publish | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_azure_cli: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_ccv_allow_promote_microsoft_azure_cli: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+foreman_ccv_auto_publish_microsoft_azure_cli: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_ccv_allow_promote_microsoft_prod: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+foreman_ccv_auto_publish_microsoft_prod: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_prod_el7: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_allow_promote_microsoft_prod_el7: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_auto_publish_microsoft_prod_el7: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+foreman_cv_allow_promote_microsoft_prod_el8: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_allow_promote_microsoft_prod_el8: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_auto_publish_microsoft_prod_el8: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+foreman_cv_allow_promote_microsoft_prod_el9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_allow_promote_microsoft_prod_el9: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_auto_publish_microsoft_prod_el9: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2017: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2017_el7: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2019: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2019_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2019_el7: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2019_el7: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
+
+
+foreman_cv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2022: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2022_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
+
+foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_ccv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+foreman_ccv_auto_publish_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
+
+
+#######################################
 ### CONTENT
 #######################################
 
