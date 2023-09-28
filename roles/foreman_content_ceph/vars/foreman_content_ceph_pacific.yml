@@ -202,8 +202,8 @@ foreman_content_views_ceph_pacific_ub2004:
     allow_promote: "{{ foreman_cv_allow_promote_ceph_pacific_ub2004 }}"
 
 
-foreman_content_credentials_pacific_ceph_main: []
-foreman_content_credentials_pacific_ceph: "{{ ( foreman_content_credentials_pacific_ceph_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
+foreman_content_credentials_ceph_pacific_main: []
+foreman_content_credentials_ceph_pacific: "{{ ( foreman_content_credentials_ceph_pacific_main | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_content_credentials_ceph_pacific_el7 | default([]) if foreman_enable_ceph_pacific_el7 | bool else [] ) |
   union( foreman_content_credentials_ceph_pacific_el8 | default([]) if foreman_enable_ceph_pacific_el8 | bool else [] ) |
   union( foreman_content_credentials_ceph_pacific_el9 | default([]) if foreman_enable_ceph_pacific_el9 | bool else [] ) |

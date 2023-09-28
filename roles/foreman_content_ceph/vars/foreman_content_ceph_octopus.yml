@@ -156,8 +156,8 @@ foreman_content_views_ceph_octopus_ub2004:
     allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_ub2004 }}"
 
 
-foreman_content_credentials_octopus_ceph_main: []
-foreman_content_credentials_octopus_ceph: "{{ ( foreman_content_credentials_octopus_ceph_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
+foreman_content_credentials_ceph_octopus_main: []
+foreman_content_credentials_ceph_octopus: "{{ ( foreman_content_credentials_ceph_octopus_main | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_content_credentials_ceph_octopus_el7 | default([]) if foreman_enable_ceph_octopus_el7 | bool else [] ) |
   union( foreman_content_credentials_ceph_octopus_el8 | default([]) if foreman_enable_ceph_octopus_el8 | bool else [] ) |
   union( foreman_content_credentials_ceph_octopus_deb10 | default([]) if foreman_enable_ceph_octopus_deb10 | bool else [] ) |
