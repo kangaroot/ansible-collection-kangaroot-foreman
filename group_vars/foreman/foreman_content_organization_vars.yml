@@ -4,6 +4,23 @@
 ### ORGANIZATION VARS
 #######################################
 
+### ATIX
+
+# foreman_organization_atix: "{{ foreman_organization }}"
+
+# foreman_organization_atix_debian: "{{ foreman_organization_atix }}"
+# foreman_organization_atix_debian11: "{{ foreman_organization_atix_debian }}"
+# foreman_organization_atix_debian12: "{{ foreman_organization_atix_debian }}"
+
+# foreman_organization_atix_ubuntu: "{{ foreman_organization_atix }}"
+# foreman_organization_atix_ubuntu2004: "{{ foreman_organization_atix_ubuntu }}"
+# foreman_organization_atix_ubuntu2204: "{{ foreman_organization_atix_ubuntu }}"
+
+# foreman_organization_atix_sles: "{{ foreman_organization_atix }}"
+# foreman_organization_atix_sles12: "{{ foreman_organization_atix_sles }}"
+# foreman_organization_atix_sles15: "{{ foreman_organization_atix_sles }}"
+
+
 ### CENTOS
 
 # foreman_organization_centos: "{{ foreman_organization }}"
@@ -403,18 +420,30 @@
 # foreman_organization_microsoft_prod_el7: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_el8: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_el9: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_debian9: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_debian10: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_debian11: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_debian12: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_ubuntu1804: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_ubuntu2004: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_ubuntu2204: "{{ foreman_organization_microsoft_prod }}"
 
 # foreman_organization_microsoft_mssql_server_2017: "{{ foreman_organization_microsoft }}"
 # foreman_organization_microsoft_mssql_server_2017_el7: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
 # foreman_organization_microsoft_mssql_server_2017_el8: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
+# foreman_organization_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_organization_microsoft_mssql_server_2017 }}"
 
 # foreman_organization_microsoft_mssql_server_2019: "{{ foreman_organization_microsoft }}"
 # foreman_organization_microsoft_mssql_server_2019_el7: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
 # foreman_organization_microsoft_mssql_server_2019_el8: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+# foreman_organization_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
+# foreman_organization_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2019 }}"
 
 # foreman_organization_microsoft_mssql_server_2022: "{{ foreman_organization_microsoft }}"
 # foreman_organization_microsoft_mssql_server_2022_el8: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 # foreman_organization_microsoft_mssql_server_2022_el9: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+# foreman_organization_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
+# foreman_organization_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_organization_microsoft_mssql_server_2022 }}"
 
 
 ### NGINX

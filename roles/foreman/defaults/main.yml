@@ -40,6 +40,7 @@ foreman_compute_profiles: []
 # Foreman content roles to include
 foreman_content_roles:
   # Package only content
+  - kangaroot.foreman.foreman_content_atix
   - kangaroot.foreman.foreman_content_ceph
   - kangaroot.foreman.foreman_content_datadog
   - kangaroot.foreman.foreman_content_docker
