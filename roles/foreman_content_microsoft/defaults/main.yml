@@ -156,9 +156,9 @@ foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote
 foreman_ccv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
 foreman_ccv_auto_publish_microsoft_prod_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
 
-foreman_cv_allow_promote_microsoft_prod_2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_2204: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_2204: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+foreman_cv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+foreman_ccv_auto_publish_microsoft_prod_ubuntu2204: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
 
 
 foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
