@@ -1310,6 +1310,34 @@
 # foreman_ccv_allow_promote_microsoft_prod_el9: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
 # foreman_ccv_auto_publish_microsoft_prod_el9: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
 
+# foreman_cv_allow_promote_microsoft_prod_debian9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_debian9: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_debian9: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_debian10: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_debian10: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_debian10: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_debian11: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_debian11: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_debian11: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_debian12: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_debian12: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_debian12: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
+# foreman_cv_allow_promote_microsoft_prod_2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_allow_promote_microsoft_prod_2204: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
+# foreman_ccv_auto_publish_microsoft_prod_2204: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
+
 
 # foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 # foreman_ccv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
@@ -1322,6 +1350,10 @@
 # foreman_cv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
 # foreman_ccv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
 # foreman_ccv_auto_publish_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
+
+# foreman_cv_allow_promote_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+# foreman_ccv_allow_promote_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
+# foreman_ccv_auto_publish_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
 
 
 # foreman_cv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_cv_allow_promote_microsoft | bool }}"
@@ -1336,6 +1368,14 @@
 # foreman_ccv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
 # foreman_ccv_auto_publish_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
 
+# foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+# foreman_ccv_allow_promote_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+# foreman_ccv_auto_publish_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
+
+# foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+# foreman_ccv_allow_promote_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
+# foreman_ccv_auto_publish_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
+
 
 # foreman_cv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 # foreman_ccv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
@@ -1348,6 +1388,14 @@
 # foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 # foreman_ccv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
 # foreman_ccv_auto_publish_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
+
+# foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+# foreman_ccv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+# foreman_ccv_auto_publish_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
+
+# foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+# foreman_ccv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
+# foreman_ccv_auto_publish_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
 
 
 ### NGINX
