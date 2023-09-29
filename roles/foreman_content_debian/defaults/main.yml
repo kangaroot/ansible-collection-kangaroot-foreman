@@ -321,11 +321,12 @@ foreman_installation_media_debian_main:
   - name: Debian mirror
     path: "{{ foreman_repo_baseurl_debian }}"
     <<: *foreman_installation_media_debian_defaults
-    operatingsystems:
-      - Debian 9 (Stretch)
-      - Debian 10 (Buster)
-      - Debian 11 (Bullseye)
-      - Debian 12 (Bookworm)
+    operatingsystems: "{{ [] |
+      union( ['Debian 9 (Stretch)'] if foreman_enable_debian9 | bool else [] ) |
+      union( ['Debian 10 (Buster)'] if foreman_enable_debian10 | bool else [] ) |
+      union( ['Debian 11 (Bullseye)'] if foreman_enable_debian11 | bool else [] ) |
+      union( ['Debian 12 (Bookworm)'] if foreman_enable_debian12 | bool else [] )
+      }}"
 
 foreman_installation_media_debian: "{{ ( foreman_installation_media_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_installation_media_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |

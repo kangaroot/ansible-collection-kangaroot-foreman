@@ -633,9 +633,10 @@ foreman_installation_media_rocky_defaults: &foreman_installation_media_rocky_def
   #   - "{{ foreman_default_location }}"
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
-  operatingsystems:
-    - Rocky Linux 8
-    - Rocky Linux 9
+  operatingsystems: "{{ [] |
+    union( ['Rocky Linux 8'] if foreman_enable_rocky8 | bool else [] ) |
+    union( ['Rocky Linux 9'] if foreman_enable_rocky9 | bool else [] )
+    }}"
 
 foreman_installation_media_rocky_main:
   - name: Rocky Linux
