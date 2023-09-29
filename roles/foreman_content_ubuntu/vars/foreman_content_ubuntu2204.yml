@@ -131,6 +131,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 
 foreman_operatingsystems_ubuntu2204:
   - name: "Ubuntu"
+    major: "22"
     release_name: jammy
     description: "Ubuntu 22.04 LTS (Jammy Jellyfish)"
     default_templates: "{{ foreman_operatingsystems_ubuntu2204_default_templates | default( foreman_operatingsystems_ubuntu2x_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"

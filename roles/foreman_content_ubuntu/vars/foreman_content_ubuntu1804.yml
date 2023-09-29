@@ -133,6 +133,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 
 foreman_operatingsystems_ubuntu1804:
   - name: "Ubuntu"
+    major: "18"
     release_name: bionic
     description: "Ubuntu 18.04 LTS (Bionic Beaver)"
     default_templates: "{{ foreman_operatingsystems_ubuntu1804_default_templates | default( foreman_operatingsystems_ubuntu_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"
