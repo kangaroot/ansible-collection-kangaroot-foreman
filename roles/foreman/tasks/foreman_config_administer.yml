@@ -2,12 +2,12 @@
 # administer section configuration tasks file for foreman
 
 - name: "Configuration | Include theforeman.foreman.organizations role"
-  ansible.builtin.include_role:
+  ansible.builtin.import_role:
     name: theforeman.foreman.organizations
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
 - name: "Configuration | Include theforeman.foreman.locations role"
-  ansible.builtin.include_role:
+  ansible.builtin.import_role:
     name: theforeman.foreman.locations
   tags: [ "foreman", "katello", "configuration", "foreman_config_administer" ]
 
