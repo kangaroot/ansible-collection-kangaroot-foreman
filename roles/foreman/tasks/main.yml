@@ -58,17 +58,17 @@
   tags: [ "katello", "configuration", "katello_cleanup" ]
 
 
-- name: "Configuration | Include Provisioning section configuration tasks"
+- name: "Configuration | Include Provisioning section Templates configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_templates.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
+
+- name: "Configuration | Include Provisioning section Operating System configuration tasks"
   ansible.builtin.include_tasks: foreman_config_provisioning.yml
   tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
 
 - name: "Configuration | Include Infrastructure compute section configuration tasks"
   ansible.builtin.include_tasks: foreman_config_infrastructure_compute.yml
   tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
-
-- name: "Configuration | Include Templates section configuration tasks"
-  ansible.builtin.include_tasks: foreman_config_templates.yml
-  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
 
 - name: "Configuration | Include Configuration section configuration tasks"
   ansible.builtin.include_tasks: foreman_config_configuration.yml
