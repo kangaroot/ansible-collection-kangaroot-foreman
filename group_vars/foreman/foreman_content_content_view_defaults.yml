@@ -1293,6 +1293,16 @@
 # foreman_ccv_auto_publish_microsoft_azure_cli: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
 
 
+# foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+# foreman_ccv_allow_promote_microsoft_edge: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
+# foreman_ccv_auto_publish_microsoft_edge: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
+
+
+# foreman_cv_allow_promote_microsoft_edge_deb: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
+# foreman_ccv_allow_promote_microsoft_edge_deb: "{{ foreman_ccv_allow_promote_microsoft_edge | bool }}"
+# foreman_ccv_auto_publish_microsoft_edge_deb: "{{ foreman_ccv_auto_publish_microsoft_edge | bool }}"
+
+
 # foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 # foreman_ccv_allow_promote_microsoft_prod: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
 # foreman_ccv_auto_publish_microsoft_prod: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
