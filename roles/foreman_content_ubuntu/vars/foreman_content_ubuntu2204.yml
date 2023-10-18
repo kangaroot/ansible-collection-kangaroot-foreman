@@ -119,14 +119,11 @@ foreman_content_views_ubuntu2204:
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Debian"
   password_hash: "SHA512"
-  architectures:
-    - amd64
+  architectures: "{{ foreman_operatingsystems_ubuntu2204_architectures }}"
   # ptables:
-  #   - Preseed default autoinstall
-  ptables: "{{
-    [ 'Preseed default autoinstall' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
-    }}"
+  #   - Preseed default
+  #   - Preseed default LVM
+  ptables: "{{ foreman_operatingsystems_ubuntu2204_ptables }}"
 
 
 foreman_operatingsystems_ubuntu2204:
@@ -144,10 +141,9 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_organization }}"
   # locations:
   #   - "{{ foreman_default_location }}"
-  organizations: "{{ foreman_all_organizations_namelist }}"
-  locations: "{{ foreman_all_locations_namelist }}"
-  operatingsystems:
-    - Ubuntu 22.04 LTS (Jammy Jellyfish)
+  organizations: "{{ foreman_installation_media_ubuntu2204_organizations }}"
+  locations: "{{ foreman_installation_media_ubuntu2204_locations }}"
+  operatingsystems: "{{ foreman_installation_media_ubuntu2204_operatingsystems }}"
 
 
 foreman_installation_media_ubuntu2204:

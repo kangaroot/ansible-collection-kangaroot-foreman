@@ -134,6 +134,46 @@ foreman_installation_media: []
 foreman_operatingsystems: []
 
 ### =====================================
+### EL installation media defaults
+### =====================================
+
+foreman_installation_media_el_organizations: "{{ foreman_all_organizations_namelist }}"
+foreman_installation_media_el_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='description') | list }}"
+
+### =====================================
+### DEB installation media defaults
+### =====================================
+
+foreman_installation_media_deb_organizations: "{{ foreman_all_organizations_namelist }}"
+foreman_installation_media_deb_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_deb_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+
+### =====================================
+### EL operating system defaults
+### =====================================
+
+foreman_operatingsystems_el_architectures:
+  - x86_64
+foreman_operatingsystems_el_ptables: "{{
+  [ 'Kickstart default',
+    'Kickstart custom' ] |
+    union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+  }}"
+
+### =====================================
+### DEB operating system defaults
+### =====================================
+
+foreman_operatingsystems_deb_architectures:
+  - amd64
+foreman_operatingsystems_deb_ptables: "{{
+  [ 'Preseed default',
+    'Preseed default LVM' ] |
+    union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
+  }}"
+
+### =====================================
 ### EL operating system default templates
 ### =====================================
 
