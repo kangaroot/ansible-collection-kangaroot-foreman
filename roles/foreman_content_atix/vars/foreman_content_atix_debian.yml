@@ -13,8 +13,8 @@ foreman_products_defaults: &foreman_products_defaults
   http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_atix }}"
   unprotected: "{{ foreman_products_defaults_unprotected_atix | bool }}"
   deb_releases: stable
-  deb_components: main
-  deb_architectures: amd64
+  deb_components: "{{ foreman_products_defaults_deb_components_atix_debian }}"
+  deb_architectures: "{{ foreman_products_defaults_deb_architectures_atix_debian }}"
 
 foreman_products_defaults_debian: &foreman_products_defaults_debian
   <<: *foreman_products_defaults

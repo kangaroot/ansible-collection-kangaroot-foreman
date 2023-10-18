@@ -129,7 +129,11 @@ foreman_ccv_auto_publish: true
 ### Hosts / Provisioning section
 ###############################################################################
 foreman_hardware_models: []
-foreman_architectures: []
+foreman_architectures:
+  - x86_64
+  - i386
+  - amd64
+  - i686
 foreman_installation_media: []
 foreman_operatingsystems: []
 
