@@ -21,18 +21,18 @@ foreman_installation_media_ubuntu_locations: "{{ foreman_installation_media_deb_
 foreman_installation_media_ubuntu_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | selectattr('name', '==', 'Ubuntu') | map(attribute='description') | list }}"
 
 
-foreman_installation_media_ubuntu1804_organizations: "{{ foreman_all_organizations_namelist }}"
-foreman_installation_media_ubuntu1804_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_ubuntu1804_organizations: "{{ foreman_installation_media_ubuntu_organizations }}"
+foreman_installation_media_ubuntu1804_locations: "{{ foreman_installation_media_ubuntu_locations }}"
 foreman_installation_media_ubuntu1804_operatingsystems:
     - Ubuntu 18.04 LTS (Bionic Beaver)
 
-foreman_installation_media_ubuntu2004_organizations: "{{ foreman_all_organizations_namelist }}"
-foreman_installation_media_ubuntu2004_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_ubuntu2004_organizations: "{{ foreman_installation_media_ubuntu_organizations }}"
+foreman_installation_media_ubuntu2004_locations: "{{ foreman_installation_media_ubuntu_locations }}"
 foreman_installation_media_ubuntu2004_operatingsystems:
     - Ubuntu 20.04 LTS (Focal Fossa)
 
-foreman_installation_media_ubuntu2204_organizations: "{{ foreman_all_organizations_namelist }}"
-foreman_installation_media_ubuntu2204_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_ubuntu2204_organizations: "{{ foreman_installation_media_ubuntu_organizations }}"
+foreman_installation_media_ubuntu2204_locations: "{{ foreman_installation_media_ubuntu_locations }}"
 foreman_installation_media_ubuntu2204_operatingsystems:
     - Ubuntu 22.04 LTS (Jammy Jellyfish)
 

@@ -14,6 +14,56 @@ foreman_repo_baseurl_debian12: "{{ foreman_repo_baseurl_debian }}"
 
 
 #######################################
+### INSTALLATION MEDIA DEFAULTS
+#######################################
+
+foreman_installation_media_debian_organizations: "{{ foreman_installation_media_deb_organizations }}"
+foreman_installation_media_debian_locations: "{{ foreman_installation_media_deb_locations }}"
+foreman_installation_media_debian_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | selectattr('name', '==', 'Debian') | map(attribute='description') | list }}"
+
+
+foreman_installation_media_debian9_organizations: "{{ foreman_installation_media_debian_organizations }}"
+foreman_installation_media_debian9_locations: "{{ foreman_installation_media_debian_locations }}"
+foreman_installation_media_debian9_operatingsystems:
+    - Debian 9 (Stretch)
+
+foreman_installation_media_debian10_organizations: "{{ foreman_installation_media_debian_organizations }}"
+foreman_installation_media_debian10_locations: "{{ foreman_installation_media_debian_locations }}"
+foreman_installation_media_debian10_operatingsystems:
+    - Debian 10 (Buster)
+
+foreman_installation_media_debian11_organizations: "{{ foreman_installation_media_debian_organizations }}"
+foreman_installation_media_debian11_locations: "{{ foreman_installation_media_debian_locations }}"
+foreman_installation_media_debian11_operatingsystems:
+    - Debian 11 (Bullseye)
+
+foreman_installation_media_debian12_organizations: "{{ foreman_installation_media_debian_organizations }}"
+foreman_installation_media_debian12_locations: "{{ foreman_installation_media_debian_locations }}"
+foreman_installation_media_debian12_operatingsystems:
+    - Debian 12 (Bookworm)
+
+
+#######################################
+### OS DEFAULTS
+#######################################
+
+foreman_operatingsystems_debian_architectures: "{{ foreman_operatingsystems_deb_architectures }}"
+foreman_operatingsystems_debian_ptables: "{{ foreman_operatingsystems_deb_ptables }}"
+
+foreman_operatingsystems_debian9_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
+foreman_operatingsystems_debian9_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
+
+foreman_operatingsystems_debian10_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
+foreman_operatingsystems_debian10_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
+
+foreman_operatingsystems_debian11_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
+foreman_operatingsystems_debian11_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
+
+foreman_operatingsystems_debian12_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
+foreman_operatingsystems_debian12_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
+
+
+#######################################
 ### OS DEFAULT TEMPLATES
 #######################################
 
