@@ -133,16 +133,11 @@ foreman_content_views_debian10:
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
   os_family: "Debian"
   password_hash: "SHA512"
-  architectures:
-    - amd64
+  architectures: "{{ foreman_operatingsystems_debian10_architectures }}"
   # ptables:
   #   - Preseed default
   #   - Preseed default LVM
-  ptables: "{{
-    [ 'Preseed default',
-      'Preseed default LVM' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
-    }}"
+  ptables: "{{ foreman_operatingsystems_debian10_ptables }}"
 
 
 foreman_operatingsystems_debian10:
@@ -160,10 +155,9 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_organization }}"
   # locations:
   #   - "{{ foreman_default_location }}"
-  organizations: "{{ foreman_all_organizations_namelist }}"
-  locations: "{{ foreman_all_locations_namelist }}"
-  operatingsystems:
-    - Debian 10 (Buster)
+  organizations: "{{ foreman_installation_media_debian10_organizations }}"
+  locations: "{{ foreman_installation_media_debian10_locations }}"
+  operatingsystems: "{{ foreman_installation_media_debian10_operatingsystems }}"
 
 
 foreman_installation_media_debian10:
