@@ -224,6 +224,16 @@ foreman_enable_ubuntu1804: false
 foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
 foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
 
+foreman_enable_ubuntu_default_ccv: false
+foreman_enable_ubuntu1804_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
+foreman_enable_ubuntu2004_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
+foreman_enable_ubuntu2204_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
+
+foreman_enable_ubuntu_default_ak: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
+foreman_enable_ubuntu1804_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
+foreman_enable_ubuntu2004_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
+foreman_enable_ubuntu2204_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
+
 
 #######################################
 ### PRODUCTS DEFAULTS
@@ -318,10 +328,15 @@ foreman_products_ubuntu: "{{ ( foreman_products_ubuntu_main | default([]) if for
   }}"
 
 foreman_content_views_ubuntu_main: []
+foreman_composite_content_views_ubuntu_main: []
 foreman_content_views_ubuntu: "{{ ( foreman_content_views_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_composite_content_views_ubuntu_main | default([]) if foreman_enable_ubuntu | bool and foreman_enable_ubuntu_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_ubuntu_main: []
@@ -357,10 +372,10 @@ foreman_installation_media_ubuntu: "{{ ( foreman_installation_media_ubuntu_main 
   }}"
 
 foreman_activation_keys_ubuntu_main: []
-foreman_activation_keys_ubuntu: "{{ ( foreman_activation_keys_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
-  union( foreman_activation_keys_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
-  union( foreman_activation_keys_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+foreman_activation_keys_ubuntu: "{{ ( foreman_activation_keys_ubuntu_main | default([]) if foreman_enable_ubuntu | bool and foreman_enable_ubuntu_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool and foreman_enable_ubuntu1804_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool and foreman_enable_ubuntu2004_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu2204_default_ak | bool else [] )
   }}"
 
 foreman_sync_plan_products_ubuntu_main:
