@@ -98,6 +98,7 @@ foreman_content_views_ubuntu2004:
         product: Ubuntu
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2004 }}"
 
+foreman_composite_content_views_ubuntu2004:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}ubuntu2004"
     organization: "{{ foreman_organization_ubuntu2004 }}"
     composite: True
@@ -129,6 +130,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_ubuntu2004:
   - name: "Ubuntu"
     major: "20"
+    minor: "04"
     release_name: focal
     description: "Ubuntu 20.04 LTS (Focal Fossa)"
     default_templates: "{{ foreman_operatingsystems_ubuntu2004_default_templates | default( foreman_operatingsystems_ubuntu2x_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"

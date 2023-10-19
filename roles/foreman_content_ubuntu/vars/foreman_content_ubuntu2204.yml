@@ -98,6 +98,7 @@ foreman_content_views_ubuntu2204:
         product: Ubuntu
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
 
+foreman_composite_content_views_ubuntu2204:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}ubuntu2204"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     composite: True
@@ -129,6 +130,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_ubuntu2204:
   - name: "Ubuntu"
     major: "22"
+    minor: "04"
     release_name: jammy
     description: "Ubuntu 22.04 LTS (Jammy Jellyfish)"
     default_templates: "{{ foreman_operatingsystems_ubuntu2204_default_templates | default( foreman_operatingsystems_ubuntu2x_default_templates | default( foreman_operatingsystems_deb_default_templates | default([]) ) ) }}"
