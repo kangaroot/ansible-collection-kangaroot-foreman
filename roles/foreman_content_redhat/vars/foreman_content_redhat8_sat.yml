@@ -35,10 +35,10 @@ foreman_products_redhat8_sat:
         # basearch: x86_64
         # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
         organization: "{{ foreman_organization_redhat8_sat }}"
-      # Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 RPMs
-      - name: Red Hat Satellite Capsule 6.12 for RHEL 8 x86_64 (RPMs)
+      # Red Hat Satellite Capsule 6.13 for RHEL 8 x86_64 RPMs
+      - name: Red Hat Satellite Capsule 6.13 for RHEL 8 x86_64 (RPMs)
         # basearch: x86_64
-        # label: satellite-capsule-6.12-for-rhel-8-x86_64-rpms
+        # label: satellite-capsule-6.13-for-rhel-8-x86_64-rpms
         organization: "{{ foreman_organization_redhat8_sat }}"
 
 foreman_content_views_redhat8_sat:
