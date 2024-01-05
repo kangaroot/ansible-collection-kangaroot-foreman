@@ -176,6 +176,7 @@ foreman_content_views_redhat8:
         product: 'Red Hat Ansible Engine'
     allow_promote: "{{ foreman_cv_allow_promote_redhat8 }}"
 
+foreman_composite_content_views_redhat8:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel8"
     organization: "{{ foreman_organization_redhat8 }}"
     composite: True
