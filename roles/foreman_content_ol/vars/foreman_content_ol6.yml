@@ -478,6 +478,7 @@ foreman_content_views_ol6:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
+foreman_composite_content_views_ol6:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol6"
     organization: "{{ foreman_organization_ol6 }}"
     composite: True

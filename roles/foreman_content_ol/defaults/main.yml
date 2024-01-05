@@ -217,14 +217,26 @@ foreman_repo_baseurl_oracle9: "{{ foreman_repo_baseurl_oracle }}"
 
 foreman_enable_ol: false
 
+foreman_enable_ol_default_ccv: false
+foreman_enable_ol_default_ak: "{{ foreman_enable_ol_default_ccv | bool }}"
+
 ### ORACLE LINUX 5/6
 
 foreman_enable_ol5: false
 foreman_enable_ol6: false
 
+foreman_enable_ol5_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
+foreman_enable_ol5_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
+
+foreman_enable_ol6_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
+foreman_enable_ol6_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
+
 ### ORACLE LINUX 7
 
 foreman_enable_ol7: false
+
+foreman_enable_ol7_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
+foreman_enable_ol7_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
 
 foreman_enable_ol70: false
 foreman_enable_ol71: false
@@ -313,6 +325,9 @@ foreman_enable_ol7_olm_oraclelinuxmanager210: "{{ foreman_enable_ol7_olm | bool 
 
 foreman_enable_ol8: "{{ foreman_enable_ol | bool }}"
 
+foreman_enable_ol8_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
+foreman_enable_ol8_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
+
 foreman_enable_ol80: false
 foreman_enable_ol81: false
 foreman_enable_ol82: false
@@ -351,6 +366,9 @@ foreman_enable_ol8_security_validation: false
 
 foreman_enable_ol9: "{{ foreman_enable_ol | bool }}"
 
+foreman_enable_ol9_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
+foreman_enable_ol9_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
+
 foreman_enable_ol90: false
 foreman_enable_ol91: false
 foreman_enable_ol92: "{{ foreman_enable_ol9 | bool }}"
@@ -377,14 +395,26 @@ foreman_enable_ol9_security_validation: false
 
 foreman_enable_ol_uln: false
 
+foreman_enable_ol_uln_default_ccv: false
+foreman_enable_ol_uln_default_ak: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+
 ### ORACLE LINUX 5/6 ULN
 
 foreman_enable_ol5_uln: false
 foreman_enable_ol6_uln: false
 
+foreman_enable_ol5_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+foreman_enable_ol5_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
+
+foreman_enable_ol6_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+foreman_enable_ol6_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
+
 ### ORACLE LINUX 7 ULN
 
 foreman_enable_ol7_uln: false
+
+foreman_enable_ol7_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+foreman_enable_ol7_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
 
 foreman_enable_ol70_uln: false
 foreman_enable_ol71_uln: false
@@ -486,6 +516,9 @@ foreman_enable_ol7_uln_exadata: false
 
 foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
 
+foreman_enable_ol8_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+foreman_enable_ol8_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
+
 foreman_enable_ol80_uln: false
 foreman_enable_ol81_uln: false
 foreman_enable_ol82_uln: false
@@ -534,6 +567,9 @@ foreman_enable_ol8_uln_security_validation: false
 ### ORACLE LINUX 9 ULN
 
 foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
+
+foreman_enable_ol9_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
+foreman_enable_ol9_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
 
 foreman_enable_ol90_uln: false
 foreman_enable_ol91_uln: false
@@ -3199,7 +3235,14 @@ foreman_content_views_ol: "{{ ( foreman_content_views_ol_main | default([]) if f
   union( foreman_content_views_ol9_olm | default([]) if foreman_enable_ol9_olm | bool else [] ) |
   union( foreman_content_views_ol9_am | default([]) if foreman_enable_ol9_am | bool else [] ) |
   union( foreman_content_views_ol9_virtualization | default([]) if foreman_enable_ol9_virtualization | bool else [] ) |
-  union( foreman_content_views_ol9_storage | default([]) if foreman_enable_ol9_storage | bool else [] )
+  union( foreman_content_views_ol9_storage | default([]) if foreman_enable_ol9_storage | bool else [] ) |
+
+  union( foreman_composite_content_views_ol_main | default([]) if foreman_enable_ol | bool and foreman_enable_ol_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol5 | default([]) if foreman_enable_ol5 | bool and foreman_enable_ol5_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol6 | default([]) if foreman_enable_ol6 | bool and foreman_enable_ol6_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol7 | default([]) if foreman_enable_ol5 | bool and foreman_enable_ol7_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol8 | default([]) if foreman_enable_ol6 | bool and foreman_enable_ol8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol9 | default([]) if foreman_enable_ol6 | bool and foreman_enable_ol9_default_ccv | bool else [] )
   }}"
 
 foreman_content_views_ol_uln_main: []
@@ -3249,7 +3292,14 @@ foreman_content_views_ol_uln: "{{ ( foreman_content_views_ol_uln_main | default(
   union( foreman_content_views_ol9_uln_am | default([]) if foreman_enable_ol9_uln_am | bool else [] ) |
   union( foreman_content_views_ol9_uln_virtualization | default([]) if foreman_enable_ol9_uln_virtualization | bool else [] ) |
   union( foreman_content_views_ol9_uln_storage | default([]) if foreman_enable_ol9_uln_storage | bool else [] ) |
-  union( foreman_content_views_ol9_uln_oci | default([]) if foreman_enable_ol9_uln_oci | bool else [] )
+  union( foreman_content_views_ol9_uln_oci | default([]) if foreman_enable_ol9_uln_oci | bool else [] ) |
+
+  union( foreman_composite_content_views_ol_uln_main | default([]) if foreman_enable_ol_uln | bool and foreman_enable_ol_uln_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol5_uln | default([]) if foreman_enable_ol5_uln | bool and foreman_enable_ol5_uln_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol6_uln | default([]) if foreman_enable_ol6_uln | bool and foreman_enable_ol6_uln_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol7_uln | default([]) if foreman_enable_ol5_uln | bool and foreman_enable_ol7_uln_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol8_uln | default([]) if foreman_enable_ol6_uln | bool and foreman_enable_ol8_uln_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol9_uln | default([]) if foreman_enable_ol6_uln | bool and foreman_enable_ol9_uln_default_ccv | bool else [] )
   }}"
 
 
@@ -3444,97 +3494,97 @@ foreman_installation_media_ol_uln: "{{ ( foreman_installation_media_ol_uln_main 
 
 
 foreman_activation_keys_ol_main: []
-foreman_activation_keys_ol: "{{ ( foreman_activation_keys_ol_main | default([]) if foreman_enable_ol | bool else [] ) |
-  union( foreman_activation_keys_ol5 | default([]) if foreman_enable_ol5 | bool else [] ) |
-  union( foreman_activation_keys_ol6 | default([]) if foreman_enable_ol6 | bool else [] ) |
+foreman_activation_keys_ol: "{{ ( foreman_activation_keys_ol_main | default([]) if foreman_enable_ol | bool and foreman_enable_ol_default_ak else [] ) |
+  union( foreman_activation_keys_ol5 | default([]) if foreman_enable_ol5 | bool and foreman_enable_ol_default_ak else [] ) |
+  union( foreman_activation_keys_ol6 | default([]) if foreman_enable_ol6 | bool and foreman_enable_ol_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol7 | default([]) if foreman_enable_ol7 | bool else [] ) |
-  union( foreman_activation_keys_ol7_versions | default([]) if foreman_enable_ol7 | bool else [] ) |
-  union( foreman_activation_keys_ol7_uek | default([]) if foreman_enable_ol7_uek | bool else [] ) |
-  union( foreman_activation_keys_ol7_leapp | default([]) if foreman_enable_ol7_leapp | bool else [] ) |
-  union( foreman_activation_keys_ol7_instantclient | default([]) if foreman_enable_ol7_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol7_olcne | default([]) if foreman_enable_ol7_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol7_security_validation | default([]) if foreman_enable_ol7_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol7_mysql | default([]) if foreman_enable_ol7_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol7_cloud | default([]) if foreman_enable_ol7_cloud | bool else [] ) |
-  union( foreman_activation_keys_ol7_virtualization | default([]) if foreman_enable_ol7_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol7_storage | default([]) if foreman_enable_ol7_storage | bool else [] ) |
-  union( foreman_activation_keys_ol7_developer | default([]) if foreman_enable_ol7_developer | bool else [] ) |
-  union( foreman_activation_keys_ol7_olm | default([]) if foreman_enable_ol7_olm | bool else [] ) |
+  union( foreman_activation_keys_ol7 | default([]) if foreman_enable_ol7 | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_versions | default([]) if foreman_enable_ol7 | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uek | default([]) if foreman_enable_ol7_uek | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_leapp | default([]) if foreman_enable_ol7_leapp | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_instantclient | default([]) if foreman_enable_ol7_instantclient | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_olcne | default([]) if foreman_enable_ol7_olcne | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_security_validation | default([]) if foreman_enable_ol7_security_validation | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_mysql | default([]) if foreman_enable_ol7_mysql | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_cloud | default([]) if foreman_enable_ol7_cloud | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_virtualization | default([]) if foreman_enable_ol7_virtualization | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_storage | default([]) if foreman_enable_ol7_storage | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_developer | default([]) if foreman_enable_ol7_developer | bool and foreman_enable_ol7_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_olm | default([]) if foreman_enable_ol7_olm | bool and foreman_enable_ol7_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol8 | default([]) if foreman_enable_ol8 | bool else [] ) |
-  union( foreman_activation_keys_ol8_versions | default([]) if foreman_enable_ol8 | bool else [] ) |
-  union( foreman_activation_keys_ol8_uek | default([]) if foreman_enable_ol8_uek | bool else [] ) |
-  union( foreman_activation_keys_ol8_instantclient | default([]) if foreman_enable_ol8_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol8_olcne | default([]) if foreman_enable_ol8_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol8_security_validation | default([]) if foreman_enable_ol8_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol8_mysql | default([]) if foreman_enable_ol8_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol8_olm | default([]) if foreman_enable_ol8_olm | bool else [] ) |
-  union( foreman_activation_keys_ol8_am | default([]) if foreman_enable_ol8_am | bool else [] ) |
-  union( foreman_activation_keys_ol8_virtualization | default([]) if foreman_enable_ol8_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol8_storage | default([]) if foreman_enable_ol8_storage | bool else [] ) |
+  union( foreman_activation_keys_ol8 | default([]) if foreman_enable_ol8 | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_versions | default([]) if foreman_enable_ol8 | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uek | default([]) if foreman_enable_ol8_uek | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_instantclient | default([]) if foreman_enable_ol8_instantclient | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_olcne | default([]) if foreman_enable_ol8_olcne | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_security_validation | default([]) if foreman_enable_ol8_security_validation | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_mysql | default([]) if foreman_enable_ol8_mysql | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_olm | default([]) if foreman_enable_ol8_olm | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_am | default([]) if foreman_enable_ol8_am | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_virtualization | default([]) if foreman_enable_ol8_virtualization | bool and foreman_enable_ol8_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_storage | default([]) if foreman_enable_ol8_storage | bool and foreman_enable_ol8_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol9 | default([]) if foreman_enable_ol9 | bool else [] ) |
-  union( foreman_activation_keys_ol9_versions | default([]) if foreman_enable_ol9 | bool else [] ) |
-  union( foreman_activation_keys_ol9_uek | default([]) if foreman_enable_ol9_uek | bool else [] ) |
-  union( foreman_activation_keys_ol9_instantclient | default([]) if foreman_enable_ol9_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol9_olcne | default([]) if foreman_enable_ol9_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol9_security_validation | default([]) if foreman_enable_ol9_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol9_mysql | default([]) if foreman_enable_ol9_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol9_olm | default([]) if foreman_enable_ol9_olm | bool else [] ) |
-  union( foreman_activation_keys_ol9_am | default([]) if foreman_enable_ol9_am | bool else [] ) |
-  union( foreman_activation_keys_ol9_virtualization | default([]) if foreman_enable_ol9_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol9_storage | default([]) if foreman_enable_ol9_storage | bool else [] )
+  union( foreman_activation_keys_ol9 | default([]) if foreman_enable_ol9 | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_versions | default([]) if foreman_enable_ol9 | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uek | default([]) if foreman_enable_ol9_uek | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_instantclient | default([]) if foreman_enable_ol9_instantclient | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_olcne | default([]) if foreman_enable_ol9_olcne | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_security_validation | default([]) if foreman_enable_ol9_security_validation | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_mysql | default([]) if foreman_enable_ol9_mysql | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_olm | default([]) if foreman_enable_ol9_olm | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_am | default([]) if foreman_enable_ol9_am | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_virtualization | default([]) if foreman_enable_ol9_virtualization | bool and foreman_enable_ol9_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_storage | default([]) if foreman_enable_ol9_storage | bool and foreman_enable_ol9_default_ak else [] )
   }}"
 
 foreman_activation_keys_ol_uln_main: []
-foreman_activation_keys_ol_uln: "{{ ( foreman_activation_keys_ol_uln_main | default([]) if foreman_enable_ol_uln | bool else [] ) |
-  union( foreman_activation_keys_ol5_uln | default([]) if foreman_enable_ol5_uln | bool else [] ) |
-  union( foreman_activation_keys_ol6_uln | default([]) if foreman_enable_ol6_uln | bool else [] ) |
+foreman_activation_keys_ol_uln: "{{ ( foreman_activation_keys_ol_uln_main | default([]) if foreman_enable_ol_uln | bool and foreman_enable_ol_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol5_uln | default([]) if foreman_enable_ol5_uln | bool and foreman_enable_ol5_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol6_uln | default([]) if foreman_enable_ol6_uln | bool and foreman_enable_ol6_uln_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol7_uln | default([]) if foreman_enable_ol7_uln | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_versions | default([]) if foreman_enable_ol7_uln | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_uek | default([]) if foreman_enable_ol7_uln_uek | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_ksplice | default([]) if foreman_enable_ol7_uln_ksplice | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_sap | default([]) if foreman_enable_ol7_uln_sap | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_leapp | default([]) if foreman_enable_ol7_uln_leapp | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_instantclient | default([]) if foreman_enable_ol7_uln_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_olcne | default([]) if foreman_enable_ol7_uln_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_security_validation | default([]) if foreman_enable_ol7_uln_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_mysql | default([]) if foreman_enable_ol7_uln_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_cloud | default([]) if foreman_enable_ol7_uln_cloud | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_virtualization | default([]) if foreman_enable_ol7_uln_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_storage | default([]) if foreman_enable_ol7_uln_storage | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_developer | default([]) if foreman_enable_ol7_uln_developer | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_olm | default([]) if foreman_enable_ol7_uln_olm | bool else [] ) |
-  union( foreman_activation_keys_ol7_uln_exadata | default([]) if foreman_enable_ol7_uln_exadata | bool else [] ) |
+  union( foreman_activation_keys_ol7_uln | default([]) if foreman_enable_ol7_uln | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_versions | default([]) if foreman_enable_ol7_uln | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_uek | default([]) if foreman_enable_ol7_uln_uek | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_ksplice | default([]) if foreman_enable_ol7_uln_ksplice | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_sap | default([]) if foreman_enable_ol7_uln_sap | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_leapp | default([]) if foreman_enable_ol7_uln_leapp | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_instantclient | default([]) if foreman_enable_ol7_uln_instantclient | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_olcne | default([]) if foreman_enable_ol7_uln_olcne | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_security_validation | default([]) if foreman_enable_ol7_uln_security_validation | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_mysql | default([]) if foreman_enable_ol7_uln_mysql | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_cloud | default([]) if foreman_enable_ol7_uln_cloud | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_virtualization | default([]) if foreman_enable_ol7_uln_virtualization | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_storage | default([]) if foreman_enable_ol7_uln_storage | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_developer | default([]) if foreman_enable_ol7_uln_developer | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_olm | default([]) if foreman_enable_ol7_uln_olm | bool and foreman_enable_ol7_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol7_uln_exadata | default([]) if foreman_enable_ol7_uln_exadata | bool and foreman_enable_ol7_uln_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol8_uln | default([]) if foreman_enable_ol8_uln | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_versions | default([]) if foreman_enable_ol8_uln | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_uek | default([]) if foreman_enable_ol8_uln_uek | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_instantclient | default([]) if foreman_enable_ol8_uln_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_mysql | default([]) if foreman_enable_ol8_uln_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_olm | default([]) if foreman_enable_ol8_uln_olm | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_virtualization | default([]) if foreman_enable_ol8_uln_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_storage | default([]) if foreman_enable_ol8_uln_storage | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_am | default([]) if foreman_enable_ol8_uln_am | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_olcne | default([]) if foreman_enable_ol8_uln_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_security_validation | default([]) if foreman_enable_ol8_uln_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol8_uln_ksplice | default([]) if foreman_enable_ol8_uln_ksplice | bool else [] ) |
+  union( foreman_activation_keys_ol8_uln | default([]) if foreman_enable_ol8_uln | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_versions | default([]) if foreman_enable_ol8_uln | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_uek | default([]) if foreman_enable_ol8_uln_uek | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_instantclient | default([]) if foreman_enable_ol8_uln_instantclient | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_mysql | default([]) if foreman_enable_ol8_uln_mysql | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_olm | default([]) if foreman_enable_ol8_uln_olm | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_virtualization | default([]) if foreman_enable_ol8_uln_virtualization | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_storage | default([]) if foreman_enable_ol8_uln_storage | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_am | default([]) if foreman_enable_ol8_uln_am | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_olcne | default([]) if foreman_enable_ol8_uln_olcne | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_security_validation | default([]) if foreman_enable_ol8_uln_security_validation | bool and foreman_enable_ol8_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol8_uln_ksplice | default([]) if foreman_enable_ol8_uln_ksplice | bool and foreman_enable_ol8_uln_default_ak else [] ) |
 
-  union( foreman_activation_keys_ol9_uln | default([]) if foreman_enable_ol9_uln | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_versions | default([]) if foreman_enable_ol9_uln | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_uek | default([]) if foreman_enable_ol9_uln_uek | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_instantclient | default([]) if foreman_enable_ol9_uln_instantclient | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_mysql | default([]) if foreman_enable_ol9_uln_mysql | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_olm | default([]) if foreman_enable_ol9_uln_olm | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_virtualization | default([]) if foreman_enable_ol9_uln_virtualization | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_storage | default([]) if foreman_enable_ol9_uln_storage | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_am | default([]) if foreman_enable_ol9_uln_am | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_olcne | default([]) if foreman_enable_ol9_uln_olcne | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_security_validation | default([]) if foreman_enable_ol9_uln_security_validation | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_ksplice | default([]) if foreman_enable_ol9_uln_ksplice | bool else [] ) |
-  union( foreman_activation_keys_ol9_uln_oci | default([]) if foreman_enable_ol9_uln_oci | bool else [] )
+  union( foreman_activation_keys_ol9_uln | default([]) if foreman_enable_ol9_uln | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_versions | default([]) if foreman_enable_ol9_uln | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_uek | default([]) if foreman_enable_ol9_uln_uek | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_instantclient | default([]) if foreman_enable_ol9_uln_instantclient | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_mysql | default([]) if foreman_enable_ol9_uln_mysql | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_olm | default([]) if foreman_enable_ol9_uln_olm | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_virtualization | default([]) if foreman_enable_ol9_uln_virtualization | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_storage | default([]) if foreman_enable_ol9_uln_storage | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_am | default([]) if foreman_enable_ol9_uln_am | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_olcne | default([]) if foreman_enable_ol9_uln_olcne | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_security_validation | default([]) if foreman_enable_ol9_uln_security_validation | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_ksplice | default([]) if foreman_enable_ol9_uln_ksplice | bool and foreman_enable_ol9_uln_default_ak else [] ) |
+  union( foreman_activation_keys_ol9_uln_oci | default([]) if foreman_enable_ol9_uln_oci | bool and foreman_enable_ol9_uln_default_ak else [] )
   }}"
 
 
