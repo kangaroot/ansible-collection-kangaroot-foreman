@@ -124,9 +124,15 @@ foreman_repo_baseurl_rocky_vault: https://download.rockylinux.org/vault/rocky
 
 foreman_enable_rocky: false
 
+foreman_enable_rocky_default_ccv: false
+foreman_enable_rocky_default_ak: "{{ foreman_enable_rocky_default_ccv | bool }}"
+
 ### ROCKY 8
 
 foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
+
+foreman_enable_rocky8_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
+foreman_enable_rocky8_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
 
 foreman_enable_rocky84: false
 foreman_enable_rocky85: false
@@ -151,6 +157,9 @@ foreman_enable_rocky8_sig_cloud_kernel: false
 ### ROCKY 9
 
 foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
+
+foreman_enable_rocky9_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
+foreman_enable_rocky9_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
 
 foreman_enable_rocky90: false
 foreman_enable_rocky91: false
@@ -608,7 +617,11 @@ foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]
   union( foreman_content_views_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
   union( foreman_content_views_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
   union( foreman_content_views_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
-  union( foreman_content_views_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
+  union( foreman_content_views_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] ) |
+
+  union( foreman_composite_content_views_rocky_main | default([]) if foreman_enable_rocky | bool and foreman_enable_rocky_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky8 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky9 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky9_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_rocky_main: []
@@ -657,17 +670,17 @@ foreman_installation_media_rocky: "{{ ( foreman_installation_media_rocky_main | 
   }}"
 
 foreman_activation_keys_rocky_main: []
-foreman_activation_keys_rocky: "{{ ( foreman_activation_keys_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
+foreman_activation_keys_rocky: "{{ ( foreman_activation_keys_rocky_main | default([]) if foreman_enable_rocky | bool and foreman_enable_rocky_default_ak | bool else [] ) |
 
-  union( foreman_activation_keys_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_activation_keys_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_activation_keys_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
-  union( foreman_activation_keys_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
+  union( foreman_activation_keys_rocky8 | default([]) if foreman_enable_rocky8 | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky8_versions | default([]) if foreman_enable_rocky8 | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
 
-  union( foreman_activation_keys_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_activation_keys_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_activation_keys_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
-  union( foreman_activation_keys_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
+  union( foreman_activation_keys_rocky9 | default([]) if foreman_enable_rocky9 | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky9_versions | default([]) if foreman_enable_rocky9 | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool and foreman_enable_rocky9_default_ak | bool else [] )
   }}"
 
 foreman_sync_plan_products_rocky_main:
