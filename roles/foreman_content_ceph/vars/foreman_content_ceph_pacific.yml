@@ -147,7 +147,7 @@ foreman_content_views_ceph_pacific_el7:
         product: Ceph
       - name: Ceph noarch packages - Pacific - EL7
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_pacific_el7 }}"
 
 foreman_content_views_ceph_pacific_el8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_el8"
@@ -157,7 +157,7 @@ foreman_content_views_ceph_pacific_el8:
         product: Ceph
       - name: Ceph noarch packages - Pacific - EL8
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_pacific_el8 }}"
 
 foreman_content_views_ceph_pacific_el9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_el9"
@@ -167,7 +167,7 @@ foreman_content_views_ceph_pacific_el9:
         product: Ceph
       - name: Ceph noarch packages - Pacific - EL9
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_pacific_el9 }}"
 
 foreman_content_views_ceph_pacific_deb10:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_pacific_deb10"
