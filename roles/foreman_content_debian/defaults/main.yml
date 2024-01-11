@@ -227,6 +227,8 @@ foreman_operatingsystems_debian12_ptables: "{{ foreman_operatingsystems_ubuntu_p
 ### ENABLE VARS
 #######################################
 
+### DEBIAN
+
 foreman_enable_debian: false
 
 foreman_enable_debian9: false
@@ -298,6 +300,8 @@ foreman_products_defaults_deb_architectures_debian12: "{{ foreman_products_defau
 ### ORGANIZATION VARS
 #######################################
 
+### DEBIAN
+
 foreman_organization_debian: "{{ foreman_organization }}"
 
 foreman_organization_debian9: "{{ foreman_organization_debian }}"
@@ -315,7 +319,6 @@ foreman_organization_debian12: "{{ foreman_organization_debian }}"
 foreman_cv_allow_promote_debian: "{{ foreman_cv_allow_promote | bool }}"
 foreman_ccv_allow_promote_debian: "{{ foreman_ccv_allow_promote | bool }}"
 foreman_ccv_auto_publish_debian: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_debian9: "{{ foreman_cv_allow_promote_debian | bool }}"
 foreman_ccv_allow_promote_debian9: "{{ foreman_ccv_allow_promote_debian | bool }}"
