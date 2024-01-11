@@ -5,6 +5,8 @@
 ### URLS
 #######################################
 
+### NGINX
+
 foreman_repo_baseurl_nginx: https://nginx.org/packages
 
 foreman_repo_baseurl_nginx_el7: "{{ foreman_repo_baseurl_nginx | default('https://nginx.org/packages') }}"
@@ -15,6 +17,8 @@ foreman_repo_baseurl_nginx_el9: "{{ foreman_repo_baseurl_nginx | default('https:
 #######################################
 ### ENABLE VARS
 #######################################
+
+### NGINX
 
 foreman_enable_nginx: false
 
@@ -40,6 +44,8 @@ foreman_products_defaults_unprotected_nginx: "{{ foreman_products_defaults_unpro
 ### ORGANIZATION VARS
 #######################################
 
+### NGINX
+
 foreman_organization_nginx: "{{ foreman_organization }}"
 
 foreman_organization_nginx_el7: "{{ foreman_organization_nginx }}"
@@ -54,21 +60,10 @@ foreman_organization_nginx_el9: "{{ foreman_organization_nginx }}"
 ### NGINX
 
 foreman_cv_allow_promote_nginx: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_nginx: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_nginx: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_nginx_el7: "{{ foreman_cv_allow_promote_nginx | bool }}"
-foreman_ccv_allow_promote_nginx_el7: "{{ foreman_ccv_allow_promote_nginx | bool }}"
-foreman_ccv_auto_publish_nginx_el7: "{{ foreman_ccv_auto_publish_nginx | bool }}"
-
 foreman_cv_allow_promote_nginx_el8: "{{ foreman_cv_allow_promote_nginx | bool }}"
-foreman_ccv_allow_promote_nginx_el8: "{{ foreman_ccv_allow_promote_nginx | bool }}"
-foreman_ccv_auto_publish_nginx_el8: "{{ foreman_ccv_auto_publish_nginx | bool }}"
-
 foreman_cv_allow_promote_nginx_el9: "{{ foreman_cv_allow_promote_nginx | bool }}"
-foreman_ccv_allow_promote_nginx_el9: "{{ foreman_ccv_allow_promote_nginx | bool }}"
-foreman_ccv_auto_publish_nginx_el9: "{{ foreman_ccv_auto_publish_nginx | bool }}"
 
 
 #######################################
