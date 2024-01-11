@@ -5,6 +5,8 @@
 ### URLS
 #######################################
 
+### REMI
+
 foreman_repo_baseurl_remi: https://rpms.remirepo.net
 
 foreman_repo_baseurl_remi_el7: "{{ foreman_repo_baseurl_remi }}"
@@ -15,6 +17,8 @@ foreman_repo_baseurl_remi_el9: "{{ foreman_repo_baseurl_remi }}"
 #######################################
 ### ENABLE VARS
 #######################################
+
+### REMI
 
 foreman_enable_remi: false
 
@@ -40,6 +44,8 @@ foreman_products_defaults_unprotected_remi: "{{ foreman_products_defaults_unprot
 ### ORGANIZATION VARS
 #######################################
 
+### REMI
+
 foreman_organization_remi: "{{ foreman_organization }}"
 
 foreman_organization_remi_el7: "{{ foreman_organization_remi }}"
@@ -51,24 +57,13 @@ foreman_organization_remi_el9: "{{ foreman_organization_remi }}"
 ### CONTENT VIEW DEFAULTS
 #######################################
 
-### NGINX
+### REMI
 
 foreman_cv_allow_promote_remi: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_remi: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_remi: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_remi_el7: "{{ foreman_cv_allow_promote_remi | bool }}"
-foreman_ccv_allow_promote_remi_el7: "{{ foreman_ccv_allow_promote_remi | bool }}"
-foreman_ccv_auto_publish_remi_el7: "{{ foreman_ccv_auto_publish_remi | bool }}"
-
 foreman_cv_allow_promote_remi_el8: "{{ foreman_cv_allow_promote_remi | bool }}"
-foreman_ccv_allow_promote_remi_el8: "{{ foreman_ccv_allow_promote_remi | bool }}"
-foreman_ccv_auto_publish_remi_el8: "{{ foreman_ccv_auto_publish_remi | bool }}"
-
 foreman_cv_allow_promote_remi_el9: "{{ foreman_cv_allow_promote_remi | bool }}"
-foreman_ccv_allow_promote_remi_el9: "{{ foreman_ccv_allow_promote_remi | bool }}"
-foreman_ccv_auto_publish_remi_el9: "{{ foreman_ccv_auto_publish_remi | bool }}"
 
 
 #######################################
