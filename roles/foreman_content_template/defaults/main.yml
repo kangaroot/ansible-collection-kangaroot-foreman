@@ -152,7 +152,7 @@ foreman_enable_template_el8: "{{ foreman_enable_template | bool }}"
 foreman_enable_template_el9: "{{ foreman_enable_template | bool }}"
 
 foreman_enable_template_default_ccv: false
-foreman_enable_template_el7_default_ccv: "{{ foreman_enable_template_default_ccv | bool }}"
+foreman_enable_template_el7_default_ccv: false
 foreman_enable_template_el8_default_ccv: "{{ foreman_enable_template_default_ccv | bool }}"
 foreman_enable_template_el9_default_ccv: "{{ foreman_enable_template_default_ccv | bool }}"
 
