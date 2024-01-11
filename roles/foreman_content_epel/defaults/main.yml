@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### EPEL
+
 foreman_repo_baseurl_epel: https://dl.fedoraproject.org/pub/epel
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### EPEL
 
 foreman_enable_epel: false
 
@@ -54,6 +58,8 @@ foreman_products_defaults_unprotected_epel_el9: "{{ foreman_products_defaults_un
 ### ORGANIZATION VARS
 #######################################
 
+### EPEL
+
 foreman_organization_epel: "{{ foreman_organization }}"
 
 foreman_organization_epel_el7: "{{ foreman_organization_epel }}"
@@ -68,21 +74,10 @@ foreman_organization_epel_el9: "{{ foreman_organization_epel }}"
 ### EPEL
 
 foreman_cv_allow_promote_epel: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_epel: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_epel: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_epel_el7: "{{ foreman_cv_allow_promote_epel | bool }}"
-foreman_ccv_allow_promote_epel_el7: "{{ foreman_ccv_allow_promote_epel | bool }}"
-foreman_ccv_auto_publish_epel_el7: "{{ foreman_ccv_auto_publish_epel | bool }}"
-
 foreman_cv_allow_promote_epel_el8: "{{ foreman_cv_allow_promote_epel | bool }}"
-foreman_ccv_allow_promote_epel_el8: "{{ foreman_ccv_allow_promote_epel | bool }}"
-foreman_ccv_auto_publish_epel_el8: "{{ foreman_ccv_auto_publish_epel | bool }}"
-
 foreman_cv_allow_promote_epel_el9: "{{ foreman_cv_allow_promote_epel | bool }}"
-foreman_ccv_allow_promote_epel_el9: "{{ foreman_ccv_allow_promote_epel | bool }}"
-foreman_ccv_auto_publish_epel_el9: "{{ foreman_ccv_auto_publish_epel | bool }}"
 
 
 #######################################
