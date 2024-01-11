@@ -18,15 +18,6 @@ foreman_products_defaults: &foreman_products_defaults
   unprotected: "{{ foreman_products_defaults_unprotected_centos8 | bool }}"
 
 
-foreman_products_defaults_centos8_kickstart: &foreman_products_defaults_centos8_kickstart
-  <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_centos8_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_centos8_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_centos8_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_centos8_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_centos8_kickstart | bool }}"
-
-
 foreman_products_centos8:
   - name: CentOS
     label: CentOS
@@ -75,12 +66,12 @@ foreman_products_centos8:
 
       - name: CentOS 8 - BaseOS Kickstart
         label: centos-8-baseos-kickstart
-        <<: *foreman_products_defaults_centos8_kickstart
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream Kickstart
         label: centos-8-appstream-kickstart
-        <<: *foreman_products_defaults_centos8_kickstart
+        <<: *foreman_products_defaults_centos8
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
 
@@ -159,10 +150,6 @@ foreman_composite_content_views_centos8:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos8_fasttrack"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -230,9 +217,9 @@ foreman_activation_keys_centos8:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-8-baseos"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-extras"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-plus"
@@ -244,10 +231,6 @@ foreman_activation_keys_centos8:
       - label: "{{ foreman_organization }}_CentOS_centos-8-cr"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-8-fasttrack"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
         override: disabled
 
 

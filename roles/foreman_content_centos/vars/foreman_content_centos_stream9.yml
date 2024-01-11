@@ -145,10 +145,6 @@ foreman_composite_content_views_centos_stream9:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_extras_common"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9_next"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -230,10 +226,6 @@ foreman_activation_keys_centos_stream9:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-9-resilientstorage"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-9-extras-common"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-9"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-9-next"
         override: disabled
 
 

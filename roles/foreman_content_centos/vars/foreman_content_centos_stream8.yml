@@ -154,12 +154,6 @@ foreman_composite_content_views_centos_stream8:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_resilientstorage"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_next"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -227,9 +221,9 @@ foreman_activation_keys_centos_stream8:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-baseos"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras-common"
@@ -243,12 +237,6 @@ foreman_activation_keys_centos_stream8:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-rt"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-resilientstorage"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-next"
         override: disabled
 
 
