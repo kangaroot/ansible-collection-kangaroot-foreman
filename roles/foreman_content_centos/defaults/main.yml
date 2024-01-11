@@ -186,9 +186,15 @@ foreman_repo_baseurl_ovirt: https://resources.ovirt.org
 
 foreman_enable_centos: false
 
+foreman_enable_centos_default_ccv: false
+foreman_enable_centos_default_ak: "{{ foreman_enable_centos_default_ccv | bool }}"
+
 ### CENTOS 7
 
 foreman_enable_centos7: false
+
+foreman_enable_centos7_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
+foreman_enable_centos7_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
 
 foreman_enable_centos70: false
 foreman_enable_centos71: false
@@ -284,6 +290,9 @@ foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 
 foreman_enable_centos8: false
 
+foreman_enable_centos8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
+foreman_enable_centos8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
+
 foreman_enable_centos80: false
 foreman_enable_centos81: false
 foreman_enable_centos82: false
@@ -356,6 +365,9 @@ foreman_enable_centos8_sig_storage_nfs_ganesha30: false
 ### CENTOS STREAM 8
 
 foreman_enable_centos_stream8: "{{ foreman_enable_centos | bool }}"
+
+foreman_enable_centos_stream8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
+foreman_enable_centos_stream8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
 
 foreman_enable_centos_stream8_sig_opstools: "{{ foreman_enable_centos_stream8_sig_virtualization_ovirt44 | bool or
                                                 foreman_enable_centos_stream8_sig_virtualization_ovirt45 | bool }}"
@@ -432,6 +444,9 @@ foreman_enable_centos_stream8_sig_hyperscale_experimental: false
 ### CENTOS STREAM 9
 
 foreman_enable_centos_stream9: "{{ foreman_enable_centos | bool }}"
+
+foreman_enable_centos_stream9_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
+foreman_enable_centos_stream9_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
 
 foreman_enable_centos_stream9_sig_opstools: "{{ foreman_enable_centos_stream9_sig_virtualization_ovirt45 | bool }}"
 foreman_enable_centos_stream9_sig_nfv: false
@@ -2218,6 +2233,7 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   }}"
 
 foreman_content_views_centos_main: []
+foreman_composite_content_views_centos_main: []
 foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
 
   union( foreman_content_views_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
@@ -2261,7 +2277,13 @@ foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default(
   union( foreman_content_views_centos_stream9_sig_messaging | default([]) if foreman_enable_centos_stream9_sig_messaging | bool else [] ) |
   union( foreman_content_views_centos_stream9_sig_cloud | default([]) if foreman_enable_centos_stream9_sig_cloud | bool else [] ) |
   union( foreman_content_views_centos_stream9_sig_storage | default([]) if foreman_enable_centos_stream9_sig_storage | bool else [] ) |
-  union( foreman_content_views_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] )
+  union( foreman_content_views_centos_stream9_sig_hyperscale | default([]) if foreman_enable_centos_stream9_sig_hyperscale | bool else [] ) |
+
+  union( foreman_composite_content_views_centos_main | default([]) if foreman_enable_centos | bool and foreman_enable_centos_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_centos7 | default([]) if foreman_enable_centos7 | bool and foreman_enable_centos7_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_centos8 | default([]) if foreman_enable_centos8 | bool and foreman_enable_centos8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool and foreman_enable_centos_stream8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool and foreman_enable_centos_stream9_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_centos_main: []
@@ -2389,9 +2411,9 @@ foreman_installation_media_centos: "{{ ( foreman_installation_media_centos_main 
   }}"
 
 foreman_activation_keys_centos_main: []
-foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
+foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | default([]) if foreman_enable_centos | bool and foreman_enable_centos_default_ak | bool else [] ) |
 
-  union( foreman_activation_keys_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
+  union( foreman_activation_keys_centos7 | default([]) if foreman_enable_centos7 | bool and foreman_enable_centos7_default_ak else [] ) |
   union( foreman_activation_keys_centos7_versions | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_activation_keys_centos7_dotnet | default([]) if foreman_enable_centos7_dotnet else [] ) |
   union( foreman_activation_keys_centos7_sig_sclo | default([]) if foreman_enable_centos7_sig_sclo else [] ) |
@@ -2403,7 +2425,7 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   union( foreman_activation_keys_centos7_sig_virtualization | default([]) if foreman_enable_centos7_sig_virtualization else [] ) |
   union( foreman_activation_keys_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
-  union( foreman_activation_keys_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_activation_keys_centos8 | default([]) if foreman_enable_centos8 | bool and foreman_enable_centos8_default_ak else [] ) |
   union( foreman_activation_keys_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_activation_keys_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
   union( foreman_activation_keys_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
@@ -2413,7 +2435,7 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   union( foreman_activation_keys_centos8_sig_virtualization | default([]) if foreman_enable_centos8_sig_virtualization else [] ) |
   union( foreman_activation_keys_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
 
-  union( foreman_activation_keys_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool else [] ) |
+  union( foreman_activation_keys_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool and foreman_enable_centos_stream8_default_ak else [] ) |
   union( foreman_activation_keys_centos_stream8_sig_opstools | default([]) if foreman_enable_centos_stream8_sig_opstools | bool else [] ) |
   union( foreman_activation_keys_centos_stream8_sig_plus | default([]) if foreman_enable_centos_stream8_sig_plus | bool else [] ) |
   union( foreman_activation_keys_centos_stream8_sig_nfv | default([]) if foreman_enable_centos_stream8_sig_nfv | bool else [] ) |
@@ -2425,7 +2447,7 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   union( foreman_activation_keys_centos_stream8_sig_storage | default([]) if foreman_enable_centos_stream8_sig_storage | bool else [] ) |
   union( foreman_activation_keys_centos_stream8_sig_hyperscale | default([]) if foreman_enable_centos_stream8_sig_hyperscale | bool else [] ) |
 
-  union( foreman_activation_keys_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool else [] ) |
+  union( foreman_activation_keys_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool and foreman_enable_centos_stream9_default_ak else [] ) |
   union( foreman_activation_keys_centos_stream9_sig_opstools | default([]) if foreman_enable_centos_stream9_sig_opstools | bool else [] ) |
   union( foreman_activation_keys_centos_stream9_sig_nfv | default([]) if foreman_enable_centos_stream9_sig_nfv | bool else [] ) |
   union( foreman_activation_keys_centos_stream9_sig_kmods | default([]) if foreman_enable_centos_stream9_sig_kmods | bool else [] ) |
