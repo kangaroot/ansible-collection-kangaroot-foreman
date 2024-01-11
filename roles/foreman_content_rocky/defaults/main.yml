@@ -489,10 +489,10 @@ foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]
   union( foreman_content_views_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] ) |
 
   union( foreman_composite_content_views_rocky_main | default([]) if foreman_enable_rocky | bool and foreman_enable_rocky_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_rocky8 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky8_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_rocky8_versions | default([]) if foreman_enable_rocky6 | bool else [] ) |
-  union( foreman_composite_content_views_rocky9 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky9_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_rocky9_versions | default([]) if foreman_enable_rocky6 | bool | bool else [] )
+  union( foreman_composite_content_views_rocky8 | default([]) if foreman_enable_rocky8 | bool and foreman_enable_rocky8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
+  union( foreman_composite_content_views_rocky9 | default([]) if foreman_enable_rocky9 | bool and foreman_enable_rocky9_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky9_versions | default([]) if foreman_enable_rocky9 | bool | bool else [] )
   }}"
 
 foreman_operatingsystems_rocky_main: []
