@@ -66,12 +66,12 @@ foreman_products_centos8:
 
       - name: CentOS 8 - BaseOS Kickstart
         label: centos-8-baseos-kickstart
-        <<: *foreman_products_defaults_centos8
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
       - name: CentOS 8 - AppStream Kickstart
         label: centos-8-appstream-kickstart
-        <<: *foreman_products_defaults_centos8
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos8 }}"
 
