@@ -22,15 +22,6 @@ foreman_products_defaults: &foreman_products_defaults
   unprotected: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 
 
-foreman_products_defaults_rocky9_kickstart: &foreman_products_defaults_rocky9_kickstart
-  <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_rocky9_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky9_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky9_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_rocky9_kickstart | bool }}"
-
-
 foreman_products_rocky9:
   - name: Rocky Linux
     label: Rocky
@@ -96,12 +87,12 @@ foreman_products_rocky9:
 
       - name: Rocky Linux 9 - BaseOS Kickstart
         label: rocky-9-baseos-kickstart
-        <<: *foreman_products_defaults_rocky9_kickstart
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky9 }}/9/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky9 }}"
       - name: Rocky Linux 9 - AppStream Kickstart
         label: rocky-9-appstream-kickstart
-        <<: *foreman_products_defaults_rocky9_kickstart
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky9 }}/9/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky9 }}"
 
@@ -205,8 +196,6 @@ foreman_composite_content_views_rocky9:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky9_saphana"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -248,12 +237,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_rocky9:
   - name: Rocky Linux 9 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-92-baseos-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-92-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9
   - name: Rocky Linux 9 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-92-appstream-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-92-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 9
@@ -278,11 +267,11 @@ foreman_activation_keys_rocky9:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Rocky_rocky-9-baseos"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_Rocky_rocky-9-appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_Rocky_rocky-9-extras"
-        override: default
+        override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-9-plus"
         override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-9-crb"
@@ -298,8 +287,6 @@ foreman_activation_keys_rocky9:
       - label: "{{ foreman_organization }}_Rocky_rocky-9-sap"
         override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-9-saphana"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-9"
         override: disabled
 
 

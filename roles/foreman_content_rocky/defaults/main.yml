@@ -138,13 +138,19 @@ foreman_enable_rocky84: false
 foreman_enable_rocky85: false
 foreman_enable_rocky86: false
 foreman_enable_rocky87: false
-foreman_enable_rocky88: false
+foreman_enable_rocky88: "{{ foreman_enable_rocky8 | bool }}"
 
-foreman_enable_rocky84_kickstart: false
-foreman_enable_rocky85_kickstart: false
-foreman_enable_rocky86_kickstart: false
-foreman_enable_rocky87_kickstart: false
-foreman_enable_rocky88_kickstart: "{{ foreman_enable_rocky8 | bool }}"
+foreman_enable_rocky84_default_ccv: false
+foreman_enable_rocky85_default_ccv: false
+foreman_enable_rocky86_default_ccv: false
+foreman_enable_rocky87_default_ccv: false
+foreman_enable_rocky88_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
+
+foreman_enable_rocky84_default_ak: "{{ foreman_enable_rocky84_default_ccv | bool }}"
+foreman_enable_rocky85_default_ak: "{{ foreman_enable_rocky85_default_ccv | bool }}"
+foreman_enable_rocky86_default_ak: "{{ foreman_enable_rocky86_default_ccv | bool }}"
+foreman_enable_rocky87_default_ak: "{{ foreman_enable_rocky87_default_ccv | bool }}"
+foreman_enable_rocky88_default_ak: "{{ foreman_enable_rocky88_default_ccv | bool }}"
 
 foreman_enable_rocky8_sig_core: false
 foreman_enable_rocky8_sig_core_common: "{{ foreman_enable_rocky8_sig_core | bool }}"
@@ -163,11 +169,15 @@ foreman_enable_rocky9_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
 
 foreman_enable_rocky90: false
 foreman_enable_rocky91: false
-foreman_enable_rocky92: false
+foreman_enable_rocky92: "{{ foreman_enable_rocky9 | bool }}"
 
-foreman_enable_rocky90_kickstart: false
-foreman_enable_rocky91_kickstart: false
-foreman_enable_rocky92_kickstart: "{{ foreman_enable_rocky9 | bool }}"
+foreman_enable_rocky90_default_ccv: false
+foreman_enable_rocky91_default_ccv: false
+foreman_enable_rocky92_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
+
+foreman_enable_rocky90_default_ak: "{{ foreman_enable_rocky90_default_ccv | bool }}"
+foreman_enable_rocky91_default_ak: "{{ foreman_enable_rocky91_default_ccv | bool }}"
+foreman_enable_rocky92_default_ak: "{{ foreman_enable_rocky92_default_ccv | bool }}"
 
 foreman_enable_rocky9_sig_core: false
 foreman_enable_rocky9_sig_core_common: "{{ foreman_enable_rocky9_sig_core | bool }}"
@@ -200,13 +210,6 @@ foreman_products_defaults_download_policy_rocky86: "{{ foreman_products_defaults
 foreman_products_defaults_download_policy_rocky87: "{{ foreman_products_defaults_download_policy_rocky8 }}"
 foreman_products_defaults_download_policy_rocky88: "{{ foreman_products_defaults_download_policy_rocky8 }}"
 
-foreman_products_defaults_download_policy_rocky8_kickstart: "{{ foreman_products_defaults_download_policy_rocky8 }}"
-foreman_products_defaults_download_policy_rocky84_kickstart: "{{ foreman_products_defaults_download_policy_rocky84 }}"
-foreman_products_defaults_download_policy_rocky85_kickstart: "{{ foreman_products_defaults_download_policy_rocky85 }}"
-foreman_products_defaults_download_policy_rocky86_kickstart: "{{ foreman_products_defaults_download_policy_rocky86 }}"
-foreman_products_defaults_download_policy_rocky87_kickstart: "{{ foreman_products_defaults_download_policy_rocky87 }}"
-foreman_products_defaults_download_policy_rocky88_kickstart: "{{ foreman_products_defaults_download_policy_rocky88 }}"
-
 foreman_products_defaults_download_policy_rocky8_sig_core: "{{ foreman_products_defaults_download_policy_rocky8 }}"
 foreman_products_defaults_download_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_download_policy_rocky8 }}"
 
@@ -217,13 +220,6 @@ foreman_products_defaults_mirroring_policy_rocky85: "{{ foreman_products_default
 foreman_products_defaults_mirroring_policy_rocky86: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
 foreman_products_defaults_mirroring_policy_rocky87: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
 foreman_products_defaults_mirroring_policy_rocky88: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
-
-foreman_products_defaults_mirroring_policy_rocky8_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
-foreman_products_defaults_mirroring_policy_rocky84_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky84 }}"
-foreman_products_defaults_mirroring_policy_rocky85_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky85 }}"
-foreman_products_defaults_mirroring_policy_rocky86_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky86 }}"
-foreman_products_defaults_mirroring_policy_rocky87_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky87 }}"
-foreman_products_defaults_mirroring_policy_rocky88_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky88 }}"
 
 foreman_products_defaults_mirroring_policy_rocky8_sig_core: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
 foreman_products_defaults_mirroring_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_mirroring_policy_rocky8 }}"
@@ -236,13 +232,6 @@ foreman_products_defaults_verify_ssl_on_sync_rocky86: "{{ foreman_products_defau
 foreman_products_defaults_verify_ssl_on_sync_rocky87: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_rocky88: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
 
-foreman_products_defaults_verify_ssl_on_sync_rocky8_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky84_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky84 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky85_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky85 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky86_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky86 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky87_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky87 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky88_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky88 | bool }}"
-
 foreman_products_defaults_verify_ssl_on_sync_rocky8_sig_core: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_rocky8_sig_cloud: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8 | bool }}"
 
@@ -253,13 +242,6 @@ foreman_products_defaults_http_proxy_policy_rocky85: "{{ foreman_products_defaul
 foreman_products_defaults_http_proxy_policy_rocky86: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
 foreman_products_defaults_http_proxy_policy_rocky87: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
 foreman_products_defaults_http_proxy_policy_rocky88: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
-
-foreman_products_defaults_http_proxy_policy_rocky8_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
-foreman_products_defaults_http_proxy_policy_rocky84_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky84 }}"
-foreman_products_defaults_http_proxy_policy_rocky85_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky85 }}"
-foreman_products_defaults_http_proxy_policy_rocky86_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky86 }}"
-foreman_products_defaults_http_proxy_policy_rocky87_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky87 }}"
-foreman_products_defaults_http_proxy_policy_rocky88_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky88 }}"
 
 foreman_products_defaults_http_proxy_policy_rocky8_sig_core: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
 foreman_products_defaults_http_proxy_policy_rocky8_sig_cloud: "{{ foreman_products_defaults_http_proxy_policy_rocky8 }}"
@@ -272,13 +254,6 @@ foreman_products_defaults_unprotected_rocky86: "{{ foreman_products_defaults_unp
 foreman_products_defaults_unprotected_rocky87: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 foreman_products_defaults_unprotected_rocky88: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 
-foreman_products_defaults_unprotected_rocky8_kickstart: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
-foreman_products_defaults_unprotected_rocky84_kickstart: "{{ foreman_products_defaults_unprotected_rocky84 | bool }}"
-foreman_products_defaults_unprotected_rocky85_kickstart: "{{ foreman_products_defaults_unprotected_rocky85 | bool }}"
-foreman_products_defaults_unprotected_rocky86_kickstart: "{{ foreman_products_defaults_unprotected_rocky86 | bool }}"
-foreman_products_defaults_unprotected_rocky87_kickstart: "{{ foreman_products_defaults_unprotected_rocky87 | bool }}"
-foreman_products_defaults_unprotected_rocky88_kickstart: "{{ foreman_products_defaults_unprotected_rocky88 | bool }}"
-
 foreman_products_defaults_unprotected_rocky8_sig_core: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 foreman_products_defaults_unprotected_rocky8_sig_cloud: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 
@@ -290,11 +265,6 @@ foreman_products_defaults_download_policy_rocky90: "{{ foreman_products_defaults
 foreman_products_defaults_download_policy_rocky91: "{{ foreman_products_defaults_download_policy_rocky9 }}"
 foreman_products_defaults_download_policy_rocky92: "{{ foreman_products_defaults_download_policy_rocky9 }}"
 
-foreman_products_defaults_download_policy_rocky9_kickstart: "{{ foreman_products_defaults_download_policy_rocky9 }}"
-foreman_products_defaults_download_policy_rocky90_kickstart: "{{ foreman_products_defaults_download_policy_rocky90 }}"
-foreman_products_defaults_download_policy_rocky91_kickstart: "{{ foreman_products_defaults_download_policy_rocky91 }}"
-foreman_products_defaults_download_policy_rocky92_kickstart: "{{ foreman_products_defaults_download_policy_rocky92 }}"
-
 foreman_products_defaults_download_policy_rocky9_sig_core: "{{ foreman_products_defaults_download_policy_rocky9 }}"
 foreman_products_defaults_download_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_download_policy_rocky9 }}"
 
@@ -303,11 +273,6 @@ foreman_products_defaults_mirroring_policy_rocky9: "{{ foreman_products_defaults
 foreman_products_defaults_mirroring_policy_rocky90: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
 foreman_products_defaults_mirroring_policy_rocky91: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
 foreman_products_defaults_mirroring_policy_rocky92: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
-
-foreman_products_defaults_mirroring_policy_rocky9_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
-foreman_products_defaults_mirroring_policy_rocky90_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky90 }}"
-foreman_products_defaults_mirroring_policy_rocky91_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky91 }}"
-foreman_products_defaults_mirroring_policy_rocky92_kickstart: "{{ foreman_products_defaults_mirroring_policy_rocky92 }}"
 
 foreman_products_defaults_mirroring_policy_rocky9_sig_core: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
 foreman_products_defaults_mirroring_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_mirroring_policy_rocky9 }}"
@@ -318,11 +283,6 @@ foreman_products_defaults_verify_ssl_on_sync_rocky90: "{{ foreman_products_defau
 foreman_products_defaults_verify_ssl_on_sync_rocky91: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_rocky92: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
 
-foreman_products_defaults_verify_ssl_on_sync_rocky9_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky90_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky90 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky91_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky91 | bool }}"
-foreman_products_defaults_verify_ssl_on_sync_rocky92_kickstart: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky92 | bool }}"
-
 foreman_products_defaults_verify_ssl_on_sync_rocky9_sig_core: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_rocky9_sig_cloud: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky9 | bool }}"
 
@@ -332,11 +292,6 @@ foreman_products_defaults_http_proxy_policy_rocky90: "{{ foreman_products_defaul
 foreman_products_defaults_http_proxy_policy_rocky91: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
 foreman_products_defaults_http_proxy_policy_rocky92: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
 
-foreman_products_defaults_http_proxy_policy_rocky9_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
-foreman_products_defaults_http_proxy_policy_rocky90_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky90 }}"
-foreman_products_defaults_http_proxy_policy_rocky91_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky91 }}"
-foreman_products_defaults_http_proxy_policy_rocky92_kickstart: "{{ foreman_products_defaults_http_proxy_policy_rocky92 }}"
-
 foreman_products_defaults_http_proxy_policy_rocky9_sig_core: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
 foreman_products_defaults_http_proxy_policy_rocky9_sig_cloud: "{{ foreman_products_defaults_http_proxy_policy_rocky9 }}"
 
@@ -345,11 +300,6 @@ foreman_products_defaults_unprotected_rocky9: "{{ foreman_products_defaults_unpr
 foreman_products_defaults_unprotected_rocky90: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
 foreman_products_defaults_unprotected_rocky91: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
 foreman_products_defaults_unprotected_rocky92: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
-
-foreman_products_defaults_unprotected_rocky9_kickstart: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
-foreman_products_defaults_unprotected_rocky90_kickstart: "{{ foreman_products_defaults_unprotected_rocky90 | bool }}"
-foreman_products_defaults_unprotected_rocky91_kickstart: "{{ foreman_products_defaults_unprotected_rocky91 | bool }}"
-foreman_products_defaults_unprotected_rocky92_kickstart: "{{ foreman_products_defaults_unprotected_rocky92 | bool }}"
 
 foreman_products_defaults_unprotected_rocky9_sig_core: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
 foreman_products_defaults_unprotected_rocky9_sig_cloud: "{{ foreman_products_defaults_unprotected_rocky9 | bool }}"
@@ -373,12 +323,6 @@ foreman_organization_rocky86: "{{ foreman_organization_rocky8 }}"
 foreman_organization_rocky87: "{{ foreman_organization_rocky8 }}"
 foreman_organization_rocky88: "{{ foreman_organization_rocky8 }}"
 
-foreman_organization_rocky84_kickstart: "{{ foreman_organization_rocky8 }}"
-foreman_organization_rocky85_kickstart: "{{ foreman_organization_rocky8 }}"
-foreman_organization_rocky86_kickstart: "{{ foreman_organization_rocky8 }}"
-foreman_organization_rocky87_kickstart: "{{ foreman_organization_rocky8 }}"
-foreman_organization_rocky88_kickstart: "{{ foreman_organization_rocky8 }}"
-
 foreman_organization_rocky8_sig_core: "{{ foreman_organization_rocky8 }}"
 foreman_organization_rocky8_sig_core_common: "{{ foreman_organization_rocky8_sig_core }}"
 foreman_organization_rocky8_sig_core_infra: "{{ foreman_organization_rocky8_sig_core }}"
@@ -394,10 +338,6 @@ foreman_organization_rocky9: "{{ foreman_organization_rocky }}"
 foreman_organization_rocky90: "{{ foreman_organization_rocky9 }}"
 foreman_organization_rocky91: "{{ foreman_organization_rocky9 }}"
 foreman_organization_rocky92: "{{ foreman_organization_rocky9 }}"
-
-foreman_organization_rocky90_kickstart: "{{ foreman_organization_rocky9 }}"
-foreman_organization_rocky91_kickstart: "{{ foreman_organization_rocky9 }}"
-foreman_organization_rocky92_kickstart: "{{ foreman_organization_rocky9 }}"
 
 foreman_organization_rocky9_sig_core: "{{ foreman_organization_rocky9 }}"
 foreman_organization_rocky9_sig_core_common: "{{ foreman_organization_rocky9_sig_core }}"
@@ -425,7 +365,6 @@ foreman_cv_allow_promote_rocky8: "{{ foreman_cv_allow_promote_rocky | bool }}"
 foreman_ccv_allow_promote_rocky8: "{{ foreman_ccv_allow_promote_rocky | bool }}"
 foreman_ccv_auto_publish_rocky8: "{{ foreman_ccv_auto_publish_rocky | bool }}"
 
-
 foreman_cv_allow_promote_rocky84: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
 foreman_ccv_allow_promote_rocky84: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
 foreman_ccv_auto_publish_rocky84: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
@@ -446,52 +385,13 @@ foreman_cv_allow_promote_rocky88: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
 foreman_ccv_allow_promote_rocky88: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
 foreman_ccv_auto_publish_rocky88: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
 
-
-foreman_cv_allow_promote_rocky84_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky84_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky84_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
-foreman_cv_allow_promote_rocky85_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky85_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky85_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
-foreman_cv_allow_promote_rocky86_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky86_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky86_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
-foreman_cv_allow_promote_rocky87_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky87_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky87_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
-foreman_cv_allow_promote_rocky88_kickstart: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky88_kickstart: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky88_kickstart: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
-
 foreman_cv_allow_promote_rocky8_sig_core: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_core: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_core: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
 foreman_cv_allow_promote_rocky8_sig_core_common: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_core_common: "{{ foreman_ccv_allow_promote_rocky8_sig_core | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_core_common: "{{ foreman_ccv_auto_publish_rocky8_sig_core | bool }}"
-
 foreman_cv_allow_promote_rocky8_sig_core_infra: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_core_infra: "{{ foreman_ccv_allow_promote_rocky8_sig_core | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_core_infra: "{{ foreman_ccv_auto_publish_rocky8_sig_core | bool }}"
-
 
 foreman_cv_allow_promote_rocky8_sig_cloud: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_cloud: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_cloud: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
-
 foreman_cv_allow_promote_rocky8_sig_cloud_common: "{{ foreman_cv_allow_promote_rocky8_sig_cloud | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_cloud_common: "{{ foreman_ccv_allow_promote_rocky8_sig_cloud | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_cloud_common: "{{ foreman_ccv_auto_publish_rocky8_sig_cloud | bool }}"
-
 foreman_cv_allow_promote_rocky8_sig_cloud_kernel: "{{ foreman_cv_allow_promote_rocky8_sig_cloud | bool }}"
-foreman_ccv_allow_promote_rocky8_sig_cloud_kernel: "{{ foreman_ccv_allow_promote_rocky8_sig_cloud | bool }}"
-foreman_ccv_auto_publish_rocky8_sig_cloud_kernel: "{{ foreman_ccv_auto_publish_rocky8_sig_cloud | bool }}"
 
 
 ### ROCKY 9
@@ -499,7 +399,6 @@ foreman_ccv_auto_publish_rocky8_sig_cloud_kernel: "{{ foreman_ccv_auto_publish_r
 foreman_cv_allow_promote_rocky9: "{{ foreman_cv_allow_promote_rocky | bool }}"
 foreman_ccv_allow_promote_rocky9: "{{ foreman_ccv_allow_promote_rocky | bool }}"
 foreman_ccv_auto_publish_rocky9: "{{ foreman_ccv_auto_publish_rocky | bool }}"
-
 
 foreman_cv_allow_promote_rocky90: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
 foreman_ccv_allow_promote_rocky90: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
@@ -513,44 +412,13 @@ foreman_cv_allow_promote_rocky92: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
 foreman_ccv_allow_promote_rocky92: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
 foreman_ccv_auto_publish_rocky92: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
 
-
-foreman_cv_allow_promote_rocky90_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
-foreman_ccv_allow_promote_rocky90_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
-foreman_ccv_auto_publish_rocky90_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
-
-foreman_cv_allow_promote_rocky91_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
-foreman_ccv_allow_promote_rocky91_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
-foreman_ccv_auto_publish_rocky91_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
-
-foreman_cv_allow_promote_rocky92_kickstart: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
-foreman_ccv_allow_promote_rocky92_kickstart: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
-foreman_ccv_auto_publish_rocky92_kickstart: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
-
-
 foreman_cv_allow_promote_rocky9_sig_core: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_core: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_core: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
-
 foreman_cv_allow_promote_rocky9_sig_core_common: "{{ foreman_cv_allow_promote_rocky9_sig_core | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_core_common: "{{ foreman_ccv_allow_promote_rocky9_sig_core | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_core_common: "{{ foreman_ccv_auto_publish_rocky9_sig_core | bool }}"
-
 foreman_cv_allow_promote_rocky9_sig_core_infra: "{{ foreman_cv_allow_promote_rocky9_sig_core | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_core_infra: "{{ foreman_ccv_allow_promote_rocky9_sig_core | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_core_infra: "{{ foreman_ccv_auto_publish_rocky9_sig_core | bool }}"
-
 
 foreman_cv_allow_promote_rocky9_sig_cloud: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_cloud: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_cloud: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
-
 foreman_cv_allow_promote_rocky9_sig_cloud_common: "{{ foreman_cv_allow_promote_rocky9_sig_cloud | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_cloud_common: "{{ foreman_ccv_allow_promote_rocky9_sig_cloud | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_cloud_common: "{{ foreman_ccv_auto_publish_rocky9_sig_cloud | bool }}"
-
 foreman_cv_allow_promote_rocky9_sig_cloud_kernel: "{{ foreman_cv_allow_promote_rocky9_sig_cloud | bool }}"
-foreman_ccv_allow_promote_rocky9_sig_cloud_kernel: "{{ foreman_ccv_allow_promote_rocky9_sig_cloud | bool }}"
-foreman_ccv_auto_publish_rocky9_sig_cloud_kernel: "{{ foreman_ccv_auto_publish_rocky9_sig_cloud | bool }}"
 
 
 #######################################
@@ -622,21 +490,17 @@ foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]
 
   union( foreman_composite_content_views_rocky_main | default([]) if foreman_enable_rocky | bool and foreman_enable_rocky_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_rocky8 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky8_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_rocky9 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky9_default_ccv | bool else [] )
+  union( foreman_composite_content_views_rocky8_versions | default([]) if foreman_enable_rocky6 | bool else [] ) |
+  union( foreman_composite_content_views_rocky9 | default([]) if foreman_enable_rocky6 | bool and foreman_enable_rocky9_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky9_versions | default([]) if foreman_enable_rocky6 | bool | bool else [] )
   }}"
 
 foreman_operatingsystems_rocky_main: []
 foreman_operatingsystems_rocky: "{{ ( foreman_operatingsystems_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-
   union( foreman_operatingsystems_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_operatingsystems_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_operatingsystems_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
-  union( foreman_operatingsystems_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
-
   union( foreman_operatingsystems_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_operatingsystems_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_operatingsystems_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
-  union( foreman_operatingsystems_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
+  union( foreman_operatingsystems_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_installation_media_rocky_defaults: &foreman_installation_media_rocky_defaults
@@ -658,45 +522,27 @@ foreman_installation_media_rocky_main:
     <<: *foreman_installation_media_rocky_defaults
 
 foreman_installation_media_rocky: "{{ ( foreman_installation_media_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-
   union( foreman_installation_media_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_installation_media_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_installation_media_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
-  union( foreman_installation_media_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
-
   union( foreman_installation_media_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_installation_media_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_installation_media_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
-  union( foreman_installation_media_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
+  union( foreman_installation_media_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_activation_keys_rocky_main: []
 foreman_activation_keys_rocky: "{{ ( foreman_activation_keys_rocky_main | default([]) if foreman_enable_rocky | bool and foreman_enable_rocky_default_ak | bool else [] ) |
-
   union( foreman_activation_keys_rocky8 | default([]) if foreman_enable_rocky8 | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky8_versions | default([]) if foreman_enable_rocky8 | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool and foreman_enable_rocky8_default_ak | bool else [] ) |
-
+  union( foreman_activation_keys_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_activation_keys_rocky9 | default([]) if foreman_enable_rocky9 | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky9_versions | default([]) if foreman_enable_rocky9 | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool and foreman_enable_rocky9_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool and foreman_enable_rocky9_default_ak | bool else [] )
+  union( foreman_activation_keys_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
 foreman_sync_plan_products_rocky_main:
   - Rocky Linux
 
 foreman_sync_plan_products_rocky: "{{ ( foreman_sync_plan_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-
   union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_sync_plan_products_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
-  union( foreman_sync_plan_products_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
-
   union( foreman_sync_plan_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
-  union( foreman_sync_plan_products_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
+  union( foreman_sync_plan_products_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
