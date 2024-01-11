@@ -591,6 +591,7 @@ foreman_products_redhat: "{{ ( foreman_products_redhat_main | default([]) if for
   }}"
 
 foreman_content_views_redhat_main: []
+foreman_composite_content_views_redhat_main: []
 foreman_content_views_redhat: "{{ ( foreman_content_views_redhat_main | default([]) if foreman_enable_redhat | bool else [] ) |
 
   union( foreman_content_views_redhat7 | default([]) if foreman_enable_redhat7 | bool else [] ) |

@@ -607,6 +607,7 @@ foreman_products_rocky: "{{ ( foreman_products_rocky_main | default([]) if forem
   }}"
 
 foreman_content_views_rocky_main: []
+foreman_composite_content_views_rocky_main: []
 foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
 
   union( foreman_content_views_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
