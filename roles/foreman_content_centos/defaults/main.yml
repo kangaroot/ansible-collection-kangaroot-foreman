@@ -1145,7 +1145,6 @@ foreman_cv_allow_promote_centos: "{{ foreman_cv_allow_promote | bool }}"
 foreman_ccv_allow_promote_centos: "{{ foreman_ccv_allow_promote | bool }}"
 foreman_ccv_auto_publish_centos: "{{ foreman_ccv_auto_publish | bool }}"
 
-
 ### CENTOS 7
 
 foreman_cv_allow_promote_centos7: "{{ foreman_cv_allow_promote_centos | bool }}"
@@ -1255,7 +1254,6 @@ foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha28: "{{ foreman_cv_allow
 foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha30: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
 foreman_cv_allow_promote_centos7_sig_storage_nfs_ganesha4: "{{ foreman_cv_allow_promote_centos7_sig_storage | bool }}"
 
-
 ### CENTOS 8
 
 foreman_cv_allow_promote_centos8: "{{ foreman_cv_allow_promote_centos | bool }}"
@@ -1331,7 +1329,6 @@ foreman_cv_allow_promote_centos8_sig_storage_ceph_pacific: "{{ foreman_cv_allow_
 foreman_cv_allow_promote_centos8_sig_storage_nfs_ganesha28: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
 foreman_cv_allow_promote_centos8_sig_storage_nfs_ganesha30: "{{ foreman_cv_allow_promote_centos8_sig_storage | bool }}"
 
-
 ### CENTOS STREAM 8
 
 foreman_cv_allow_promote_centos_stream8: "{{ foreman_cv_allow_promote_centos | bool }}"
@@ -1397,7 +1394,6 @@ foreman_cv_allow_promote_centos_stream8_sig_hyperscale_main: "{{ foreman_cv_allo
 foreman_cv_allow_promote_centos_stream8_sig_hyperscale_hotfixes: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
 foreman_cv_allow_promote_centos_stream8_sig_hyperscale_spin: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
 foreman_cv_allow_promote_centos_stream8_sig_hyperscale_experimental: "{{ foreman_cv_allow_promote_centos_stream8_sig_hyperscale | bool }}"
-
 
 ### CENTOS STREAM 9
 
