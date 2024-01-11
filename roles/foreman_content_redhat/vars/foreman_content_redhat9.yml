@@ -112,12 +112,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_redhat9:
   - name: Red Hat 9 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.3/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 9
   - name: Red Hat 9 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.3/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 9

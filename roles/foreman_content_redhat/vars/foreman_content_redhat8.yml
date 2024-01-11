@@ -247,12 +247,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_redhat8:
   - name: Red Hat 8 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/baseos/kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.9/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8
   - name: Red Hat 8 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/appstream/kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.9/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8
