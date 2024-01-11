@@ -291,7 +291,7 @@ foreman_activation_keys_ol7_uln:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol7_uln_x86_64_latest"
-        override: default
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_ol7_uln_x86_64_latest_archive"
       #   override: disabled
       - label: "{{ foreman_organization }}_OL_ol7_uln_x86_64_optional_latest"

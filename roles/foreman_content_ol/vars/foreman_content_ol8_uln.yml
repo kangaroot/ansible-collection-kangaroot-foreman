@@ -218,9 +218,9 @@ foreman_activation_keys_ol8_uln:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_baseos_latest"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_addons"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol8_uln_x86_64_developer"

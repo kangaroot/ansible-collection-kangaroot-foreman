@@ -250,9 +250,9 @@ foreman_activation_keys_ol9_uln:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_baseos_latest"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_appstream"
-        override: default
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_baseos_developer"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol9_uln_x86_64_appstream_developer"

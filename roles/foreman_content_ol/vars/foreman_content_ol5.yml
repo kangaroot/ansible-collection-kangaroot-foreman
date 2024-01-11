@@ -532,13 +532,13 @@ foreman_activation_keys_ol5:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol5_i386_latest"
-        override: disabled
+        override: enabled
       - label: "{{ foreman_organization }}_OL_el5_unsupported_i386_latest"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol5_i386_UEK_base"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol5_i386_UEK_latest"
-        override: disabled
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_el5_rds_i386_latest"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol5_i386_spacewalk26_client"
@@ -556,13 +556,13 @@ foreman_activation_keys_ol5:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol5_x86_64_latest"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_OL_el5_unsupported_x86_64_latest"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol5_x86_64_UEK_base"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol5_x86_64_UEK_latest"
-        override: default
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_ol5_x86_64_spacewalk26_client"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol5_x86_64_spacewalk27_client"

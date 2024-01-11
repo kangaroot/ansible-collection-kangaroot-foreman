@@ -1930,7 +1930,7 @@ foreman_activation_keys_ol6_uln:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_latest"
-        override: disabled
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_latest_archive"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_ELS"
@@ -1946,7 +1946,7 @@ foreman_activation_keys_ol6_uln:
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEK_base"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEK_latest"
-        override: disabled
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEKR3_latest"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEKR4"
