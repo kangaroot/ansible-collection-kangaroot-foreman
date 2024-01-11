@@ -228,7 +228,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_ol9_uln:
   - name: Oracle Linux 9 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u2_baseos_base/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol9_uln_x86_64_u3_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 9

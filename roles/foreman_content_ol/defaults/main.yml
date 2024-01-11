@@ -358,7 +358,8 @@ foreman_enable_ol84: false
 foreman_enable_ol85: false
 foreman_enable_ol86: false
 foreman_enable_ol87: false
-foreman_enable_ol88: "{{ foreman_enable_ol8 | bool }}"
+foreman_enable_ol88: false
+foreman_enable_ol89: "{{ foreman_enable_ol8 | bool }}"
 
 foreman_enable_ol80_default_ccv: false
 foreman_enable_ol81_default_ccv: false
@@ -368,7 +369,8 @@ foreman_enable_ol84_default_ccv: false
 foreman_enable_ol85_default_ccv: false
 foreman_enable_ol86_default_ccv: false
 foreman_enable_ol87_default_ccv: false
-foreman_enable_ol88_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+foreman_enable_ol88_default_ccv: false
+foreman_enable_ol89_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
 
 foreman_enable_ol80_default_ak: "{{ foreman_enable_ol80_default_ccv | bool }}"
 foreman_enable_ol81_default_ak: "{{ foreman_enable_ol81_default_ccv | bool }}"
@@ -379,6 +381,7 @@ foreman_enable_ol85_default_ak: "{{ foreman_enable_ol85_default_ccv | bool }}"
 foreman_enable_ol86_default_ak: "{{ foreman_enable_ol86_default_ccv | bool }}"
 foreman_enable_ol87_default_ak: "{{ foreman_enable_ol87_default_ccv | bool }}"
 foreman_enable_ol88_default_ak: "{{ foreman_enable_ol88_default_ccv | bool }}"
+foreman_enable_ol89_default_ak: "{{ foreman_enable_ol89_default_ccv | bool }}"
 
 foreman_enable_ol8_uek: false
 foreman_enable_ol8_uekr6: "{{ foreman_enable_ol8_uek | bool }}"
@@ -413,15 +416,18 @@ foreman_enable_ol9_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
 
 foreman_enable_ol90: false
 foreman_enable_ol91: false
-foreman_enable_ol92: "{{ foreman_enable_ol9 | bool }}"
+foreman_enable_ol92: false
+foreman_enable_ol93: "{{ foreman_enable_ol9 | bool }}"
 
 foreman_enable_ol90_default_ccv: false
 foreman_enable_ol91_default_ccv: false
-foreman_enable_ol92_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
+foreman_enable_ol92_default_ccv: false
+foreman_enable_ol93_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
 
 foreman_enable_ol90_default_ak: "{{ foreman_enable_ol90_default_ccv | bool }}"
 foreman_enable_ol91_default_ak: "{{ foreman_enable_ol91_default_ccv | bool }}"
 foreman_enable_ol92_default_ak: "{{ foreman_enable_ol92_default_ccv | bool }}"
+foreman_enable_ol93_default_ak: "{{ foreman_enable_ol93_default_ccv | bool }}"
 
 foreman_enable_ol9_uek: false
 foreman_enable_ol9_uekr7: "{{ foreman_enable_ol9_uek | bool }}"
@@ -599,7 +605,8 @@ foreman_enable_ol84_uln: false
 foreman_enable_ol85_uln: false
 foreman_enable_ol86_uln: false
 foreman_enable_ol87_uln: false
-foreman_enable_ol88_uln: "{{ foreman_enable_ol7_uln | bool }}"
+foreman_enable_ol88_uln: false
+foreman_enable_ol89_uln: "{{ foreman_enable_ol8_uln | bool }}"
 
 foreman_enable_ol80_uln_default_ccv: false
 foreman_enable_ol81_uln_default_ccv: false
@@ -609,7 +616,8 @@ foreman_enable_ol84_uln_default_ccv: false
 foreman_enable_ol85_uln_default_ccv: false
 foreman_enable_ol86_uln_default_ccv: false
 foreman_enable_ol87_uln_default_ccv: false
-foreman_enable_ol88_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+foreman_enable_ol88_uln_default_ccv: false
+foreman_enable_ol89_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 
 foreman_enable_ol80_uln_default_ak: "{{ foreman_enable_ol80_uln_default_ccv | bool }}"
 foreman_enable_ol81_uln_default_ak: "{{ foreman_enable_ol81_uln_default_ccv | bool }}"
@@ -620,6 +628,7 @@ foreman_enable_ol85_uln_default_ak: "{{ foreman_enable_ol85_uln_default_ccv | bo
 foreman_enable_ol86_uln_default_ak: "{{ foreman_enable_ol86_uln_default_ccv | bool }}"
 foreman_enable_ol87_uln_default_ak: "{{ foreman_enable_ol87_uln_default_ccv | bool }}"
 foreman_enable_ol88_uln_default_ak: "{{ foreman_enable_ol88_uln_default_ccv | bool }}"
+foreman_enable_ol89_uln_default_ak: "{{ foreman_enable_ol89_uln_default_ccv | bool }}"
 
 foreman_enable_ol80_patch_uln: false
 foreman_enable_ol81_patch_uln: false
@@ -629,7 +638,8 @@ foreman_enable_ol84_patch_uln: false
 foreman_enable_ol85_patch_uln: false
 foreman_enable_ol86_patch_uln: false
 foreman_enable_ol87_patch_uln: false
-foreman_enable_ol88_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+foreman_enable_ol88_patch_uln: false
+foreman_enable_ol89_patch_uln: "{{ foreman_enable_ol8_uln | bool }}"
 
 foreman_enable_ol8_uln_uek: false
 foreman_enable_ol8_uln_uekr6: "{{ foreman_enable_ol8_uln_uek | bool }}"
@@ -665,19 +675,23 @@ foreman_enable_ol9_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }
 
 foreman_enable_ol90_uln: false
 foreman_enable_ol91_uln: false
-foreman_enable_ol92_uln: "{{ foreman_enable_ol7_uln | bool }}"
+foreman_enable_ol92_uln: false
+foreman_enable_ol93_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
 foreman_enable_ol90_uln_default_ccv: false
 foreman_enable_ol91_uln_default_ccv: false
-foreman_enable_ol92_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
+foreman_enable_ol92_uln_default_ccv: false
+foreman_enable_ol93_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 
 foreman_enable_ol90_uln_default_ak: "{{ foreman_enable_ol90_uln_default_ccv | bool }}"
 foreman_enable_ol91_uln_default_ak: "{{ foreman_enable_ol91_uln_default_ccv | bool }}"
 foreman_enable_ol92_uln_default_ak: "{{ foreman_enable_ol92_uln_default_ccv | bool }}"
+foreman_enable_ol93_uln_default_ak: "{{ foreman_enable_ol93_uln_default_ccv | bool }}"
 
 foreman_enable_ol90_patch_uln: false
 foreman_enable_ol91_patch_uln: false
-foreman_enable_ol92_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+foreman_enable_ol92_patch_uln: false
+foreman_enable_ol93_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
 
 foreman_enable_ol9_uln_uek: false
 foreman_enable_ol9_uln_uekr7: "{{ foreman_enable_ol9_uln_uek | bool }}"
@@ -867,6 +881,7 @@ foreman_products_defaults_download_policy_ol85: "{{ foreman_products_defaults_do
 foreman_products_defaults_download_policy_ol86: "{{ foreman_products_defaults_download_policy_ol8 }}"
 foreman_products_defaults_download_policy_ol87: "{{ foreman_products_defaults_download_policy_ol8 }}"
 foreman_products_defaults_download_policy_ol88: "{{ foreman_products_defaults_download_policy_ol8 }}"
+foreman_products_defaults_download_policy_ol89: "{{ foreman_products_defaults_download_policy_ol8 }}"
 
 foreman_products_defaults_download_policy_ol8_uek: "{{ foreman_products_defaults_download_policy_ol8 }}"
 foreman_products_defaults_download_policy_ol8_instantclient: "{{ foreman_products_defaults_download_policy_ol8 }}"
@@ -889,6 +904,7 @@ foreman_products_defaults_mirroring_policy_ol85: "{{ foreman_products_defaults_m
 foreman_products_defaults_mirroring_policy_ol86: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
 foreman_products_defaults_mirroring_policy_ol87: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
 foreman_products_defaults_mirroring_policy_ol88: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
+foreman_products_defaults_mirroring_policy_ol89: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
 
 foreman_products_defaults_mirroring_policy_ol8_uek: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
 foreman_products_defaults_mirroring_policy_ol8_instantclient: "{{ foreman_products_defaults_mirroring_policy_ol8 }}"
@@ -911,6 +927,7 @@ foreman_products_defaults_verify_ssl_on_sync_ol85: "{{ foreman_products_defaults
 foreman_products_defaults_verify_ssl_on_sync_ol86: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol87: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol88: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol89: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol8_uek: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol8_instantclient: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8 | bool }}"
@@ -933,6 +950,7 @@ foreman_products_defaults_http_proxy_policy_ol85: "{{ foreman_products_defaults_
 foreman_products_defaults_http_proxy_policy_ol86: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
 foreman_products_defaults_http_proxy_policy_ol87: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
 foreman_products_defaults_http_proxy_policy_ol88: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
+foreman_products_defaults_http_proxy_policy_ol89: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
 
 foreman_products_defaults_http_proxy_policy_ol8_uek: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
 foreman_products_defaults_http_proxy_policy_ol8_instantclient: "{{ foreman_products_defaults_http_proxy_policy_ol8 }}"
@@ -955,6 +973,7 @@ foreman_products_defaults_unprotected_ol85: "{{ foreman_products_defaults_unprot
 foreman_products_defaults_unprotected_ol86: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 foreman_products_defaults_unprotected_ol87: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 foreman_products_defaults_unprotected_ol88: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
+foreman_products_defaults_unprotected_ol89: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 
 foreman_products_defaults_unprotected_ol8_uek: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 foreman_products_defaults_unprotected_ol8_instantclient: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
@@ -973,6 +992,7 @@ foreman_products_defaults_download_policy_ol9: "{{ foreman_products_defaults_dow
 foreman_products_defaults_download_policy_ol90: "{{ foreman_products_defaults_download_policy_ol9 }}"
 foreman_products_defaults_download_policy_ol91: "{{ foreman_products_defaults_download_policy_ol9 }}"
 foreman_products_defaults_download_policy_ol92: "{{ foreman_products_defaults_download_policy_ol9 }}"
+foreman_products_defaults_download_policy_ol93: "{{ foreman_products_defaults_download_policy_ol9 }}"
 
 foreman_products_defaults_download_policy_ol9_uek: "{{ foreman_products_defaults_download_policy_ol9 }}"
 foreman_products_defaults_download_policy_ol9_instantclient: "{{ foreman_products_defaults_download_policy_ol9 }}"
@@ -989,6 +1009,7 @@ foreman_products_defaults_mirroring_policy_ol9: "{{ foreman_products_defaults_mi
 foreman_products_defaults_mirroring_policy_ol90: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
 foreman_products_defaults_mirroring_policy_ol91: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
 foreman_products_defaults_mirroring_policy_ol92: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
+foreman_products_defaults_mirroring_policy_ol93: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
 
 foreman_products_defaults_mirroring_policy_ol9_uek: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
 foreman_products_defaults_mirroring_policy_ol9_instantclient: "{{ foreman_products_defaults_mirroring_policy_ol9 }}"
@@ -1005,6 +1026,7 @@ foreman_products_defaults_verify_ssl_on_sync_ol9: "{{ foreman_products_defaults_
 foreman_products_defaults_verify_ssl_on_sync_ol90: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol91: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol92: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol93: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol9_uek: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol9_instantclient: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9 | bool }}"
@@ -1021,6 +1043,7 @@ foreman_products_defaults_http_proxy_policy_ol9: "{{ foreman_products_defaults_h
 foreman_products_defaults_http_proxy_policy_ol90: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
 foreman_products_defaults_http_proxy_policy_ol91: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
 foreman_products_defaults_http_proxy_policy_ol92: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
+foreman_products_defaults_http_proxy_policy_ol93: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
 
 foreman_products_defaults_http_proxy_policy_ol9_uek: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
 foreman_products_defaults_http_proxy_policy_ol9_instantclient: "{{ foreman_products_defaults_http_proxy_policy_ol9 }}"
@@ -1037,6 +1060,7 @@ foreman_products_defaults_unprotected_ol9: "{{ foreman_products_defaults_unprote
 foreman_products_defaults_unprotected_ol90: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
 foreman_products_defaults_unprotected_ol91: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
 foreman_products_defaults_unprotected_ol92: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
+foreman_products_defaults_unprotected_ol93: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
 
 foreman_products_defaults_unprotected_ol9_uek: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
 foreman_products_defaults_unprotected_ol9_instantclient: "{{ foreman_products_defaults_unprotected_ol9 | bool }}"
@@ -1281,6 +1305,7 @@ foreman_products_defaults_download_policy_ol85_uln: "{{ foreman_products_default
 foreman_products_defaults_download_policy_ol86_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol87_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol88_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
+foreman_products_defaults_download_policy_ol89_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 
 foreman_products_defaults_download_policy_ol80_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol81_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
@@ -1291,6 +1316,7 @@ foreman_products_defaults_download_policy_ol85_patch_uln: "{{ foreman_products_d
 foreman_products_defaults_download_policy_ol86_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol87_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol88_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
+foreman_products_defaults_download_policy_ol89_patch_uln: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 
 foreman_products_defaults_download_policy_ol8_uln_uek: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
 foreman_products_defaults_download_policy_ol8_uln_ksplice: "{{ foreman_products_defaults_download_policy_ol8_uln }}"
@@ -1314,6 +1340,7 @@ foreman_products_defaults_mirroring_policy_ol85_uln: "{{ foreman_products_defaul
 foreman_products_defaults_mirroring_policy_ol86_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol87_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol88_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
+foreman_products_defaults_mirroring_policy_ol89_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 
 foreman_products_defaults_mirroring_policy_ol80_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol81_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
@@ -1324,6 +1351,7 @@ foreman_products_defaults_mirroring_policy_ol85_patch_uln: "{{ foreman_products_
 foreman_products_defaults_mirroring_policy_ol86_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol87_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol88_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
+foreman_products_defaults_mirroring_policy_ol89_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 
 foreman_products_defaults_mirroring_policy_ol8_uln_uek: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
 foreman_products_defaults_mirroring_policy_ol8_uln_ksplice: "{{ foreman_products_defaults_mirroring_policy_ol8_uln }}"
@@ -1347,6 +1375,7 @@ foreman_products_defaults_verify_ssl_on_sync_ol85_uln: "{{ foreman_products_defa
 foreman_products_defaults_verify_ssl_on_sync_ol86_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol87_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol88_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol89_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol80_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol81_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
@@ -1357,6 +1386,7 @@ foreman_products_defaults_verify_ssl_on_sync_ol85_patch_uln: "{{ foreman_product
 foreman_products_defaults_verify_ssl_on_sync_ol86_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol87_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol88_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol89_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol8_uln_uek: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol8_uln_ksplice: "{{ foreman_products_defaults_verify_ssl_on_sync_ol8_uln | bool }}"
@@ -1380,6 +1410,7 @@ foreman_products_defaults_http_proxy_policy_ol85_uln: "{{ foreman_products_defau
 foreman_products_defaults_http_proxy_policy_ol86_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol87_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol88_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
+foreman_products_defaults_http_proxy_policy_ol89_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 
 foreman_products_defaults_http_proxy_policy_ol80_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol81_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
@@ -1390,6 +1421,7 @@ foreman_products_defaults_http_proxy_policy_ol85_patch_uln: "{{ foreman_products
 foreman_products_defaults_http_proxy_policy_ol86_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol87_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol88_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
+foreman_products_defaults_http_proxy_policy_ol89_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 
 foreman_products_defaults_http_proxy_policy_ol8_uln_uek: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
 foreman_products_defaults_http_proxy_policy_ol8_uln_ksplice: "{{ foreman_products_defaults_http_proxy_policy_ol8_uln }}"
@@ -1413,6 +1445,7 @@ foreman_products_defaults_unprotected_ol85_uln: "{{ foreman_products_defaults_un
 foreman_products_defaults_unprotected_ol86_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol87_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol88_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
+foreman_products_defaults_unprotected_ol89_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 
 foreman_products_defaults_unprotected_ol80_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol81_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
@@ -1423,6 +1456,7 @@ foreman_products_defaults_unprotected_ol85_patch_uln: "{{ foreman_products_defau
 foreman_products_defaults_unprotected_ol86_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol87_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol88_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
+foreman_products_defaults_unprotected_ol89_patch_uln: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 
 foreman_products_defaults_unprotected_ol8_uln_uek: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol8_uln_ksplice: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
@@ -1442,10 +1476,12 @@ foreman_products_defaults_download_policy_ol9_uln: "{{ foreman_products_defaults
 foreman_products_defaults_download_policy_ol90_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 foreman_products_defaults_download_policy_ol91_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 foreman_products_defaults_download_policy_ol92_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
+foreman_products_defaults_download_policy_ol93_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 
 foreman_products_defaults_download_policy_ol90_patch_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 foreman_products_defaults_download_policy_ol91_patch_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 foreman_products_defaults_download_policy_ol92_patch_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
+foreman_products_defaults_download_policy_ol93_patch_uln: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 
 foreman_products_defaults_download_policy_ol9_uln_uek: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
 foreman_products_defaults_download_policy_ol9_uln_ksplice: "{{ foreman_products_defaults_download_policy_ol9_uln }}"
@@ -1464,10 +1500,12 @@ foreman_products_defaults_mirroring_policy_ol9_uln: "{{ foreman_products_default
 foreman_products_defaults_mirroring_policy_ol90_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 foreman_products_defaults_mirroring_policy_ol91_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 foreman_products_defaults_mirroring_policy_ol92_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
+foreman_products_defaults_mirroring_policy_ol93_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 
 foreman_products_defaults_mirroring_policy_ol90_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 foreman_products_defaults_mirroring_policy_ol91_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 foreman_products_defaults_mirroring_policy_ol92_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
+foreman_products_defaults_mirroring_policy_ol93_patch_uln: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 
 foreman_products_defaults_mirroring_policy_ol9_uln_uek: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
 foreman_products_defaults_mirroring_policy_ol9_uln_ksplice: "{{ foreman_products_defaults_mirroring_policy_ol9_uln }}"
@@ -1486,10 +1524,12 @@ foreman_products_defaults_verify_ssl_on_sync_ol9_uln: "{{ foreman_products_defau
 foreman_products_defaults_verify_ssl_on_sync_ol90_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol91_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol92_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol93_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol90_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol91_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol92_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ol93_patch_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ol9_uln_uek: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ol9_uln_ksplice: "{{ foreman_products_defaults_verify_ssl_on_sync_ol9_uln | bool }}"
@@ -1508,10 +1548,12 @@ foreman_products_defaults_http_proxy_policy_ol9_uln: "{{ foreman_products_defaul
 foreman_products_defaults_http_proxy_policy_ol90_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 foreman_products_defaults_http_proxy_policy_ol91_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 foreman_products_defaults_http_proxy_policy_ol92_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
+foreman_products_defaults_http_proxy_policy_ol93_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 
 foreman_products_defaults_http_proxy_policy_ol90_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 foreman_products_defaults_http_proxy_policy_ol91_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 foreman_products_defaults_http_proxy_policy_ol92_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
+foreman_products_defaults_http_proxy_policy_ol93_patch_uln: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 
 foreman_products_defaults_http_proxy_policy_ol9_uln_uek: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
 foreman_products_defaults_http_proxy_policy_ol9_uln_ksplice: "{{ foreman_products_defaults_http_proxy_policy_ol9_uln }}"
@@ -1530,10 +1572,12 @@ foreman_products_defaults_unprotected_ol9_uln: "{{ foreman_products_defaults_unp
 foreman_products_defaults_unprotected_ol90_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 foreman_products_defaults_unprotected_ol91_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 foreman_products_defaults_unprotected_ol92_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
+foreman_products_defaults_unprotected_ol93_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 
 foreman_products_defaults_unprotected_ol90_patch_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 foreman_products_defaults_unprotected_ol91_patch_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 foreman_products_defaults_unprotected_ol92_patch_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
+foreman_products_defaults_unprotected_ol93_patch_uln: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 
 foreman_products_defaults_unprotected_ol9_uln_uek: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
 foreman_products_defaults_unprotected_ol9_uln_ksplice: "{{ foreman_products_defaults_unprotected_ol9_uln | bool }}"
@@ -1661,6 +1705,7 @@ foreman_organization_ol85: "{{ foreman_organization_ol8 }}"
 foreman_organization_ol86: "{{ foreman_organization_ol8 }}"
 foreman_organization_ol87: "{{ foreman_organization_ol8 }}"
 foreman_organization_ol88: "{{ foreman_organization_ol8 }}"
+foreman_organization_ol89: "{{ foreman_organization_ol8 }}"
 
 foreman_organization_ol8_uek: "{{ foreman_organization_ol8 }}"
 foreman_organization_ol8_uekr6: "{{ foreman_organization_ol8 }}"
@@ -1693,6 +1738,7 @@ foreman_organization_ol9: "{{ foreman_organization_ol }}"
 foreman_organization_ol90: "{{ foreman_organization_ol9 }}"
 foreman_organization_ol91: "{{ foreman_organization_ol9 }}"
 foreman_organization_ol92: "{{ foreman_organization_ol9 }}"
+foreman_organization_ol93: "{{ foreman_organization_ol9 }}"
 
 foreman_organization_ol9_uek: "{{ foreman_organization_ol9 }}"
 foreman_organization_ol9_uekr7: "{{ foreman_organization_ol9 }}"
@@ -1834,6 +1880,7 @@ foreman_organization_ol85_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol86_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol87_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol88_uln: "{{ foreman_organization_ol8_uln }}"
+foreman_organization_ol89_uln: "{{ foreman_organization_ol8_uln }}"
 
 foreman_organization_ol80_patch_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol81_patch_uln: "{{ foreman_organization_ol8_uln }}"
@@ -1844,6 +1891,7 @@ foreman_organization_ol85_patch_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol86_patch_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol87_patch_uln: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol88_patch_uln: "{{ foreman_organization_ol8_uln }}"
+foreman_organization_ol89_patch_uln: "{{ foreman_organization_ol8_uln }}"
 
 foreman_organization_ol8_uln_uek: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol8_uln_uekr6: "{{ foreman_organization_ol8_uln }}"
@@ -1877,10 +1925,12 @@ foreman_organization_ol9_uln: "{{ foreman_organization_ol_uln }}"
 foreman_organization_ol90_uln: "{{ foreman_organization_ol9_uln }}"
 foreman_organization_ol91_uln: "{{ foreman_organization_ol9_uln }}"
 foreman_organization_ol92_uln: "{{ foreman_organization_ol9_uln }}"
+foreman_organization_ol93_uln: "{{ foreman_organization_ol9_uln }}"
 
 foreman_organization_ol90_patch_uln: "{{ foreman_organization_ol9_uln }}"
 foreman_organization_ol91_patch_uln: "{{ foreman_organization_ol9_uln }}"
 foreman_organization_ol92_patch_uln: "{{ foreman_organization_ol9_uln }}"
+foreman_organization_ol93_patch_uln: "{{ foreman_organization_ol9_uln }}"
 
 foreman_organization_ol9_uln_uek: "{{ foreman_organization_ol9_uln }}"
 foreman_organization_ol9_uln_uekr7: "{{ foreman_organization_ol9_uln }}"
@@ -2084,6 +2134,10 @@ foreman_cv_allow_promote_ol88: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 foreman_ccv_allow_promote_ol88: "{{ foreman_ccv_allow_promote_ol8 | bool }}"
 foreman_ccv_auto_publish_ol88: "{{ foreman_ccv_auto_publish_ol8 | bool }}"
 
+foreman_cv_allow_promote_ol89: "{{ foreman_cv_allow_promote_ol8 | bool }}"
+foreman_ccv_allow_promote_ol89: "{{ foreman_ccv_allow_promote_ol8 | bool }}"
+foreman_ccv_auto_publish_ol89: "{{ foreman_ccv_auto_publish_ol8 | bool }}"
+
 foreman_cv_allow_promote_ol8_uek: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 foreman_cv_allow_promote_ol8_uekr6: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 foreman_cv_allow_promote_ol8_uekr6_developer: "{{ foreman_cv_allow_promote_ol8 | bool }}"
@@ -2125,6 +2179,10 @@ foreman_ccv_auto_publish_ol91: "{{ foreman_ccv_auto_publish_ol9 | bool }}"
 foreman_cv_allow_promote_ol92: "{{ foreman_cv_allow_promote_ol9 | bool }}"
 foreman_ccv_allow_promote_ol92: "{{ foreman_ccv_allow_promote_ol9 | bool }}"
 foreman_ccv_auto_publish_ol92: "{{ foreman_ccv_auto_publish_ol9 | bool }}"
+
+foreman_cv_allow_promote_ol93: "{{ foreman_cv_allow_promote_ol9 | bool }}"
+foreman_ccv_allow_promote_ol93: "{{ foreman_ccv_allow_promote_ol9 | bool }}"
+foreman_ccv_auto_publish_ol93: "{{ foreman_ccv_auto_publish_ol9 | bool }}"
 
 foreman_cv_allow_promote_ol9_uek: "{{ foreman_cv_allow_promote_ol9 | bool }}"
 foreman_cv_allow_promote_ol9_uekr7: "{{ foreman_cv_allow_promote_ol9 | bool }}"
@@ -2333,6 +2391,10 @@ foreman_cv_allow_promote_ol88_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }
 foreman_ccv_allow_promote_ol88_uln: "{{ foreman_ccv_allow_promote_ol8_uln | bool }}"
 foreman_ccv_auto_publish_ol88_uln: "{{ foreman_ccv_auto_publish_ol8_uln | bool }}"
 
+foreman_cv_allow_promote_ol89_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
+foreman_ccv_allow_promote_ol89_uln: "{{ foreman_ccv_allow_promote_ol8_uln | bool }}"
+foreman_ccv_auto_publish_ol89_uln: "{{ foreman_ccv_auto_publish_ol8_uln | bool }}"
+
 foreman_cv_allow_promote_ol80_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol81_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol82_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
@@ -2342,6 +2404,7 @@ foreman_cv_allow_promote_ol85_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | 
 foreman_cv_allow_promote_ol86_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol87_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol88_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
+foreman_cv_allow_promote_ol89_patch_uln: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 
 foreman_cv_allow_promote_ol8_uln_uek: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol8_uln_uekr6: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
@@ -2386,9 +2449,14 @@ foreman_cv_allow_promote_ol92_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }
 foreman_ccv_allow_promote_ol92_uln: "{{ foreman_ccv_allow_promote_ol9_uln | bool }}"
 foreman_ccv_auto_publish_ol92_uln: "{{ foreman_ccv_auto_publish_ol9_uln | bool }}"
 
+foreman_cv_allow_promote_ol93_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
+foreman_ccv_allow_promote_ol93_uln: "{{ foreman_ccv_allow_promote_ol9_uln | bool }}"
+foreman_ccv_auto_publish_ol93_uln: "{{ foreman_ccv_auto_publish_ol9_uln | bool }}"
+
 foreman_cv_allow_promote_ol90_patch_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
 foreman_cv_allow_promote_ol91_patch_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
 foreman_cv_allow_promote_ol92_patch_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
+foreman_cv_allow_promote_ol93_patch_uln: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
 
 foreman_cv_allow_promote_ol9_uln_uek: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"
 foreman_cv_allow_promote_ol9_uln_uekr7: "{{ foreman_cv_allow_promote_ol9_uln | bool }}"

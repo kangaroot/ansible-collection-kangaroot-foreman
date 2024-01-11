@@ -196,7 +196,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_ol8_uln:
   - name: Oracle Linux 8 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u8_baseos_base/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol8_uln_x86_64_u9_baseos_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 8
