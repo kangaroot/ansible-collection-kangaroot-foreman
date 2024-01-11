@@ -139,10 +139,14 @@
 ### ENABLE VARS
 #######################################
 
+### REDHAT
+
 foreman_enable_redhat: false
 
 foreman_enable_redhat_default_ccv: false
 foreman_enable_redhat_default_ak: "{{ foreman_enable_redhat_default_ccv | bool }}"
+
+### REDHAT 7
 
 foreman_enable_redhat7: false
 
@@ -205,6 +209,7 @@ foreman_enable_redhat7_aap_default_ak: "{{ foreman_enable_redhat7_aap_default_cc
 foreman_enable_redhat7_rhocp_default_ak: "{{ foreman_enable_redhat7_rhocp_default_ccv | bool }}"
 foreman_enable_redhat7_sat_default_ak: "{{ foreman_enable_redhat7_sat_default_ccv | bool }}"
 
+### REDHAT 8
 
 foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
 
@@ -263,6 +268,7 @@ foreman_enable_redhat8_aap_default_ak: "{{ foreman_enable_redhat8_aap_default_cc
 foreman_enable_redhat8_rhocp_default_ak: "{{ foreman_enable_redhat8_rhocp_default_ccv | bool }}"
 foreman_enable_redhat8_sat_default_ak: "{{ foreman_enable_redhat8_sat_default_ccv | bool }}"
 
+### REDHAT 9
 
 foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
 
@@ -299,7 +305,11 @@ foreman_enable_redhat9_rhocp_default_ak: "{{ foreman_enable_redhat9_rhocp_defaul
 ### ORGANIZATION VARS
 #######################################
 
+### REDHAT
+
 foreman_organization_redhat: "{{ foreman_organization }}"
+
+### REDHAT 7
 
 foreman_organization_redhat7: "{{ foreman_organization_redhat }}"
 
@@ -329,6 +339,8 @@ foreman_organization_redhat7_sat: "{{ foreman_organization_redhat7 }}"
 foreman_organization_redhat7_aap: "{{ foreman_organization_redhat7 }}"
 foreman_organization_redhat7_rhocp: "{{ foreman_organization_redhat7 }}"
 
+### REDHAT 8
+
 foreman_organization_redhat8: "{{ foreman_organization_redhat }}"
 
 foreman_organization_redhat80: "{{ foreman_organization_redhat8 }}"
@@ -355,6 +367,8 @@ foreman_organization_redhat8_sat: "{{ foreman_organization_redhat8 }}"
 foreman_organization_redhat8_aap: "{{ foreman_organization_redhat8 }}"
 foreman_organization_redhat8_rhocp: "{{ foreman_organization_redhat8 }}"
 
+### REDHAT 9
+
 foreman_organization_redhat9: "{{ foreman_organization_redhat }}"
 
 foreman_organization_redhat90: "{{ foreman_organization_redhat9 }}"
@@ -379,11 +393,11 @@ foreman_cv_allow_promote_redhat: "{{ foreman_cv_allow_promote | bool }}"
 foreman_ccv_allow_promote_redhat: "{{ foreman_ccv_allow_promote | bool }}"
 foreman_ccv_auto_publish_redhat: "{{ foreman_ccv_auto_publish | bool }}"
 
+### REDHAT 7
 
 foreman_cv_allow_promote_redhat7: "{{ foreman_cv_allow_promote_redhat | bool }}"
 foreman_ccv_allow_promote_redhat7: "{{ foreman_ccv_allow_promote_redhat | bool }}"
 foreman_ccv_auto_publish_redhat7: "{{ foreman_ccv_auto_publish_redhat | bool }}"
-
 
 foreman_cv_allow_promote_redhat70: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
 foreman_ccv_allow_promote_redhat70: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
@@ -425,7 +439,6 @@ foreman_cv_allow_promote_redhat79: "{{ foreman_cv_allow_promote_redhat7 | bool }
 foreman_ccv_allow_promote_redhat79: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
 foreman_ccv_auto_publish_redhat79: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
 
-
 foreman_cv_allow_promote_redhat7_sat: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
 foreman_ccv_allow_promote_redhat7_sat: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
 foreman_ccv_auto_publish_redhat7_sat: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
@@ -438,11 +451,11 @@ foreman_cv_allow_promote_redhat7_rhocp: "{{ foreman_cv_allow_promote_redhat7 | b
 foreman_ccv_allow_promote_redhat7_rhocp: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
 foreman_ccv_auto_publish_redhat7_rhocp: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
 
+### REDHAT 8
 
 foreman_cv_allow_promote_redhat8: "{{ foreman_cv_allow_promote_redhat | bool }}"
 foreman_ccv_allow_promote_redhat8: "{{ foreman_ccv_allow_promote_redhat | bool }}"
 foreman_ccv_auto_publish_redhat8: "{{ foreman_ccv_auto_publish_redhat | bool }}"
-
 
 foreman_cv_allow_promote_redhat80: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
 foreman_ccv_allow_promote_redhat80: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
@@ -480,7 +493,6 @@ foreman_cv_allow_promote_redhat88: "{{ foreman_cv_allow_promote_redhat8 | bool }
 foreman_ccv_allow_promote_redhat88: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 foreman_ccv_auto_publish_redhat88: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
 
-
 foreman_cv_allow_promote_redhat8_sat: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
 foreman_ccv_allow_promote_redhat8_sat: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 foreman_ccv_auto_publish_redhat8_sat: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
@@ -493,11 +505,11 @@ foreman_cv_allow_promote_redhat8_rhocp: "{{ foreman_cv_allow_promote_redhat8 | b
 foreman_ccv_allow_promote_redhat8_rhocp: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 foreman_ccv_auto_publish_redhat8_rhocp: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
 
+### REDHAT 9
 
 foreman_cv_allow_promote_redhat9: "{{ foreman_cv_allow_promote_redhat | bool }}"
 foreman_ccv_allow_promote_redhat9: "{{ foreman_ccv_allow_promote_redhat | bool }}"
 foreman_ccv_auto_publish_redhat9: "{{ foreman_ccv_auto_publish_redhat | bool }}"
-
 
 foreman_cv_allow_promote_redhat90: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 foreman_ccv_allow_promote_redhat90: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
@@ -510,7 +522,6 @@ foreman_ccv_auto_publish_redhat91: "{{ foreman_ccv_auto_publish_redhat9 | bool }
 foreman_cv_allow_promote_redhat92: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 foreman_ccv_allow_promote_redhat92: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
 foreman_ccv_auto_publish_redhat92: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
-
 
 foreman_cv_allow_promote_redhat9_aap: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 foreman_ccv_allow_promote_redhat9_aap: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
