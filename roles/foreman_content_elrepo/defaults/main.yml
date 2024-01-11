@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### ELREPO
+
 foreman_repo_baseurl_elrepo: http://elrepo.org/linux
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### ELREPO
 
 foreman_enable_elrepo: false
 
@@ -36,6 +40,8 @@ foreman_products_defaults_unprotected_elrepo: "{{ foreman_products_defaults_unpr
 ### ORGANIZATION VARS
 #######################################
 
+### ELREPO
+
 foreman_organization_elrepo: "{{ foreman_organization }}"
 
 foreman_organization_elrepo_el7: "{{ foreman_organization_elrepo }}"
@@ -50,21 +56,10 @@ foreman_organization_elrepo_el9: "{{ foreman_organization_elrepo }}"
 ### ELREPO
 
 foreman_cv_allow_promote_elrepo: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_elrepo: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_elrepo: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_elrepo_el7: "{{ foreman_cv_allow_promote_elrepo | bool }}"
-foreman_ccv_allow_promote_elrepo_el7: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
-foreman_ccv_auto_publish_elrepo_el7: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
-
 foreman_cv_allow_promote_elrepo_el8: "{{ foreman_cv_allow_promote_elrepo | bool }}"
-foreman_ccv_allow_promote_elrepo_el8: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
-foreman_ccv_auto_publish_elrepo_el8: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
-
 foreman_cv_allow_promote_elrepo_el9: "{{ foreman_cv_allow_promote_elrepo | bool }}"
-foreman_ccv_allow_promote_elrepo_el9: "{{ foreman_ccv_allow_promote_elrepo | bool }}"
-foreman_ccv_auto_publish_elrepo_el9: "{{ foreman_ccv_auto_publish_elrepo | bool }}"
 
 
 #######################################
