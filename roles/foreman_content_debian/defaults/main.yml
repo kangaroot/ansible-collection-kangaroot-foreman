@@ -234,6 +234,18 @@ foreman_enable_debian10: false
 foreman_enable_debian11: "{{ foreman_enable_debian | bool }}"
 foreman_enable_debian12: "{{ foreman_enable_debian | bool }}"
 
+foreman_enable_debian_default_ccv: false
+foreman_enable_debian9_default_ccv: "{{ foreman_enable_debian_default_ccv | bool }}"
+foreman_enable_debian10_default_ccv: "{{ foreman_enable_debian_default_ccv | bool }}"
+foreman_enable_debian11_default_ccv: "{{ foreman_enable_debian_default_ccv | bool }}"
+foreman_enable_debian12_default_ccv: "{{ foreman_enable_debian_default_ccv | bool }}"
+
+foreman_enable_debian_default_ak: "{{ foreman_enable_debian_default_ccv | bool }}"
+foreman_enable_debian9_default_ak: "{{ foreman_enable_debian_default_ak | bool }}"
+foreman_enable_debian10_default_ak: "{{ foreman_enable_debian_default_ak | bool }}"
+foreman_enable_debian11_default_ak: "{{ foreman_enable_debian_default_ak | bool }}"
+foreman_enable_debian12_default_ak: "{{ foreman_enable_debian_default_ak | bool }}"
+
 
 #######################################
 ### PRODUCT DEFAULTS
@@ -343,11 +355,17 @@ foreman_products_debian: "{{ ( foreman_products_debian_main | default([]) if for
   }}"
 
 foreman_content_views_debian_main: []
+foreman_composite_content_views_debian_main: []
 foreman_content_views_debian: "{{ ( foreman_content_views_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
   union( foreman_content_views_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
   union( foreman_content_views_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
   union( foreman_content_views_debian11 | default([]) if foreman_enable_debian11 | bool else [] ) |
-  union( foreman_content_views_debian12 | default([]) if foreman_enable_debian11 | bool else [] )
+  union( foreman_content_views_debian12 | default([]) if foreman_enable_debian11 | bool else [] ) |
+  union( foreman_composite_content_views_debian_main | default([]) if foreman_enable_debian | bool and foreman_enable_debian_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_debian9 | default([]) if foreman_enable_debian9 | bool and foreman_enable_debian9_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_debian10 | default([]) if foreman_enable_debian10 | bool and foreman_enable_debian10_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_debian11 | default([]) if foreman_enable_debian11 | bool and foreman_enable_debian11_default_ccv | bool else [] )
+  union( foreman_composite_content_views_debian12 | default([]) if foreman_enable_debian12 | bool and foreman_enable_debian12_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_debian_main: []
@@ -386,11 +404,11 @@ foreman_installation_media_debian: "{{ ( foreman_installation_media_debian_main 
   }}"
 
 foreman_activation_keys_debian_main: []
-foreman_activation_keys_debian: "{{ ( foreman_activation_keys_debian_main | default([]) if foreman_enable_debian | bool else [] ) |
-  union( foreman_activation_keys_debian9 | default([]) if foreman_enable_debian9 | bool else [] ) |
-  union( foreman_activation_keys_debian10 | default([]) if foreman_enable_debian10 | bool else [] ) |
-  union( foreman_activation_keys_debian11 | default([]) if foreman_enable_debian11 | bool else [] ) |
-  union( foreman_activation_keys_debian12 | default([]) if foreman_enable_debian11 | bool else [] )
+foreman_activation_keys_debian: "{{ ( foreman_activation_keys_debian_main | default([]) if foreman_enable_debian | bool and foreman_enable_debian_default_ak | bool else [] ) |
+  union( foreman_activation_keys_debian9 | default([]) if foreman_enable_debian9 | bool and foreman_enable_debian9_default_ak | bool else [] ) |
+  union( foreman_activation_keys_debian10 | default([]) if foreman_enable_debian10 | bool and foreman_enable_debian10_default_ak | bool else [] ) |
+  union( foreman_activation_keys_debian11 | default([]) if foreman_enable_debian11 | bool and foreman_enable_debian11_default_ak | bool else [] ) |
+  union( foreman_activation_keys_debian12 | default([]) if foreman_enable_debian11 | bool and foreman_enable_debian12_default_ak | bool else [] )
   }}"
 
 foreman_sync_plan_products_debian_main:
