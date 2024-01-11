@@ -171,16 +171,16 @@ foreman_enable_redhat77_default_ccv: false
 foreman_enable_redhat78_default_ccv: false
 foreman_enable_redhat79_default_ccv: false
 
-foreman_enable_redhat70_default_ak: "{{ foreman_enabled_redhat70_default_ccv | bool }}"
-foreman_enable_redhat71_default_ak: "{{ foreman_enabled_redhat71_default_ccv | bool }}"
-foreman_enable_redhat72_default_ak: "{{ foreman_enabled_redhat72_default_ccv | bool }}"
-foreman_enable_redhat73_default_ak: "{{ foreman_enabled_redhat73_default_ccv | bool }}"
-foreman_enable_redhat74_default_ak: "{{ foreman_enabled_redhat74_default_ccv | bool }}"
-foreman_enable_redhat75_default_ak: "{{ foreman_enabled_redhat75_default_ccv | bool }}"
-foreman_enable_redhat76_default_ak: "{{ foreman_enabled_redhat76_default_ccv | bool }}"
-foreman_enable_redhat77_default_ak: "{{ foreman_enabled_redhat77_default_ccv | bool }}"
-foreman_enable_redhat78_default_ak: "{{ foreman_enabled_redhat78_default_ccv | bool }}"
-foreman_enable_redhat79_default_ak: "{{ foreman_enabled_redhat79_default_ccv | bool }}"
+foreman_enable_redhat70_default_ak: "{{ foreman_enable_redhat70_default_ccv | bool }}"
+foreman_enable_redhat71_default_ak: "{{ foreman_enable_redhat71_default_ccv | bool }}"
+foreman_enable_redhat72_default_ak: "{{ foreman_enable_redhat72_default_ccv | bool }}"
+foreman_enable_redhat73_default_ak: "{{ foreman_enable_redhat73_default_ccv | bool }}"
+foreman_enable_redhat74_default_ak: "{{ foreman_enable_redhat74_default_ccv | bool }}"
+foreman_enable_redhat75_default_ak: "{{ foreman_enable_redhat75_default_ccv | bool }}"
+foreman_enable_redhat76_default_ak: "{{ foreman_enable_redhat76_default_ccv | bool }}"
+foreman_enable_redhat77_default_ak: "{{ foreman_enable_redhat77_default_ccv | bool }}"
+foreman_enable_redhat78_default_ak: "{{ foreman_enable_redhat78_default_ccv | bool }}"
+foreman_enable_redhat79_default_ak: "{{ foreman_enable_redhat79_default_ccv | bool }}"
 
 foreman_enable_redhat70_kickstart: false
 foreman_enable_redhat71_kickstart: false
@@ -231,15 +231,15 @@ foreman_enable_redhat86_default_ccv: false
 foreman_enable_redhat87_default_ccv: false
 foreman_enable_redhat88_default_ccv: false
 
-foreman_enable_redhat80_default_ak: "{{ foreman_enabled_redhat80_default_ccv | bool }}"
-foreman_enable_redhat81_default_ak: "{{ foreman_enabled_redhat81_default_ccv | bool }}"
-foreman_enable_redhat82_default_ak: "{{ foreman_enabled_redhat82_default_ccv | bool }}"
-foreman_enable_redhat83_default_ak: "{{ foreman_enabled_redhat83_default_ccv | bool }}"
-foreman_enable_redhat84_default_ak: "{{ foreman_enabled_redhat84_default_ccv | bool }}"
-foreman_enable_redhat85_default_ak: "{{ foreman_enabled_redhat85_default_ccv | bool }}"
-foreman_enable_redhat86_default_ak: "{{ foreman_enabled_redhat86_default_ccv | bool }}"
-foreman_enable_redhat87_default_ak: "{{ foreman_enabled_redhat87_default_ccv | bool }}"
-foreman_enable_redhat88_default_ak: "{{ foreman_enabled_redhat88_default_ccv | bool }}"
+foreman_enable_redhat80_default_ak: "{{ foreman_enable_redhat80_default_ccv | bool }}"
+foreman_enable_redhat81_default_ak: "{{ foreman_enable_redhat81_default_ccv | bool }}"
+foreman_enable_redhat82_default_ak: "{{ foreman_enable_redhat82_default_ccv | bool }}"
+foreman_enable_redhat83_default_ak: "{{ foreman_enable_redhat83_default_ccv | bool }}"
+foreman_enable_redhat84_default_ak: "{{ foreman_enable_redhat84_default_ccv | bool }}"
+foreman_enable_redhat85_default_ak: "{{ foreman_enable_redhat85_default_ccv | bool }}"
+foreman_enable_redhat86_default_ak: "{{ foreman_enable_redhat86_default_ccv | bool }}"
+foreman_enable_redhat87_default_ak: "{{ foreman_enable_redhat87_default_ccv | bool }}"
+foreman_enable_redhat88_default_ak: "{{ foreman_enable_redhat88_default_ccv | bool }}"
 
 foreman_enable_redhat80_kickstart: false
 foreman_enable_redhat81_kickstart: false
@@ -277,9 +277,9 @@ foreman_enable_redhat90_default_ccv: false
 foreman_enable_redhat91_default_ccv: false
 foreman_enable_redhat92_default_ccv: false
 
-foreman_enable_redhat90_default_ak: "{{ foreman_enabled_redhat90_default_ccv | bool }}"
-foreman_enable_redhat91_default_ak: "{{ foreman_enabled_redhat91_default_ccv | bool }}"
-foreman_enable_redhat92_default_ak: "{{ foreman_enabled_redhat92_default_ccv | bool }}"
+foreman_enable_redhat90_default_ak: "{{ foreman_enable_redhat90_default_ccv | bool }}"
+foreman_enable_redhat91_default_ak: "{{ foreman_enable_redhat91_default_ccv | bool }}"
+foreman_enable_redhat92_default_ak: "{{ foreman_enable_redhat92_default_ccv | bool }}"
 
 foreman_enable_redhat90_kickstart: false
 foreman_enable_redhat91_kickstart: false
