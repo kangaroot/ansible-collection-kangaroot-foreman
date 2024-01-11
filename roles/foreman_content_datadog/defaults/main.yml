@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### DATADOG
+
 foreman_repo_baseurl_datadog: https://yum.datadoghq.com
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### DATADOG
 
 foreman_enable_datadog: false
 
@@ -35,6 +39,8 @@ foreman_products_defaults_unprotected_datadog: "{{ foreman_products_defaults_unp
 ### ORGANIZATION VARS
 #######################################
 
+### DATADOG
+
 foreman_organization_datadog: "{{ foreman_organization }}"
 
 foreman_organization_datadog_v6: "{{ foreman_organization_datadog }}"
@@ -48,17 +54,9 @@ foreman_organization_datadog_v7: "{{ foreman_organization_datadog }}"
 ### DATADOG
 
 foreman_cv_allow_promote_datadog: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_datadog: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_datadog: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_datadog_v6: "{{ foreman_cv_allow_promote_datadog | bool }}"
-foreman_ccv_allow_promote_datadog_v6: "{{ foreman_ccv_allow_promote_datadog | bool }}"
-foreman_ccv_auto_publish_datadog_v6: "{{ foreman_ccv_auto_publish_datadog | bool }}"
-
 foreman_cv_allow_promote_datadog_v7: "{{ foreman_cv_allow_promote_datadog | bool }}"
-foreman_ccv_allow_promote_datadog_v7: "{{ foreman_ccv_allow_promote_datadog | bool }}"
-foreman_ccv_auto_publish_datadog_v7: "{{ foreman_ccv_auto_publish_datadog | bool }}"
 
 
 #######################################
