@@ -651,27 +651,27 @@ foreman_products_redhat79_kickstart:
         organization: "{{ foreman_organization_redhat79_kickstart }}"
 
 foreman_products_redhat7_versions: "{{ [] |
-  union( foreman_products_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_products_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_products_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_products_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_products_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_products_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_products_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_products_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_products_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
-  union( foreman_products_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
+  union( foreman_products_redhat70 | default([]) if foreman_enable_redhat70 | bool else [] ) |
+  union( foreman_products_redhat71 | default([]) if foreman_enable_redhat71 | bool else [] ) |
+  union( foreman_products_redhat72 | default([]) if foreman_enable_redhat72 | bool else [] ) |
+  union( foreman_products_redhat73 | default([]) if foreman_enable_redhat73 | bool else [] ) |
+  union( foreman_products_redhat74 | default([]) if foreman_enable_redhat74 | bool else [] ) |
+  union( foreman_products_redhat75 | default([]) if foreman_enable_redhat75 | bool else [] ) |
+  union( foreman_products_redhat76 | default([]) if foreman_enable_redhat76 | bool else [] ) |
+  union( foreman_products_redhat77 | default([]) if foreman_enable_redhat77 | bool else [] ) |
+  union( foreman_products_redhat78 | default([]) if foreman_enable_redhat78 | bool else [] ) |
+  union( foreman_products_redhat79 | default([]) if foreman_enable_redhat79 | bool else [] ) |
 
-  union( foreman_products_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_products_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_products_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_products_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_products_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_products_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_products_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_products_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_products_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
-  union( foreman_products_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
+  union( foreman_products_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart | bool else [] ) |
+  union( foreman_products_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart | bool else [] ) |
+  union( foreman_products_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart | bool else [] ) |
+  union( foreman_products_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart | bool else [] ) |
+  union( foreman_products_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart | bool else [] ) |
+  union( foreman_products_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart | bool else [] ) |
+  union( foreman_products_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart | bool else [] ) |
+  union( foreman_products_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart | bool else [] ) |
+  union( foreman_products_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart | bool else [] ) |
+  union( foreman_products_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart | bool else [] )
   }}"
 
 
@@ -1185,28 +1185,410 @@ foreman_content_views_redhat79:
         product: 'Red Hat Software Collections (for RHEL Server)'
     allow_promote: "{{ foreman_cv_allow_promote_redhat79 }}"
 
-foreman_content_views_redhat7_versions: "{{ [] |
-  union( foreman_content_views_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_content_views_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_content_views_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_content_views_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_content_views_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_content_views_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_content_views_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_content_views_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_content_views_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
-  union( foreman_content_views_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
+foreman_composite_content_views_redhat70:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel70"
+    organization: "{{ foreman_organization_redhat70 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat70 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat70 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel70_ansible_29"
+      #   latest: true
 
-  union( foreman_content_views_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_content_views_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_content_views_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_content_views_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_content_views_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_content_views_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_content_views_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_content_views_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_content_views_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
-  union( foreman_content_views_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
+foreman_composite_content_views_redhat71:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel71"
+    organization: "{{ foreman_organization_redhat71 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat71 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat71 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel71_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat72:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel72"
+    organization: "{{ foreman_organization_redhat72 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat72 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat72 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel72_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat73:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel73"
+    organization: "{{ foreman_organization_redhat73 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat73 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat73 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel73_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat74:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel74"
+    organization: "{{ foreman_organization_redhat74 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat74 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat74 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel74_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat75:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel75"
+    organization: "{{ foreman_organization_redhat75 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat75 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat75 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel75_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat76:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel76"
+    organization: "{{ foreman_organization_redhat76 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat76 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat76 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel76_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat77:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel77"
+    organization: "{{ foreman_organization_redhat77 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat77 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat77 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel77_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat78:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel78"
+    organization: "{{ foreman_organization_redhat78 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat78 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat78 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel78_ansible_29"
+      #   latest: true
+
+foreman_composite_content_views_redhat79:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel79"
+    organization: "{{ foreman_organization_redhat79 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat79 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat79 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_base"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_optional"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_supplementary"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_fastrack"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_optional_fastrack"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_rh_common"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_sat_client_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_sat_tools_610"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_sat_utils_611"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_sat_maint_6"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_sat_maint_611"
+      #   latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_rhscl"
+        latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_ansible_2"
+      #   latest: true
+      # - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel79_ansible_29"
+      #   latest: true
+
+foreman_content_views_redhat7_versions: "{{ [] |
+  union( foreman_content_views_redhat70 | default([]) if foreman_enable_redhat70 | bool else [] ) |
+  union( foreman_content_views_redhat71 | default([]) if foreman_enable_redhat71 | bool else [] ) |
+  union( foreman_content_views_redhat72 | default([]) if foreman_enable_redhat72 | bool else [] ) |
+  union( foreman_content_views_redhat73 | default([]) if foreman_enable_redhat73 | bool else [] ) |
+  union( foreman_content_views_redhat74 | default([]) if foreman_enable_redhat74 | bool else [] ) |
+  union( foreman_content_views_redhat75 | default([]) if foreman_enable_redhat75 | bool else [] ) |
+  union( foreman_content_views_redhat76 | default([]) if foreman_enable_redhat76 | bool else [] ) |
+  union( foreman_content_views_redhat77 | default([]) if foreman_enable_redhat77 | bool else [] ) |
+  union( foreman_content_views_redhat78 | default([]) if foreman_enable_redhat78 | bool else [] ) |
+  union( foreman_content_views_redhat79 | default([]) if foreman_enable_redhat79 | bool else [] )
+  }}"
+
+foreman_composite_content_views_redhat7_versions: "{{ [] |
+  union( foreman_composite_content_views_redhat70 | default([]) if foreman_enable_redhat70 | bool and foreman_enable_redhat70_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat71 | default([]) if foreman_enable_redhat71 | bool and foreman_enable_redhat71_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat72 | default([]) if foreman_enable_redhat72 | bool and foreman_enable_redhat72_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat73 | default([]) if foreman_enable_redhat73 | bool and foreman_enable_redhat73_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat74 | default([]) if foreman_enable_redhat74 | bool and foreman_enable_redhat74_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat75 | default([]) if foreman_enable_redhat75 | bool and foreman_enable_redhat75_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat76 | default([]) if foreman_enable_redhat76 | bool and foreman_enable_redhat76_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat77 | default([]) if foreman_enable_redhat77 | bool and foreman_enable_redhat77_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat78 | default([]) if foreman_enable_redhat78 | bool and foreman_enable_redhat78_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat79 | default([]) if foreman_enable_redhat79 | bool and foreman_enable_redhat79_default_ccv | bool else [] )
   }}"
 
 
@@ -1225,7 +1607,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
     }}"
 
 
-foreman_operatingsystems_redhat70_kickstart:
+foreman_operatingsystems_redhat70:
   - name: "RedHat"
     major: "7"
     minor: "0"
@@ -1233,7 +1615,7 @@ foreman_operatingsystems_redhat70_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat71_kickstart:
+foreman_operatingsystems_redhat71:
   - name: "RedHat"
     major: "7"
     minor: "1"
@@ -1241,7 +1623,7 @@ foreman_operatingsystems_redhat71_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat72_kickstart:
+foreman_operatingsystems_redhat72:
   - name: "RedHat"
     major: "7"
     minor: "2"
@@ -1249,7 +1631,7 @@ foreman_operatingsystems_redhat72_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat73_kickstart:
+foreman_operatingsystems_redhat73:
   - name: "RedHat"
     major: "7"
     minor: "3"
@@ -1257,7 +1639,7 @@ foreman_operatingsystems_redhat73_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat74_kickstart:
+foreman_operatingsystems_redhat74:
   - name: "RedHat"
     major: "7"
     minor: "4"
@@ -1265,7 +1647,7 @@ foreman_operatingsystems_redhat74_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat75_kickstart:
+foreman_operatingsystems_redhat75:
   - name: "RedHat"
     major: "7"
     minor: "5"
@@ -1273,7 +1655,7 @@ foreman_operatingsystems_redhat75_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat76_kickstart:
+foreman_operatingsystems_redhat76:
   - name: "RedHat"
     major: "7"
     minor: "6"
@@ -1281,7 +1663,7 @@ foreman_operatingsystems_redhat76_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat77_kickstart:
+foreman_operatingsystems_redhat77:
   - name: "RedHat"
     major: "7"
     minor: "7"
@@ -1289,7 +1671,7 @@ foreman_operatingsystems_redhat77_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat78_kickstart:
+foreman_operatingsystems_redhat78:
   - name: "RedHat"
     major: "7"
     minor: "8"
@@ -1297,7 +1679,7 @@ foreman_operatingsystems_redhat78_kickstart:
     default_templates: "{{ foreman_operatingsystems_redhat7_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
-foreman_operatingsystems_redhat79_kickstart:
+foreman_operatingsystems_redhat79:
   - name: "RedHat"
     major: "7"
     minor: "9"
@@ -1306,27 +1688,16 @@ foreman_operatingsystems_redhat79_kickstart:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_redhat7_versions: "{{ [] |
-  union( foreman_operatingsystems_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_operatingsystems_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_operatingsystems_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_operatingsystems_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_operatingsystems_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_operatingsystems_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_operatingsystems_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_operatingsystems_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_operatingsystems_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
-  union( foreman_operatingsystems_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
-
-  union( foreman_operatingsystems_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
+  union( foreman_operatingsystems_redhat70 | default([]) if foreman_enable_redhat70 | bool or foreman_enable_redhat70_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat71 | default([]) if foreman_enable_redhat71 | bool or foreman_enable_redhat71_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat72 | default([]) if foreman_enable_redhat72 | bool or foreman_enable_redhat72_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat73 | default([]) if foreman_enable_redhat73 | bool or foreman_enable_redhat73_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat74 | default([]) if foreman_enable_redhat74 | bool or foreman_enable_redhat74_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat75 | default([]) if foreman_enable_redhat75 | bool or foreman_enable_redhat75_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat76 | default([]) if foreman_enable_redhat76 | bool or foreman_enable_redhat76_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat77 | default([]) if foreman_enable_redhat77 | bool or foreman_enable_redhat77_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat78 | default([]) if foreman_enable_redhat78 | bool or foreman_enable_redhat78_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat79 | default([]) if foreman_enable_redhat79 | bool or foreman_enable_redhat79_kickstart | bool else [] )
   }}"
 
 
@@ -1340,70 +1711,70 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_redhat70_kickstart:
+foreman_installation_media_redhat70:
   - name: RHEL 7.0
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.0/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.0
 
-foreman_installation_media_redhat71_kickstart:
+foreman_installation_media_redhat71:
   - name: RHEL 7.1
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.1/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.1
 
-foreman_installation_media_redhat72_kickstart:
+foreman_installation_media_redhat72:
   - name: RHEL 7.2
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.2/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.2
 
-foreman_installation_media_redhat73_kickstart:
+foreman_installation_media_redhat73:
   - name: RHEL 7.3
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.3/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.3
 
-foreman_installation_media_redhat74_kickstart:
+foreman_installation_media_redhat74:
   - name: RHEL 7.4
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.4/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.4
 
-foreman_installation_media_redhat75_kickstart:
+foreman_installation_media_redhat75:
   - name: RHEL 7.5
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.5/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.5
 
-foreman_installation_media_redhat76_kickstart:
+foreman_installation_media_redhat76:
   - name: RHEL 7.6
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.6/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.6
 
-foreman_installation_media_redhat77_kickstart:
+foreman_installation_media_redhat77:
   - name: RHEL 7.7
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.7/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.7
 
-foreman_installation_media_redhat78_kickstart:
+foreman_installation_media_redhat78:
   - name: RHEL 7.8
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.8/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.8
 
-foreman_installation_media_redhat79_kickstart:
+foreman_installation_media_redhat79:
   - name: RHEL 7.9
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/redhat/server/7/7.9/x86_64/kickstart/"
     <<: *foreman_installation_media_defaults
@@ -1411,26 +1782,498 @@ foreman_installation_media_redhat79_kickstart:
       - RHEL 7.9
 
 foreman_installation_media_redhat7_versions: "{{ [] |
-  union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70 else [] ) |
-  union( foreman_installation_media_redhat71 | default([]) if foreman_enable_redhat71 else [] ) |
-  union( foreman_installation_media_redhat72 | default([]) if foreman_enable_redhat72 else [] ) |
-  union( foreman_installation_media_redhat73 | default([]) if foreman_enable_redhat73 else [] ) |
-  union( foreman_installation_media_redhat74 | default([]) if foreman_enable_redhat74 else [] ) |
-  union( foreman_installation_media_redhat75 | default([]) if foreman_enable_redhat75 else [] ) |
-  union( foreman_installation_media_redhat76 | default([]) if foreman_enable_redhat76 else [] ) |
-  union( foreman_installation_media_redhat77 | default([]) if foreman_enable_redhat77 else [] ) |
-  union( foreman_installation_media_redhat78 | default([]) if foreman_enable_redhat78 else [] ) |
-  union( foreman_installation_media_redhat79 | default([]) if foreman_enable_redhat79 else [] ) |
+  union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat71 | default([]) if foreman_enable_redhat71_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat72 | default([]) if foreman_enable_redhat72_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat73 | default([]) if foreman_enable_redhat73_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat74 | default([]) if foreman_enable_redhat74_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat75 | default([]) if foreman_enable_redhat75_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat76 | default([]) if foreman_enable_redhat76_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat77 | default([]) if foreman_enable_redhat77_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat78 | default([]) if foreman_enable_redhat78_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat79 | default([]) if foreman_enable_redhat79_kickstart | bool else [] )
+  }}"
 
-  union( foreman_installation_media_redhat70_kickstart | default([]) if foreman_enable_redhat70_kickstart else [] ) |
-  union( foreman_installation_media_redhat71_kickstart | default([]) if foreman_enable_redhat71_kickstart else [] ) |
-  union( foreman_installation_media_redhat72_kickstart | default([]) if foreman_enable_redhat72_kickstart else [] ) |
-  union( foreman_installation_media_redhat73_kickstart | default([]) if foreman_enable_redhat73_kickstart else [] ) |
-  union( foreman_installation_media_redhat74_kickstart | default([]) if foreman_enable_redhat74_kickstart else [] ) |
-  union( foreman_installation_media_redhat75_kickstart | default([]) if foreman_enable_redhat75_kickstart else [] ) |
-  union( foreman_installation_media_redhat76_kickstart | default([]) if foreman_enable_redhat76_kickstart else [] ) |
-  union( foreman_installation_media_redhat77_kickstart | default([]) if foreman_enable_redhat77_kickstart else [] ) |
-  union( foreman_installation_media_redhat78_kickstart | default([]) if foreman_enable_redhat78_kickstart else [] ) |
-  union( foreman_installation_media_redhat79_kickstart | default([]) if foreman_enable_redhat79_kickstart else [] )
+
+# Refer to https://access.redhat.com/solutions/125873 for pool ids
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   # Example to uyse a pool id
+  #   # - pool_id: "8a88e9826db22df5016dd018abdd029b"
+  #   # - name: "Red Hat Ansible Engine"
+  #   # - name: "Red Hat Ansible Automation Platform"
+  #   # - name: "Red Hat Enterprise Linux for x8664"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   # - name: "Red Hat Satellite"
+  #   # - name: "Red Hat Satellite Capsule"
+  #   # - name: "Red Hat Software Collections (for RHEL Server)"
+  #   # - name: "Red Hat OpenShift Container Platform"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
+  auto_attach: False
+  release_version: 7Server
+  # service_level: Standard
+
+
+foreman_activation_keys_defaults_el7: &foreman_activation_keys_defaults_el7
+  <<: *foreman_activation_keys_defaults
+  # subscriptions:
+  #   - name: "Red Hat Ansible Engine"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   - name: "Red Hat Software Collections (for RHEL Server)"
+  #   - name: "Extra Packages for Enterprise Linux"
+  release_version: 7Server
+
+
+##############################################################################
+### DISABLED FOR NOW - NEED TO KNOW HOW TO ENABLE VERSION SPECIFIC REPO LABELS
+##############################################################################
+
+# foreman_activation_keys_redhat70:
+#   - name: ak_rhel70
+#     organization: "{{ foreman_organization_redhat70 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel70"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat71:
+#   - name: ak_rhel71
+#     organization: "{{ foreman_organization_redhat71 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel71"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat72:
+#   - name: ak_rhel72
+#     organization: "{{ foreman_organization_redhat72 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel72"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat73:
+#   - name: ak_rhel73
+#     organization: "{{ foreman_organization_redhat73 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel73"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat74:
+#   - name: ak_rhel74
+#     organization: "{{ foreman_organization_redhat74 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel74"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat75:
+#   - name: ak_rhel75
+#     organization: "{{ foreman_organization_redhat75 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel75"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat76:
+#   - name: ak_rhel76
+#     organization: "{{ foreman_organization_redhat76 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel76"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat77:
+#   - name: ak_rhel77
+#     organization: "{{ foreman_organization_redhat77 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel77"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat78:
+#   - name: ak_rhel78
+#     organization: "{{ foreman_organization_redhat78 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel78"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+# foreman_activation_keys_redhat79:
+#   - name: ak_rhel79
+#     organization: "{{ foreman_organization_redhat79 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel79"
+#     <<: *foreman_activation_keys_defaults_el7
+#     content_overrides:
+#       - label: rhel-7-server-rpms
+#         override: default
+#       - label: rhel-7-server-extras-rpms
+#         override: default
+#       - label: rhel-7-server-optional-rpms
+#         override: default
+#       - label: rhel-7-server-supplementary-rpms
+#         override: default
+#       # - label: rhel-7-server-fastrack-rpms
+#       #   override: default
+#       # - label: rhel-7-server-optional-fastrack-rpms
+#       #   override: default
+#       - label: rhel-7-server-rh-common-rpms
+#         override: default
+#       # - label: rhel-7-server-satellite-client-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-tools-6.10-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-utils-6.11-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6-rpms
+#       #   override: default
+#       # - label: rhel-7-server-satellite-maintenance-6.11-rpms
+#       #   override: default
+#       - label: rhel-server-rhscl-7-rpms
+#         override: default
+#       # - label: rhel-7-server-ansible-2-rpms
+#       #   override: default
+#       # - label: rhel-7-server-ansible-2.9-rpms
+#       #   override: default
+
+foreman_activation_keys_redhat7_versions: "{{ [] |
+  union( foreman_activation_keys_redhat70 | default([]) if foreman_enable_redhat70 | bool and foreman_enable_redhat70_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat71 | default([]) if foreman_enable_redhat71 | bool and foreman_enable_redhat71_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat72 | default([]) if foreman_enable_redhat72 | bool and foreman_enable_redhat72_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat73 | default([]) if foreman_enable_redhat73 | bool and foreman_enable_redhat73_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat74 | default([]) if foreman_enable_redhat74 | bool and foreman_enable_redhat74_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat75 | default([]) if foreman_enable_redhat75 | bool and foreman_enable_redhat75_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat76 | default([]) if foreman_enable_redhat76 | bool and foreman_enable_redhat76_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat77 | default([]) if foreman_enable_redhat77 | bool and foreman_enable_redhat77_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat78 | default([]) if foreman_enable_redhat78 | bool and foreman_enable_redhat78_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat79 | default([]) if foreman_enable_redhat79 | bool and foreman_enable_redhat79_default_ak | bool else [] )
+  }}"
+
+
+foreman_sync_plan_products_redhat70:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat71:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat72:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat73:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat74:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat75:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat76:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat77:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat78:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat79:
+  - Red Hat Enterprise Linux Server
+  - Red Hat Software Collections (for RHEL Server)
+  # - Red Hat Ansible Engine
+
+foreman_sync_plan_products_redhat7_versions: "{{ [] |
+  union( foreman_sync_plan_products_redhat70 | default([]) if foreman_enable_redhat70 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat71 | default([]) if foreman_enable_redhat71 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat72 | default([]) if foreman_enable_redhat72 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat73 | default([]) if foreman_enable_redhat73 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat74 | default([]) if foreman_enable_redhat74 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat75 | default([]) if foreman_enable_redhat75 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat76 | default([]) if foreman_enable_redhat76 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat77 | default([]) if foreman_enable_redhat77 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat78 | default([]) if foreman_enable_redhat78 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat79 | default([]) if foreman_enable_redhat79 | bool else [] )
   }}"
 

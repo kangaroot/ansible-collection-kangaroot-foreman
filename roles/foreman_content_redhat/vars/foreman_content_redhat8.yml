@@ -209,10 +209,6 @@ foreman_composite_content_views_redhat8:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel8_ansible_29"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -324,10 +320,6 @@ foreman_activation_keys_redhat8:
         override: default
       - label: ansible-2.9-for-rhel-8-x86_64-rpms
         override: default
-      - label: "{{ foreman_organization }}_EPEL_epel-8"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
-        override: disabled
 
 
 foreman_sync_plan_products_redhat8:

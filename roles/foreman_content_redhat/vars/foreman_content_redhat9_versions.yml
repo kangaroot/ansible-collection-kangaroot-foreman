@@ -121,13 +121,13 @@ foreman_products_redhat92_kickstart:
         organization: "{{ foreman_organization_redhat92_kickstart }}"
 
 foreman_products_redhat9_versions: "{{ [] |
-  union( foreman_products_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
-  union( foreman_products_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
-  union( foreman_products_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
+  union( foreman_products_redhat90 | default([]) if foreman_enable_redhat90 | bool else [] ) |
+  union( foreman_products_redhat91 | default([]) if foreman_enable_redhat91 | bool else [] ) |
+  union( foreman_products_redhat92 | default([]) if foreman_enable_redhat92 | bool else [] ) |
 
-  union( foreman_products_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
-  union( foreman_products_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
-  union( foreman_products_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
+  union( foreman_products_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart | bool else [] ) |
+  union( foreman_products_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart | bool else [] ) |
+  union( foreman_products_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart | bool else [] )
   }}"
 
 
@@ -191,14 +191,64 @@ foreman_content_views_redhat92:
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: "{{ foreman_cv_allow_promote_redhat92 }}"
 
-foreman_content_views_redhat9_versions: "{{ [] |
-  union( foreman_content_views_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
-  union( foreman_content_views_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
-  union( foreman_content_views_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
+foreman_composite_content_views_redhat90:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel90"
+    organization: "{{ foreman_organization_redhat90 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat90 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat90 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel90_baseos"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel90_appstream"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel90_supplementary"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel90_sat_client_6"
+        latest: true
 
-  union( foreman_content_views_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
-  union( foreman_content_views_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
-  union( foreman_content_views_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
+foreman_composite_content_views_redhat91:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel91"
+    organization: "{{ foreman_organization_redhat91 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat91 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat91 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel91_baseos"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel91_appstream"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel91_supplementary"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel91_sat_client_6"
+        latest: true
+
+foreman_composite_content_views_redhat92:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel92"
+    organization: "{{ foreman_organization_redhat92 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_redhat92 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_redhat92 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel92_baseos"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel92_appstream"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel92_supplementary"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel92_sat_client_6"
+        latest: true
+
+foreman_content_views_redhat9_versions: "{{ [] |
+  union( foreman_content_views_redhat90 | default([]) if foreman_enable_redhat90 | bool else [] ) |
+  union( foreman_content_views_redhat91 | default([]) if foreman_enable_redhat91 | bool else [] ) |
+  union( foreman_content_views_redhat92 | default([]) if foreman_enable_redhat92 | bool else [] )
+  }}"
+
+foreman_composite_content_views_redhat9_versions: "{{ [] |
+  union( foreman_composite_content_views_redhat90 | default([]) if foreman_enable_redhat90 | bool and foreman_enable_redhat90_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat91 | default([]) if foreman_enable_redhat91 | bool and foreman_enable_redhat91_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat92 | default([]) if foreman_enable_redhat92 | bool and foreman_enable_redhat92_default_ccv | bool else [] )
   }}"
 
 
@@ -242,13 +292,9 @@ foreman_operatingsystems_redhat92_kickstart:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_redhat9_versions: "{{ [] |
-  union( foreman_operatingsystems_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
-  union( foreman_operatingsystems_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
-  union( foreman_operatingsystems_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
-
-  union( foreman_operatingsystems_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
-  union( foreman_operatingsystems_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
+  union( foreman_operatingsystems_redhat90 | default([]) if foreman_enable_redhat90 | bool or foreman_enable_redhat90_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat91 | default([]) if foreman_enable_redhat91 | bool or foreman_enable_redhat91_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_redhat92 | default([]) if foreman_enable_redhat92 | bool or foreman_enable_redhat92_kickstart | bool else [] )
   }}"
 
 
@@ -299,12 +345,109 @@ foreman_installation_media_redhat92_kickstart:
       - RHEL 9.2
 
 foreman_installation_media_redhat9_versions: "{{ [] |
-  union( foreman_installation_media_redhat90 | default([]) if foreman_enable_redhat90 else [] ) |
-  union( foreman_installation_media_redhat91 | default([]) if foreman_enable_redhat91 else [] ) |
-  union( foreman_installation_media_redhat92 | default([]) if foreman_enable_redhat92 else [] ) |
+  union( foreman_installation_media_redhat90 | default([]) if foreman_enable_redhat90_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat91 | default([]) if foreman_enable_redhat91_kickstart | bool else [] ) |
+  union( foreman_installation_media_redhat92 | default([]) if foreman_enable_redhat92_kickstart | bool else [] )
+  }}"
 
-  union( foreman_installation_media_redhat90_kickstart | default([]) if foreman_enable_redhat90_kickstart else [] ) |
-  union( foreman_installation_media_redhat91_kickstart | default([]) if foreman_enable_redhat91_kickstart else [] ) |
-  union( foreman_installation_media_redhat92_kickstart | default([]) if foreman_enable_redhat92_kickstart else [] )
+
+# Refer to https://access.redhat.com/solutions/125873 for pool ids
+foreman_activation_keys_defaults: &foreman_activation_keys_defaults
+  # lifecycle_environment: "Library"
+  # subscriptions:
+  #   # Example to uyse a pool id
+  #   # - pool_id: "8a88e9826db22df5016dd018abdd029b"
+  #   # - name: "Red Hat Ansible Engine"
+  #   # - name: "Red Hat Ansible Automation Platform"
+  #   # - name: "Red Hat Enterprise Linux for x86_64"
+  #   - name: "Red Hat Enterprise Linux Server"
+  #   # - name: "Red Hat Satellite"
+  #   # - name: "Red Hat Satellite Capsule"
+  #   # - name: "Red Hat Software Collections (for RHEL Server)"
+  #   # - name: "Red Hat OpenShift Container Platform"
+  #   - name: "Extra Packages for Enterprise Linux"
+  #   # - name: "Foreman"
+  auto_attach: False
+  release_version: 7Server
+  # service_level: Standard
+
+
+foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
+  <<: *foreman_activation_keys_defaults
+  # subscriptions:
+  #   - name: "Red Hat Enterprise Linux for x86_64"
+  #   - name: "Extra Packages for Enterprise Linux"
+  release_version: 9
+
+
+##############################################################################
+### DISABLED FOR NOW - NEED TO KNOW HOW TO ENABLE VERSION SPECIFIC REPO LABELS
+##############################################################################
+
+# foreman_activation_keys_redhat90:
+#   - name: ak_rhel90
+#     organization: "{{ foreman_organization_redhat90 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel90"
+#     <<: *foreman_activation_keys_defaults_el9
+#     content_overrides:
+#       - label: rhel-9-for-x86_64-baseos-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-appstream-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-supplementary-rpms
+#         override: default
+#       - label: satellite-client-6-for-rhel-9-x86_64-rpms
+#         override: default
+
+# foreman_activation_keys_redhat91:
+#   - name: ak_rhel91
+#     organization: "{{ foreman_organization_redhat91 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel91"
+#     <<: *foreman_activation_keys_defaults_el9
+#     content_overrides:
+#       - label: rhel-9-for-x86_64-baseos-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-appstream-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-supplementary-rpms
+#         override: default
+#       - label: satellite-client-6-for-rhel-9-x86_64-rpms
+#         override: default
+
+# foreman_activation_keys_redhat92:
+#   - name: ak_rhel92
+#     organization: "{{ foreman_organization_redhat92 }}"
+#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel92"
+#     <<: *foreman_activation_keys_defaults_el9
+#     content_overrides:
+#       - label: rhel-9-for-x86_64-baseos-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-appstream-rpms
+#         override: default
+#       - label: rhel-9-for-x86_64-supplementary-rpms
+#         override: default
+#       - label: satellite-client-6-for-rhel-9-x86_64-rpms
+#         override: default
+
+foreman_activation_keys_redhat9_versions: "{{ [] |
+  union( foreman_activation_keys_redhat90 | default([]) if foreman_enable_redhat90 | bool and foreman_enable_redhat90_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat91 | default([]) if foreman_enable_redhat91 | bool and foreman_enable_redhat91_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat92 | default([]) if foreman_enable_redhat92 | bool and foreman_enable_redhat92_default_ak | bool else [] )
+  }}"
+
+
+foreman_sync_plan_products_redhat90:
+  - Red Hat Enterprise Linux for x86_64
+
+foreman_sync_plan_products_redhat91:
+  - Red Hat Enterprise Linux for x86_64
+
+foreman_sync_plan_products_redhat92:
+  - Red Hat Enterprise Linux for x86_64
+
+foreman_sync_plan_products_redhat9_versions: "{{ [] |
+  union( foreman_sync_plan_products_redhat90 | default([]) if foreman_enable_redhat90 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat91 | default([]) if foreman_enable_redhat91 | bool else [] ) |
+  union( foreman_sync_plan_products_redhat92 | default([]) if foreman_enable_redhat92 | bool else [] )
   }}"
 

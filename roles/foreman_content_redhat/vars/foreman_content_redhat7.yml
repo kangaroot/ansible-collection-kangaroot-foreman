@@ -236,8 +236,6 @@ foreman_composite_content_views_redhat7:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel7_ansible_29"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel7"
-        latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -349,8 +347,6 @@ foreman_activation_keys_redhat7:
         override: default
       - label: rhel-7-server-ansible-2.9-rpms
         override: default
-      - label: "{{ foreman_organization }}_EPEL_epel-7"
-        override: disabled
 
 
 foreman_sync_plan_products_redhat7:

@@ -142,24 +142,12 @@
 foreman_enable_redhat: false
 
 foreman_enable_redhat_default_ccv: false
-foreman_enable_redhat7_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
-foreman_enable_redhat7_aap_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
-foreman_enable_redhat7_rhocp_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
-foreman_enable_redhat7_sat_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
-foreman_enable_redhat8_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
-foreman_enable_redhat8_aap_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
-foreman_enable_redhat8_rhocp_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
-foreman_enable_redhat8_sat_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
-foreman_enable_redhat9_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
-foreman_enable_redhat9_aap_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
-foreman_enable_redhat9_rhocp_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
-
 foreman_enable_redhat_default_ak: "{{ foreman_enable_redhat_default_ccv | bool }}"
-foreman_enable_redhat7_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
-foreman_enable_redhat8_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
-foreman_enable_redhat9_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
 
 foreman_enable_redhat7: false
+
+foreman_enable_redhat7_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
+foreman_enable_redhat7_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
 
 foreman_enable_redhat70: false
 foreman_enable_redhat71: false
@@ -171,6 +159,28 @@ foreman_enable_redhat76: false
 foreman_enable_redhat77: false
 foreman_enable_redhat78: false
 foreman_enable_redhat79: false
+
+foreman_enable_redhat70_default_ccv: false
+foreman_enable_redhat71_default_ccv: false
+foreman_enable_redhat72_default_ccv: false
+foreman_enable_redhat73_default_ccv: false
+foreman_enable_redhat74_default_ccv: false
+foreman_enable_redhat75_default_ccv: false
+foreman_enable_redhat76_default_ccv: false
+foreman_enable_redhat77_default_ccv: false
+foreman_enable_redhat78_default_ccv: false
+foreman_enable_redhat79_default_ccv: false
+
+foreman_enable_redhat70_default_ak: "{{ foreman_enabled_redhat70_default_ccv | bool }}"
+foreman_enable_redhat71_default_ak: "{{ foreman_enabled_redhat71_default_ccv | bool }}"
+foreman_enable_redhat72_default_ak: "{{ foreman_enabled_redhat72_default_ccv | bool }}"
+foreman_enable_redhat73_default_ak: "{{ foreman_enabled_redhat73_default_ccv | bool }}"
+foreman_enable_redhat74_default_ak: "{{ foreman_enabled_redhat74_default_ccv | bool }}"
+foreman_enable_redhat75_default_ak: "{{ foreman_enabled_redhat75_default_ccv | bool }}"
+foreman_enable_redhat76_default_ak: "{{ foreman_enabled_redhat76_default_ccv | bool }}"
+foreman_enable_redhat77_default_ak: "{{ foreman_enabled_redhat77_default_ccv | bool }}"
+foreman_enable_redhat78_default_ak: "{{ foreman_enabled_redhat78_default_ccv | bool }}"
+foreman_enable_redhat79_default_ak: "{{ foreman_enabled_redhat79_default_ccv | bool }}"
 
 foreman_enable_redhat70_kickstart: false
 foreman_enable_redhat71_kickstart: false
@@ -187,7 +197,19 @@ foreman_enable_redhat7_sat: false
 foreman_enable_redhat7_aap: false
 foreman_enable_redhat7_rhocp: false
 
+foreman_enable_redhat7_aap_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+foreman_enable_redhat7_rhocp_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+foreman_enable_redhat7_sat_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+
+foreman_enable_redhat7_aap_default_ak: "{{ foreman_enable_redhat7_aap_default_ccv | bool }}"
+foreman_enable_redhat7_rhocp_default_ak: "{{ foreman_enable_redhat7_rhocp_default_ccv | bool }}"
+foreman_enable_redhat7_sat_default_ak: "{{ foreman_enable_redhat7_sat_default_ccv | bool }}"
+
+
 foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
+
+foreman_enable_redhat8_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
+foreman_enable_redhat8_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
 
 foreman_enable_redhat80: false
 foreman_enable_redhat81: false
@@ -198,6 +220,26 @@ foreman_enable_redhat85: false
 foreman_enable_redhat86: false
 foreman_enable_redhat87: false
 foreman_enable_redhat88: false
+
+foreman_enable_redhat80_default_ccv: false
+foreman_enable_redhat81_default_ccv: false
+foreman_enable_redhat82_default_ccv: false
+foreman_enable_redhat83_default_ccv: false
+foreman_enable_redhat84_default_ccv: false
+foreman_enable_redhat85_default_ccv: false
+foreman_enable_redhat86_default_ccv: false
+foreman_enable_redhat87_default_ccv: false
+foreman_enable_redhat88_default_ccv: false
+
+foreman_enable_redhat80_default_ak: "{{ foreman_enabled_redhat80_default_ccv | bool }}"
+foreman_enable_redhat81_default_ak: "{{ foreman_enabled_redhat81_default_ccv | bool }}"
+foreman_enable_redhat82_default_ak: "{{ foreman_enabled_redhat82_default_ccv | bool }}"
+foreman_enable_redhat83_default_ak: "{{ foreman_enabled_redhat83_default_ccv | bool }}"
+foreman_enable_redhat84_default_ak: "{{ foreman_enabled_redhat84_default_ccv | bool }}"
+foreman_enable_redhat85_default_ak: "{{ foreman_enabled_redhat85_default_ccv | bool }}"
+foreman_enable_redhat86_default_ak: "{{ foreman_enabled_redhat86_default_ccv | bool }}"
+foreman_enable_redhat87_default_ak: "{{ foreman_enabled_redhat87_default_ccv | bool }}"
+foreman_enable_redhat88_default_ak: "{{ foreman_enabled_redhat88_default_ccv | bool }}"
 
 foreman_enable_redhat80_kickstart: false
 foreman_enable_redhat81_kickstart: false
@@ -213,11 +255,31 @@ foreman_enable_redhat8_sat: false
 foreman_enable_redhat8_aap: false
 foreman_enable_redhat8_rhocp: false
 
+foreman_enable_redhat8_aap_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+foreman_enable_redhat8_rhocp_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+foreman_enable_redhat8_sat_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+
+foreman_enable_redhat8_aap_default_ak: "{{ foreman_enable_redhat8_aap_default_ccv | bool }}"
+foreman_enable_redhat8_rhocp_default_ak: "{{ foreman_enable_redhat8_rhocp_default_ccv | bool }}"
+foreman_enable_redhat8_sat_default_ak: "{{ foreman_enable_redhat8_sat_default_ccv | bool }}"
+
+
 foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
+
+foreman_enable_redhat9_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
+foreman_enable_redhat9_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
 
 foreman_enable_redhat90: false
 foreman_enable_redhat91: false
 foreman_enable_redhat92: false
+
+foreman_enable_redhat90_default_ccv: false
+foreman_enable_redhat91_default_ccv: false
+foreman_enable_redhat92_default_ccv: false
+
+foreman_enable_redhat90_default_ak: "{{ foreman_enabled_redhat90_default_ccv | bool }}"
+foreman_enable_redhat91_default_ak: "{{ foreman_enabled_redhat91_default_ccv | bool }}"
+foreman_enable_redhat92_default_ak: "{{ foreman_enabled_redhat92_default_ccv | bool }}"
 
 foreman_enable_redhat90_kickstart: false
 foreman_enable_redhat91_kickstart: false
@@ -225,6 +287,12 @@ foreman_enable_redhat92_kickstart: "{{ foreman_enable_redhat9 | bool }}"
 
 foreman_enable_redhat9_aap: false
 foreman_enable_redhat9_rhocp: false
+
+foreman_enable_redhat9_aap_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
+foreman_enable_redhat9_rhocp_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
+
+foreman_enable_redhat9_aap_default_ak: "{{ foreman_enable_redhat9_aap_default_ccv | bool }}"
+foreman_enable_redhat9_rhocp_default_ak: "{{ foreman_enable_redhat9_rhocp_default_ccv | bool }}"
 
 
 #######################################
@@ -358,47 +426,6 @@ foreman_ccv_allow_promote_redhat79: "{{ foreman_ccv_allow_promote_redhat7 | bool
 foreman_ccv_auto_publish_redhat79: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
 
 
-foreman_cv_allow_promote_redhat70_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat70_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat70_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat71_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat71_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat71_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat72_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat72_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat72_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat73_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat73_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat73_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat74_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat74_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat74_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat75_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat75_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat75_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat76_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat76_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat76_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat77_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat77_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat77_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat78_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat78_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat78_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-foreman_cv_allow_promote_redhat79_kickstart: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
-foreman_ccv_allow_promote_redhat79_kickstart: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
-foreman_ccv_auto_publish_redhat79_kickstart: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
-
-
 foreman_cv_allow_promote_redhat7_sat: "{{ foreman_cv_allow_promote_redhat7 | bool }}"
 foreman_ccv_allow_promote_redhat7_sat: "{{ foreman_ccv_allow_promote_redhat7 | bool }}"
 foreman_ccv_auto_publish_redhat7_sat: "{{ foreman_ccv_auto_publish_redhat7 | bool }}"
@@ -454,43 +481,6 @@ foreman_ccv_allow_promote_redhat88: "{{ foreman_ccv_allow_promote_redhat8 | bool
 foreman_ccv_auto_publish_redhat88: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
 
 
-foreman_cv_allow_promote_redhat80_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat80_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat80_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat81_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat81_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat81_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat82_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat82_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat82_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat83_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat83_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat83_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat84_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat84_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat84_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat85_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat85_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat85_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat86_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat86_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat86_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat87_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat87_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat87_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-foreman_cv_allow_promote_redhat88_kickstart: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
-foreman_ccv_allow_promote_redhat88_kickstart: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
-foreman_ccv_auto_publish_redhat88_kickstart: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
-
-
 foreman_cv_allow_promote_redhat8_sat: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
 foreman_ccv_allow_promote_redhat8_sat: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 foreman_ccv_auto_publish_redhat8_sat: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
@@ -520,19 +510,6 @@ foreman_ccv_auto_publish_redhat91: "{{ foreman_ccv_auto_publish_redhat9 | bool }
 foreman_cv_allow_promote_redhat92: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 foreman_ccv_allow_promote_redhat92: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
 foreman_ccv_auto_publish_redhat92: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
-
-
-foreman_cv_allow_promote_redhat90_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
-foreman_ccv_allow_promote_redhat90_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
-foreman_ccv_auto_publish_redhat90_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
-
-foreman_cv_allow_promote_redhat91_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
-foreman_ccv_allow_promote_redhat91_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
-foreman_ccv_auto_publish_redhat91_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
-
-foreman_cv_allow_promote_redhat92_kickstart: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
-foreman_ccv_allow_promote_redhat92_kickstart: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
-foreman_ccv_auto_publish_redhat92_kickstart: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
 
 
 foreman_cv_allow_promote_redhat9_aap: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
@@ -614,19 +591,19 @@ foreman_content_views_redhat: "{{ ( foreman_content_views_redhat_main | default(
   union( foreman_composite_content_views_redhat_main | default([]) if foreman_enable_redhat | bool and foreman_enable_redhat_default_ccv | bool else [] ) |
 
   union( foreman_composite_content_views_redhat7 | default([]) if foreman_enable_redhat7 | bool and foreman_enable_redhat7_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_redhat7_versions | default([]) if foreman_enable_redhat7 | bool and foreman_enable_redhat7_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat7_versions | default([]) if foreman_enable_redhat7 | bool | bool else [] ) |
   union( foreman_composite_content_views_redhat7_sat | default([]) if foreman_enable_redhat7_sat | bool and foreman_enable_redhat7_sat_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_redhat7_aap | default([]) if foreman_enable_redhat7_aap | bool and foreman_enable_redhat7_aap_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_redhat7_rhocp | default([]) if foreman_enable_redhat7_rhocp | bool and foreman_enable_redhat7_rhocp_default_ccv | bool else [] ) |
 
   union( foreman_composite_content_views_redhat8 | default([]) if foreman_enable_redhat8 | bool and foreman_enable_redhat8_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_redhat8_versions | default([]) if foreman_enable_redhat8 | bool and foreman_enable_redhat8_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat8_versions | default([]) if foreman_enable_redhat8 | bool else [] ) |
   union( foreman_composite_content_views_redhat8_sat | default([]) if foreman_enable_redhat8_sat | bool and foreman_enable_redhat8_sat_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_redhat8_aap | default([]) if foreman_enable_redhat8_aap | bool and foreman_enable_redhat8_aap_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_redhat8_rhocp | default([]) if foreman_enable_redhat8_rhocp | bool and foreman_enable_redhat8_rhocp_default_ccv | bool else [] ) |
 
   union( foreman_composite_content_views_redhat9 | default([]) if foreman_enable_redhat9 | bool and foreman_enable_redhat9_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_redhat9_versions | default([]) if foreman_enable_redhat9 | bool and foreman_enable_redhat9_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] ) |
   union( foreman_composite_content_views_redhat9_aap | default([]) if foreman_enable_redhat9_aap | bool and foreman_enable_redhat9_aap_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_redhat9_rhocp | default([]) if foreman_enable_redhat9_rhocp | bool and foreman_enable_redhat9_rhocp_default_ccv | bool else [] )
   }}"
@@ -636,20 +613,12 @@ foreman_operatingsystems_redhat: "{{ ( foreman_operatingsystems_redhat_main | de
 
   union( foreman_operatingsystems_redhat7 | default([]) if foreman_enable_redhat7 | bool else [] ) |
   union( foreman_operatingsystems_redhat7_versions | default([]) if foreman_enable_redhat7 | bool else [] ) |
-  union( foreman_operatingsystems_redhat7_sat | default([]) if foreman_enable_redhat7_sat | bool else [] ) |
-  union( foreman_operatingsystems_redhat7_aap | default([]) if foreman_enable_redhat7_aap | bool else [] ) |
-  union( foreman_operatingsystems_redhat7_rhocp | default([]) if foreman_enable_redhat7_rhocp | bool else [] ) |
 
   union( foreman_operatingsystems_redhat8 | default([]) if foreman_enable_redhat8 | bool else [] ) |
   union( foreman_operatingsystems_redhat8_versions | default([]) if foreman_enable_redhat8 | bool else [] ) |
-  union( foreman_operatingsystems_redhat8_sat | default([]) if foreman_enable_redhat8_sat | bool else [] ) |
-  union( foreman_operatingsystems_redhat8_aap | default([]) if foreman_enable_redhat8_aap | bool else [] ) |
-  union( foreman_operatingsystems_redhat8_rhocp | default([]) if foreman_enable_redhat8_rhocp | bool else [] ) |
 
   union( foreman_operatingsystems_redhat9 | default([]) if foreman_enable_redhat9 | bool else [] ) |
-  union( foreman_operatingsystems_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] ) |
-  union( foreman_operatingsystems_redhat9_aap | default([]) if foreman_enable_redhat9_aap | bool else [] ) |
-  union( foreman_operatingsystems_redhat9_rhocp | default([]) if foreman_enable_redhat9_rhocp | bool else [] )
+  union( foreman_operatingsystems_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] )
   }}"
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
@@ -666,39 +635,31 @@ foreman_installation_media_redhat: "{{ ( foreman_installation_media_redhat_main 
 
   union( foreman_installation_media_redhat7 | default([]) if foreman_enable_redhat7 | bool else [] ) |
   union( foreman_installation_media_redhat7_versions | default([]) if foreman_enable_redhat7 | bool else [] ) |
-  union( foreman_installation_media_redhat7_sat | default([]) if foreman_enable_redhat7_sat | bool else [] ) |
-  union( foreman_installation_media_redhat7_aap | default([]) if foreman_enable_redhat7_aap | bool else [] ) |
-  union( foreman_installation_media_redhat7_rhocp | default([]) if foreman_enable_redhat7_rhocp | bool else [] ) |
 
   union( foreman_installation_media_redhat8 | default([]) if foreman_enable_redhat8 | bool else [] ) |
   union( foreman_installation_media_redhat8_versions | default([]) if foreman_enable_redhat8 | bool else [] ) |
-  union( foreman_installation_media_redhat8_sat | default([]) if foreman_enable_redhat8_sat | bool else [] ) |
-  union( foreman_installation_media_redhat8_aap | default([]) if foreman_enable_redhat8_aap | bool else [] ) |
-  union( foreman_installation_media_redhat8_rhocp | default([]) if foreman_enable_redhat8_rhocp | bool else [] ) |
 
   union( foreman_installation_media_redhat9 | default([]) if foreman_enable_redhat9 | bool else [] ) |
-  union( foreman_installation_media_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] ) |
-  union( foreman_installation_media_redhat9_aap | default([]) if foreman_enable_redhat9_aap | bool else [] ) |
-  union( foreman_installation_media_redhat9_rhocp | default([]) if foreman_enable_redhat9_rhocp | bool else [] )
+  union( foreman_installation_media_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] )
   }}"
 
 foreman_activation_keys_redhat_main: []
 foreman_activation_keys_redhat: "{{ ( foreman_activation_keys_redhat_main | default([]) if foreman_enable_redhat | bool and foreman_enable_redhat_default_ak | bool else [] ) |
 
   union( foreman_activation_keys_redhat7 | default([]) if foreman_enable_redhat7 | bool and foreman_enable_redhat7_default_ak | bool else [] ) |
-  union( foreman_activation_keys_redhat7_versions | default([]) if foreman_enable_redhat7 | bool and foreman_enable_redhat7_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat7_versions | default([]) if foreman_enable_redhat7 | bool | bool else [] ) |
   union( foreman_activation_keys_redhat7_sat | default([]) if foreman_enable_redhat7_sat | bool and foreman_enable_redhat7_sat_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat7_aap | default([]) if foreman_enable_redhat7_aap | bool and foreman_enable_redhat7_aap_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat7_rhocp | default([]) if foreman_enable_redhat7_rhocp | bool and foreman_enable_redhat7_rhocp_default_ak | bool else [] ) |
 
   union( foreman_activation_keys_redhat8 | default([]) if foreman_enable_redhat8 | bool and foreman_enable_redhat8_default_ak | bool else [] ) |
-  union( foreman_activation_keys_redhat8_versions | default([]) if foreman_enable_redhat8 | bool and foreman_enable_redhat8_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat8_versions | default([]) if foreman_enable_redhat8 | bool | bool else [] ) |
   union( foreman_activation_keys_redhat8_sat | default([]) if foreman_enable_redhat8_sat | bool and foreman_enable_redhat8_sat_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat8_aap | default([]) if foreman_enable_redhat8_aap | bool and foreman_enable_redhat8_aap_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat8_rhocp | default([]) if foreman_enable_redhat8_rhocp | bool and foreman_enable_redhat8_rhocp_default_ak | bool else [] ) |
 
   union( foreman_activation_keys_redhat9 | default([]) if foreman_enable_redhat9 | bool and foreman_enable_redhat9_default_ak | bool else [] ) |
-  union( foreman_activation_keys_redhat9_versions | default([]) if foreman_enable_redhat9 | bool and foreman_enable_redhat9_default_ak | bool else [] ) |
+  union( foreman_activation_keys_redhat9_versions | default([]) if foreman_enable_redhat9 | bool else [] ) |
   union( foreman_activation_keys_redhat9_aap | default([]) if foreman_enable_redhat9_aap | bool and foreman_enable_redhat9_aap_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat9_rhocp | default([]) if foreman_enable_redhat9_rhocp | bool and foreman_enable_redhat9_rhocp_default_ak | bool else [] )
   }}"
