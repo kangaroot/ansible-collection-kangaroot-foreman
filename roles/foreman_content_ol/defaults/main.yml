@@ -220,7 +220,6 @@ foreman_enable_ol: false
 foreman_enable_ol_default_ccv: false
 foreman_enable_ol_default_ak: "{{ foreman_enable_ol_default_ccv | bool }}"
 
-
 ### ORACLE LINUX 5/6
 
 foreman_enable_ol5: false
@@ -231,7 +230,6 @@ foreman_enable_ol5_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
 
 foreman_enable_ol6_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
 foreman_enable_ol6_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
-
 
 ### ORACLE LINUX 7
 
@@ -345,7 +343,6 @@ foreman_enable_ol7_olm_spacewalk27: false
 foreman_enable_ol7_olm_spacewalk210: false
 foreman_enable_ol7_olm_oraclelinuxmanager210: "{{ foreman_enable_ol7_olm | bool }}"
 
-
 ### ORACLE LINUX 8
 
 foreman_enable_ol8: "{{ foreman_enable_ol | bool }}"
@@ -407,7 +404,6 @@ foreman_enable_ol8_virtualization_ovirt44: "{{ foreman_enable_ol8_virtualization
 foreman_enable_ol8_storage: false
 foreman_enable_ol8_security_validation: false
 
-
 ### ORACLE LINUX 9
 
 foreman_enable_ol9: "{{ foreman_enable_ol | bool }}"
@@ -453,7 +449,6 @@ foreman_enable_ol_uln: false
 foreman_enable_ol_uln_default_ccv: false
 foreman_enable_ol_uln_default_ak: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
 
-
 ### ORACLE LINUX 5/6 ULN
 
 foreman_enable_ol5_uln: false
@@ -464,7 +459,6 @@ foreman_enable_ol5_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }
 
 foreman_enable_ol6_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
 foreman_enable_ol6_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
-
 
 ### ORACLE LINUX 7 ULN
 
@@ -590,7 +584,6 @@ foreman_enable_ol7_uln_olm_oraclelinuxmanager210: "{{ foreman_enable_ol7_uln_olm
 
 foreman_enable_ol7_uln_exadata: false
 
-
 ### ORACLE LINUX 8 ULN
 
 foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
@@ -663,7 +656,6 @@ foreman_enable_ol8_uln_virtualization_ovirt44: "{{ foreman_enable_ol8_uln_virtua
 foreman_enable_ol8_uln_storage: false
 foreman_enable_ol8_uln_security_validation: false
 
-
 ### ORACLE LINUX 9 ULN
 
 foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
@@ -721,7 +713,6 @@ foreman_products_defaults_verify_ssl_on_sync_ol: "{{ foreman_products_defaults_v
 foreman_products_defaults_http_proxy_policy_ol: "{{ foreman_products_defaults_http_proxy_policy }}"
 foreman_products_defaults_unprotected_ol: "{{ foreman_products_defaults_unprotected | bool }}"
 
-
 ### ORACLE LINUX 5/6
 
 foreman_products_defaults_download_policy_ol5: "{{ foreman_products_defaults_download_policy_ol }}"
@@ -735,7 +726,6 @@ foreman_products_defaults_mirroring_policy_ol6: "{{ foreman_products_defaults_mi
 foreman_products_defaults_verify_ssl_on_sync_ol6: "{{ foreman_products_defaults_verify_ssl_on_sync_ol | bool }}"
 foreman_products_defaults_http_proxy_policy_ol6: "{{ foreman_products_defaults_http_proxy_policy_ol }}"
 foreman_products_defaults_unprotected_ol6: "{{ foreman_products_defaults_unprotected_ol | bool }}"
-
 
 ### ORACLE LINUX 7
 
@@ -864,7 +854,6 @@ foreman_products_defaults_unprotected_ol7_storage: "{{ foreman_products_defaults
 foreman_products_defaults_unprotected_ol7_developer: "{{ foreman_products_defaults_unprotected_ol7 | bool }}"
 foreman_products_defaults_unprotected_ol7_olm: "{{ foreman_products_defaults_unprotected_ol7 | bool }}"
 
-
 ### ORACLE LINUX 8
 
 foreman_products_defaults_download_policy_ol8: "{{ foreman_products_defaults_download_policy_ol }}"
@@ -977,7 +966,6 @@ foreman_products_defaults_unprotected_ol8_virtualization: "{{ foreman_products_d
 foreman_products_defaults_unprotected_ol8_storage: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 foreman_products_defaults_unprotected_ol8_security_validation: "{{ foreman_products_defaults_unprotected_ol8 | bool }}"
 
-
 ### ORACLE LINUX 9
 
 foreman_products_defaults_download_policy_ol9: "{{ foreman_products_defaults_download_policy_ol }}"
@@ -1069,7 +1057,6 @@ foreman_products_defaults_verify_ssl_on_sync_ol_uln: "{{ foreman_products_defaul
 foreman_products_defaults_http_proxy_policy_ol_uln: "{{ foreman_products_defaults_http_proxy_policy }}"
 foreman_products_defaults_unprotected_ol_uln: "{{ foreman_products_defaults_unprotected | bool }}"
 
-
 ### ORACLE LINUX 5/6 ULN
 
 foreman_products_defaults_download_policy_ol5_uln: "{{ foreman_products_defaults_download_policy_ol_uln }}"
@@ -1083,7 +1070,6 @@ foreman_products_defaults_mirroring_policy_ol6_uln: "{{ foreman_products_default
 foreman_products_defaults_verify_ssl_on_sync_ol6_uln: "{{ foreman_products_defaults_verify_ssl_on_sync_ol_uln | bool }}"
 foreman_products_defaults_http_proxy_policy_ol6_uln: "{{ foreman_products_defaults_http_proxy_policy_ol_uln }}"
 foreman_products_defaults_unprotected_ol6_uln: "{{ foreman_products_defaults_unprotected_ol_uln | bool }}"
-
 
 ### ORACLE LINUX 7 ULN
 
@@ -1282,7 +1268,6 @@ foreman_products_defaults_unprotected_ol7_uln_developer: "{{ foreman_products_de
 foreman_products_defaults_unprotected_ol7_uln_olm: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
 foreman_products_defaults_unprotected_ol7_uln_exadata: "{{ foreman_products_defaults_unprotected_ol7_uln | bool }}"
 
-
 ### ORACLE LINUX 8 ULN
 
 foreman_products_defaults_download_policy_ol8_uln: "{{ foreman_products_defaults_download_policy_ol_uln }}"
@@ -1450,7 +1435,6 @@ foreman_products_defaults_unprotected_ol8_uln_virtualization: "{{ foreman_produc
 foreman_products_defaults_unprotected_ol8_uln_storage: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 foreman_products_defaults_unprotected_ol8_uln_security_validation: "{{ foreman_products_defaults_unprotected_ol8_uln | bool }}"
 
-
 ### ORACLE LINUX 9 ULN
 
 foreman_products_defaults_download_policy_ol9_uln: "{{ foreman_products_defaults_download_policy_ol_uln }}"
@@ -1572,12 +1556,10 @@ foreman_products_defaults_unprotected_ol9_uln_oci: "{{ foreman_products_defaults
 
 foreman_organization_ol: "{{ foreman_organization }}"
 
-
 ### ORACLE LINUX 5/6
 
 foreman_organization_ol5: "{{ foreman_organization_ol }}"
 foreman_organization_ol6: "{{ foreman_organization_ol }}"
-
 
 ### ORACLE LINUX 7
 
@@ -1666,7 +1648,6 @@ foreman_organization_ol7_olm_spacewalk27: "{{ foreman_organization_ol7_olm }}"
 foreman_organization_ol7_olm_spacewalk210: "{{ foreman_organization_ol7_olm }}"
 foreman_organization_ol7_olm_oraclelinuxmanager210: "{{ foreman_organization_ol7_olm }}"
 
-
 ### ORACLE LINUX 8
 
 foreman_organization_ol8: "{{ foreman_organization_ol }}"
@@ -1705,7 +1686,6 @@ foreman_organization_ol8_virtualization_ovirt44: "{{ foreman_organization_ol8_vi
 foreman_organization_ol8_storage: "{{ foreman_organization_ol8 }}"
 foreman_organization_ol8_security_validation: "{{ foreman_organization_ol8 }}"
 
-
 ### ORACLE LINUX 9
 
 foreman_organization_ol9: "{{ foreman_organization_ol }}"
@@ -1737,12 +1717,10 @@ foreman_organization_ol9_security_validation: "{{ foreman_organization_ol9 }}"
 
 foreman_organization_ol_uln: "{{ foreman_organization }}"
 
-
 ### ORACLE LINUX 5/6 ULN
 
 foreman_organization_ol5_uln: "{{ foreman_organization_ol_uln }}"
 foreman_organization_ol6_uln: "{{ foreman_organization_ol_uln }}"
-
 
 ### ORACLE LINUX 7 ULN
 
@@ -1843,7 +1821,6 @@ foreman_organization_ol7_uln_olm_oraclelinuxmanager210: "{{ foreman_organization
 
 foreman_organization_ol7_uln_exadata: "{{ foreman_organization_ol7_uln }}"
 
-
 ### ORACLE LINUX 8 ULN
 
 foreman_organization_ol8_uln: "{{ foreman_organization_ol_uln }}"
@@ -1893,7 +1870,6 @@ foreman_organization_ol8_uln_virtualization_ovirt44: "{{ foreman_organization_ol
 foreman_organization_ol8_uln_storage: "{{ foreman_organization_ol8_uln }}"
 foreman_organization_ol8_uln_security_validation: "{{ foreman_organization_ol8_uln }}"
 
-
 ### ORACLE LINUX 9 ULN
 
 foreman_organization_ol9_uln: "{{ foreman_organization_ol_uln }}"
@@ -1938,18 +1914,15 @@ foreman_cv_allow_promote_ol: "{{ foreman_cv_allow_promote | bool }}"
 foreman_ccv_allow_promote_ol: "{{ foreman_ccv_allow_promote | bool }}"
 foreman_ccv_auto_publish_ol: "{{ foreman_ccv_auto_publish | bool }}"
 
-
 ### ORACLE LINUX 5/6
 
 foreman_cv_allow_promote_ol5: "{{ foreman_cv_allow_promote_ol | bool }}"
 foreman_ccv_allow_promote_ol5: "{{ foreman_ccv_allow_promote_ol | bool }}"
 foreman_ccv_auto_publish_ol5: "{{ foreman_ccv_auto_publish_ol | bool }}"
 
-
 foreman_cv_allow_promote_ol6: "{{ foreman_cv_allow_promote_ol | bool }}"
 foreman_ccv_allow_promote_ol6: "{{ foreman_ccv_allow_promote_ol | bool }}"
 foreman_ccv_auto_publish_ol6: "{{ foreman_ccv_auto_publish_ol | bool }}"
-
 
 ### ORACLE LINUX 7
 
@@ -2069,13 +2042,11 @@ foreman_cv_allow_promote_ol7_olm_spacewalk27: "{{ foreman_cv_allow_promote_ol7_o
 foreman_cv_allow_promote_ol7_olm_spacewalk210: "{{ foreman_cv_allow_promote_ol7_olm | bool }}"
 foreman_cv_allow_promote_ol7_olm_oraclelinuxmanager210: "{{ foreman_cv_allow_promote_ol7_olm | bool }}"
 
-
 ### ORACLE LINUX 8
 
 foreman_cv_allow_promote_ol8: "{{ foreman_cv_allow_promote_ol | bool }}"
 foreman_ccv_allow_promote_ol8: "{{ foreman_ccv_allow_promote_ol | bool }}"
 foreman_ccv_auto_publish_ol8: "{{ foreman_ccv_auto_publish_ol | bool }}"
-
 
 foreman_cv_allow_promote_ol80: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 foreman_ccv_allow_promote_ol80: "{{ foreman_ccv_allow_promote_ol8 | bool }}"
@@ -2137,7 +2108,6 @@ foreman_cv_allow_promote_ol8_virtualization_ovirt44: "{{ foreman_cv_allow_promot
 foreman_cv_allow_promote_ol8_storage: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 foreman_cv_allow_promote_ol8_security_validation: "{{ foreman_cv_allow_promote_ol8 | bool }}"
 
-
 ### ORACLE LINUX 9
 
 foreman_cv_allow_promote_ol9: "{{ foreman_cv_allow_promote_ol | bool }}"
@@ -2181,7 +2151,6 @@ foreman_cv_allow_promote_ol_uln: "{{ foreman_cv_allow_promote | bool }}"
 foreman_ccv_allow_promote_ol_uln: "{{ foreman_ccv_allow_promote | bool }}"
 foreman_ccv_auto_publish_ol_uln: "{{ foreman_ccv_auto_publish | bool }}"
 
-
 ### ORACLE LINUX 5/6 ULN
 
 foreman_cv_allow_promote_ol5_uln: "{{ foreman_cv_allow_promote_ol_uln | bool }}"
@@ -2191,7 +2160,6 @@ foreman_ccv_auto_publish_ol5_uln: "{{ foreman_ccv_auto_publish_ol_uln | bool }}"
 foreman_cv_allow_promote_ol6_uln: "{{ foreman_cv_allow_promote_ol_uln | bool }}"
 foreman_ccv_allow_promote_ol6_uln: "{{ foreman_ccv_allow_promote_ol_uln | bool }}"
 foreman_ccv_auto_publish_ol6_uln: "{{ foreman_ccv_auto_publish_ol_uln | bool }}"
-
 
 ### ORACLE LINUX 7 ULN
 
@@ -2323,7 +2291,6 @@ foreman_cv_allow_promote_ol7_uln_olm_oraclelinuxmanager210: "{{ foreman_cv_allow
 
 foreman_cv_allow_promote_ol7_uln_exadata: "{{ foreman_cv_allow_promote_ol7_uln | bool }}"
 
-
 ### ORACLE LINUX 8 ULN
 
 foreman_cv_allow_promote_ol8_uln: "{{ foreman_cv_allow_promote_ol_uln | bool }}"
@@ -2400,7 +2367,6 @@ foreman_cv_allow_promote_ol8_uln_virtualization_ovirt44: "{{ foreman_cv_allow_pr
 
 foreman_cv_allow_promote_ol8_uln_storage: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
 foreman_cv_allow_promote_ol8_uln_security_validation: "{{ foreman_cv_allow_promote_ol8_uln | bool }}"
-
 
 ### ORACLE LINUX 9 ULN
 

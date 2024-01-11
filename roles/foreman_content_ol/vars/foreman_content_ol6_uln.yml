@@ -999,7 +999,7 @@ foreman_content_views_ol6_uln:
   #   repositories:
   #     - name: HA Utilities for MySQL and Oracle Linux 6 (x86_64)
   #       product: Oracle Linux
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_ol6_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_MySQL"
   #   organization: "{{ foreman_organization_ol6_uln }}"
   #   repositories:

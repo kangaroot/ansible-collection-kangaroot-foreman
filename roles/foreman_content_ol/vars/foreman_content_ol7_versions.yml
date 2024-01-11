@@ -270,7 +270,7 @@ foreman_content_views_ol73:
     repositories:
       - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
         product: Oracle Linux
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ol73 }}"
 
 foreman_content_views_ol74:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_x86_64_u4_base"
