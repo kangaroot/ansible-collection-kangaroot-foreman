@@ -1390,7 +1390,7 @@ foreman_content_views_centos7_versions: "{{ [] |
   union( foreman_content_views_centos76 | default([]) if foreman_enable_centos76 | bool else [] ) |
   union( foreman_content_views_centos77 | default([]) if foreman_enable_centos77 | bool else [] ) |
   union( foreman_content_views_centos78 | default([]) if foreman_enable_centos78 | bool else [] ) |
-  union( foreman_content_views_centos79 | default([]) if foreman_enable_centos79 | bool else [] ) |
+  union( foreman_content_views_centos79 | default([]) if foreman_enable_centos79 | bool else [] )
   }}"
 
 foreman_composite_content_views_centos7_versions: "{{ [] |
