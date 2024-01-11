@@ -5,6 +5,8 @@
 ### URLS
 #######################################
 
+### FOREMAN
+
 foreman_repo_baseurl_foreman: https://yum.theforeman.org
 foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
 foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
@@ -14,11 +16,13 @@ foreman_repo_baseurl_puppet: http://yum.puppetlabs.com
 ### ENABLE VARS
 #######################################
 
+### FOREMAN
+
 foreman_enable_foreman: false
 
-foreman_enable_foreman_el7: false
+foreman_enable_foreman_el7: "{{ foreman_enable_foreman | bool }}"
 foreman_enable_foreman_el8: "{{ foreman_enable_foreman | bool }}"
-foreman_enable_foreman_el9: false
+foreman_enable_foreman_el9: "{{ foreman_enable_foreman | bool }}"
 
 
 #######################################
@@ -38,6 +42,8 @@ foreman_products_defaults_unprotected_foreman: "{{ foreman_products_defaults_unp
 ### ORGANIZATION VARS
 #######################################
 
+### FOREMAN
+
 foreman_organization_foreman: "{{ foreman_organization }}"
 
 foreman_organization_foreman_el7: "{{ foreman_organization_foreman }}"
@@ -52,21 +58,10 @@ foreman_organization_foreman_el9: "{{ foreman_organization_foreman }}"
 ### FOREMAN
 
 foreman_cv_allow_promote_foreman: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_foreman: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_foreman: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_foreman_el7: "{{ foreman_cv_allow_promote_foreman | bool }}"
-foreman_ccv_allow_promote_foreman_el7: "{{ foreman_ccv_allow_promote_foreman | bool }}"
-foreman_ccv_auto_publish_foreman_el7: "{{ foreman_ccv_auto_publish_foreman | bool }}"
-
 foreman_cv_allow_promote_foreman_el8: "{{ foreman_cv_allow_promote_foreman | bool }}"
-foreman_ccv_allow_promote_foreman_el8: "{{ foreman_ccv_allow_promote_foreman | bool }}"
-foreman_ccv_auto_publish_foreman_el8: "{{ foreman_ccv_auto_publish_foreman | bool }}"
-
 foreman_cv_allow_promote_foreman_el9: "{{ foreman_cv_allow_promote_foreman | bool }}"
-foreman_ccv_allow_promote_foreman_el9: "{{ foreman_ccv_allow_promote_foreman | bool }}"
-foreman_ccv_auto_publish_foreman_el9: "{{ foreman_ccv_auto_publish_foreman | bool }}"
 
 
 #######################################
