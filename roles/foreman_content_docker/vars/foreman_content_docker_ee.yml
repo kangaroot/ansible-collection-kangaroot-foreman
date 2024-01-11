@@ -131,19 +131,19 @@ foreman_products_docker_ee_el9:
     repositories:
       - name: Docker EE Stable - x86_64 - RHEL9
         label: docker-ee-stable-rhel9
-        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/8/x86_64/stable/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/9/x86_64/stable/"
         <<: *foreman_products_defaults_docker_ee
         organization: "{{ foreman_organization_docker_ee_el9 }}"
 
       - name: Docker EE Stable 20.10 - x86_64 - RHEL9
         label: docker-ee-stable-20_10-rhel9
-        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/8/x86_64/stable-20.10/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/9/x86_64/stable-20.10/"
         <<: *foreman_products_defaults_docker_ee
         organization: "{{ foreman_organization_docker_ee_el9 }}"
 
       - name: Docker EE Stable 23.0 - x86_64 - RHEL9
         label: docker-ee-stable-23_0-rhel9
-        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/8/x86_64/stable-23.0/"
+        url: "{{ foreman_repo_baseurl_docker_ee }}/rhel/9/x86_64/stable-23.0/"
         <<: *foreman_products_defaults_docker_ee
         organization: "{{ foreman_organization_docker_ee_el9 }}"
 

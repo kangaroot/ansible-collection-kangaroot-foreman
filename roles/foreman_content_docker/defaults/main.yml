@@ -5,6 +5,8 @@
 ### URLS
 #######################################
 
+### DOCKER
+
 foreman_repo_baseurl_docker: https://download.docker.com/linux/centos
 
 foreman_repo_baseurl_docker_ce: "{{ foreman_repo_baseurl_docker }}"
@@ -14,6 +16,8 @@ foreman_repo_baseurl_docker_ee: https://repos.mirantis.com
 #######################################
 ### ENABLE VARS
 #######################################
+
+### DOCKER
 
 foreman_enable_docker: false
 
@@ -59,6 +63,8 @@ foreman_products_defaults_unprotected_docker_ee: "{{ foreman_products_defaults_u
 ### ORGANIZATION VARS
 #######################################
 
+### DOCKER
+
 foreman_organization_docker: "{{ foreman_organization }}"
 
 foreman_organization_docker_ce: "{{ foreman_organization_docker }}"
@@ -81,44 +87,18 @@ foreman_organization_docker_ee_el9: "{{ foreman_organization_docker_ee }}"
 ### DOCKER
 
 foreman_cv_allow_promote_docker: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_docker: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_docker: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_docker_ce: "{{ foreman_cv_allow_promote_docker | bool }}"
-foreman_ccv_allow_promote_docker_ce: "{{ foreman_ccv_allow_promote_docker | bool }}"
-foreman_ccv_auto_publish_docker_ce: "{{ foreman_ccv_auto_publish_docker | bool }}"
-
 
 foreman_cv_allow_promote_docker_ce_el7: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
-foreman_ccv_allow_promote_docker_ce_el7: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
-foreman_ccv_auto_publish_docker_ce_el7: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
-
 foreman_cv_allow_promote_docker_ce_el8: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
-foreman_ccv_allow_promote_docker_ce_el8: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
-foreman_ccv_auto_publish_docker_ce_el8: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
-
 foreman_cv_allow_promote_docker_ce_el9: "{{ foreman_cv_allow_promote_docker_ce | bool }}"
-foreman_ccv_allow_promote_docker_ce_el9: "{{ foreman_ccv_allow_promote_docker_ce | bool }}"
-foreman_ccv_auto_publish_docker_ce_el9: "{{ foreman_ccv_auto_publish_docker_ce | bool }}"
-
 
 foreman_cv_allow_promote_docker_ee: "{{ foreman_cv_allow_promote_docker | bool }}"
-foreman_ccv_allow_promote_docker_ee: "{{ foreman_ccv_allow_promote_docker | bool }}"
-foreman_ccv_auto_publish_docker_ee: "{{ foreman_ccv_auto_publish_docker | bool }}"
-
 
 foreman_cv_allow_promote_docker_ee_el7: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
-foreman_ccv_allow_promote_docker_ee_el7: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
-foreman_ccv_auto_publish_docker_ee_el7: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
-
 foreman_cv_allow_promote_docker_ee_el8: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
-foreman_ccv_allow_promote_docker_ee_el8: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
-foreman_ccv_auto_publish_docker_ee_el8: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
-
 foreman_cv_allow_promote_docker_ee_el9: "{{ foreman_cv_allow_promote_docker_ee | bool }}"
-foreman_ccv_allow_promote_docker_ee_el9: "{{ foreman_ccv_allow_promote_docker_ee | bool }}"
-foreman_ccv_auto_publish_docker_ee_el9: "{{ foreman_ccv_auto_publish_docker_ee | bool }}"
 
 
 #######################################
