@@ -222,12 +222,14 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_ol8:
-  - name: Oracle Linux 8 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u9_baseos_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 8
+foreman_installation_media_ol8: []
+# ENABLED IN VERSIONS!
+#   - name: Oracle Linux 8.9 BaseOS
+#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol8_u9_baseos_base/"
+#     <<: *foreman_installation_media_defaults
+#     operatingsystems:
+#       - Oracle Linux 8.9
+#       - Oracle Linux 8
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults

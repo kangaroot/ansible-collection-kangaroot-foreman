@@ -48,7 +48,7 @@ foreman_products_defaults_ol93: &foreman_products_defaults_ol93
   unprotected: "{{ foreman_products_defaults_unprotected_ol93 | bool }}"
 
 
-foreman_products_ol90:
+foreman_products_ol90_content: &foreman_products_ol90_content
   - name: Oracle Linux
     label: OL
     organization: "{{ foreman_organization_ol90 }}"
@@ -61,7 +61,12 @@ foreman_products_ol90:
         <<: *foreman_products_defaults_ol90
         organization: "{{ foreman_organization_ol90 }}"
 
-foreman_products_ol91:
+foreman_products_ol90:
+  <<: *foreman_products_ol90_content
+foreman_products_ol90_kickstart:
+  <<: *foreman_products_ol90_content
+
+foreman_products_ol91_content: &foreman_products_ol91_content
   - name: Oracle Linux
     label: OL
     organization: "{{ foreman_organization_ol91 }}"
@@ -74,7 +79,12 @@ foreman_products_ol91:
         <<: *foreman_products_defaults_ol91
         organization: "{{ foreman_organization_ol91 }}"
 
-foreman_products_ol92:
+foreman_products_ol91:
+  <<: *foreman_products_ol91_content
+foreman_products_ol91_kickstart:
+  <<: *foreman_products_ol91_content
+
+foreman_products_ol92_content: &foreman_products_ol92_content
   - name: Oracle Linux
     label: OL
     organization: "{{ foreman_organization_ol92 }}"
@@ -87,7 +97,12 @@ foreman_products_ol92:
         <<: *foreman_products_defaults_ol92
         organization: "{{ foreman_organization_ol92 }}"
 
-foreman_products_ol93:
+foreman_products_ol92:
+  <<: *foreman_products_ol92_content
+foreman_products_ol92_kickstart:
+  <<: *foreman_products_ol92_content
+
+foreman_products_ol93_content: &foreman_products_ol93_content
   - name: Oracle Linux
     label: OL
     organization: "{{ foreman_organization_ol93 }}"
@@ -100,11 +115,21 @@ foreman_products_ol93:
         <<: *foreman_products_defaults_ol93
         organization: "{{ foreman_organization_ol93 }}"
 
+foreman_products_ol93:
+  <<: *foreman_products_ol93_content
+foreman_products_ol93_kickstart:
+  <<: *foreman_products_ol93_content
+
 foreman_products_ol9_versions: "{{ [] |
-  union( foreman_products_ol90 | default([]) if foreman_enable_ol90 else [] ) |
-  union( foreman_products_ol91 | default([]) if foreman_enable_ol91 else [] ) |
-  union( foreman_products_ol92 | default([]) if foreman_enable_ol92 else [] ) |
-  union( foreman_products_ol93 | default([]) if foreman_enable_ol93 else [] )
+  union( foreman_products_ol90 | default([]) if foreman_enable_ol90 | bool else [] ) |
+  union( foreman_products_ol91 | default([]) if foreman_enable_ol91 | bool else [] ) |
+  union( foreman_products_ol92 | default([]) if foreman_enable_ol92 | bool else [] ) |
+  union( foreman_products_ol93 | default([]) if foreman_enable_ol93 | bool else [] ) |
+
+  union( foreman_products_ol90_kickstart | default([]) if foreman_enable_ol90_kickstart | bool else [] ) |
+  union( foreman_products_ol91_kickstart | default([]) if foreman_enable_ol91_kickstart | bool else [] ) |
+  union( foreman_products_ol92_kickstart | default([]) if foreman_enable_ol92_kickstart | bool else [] ) |
+  union( foreman_products_ol93_kickstart | default([]) if foreman_enable_ol93_kickstart | bool else [] )
   }}"
 
 
@@ -140,11 +165,23 @@ foreman_content_views_ol93:
         product: Oracle Linux
     allow_promote: "{{ foreman_cv_allow_promote_ol93 }}"
 
+foreman_composite_content_views_ol90: []
+foreman_composite_content_views_ol91: []
+foreman_composite_content_views_ol92: []
+foreman_composite_content_views_ol93: []
+
 foreman_content_views_ol9_versions: "{{ [] |
-  union( foreman_content_views_ol90 | default([]) if foreman_enable_ol90 else [] ) |
-  union( foreman_content_views_ol91 | default([]) if foreman_enable_ol91 else [] ) |
-  union( foreman_content_views_ol92 | default([]) if foreman_enable_ol92 else [] ) |
-  union( foreman_content_views_ol93 | default([]) if foreman_enable_ol93 else [] )
+  union( foreman_content_views_ol90 | default([]) if foreman_enable_ol90 | bool else [] ) |
+  union( foreman_content_views_ol91 | default([]) if foreman_enable_ol91 | bool else [] ) |
+  union( foreman_content_views_ol92 | default([]) if foreman_enable_ol92 | bool else [] ) |
+  union( foreman_content_views_ol93 | default([]) if foreman_enable_ol93 | bool else [] )
+  }}"
+
+foreman_composite_content_views_ol9_versions: "{{ [] |
+  union( foreman_composite_content_views_ol90 | default([]) if foreman_enable_ol90 | bool and foreman_enable_ol90_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol91 | default([]) if foreman_enable_ol91 | bool and foreman_enable_ol91_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol92 | default([]) if foreman_enable_ol92 | bool and foreman_enable_ol92_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ol93 | default([]) if foreman_enable_ol93 | bool and foreman_enable_ol93_default_ccv | bool else [] )
   }}"
 
 
@@ -211,10 +248,10 @@ foreman_operatingsystems_ol93:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_ol9_versions: "{{ [] |
-  union( foreman_operatingsystems_ol90 | default([]) if foreman_enable_ol90 else [] ) |
-  union( foreman_operatingsystems_ol91 | default([]) if foreman_enable_ol91 else [] ) |
-  union( foreman_operatingsystems_ol92 | default([]) if foreman_enable_ol92 else [] ) |
-  union( foreman_operatingsystems_ol93 | default([]) if foreman_enable_ol93 else [] )
+  union( foreman_operatingsystems_ol90 | default([]) if foreman_enable_ol90 | bool or foreman_enable_ol90_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_ol91 | default([]) if foreman_enable_ol91 | bool or foreman_enable_ol91_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_ol92 | default([]) if foreman_enable_ol92 | bool or foreman_enable_ol92_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_ol93 | default([]) if foreman_enable_ol93 | bool or foreman_enable_ol93_kickstart | bool else [] )
   }}"
 
 
@@ -255,11 +292,38 @@ foreman_installation_media_ol93:
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 9.3
+      - Oracle Linux 9
 
 foreman_installation_media_ol9_versions: "{{ [] |
-  union( foreman_installation_media_ol90 | default([]) if foreman_enable_ol90 else [] ) |
-  union( foreman_installation_media_ol91 | default([]) if foreman_enable_ol91 else [] ) |
-  union( foreman_installation_media_ol92 | default([]) if foreman_enable_ol92 else [] ) |
-  union( foreman_installation_media_ol93 | default([]) if foreman_enable_ol93 else [] )
+  union( foreman_installation_media_ol90 | default([]) if foreman_enable_ol90_kickstart | bool else [] ) |
+  union( foreman_installation_media_ol91 | default([]) if foreman_enable_ol91_kickstart | bool else [] ) |
+  union( foreman_installation_media_ol92 | default([]) if foreman_enable_ol92_kickstart | bool else [] ) |
+  union( foreman_installation_media_ol93 | default([]) if foreman_enable_ol93_kickstart | bool else [] )
+  }}"
+
+
+foreman_activation_keys_ol90: []
+foreman_activation_keys_ol91: []
+foreman_activation_keys_ol92: []
+foreman_activation_keys_ol93: []
+
+foreman_activation_keys_redhat7_versions: "{{ [] |
+  union( foreman_activation_keys_ol90 | default([]) if foreman_enable_ol90 | bool and foreman_enable_ol90_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ol91 | default([]) if foreman_enable_ol91 | bool and foreman_enable_ol91_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ol92 | default([]) if foreman_enable_ol92 | bool and foreman_enable_ol92_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ol93 | default([]) if foreman_enable_ol93 | bool and foreman_enable_ol93_default_ak | bool else [] )
+  }}"
+
+
+foreman_sync_plan_products_ol90: []
+foreman_sync_plan_products_ol91: []
+foreman_sync_plan_products_ol92: []
+foreman_sync_plan_products_ol93: []
+
+foreman_sync_plan_products_redhat7_versions: "{{ [] |
+  union( foreman_sync_plan_products_ol90 | default([]) if foreman_enable_ol90 | bool or foreman_enable_ol90_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_ol91 | default([]) if foreman_enable_ol91 | bool or foreman_enable_ol91_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_ol92 | default([]) if foreman_enable_ol92 | bool or foreman_enable_ol92_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_ol93 | default([]) if foreman_enable_ol93 | bool or foreman_enable_ol93_kickstart | bool else [] )
   }}"
 

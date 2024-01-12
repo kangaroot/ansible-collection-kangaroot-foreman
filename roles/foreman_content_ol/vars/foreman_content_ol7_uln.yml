@@ -267,12 +267,14 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_ol7_uln:
-  - name: Oracle Linux 7
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u9_base/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Oracle Linux 7
+foreman_installation_media_ol7_uln: []
+# ENABLED IN VERSIONS!
+#   - name: Oracle Linux 7.9
+#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u9_base/"
+#     <<: *foreman_installation_media_defaults
+#     operatingsystems:
+#       - Oracle Linux 7.9
+#       - Oracle Linux 7
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
