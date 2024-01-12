@@ -1337,11 +1337,11 @@ foreman_sync_plan_products_rocky88: []
 foreman_sync_plan_products_rocky89: []
 
 foreman_sync_plan_products_rocky8_versions: "{{ [] |
-  union( foreman_sync_plan_products_rocky84 | default([]) if foreman_enable_rocky84 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky85 | default([]) if foreman_enable_rocky85 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky86 | default([]) if foreman_enable_rocky86 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky87 | default([]) if foreman_enable_rocky87 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky88 | default([]) if foreman_enable_rocky88 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky89 | default([]) if foreman_enable_rocky89 | bool else [] )
+  union( foreman_sync_plan_products_rocky84 | default([]) if foreman_enable_rocky84 | bool or foreman_enable_rocky84_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky85 | default([]) if foreman_enable_rocky85 | bool or foreman_enable_rocky85_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky86 | default([]) if foreman_enable_rocky86 | bool or foreman_enable_rocky86_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky87 | default([]) if foreman_enable_rocky87 | bool or foreman_enable_rocky87_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky88 | default([]) if foreman_enable_rocky88 | bool or foreman_enable_rocky88_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky89 | default([]) if foreman_enable_rocky89 | bool or foreman_enable_rocky89_kickstart | bool else [] )
   }}"
 

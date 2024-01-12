@@ -1276,9 +1276,9 @@ foreman_sync_plan_products_rocky93: []
 # foreman_sync_plan_products_rocky94: []
 
 foreman_sync_plan_products_rocky9_versions: "{{ [] |
-  union( foreman_sync_plan_products_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] )
+  union( foreman_sync_plan_products_rocky90 | default([]) if foreman_enable_rocky90 | bool or foreman_enable_rocky90_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky91 | default([]) if foreman_enable_rocky91 | bool or foreman_enable_rocky91_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky92 | default([]) if foreman_enable_rocky92 | bool or foreman_enable_rocky92_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] )
   }}"
 

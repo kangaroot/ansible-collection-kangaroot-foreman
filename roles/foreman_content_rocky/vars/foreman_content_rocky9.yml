@@ -85,6 +85,11 @@ foreman_products_rocky9:
         url: "{{ foreman_repo_baseurl_rocky9 }}/9/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky9 }}"
 
+foreman_products_rocky9_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky9 }}"
+    repositories:
       - name: Rocky Linux 9 - BaseOS Kickstart
         label: rocky-9-baseos-kickstart
         <<: *foreman_products_defaults

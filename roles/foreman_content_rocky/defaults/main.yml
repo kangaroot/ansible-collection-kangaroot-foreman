@@ -130,6 +130,7 @@ foreman_enable_rocky_default_ak: "{{ foreman_enable_rocky_default_ccv | bool }}"
 ### ROCKY 8
 
 foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
+foreman_enable_rocky8_kickstart: "{{ foreman_enable_rocky8 | bool }}"
 
 foreman_enable_rocky8_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
 foreman_enable_rocky8_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
@@ -141,12 +142,12 @@ foreman_enable_rocky87: false
 foreman_enable_rocky88: false
 foreman_enable_rocky89: false
 
-foreman_enable_rocky84_kickstart: false
-foreman_enable_rocky85_kickstart: false
-foreman_enable_rocky86_kickstart: false
-foreman_enable_rocky87_kickstart: false
-foreman_enable_rocky88_kickstart: false
-foreman_enable_rocky89_kickstart: false
+foreman_enable_rocky84_kickstart: "{{ foreman_enable_rocky84 | bool }}"
+foreman_enable_rocky85_kickstart: "{{ foreman_enable_rocky85 | bool }}"
+foreman_enable_rocky86_kickstart: "{{ foreman_enable_rocky86 | bool }}"
+foreman_enable_rocky87_kickstart: "{{ foreman_enable_rocky87 | bool }}"
+foreman_enable_rocky88_kickstart: "{{ foreman_enable_rocky88 | bool }}"
+foreman_enable_rocky89_kickstart: "{{ foreman_enable_rocky89 | bool }}"
 
 foreman_enable_rocky84_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
 foreman_enable_rocky85_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
@@ -173,6 +174,7 @@ foreman_enable_rocky8_sig_cloud_kernel: false
 ### ROCKY 9
 
 foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
+foreman_enable_rocky9_kickstart: "{{ foreman_enable_rocky9 | bool }}"
 
 foreman_enable_rocky9_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
 foreman_enable_rocky9_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
@@ -182,10 +184,10 @@ foreman_enable_rocky91: false
 foreman_enable_rocky92: false
 foreman_enable_rocky93: false
 
-foreman_enable_rocky90_kickstart: false
-foreman_enable_rocky91_kickstart: false
-foreman_enable_rocky92_kickstart: false
-foreman_enable_rocky93_kickstart: false
+foreman_enable_rocky90_kickstart: "{{ foreman_enable_rocky90 | bool }}"
+foreman_enable_rocky91_kickstart: "{{ foreman_enable_rocky91 | bool }}"
+foreman_enable_rocky92_kickstart: "{{ foreman_enable_rocky92 | bool }}"
+foreman_enable_rocky93_kickstart: "{{ foreman_enable_rocky93 | bool }}"
 
 foreman_enable_rocky90_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
 foreman_enable_rocky91_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
@@ -500,11 +502,13 @@ foreman_products_rocky_main: []
 foreman_products_rocky: "{{ ( foreman_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
 
   union( foreman_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
+  union( foreman_products_rocky8_kickstart | default([]) if foreman_enable_rocky8_kickstart | bool else [] )
   union( foreman_products_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_products_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
   union( foreman_products_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
 
   union( foreman_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
+  union( foreman_products_rocky9_kickstart | default([]) if foreman_enable_rocky9_kickstart | bool else [] )
   union( foreman_products_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
   union( foreman_products_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
   union( foreman_products_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
@@ -533,9 +537,9 @@ foreman_content_views_rocky: "{{ ( foreman_content_views_rocky_main | default([]
 
 foreman_operatingsystems_rocky_main: []
 foreman_operatingsystems_rocky: "{{ ( foreman_operatingsystems_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-  union( foreman_operatingsystems_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
+  union( foreman_operatingsystems_rocky8 | default([]) if foreman_enable_rocky8 | bool or foreman_enable_rocky8_kickstart | bool else [] ) |
   union( foreman_operatingsystems_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_operatingsystems_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
+  union( foreman_operatingsystems_rocky9 | default([]) if foreman_enable_rocky9 | bool or foreman_enable_rocky9_kickstart | bool else [] ) |
   union( foreman_operatingsystems_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
@@ -558,9 +562,9 @@ foreman_installation_media_rocky_main:
     <<: *foreman_installation_media_rocky_defaults
 
 foreman_installation_media_rocky: "{{ ( foreman_installation_media_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-  union( foreman_installation_media_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
+  union( foreman_installation_media_rocky8 | default([]) if foreman_enable_rocky8_kickstart | bool else [] ) |
   union( foreman_installation_media_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_installation_media_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
+  union( foreman_installation_media_rocky9 | default([]) if foreman_enable_rocky9_kickstart | bool else [] ) |
   union( foreman_installation_media_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
@@ -576,9 +580,9 @@ foreman_sync_plan_products_rocky_main:
   - Rocky Linux
 
 foreman_sync_plan_products_rocky: "{{ ( foreman_sync_plan_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
-  union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
+  union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | bool or foreman_enable_rocky8_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_sync_plan_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
+  union( foreman_sync_plan_products_rocky9 | default([]) if foreman_enable_rocky9 | bool or foreman_enable_rocky9_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] )
   }}"
 
