@@ -502,13 +502,13 @@ foreman_products_rocky_main: []
 foreman_products_rocky: "{{ ( foreman_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
 
   union( foreman_products_rocky8 | default([]) if foreman_enable_rocky8 | bool else [] ) |
-  union( foreman_products_rocky8_kickstart | default([]) if foreman_enable_rocky8_kickstart | bool else [] )
+  union( foreman_products_rocky8_kickstart | default([]) if foreman_enable_rocky8_kickstart | bool else [] ) |
   union( foreman_products_rocky8_versions | default([]) if foreman_enable_rocky8 | bool else [] ) |
   union( foreman_products_rocky8_sig_core | default([]) if foreman_enable_rocky8_sig_core | bool else [] ) |
   union( foreman_products_rocky8_sig_cloud | default([]) if foreman_enable_rocky8_sig_cloud | bool else [] ) |
 
   union( foreman_products_rocky9 | default([]) if foreman_enable_rocky9 | bool else [] ) |
-  union( foreman_products_rocky9_kickstart | default([]) if foreman_enable_rocky9_kickstart | bool else [] )
+  union( foreman_products_rocky9_kickstart | default([]) if foreman_enable_rocky9_kickstart | bool else [] ) |
   union( foreman_products_rocky9_versions | default([]) if foreman_enable_rocky9 | bool else [] ) |
   union( foreman_products_rocky9_sig_core | default([]) if foreman_enable_rocky9_sig_core | bool else [] ) |
   union( foreman_products_rocky9_sig_cloud | default([]) if foreman_enable_rocky9_sig_cloud | bool else [] )
