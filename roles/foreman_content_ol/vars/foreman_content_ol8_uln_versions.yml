@@ -193,9 +193,9 @@ foreman_products_ol80_uln_content: &foreman_products_ol80_uln_content
         organization: "{{ foreman_organization_ol80_uln }}"
 
 foreman_products_ol80_uln:
-  <<: *foreman_products_ol80_uln_content
+  - *foreman_products_ol80_uln_content
 foreman_products_ol80_uln_kickstart:
-  <<: *foreman_products_ol80_uln_content
+  - *foreman_products_ol80_uln_content
 
 foreman_products_ol81_uln_content: &foreman_products_ol81_uln_content
   - name: Oracle Linux
@@ -211,9 +211,9 @@ foreman_products_ol81_uln_content: &foreman_products_ol81_uln_content
         organization: "{{ foreman_organization_ol81_uln }}"
 
 foreman_products_ol81_uln:
-  <<: *foreman_products_ol81_uln_content
+  - *foreman_products_ol81_uln_content
 foreman_products_ol81_uln_kickstart:
-  <<: *foreman_products_ol81_uln_content
+  - *foreman_products_ol81_uln_content
 
 foreman_products_ol82_uln_content: &foreman_products_ol82_uln_content
   - name: Oracle Linux
@@ -229,9 +229,9 @@ foreman_products_ol82_uln_content: &foreman_products_ol82_uln_content
         organization: "{{ foreman_organization_ol82_uln }}"
 
 foreman_products_ol82_uln:
-  <<: *foreman_products_ol82_uln_content
+  - *foreman_products_ol82_uln_content
 foreman_products_ol82_uln_kickstart:
-  <<: *foreman_products_ol82_uln_content
+  - *foreman_products_ol82_uln_content
 
 foreman_products_ol83_uln_content: &foreman_products_ol83_uln_content
   - name: Oracle Linux
@@ -247,9 +247,9 @@ foreman_products_ol83_uln_content: &foreman_products_ol83_uln_content
         organization: "{{ foreman_organization_ol83_uln }}"
 
 foreman_products_ol83_uln:
-  <<: *foreman_products_ol83_uln_content
+  - *foreman_products_ol83_uln_content
 foreman_products_ol83_uln_kickstart:
-  <<: *foreman_products_ol83_uln_content
+  - *foreman_products_ol83_uln_content
 
 foreman_products_ol84_uln_content: &foreman_products_ol84_uln_content
   - name: Oracle Linux
@@ -265,9 +265,9 @@ foreman_products_ol84_uln_content: &foreman_products_ol84_uln_content
         organization: "{{ foreman_organization_ol84_uln }}"
 
 foreman_products_ol84_uln:
-  <<: *foreman_products_ol84_uln_content
+  - *foreman_products_ol84_uln_content
 foreman_products_ol84_uln_kickstart:
-  <<: *foreman_products_ol84_uln_content
+  - *foreman_products_ol84_uln_content
 
 foreman_products_ol85_uln_content: &foreman_products_ol85_uln_content
   - name: Oracle Linux
@@ -283,9 +283,9 @@ foreman_products_ol85_uln_content: &foreman_products_ol85_uln_content
         organization: "{{ foreman_organization_ol85_uln }}"
 
 foreman_products_ol85_uln:
-  <<: *foreman_products_ol85_uln_content
+  - *foreman_products_ol85_uln_content
 foreman_products_ol85_uln_kickstart:
-  <<: *foreman_products_ol85_uln_content
+  - *foreman_products_ol85_uln_content
 
 foreman_products_ol86_uln_content: &foreman_products_ol86_uln_content
   - name: Oracle Linux
@@ -301,9 +301,9 @@ foreman_products_ol86_uln_content: &foreman_products_ol86_uln_content
         organization: "{{ foreman_organization_ol86_uln }}"
 
 foreman_products_ol86_uln:
-  <<: *foreman_products_ol86_uln_content
+  - *foreman_products_ol86_uln_content
 foreman_products_ol86_uln_kickstart:
-  <<: *foreman_products_ol86_uln_content
+  - *foreman_products_ol86_uln_content
 
 foreman_products_ol87_uln_content: &foreman_products_ol87_uln_content
   - name: Oracle Linux
@@ -319,9 +319,9 @@ foreman_products_ol87_uln_content: &foreman_products_ol87_uln_content
         organization: "{{ foreman_organization_ol87_uln }}"
 
 foreman_products_ol87_uln:
-  <<: *foreman_products_ol87_uln_content
+  - *foreman_products_ol87_uln_content
 foreman_products_ol87_uln_kickstart:
-  <<: *foreman_products_ol87_uln_content
+  - *foreman_products_ol87_uln_content
 
 foreman_products_ol88_uln_content: &foreman_products_ol88_uln_content
   - name: Oracle Linux
@@ -337,9 +337,9 @@ foreman_products_ol88_uln_content: &foreman_products_ol88_uln_content
         organization: "{{ foreman_organization_ol88_uln }}"
 
 foreman_products_ol88_uln:
-  <<: *foreman_products_ol88_uln_content
+  - *foreman_products_ol88_uln_content
 foreman_products_ol88_uln_kickstart:
-  <<: *foreman_products_ol88_uln_content
+  - *foreman_products_ol88_uln_content
 
 foreman_products_ol89_uln_content: &foreman_products_ol89_uln_content
   - name: Oracle Linux
@@ -355,9 +355,9 @@ foreman_products_ol89_uln_content: &foreman_products_ol89_uln_content
         organization: "{{ foreman_organization_ol89_uln }}"
 
 foreman_products_ol89_uln:
-  <<: *foreman_products_ol89_uln_content
+  - *foreman_products_ol89_uln_content
 foreman_products_ol89_uln_kickstart:
-  <<: *foreman_products_ol89_uln_content
+  - *foreman_products_ol89_uln_content
 
 foreman_products_ol80_patch_uln:
   - name: Oracle Linux

@@ -110,9 +110,9 @@ foreman_products_ol80_content: &foreman_products_ol80_content
         organization: "{{ foreman_organization_ol80 }}"
 
 foreman_products_ol80:
-  <<: *foreman_products_ol80_content
+  - *foreman_products_ol80_content
 foreman_products_ol80_kickstart:
-  <<: *foreman_products_ol80_content
+  - *foreman_products_ol80_content
 
 foreman_products_ol81_content: &foreman_products_ol81_content
   - name: Oracle Linux
@@ -128,9 +128,9 @@ foreman_products_ol81_content: &foreman_products_ol81_content
         organization: "{{ foreman_organization_ol81 }}"
 
 foreman_products_ol81:
-  <<: *foreman_products_ol81_content
+  - *foreman_products_ol81_content
 foreman_products_ol81_kickstart:
-  <<: *foreman_products_ol81_content
+  - *foreman_products_ol81_content
 
 foreman_products_ol82_content: &foreman_products_ol82_content
   - name: Oracle Linux
@@ -146,9 +146,9 @@ foreman_products_ol82_content: &foreman_products_ol82_content
         organization: "{{ foreman_organization_ol82 }}"
 
 foreman_products_ol82:
-  <<: *foreman_products_ol82_content
+  - *foreman_products_ol82_content
 foreman_products_ol82_kickstart:
-  <<: *foreman_products_ol82_content
+  - *foreman_products_ol82_content
 
 foreman_products_ol83_content: &foreman_products_ol83_content
   - name: Oracle Linux
@@ -164,9 +164,9 @@ foreman_products_ol83_content: &foreman_products_ol83_content
         organization: "{{ foreman_organization_ol83 }}"
 
 foreman_products_ol83:
-  <<: *foreman_products_ol83_content
+  - *foreman_products_ol83_content
 foreman_products_ol83_kickstart:
-  <<: *foreman_products_ol83_content
+  - *foreman_products_ol83_content
 
 foreman_products_ol84_content: &foreman_products_ol84_content
   - name: Oracle Linux
@@ -182,9 +182,9 @@ foreman_products_ol84_content: &foreman_products_ol84_content
         organization: "{{ foreman_organization_ol84 }}"
 
 foreman_products_ol84:
-  <<: *foreman_products_ol84_content
+  - *foreman_products_ol84_content
 foreman_products_ol84_kickstart:
-  <<: *foreman_products_ol84_content
+  - *foreman_products_ol84_content
 
 foreman_products_ol85_content: &foreman_products_ol85_content
   - name: Oracle Linux
@@ -200,9 +200,9 @@ foreman_products_ol85_content: &foreman_products_ol85_content
         organization: "{{ foreman_organization_ol85 }}"
 
 foreman_products_ol85:
-  <<: *foreman_products_ol85_content
+  - *foreman_products_ol85_content
 foreman_products_ol85_kickstart:
-  <<: *foreman_products_ol85_content
+  - *foreman_products_ol85_content
 
 foreman_products_ol86_content: &foreman_products_ol86_content
   - name: Oracle Linux
@@ -218,9 +218,9 @@ foreman_products_ol86_content: &foreman_products_ol86_content
         organization: "{{ foreman_organization_ol86 }}"
 
 foreman_products_ol86:
-  <<: *foreman_products_ol86_content
+  - *foreman_products_ol86_content
 foreman_products_ol86_kickstart:
-  <<: *foreman_products_ol86_content
+  - *foreman_products_ol86_content
 
 foreman_products_ol87_content: &foreman_products_ol87_content
   - name: Oracle Linux
@@ -236,9 +236,9 @@ foreman_products_ol87_content: &foreman_products_ol87_content
         organization: "{{ foreman_organization_ol87 }}"
 
 foreman_products_ol87:
-  <<: *foreman_products_ol87_content
+  - *foreman_products_ol87_content
 foreman_products_ol87_kickstart:
-  <<: *foreman_products_ol87_content
+  - *foreman_products_ol87_content
 
 foreman_products_ol88_content: &foreman_products_ol88_content
   - name: Oracle Linux
@@ -254,9 +254,9 @@ foreman_products_ol88_content: &foreman_products_ol88_content
         organization: "{{ foreman_organization_ol88 }}"
 
 foreman_products_ol88:
-  <<: *foreman_products_ol88_content
+  - *foreman_products_ol88_content
 foreman_products_ol88_kickstart:
-  <<: *foreman_products_ol88_content
+  - *foreman_products_ol88_content
 
 foreman_products_ol89_content: &foreman_products_ol89_content
   - name: Oracle Linux
@@ -272,9 +272,9 @@ foreman_products_ol89_content: &foreman_products_ol89_content
         organization: "{{ foreman_organization_ol89 }}"
 
 foreman_products_ol89:
-  <<: *foreman_products_ol89_content
+  - *foreman_products_ol89_content
 foreman_products_ol89_kickstart:
-  <<: *foreman_products_ol89_content
+  - *foreman_products_ol89_content
 
 foreman_products_ol8_versions: "{{ [] |
   union( foreman_products_ol80 | default([]) if foreman_enable_ol80 | bool else [] ) |
