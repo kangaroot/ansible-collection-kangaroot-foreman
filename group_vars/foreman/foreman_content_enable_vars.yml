@@ -31,6 +31,7 @@
 ### CENTOS 7
 
 # foreman_enable_centos7: false
+# foreman_enable_centos7_kickstart: "{{ foreman_enable_centos7 | bool }}"
 
 # foreman_enable_centos7_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 # foreman_enable_centos7_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -44,17 +45,28 @@
 # foreman_enable_centos76: false
 # foreman_enable_centos77: false
 # foreman_enable_centos78: false
-# foreman_enable_centos79: "{{ foreman_enable_centos7 | bool }}"
+# foreman_enable_centos79: false
 
-# foreman_enable_centos70_default_ccv: false
-# foreman_enable_centos71_default_ccv: false
-# foreman_enable_centos72_default_ccv: false
-# foreman_enable_centos73_default_ccv: false
-# foreman_enable_centos74_default_ccv: false
-# foreman_enable_centos75_default_ccv: false
-# foreman_enable_centos76_default_ccv: false
-# foreman_enable_centos77_default_ccv: false
-# foreman_enable_centos78_default_ccv: false
+# foreman_enable_centos70_kickstart: "{{ foreman_enable_centos70 | bool }}"
+# foreman_enable_centos71_kickstart: "{{ foreman_enable_centos71 | bool }}"
+# foreman_enable_centos72_kickstart: "{{ foreman_enable_centos72 | bool }}"
+# foreman_enable_centos73_kickstart: "{{ foreman_enable_centos73 | bool }}"
+# foreman_enable_centos74_kickstart: "{{ foreman_enable_centos74 | bool }}"
+# foreman_enable_centos75_kickstart: "{{ foreman_enable_centos75 | bool }}"
+# foreman_enable_centos76_kickstart: "{{ foreman_enable_centos76 | bool }}"
+# foreman_enable_centos77_kickstart: "{{ foreman_enable_centos77 | bool }}"
+# foreman_enable_centos78_kickstart: "{{ foreman_enable_centos78 | bool }}"
+# foreman_enable_centos79_kickstart: "{{ foreman_enable_centos79 | bool }}"
+
+# foreman_enable_centos70_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos71_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos72_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos73_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos74_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos75_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos76_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos77_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+# foreman_enable_centos78_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
 # foreman_enable_centos79_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
 
 # foreman_enable_centos70_default_ak: "{{ foreman_enable_centos70_default_ccv | bool }}"
@@ -150,6 +162,7 @@
 ### CENTOS 8
 
 # foreman_enable_centos8: false
+# foreman_enable_centos8_kickstart: "{{ foreman_enable_centos8 | bool }}"
 
 # foreman_enable_centos8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 # foreman_enable_centos8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -159,13 +172,20 @@
 # foreman_enable_centos82: false
 # foreman_enable_centos83: false
 # foreman_enable_centos84: false
-# foreman_enable_centos85: "{{ foreman_enable_centos8 | bool }}"
+# foreman_enable_centos85: false
 
-# foreman_enable_centos80_default_ccv: false
-# foreman_enable_centos81_default_ccv: false
-# foreman_enable_centos82_default_ccv: false
-# foreman_enable_centos83_default_ccv: false
-# foreman_enable_centos84_default_ccv: false
+# foreman_enable_centos80_kickstart: "{{ foreman_enable_centos80 | bool }}"
+# foreman_enable_centos81_kickstart: "{{ foreman_enable_centos81 | bool }}"
+# foreman_enable_centos82_kickstart: "{{ foreman_enable_centos82 | bool }}"
+# foreman_enable_centos83_kickstart: "{{ foreman_enable_centos83 | bool }}"
+# foreman_enable_centos84_kickstart: "{{ foreman_enable_centos84 | bool }}"
+# foreman_enable_centos85_kickstart: "{{ foreman_enable_centos85 | bool }}"
+
+# foreman_enable_centos80_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+# foreman_enable_centos81_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+# foreman_enable_centos82_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+# foreman_enable_centos83_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+# foreman_enable_centos84_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
 # foreman_enable_centos85_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
 
 # foreman_enable_centos80_default_ak: "{{ foreman_enable_centos80_default_ccv | bool }}"
@@ -233,6 +253,7 @@
 ### CENTOS STREAM 8
 
 # foreman_enable_centos_stream8: "{{ foreman_enable_centos | bool }}"
+# foreman_enable_centos_stream8_kickstart: "{{ foreman_enable_centos_stream8 | bool }}"
 
 # foreman_enable_centos_stream8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 # foreman_enable_centos_stream8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -312,6 +333,7 @@
 ### CENTOS STREAM 9
 
 # foreman_enable_centos_stream9: "{{ foreman_enable_centos | bool }}"
+# foreman_enable_centos_stream9_kickstart: "{{ foreman_enable_centos_stream9 | bool }}"
 
 # foreman_enable_centos_stream9_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 # foreman_enable_centos_stream9_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -582,6 +604,7 @@
 ### ORACLE LINUX 7
 
 # foreman_enable_ol7: false
+# foreman_enable_ol7_kickstart: "{{ foreman_enable_ol7 | bool }}"
 
 # foreman_enable_ol7_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
 # foreman_enable_ol7_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
@@ -595,17 +618,29 @@
 # foreman_enable_ol76: false
 # foreman_enable_ol77: false
 # foreman_enable_ol78: false
-# foreman_enable_ol79: "{{ foreman_enable_ol7 | bool }}"
+# foreman_enable_ol79: false
 
-# foreman_enable_ol70_default_ccv: false
-# foreman_enable_ol71_default_ccv: false
-# foreman_enable_ol72_default_ccv: false
-# foreman_enable_ol73_default_ccv: false
-# foreman_enable_ol74_default_ccv: false
-# foreman_enable_ol75_default_ccv: false
-# foreman_enable_ol76_default_ccv: false
-# foreman_enable_ol77_default_ccv: false
-# foreman_enable_ol78_default_ccv: false
+# foreman_enable_ol70_kickstart: "{{ foreman_enable_ol70 | bool }}"
+# foreman_enable_ol71_kickstart: "{{ foreman_enable_ol71 | bool }}"
+# foreman_enable_ol72_kickstart: "{{ foreman_enable_ol72 | bool }}"
+# foreman_enable_ol73_kickstart: "{{ foreman_enable_ol73 | bool }}"
+# foreman_enable_ol74_kickstart: "{{ foreman_enable_ol74 | bool }}"
+# foreman_enable_ol75_kickstart: "{{ foreman_enable_ol75 | bool }}"
+# foreman_enable_ol76_kickstart: "{{ foreman_enable_ol76 | bool }}"
+# foreman_enable_ol77_kickstart: "{{ foreman_enable_ol77 | bool }}"
+# foreman_enable_ol78_kickstart: "{{ foreman_enable_ol78 | bool }}"
+# foreman_enable_ol79_kickstart: "{{ foreman_enable_ol7_kickstart | bool or
+#                                    foreman_enable_ol79 | bool }}"
+
+# foreman_enable_ol70_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol71_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol72_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol73_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol74_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol75_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol76_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol77_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
+# foreman_enable_ol78_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
 # foreman_enable_ol79_default_ccv: "{{ foreman_enable_ol7_default_ccv | bool }}"
 
 # foreman_enable_ol70_default_ak: "{{ foreman_enable_ol70_default_ccv | bool }}"
@@ -693,7 +728,8 @@
 
 ### ORACLE LINUX 8
 
-# foreman_enable_ol8: "{{ foreman_enable_ol | bool }}"
+# foreman_enable_ol8: false
+# foreman_enable_ol8_kickstart: "{{ foreman_enable_ol8 | bool }}"
 
 # foreman_enable_ol8_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
 # foreman_enable_ol8_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
@@ -707,17 +743,29 @@
 # foreman_enable_ol86: false
 # foreman_enable_ol87: false
 # foreman_enable_ol88: false
-# foreman_enable_ol89: "{{ foreman_enable_ol8 | bool }}"
+# foreman_enable_ol89: false
 
-# foreman_enable_ol80_default_ccv: false
-# foreman_enable_ol81_default_ccv: false
-# foreman_enable_ol82_default_ccv: false
-# foreman_enable_ol83_default_ccv: false
-# foreman_enable_ol84_default_ccv: false
-# foreman_enable_ol85_default_ccv: false
-# foreman_enable_ol86_default_ccv: false
-# foreman_enable_ol87_default_ccv: false
-# foreman_enable_ol88_default_ccv: false
+# foreman_enable_ol80_kickstart: "{{ foreman_enable_ol80 | bool }}"
+# foreman_enable_ol81_kickstart: "{{ foreman_enable_ol81 | bool }}"
+# foreman_enable_ol82_kickstart: "{{ foreman_enable_ol82 | bool }}"
+# foreman_enable_ol83_kickstart: "{{ foreman_enable_ol83 | bool }}"
+# foreman_enable_ol84_kickstart: "{{ foreman_enable_ol84 | bool }}"
+# foreman_enable_ol85_kickstart: "{{ foreman_enable_ol85 | bool }}"
+# foreman_enable_ol86_kickstart: "{{ foreman_enable_ol86 | bool }}"
+# foreman_enable_ol87_kickstart: "{{ foreman_enable_ol87 | bool }}"
+# foreman_enable_ol88_kickstart: "{{ foreman_enable_ol88 | bool }}"
+# foreman_enable_ol89_kickstart: "{{ foreman_enable_ol8_kickstart | bool or
+#                                    foreman_enable_ol89 | bool }}"
+
+# foreman_enable_ol80_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol81_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol82_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol83_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol84_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol85_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol86_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol87_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
+# foreman_enable_ol88_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
 # foreman_enable_ol89_default_ccv: "{{ foreman_enable_ol8_default_ccv | bool }}"
 
 # foreman_enable_ol80_default_ak: "{{ foreman_enable_ol80_default_ccv | bool }}"
@@ -757,7 +805,8 @@
 
 ### ORACLE LINUX 9
 
-# foreman_enable_ol9: "{{ foreman_enable_ol | bool }}"
+# foreman_enable_ol9: false
+# foreman_enable_ol9_kickstart: "{{ foreman_enable_ol9 | bool }}"
 
 # foreman_enable_ol9_default_ccv: "{{ foreman_enable_ol_default_ccv | bool }}"
 # foreman_enable_ol9_default_ak: "{{ foreman_enable_ol_default_ak | bool }}"
@@ -765,11 +814,17 @@
 # foreman_enable_ol90: false
 # foreman_enable_ol91: false
 # foreman_enable_ol92: false
-# foreman_enable_ol93: "{{ foreman_enable_ol9 | bool }}"
+# foreman_enable_ol93: false
 
-# foreman_enable_ol90_default_ccv: false
-# foreman_enable_ol91_default_ccv: false
-# foreman_enable_ol92_default_ccv: false
+# foreman_enable_ol90_kickstart: "{{ foreman_enable_ol90 | bool }}"
+# foreman_enable_ol91_kickstart: "{{ foreman_enable_ol91 | bool }}"
+# foreman_enable_ol92_kickstart: "{{ foreman_enable_ol92 | bool }}"
+# foreman_enable_ol93_kickstart: "{{ foreman_enable_ol9_kickstart | bool or
+#                                    foreman_enable_ol93 | bool }}"
+
+# foreman_enable_ol90_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
+# foreman_enable_ol91_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
+# foreman_enable_ol92_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
 # foreman_enable_ol93_default_ccv: "{{ foreman_enable_ol9_default_ccv | bool }}"
 
 # foreman_enable_ol90_default_ak: "{{ foreman_enable_ol90_default_ccv | bool }}"
@@ -817,6 +872,7 @@
 ### ORACLE LINUX 7 ULN
 
 # foreman_enable_ol7_uln: false
+# foreman_enable_ol7_uln_kickstart: "{{ foreman_enable_ol7_uln | bool }}"
 
 # foreman_enable_ol7_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
 # foreman_enable_ol7_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
@@ -830,17 +886,29 @@
 # foreman_enable_ol76_uln: false
 # foreman_enable_ol77_uln: false
 # foreman_enable_ol78_uln: false
-# foreman_enable_ol79_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol79_uln: false
 
-# foreman_enable_ol70_uln_default_ccv: false
-# foreman_enable_ol71_uln_default_ccv: false
-# foreman_enable_ol72_uln_default_ccv: false
-# foreman_enable_ol73_uln_default_ccv: false
-# foreman_enable_ol74_uln_default_ccv: false
-# foreman_enable_ol75_uln_default_ccv: false
-# foreman_enable_ol76_uln_default_ccv: false
-# foreman_enable_ol77_uln_default_ccv: false
-# foreman_enable_ol78_uln_default_ccv: false
+# foreman_enable_ol70_uln_kickstart: "{{ foreman_enable_ol70_uln | bool }}"
+# foreman_enable_ol71_uln_kickstart: "{{ foreman_enable_ol71_uln | bool }}"
+# foreman_enable_ol72_uln_kickstart: "{{ foreman_enable_ol72_uln | bool }}"
+# foreman_enable_ol73_uln_kickstart: "{{ foreman_enable_ol73_uln | bool }}"
+# foreman_enable_ol74_uln_kickstart: "{{ foreman_enable_ol74_uln | bool }}"
+# foreman_enable_ol75_uln_kickstart: "{{ foreman_enable_ol75_uln | bool }}"
+# foreman_enable_ol76_uln_kickstart: "{{ foreman_enable_ol76_uln | bool }}"
+# foreman_enable_ol77_uln_kickstart: "{{ foreman_enable_ol77_uln | bool }}"
+# foreman_enable_ol78_uln_kickstart: "{{ foreman_enable_ol78_uln | bool }}"
+# foreman_enable_ol79_uln_kickstart: "{{ foreman_enable_ol7_uln_kickstart | bool or
+#                                        foreman_enable_ol79_uln | bool }}"
+
+# foreman_enable_ol70_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol71_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol72_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol73_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol74_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol75_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol76_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol77_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
+# foreman_enable_ol78_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
 # foreman_enable_ol79_uln_default_ccv: "{{ foreman_enable_ol7_uln_default_ccv | bool }}"
 
 # foreman_enable_ol70_uln_default_ak: "{{ foreman_enable_ol70_uln_default_ccv | bool }}"
@@ -854,16 +922,16 @@
 # foreman_enable_ol78_uln_default_ak: "{{ foreman_enable_ol78_uln_default_ccv | bool }}"
 # foreman_enable_ol79_uln_default_ak: "{{ foreman_enable_ol79_uln_default_ccv | bool }}"
 
-# foreman_enable_ol70_patch_uln: false
-# foreman_enable_ol71_patch_uln: false
-# foreman_enable_ol72_patch_uln: false
-# foreman_enable_ol73_patch_uln: false
-# foreman_enable_ol74_patch_uln: false
-# foreman_enable_ol75_patch_uln: false
-# foreman_enable_ol76_patch_uln: false
-# foreman_enable_ol77_patch_uln: false
-# foreman_enable_ol78_patch_uln: false
-# foreman_enable_ol79_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol70_patch_uln: "{{ foreman_enable_ol70_uln | bool }}"
+# foreman_enable_ol71_patch_uln: "{{ foreman_enable_ol71_uln | bool }}"
+# foreman_enable_ol72_patch_uln: "{{ foreman_enable_ol72_uln | bool }}"
+# foreman_enable_ol73_patch_uln: "{{ foreman_enable_ol73_uln | bool }}"
+# foreman_enable_ol74_patch_uln: "{{ foreman_enable_ol74_uln | bool }}"
+# foreman_enable_ol75_patch_uln: "{{ foreman_enable_ol75_uln | bool }}"
+# foreman_enable_ol76_patch_uln: "{{ foreman_enable_ol76_uln | bool }}"
+# foreman_enable_ol77_patch_uln: "{{ foreman_enable_ol77_uln | bool }}"
+# foreman_enable_ol78_patch_uln: "{{ foreman_enable_ol78_uln | bool }}"
+# foreman_enable_ol79_patch_uln: "{{ foreman_enable_ol79_uln | bool }}"
 
 # foreman_enable_ol7_uln_uek: "{{ foreman_enable_ol7_uln | bool }}"
 # foreman_enable_ol7_uln_uekr3: false
@@ -940,7 +1008,8 @@
 
 ### ORACLE LINUX 8 ULN
 
-# foreman_enable_ol8_uln: "{{ foreman_enable_ol_uln | bool }}"
+# foreman_enable_ol8_uln: false
+# foreman_enable_ol8_uln_kickstart: "{{ foreman_enable_ol8_uln | bool }}"
 
 # foreman_enable_ol8_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
 # foreman_enable_ol8_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
@@ -954,17 +1023,29 @@
 # foreman_enable_ol86_uln: false
 # foreman_enable_ol87_uln: false
 # foreman_enable_ol88_uln: false
-# foreman_enable_ol89_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol89_uln: false
 
-# foreman_enable_ol80_uln_default_ccv: false
-# foreman_enable_ol81_uln_default_ccv: false
-# foreman_enable_ol82_uln_default_ccv: false
-# foreman_enable_ol83_uln_default_ccv: false
-# foreman_enable_ol84_uln_default_ccv: false
-# foreman_enable_ol85_uln_default_ccv: false
-# foreman_enable_ol86_uln_default_ccv: false
-# foreman_enable_ol87_uln_default_ccv: false
-# foreman_enable_ol88_uln_default_ccv: false
+# foreman_enable_ol80_uln_kickstart: "{{ foreman_enable_ol80_uln | bool }}"
+# foreman_enable_ol81_uln_kickstart: "{{ foreman_enable_ol81_uln | bool }}"
+# foreman_enable_ol82_uln_kickstart: "{{ foreman_enable_ol82_uln | bool }}"
+# foreman_enable_ol83_uln_kickstart: "{{ foreman_enable_ol83_uln | bool }}"
+# foreman_enable_ol84_uln_kickstart: "{{ foreman_enable_ol84_uln | bool }}"
+# foreman_enable_ol85_uln_kickstart: "{{ foreman_enable_ol85_uln | bool }}"
+# foreman_enable_ol86_uln_kickstart: "{{ foreman_enable_ol86_uln | bool }}"
+# foreman_enable_ol87_uln_kickstart: "{{ foreman_enable_ol87_uln | bool }}"
+# foreman_enable_ol88_uln_kickstart: "{{ foreman_enable_ol88_uln | bool }}"
+# foreman_enable_ol89_uln_kickstart: "{{ foreman_enable_ol8_uln_kickstart | bool or
+#                                        foreman_enable_ol89_uln | bool }}"
+
+# foreman_enable_ol80_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol81_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol82_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol83_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol84_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol85_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol86_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol87_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol88_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 # foreman_enable_ol89_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 
 # foreman_enable_ol80_uln_default_ak: "{{ foreman_enable_ol80_uln_default_ccv | bool }}"
@@ -978,16 +1059,16 @@
 # foreman_enable_ol88_uln_default_ak: "{{ foreman_enable_ol88_uln_default_ccv | bool }}"
 # foreman_enable_ol89_uln_default_ak: "{{ foreman_enable_ol89_uln_default_ccv | bool }}"
 
-# foreman_enable_ol80_patch_uln: false
-# foreman_enable_ol81_patch_uln: false
-# foreman_enable_ol82_patch_uln: false
-# foreman_enable_ol83_patch_uln: false
-# foreman_enable_ol84_patch_uln: false
-# foreman_enable_ol85_patch_uln: false
-# foreman_enable_ol86_patch_uln: false
-# foreman_enable_ol87_patch_uln: false
-# foreman_enable_ol88_patch_uln: false
-# foreman_enable_ol89_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol80_patch_uln: "{{ foreman_enable_ol80_uln | bool }}"
+# foreman_enable_ol81_patch_uln: "{{ foreman_enable_ol81_uln | bool }}"
+# foreman_enable_ol82_patch_uln: "{{ foreman_enable_ol82_uln | bool }}"
+# foreman_enable_ol83_patch_uln: "{{ foreman_enable_ol83_uln | bool }}"
+# foreman_enable_ol84_patch_uln: "{{ foreman_enable_ol84_uln | bool }}"
+# foreman_enable_ol85_patch_uln: "{{ foreman_enable_ol85_uln | bool }}"
+# foreman_enable_ol86_patch_uln: "{{ foreman_enable_ol86_uln | bool }}"
+# foreman_enable_ol87_patch_uln: "{{ foreman_enable_ol87_uln | bool }}"
+# foreman_enable_ol88_patch_uln: "{{ foreman_enable_ol88_uln | bool }}"
+# foreman_enable_ol89_patch_uln: "{{ foreman_enable_ol89_uln | bool }}"
 
 # foreman_enable_ol8_uln_uek: false
 # foreman_enable_ol8_uln_uekr6: "{{ foreman_enable_ol8_uln_uek | bool }}"
@@ -1016,7 +1097,8 @@
 
 ### ORACLE LINUX 9 ULN
 
-# foreman_enable_ol9_uln: "{{ foreman_enable_ol_uln | bool }}"
+# foreman_enable_ol9_uln: false
+# foreman_enable_ol9_uln_kickstart: "{{ foreman_enable_ol9_uln | bool }}"
 
 # foreman_enable_ol9_uln_default_ccv: "{{ foreman_enable_ol_uln_default_ccv | bool }}"
 # foreman_enable_ol9_uln_default_ak: "{{ foreman_enable_ol_uln_default_ak | bool }}"
@@ -1024,11 +1106,17 @@
 # foreman_enable_ol90_uln: false
 # foreman_enable_ol91_uln: false
 # foreman_enable_ol92_uln: false
-# foreman_enable_ol93_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol93_uln: false
 
-# foreman_enable_ol90_uln_default_ccv: false
-# foreman_enable_ol91_uln_default_ccv: false
-# foreman_enable_ol92_uln_default_ccv: false
+# foreman_enable_ol90_uln_kickstart: "{{ foreman_enable_ol90_uln | bool }}"
+# foreman_enable_ol91_uln_kickstart: "{{ foreman_enable_ol91_uln | bool }}"
+# foreman_enable_ol92_uln_kickstart: "{{ foreman_enable_ol92_uln | bool }}"
+# foreman_enable_ol93_uln_kickstart: "{{ foreman_enable_ol9_uln_kickstart | bool or
+#                                        foreman_enable_ol93_uln | bool }}"
+
+# foreman_enable_ol90_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
+# foreman_enable_ol91_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
+# foreman_enable_ol92_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 # foreman_enable_ol93_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 
 # foreman_enable_ol90_uln_default_ak: "{{ foreman_enable_ol90_uln_default_ccv | bool }}"
@@ -1036,10 +1124,10 @@
 # foreman_enable_ol92_uln_default_ak: "{{ foreman_enable_ol92_uln_default_ccv | bool }}"
 # foreman_enable_ol93_uln_default_ak: "{{ foreman_enable_ol93_uln_default_ccv | bool }}"
 
-# foreman_enable_ol90_patch_uln: false
-# foreman_enable_ol91_patch_uln: false
-# foreman_enable_ol92_patch_uln: false
-# foreman_enable_ol93_patch_uln: "{{ foreman_enable_ol7_uln | bool }}"
+# foreman_enable_ol90_patch_uln: "{{ foreman_enable_ol90_uln | bool }}"
+# foreman_enable_ol91_patch_uln: "{{ foreman_enable_ol91_uln | bool }}"
+# foreman_enable_ol92_patch_uln: "{{ foreman_enable_ol92_uln | bool }}"
+# foreman_enable_ol93_patch_uln: "{{ foreman_enable_ol93_uln | bool }}"
 
 # foreman_enable_ol9_uln_uek: false
 # foreman_enable_ol9_uln_uekr7: "{{ foreman_enable_ol9_uln_uek | bool }}"
@@ -1073,6 +1161,7 @@
 ### REDHAT 7
 
 # foreman_enable_redhat7: false
+# foreman_enable_redhat7_kickstart: "{{ foreman_enable_redhat7 | bool }}"
 
 # foreman_enable_redhat7_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
 # foreman_enable_redhat7_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
@@ -1088,16 +1177,28 @@
 # foreman_enable_redhat78: false
 # foreman_enable_redhat79: false
 
-# foreman_enable_redhat70_default_ccv: false
-# foreman_enable_redhat71_default_ccv: false
-# foreman_enable_redhat72_default_ccv: false
-# foreman_enable_redhat73_default_ccv: false
-# foreman_enable_redhat74_default_ccv: false
-# foreman_enable_redhat75_default_ccv: false
-# foreman_enable_redhat76_default_ccv: false
-# foreman_enable_redhat77_default_ccv: false
-# foreman_enable_redhat78_default_ccv: false
-# foreman_enable_redhat79_default_ccv: false
+# foreman_enable_redhat70_kickstart: "{{ foreman_enable_redhat70 | bool }}"
+# foreman_enable_redhat71_kickstart: "{{ foreman_enable_redhat71 | bool }}"
+# foreman_enable_redhat72_kickstart: "{{ foreman_enable_redhat72 | bool }}"
+# foreman_enable_redhat73_kickstart: "{{ foreman_enable_redhat73 | bool }}"
+# foreman_enable_redhat74_kickstart: "{{ foreman_enable_redhat74 | bool }}"
+# foreman_enable_redhat75_kickstart: "{{ foreman_enable_redhat75 | bool }}"
+# foreman_enable_redhat76_kickstart: "{{ foreman_enable_redhat76 | bool }}"
+# foreman_enable_redhat77_kickstart: "{{ foreman_enable_redhat77 | bool }}"
+# foreman_enable_redhat78_kickstart: "{{ foreman_enable_redhat78 | bool }}"
+# foreman_enable_redhat79_kickstart: "{{ foreman_enable_redhat7_kickstart | bool or
+#                                        foreman_enable_redhat79 | bool }}"
+
+# foreman_enable_redhat70_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat71_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat72_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat73_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat74_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat75_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat76_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat77_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat78_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
+# foreman_enable_redhat79_default_ccv: "{{ foreman_enable_redhat7_default_ccv | bool }}"
 
 # foreman_enable_redhat70_default_ak: "{{ foreman_enable_redhat70_default_ccv | bool }}"
 # foreman_enable_redhat71_default_ak: "{{ foreman_enable_redhat71_default_ccv | bool }}"
@@ -1109,17 +1210,6 @@
 # foreman_enable_redhat77_default_ak: "{{ foreman_enable_redhat77_default_ccv | bool }}"
 # foreman_enable_redhat78_default_ak: "{{ foreman_enable_redhat78_default_ccv | bool }}"
 # foreman_enable_redhat79_default_ak: "{{ foreman_enable_redhat79_default_ccv | bool }}"
-
-# foreman_enable_redhat70_kickstart: false
-# foreman_enable_redhat71_kickstart: false
-# foreman_enable_redhat72_kickstart: false
-# foreman_enable_redhat73_kickstart: false
-# foreman_enable_redhat74_kickstart: false
-# foreman_enable_redhat75_kickstart: false
-# foreman_enable_redhat76_kickstart: false
-# foreman_enable_redhat77_kickstart: false
-# foreman_enable_redhat78_kickstart: false
-# foreman_enable_redhat79_kickstart: "{{ foreman_enable_redhat7 | bool }}"
 
 # foreman_enable_redhat7_sat: false
 # foreman_enable_redhat7_aap: false
@@ -1136,6 +1226,7 @@
 ### REDHAT 8
 
 # foreman_enable_redhat8: "{{ foreman_enable_redhat | bool }}"
+# foreman_enable_redhat8_kickstart: "{{ foreman_enable_redhat8 | bool }}"
 
 # foreman_enable_redhat8_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
 # foreman_enable_redhat8_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
@@ -1151,16 +1242,28 @@
 # foreman_enable_redhat88: false
 # foreman_enable_redhat89: false
 
-# foreman_enable_redhat80_default_ccv: false
-# foreman_enable_redhat81_default_ccv: false
-# foreman_enable_redhat82_default_ccv: false
-# foreman_enable_redhat83_default_ccv: false
-# foreman_enable_redhat84_default_ccv: false
-# foreman_enable_redhat85_default_ccv: false
-# foreman_enable_redhat86_default_ccv: false
-# foreman_enable_redhat87_default_ccv: false
-# foreman_enable_redhat88_default_ccv: false
-# foreman_enable_redhat89_default_ccv: false
+# foreman_enable_redhat80_kickstart: "{{ foreman_enable_redhat80 | bool }}"
+# foreman_enable_redhat81_kickstart: "{{ foreman_enable_redhat81 | bool }}"
+# foreman_enable_redhat82_kickstart: "{{ foreman_enable_redhat82 | bool }}"
+# foreman_enable_redhat83_kickstart: "{{ foreman_enable_redhat83 | bool }}"
+# foreman_enable_redhat84_kickstart: "{{ foreman_enable_redhat84 | bool }}"
+# foreman_enable_redhat85_kickstart: "{{ foreman_enable_redhat85 | bool }}"
+# foreman_enable_redhat86_kickstart: "{{ foreman_enable_redhat86 | bool }}"
+# foreman_enable_redhat87_kickstart: "{{ foreman_enable_redhat87 | bool }}"
+# foreman_enable_redhat88_kickstart: "{{ foreman_enable_redhat88 | bool }}"
+# foreman_enable_redhat89_kickstart: "{{ foreman_enable_redhat8_kickstart | bool or
+#                                        foreman_enable_redhat89 | bool }}"
+
+# foreman_enable_redhat80_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat81_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat82_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat83_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat84_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat85_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat86_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat87_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat88_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
+# foreman_enable_redhat89_default_ccv: "{{ foreman_enable_redhat8_default_ccv | bool }}"
 
 # foreman_enable_redhat80_default_ak: "{{ foreman_enable_redhat80_default_ccv | bool }}"
 # foreman_enable_redhat81_default_ak: "{{ foreman_enable_redhat81_default_ccv | bool }}"
@@ -1172,17 +1275,6 @@
 # foreman_enable_redhat87_default_ak: "{{ foreman_enable_redhat87_default_ccv | bool }}"
 # foreman_enable_redhat88_default_ak: "{{ foreman_enable_redhat88_default_ccv | bool }}"
 # foreman_enable_redhat89_default_ak: "{{ foreman_enable_redhat89_default_ccv | bool }}"
-
-# foreman_enable_redhat80_kickstart: false
-# foreman_enable_redhat81_kickstart: false
-# foreman_enable_redhat82_kickstart: false
-# foreman_enable_redhat83_kickstart: false
-# foreman_enable_redhat84_kickstart: false
-# foreman_enable_redhat85_kickstart: false
-# foreman_enable_redhat86_kickstart: false
-# foreman_enable_redhat87_kickstart: false
-# foreman_enable_redhat88_kickstart: false
-# foreman_enable_redhat89_kickstart: "{{ foreman_enable_redhat8 | bool }}"
 
 # foreman_enable_redhat8_sat: false
 # foreman_enable_redhat8_aap: false
@@ -1199,6 +1291,7 @@
 ### REDHAT 9
 
 # foreman_enable_redhat9: "{{ foreman_enable_redhat | bool }}"
+# foreman_enable_redhat9_kickstart: "{{ foreman_enable_redhat9 | bool }}"
 
 # foreman_enable_redhat9_default_ccv: "{{ foreman_enable_redhat_default_ccv | bool }}"
 # foreman_enable_redhat9_default_ak: "{{ foreman_enable_redhat_default_ak | bool }}"
@@ -1208,20 +1301,21 @@
 # foreman_enable_redhat92: false
 # foreman_enable_redhat93: false
 
-# foreman_enable_redhat90_default_ccv: false
-# foreman_enable_redhat91_default_ccv: false
-# foreman_enable_redhat92_default_ccv: false
-# foreman_enable_redhat93_default_ccv: false
+# foreman_enable_redhat90_kickstart: "{{ foreman_enable_redhat90 | bool }}"
+# foreman_enable_redhat91_kickstart: "{{ foreman_enable_redhat91 | bool }}"
+# foreman_enable_redhat92_kickstart: "{{ foreman_enable_redhat92 | bool }}"
+# foreman_enable_redhat93_kickstart: "{{ foreman_enable_redhat9_kickstart | bool or
+#                                        foreman_enable_redhat93 | bool }}"
+
+# foreman_enable_redhat90_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
+# foreman_enable_redhat91_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
+# foreman_enable_redhat92_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
+# foreman_enable_redhat93_default_ccv: "{{ foreman_enable_redhat9_default_ccv | bool }}"
 
 # foreman_enable_redhat90_default_ak: "{{ foreman_enable_redhat90_default_ccv | bool }}"
 # foreman_enable_redhat91_default_ak: "{{ foreman_enable_redhat91_default_ccv | bool }}"
 # foreman_enable_redhat92_default_ak: "{{ foreman_enable_redhat92_default_ccv | bool }}"
 # foreman_enable_redhat93_default_ak: "{{ foreman_enable_redhat93_default_ccv | bool }}"
-
-# foreman_enable_redhat90_kickstart: false
-# foreman_enable_redhat91_kickstart: false
-# foreman_enable_redhat92_kickstart: false
-# foreman_enable_redhat93_kickstart: "{{ foreman_enable_redhat9 | bool }}"
 
 # foreman_enable_redhat9_aap: false
 # foreman_enable_redhat9_rhocp: false
@@ -1252,6 +1346,7 @@
 ### ROCKY 8
 
 # foreman_enable_rocky8: "{{ foreman_enable_rocky | bool }}"
+# foreman_enable_rocky8_kickstart: "{{ foreman_enable_rocky8 | bool }}"
 
 # foreman_enable_rocky8_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
 # foreman_enable_rocky8_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
@@ -1261,13 +1356,20 @@
 # foreman_enable_rocky86: false
 # foreman_enable_rocky87: false
 # foreman_enable_rocky88: false
-# foreman_enable_rocky89: "{{ foreman_enable_rocky8 | bool }}"
+# foreman_enable_rocky89: false
 
-# foreman_enable_rocky84_default_ccv: false
-# foreman_enable_rocky85_default_ccv: false
-# foreman_enable_rocky86_default_ccv: false
-# foreman_enable_rocky87_default_ccv: false
-# foreman_enable_rocky88_default_ccv: false
+# foreman_enable_rocky84_kickstart: "{{ foreman_enable_rocky84 | bool }}"
+# foreman_enable_rocky85_kickstart: "{{ foreman_enable_rocky85 | bool }}"
+# foreman_enable_rocky86_kickstart: "{{ foreman_enable_rocky86 | bool }}"
+# foreman_enable_rocky87_kickstart: "{{ foreman_enable_rocky87 | bool }}"
+# foreman_enable_rocky88_kickstart: "{{ foreman_enable_rocky88 | bool }}"
+# foreman_enable_rocky89_kickstart: "{{ foreman_enable_rocky89 | bool }}"
+
+# foreman_enable_rocky84_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
+# foreman_enable_rocky85_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
+# foreman_enable_rocky86_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
+# foreman_enable_rocky87_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
+# foreman_enable_rocky88_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
 # foreman_enable_rocky89_default_ccv: "{{ foreman_enable_rocky8_default_ccv | bool }}"
 
 # foreman_enable_rocky84_default_ak: "{{ foreman_enable_rocky84_default_ccv | bool }}"
@@ -1288,6 +1390,7 @@
 ### ROCKY 9
 
 # foreman_enable_rocky9: "{{ foreman_enable_rocky | bool }}"
+# foreman_enable_rocky9_kickstart: "{{ foreman_enable_rocky9 | bool }}"
 
 # foreman_enable_rocky9_default_ccv: "{{ foreman_enable_rocky_default_ccv | bool }}"
 # foreman_enable_rocky9_default_ak: "{{ foreman_enable_rocky_default_ak | bool }}"
@@ -1295,11 +1398,16 @@
 # foreman_enable_rocky90: false
 # foreman_enable_rocky91: false
 # foreman_enable_rocky92: false
-# foreman_enable_rocky93: "{{ foreman_enable_rocky9 | bool }}"
+# foreman_enable_rocky93: false
 
-# foreman_enable_rocky90_default_ccv: false
-# foreman_enable_rocky91_default_ccv: false
-# foreman_enable_rocky92_default_ccv: false
+# foreman_enable_rocky90_kickstart: "{{ foreman_enable_rocky90 | bool }}"
+# foreman_enable_rocky91_kickstart: "{{ foreman_enable_rocky91 | bool }}"
+# foreman_enable_rocky92_kickstart: "{{ foreman_enable_rocky92 | bool }}"
+# foreman_enable_rocky93_kickstart: "{{ foreman_enable_rocky93 | bool }}"
+
+# foreman_enable_rocky90_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
+# foreman_enable_rocky91_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
+# foreman_enable_rocky92_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
 # foreman_enable_rocky93_default_ccv: "{{ foreman_enable_rocky9_default_ccv | bool }}"
 
 # foreman_enable_rocky90_default_ak: "{{ foreman_enable_rocky90_default_ccv | bool }}"
