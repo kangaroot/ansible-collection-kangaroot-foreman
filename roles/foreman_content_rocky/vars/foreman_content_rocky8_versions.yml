@@ -116,6 +116,11 @@ foreman_products_rocky84:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.4/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky84 }}"
 
+foreman_products_rocky84_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.4 - BaseOS Kickstart
         label: rocky-84-baseos-kickstart
         <<: *foreman_products_defaults_rocky84
@@ -179,6 +184,11 @@ foreman_products_rocky85:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.5/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky85 }}"
 
+foreman_products_rocky85_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.5 - BaseOS Kickstart
         label: rocky-85-baseos-kickstart
         <<: *foreman_products_defaults_rocky85
@@ -242,6 +252,11 @@ foreman_products_rocky86:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.6/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky86 }}"
 
+foreman_products_rocky86_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.6 - BaseOS Kickstart
         label: rocky-86-baseos-kickstart
         <<: *foreman_products_defaults_rocky86
@@ -305,6 +320,11 @@ foreman_products_rocky87:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.7/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky87 }}"
 
+foreman_products_rocky87_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.7 - BaseOS Kickstart
         label: rocky-87-baseos-kickstart
         <<: *foreman_products_defaults_rocky87
@@ -368,6 +388,11 @@ foreman_products_rocky88:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/8.8/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky88 }}"
 
+foreman_products_rocky88_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.8 - BaseOS Kickstart
         label: rocky-88-baseos-kickstart
         <<: *foreman_products_defaults_rocky88
@@ -431,6 +456,11 @@ foreman_products_rocky89:
         url: "{{ foreman_repo_baseurl_rocky8 }}/8.9/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky89 }}"
 
+foreman_products_rocky89_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 8.9 - BaseOS Kickstart
         label: rocky-89-baseos-kickstart
         <<: *foreman_products_defaults_rocky89
@@ -443,12 +473,19 @@ foreman_products_rocky89:
         organization: "{{ foreman_organization_rocky89 }}"
 
 foreman_products_rocky8_versions: "{{ [] |
-  union( foreman_products_rocky84 | default([]) if foreman_enable_rocky84 | default(false) | bool else [] ) |
-  union( foreman_products_rocky85 | default([]) if foreman_enable_rocky85 | default(false) | bool else [] ) |
-  union( foreman_products_rocky86 | default([]) if foreman_enable_rocky86 | default(false) | bool else [] ) |
-  union( foreman_products_rocky87 | default([]) if foreman_enable_rocky87 | default(false) | bool else [] ) |
-  union( foreman_products_rocky88 | default([]) if foreman_enable_rocky88 | default(false) | bool else [] ) |
-  union( foreman_products_rocky89 | default([]) if foreman_enable_rocky89 | default(false) | bool else [] )
+  union( foreman_products_rocky84 | default([]) if foreman_enable_rocky84 | bool else [] ) |
+  union( foreman_products_rocky85 | default([]) if foreman_enable_rocky85 | bool else [] ) |
+  union( foreman_products_rocky86 | default([]) if foreman_enable_rocky86 | bool else [] ) |
+  union( foreman_products_rocky87 | default([]) if foreman_enable_rocky87 | bool else [] ) |
+  union( foreman_products_rocky88 | default([]) if foreman_enable_rocky88 | bool else [] ) |
+  union( foreman_products_rocky89 | default([]) if foreman_enable_rocky89 | bool else [] ) |
+
+  union( foreman_products_rocky84_kickstart | default([]) if foreman_enable_rocky84_kickstart | bool else [] ) |
+  union( foreman_products_rocky85_kickstart | default([]) if foreman_enable_rocky85_kickstart | bool else [] ) |
+  union( foreman_products_rocky86_kickstart | default([]) if foreman_enable_rocky86_kickstart | bool else [] ) |
+  union( foreman_products_rocky87_kickstart | default([]) if foreman_enable_rocky87_kickstart | bool else [] ) |
+  union( foreman_products_rocky88_kickstart | default([]) if foreman_enable_rocky88_kickstart | bool else [] ) |
+  union( foreman_products_rocky89_kickstart | default([]) if foreman_enable_rocky89_kickstart | bool else [] )
   }}"
 
 
@@ -1015,18 +1052,18 @@ foreman_operatingsystems_rocky88:
 foreman_operatingsystems_rocky89:
   - name: "Rocky"
     major: "8"
-    minor: "8"
+    minor: "9"
     description: "Rocky Linux release 8.9 (Green Obsidian)"
     default_templates: "{{ foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_rocky8_versions: "{{ [] |
-  union( foreman_operatingsystems_rocky84 | default([]) if foreman_enable_rocky84 | bool else [] ) |
-  union( foreman_operatingsystems_rocky85 | default([]) if foreman_enable_rocky85 | bool else [] ) |
-  union( foreman_operatingsystems_rocky86 | default([]) if foreman_enable_rocky86 | bool else [] ) |
-  union( foreman_operatingsystems_rocky87 | default([]) if foreman_enable_rocky87 | bool else [] ) |
-  union( foreman_operatingsystems_rocky88 | default([]) if foreman_enable_rocky88 | bool else [] ) |
-  union( foreman_operatingsystems_rocky89 | default([]) if foreman_enable_rocky89 | bool else [] )
+  union( foreman_operatingsystems_rocky84 | default([]) if foreman_enable_rocky84 | bool or foreman_enable_rocky84_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky85 | default([]) if foreman_enable_rocky85 | bool or foreman_enable_rocky85_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky86 | default([]) if foreman_enable_rocky86 | bool or foreman_enable_rocky86_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky87 | default([]) if foreman_enable_rocky87 | bool or foreman_enable_rocky87_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky88 | default([]) if foreman_enable_rocky88 | bool or foreman_enable_rocky88_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky89 | default([]) if foreman_enable_rocky89 | bool or foreman_enable_rocky89_kickstart | bool else [] )
   }}"
 
 
@@ -1112,12 +1149,12 @@ foreman_installation_media_rocky89:
       - Rocky Linux release 8.9 (Green Obsidian)
 
 foreman_installation_media_rocky8_versions: "{{ [] |
-  union( foreman_installation_media_rocky84 | default([]) if foreman_enable_rocky84 | bool else [] ) |
-  union( foreman_installation_media_rocky85 | default([]) if foreman_enable_rocky85 | bool else [] ) |
-  union( foreman_installation_media_rocky86 | default([]) if foreman_enable_rocky86 | bool else [] ) |
-  union( foreman_installation_media_rocky87 | default([]) if foreman_enable_rocky87 | bool else [] ) |
-  union( foreman_installation_media_rocky88 | default([]) if foreman_enable_rocky88 | bool else [] ) |
-  union( foreman_installation_media_rocky89 | default([]) if foreman_enable_rocky89 | bool else [] )
+  union( foreman_installation_media_rocky84 | default([]) if foreman_enable_rocky84_kickstart | bool else [] ) |
+  union( foreman_installation_media_rocky85 | default([]) if foreman_enable_rocky85_kickstart | bool else [] ) |
+  union( foreman_installation_media_rocky86 | default([]) if foreman_enable_rocky86_kickstart | bool else [] ) |
+  union( foreman_installation_media_rocky87 | default([]) if foreman_enable_rocky87_kickstart | bool else [] ) |
+  union( foreman_installation_media_rocky88 | default([]) if foreman_enable_rocky88_kickstart | bool else [] ) |
+  union( foreman_installation_media_rocky89 | default([]) if foreman_enable_rocky89_kickstart | bool else [] )
   }}"
 
 

@@ -119,6 +119,11 @@ foreman_products_rocky90:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.0/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky90 }}"
 
+foreman_products_rocky90_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 9.0 - BaseOS Kickstart
         label: rocky-90-baseos-kickstart
         <<: *foreman_products_defaults_rocky90
@@ -193,6 +198,11 @@ foreman_products_rocky91:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.1/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky91 }}"
 
+foreman_products_rocky91_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 9.1 - BaseOS Kickstart
         label: rocky-91-baseos-kickstart
         <<: *foreman_products_defaults_rocky91
@@ -267,6 +277,11 @@ foreman_products_rocky92:
         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.2/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky92 }}"
 
+foreman_products_rocky92_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 9.2 - BaseOS Kickstart
         label: rocky-92-baseos-kickstart
         <<: *foreman_products_defaults_rocky92
@@ -341,6 +356,11 @@ foreman_products_rocky93:
         url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
 
+foreman_products_rocky93_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky90 }}"
+    repositories:
       - name: Rocky Linux 9.3 - BaseOS Kickstart
         label: rocky-93-baseos-kickstart
         <<: *foreman_products_defaults_rocky93
@@ -415,6 +435,11 @@ foreman_products_rocky93:
 #         url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAPHANA/x86_64/os/"
 #         organization: "{{ foreman_organization_rocky94 }}"
 
+# foreman_products_rocky94_kickstart:
+#   - name: Rocky Linux
+#     label: Rocky
+#     organization: "{{ foreman_organization_rocky90 }}"
+#     repositories:
 #       - name: Rocky Linux 9.4 - BaseOS Kickstart
 #         label: rocky-94-baseos-kickstart
 #         <<: *foreman_products_defaults_rocky94
@@ -430,7 +455,12 @@ foreman_products_rocky9_versions: "{{ [] |
   union( foreman_products_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
   union( foreman_products_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
   union( foreman_products_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
-  union( foreman_products_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] )
+  union( foreman_products_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] ) |
+
+  union( foreman_products_rocky90_kickstart | default([]) if foreman_enable_rocky90_kickstart | bool else [] ) |
+  union( foreman_products_rocky91_kickstart | default([]) if foreman_enable_rocky91_kickstart | bool else [] ) |
+  union( foreman_products_rocky92_kickstart | default([]) if foreman_enable_rocky92_kickstart | bool else [] ) |
+  union( foreman_products_rocky93_kickstart | default([]) if foreman_enable_rocky93_kickstart | bool else [] )
   }}"
 
 
@@ -990,10 +1020,10 @@ foreman_operatingsystems_rocky93:
 #     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_rocky9_versions: "{{ [] |
-  union( foreman_operatingsystems_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
-  union( foreman_operatingsystems_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
-  union( foreman_operatingsystems_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
-  union( foreman_operatingsystems_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] )
+  union( foreman_operatingsystems_rocky90 | default([]) if foreman_enable_rocky90 | bool or foreman_enable_rocky90_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky91 | default([]) if foreman_enable_rocky91 | bool or foreman_enable_rocky91_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky92 | default([]) if foreman_enable_rocky92 | bool or foreman_enable_rocky92_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] )
   }}"
 
 
