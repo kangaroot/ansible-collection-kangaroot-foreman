@@ -687,13 +687,13 @@ foreman_activation_keys_redhat_main: []
 foreman_activation_keys_redhat: "{{ ( foreman_activation_keys_redhat_main | default([]) if foreman_enable_redhat | bool and foreman_enable_redhat_default_ak | bool else [] ) |
 
   union( foreman_activation_keys_redhat7 | default([]) if foreman_enable_redhat7 | bool and foreman_enable_redhat7_default_ak | bool else [] ) |
-  union( foreman_activation_keys_redhat7_versions | default([]) if foreman_enable_redhat7 | bool | bool else [] ) |
+  union( foreman_activation_keys_redhat7_versions | default([]) if foreman_enable_redhat7 | bool else [] ) |
   union( foreman_activation_keys_redhat7_sat | default([]) if foreman_enable_redhat7_sat | bool and foreman_enable_redhat7_sat_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat7_aap | default([]) if foreman_enable_redhat7_aap | bool and foreman_enable_redhat7_aap_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat7_rhocp | default([]) if foreman_enable_redhat7_rhocp | bool and foreman_enable_redhat7_rhocp_default_ak | bool else [] ) |
 
   union( foreman_activation_keys_redhat8 | default([]) if foreman_enable_redhat8 | bool and foreman_enable_redhat8_default_ak | bool else [] ) |
-  union( foreman_activation_keys_redhat8_versions | default([]) if foreman_enable_redhat8 | bool | bool else [] ) |
+  union( foreman_activation_keys_redhat8_versions | default([]) if foreman_enable_redhat8 | bool else [] ) |
   union( foreman_activation_keys_redhat8_sat | default([]) if foreman_enable_redhat8_sat | bool and foreman_enable_redhat8_sat_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat8_aap | default([]) if foreman_enable_redhat8_aap | bool and foreman_enable_redhat8_aap_default_ak | bool else [] ) |
   union( foreman_activation_keys_redhat8_rhocp | default([]) if foreman_enable_redhat8_rhocp | bool and foreman_enable_redhat8_rhocp_default_ak | bool else [] ) |
