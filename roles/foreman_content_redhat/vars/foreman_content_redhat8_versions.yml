@@ -1025,6 +1025,7 @@ foreman_installation_media_redhat89:
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.9
+      - RHEL 8
   - name: RHEL 8.9 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.9/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
