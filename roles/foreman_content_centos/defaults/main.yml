@@ -192,6 +192,7 @@ foreman_enable_centos_default_ak: "{{ foreman_enable_centos_default_ccv | bool }
 ### CENTOS 7
 
 foreman_enable_centos7: false
+foreman_enable_centos7_kickstart: "{{ foreman_enable_centos7 | bool }}"
 
 foreman_enable_centos7_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 foreman_enable_centos7_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -205,17 +206,28 @@ foreman_enable_centos75: false
 foreman_enable_centos76: false
 foreman_enable_centos77: false
 foreman_enable_centos78: false
-foreman_enable_centos79: "{{ foreman_enable_centos7 | bool }}"
+foreman_enable_centos79: false
 
-foreman_enable_centos70_default_ccv: false
-foreman_enable_centos71_default_ccv: false
-foreman_enable_centos72_default_ccv: false
-foreman_enable_centos73_default_ccv: false
-foreman_enable_centos74_default_ccv: false
-foreman_enable_centos75_default_ccv: false
-foreman_enable_centos76_default_ccv: false
-foreman_enable_centos77_default_ccv: false
-foreman_enable_centos78_default_ccv: false
+foreman_enable_centos70_kickstart: "{{ foreman_enable_centos70 | bool }}"
+foreman_enable_centos71_kickstart: "{{ foreman_enable_centos71 | bool }}"
+foreman_enable_centos72_kickstart: "{{ foreman_enable_centos72 | bool }}"
+foreman_enable_centos73_kickstart: "{{ foreman_enable_centos73 | bool }}"
+foreman_enable_centos74_kickstart: "{{ foreman_enable_centos74 | bool }}"
+foreman_enable_centos75_kickstart: "{{ foreman_enable_centos75 | bool }}"
+foreman_enable_centos76_kickstart: "{{ foreman_enable_centos76 | bool }}"
+foreman_enable_centos77_kickstart: "{{ foreman_enable_centos77 | bool }}"
+foreman_enable_centos78_kickstart: "{{ foreman_enable_centos78 | bool }}"
+foreman_enable_centos79_kickstart: "{{ foreman_enable_centos79 | bool }}"
+
+foreman_enable_centos70_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos71_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos72_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos73_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos74_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos75_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos76_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos77_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
+foreman_enable_centos78_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
 foreman_enable_centos79_default_ccv: "{{ foreman_enable_centos7_default_ccv | bool }}"
 
 foreman_enable_centos70_default_ak: "{{ foreman_enable_centos70_default_ccv | bool }}"
@@ -311,6 +323,7 @@ foreman_enable_centos7_sig_storage_nfs_ganesha4: false
 ### CENTOS 8
 
 foreman_enable_centos8: false
+foreman_enable_centos8_kickstart: "{{ foreman_enable_centos8 | bool }}"
 
 foreman_enable_centos8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 foreman_enable_centos8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -320,13 +333,20 @@ foreman_enable_centos81: false
 foreman_enable_centos82: false
 foreman_enable_centos83: false
 foreman_enable_centos84: false
-foreman_enable_centos85: "{{ foreman_enable_centos8 | bool }}"
+foreman_enable_centos85: false
 
-foreman_enable_centos80_default_ccv: false
-foreman_enable_centos81_default_ccv: false
-foreman_enable_centos82_default_ccv: false
-foreman_enable_centos83_default_ccv: false
-foreman_enable_centos84_default_ccv: false
+foreman_enable_centos80_kickstart: "{{ foreman_enable_centos80 | bool }}"
+foreman_enable_centos81_kickstart: "{{ foreman_enable_centos81 | bool }}"
+foreman_enable_centos82_kickstart: "{{ foreman_enable_centos82 | bool }}"
+foreman_enable_centos83_kickstart: "{{ foreman_enable_centos83 | bool }}"
+foreman_enable_centos84_kickstart: "{{ foreman_enable_centos84 | bool }}"
+foreman_enable_centos85_kickstart: "{{ foreman_enable_centos85 | bool }}"
+
+foreman_enable_centos80_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+foreman_enable_centos81_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+foreman_enable_centos82_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+foreman_enable_centos83_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
+foreman_enable_centos84_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
 foreman_enable_centos85_default_ccv: "{{ foreman_enable_centos8_default_ccv | bool }}"
 
 foreman_enable_centos80_default_ak: "{{ foreman_enable_centos80_default_ccv | bool }}"
@@ -394,6 +414,7 @@ foreman_enable_centos8_sig_storage_nfs_ganesha30: false
 ### CENTOS STREAM 8
 
 foreman_enable_centos_stream8: "{{ foreman_enable_centos | bool }}"
+foreman_enable_centos_stream8_kickstart: "{{ foreman_enable_centos_stream8 | bool }}"
 
 foreman_enable_centos_stream8_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 foreman_enable_centos_stream8_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -473,6 +494,7 @@ foreman_enable_centos_stream8_sig_hyperscale_experimental: false
 ### CENTOS STREAM 9
 
 foreman_enable_centos_stream9: "{{ foreman_enable_centos | bool }}"
+foreman_enable_centos_stream9_kickstart: "{{ foreman_enable_centos_stream9 | bool }}"
 
 foreman_enable_centos_stream9_default_ccv: "{{ foreman_enable_centos_default_ccv | bool }}"
 foreman_enable_centos_stream9_default_ak: "{{ foreman_enable_centos_default_ak | bool }}"
@@ -1582,6 +1604,7 @@ foreman_products_centos_main: []
 foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
 
   union( foreman_products_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
+  union( foreman_products_centos7_kickstart | default([]) if foreman_enable_centos7_kickstart | bool else [] ) |
   union( foreman_products_centos7_versions | default([]) if foreman_enable_centos7 | bool else [] ) |
   union( foreman_products_centos7_dotnet | default([]) if foreman_enable_centos7_dotnet else [] ) |
   union( foreman_products_centos7_sig_sclo | default([]) if foreman_enable_centos7_sig_sclo else [] ) |
@@ -1594,6 +1617,7 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   union( foreman_products_centos7_sig_storage | default([]) if foreman_enable_centos7_sig_storage else [] ) |
 
   union( foreman_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_products_centos8_kickstart | default([]) if foreman_enable_centos8_kickstart | bool else [] ) |
   union( foreman_products_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
   union( foreman_products_centos8_sig_opstools | default([]) if foreman_enable_centos8_sig_opstools else [] ) |
   union( foreman_products_centos8_sig_nfv | default([]) if foreman_enable_centos8_sig_nfv else [] ) |
@@ -1604,6 +1628,7 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   union( foreman_products_centos8_sig_storage | default([]) if foreman_enable_centos8_sig_storage else [] ) |
 
   union( foreman_products_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool else [] ) |
+  union( foreman_products_centos_stream8_kickstart | default([]) if foreman_enable_centos_stream8_kickstart | bool else [] ) |
   union( foreman_products_centos_stream8_sig_opstools | default([]) if foreman_enable_centos_stream8_sig_opstools | bool else [] ) |
   union( foreman_products_centos_stream8_sig_plus | default([]) if foreman_enable_centos_stream8_sig_plus | bool else [] ) |
   union( foreman_products_centos_stream8_sig_nfv | default([]) if foreman_enable_centos_stream8_sig_nfv | bool else [] ) |
@@ -1616,6 +1641,7 @@ foreman_products_centos: "{{ ( foreman_products_centos_main | default([]) if for
   union( foreman_products_centos_stream8_sig_hyperscale | default([]) if foreman_enable_centos_stream8_sig_hyperscale | bool else [] ) |
 
   union( foreman_products_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool else [] ) |
+  union( foreman_products_centos_stream9_kickstart | default([]) if foreman_enable_centos_stream9_kickstart | bool else [] ) |
   union( foreman_products_centos_stream9_sig_opstools | default([]) if foreman_enable_centos_stream9_sig_opstools | bool else [] ) |
   union( foreman_products_centos_stream9_sig_nfv | default([]) if foreman_enable_centos_stream9_sig_nfv | bool else [] ) |
   union( foreman_products_centos_stream9_sig_kmods | default([]) if foreman_enable_centos_stream9_sig_kmods | bool else [] ) |
@@ -1646,12 +1672,12 @@ foreman_content_views_centos: "{{ ( foreman_content_views_centos_main | default(
 
 foreman_operatingsystems_centos_main: []
 foreman_operatingsystems_centos: "{{ ( foreman_operatingsystems_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
-  union( foreman_operatingsystems_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
+  union( foreman_operatingsystems_centos7 | default([]) if foreman_enable_centos7 | bool or foreman_enable_centos7_kickstart | bool else [] ) |
   union( foreman_operatingsystems_centos7_versions | default([]) if foreman_enable_centos7 | bool else [] ) |
-  union( foreman_operatingsystems_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_operatingsystems_centos8 | default([]) if foreman_enable_centos8 | bool or foreman_enable_centos8_kickstart | bool else [] ) |
   union( foreman_operatingsystems_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
-  union( foreman_operatingsystems_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool else [] ) |
-  union( foreman_operatingsystems_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool else [] )
+  union( foreman_operatingsystems_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool or foreman_enable_centos_stream8_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool or foreman_enable_centos_stream9_kickstart | bool else [] )
   }}"
 
 foreman_installation_media_defaults: &foreman_installation_media_defaults
@@ -1687,12 +1713,12 @@ foreman_installation_media_centos_main:
 
 foreman_installation_media_centos: "{{ ( foreman_installation_media_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
 
-  union( foreman_installation_media_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
+  union( foreman_installation_media_centos7 | default([]) if foreman_enable_centos7_kickstart | bool else [] ) |
   union( foreman_installation_media_centos7_versions | default([]) if foreman_enable_centos7 | bool else [] ) |
-  union( foreman_installation_media_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_installation_media_centos8 | default([]) if foreman_enable_centos8_kickstart | bool else [] ) |
   union( foreman_installation_media_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
-  union( foreman_installation_media_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool else [] ) |
-  union( foreman_installation_media_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool else [] )
+  union( foreman_installation_media_centos_stream8 | default([]) if foreman_enable_centos_stream8_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos_stream9 | default([]) if foreman_enable_centos_stream9_kickstart | bool else [] )
   }}"
 
 foreman_activation_keys_centos_main: []
@@ -1709,11 +1735,11 @@ foreman_sync_plan_products_centos_main:
   - CentOS
 
 foreman_sync_plan_products_centos: "{{ ( foreman_sync_plan_products_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
-  union( foreman_sync_plan_products_centos7 | default([]) if foreman_enable_centos7 | bool else [] ) |
+  union( foreman_sync_plan_products_centos7 | default([]) if foreman_enable_centos7 | bool or foreman_enable_centos7_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_centos7_versions | default([]) if foreman_enable_centos7 | bool else [] ) |
-  union( foreman_sync_plan_products_centos8 | default([]) if foreman_enable_centos8 | bool else [] ) |
+  union( foreman_sync_plan_products_centos8 | default([]) if foreman_enable_centos8 | bool or foreman_enable_centos8_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_centos8_versions | default([]) if foreman_enable_centos8 | bool else [] ) |
-  union( foreman_sync_plan_products_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool else [] ) |
-  union( foreman_sync_plan_products_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool else [] )
+  union( foreman_sync_plan_products_centos_stream8 | default([]) if foreman_enable_centos_stream8 | bool or foreman_enable_centos_stream8_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos_stream9 | default([]) if foreman_enable_centos_stream9 | bool or foreman_enable_centos_stream9_kickstart | bool else [] )
   }}"
 

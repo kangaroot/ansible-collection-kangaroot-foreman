@@ -147,6 +147,17 @@ foreman_products_centos70:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos70 }}"
 
+foreman_products_centos70_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos70 }}"
+    repositories:
+      - name: CentOS 7.0.1406 - Base
+        label: centos-70-base
+        <<: *foreman_products_defaults_centos70
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.0.1406/os/x86_64/"
+        organization: "{{ foreman_organization_centos70 }}"
+
 foreman_products_centos71:
   - name: CentOS
     label: CentOS
@@ -198,20 +209,31 @@ foreman_products_centos71:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos71 }}"
 
+foreman_products_centos71_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos71 }}"
+    repositories:
+      - name: CentOS 7.1.1503 - Base
+        label: centos-71-base
+        <<: *foreman_products_defaults_centos71
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.1.1503/os/x86_64/"
+        organization: "{{ foreman_organization_centos71 }}"
+
 foreman_products_centos72:
   - name: CentOS
     label: CentOS
     organization: "{{ foreman_organization_centos72 }}"
     repositories:
-      - name: CentOS 7.2.1511 - Base
-        label: centos-72-base
-        <<: *foreman_products_defaults_centos72
-        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/os/x86_64/"
-        organization: "{{ foreman_organization_centos72 }}"
       - name: CentOS 7.2.1511 - Updates
         label: centos-72-updates
         <<: *foreman_products_defaults_centos72
         url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/updates/x86_64/"
+        organization: "{{ foreman_organization_centos72 }}"
+      - name: CentOS 7.2.1511 - Base
+        label: centos-72-base
+        <<: *foreman_products_defaults_centos72
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/os/x86_64/"
         organization: "{{ foreman_organization_centos72 }}"
       - name: CentOS 7.2.1511 - Extras
         label: centos-72-extras
@@ -247,6 +269,17 @@ foreman_products_centos72:
         <<: *foreman_products_defaults_centos72
         url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.2.1511/experimental/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
+        organization: "{{ foreman_organization_centos72 }}"
+
+foreman_products_centos72_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos72 }}"
+    repositories:
+      - name: CentOS 7.2.1511 - Base
+        label: centos-72-base
+        <<: *foreman_products_defaults_centos72
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.2.1511/os/x86_64/"
         organization: "{{ foreman_organization_centos72 }}"
 
 foreman_products_centos73:
@@ -300,6 +333,17 @@ foreman_products_centos73:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos73 }}"
 
+foreman_products_centos73_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos73 }}"
+    repositories:
+      - name: CentOS 7.3.1611 - Base
+        label: centos-73-base
+        <<: *foreman_products_defaults_centos73
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.3.1611/os/x86_64/"
+        organization: "{{ foreman_organization_centos73 }}"
+
 foreman_products_centos74:
   - name: CentOS
     label: CentOS
@@ -349,6 +393,17 @@ foreman_products_centos74:
         <<: *foreman_products_defaults_centos74
         url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.4.1708/experimental/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
+        organization: "{{ foreman_organization_centos74 }}"
+
+foreman_products_centos74_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos74 }}"
+    repositories:
+      - name: CentOS 7.4.1708 - Base
+        label: centos-74-base
+        <<: *foreman_products_defaults_centos74
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.4.1708/os/x86_64/"
         organization: "{{ foreman_organization_centos74 }}"
 
 foreman_products_centos75:
@@ -402,6 +457,17 @@ foreman_products_centos75:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos75 }}"
 
+foreman_products_centos75_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos75 }}"
+    repositories:
+      - name: CentOS 7.5.1804 - Base
+        label: centos-75-base
+        <<: *foreman_products_defaults_centos75
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.5.1804/os/x86_64/"
+        organization: "{{ foreman_organization_centos75 }}"
+
 foreman_products_centos76:
   - name: CentOS
     label: CentOS
@@ -451,6 +517,17 @@ foreman_products_centos76:
         <<: *foreman_products_defaults_centos76
         url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.6.1810/experimental/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
+        organization: "{{ foreman_organization_centos76 }}"
+
+foreman_products_centos76_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos76 }}"
+    repositories:
+      - name: CentOS 7.6.1810 - Base
+        label: centos-76-base
+        <<: *foreman_products_defaults_centos76
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.6.1810/os/x86_64/"
         organization: "{{ foreman_organization_centos76 }}"
 
 foreman_products_centos77:
@@ -504,6 +581,17 @@ foreman_products_centos77:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos77 }}"
 
+foreman_products_centos77_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos77 }}"
+    repositories:
+      - name: CentOS 7.7.1908 - Base
+        label: centos-77-base
+        <<: *foreman_products_defaults_centos77
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.7.1908/os/x86_64/"
+        organization: "{{ foreman_organization_centos77 }}"
+
 foreman_products_centos78:
   - name: CentOS
     label: CentOS
@@ -553,6 +641,17 @@ foreman_products_centos78:
         <<: *foreman_products_defaults_centos78
         url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.8.2003/experimental/x86_64/"
         gpg_key: RPM-GPG-KEY-CentOS-7
+        organization: "{{ foreman_organization_centos78 }}"
+
+foreman_products_centos78_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos78 }}"
+    repositories:
+      - name: CentOS 7.8.2003 - Base
+        label: centos-78-base
+        <<: *foreman_products_defaults_centos78
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.8.2003/os/x86_64/"
         organization: "{{ foreman_organization_centos78 }}"
 
 foreman_products_centos79:
@@ -606,17 +705,39 @@ foreman_products_centos79:
         gpg_key: RPM-GPG-KEY-CentOS-7
         organization: "{{ foreman_organization_centos79 }}"
 
+foreman_products_centos79_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos79 }}"
+    repositories:
+      - name: CentOS 7.9.2009 - Base
+        label: centos-79-base
+        <<: *foreman_products_defaults_centos79
+        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/os/x86_64/"
+        organization: "{{ foreman_organization_centos79 }}"
+
 foreman_products_centos7_versions: "{{ [] |
-  union( foreman_products_centos70 | default([]) if foreman_enable_centos70 else [] ) |
-  union( foreman_products_centos71 | default([]) if foreman_enable_centos71 else [] ) |
-  union( foreman_products_centos72 | default([]) if foreman_enable_centos72 else [] ) |
-  union( foreman_products_centos73 | default([]) if foreman_enable_centos73 else [] ) |
-  union( foreman_products_centos74 | default([]) if foreman_enable_centos74 else [] ) |
-  union( foreman_products_centos75 | default([]) if foreman_enable_centos75 else [] ) |
-  union( foreman_products_centos76 | default([]) if foreman_enable_centos76 else [] ) |
-  union( foreman_products_centos77 | default([]) if foreman_enable_centos77 else [] ) |
-  union( foreman_products_centos78 | default([]) if foreman_enable_centos78 else [] ) |
-  union( foreman_products_centos79 | default([]) if foreman_enable_centos79 else [] )
+  union( foreman_products_centos70 | default([]) if foreman_enable_centos70 | bool else [] ) |
+  union( foreman_products_centos71 | default([]) if foreman_enable_centos71 | bool else [] ) |
+  union( foreman_products_centos72 | default([]) if foreman_enable_centos72 | bool else [] ) |
+  union( foreman_products_centos73 | default([]) if foreman_enable_centos73 | bool else [] ) |
+  union( foreman_products_centos74 | default([]) if foreman_enable_centos74 | bool else [] ) |
+  union( foreman_products_centos75 | default([]) if foreman_enable_centos75 | bool else [] ) |
+  union( foreman_products_centos76 | default([]) if foreman_enable_centos76 | bool else [] ) |
+  union( foreman_products_centos77 | default([]) if foreman_enable_centos77 | bool else [] ) |
+  union( foreman_products_centos78 | default([]) if foreman_enable_centos78 | bool else [] ) |
+  union( foreman_products_centos79 | default([]) if foreman_enable_centos79 | bool else [] ) |
+
+  union( foreman_products_centos70_kickstart | default([]) if foreman_enable_centos70_kickstart | bool else [] ) |
+  union( foreman_products_centos71_kickstart | default([]) if foreman_enable_centos71_kickstart | bool else [] ) |
+  union( foreman_products_centos72_kickstart | default([]) if foreman_enable_centos72_kickstart | bool else [] ) |
+  union( foreman_products_centos73_kickstart | default([]) if foreman_enable_centos73_kickstart | bool else [] ) |
+  union( foreman_products_centos74_kickstart | default([]) if foreman_enable_centos74_kickstart | bool else [] ) |
+  union( foreman_products_centos75_kickstart | default([]) if foreman_enable_centos75_kickstart | bool else [] ) |
+  union( foreman_products_centos76_kickstart | default([]) if foreman_enable_centos76_kickstart | bool else [] ) |
+  union( foreman_products_centos77_kickstart | default([]) if foreman_enable_centos77_kickstart | bool else [] ) |
+  union( foreman_products_centos78_kickstart | default([]) if foreman_enable_centos78_kickstart | bool else [] ) |
+  union( foreman_products_centos79_kickstart | default([]) if foreman_enable_centos79_kickstart | bool else [] )
   }}"
 
 
@@ -1503,16 +1624,16 @@ foreman_operatingsystems_centos79:
     <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_versions: "{{ [] |
-  union( foreman_operatingsystems_centos70 | default([]) if foreman_enable_centos70 | bool else [] ) |
-  union( foreman_operatingsystems_centos71 | default([]) if foreman_enable_centos71 | bool else [] ) |
-  union( foreman_operatingsystems_centos72 | default([]) if foreman_enable_centos72 | bool else [] ) |
-  union( foreman_operatingsystems_centos73 | default([]) if foreman_enable_centos73 | bool else [] ) |
-  union( foreman_operatingsystems_centos74 | default([]) if foreman_enable_centos74 | bool else [] ) |
-  union( foreman_operatingsystems_centos75 | default([]) if foreman_enable_centos75 | bool else [] ) |
-  union( foreman_operatingsystems_centos76 | default([]) if foreman_enable_centos76 | bool else [] ) |
-  union( foreman_operatingsystems_centos77 | default([]) if foreman_enable_centos77 | bool else [] ) |
-  union( foreman_operatingsystems_centos78 | default([]) if foreman_enable_centos78 | bool else [] ) |
-  union( foreman_operatingsystems_centos79 | default([]) if foreman_enable_centos79 | bool else [] )
+  union( foreman_operatingsystems_centos70 | default([]) if foreman_enable_centos70 | bool or foreman_enable_centos70_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos71 | default([]) if foreman_enable_centos71 | bool or foreman_enable_centos71_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos72 | default([]) if foreman_enable_centos72 | bool or foreman_enable_centos72_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos73 | default([]) if foreman_enable_centos73 | bool or foreman_enable_centos73_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos74 | default([]) if foreman_enable_centos74 | bool or foreman_enable_centos74_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos75 | default([]) if foreman_enable_centos75 | bool or foreman_enable_centos75_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos76 | default([]) if foreman_enable_centos76 | bool or foreman_enable_centos76_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos77 | default([]) if foreman_enable_centos77 | bool or foreman_enable_centos77_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos78 | default([]) if foreman_enable_centos78 | bool or foreman_enable_centos78_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_centos79 | default([]) if foreman_enable_centos79 | bool or foreman_enable_centos79_kickstart | bool else [] )
   }}"
 
 
@@ -1528,86 +1649,85 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_centos70:
   - name: CentOS 7.0.1406
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-70/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-70-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.0.1406 (Core)
 
 foreman_installation_media_centos71:
   - name: CentOS 7.1.1503
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-71/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-71-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.1.1503 (Core)
 
 foreman_installation_media_centos72:
   - name: CentOS 7.2.1511
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-72/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-72-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.2.1511 (Core)
 
 foreman_installation_media_centos73:
   - name: CentOS 7.3.1611
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-73/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-73-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.3.1611 (Core)
 
 foreman_installation_media_centos74:
   - name: CentOS 7.4.1708
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-74/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-74-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.4.1708 (Core)
 
 foreman_installation_media_centos75:
   - name: CentOS 7.5.1804
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-75/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-75-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.5.1804 (Core)
 
 foreman_installation_media_centos76:
   - name: CentOS 7.6.1810
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-76/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-76-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.6.1810 (Core)
 
 foreman_installation_media_centos77:
   - name: CentOS 7.7.1908
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-77/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-77-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.7.1908 (Core)
 
 foreman_installation_media_centos78:
   - name: CentOS 7.8.2003
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-78/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-78-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 7.8.2003 (Core)
 
 foreman_installation_media_centos79:
   - name: CentOS 7.9.2009
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-79/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-79-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
-      - CentOS 7
       - CentOS Linux release 7.9.2009 (Core)
 
 foreman_installation_media_centos7_versions: "{{ [] |
-  union( foreman_installation_media_centos70 | default([]) if foreman_enable_centos70 | bool else [] ) |
-  union( foreman_installation_media_centos71 | default([]) if foreman_enable_centos71 | bool else [] ) |
-  union( foreman_installation_media_centos72 | default([]) if foreman_enable_centos72 | bool else [] ) |
-  union( foreman_installation_media_centos73 | default([]) if foreman_enable_centos73 | bool else [] ) |
-  union( foreman_installation_media_centos74 | default([]) if foreman_enable_centos74 | bool else [] ) |
-  union( foreman_installation_media_centos75 | default([]) if foreman_enable_centos75 | bool else [] ) |
-  union( foreman_installation_media_centos76 | default([]) if foreman_enable_centos76 | bool else [] ) |
-  union( foreman_installation_media_centos77 | default([]) if foreman_enable_centos77 | bool else [] ) |
-  union( foreman_installation_media_centos78 | default([]) if foreman_enable_centos78 | bool else [] ) |
-  union( foreman_installation_media_centos79 | default([]) if foreman_enable_centos79 | bool else [] )
+  union( foreman_installation_media_centos70 | default([]) if foreman_enable_centos70_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos71 | default([]) if foreman_enable_centos71_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos72 | default([]) if foreman_enable_centos72_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos73 | default([]) if foreman_enable_centos73_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos74 | default([]) if foreman_enable_centos74_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos75 | default([]) if foreman_enable_centos75_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos76 | default([]) if foreman_enable_centos76_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos77 | default([]) if foreman_enable_centos77_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos78 | default([]) if foreman_enable_centos78_kickstart | bool else [] ) |
+  union( foreman_installation_media_centos79 | default([]) if foreman_enable_centos79_kickstart | bool else [] )
   }}"
 
 
@@ -1878,15 +1998,15 @@ foreman_sync_plan_products_centos78: []
 foreman_sync_plan_products_centos79: []
 
 foreman_sync_plan_products_centos7_versions: "{{ [] |
-  union( foreman_sync_plan_products_centos70 | default([]) if foreman_enable_centos70 | bool else [] ) |
-  union( foreman_sync_plan_products_centos71 | default([]) if foreman_enable_centos71 | bool else [] ) |
-  union( foreman_sync_plan_products_centos72 | default([]) if foreman_enable_centos72 | bool else [] ) |
-  union( foreman_sync_plan_products_centos73 | default([]) if foreman_enable_centos73 | bool else [] ) |
-  union( foreman_sync_plan_products_centos74 | default([]) if foreman_enable_centos74 | bool else [] ) |
-  union( foreman_sync_plan_products_centos75 | default([]) if foreman_enable_centos75 | bool else [] ) |
-  union( foreman_sync_plan_products_centos76 | default([]) if foreman_enable_centos76 | bool else [] ) |
-  union( foreman_sync_plan_products_centos77 | default([]) if foreman_enable_centos77 | bool else [] ) |
-  union( foreman_sync_plan_products_centos78 | default([]) if foreman_enable_centos78 | bool else [] ) |
-  union( foreman_sync_plan_products_centos79 | default([]) if foreman_enable_centos79 | bool else [] )
+  union( foreman_sync_plan_products_centos70 | default([]) if foreman_enable_centos70 | bool or foreman_enable_centos70_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos71 | default([]) if foreman_enable_centos71 | bool or foreman_enable_centos71_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos72 | default([]) if foreman_enable_centos72 | bool or foreman_enable_centos72_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos73 | default([]) if foreman_enable_centos73 | bool or foreman_enable_centos73_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos74 | default([]) if foreman_enable_centos74 | bool or foreman_enable_centos74_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos75 | default([]) if foreman_enable_centos75 | bool or foreman_enable_centos75_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos76 | default([]) if foreman_enable_centos76 | bool or foreman_enable_centos76_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos77 | default([]) if foreman_enable_centos77 | bool or foreman_enable_centos77_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos78 | default([]) if foreman_enable_centos78 | bool or foreman_enable_centos78_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_centos79 | default([]) if foreman_enable_centos79 | bool or foreman_enable_centos79_kickstart | bool else [] )
   }}"
 

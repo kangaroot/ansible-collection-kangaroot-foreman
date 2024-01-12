@@ -64,6 +64,11 @@ foreman_products_centos8:
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos8 }}"
 
+foreman_products_centos8_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos8 }}"
+    repositories:
       - name: CentOS 8 - BaseOS Kickstart
         label: centos-8-baseos-kickstart
         <<: *foreman_products_defaults

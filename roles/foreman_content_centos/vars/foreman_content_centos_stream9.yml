@@ -68,6 +68,22 @@ foreman_products_centos_stream9:
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Extras
         organization: "{{ foreman_organization_centos_stream9 }}"
 
+foreman_products_centos_stream9_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos_stream9 }}"
+    repositories:
+      - name: CentOS Stream 9 - BaseOS
+        label: centos-stream-9-baseos
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
+      - name: CentOS Stream 9 - AppStream
+        label: centos-stream-9-appstream
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
+
 
 foreman_content_views_centos_stream9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_baseos"
