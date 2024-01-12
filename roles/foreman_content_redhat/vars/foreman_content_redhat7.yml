@@ -272,12 +272,14 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_redhat7:
-  - name: Red Hat 7
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x8664/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - RHEL 7
+foreman_installation_media_redhat7: []
+# ENABLED IN VERSIONS!
+#   - name: RHEL 7.9
+#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel/server/7/7.9/x8664/kickstart/"
+#     <<: *foreman_installation_media_defaults
+#     operatingsystems:
+#       - RHEL 7.9
+#       - RHEL 7
 
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids

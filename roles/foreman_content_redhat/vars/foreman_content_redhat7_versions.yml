@@ -1780,6 +1780,7 @@ foreman_installation_media_redhat79:
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 7.9
+      - RHEL 7
 
 foreman_installation_media_redhat7_versions: "{{ [] |
   union( foreman_installation_media_redhat70 | default([]) if foreman_enable_redhat70_kickstart | bool else [] ) |
@@ -2265,15 +2266,15 @@ foreman_sync_plan_products_redhat79:
   # - Red Hat Ansible Engine
 
 foreman_sync_plan_products_redhat7_versions: "{{ [] |
-  union( foreman_sync_plan_products_redhat70 | default([]) if foreman_enable_redhat70 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat71 | default([]) if foreman_enable_redhat71 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat72 | default([]) if foreman_enable_redhat72 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat73 | default([]) if foreman_enable_redhat73 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat74 | default([]) if foreman_enable_redhat74 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat75 | default([]) if foreman_enable_redhat75 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat76 | default([]) if foreman_enable_redhat76 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat77 | default([]) if foreman_enable_redhat77 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat78 | default([]) if foreman_enable_redhat78 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat79 | default([]) if foreman_enable_redhat79 | bool else [] )
+  union( foreman_sync_plan_products_redhat70 | default([]) if foreman_enable_redhat70 | bool or foreman_enable_redhat70_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat71 | default([]) if foreman_enable_redhat71 | bool or foreman_enable_redhat71_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat72 | default([]) if foreman_enable_redhat72 | bool or foreman_enable_redhat72_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat73 | default([]) if foreman_enable_redhat73 | bool or foreman_enable_redhat73_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat74 | default([]) if foreman_enable_redhat74 | bool or foreman_enable_redhat74_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat75 | default([]) if foreman_enable_redhat75 | bool or foreman_enable_redhat75_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat76 | default([]) if foreman_enable_redhat76 | bool or foreman_enable_redhat76_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat77 | default([]) if foreman_enable_redhat77 | bool or foreman_enable_redhat77_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat78 | default([]) if foreman_enable_redhat78 | bool or foreman_enable_redhat78_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat79 | default([]) if foreman_enable_redhat79 | bool or foreman_enable_redhat79_kickstart | bool else [] )
   }}"
 

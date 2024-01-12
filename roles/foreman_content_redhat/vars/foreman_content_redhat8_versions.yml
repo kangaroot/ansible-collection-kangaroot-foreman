@@ -912,124 +912,125 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_redhat80:
-  - name: Red Hat 8.0 BaseOS
+  - name: RHEL 8.0 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.0/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.0
-  - name: Red Hat 8.0 AppStream
+  - name: RHEL 8.0 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.0/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.0
 
 foreman_installation_media_redhat81:
-  - name: Red Hat 8.1 BaseOS
+  - name: RHEL 8.1 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.1/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.1
-  - name: Red Hat 8.1 AppStream
+  - name: RHEL 8.1 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.1/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.1
 
 foreman_installation_media_redhat82:
-  - name: Red Hat 8.2 BaseOS
+  - name: RHEL 8.2 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.2/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.2
-  - name: Red Hat 8.2 AppStream
+  - name: RHEL 8.2 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.2/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.2
 
 foreman_installation_media_redhat83:
-  - name: Red Hat 8.3 BaseOS
+  - name: RHEL 8.3 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.3/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.3
-  - name: Red Hat 8.3 AppStream
+  - name: RHEL 8.3 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.3/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.3
 
 foreman_installation_media_redhat84:
-  - name: Red Hat 8.4 BaseOS
+  - name: RHEL 8.4 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.4/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.4
-  - name: Red Hat 8.4 AppStream
+  - name: RHEL 8.4 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.4/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.4
 
 foreman_installation_media_redhat85:
-  - name: Red Hat 8.5 BaseOS
+  - name: RHEL 8.5 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.5/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.5
-  - name: Red Hat 8.5 AppStream
+  - name: RHEL 8.5 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.5/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.5
 
 foreman_installation_media_redhat86:
-  - name: Red Hat 8.6 BaseOS
+  - name: RHEL 8.6 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.6
-  - name: Red Hat 8.6 AppStream
+  - name: RHEL 8.6 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.6/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.6
 
 foreman_installation_media_redhat87:
-  - name: Red Hat 8.7 BaseOS
+  - name: RHEL 8.7 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.7
-  - name: Red Hat 8.7 AppStream
+  - name: RHEL 8.7 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.7/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.7
 
 foreman_installation_media_redhat88:
-  - name: Red Hat 8.8 BaseOS
+  - name: RHEL 8.8 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.8
-  - name: Red Hat 8.8 AppStream
+  - name: RHEL 8.8 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.8/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.8
 
 foreman_installation_media_redhat89:
-  - name: Red Hat 8.9 BaseOS
+  - name: RHEL 8.9 BaseOS
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.9/x86_64/baseos/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.9
-  - name: Red Hat 8.9 AppStream
+  - name: RHEL 8.9 AppStream
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel8/8.9/x86_64/appstream/kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - RHEL 8.9
+      - RHEL 8
 
 foreman_installation_media_redhat8_versions: "{{ [] |
   union( foreman_installation_media_redhat80 | default([]) if foreman_enable_redhat80_kickstart | bool else [] ) |
@@ -1253,15 +1254,15 @@ foreman_sync_plan_products_redhat89:
   - Red Hat Enterprise Linux for x86_64
 
 foreman_sync_plan_products_redhat8_versions: "{{ [] |
-  union( foreman_sync_plan_products_redhat80 | default([]) if foreman_enable_redhat80 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat81 | default([]) if foreman_enable_redhat81 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat82 | default([]) if foreman_enable_redhat82 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat83 | default([]) if foreman_enable_redhat83 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat84 | default([]) if foreman_enable_redhat84 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat85 | default([]) if foreman_enable_redhat85 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat86 | default([]) if foreman_enable_redhat86 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat87 | default([]) if foreman_enable_redhat87 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat88 | default([]) if foreman_enable_redhat88 | bool else [] ) |
-  union( foreman_sync_plan_products_redhat89 | default([]) if foreman_enable_redhat89 | bool else [] )
+  union( foreman_sync_plan_products_redhat80 | default([]) if foreman_enable_redhat80 | bool or foreman_enable_redhat80_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat81 | default([]) if foreman_enable_redhat81 | bool or foreman_enable_redhat81_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat82 | default([]) if foreman_enable_redhat82 | bool or foreman_enable_redhat82_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat83 | default([]) if foreman_enable_redhat83 | bool or foreman_enable_redhat83_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat84 | default([]) if foreman_enable_redhat84 | bool or foreman_enable_redhat84_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat85 | default([]) if foreman_enable_redhat85 | bool or foreman_enable_redhat85_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat86 | default([]) if foreman_enable_redhat86 | bool or foreman_enable_redhat86_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat87 | default([]) if foreman_enable_redhat87 | bool or foreman_enable_redhat87_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat88 | default([]) if foreman_enable_redhat88 | bool or foreman_enable_redhat88_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_redhat89 | default([]) if foreman_enable_redhat89 | bool or foreman_enable_redhat89_kickstart | bool else [] )
   }}"
 
