@@ -150,12 +150,12 @@ foreman_content_views_ol9_uln:
       - name: Oracle Linux 9 CodeReady Builder (x86_64)
         product: Oracle Linux
     allow_promote: "{{ foreman_cv_allow_promote_ol9_uln }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_codeready_builder_developer"
-    organization: "{{ foreman_organization_ol9_uln }}"
-    repositories:
-      - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
-        product: Oracle Linux
-    allow_promote: "{{ foreman_cv_allow_promote_ol9_uln }}"
+  # - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_codeready_builder_developer"
+  #   organization: "{{ foreman_organization_ol9_uln }}"
+  #   repositories:
+  #     - name: Oracle Linux 9 CodeReady Builder Developer Preview (x86_64)
+  #       product: Oracle Linux
+  #   allow_promote: "{{ foreman_cv_allow_promote_ol9_uln }}"
   - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_uln_x86_64_distro_builder"
     organization: "{{ foreman_organization_ol9_uln }}"
     repositories:
