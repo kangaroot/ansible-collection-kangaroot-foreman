@@ -22,15 +22,6 @@ foreman_products_defaults: &foreman_products_defaults
   unprotected: "{{ foreman_products_defaults_unprotected_rocky8 | bool }}"
 
 
-foreman_products_defaults_rocky8_kickstart: &foreman_products_defaults_rocky8_kickstart
-  <<: *foreman_products_defaults
-  download_policy: "{{ foreman_products_defaults_download_policy_rocky8_kickstart }}"
-  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky8_kickstart }}"
-  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky8_kickstart | bool }}"
-  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky8_kickstart }}"
-  unprotected: "{{ foreman_products_defaults_unprotected_rocky8_kickstart | bool }}"
-
-
 foreman_products_rocky8:
   - name: Rocky Linux
     label: Rocky
@@ -83,14 +74,19 @@ foreman_products_rocky8:
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky8 }}"
 
+foreman_products_rocky8_kickstart:
+  - name: Rocky Linux
+    label: Rocky
+    organization: "{{ foreman_organization_rocky8 }}"
+    repositories:
       - name: Rocky Linux 8 - BaseOS Kickstart
         label: rocky-8-baseos-kickstart
-        <<: *foreman_products_defaults_rocky8_kickstart
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky8 }}"
       - name: Rocky Linux 8 - AppStream Kickstart
         label: rocky-8-appstream-kickstart
-        <<: *foreman_products_defaults_rocky8_kickstart
+        <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_rocky8 }}/8/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky8 }}"
 
@@ -151,6 +147,7 @@ foreman_content_views_rocky8:
         product: Rocky Linux
     allow_promote: "{{ foreman_cv_allow_promote_rocky8 }}"
 
+foreman_composite_content_views_rocky8:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8"
     organization: "{{ foreman_organization_rocky8 }}"
     composite: True
@@ -174,10 +171,6 @@ foreman_content_views_rocky8:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_resilientstorage"
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky8_rt"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
         latest: true
 
 
@@ -219,12 +212,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 foreman_installation_media_rocky8:
   - name: Rocky Linux 8 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-baseos-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-8-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 8
   - name: Rocky Linux 8 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky_Linux/rocky-8-appstream-kickstart/"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-8-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Rocky Linux 8
@@ -248,9 +241,9 @@ foreman_activation_keys_rocky8:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
         override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-8-plus"
@@ -265,58 +258,6 @@ foreman_activation_keys_rocky8:
         override: disabled
       - label: "{{ foreman_organization }}_Rocky_rocky-8-rt"
         override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
-        override: disabled
-
-
-  # - name: ak_rocky8_foreman
-  #   organization: "{{ foreman_organization_rocky8 }}"
-  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8_foreman"
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-  #       override: default
-
-
-  # - name: ak_rocky8_katello
-  #   organization: "{{ foreman_organization_rocky8 }}"
-  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky8_katello"
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-baseos"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-appstream"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-extras"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Rocky_rocky-8-powertools"
-  #       override: disabled
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el8"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el8"
-  #       override: default
 
 
 foreman_sync_plan_products_rocky8: []

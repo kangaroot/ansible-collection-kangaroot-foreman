@@ -41,7 +41,7 @@ foreman_products_atix_debian12:
     label: ATIX
     organization: "{{ foreman_organization_atix_debian12 }}"
     repositories:
-      - name: ATIX Subscription Manager for Debian 12 (buBookwormllseye)
+      - name: ATIX Subscription Manager for Debian 12 (Bookworm)
         label: atix-debian12
         <<: *foreman_products_defaults_debian
         url: "{{ foreman_repo_baseurl_atix_debian12 }}/Debian12/"
@@ -54,7 +54,7 @@ foreman_content_views_atix_debian11:
     repositories:
       - name: ATIX Subscription Manager for Debian 11 (bullseye)
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_debian11 }}"
 
 foreman_content_views_atix_debian12:
   - name: "{{ foreman_cv_prefix | default('cv_') }}atix_debian12"
@@ -62,7 +62,7 @@ foreman_content_views_atix_debian12:
     repositories:
       - name: ATIX Subscription Manager for Debian 12 (Bookworm)
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_debian12 }}"
 
 
 foreman_content_credentials_atix_debian_main: []

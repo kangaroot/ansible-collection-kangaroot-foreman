@@ -68,6 +68,22 @@ foreman_products_centos_stream9:
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Extras
         organization: "{{ foreman_organization_centos_stream9 }}"
 
+foreman_products_centos_stream9_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos_stream9 }}"
+    repositories:
+      - name: CentOS Stream 9 - BaseOS
+        label: centos-stream-9-baseos
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
+      - name: CentOS Stream 9 - AppStream
+        label: centos-stream-9-appstream
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream9 }}/9-stream/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream9 }}"
+
 
 foreman_content_views_centos_stream9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_baseos"
@@ -122,6 +138,7 @@ foreman_content_views_centos_stream9:
         product: CentOS
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream9 }}"
 
+foreman_composite_content_views_centos_stream9:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos_stream9"
     organization: "{{ foreman_organization_centos_stream9 }}"
     composite: True
@@ -143,10 +160,6 @@ foreman_content_views_centos_stream9:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_resilientstorage"
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_extras_common"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9_next"
         latest: true
 
 
@@ -229,10 +242,6 @@ foreman_activation_keys_centos_stream9:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-9-resilientstorage"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-9-extras-common"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-9"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-9-next"
         override: disabled
 
 

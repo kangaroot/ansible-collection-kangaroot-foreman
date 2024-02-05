@@ -22,6 +22,23 @@
   ansible.builtin.include_tasks: foreman_config_infrastructure.yml
   tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
 
+- name: "Configuration | Include Hosts section Provisioning configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_provisioning.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
+
+- name: "Configuration | Include Hosts section Templates configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_templates.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
+
+- name: "Configuration | Include Infrastructure section compute configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_infrastructure_compute.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
+
+- name: "Configuration | Include Configure section configuration tasks"
+  ansible.builtin.include_tasks: foreman_config_configuration.yml
+  tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
+
+
 - name: "Configuration | Include Content section configuration tasks"
   ansible.builtin.include_tasks: foreman_config_content.yml
   tags: [ "katello", "configuration", "foreman_config_content" ]
@@ -56,21 +73,4 @@
   when:
     foreman_cleanup_content | default(false) | bool
   tags: [ "katello", "configuration", "katello_cleanup" ]
-
-
-- name: "Configuration | Include Hosts section Templates configuration tasks"
-  ansible.builtin.include_tasks: foreman_config_templates.yml
-  tags: [ "foreman", "katello", "configuration", "foreman_config_templates" ]
-
-- name: "Configuration | Include Hosts section Provisioning configuration tasks"
-  ansible.builtin.include_tasks: foreman_config_provisioning.yml
-  tags: [ "foreman", "katello", "configuration", "foreman_config_provisioning" ]
-
-- name: "Configuration | Include Infrastructure section compute configuration tasks"
-  ansible.builtin.include_tasks: foreman_config_infrastructure_compute.yml
-  tags: [ "foreman", "katello", "configuration", "foreman_config_infrastructure" ]
-
-- name: "Configuration | Include Configure section configuration tasks"
-  ansible.builtin.include_tasks: foreman_config_configuration.yml
-  tags: [ "foreman", "katello", "configuration", "foreman_config_configuration" ]
 

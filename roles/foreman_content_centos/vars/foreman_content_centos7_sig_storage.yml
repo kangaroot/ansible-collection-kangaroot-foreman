@@ -178,6 +178,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha30:
         <<: *foreman_products_defaults_centos7_sig_storage
         url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-30/"
         gpg_key: RPM-GPG-KEY-CentOS-SIG-Storage
+
 foreman_products_centos7_sig_storage_nfs_ganesha4:
   - name: CentOS
     label: CentOS

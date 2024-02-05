@@ -999,7 +999,7 @@ foreman_content_views_ol6_uln:
   #   repositories:
   #     - name: HA Utilities for MySQL and Oracle Linux 6 (x86_64)
   #       product: Oracle Linux
-  #   allow_promote: False
+  #   allow_promote: "{{ foreman_cv_allow_promote_ol6_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_MySQL"
   #   organization: "{{ foreman_organization_ol6_uln }}"
   #   repositories:
@@ -1536,6 +1536,7 @@ foreman_content_views_ol6_uln:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol6_uln }}"
 
+foreman_composite_content_views_ol6_uln:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol6"
     organization: "{{ foreman_organization_ol6_uln }}"
     composite: True
@@ -1929,7 +1930,7 @@ foreman_activation_keys_ol6_uln:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_latest"
-        override: disabled
+        override: enabled
       # - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_latest_archive"
       #   override: disabled
       # - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_ELS"
@@ -1945,7 +1946,7 @@ foreman_activation_keys_ol6_uln:
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEK_base"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEK_latest"
-        override: disabled
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEKR3_latest"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_uln_x86_64_UEKR4"

@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### MICROSOFT
+
 foreman_repo_baseurl_microsoft: https://packages.microsoft.com
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### MICROSOFT
 
 foreman_enable_microsoft: false
 
@@ -68,6 +72,8 @@ foreman_products_defaults_unprotected_microsoft: "{{ foreman_products_defaults_u
 ### ORGANIZATION VARS
 #######################################
 
+### MICROSOFT
+
 foreman_organization_microsoft: "{{ foreman_organization }}"
 
 foreman_organization_microsoft_azure_cli: "{{ foreman_organization_microsoft }}"
@@ -114,128 +120,42 @@ foreman_organization_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_organiz
 ### MICROSOFT
 
 foreman_cv_allow_promote_microsoft: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_microsoft: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_microsoft: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_azure_cli: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_azure_cli: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_azure_cli: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_edge: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_edge: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_edge_deb: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
-foreman_ccv_allow_promote_microsoft_edge_deb: "{{ foreman_ccv_allow_promote_microsoft_edge | bool }}"
-foreman_ccv_auto_publish_microsoft_edge_deb: "{{ foreman_ccv_auto_publish_microsoft_edge | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_prod: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_prod: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_prod_el7: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_el7: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_el7: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_el8: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_el8: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_el8: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_el9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_el9: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_el9: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_debian9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_debian9: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_debian9: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_debian10: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_debian10: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_debian10: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_debian11: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_debian11: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_debian11: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_debian12: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_debian12: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_debian12: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 foreman_cv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_allow_promote_microsoft_prod_ubuntu2204: "{{ foreman_ccv_allow_promote_microsoft_prod | bool }}"
-foreman_ccv_auto_publish_microsoft_prod_ubuntu2204: "{{ foreman_ccv_auto_publish_microsoft_prod | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2017: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2017: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2017_el7: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2017_el7: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2017_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2017 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2017_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2017 | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2019: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2019: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2019_el7: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2019_el7: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2019_el7: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2019_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2019_ubuntu1804: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2019 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2019_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2019 | bool }}"
-
 
 foreman_cv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_cv_allow_promote_microsoft | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2022: "{{ foreman_ccv_allow_promote_microsoft | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2022: "{{ foreman_ccv_auto_publish_microsoft | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2022_el8: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2022_el8: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2022_el9: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2022_ubuntu2004: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
-
 foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_ccv_allow_promote_microsoft_mssql_server_2022 | bool }}"
-foreman_ccv_auto_publish_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_ccv_auto_publish_microsoft_mssql_server_2022 | bool }}"
 
 
 #######################################

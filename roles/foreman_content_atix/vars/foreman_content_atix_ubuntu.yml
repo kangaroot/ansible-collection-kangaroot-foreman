@@ -54,7 +54,7 @@ foreman_content_views_atix_ubuntu2004:
     repositories:
       - name: ATIX Subscription Manager for Ubuntu 20.04 (Focal Fossa)
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_ubuntu2004 }}"
 
 foreman_content_views_atix_ubuntu2204:
   - name: "{{ foreman_cv_prefix | default('cv_') }}atix_ubuntu2204"
@@ -62,7 +62,7 @@ foreman_content_views_atix_ubuntu2204:
     repositories:
       - name: ATIX Subscription Manager for Ubuntu 22.04 (Jammy Jellyfish)
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_ubuntu2204 }}"
 
 
 foreman_content_credentials_atix_ubuntu_main: []

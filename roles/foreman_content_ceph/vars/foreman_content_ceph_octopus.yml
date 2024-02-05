@@ -119,7 +119,7 @@ foreman_content_views_ceph_octopus_el7:
         product: Ceph
       - name: Ceph noarch packages - Octopus - EL7
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_el7 }}"
 
 foreman_content_views_ceph_octopus_el8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_octopus_el8"
@@ -129,7 +129,7 @@ foreman_content_views_ceph_octopus_el8:
         product: Ceph
       - name: Ceph noarch packages - Octopus - EL8
         product: Ceph
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_ceph_octopus_el8 }}"
 
 foreman_content_views_ceph_octopus_deb10:
   - name: "{{ foreman_cv_prefix | default('cv_') }}ceph_octopus_deb10"

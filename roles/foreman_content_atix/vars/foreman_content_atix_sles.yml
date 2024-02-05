@@ -51,7 +51,7 @@ foreman_content_views_atix_sles12:
     repositories:
       - name: ATIX Subscription Manager for SLES 12
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_sles12 }}"
 
 foreman_content_views_atix_sles15:
   - name: "{{ foreman_cv_prefix | default('cv_') }}atix_sles15"
@@ -59,7 +59,7 @@ foreman_content_views_atix_sles15:
     repositories:
       - name: ATIX Subscription Manager for SLES 15
         product: ATIX
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_atix_sles15 }}"
 
 
 foreman_content_credentials_atix_sles_main: []

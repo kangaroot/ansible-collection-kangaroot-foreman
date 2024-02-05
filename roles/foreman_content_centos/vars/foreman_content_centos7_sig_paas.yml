@@ -207,7 +207,7 @@ foreman_content_views_centos7_sig_paas_openshift_origin310:
     repositories:
       - name: CentOS 7 - OpenShift Origin
         product: CentOS
-    allow_promote: False
+    allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin310 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin311:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin311"

@@ -478,6 +478,7 @@ foreman_content_views_ol6:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
+foreman_composite_content_views_ol6:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol6"
     organization: "{{ foreman_organization_ol6 }}"
     composite: True
@@ -703,7 +704,7 @@ foreman_activation_keys_ol6:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_latest"
-        override: disabled
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_addons"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_SoftwareCollections"
@@ -713,7 +714,7 @@ foreman_activation_keys_ol6:
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEK_base"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEK_latest"
-        override: disabled
+        override: enabled
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEKR3_latest"
         override: disabled
       - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEKR4"

@@ -114,13 +114,6 @@
 # foreman_organization_centos84: "{{ foreman_organization_centos8 }}"
 # foreman_organization_centos85: "{{ foreman_organization_centos8 }}"
 
-# foreman_organization_centos80_kickstart: "{{ foreman_organization_centos8 }}"
-# foreman_organization_centos81_kickstart: "{{ foreman_organization_centos8 }}"
-# foreman_organization_centos82_kickstart: "{{ foreman_organization_centos8 }}"
-# foreman_organization_centos83_kickstart: "{{ foreman_organization_centos8 }}"
-# foreman_organization_centos84_kickstart: "{{ foreman_organization_centos8 }}"
-# foreman_organization_centos85_kickstart: "{{ foreman_organization_centos8 }}"
-
 # foreman_organization_centos8_sig_opstools: "{{ foreman_organization_centos8 }}"
 # foreman_organization_centos8_sig_nfv: "{{ foreman_organization_centos8 }}"
 # foreman_organization_centos8_sig_nfv_extras: "{{ foreman_organization_centos8_sig_nfv }}"
@@ -568,6 +561,7 @@
 # foreman_organization_ol86: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol87: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol88: "{{ foreman_organization_ol8 }}"
+# foreman_organization_ol89: "{{ foreman_organization_ol8 }}"
 
 # foreman_organization_ol8_uek: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol8_uekr6: "{{ foreman_organization_ol8 }}"
@@ -600,6 +594,7 @@
 # foreman_organization_ol90: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol91: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol92: "{{ foreman_organization_ol9 }}"
+# foreman_organization_ol93: "{{ foreman_organization_ol9 }}"
 
 # foreman_organization_ol9_uek: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol9_uekr7: "{{ foreman_organization_ol9 }}"
@@ -656,7 +651,6 @@
 # foreman_organization_ol79_patch_uln: "{{ foreman_organization_ol7_uln }}"
 
 # foreman_organization_ol7_uln_uek: "{{ foreman_organization_ol7_uln }}"
-
 # foreman_organization_ol7_uln_uekr3: "{{ foreman_organization_ol7_uln }}"
 # foreman_organization_ol7_uln_uekr3_ofed: "{{ foreman_organization_ol7_uln }}"
 # foreman_organization_ol7_uln_uekr3_dtrace: "{{ foreman_organization_ol7_uln }}"
@@ -742,6 +736,7 @@
 # foreman_organization_ol86_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol87_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol88_uln: "{{ foreman_organization_ol8_uln }}"
+# foreman_organization_ol89_uln: "{{ foreman_organization_ol8_uln }}"
 
 # foreman_organization_ol80_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol81_patch_uln: "{{ foreman_organization_ol8_uln }}"
@@ -752,6 +747,7 @@
 # foreman_organization_ol86_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol87_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol88_patch_uln: "{{ foreman_organization_ol8_uln }}"
+# foreman_organization_ol89_patch_uln: "{{ foreman_organization_ol8_uln }}"
 
 # foreman_organization_ol8_uln_uek: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol8_uln_uekr6: "{{ foreman_organization_ol8_uln }}"
@@ -785,10 +781,12 @@
 # foreman_organization_ol90_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol91_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol92_uln: "{{ foreman_organization_ol9_uln }}"
+# foreman_organization_ol93_uln: "{{ foreman_organization_ol9_uln }}"
 
 # foreman_organization_ol90_patch_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol91_patch_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol92_patch_uln: "{{ foreman_organization_ol9_uln }}"
+# foreman_organization_ol93_patch_uln: "{{ foreman_organization_ol9_uln }}"
 
 # foreman_organization_ol9_uln_uek: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol9_uln_uekr7: "{{ foreman_organization_ol9_uln }}"
@@ -815,6 +813,8 @@
 ### REDHAT
 
 # foreman_organization_redhat: "{{ foreman_organization }}"
+
+### REDHAT 7
 
 # foreman_organization_redhat7: "{{ foreman_organization_redhat }}"
 
@@ -844,6 +844,8 @@
 # foreman_organization_redhat7_aap: "{{ foreman_organization_redhat7 }}"
 # foreman_organization_redhat7_rhocp: "{{ foreman_organization_redhat7 }}"
 
+### REDHAT 8
+
 # foreman_organization_redhat8: "{{ foreman_organization_redhat }}"
 
 # foreman_organization_redhat80: "{{ foreman_organization_redhat8 }}"
@@ -855,6 +857,7 @@
 # foreman_organization_redhat86: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat87: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat88: "{{ foreman_organization_redhat8 }}"
+# foreman_organization_redhat89: "{{ foreman_organization_redhat8 }}"
 
 # foreman_organization_redhat80_kickstart: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat81_kickstart: "{{ foreman_organization_redhat8 }}"
@@ -865,20 +868,25 @@
 # foreman_organization_redhat86_kickstart: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat87_kickstart: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat88_kickstart: "{{ foreman_organization_redhat8 }}"
+# foreman_organization_redhat89_kickstart: "{{ foreman_organization_redhat8 }}"
 
 # foreman_organization_redhat8_sat: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat8_aap: "{{ foreman_organization_redhat8 }}"
 # foreman_organization_redhat8_rhocp: "{{ foreman_organization_redhat8 }}"
+
+### REDHAT 9
 
 # foreman_organization_redhat9: "{{ foreman_organization_redhat }}"
 
 # foreman_organization_redhat90: "{{ foreman_organization_redhat9 }}"
 # foreman_organization_redhat91: "{{ foreman_organization_redhat9 }}"
 # foreman_organization_redhat92: "{{ foreman_organization_redhat9 }}"
+# foreman_organization_redhat93: "{{ foreman_organization_redhat9 }}"
 
 # foreman_organization_redhat90_kickstart: "{{ foreman_organization_redhat9 }}"
 # foreman_organization_redhat91_kickstart: "{{ foreman_organization_redhat9 }}"
 # foreman_organization_redhat92_kickstart: "{{ foreman_organization_redhat9 }}"
+# foreman_organization_redhat93_kickstart: "{{ foreman_organization_redhat9 }}"
 
 # foreman_organization_redhat9_aap: "{{ foreman_organization_redhat9 }}"
 # foreman_organization_redhat9_rhocp: "{{ foreman_organization_redhat9 }}"
@@ -906,12 +914,7 @@
 # foreman_organization_rocky86: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky87: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky88: "{{ foreman_organization_rocky8 }}"
-
-# foreman_organization_rocky84_kickstart: "{{ foreman_organization_rocky8 }}"
-# foreman_organization_rocky85_kickstart: "{{ foreman_organization_rocky8 }}"
-# foreman_organization_rocky86_kickstart: "{{ foreman_organization_rocky8 }}"
-# foreman_organization_rocky87_kickstart: "{{ foreman_organization_rocky8 }}"
-# foreman_organization_rocky88_kickstart: "{{ foreman_organization_rocky8 }}"
+# foreman_organization_rocky89: "{{ foreman_organization_rocky8 }}"
 
 # foreman_organization_rocky8_sig_core: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky8_sig_core_common: "{{ foreman_organization_rocky8_sig_core }}"
@@ -928,10 +931,7 @@
 # foreman_organization_rocky90: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky91: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky92: "{{ foreman_organization_rocky9 }}"
-
-# foreman_organization_rocky90_kickstart: "{{ foreman_organization_rocky9 }}"
-# foreman_organization_rocky91_kickstart: "{{ foreman_organization_rocky9 }}"
-# foreman_organization_rocky92_kickstart: "{{ foreman_organization_rocky9 }}"
+# foreman_organization_rocky93: "{{ foreman_organization_rocky9 }}"
 
 # foreman_organization_rocky9_sig_core: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky9_sig_core_common: "{{ foreman_organization_rocky9_sig_core }}"

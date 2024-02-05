@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### FEDORA COPR
+
 foreman_repo_baseurl_fedora_copr: https://download.copr.fedorainfracloud.org/results
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### FEDORA COPR
 
 foreman_enable_fedora_copr: false
 
@@ -39,6 +43,8 @@ foreman_products_defaults_unprotected_fedora_copr: "{{ foreman_products_defaults
 ### ORGANIZATION VARS
 #######################################
 
+### FEDORA COPR
+
 foreman_organization_fedora_copr: "{{ foreman_organization }}"
 
 foreman_organization_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_organization_fedora_copr }}"
@@ -56,30 +62,13 @@ foreman_organization_fedora_copr_dmann_subscription_manager_ol8: "{{ foreman_org
 ### FEDORA COPR
 
 foreman_cv_allow_promote_fedora_copr: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_fedora_copr: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_fedora_copr: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_cv_allow_promote_fedora_copr | bool }}"
-foreman_ccv_allow_promote_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_ccv_allow_promote_fedora_copr | bool }}"
-foreman_ccv_auto_publish_fedora_copr_dgoodwin_subscription_manager: "{{ foreman_ccv_auto_publish_fedora_copr | bool }}"
-
 foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol6: "{{ foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager | bool }}"
-foreman_ccv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol6: "{{ foreman_ccv_allow_promote_fedora_copr_dgoodwin_subscription_manager | bool }}"
-foreman_ccv_auto_publish_fedora_copr_dgoodwin_subscription_manager_ol6: "{{ foreman_ccv_auto_publish_fedora_copr_dgoodwin_subscription_manager | bool }}"
-
 foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol7: "{{ foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager | bool }}"
-foreman_ccv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol7: "{{ foreman_ccv_allow_promote_fedora_copr_dgoodwin_subscription_manager | bool }}"
-foreman_ccv_auto_publish_fedora_copr_dgoodwin_subscription_manager_ol7: "{{ foreman_ccv_auto_publish_fedora_copr_dgoodwin_subscription_manager | bool }}"
-
 
 foreman_cv_allow_promote_fedora_copr_dmann_subscription_manager: "{{ foreman_cv_allow_promote_fedora_copr | bool }}"
-foreman_ccv_allow_promote_fedora_copr_dmann_subscription_manager: "{{ foreman_ccv_allow_promote_fedora_copr | bool }}"
-foreman_ccv_auto_publish_fedora_copr_dmann_subscription_manager: "{{ foreman_ccv_auto_publish_fedora_copr | bool }}"
-
 foreman_cv_allow_promote_fedora_copr_dmann_subscription_manager_ol8: "{{ foreman_cv_allow_promote_fedora_copr_dmann_subscription_manager | bool }}"
-foreman_ccv_allow_promote_fedora_copr_dmann_subscription_manager_ol8: "{{ foreman_ccv_allow_promote_fedora_copr_dmann_subscription_manager | bool }}"
-foreman_ccv_auto_publish_fedora_copr_dmann_subscription_manager_ol8: "{{ foreman_ccv_auto_publish_fedora_copr_dmann_subscription_manager | bool }}"
 
 
 #######################################

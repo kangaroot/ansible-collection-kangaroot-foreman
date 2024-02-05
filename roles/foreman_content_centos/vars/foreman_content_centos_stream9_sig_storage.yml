@@ -200,7 +200,7 @@ foreman_products_centos_stream9_sig_storage: "{{ [] |
 #     repositories:
 #       - name: CentOS Stream 9 - Storage SIG - common
 #         product: CentOS
-#     allow_promote: False
+#     allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_storage_samba413 }}"
 
 foreman_content_views_centos_stream9_sig_storage_samba414:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_samba414"

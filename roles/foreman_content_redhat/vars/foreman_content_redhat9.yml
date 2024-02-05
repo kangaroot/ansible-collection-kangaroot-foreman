@@ -60,6 +60,7 @@ foreman_content_views_redhat9:
         product: 'Red Hat Enterprise Linux for x86_64'
     allow_promote: "{{ foreman_cv_allow_promote_redhat9 }}"
 
+foreman_composite_content_views_redhat9:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9"
     organization: "{{ foreman_organization_redhat9 }}"
     composite: True
@@ -73,8 +74,6 @@ foreman_content_views_redhat9:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_supplementary"
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_sat_client_6"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel9"
         latest: true
 
 
@@ -96,6 +95,7 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_redhat9:
   - name: "RedHat"
     major: "9"
+    minor: ""
     description: "RHEL 9"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
@@ -111,17 +111,20 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 
-foreman_installation_media_redhat9:
-  - name: Red Hat 9 BaseOS
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/baseos/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - RHEL 9
-  - name: Red Hat 9 AppStream
-    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.2/x86_64/appstream/kickstart/"
-    <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - RHEL 9
+foreman_installation_media_redhat9: []
+# ENABLED IN VERSIONS!
+#   - name: RHEL 9.3 BaseOS
+#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.3/x86_64/baseos/kickstart/"
+#     <<: *foreman_installation_media_defaults
+#     operatingsystems:
+#       - RHEL 9.3
+#       - RHEL 9
+#   - name: RHEL 9.3 AppStream
+#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/content/dist/rhel9/9.3/x86_64/appstream/kickstart/"
+#     <<: *foreman_installation_media_defaults
+#     operatingsystems:
+#       - RHEL 9.3
+#       - RHEL 9
 
 
 # Refer to https://access.redhat.com/solutions/125873 for pool ids
@@ -167,8 +170,6 @@ foreman_activation_keys_redhat9:
         override: default
       - label: satellite-client-6-for-rhel-9-x86_64-rpms
         override: default
-      - label: "{{ foreman_organization }}_EPEL_epel-9"
-        override: disabled
 
 
 foreman_sync_plan_products_redhat9:

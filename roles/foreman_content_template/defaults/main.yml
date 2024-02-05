@@ -151,6 +151,16 @@ foreman_enable_template_el7: false
 foreman_enable_template_el8: "{{ foreman_enable_template | bool }}"
 foreman_enable_template_el9: "{{ foreman_enable_template | bool }}"
 
+foreman_enable_template_default_ccv: false
+foreman_enable_template_el7_default_ccv: false
+foreman_enable_template_el8_default_ccv: "{{ foreman_enable_template_default_ccv | bool }}"
+foreman_enable_template_el9_default_ccv: "{{ foreman_enable_template_default_ccv | bool }}"
+
+foreman_enable_template_default_ak: "{{ foreman_enable_template_default_ccv | bool }}"
+foreman_enable_template_el7_default_ak: "{{ foreman_enable_template_default_ak | bool }}"
+foreman_enable_template_el8_default_ak: "{{ foreman_enable_template_default_ak | bool }}"
+foreman_enable_template_el9_default_ak: "{{ foreman_enable_template_default_ak | bool }}"
+
 
 #######################################
 ### ORGANIZATION VARS
@@ -204,10 +214,15 @@ foreman_products_template: "{{ ( foreman_products_template_main | default([]) if
   }}"
 
 foreman_content_views_template_main: []
+foreman_composite_content_views_template_main: []
 foreman_content_views_template: "{{ ( foreman_content_views_template_main | default([]) if foreman_enable_template | bool else [] ) |
   union( foreman_content_views_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
   union( foreman_content_views_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
-  union( foreman_content_views_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
+  union( foreman_content_views_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] ) |
+  union( foreman_composite_content_views_template_main | default([]) if foreman_enable_template | bool and foreman_enable_template_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_template_el7 | default([]) if foreman_enable_template_el7 | bool and foreman_enable_template_el7_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_template_el8 | default([]) if foreman_enable_template_el8 | bool and foreman_enable_template_el7_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_template_el9 | default([]) if foreman_enable_template_el9 | bool and foreman_enable_template_el7_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_template_main: []
@@ -225,10 +240,10 @@ foreman_installation_media_template: "{{ ( foreman_installation_media_template_m
   }}"
 
 foreman_activation_keys_template_main: []
-foreman_activation_keys_template: "{{ ( foreman_activation_keys_template_main | default([]) if foreman_enable_template | bool else [] ) |
-  union( foreman_activation_keys_template_el7 | default([]) if foreman_enable_template_el7 | bool else [] ) |
-  union( foreman_activation_keys_template_el8 | default([]) if foreman_enable_template_el8 | bool else [] ) |
-  union( foreman_activation_keys_template_el9 | default([]) if foreman_enable_template_el9 | bool else [] )
+foreman_activation_keys_template: "{{ ( foreman_activation_keys_template_main | default([]) if foreman_enable_template | bool and foreman_enable_template_default_ak | bool else [] ) |
+  union( foreman_activation_keys_template_el7 | default([]) if foreman_enable_template_el7 | bool and foreman_enable_template_el7_default_ak | bool else [] ) |
+  union( foreman_activation_keys_template_el8 | default([]) if foreman_enable_template_el8 | bool and foreman_enable_template_el8_default_ak | bool else [] ) |
+  union( foreman_activation_keys_template_el9 | default([]) if foreman_enable_template_el9 | bool and foreman_enable_template_el9_default_ak | bool else [] )
   }}"
 
 foreman_sync_plan_products_template_main: []

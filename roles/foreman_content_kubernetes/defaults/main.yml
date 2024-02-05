@@ -5,12 +5,16 @@
 ### URLS
 #######################################
 
+### KUBERNETES
+
 foreman_repo_baseurl_kubernetes: https://packages.cloud.google.com/yum
 
 
 #######################################
 ### ENABLE VARS
 #######################################
+
+### KUBERNETES
 
 foreman_enable_kubernetes: false
 
@@ -34,6 +38,8 @@ foreman_products_defaults_unprotected_kubernetes: "{{ foreman_products_defaults_
 ### ORGANIZATION VARS
 #######################################
 
+### KUBERNETES
+
 foreman_organization_kubernetes: "{{ foreman_organization }}"
 
 foreman_organization_kubernetes_el7: "{{ foreman_organization_kubernetes }}"
@@ -46,13 +52,8 @@ foreman_organization_kubernetes_el7: "{{ foreman_organization_kubernetes }}"
 ### KUBERNETES
 
 foreman_cv_allow_promote_kubernetes: "{{ foreman_cv_allow_promote | bool }}"
-foreman_ccv_allow_promote_kubernetes: "{{ foreman_ccv_allow_promote | bool }}"
-foreman_ccv_auto_publish_kubernetes: "{{ foreman_ccv_auto_publish | bool }}"
-
 
 foreman_cv_allow_promote_kubernetes_el7: "{{ foreman_cv_allow_promote_kubernetes | bool }}"
-foreman_ccv_allow_promote_kubernetes_el7: "{{ foreman_ccv_allow_promote_kubernetes | bool }}"
-foreman_ccv_auto_publish_kubernetes_el7: "{{ foreman_ccv_auto_publish_kubernetes | bool }}"
 
 
 #######################################

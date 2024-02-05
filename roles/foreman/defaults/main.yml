@@ -173,7 +173,8 @@ foreman_operatingsystems_deb_architectures:
   - amd64
 foreman_operatingsystems_deb_ptables: "{{
   [ 'Preseed default',
-    'Preseed default LVM' ] |
+    'Preseed default LVM',
+    'Preseed default autoinstall' ] |
     union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
   }}"
 

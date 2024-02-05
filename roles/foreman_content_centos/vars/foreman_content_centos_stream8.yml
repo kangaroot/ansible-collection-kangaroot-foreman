@@ -71,6 +71,22 @@ foreman_products_centos_stream8:
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/ResilientStorage/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
 
+foreman_products_centos_stream8_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos_stream8 }}"
+    repositories:
+      - name: CentOS Stream 8 - BaseOS
+        label: centos-stream-8-baseos
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream8 }}"
+      - name: CentOS Stream 8 - AppStream
+        label: centos-stream-8-appstream
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_centos_stream8 }}"
+
 
 foreman_content_views_centos_stream8:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_baseos"
@@ -129,6 +145,7 @@ foreman_content_views_centos_stream8:
         product: CentOS
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
 
+foreman_composite_content_views_centos_stream8:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos_stream8"
     organization: "{{ foreman_organization_centos_stream8 }}"
     composite: True
@@ -152,12 +169,6 @@ foreman_content_views_centos_stream8:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_rt"
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_resilientstorage"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_modular"
-        latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel8_next"
         latest: true
 
 
@@ -226,9 +237,9 @@ foreman_activation_keys_centos_stream8:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-baseos"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-appstream"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras-common"
@@ -242,12 +253,6 @@ foreman_activation_keys_centos_stream8:
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-rt"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-stream-8-resilientstorage"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-modular"
-        override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-8-next"
         override: disabled
 
 

@@ -78,6 +78,17 @@ foreman_products_centos7:
         url: "{{ foreman_repo_baseurl_centos_altarch }}/7/experimental/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
+foreman_products_centos7_kickstart:
+  - name: CentOS
+    label: CentOS
+    organization: "{{ foreman_organization_centos7 }}"
+    repositories:
+      - name: CentOS 7 - Base
+        label: centos-7-base
+        <<: *foreman_products_defaults
+        url: "{{ foreman_repo_baseurl_centos7 }}/7/os/x86_64/"
+        organization: "{{ foreman_organization_centos7 }}"
+
 
 foreman_content_views_centos7:
   - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
@@ -131,6 +142,7 @@ foreman_content_views_centos7:
         product: CentOS
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
 
+foreman_composite_content_views_centos7:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
     organization: "{{ foreman_organization_centos7 }}"
     composite: True
@@ -153,60 +165,6 @@ foreman_content_views_centos7:
         latest: true
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel_experimental"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}epel7"
-        latest: true
-
-  # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_foreman"
-  #   organization: "{{ foreman_organization_centos7 }}"
-  #   composite: True
-  #   allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
-  #   auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
-  #   components:
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_sclo"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
-  #       latest: true
-  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
-  #       latest: true
-
-  # - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_katello"
-  #   organization: "{{ foreman_organization_centos7 }}"
-  #   composite: True
-  #   allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
-  #   auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
-  #   components:
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_sclo"
-  #       latest: true
-  #     - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
-  #       latest: true
-  #     - content_view: "cv_foreman_{{ foreman_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_foreman_plugins_{{ foreman_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_katello_{{ foreman_katello_version_label }}_candlepin_el7"
-  #       latest: true
-  #     - content_view: "cv_pulpcore_{{ foreman_pulpcore_version_label }}_el7"
-  #       latest: true
-  #     - content_view: "cv_puppet{{ foreman_puppet_version }}_el7"
-  #       latest: true
 
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -249,26 +207,6 @@ foreman_installation_media_centos7:
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 7
-  # - name: CentOS 7 - Updates
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-updates/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 7
-  # - name: CentOS 7 - Extras
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-extras/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 7
-  # - name: CentOS 7 - CentOSPlus
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-centosplus/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 7
-  # - name: CentOS 7 - Fasttrack
-  #   path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-fasttrack/"
-  #   <<: *foreman_installation_media_defaults
-  #   operatingsystems:
-  #     - CentOS 7
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults
@@ -289,11 +227,11 @@ foreman_activation_keys_centos7:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_CentOS_centos-7-base"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-7-updates"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-7-extras"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_CentOS_centos-7-plus"
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-7-fasttrack"
@@ -304,58 +242,6 @@ foreman_activation_keys_centos7:
         override: disabled
       - label: "{{ foreman_organization }}_CentOS_centos-7-kernel-experimental"
         override: disabled
-      - label: "{{ foreman_organization }}_EPEL_epel-7"
-        override: disabled
-
-  # - name: ak_centos7_foreman
-  #   organization: "{{ foreman_organization_centos7 }}"
-  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_foreman"
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-base"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-updates"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-extras"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-sclo"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-rh"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}-el7"
-  #       override: default
-
-  # - name: ak_centos7_katello
-  #   organization: "{{ foreman_organization_centos7 }}"
-  #   content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7_katello"
-  #   <<: *foreman_activation_keys_defaults
-  #   content_overrides:
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-base"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-updates"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-extras"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-sclo"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_CentOS_centos-7-sclo-rh"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-{{ foreman_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_foreman-plugins-{{ foreman_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_katello-{{ foreman_katello_version_label }}-candlepin-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_pulpcore-{{ foreman_pulpcore_version_label }}-el7"
-  #       override: default
-  #     - label: "{{ foreman_organization }}_Foreman_puppet{{ foreman_puppet_version }}_el7"
-  #       override: default
 
 
 foreman_sync_plan_products_centos7: []

@@ -9,7 +9,7 @@ namespace: kangaroot
 name: foreman
 
 # The version of the collection. Must be compatible with semantic versioning
-version: 1.1.0
+version: 1.2.0
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: README.md
@@ -47,14 +47,14 @@ dependencies:
   theforeman.operations: '>=1.3.0'
 
 # The URL of the originating SCM repository
-repository: https://gitlab.kangaroot.net/product-development/ansible-collection-kangaroot-foreman
+repository: https://github.com/kangaroot/ansible-collection-kangaroot-foreman
 
 # The URL to any online docs
-documentation: https://gitlab.kangaroot.net/product-development/ansible-collection-kangaroot-foreman/-/wikis/home
+documentation: https://github.com/kangaroot/ansible-collection-kangaroot-foreman
 
 # The URL to the homepage of the collection/project
-homepage: https://gitlab.kangaroot.net/product-development/ansible-collection-kangaroot-foreman
+homepage: https://github.com/kangaroot/ansible-collection-kangaroot-foreman
 
 # The URL to the collection issue tracker
-issues: https://gitlab.kangaroot.net/product-development/ansible-collection-kangaroot-foreman/-/issues
+issues: https://github.com/kangaroot/ansible-collection-kangaroot-foreman/issues
 
