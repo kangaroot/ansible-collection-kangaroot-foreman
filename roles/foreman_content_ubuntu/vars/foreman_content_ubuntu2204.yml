@@ -30,18 +30,18 @@ foreman_products_defaults_ubuntu2204: &foreman_products_defaults_ubuntu2204
 
 
 foreman_products_ubuntu2204:
-  - name: Ubuntu
-    label: Ubuntu
+  - name: "{{ foreman_product_name_prefix | default('') }}Ubuntu"
+    label: "{{ foreman_product_label_prefix | default('') }}Ubuntu"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
-        label: ubuntu-2204
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish)"
+        label: "{{ foreman_repo_label_prefix | default('') }}ubuntu-2204"
         <<: *foreman_products_defaults_ubuntu2204
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy
         organization: "{{ foreman_organization_ubuntu2204 }}"
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates
-        label: ubuntu-2204-updates
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates"
+        label: "{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-updates"
         <<: *foreman_products_defaults_ubuntu2204
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-updates
@@ -52,14 +52,14 @@ foreman_products_ubuntu2204:
       #   url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
       #   deb_releases: jammy-proposed
       #   organization: "{{ foreman_organization_ubuntu2204 }}"
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports
-        label: ubuntu-2204-backports
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports"
+        label: "{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-backports"
         <<: *foreman_products_defaults_ubuntu2204
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-backports
         organization: "{{ foreman_organization_ubuntu2204 }}"
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates
-        label: ubuntu-2204-security
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates"
+        label: "{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-security"
         <<: *foreman_products_defaults_ubuntu2204
         url: "{{ foreman_repo_baseurl_ubuntu2204 }}/"
         deb_releases: jammy-security
@@ -67,17 +67,17 @@ foreman_products_ubuntu2204:
 
 
 foreman_content_views_ubuntu2204:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
-        product: Ubuntu
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish)"
+        product: "{{ foreman_product_name_prefix | default('') }}Ubuntu"
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_updates"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_updates"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates
-        product: Ubuntu
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Updates"
+        product: "{{ foreman_product_name_prefix | default('') }}Ubuntu"
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_proposed"
   #   organization: "{{ foreman_organization_ubuntu2204 }}"
@@ -85,35 +85,35 @@ foreman_content_views_ubuntu2204:
   #     - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Proposed Updates
   #       product: Ubuntu
   #   allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_backports"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_backports"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports
-        product: Ubuntu
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Backports"
+        product: "{{ foreman_product_name_prefix | default('') }}Ubuntu"
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_security"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_security"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     repositories:
-      - name: Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates
-        product: Ubuntu
+      - name: "{{ foreman_repo_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish) - Security updates"
+        product: "{{ foreman_product_name_prefix | default('') }}Ubuntu"
     allow_promote: "{{ foreman_cv_allow_promote_ubuntu2204 }}"
 
 foreman_composite_content_views_ubuntu2204:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}ubuntu2204"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ubuntu2204"
     organization: "{{ foreman_organization_ubuntu2204 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_ubuntu2204 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_ubuntu2204 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_updates"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_updates"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_proposed"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_backports"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_backports"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ubuntu2204_security"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ubuntu2204_security"
         latest: true
 
 
@@ -149,7 +149,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_ubuntu2204:
-  - name: Ubuntu 22.04 LTS (Jammy Jellyfish)
+  - name: "{{ foreman_media_name_prefix | default('') }}Ubuntu 22.04 LTS (Jammy Jellyfish)"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Ubuntu/ubuntu-2204/"
     <<: *foreman_installation_media_defaults
 
@@ -162,20 +162,20 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_ubuntu2204:
-  - name: ak_ubuntu2204
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}ubuntu2204"
     organization: "{{ foreman_organization_ubuntu2204 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}ubuntu2204"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ubuntu2204"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-2204"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2204"
         override: default
-      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-2204-updates"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-updates"
         override: default
-      # - label: "{{ foreman_organization }}_Ubuntu_ubuntu-2204-proposed"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-proposed"
       #   override: default
-      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-2204-backports"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-backports"
         override: disabled
-      - label: "{{ foreman_organization }}_Ubuntu_ubuntu-2204-security"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2204-security"
         override: disabled
 
 

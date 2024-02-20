@@ -356,7 +356,7 @@ foreman_installation_media_ubuntu_defaults: &foreman_installation_media_ubuntu_d
   locations: "{{ foreman_all_locations_namelist }}"
 
 foreman_installation_media_ubuntu_main:
-  - name: Ubuntu mirror
+  - name: "{{ foreman_media_name_prefix | default('') }}Ubuntu mirror"
     path: "{{ foreman_repo_baseurl_ubuntu }}"
     <<: *foreman_installation_media_ubuntu_defaults
     operatingsystems: "{{ [] |
@@ -379,7 +379,7 @@ foreman_activation_keys_ubuntu: "{{ ( foreman_activation_keys_ubuntu_main | defa
   }}"
 
 foreman_sync_plan_products_ubuntu_main:
-  - Ubuntu
+  - "{{ foreman_product_name_prefix | default('') }}Ubuntu"
 
 foreman_sync_plan_products_ubuntu: "{{ ( foreman_sync_plan_products_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_sync_plan_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
