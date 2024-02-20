@@ -18,37 +18,37 @@ foreman_products_redhat9_aap:
         organization: "{{ foreman_organization_redhat9_aap }}"
 
 foreman_content_views_redhat9_aap:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_ansible_automation_platform_22"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel8_ansible_automation_platform_22"
     organization: "{{ foreman_organization_redhat9_aap }}"
     repositories:
-      - name: Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs
-        product: 'Red Hat Ansible Automation Platform'
+      - name: "{{ foreman_repo_name_prefix | default('') }}Red Hat Ansible Automation Platform 2.2 for RHEL 8 x86_64 RPMs"
+        product: "{{ foreman_product_name_prefix | default('') }}'Red Hat Ansible Automation Platform'"
     allow_promote: "{{ foreman_cv_allow_promote_redhat9_aap }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel8_ansible_automation_platform_23"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel8_ansible_automation_platform_23"
     organization: "{{ foreman_organization_redhat9_aap }}"
     repositories:
-      - name: Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs
-        product: 'Red Hat Ansible Automation Platform'
+      - name: "{{ foreman_repo_name_prefix | default('') }}Red Hat Ansible Automation Platform 2.3 for RHEL 8 x86_64 RPMs"
+        product: "{{ foreman_product_name_prefix | default('') }}'Red Hat Ansible Automation Platform'"
     allow_promote: "{{ foreman_cv_allow_promote_redhat9_aap }}"
 
 foreman_composite_content_views_redhat9_aap:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9_aap"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rhel9_aap"
     organization: "{{ foreman_organization_redhat9_aap }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_redhat9_aap }}"
     auto_publish: "{{ foreman_ccv_auto_publish_redhat9_aap }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_supplementary"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_supplementary"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_sat_client_6"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_sat_client_6"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel8_ansible_automation_platform_22"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel8_ansible_automation_platform_22"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel8_ansible_automation_platform_23"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel8_ansible_automation_platform_23"
         latest: true
 
 foreman_operatingsystems_redhat9_aap: []
@@ -83,9 +83,9 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
   release_version: 9
 
 foreman_activation_keys_redhat9_aap:
-  - name: ak_rhel9_aap
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}rhel9_aap"
     organization: "{{ foreman_organization_redhat9_aap }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9_aap"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rhel9_aap"
     <<: *foreman_activation_keys_defaults_el9
     # subscriptions:
     #   - name: "Red Hat Ansible Automation Platform"

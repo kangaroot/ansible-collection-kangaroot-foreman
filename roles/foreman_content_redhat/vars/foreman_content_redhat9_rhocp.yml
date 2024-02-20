@@ -27,37 +27,37 @@ foreman_products_redhat9_rhocp:
       - rhocp-4.13-for-rhel-9-x86_64-rpms
 
 foreman_content_views_redhat9_rhocp:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_rhocp_412"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_rhocp_412"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
     repositories:
-      - name: Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs
-        product: 'Red Hat OpenShift Container Platform'
+      - name: "{{ foreman_repo_name_prefix | default('') }}Red Hat OpenShift Container Platform 4.12 for RHEL 9 x86_64 RPMs"
+        product: "{{ foreman_product_name_prefix | default('') }}'Red Hat OpenShift Container Platform'"
     allow_promote: "{{ foreman_cv_allow_promote_redhat9_rhocp }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}rhel9_rhocp_413"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_rhocp_413"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
     repositories:
-      - name: Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs
-        product: 'Red Hat OpenShift Container Platform'
+      - name: "{{ foreman_repo_name_prefix | default('') }}Red Hat OpenShift Container Platform 4.13 for RHEL 9 x86_64 RPMs"
+        product: "{{ foreman_product_name_prefix | default('') }}'Red Hat OpenShift Container Platform'"
     allow_promote: "{{ foreman_cv_allow_promote_redhat9_rhocp }}"
 
 foreman_composite_content_views_redhat9_rhocp:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9_rhocp"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rhel9_rhocp"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_redhat9_rhocp }}"
     auto_publish: "{{ foreman_ccv_auto_publish_redhat9_rhocp }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_supplementary"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_supplementary"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}rhel9_sat_client_6"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_sat_client_6"
         latest: true
-      - content_View: "{{ foreman_cv_prefix | default('cv_') }}rhel9_rhocp_412"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_rhocp_412"
         latest: true
-      - content_View: "{{ foreman_cv_prefix | default('cv_') }}rhel9_rhocp_413"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rhel9_rhocp_413"
         latest: true
 
 foreman_operatingsystems_redhat9_rhocp: []
@@ -92,9 +92,9 @@ foreman_activation_keys_defaults_el9: &foreman_activation_keys_defaults_el9
   release_version: 9
 
 foreman_activation_keys_redhat9_rhocp:
-  - name: ak_rhel9_rhocp
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}rhel9_rhocp"
     organization: "{{ foreman_organization_redhat9_rhocp }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rhel9_rhocp"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rhel9_rhocp"
     <<: *foreman_activation_keys_defaults_el9
     # subscriptions:
     #   - name: "Red Hat Enterprise Linux for x86_64"
