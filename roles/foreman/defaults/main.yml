@@ -101,6 +101,23 @@ foreman_content_views: []
 foreman_activation_keys: []
 foreman_sync_plans: []
 
+# foreman_cred_name_prefix: "{{ foreman_organization }}-"
+# foreman_product_name_prefix: "{{ foreman_organization }} - "
+# foreman_product_label_prefix: "{{ foreman_organization }}_"
+# foreman_repo_name_prefix: "{{ foreman_organization }} - "
+# foreman_repo_label_prefix: "{{ foreman_organization }}-"
+# foreman_media_name_prefix: "{{ foreman_organization }} - "
+# foreman_media_label_prefix: "{{ foreman_organization }}_"
+# foreman_os_name_prefix: "{{ foreman_organization }} - "
+# foreman_os_label_prefix: "{{ foreman_organization }}_"
+# foreman_ak_name_prefix: "{{ foreman_organization }}_"
+# foreman_cv_name_prefix: "{{ foreman_organization }}_"
+# foreman_ccv_name_prefix: "{{ foreman_organization }}_"
+# foreman_ptable_name_prefix: "{{ foreman_organization }} - "
+# foreman_ptable_label_prefix: "{{ foreman_organization }}_"
+# foreman_template_name_prefix: "{{ foreman_organization }} - "
+# foreman_template_label_prefix: "{{ foreman_organization }}_"
+
 ### ======================================
 ### Product Defaults
 ### ======================================
