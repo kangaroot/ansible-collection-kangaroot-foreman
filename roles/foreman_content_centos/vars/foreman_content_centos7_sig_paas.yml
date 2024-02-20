@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-7
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
   download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,111 +25,111 @@ foreman_products_defaults_centos7_sig_paas: &foreman_products_defaults_centos7_s
 
 
 foreman_products_centos7_sig_paas_openshift_origin:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin
-        label: centos-7-openshift-origin
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin }}"
 
 foreman_products_centos7_sig_paas_openshift_origin13:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin13 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.3
-        label: centos-7-openshift-origin13
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.3"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin13"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin13/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin13 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin14:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin14 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.4
-        label: centos-7-openshift-origin14
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.4"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin14"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin14/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin14 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin15:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin15 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.5
-        label: centos-7-openshift-origin15
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.5"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin15"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin15/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin15 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin36:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin36 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.6
-        label: centos-7-openshift-origin36
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.6"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin36"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin36/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin36 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin37:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin37 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.7
-        label: centos-7-openshift-origin37
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.7"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin37"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin37/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin37 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin39:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin39 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.9
-        label: centos-7-openshift-origin39
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.9"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin39"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin39/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin39 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin310:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin310 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.10
-        label: centos-7-openshift-origin310
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.10"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin310"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin310/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin310 }}"
 
 foreman_products_centos7_sig_paas_openshift_origin311:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin311 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.11
-        label: centos-7-openshift-origin311
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.11"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openshift-origin311"
         <<: *foreman_products_defaults_centos7_sig_paas
         url: "{{ foreman_repo_baseurl_centos7 }}/7/paas/x86_64/openshift-origin311/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-PaaS
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
         organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin311 }}"
 
 foreman_products_centos7_sig_paas: "{{ [] |
@@ -146,75 +146,75 @@ foreman_products_centos7_sig_paas: "{{ [] |
 
 
 foreman_content_views_centos7_sig_paas_openshift_origin:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin13:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin13"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin13"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin13 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.3
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.3"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin13 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin14:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin14"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin14"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin14 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.4
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.4"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin14 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin15:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin15"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin15"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin15 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 1.5
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 1.5"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin15 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin36:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin36"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin36"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin36 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.6
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.6"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin36 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin37:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin37"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin37"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin37 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.7
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.7"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin37 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin39:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin39"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin39"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin39 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.9
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.9"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin39 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin310:
   - name: cv_centos7_openshift_origin310 3.10
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin310 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin310 }}"
 
 foreman_content_views_centos7_sig_paas_openshift_origin311:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openshift_origin311"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openshift_origin311"
     organization: "{{ foreman_organization_centos7_sig_paas_openshift_origin311 }}"
     repositories:
-      - name: CentOS 7 - OpenShift Origin 3.11
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenShift Origin 3.11"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_paas_openshift_origin311 }}"
 
 foreman_content_views_centos7_sig_paas: "{{ [] |

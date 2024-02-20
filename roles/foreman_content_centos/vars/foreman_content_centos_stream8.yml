@@ -5,7 +5,7 @@ foreman_content_credentials_centos_stream8: []
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-Official
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Official"
   download_policy: "{{ foreman_products_defaults_download_policy_centos_stream8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -19,156 +19,156 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_centos_stream8:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - BaseOS
-        label: centos-stream-8-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-baseos"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - AppStream
-        label: centos-stream-8-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-appstream"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
 
-      - name: CentOS Stream 8 - Extras
-        label: centos-stream-8-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-extras"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - Extras common packages
-        label: centos-stream-8-extras-common
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - Extras common packages"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-extras-common"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/extras/x86_64/extras-common/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Extras
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Extras"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - PowerTools
-        label: centos-stream-8-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-powertools"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - HighAvailability
-        label: centos-stream-8-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-ha"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - NFV
-        label: centos-stream-8-nfv
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - NFV"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-nfv"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/NFV/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - RealTime
-        label: centos-stream-8-rt
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - RealTime"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-rt"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/RT/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - ResilientStorage
-        label: centos-stream-8-resilientstorage
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - ResilientStorage"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-resilientstorage"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/ResilientStorage/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
 
 foreman_products_centos_stream8_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - BaseOS
-        label: centos-stream-8-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-baseos"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
-      - name: CentOS Stream 8 - AppStream
-        label: centos-stream-8-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-8-appstream"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_stream8 }}/8-stream/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos_stream8 }}"
 
 
 foreman_content_views_centos_stream8:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_baseos"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_appstream"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_extras"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_extras_common"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_extras_common"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - Extras common packages
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - Extras common packages"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_powertools"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_ha"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_nfv"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_nfv"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - NFV
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - NFV"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_rt"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_rt"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - RealTime
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - RealTime"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_resilientstorage"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_resilientstorage"
     organization: "{{ foreman_organization_centos_stream8 }}"
     repositories:
-      - name: CentOS Stream 8 - ResilientStorage
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 8 - ResilientStorage"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream8 }}"
 
 foreman_composite_content_views_centos_stream8:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos_stream8"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos_stream8"
     organization: "{{ foreman_organization_centos_stream8 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos_stream8 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos_stream8 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_extras_common"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_extras_common"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_nfv"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_nfv"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_rt"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_rt"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos_stream8_resilientstorage"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream8_resilientstorage"
         latest: true
 
 
@@ -207,12 +207,12 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_centos_stream8:
-  - name: CentOS Stream 8 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS Stream 8 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-8-baseos/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Stream release 8
-  - name: CentOS Stream 8 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS Stream 8 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-stream-8-appstream/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -231,28 +231,28 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_centos_stream8:
-  - name: ak_centos8stream
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos8stream"
     organization: "{{ foreman_organization_centos_stream8 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos_stream8"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos_stream8"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-extras-common"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-extras-common"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-nfv"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-nfv"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-rt"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-rt"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-stream-8-resilientstorage"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-stream-8-resilientstorage"
         override: disabled
 
 

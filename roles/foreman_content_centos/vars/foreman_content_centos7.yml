@@ -1,15 +1,15 @@
 ---
 
 foreman_content_credentials_centos7:
-  - name: RPM-GPG-KEY-CentOS-7
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-7', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-7') }}"
-  - name: RPM-GPG-KEY-CentOS-Debug-7
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Debug-7"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Debug-7', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Debug-7') }}"
-  - name: RPM-GPG-KEY-CentOS-Testing-7
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Testing-7"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing-7', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing-7') }}"
@@ -17,7 +17,7 @@ foreman_content_credentials_centos7:
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-7
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
   download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -31,139 +31,139 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_centos7:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Base
-        label: centos-7-base
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Base"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-base"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/os/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
-      - name: CentOS 7 - Updates
-        label: centos-7-updates
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Updates"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-updates"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/updates/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
-      - name: CentOS 7 - Extras
-        label: centos-7-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-extras"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/extras/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
-      - name: CentOS 7 - Plus
-        label: centos-7-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-plus"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/centosplus/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
-      - name: CentOS 7 - fasttrack
-        label: centos-7-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - fasttrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-fasttrack"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/fasttrack/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
-      - name: CentOS 7 - cr
-        label: centos-7-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - cr"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-cr"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cr/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
-      - name: CentOS 7 LTS Kernels for x86_64
-        label: centos-7-kernel
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 LTS Kernels for x86_64"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-kernel"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_altarch }}/7/kernel/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
-      - name: CentOS 7 Experimental Kernels for x86_64
-        label: centos-7-kernel-experimental
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 Experimental Kernels for x86_64"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-kernel-experimental"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos_altarch }}/7/experimental/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
 foreman_products_centos7_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Base
-        label: centos-7-base
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Base"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-base"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_centos7 }}/7/os/x86_64/"
         organization: "{{ foreman_organization_centos7 }}"
 
 
 foreman_content_views_centos7:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_base"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Base
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Base"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_updates"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Updates
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Updates"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_extras"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_plus"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_fasttrack"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 - fasttrack
-        product: CentOS
-    allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_cr"
-    organization: "{{ foreman_organization_centos7 }}"
-    repositories:
-      - name: CentOS 7 - cr
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - fasttrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_cr"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 LTS Kernels for x86_64
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - cr"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel_experimental"
+
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_kernel"
     organization: "{{ foreman_organization_centos7 }}"
     repositories:
-      - name: CentOS 7 Experimental Kernels for x86_64
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 LTS Kernels for x86_64"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_kernel_experimental"
+    organization: "{{ foreman_organization_centos7 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 Experimental Kernels for x86_64"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7 }}"
 
 foreman_composite_content_views_centos7:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos7"
     organization: "{{ foreman_organization_centos7 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos7 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos7 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_base"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_base"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_updates"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_updates"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_fasttrack"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_kernel"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos7_kernel_experimental"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_kernel_experimental"
         latest: true
 
 
@@ -202,7 +202,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_centos7:
-  - name: CentOS 7
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 7"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-7-base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -221,26 +221,26 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_centos7:
-  - name: ak_centos7
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos7"
     organization: "{{ foreman_organization_centos7 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos7"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos7"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-7-base"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-base"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-updates"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-updates"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-extras"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-fasttrack"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-kernel"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-kernel"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-7-kernel-experimental"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-7-kernel-experimental"
         override: disabled
 
 

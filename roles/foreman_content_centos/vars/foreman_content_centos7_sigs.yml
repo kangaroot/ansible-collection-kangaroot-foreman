@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-7
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
   download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -49,102 +49,102 @@ foreman_products_defaults_centos7_sig_nfv: &foreman_products_defaults_centos7_si
 
 
 foreman_products_centos7_dotnet:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_dotnet }}"
     repositories:
-      - name: CentOS 7 - DotNet
-        label: centos-7-dotnet
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - DotNet"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-dotnet"
         <<: *foreman_products_defaults_centos7_dotnet
         url: "{{ foreman_repo_baseurl_centos7 }}/7/dotnet/x86_64/"
-        gpg_key: RPM-GPG-KEY-CentOS-7
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
         organization: "{{ foreman_organization_centos7_dotnet }}"
 
 foreman_content_views_centos7_dotnet:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_dotnet"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_dotnet"
     organization: "{{ foreman_organization_centos7_dotnet }}"
     repositories:
-      - name: CentOS 7 - DotNet
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - DotNet"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_dotnet }}"
 
 
 foreman_products_centos7_sig_sclo:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_sclo }}"
     repositories:
-      - name: CentOS 7 - SCLo sclo
-        label: centos-7-sclo-sclo
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo sclo"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-sclo-sclo"
         <<: *foreman_products_defaults_centos7_sig_sclo
         url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/sclo/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-SCLo"
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
-      - name: CentOS 7 - SCLo rh
-        label: centos-7-sclo-rh
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo rh"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-sclo-rh"
         <<: *foreman_products_defaults_centos7_sig_sclo
         url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/rh/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-SCLo
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-SCLo"
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
 
 foreman_content_views_centos7_sig_sclo:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_sclo"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_sclo_sclo"
     organization: "{{ foreman_organization_centos7_sig_sclo }}"
     repositories:
-      - name: CentOS 7 - SCLo sclo
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo sclo"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_sclo }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_sclo_rh"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_sclo_rh"
     organization: "{{ foreman_organization_centos7_sig_sclo }}"
     repositories:
-      - name: CentOS 7 - SCLo rh
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo rh"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_sclo }}"
 
 
 foreman_products_centos7_sig_opstools:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_opstools }}"
     repositories:
-      - name: CentOS 7 - OpsTools - release
-        label: centos-7-release-opstools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpsTools - release"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-release-opstools"
         <<: *foreman_products_defaults_centos7_sig_opstools
         url: "{{ foreman_repo_baseurl_centos7 }}/7/opstools/x86_64/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-OpsTools
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-OpsTools"
         organization: "{{ foreman_organization_centos7_sig_opstools }}"
 
 foreman_content_views_centos7_sig_opstools:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_release_opstools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_release_opstools"
     organization: "{{ foreman_organization_centos7_sig_opstools }}"
     repositories:
-      - name: CentOS 7 - OpsTools - release
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpsTools - release"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_opstools }}"
 
 
 foreman_products_centos7_sig_nfv_common:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_nfv_common }}"
     repositories:
-      - name: CentOS 7 - nfv common
-        label: centos-7-nfv-common
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - nfv common"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-nfv-common"
         <<: *foreman_products_defaults_centos7_sig_nfv
         url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/common/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-NFV"
         organization: "{{ foreman_organization_centos7_sig_nfv_common }}"
 
 foreman_products_centos7_sig_nfv_fdio:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_nfv_fdio }}"
     repositories:
-      - name: CentOS 7 - fd.io
-        label: centos-7-fdio
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - fd.io"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-fdio"
         <<: *foreman_products_defaults_centos7_sig_nfv
         url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/fdio/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-NFV
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-NFV"
         organization: "{{ foreman_organization_centos7_sig_nfv_fdio }}"
 
 foreman_products_centos7_sig_nfv: "{{ [] |
@@ -153,19 +153,19 @@ foreman_products_centos7_sig_nfv: "{{ [] |
   }}"
 
 foreman_content_views_centos7_sig_nfv_common:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_nfv_common"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_nfv_common"
     organization: "{{ foreman_organization_centos7_sig_nfv_common }}"
     repositories:
-      - name: CentOS 7 - nfv common
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - nfv common"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_nfv_common }}"
 
 foreman_content_views_centos7_sig_nfv_fdio:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_fdio"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_fdio"
     organization: "{{ foreman_organization_centos7_sig_nfv_fdio }}"
     repositories:
-      - name: CentOS 7 - fd.io
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - fd.io"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_nfv_fdio }}"
 
 foreman_content_views_centos7_nfv: "{{ [] |

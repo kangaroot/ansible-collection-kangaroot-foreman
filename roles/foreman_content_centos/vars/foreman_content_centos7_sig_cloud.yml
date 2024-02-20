@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-7
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
   download_policy: "{{ foreman_products_defaults_download_policy_centos7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,93 +25,93 @@ foreman_products_defaults_centos7_sig_cloud: &foreman_products_defaults_centos7_
 
 
 foreman_products_centos7_sig_cloud_openstack_queens:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
     repositories:
-      - name: CentOS 7 - OpenStack queens
-        label: centos-7-openstack-queens
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack queens"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-queens"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-queens/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
 
 foreman_products_centos7_sig_cloud_openstack_queens_tested:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack queens Trunk Tested
-        label: centos-7-rdo-trunk-queens-tested
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack queens Trunk Tested"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-rdo-trunk-queens-tested"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-queens/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens_tested }}"
 
 foreman_products_centos7_sig_cloud_openstack_rocky:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
     repositories:
-      - name: CentOS 7 - OpenStack rocky
-        label: centos-7-openstack-rocky
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack rocky"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-rocky"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-rocky/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
 
 foreman_products_centos7_sig_cloud_openstack_rocky_tested:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack rocky Trunk Tested
-        label: centos-7-rdo-trunk-rocky-tested
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack rocky Trunk Tested"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-rdo-trunk-rocky-tested"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-rocky/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky_tested }}"
 
 foreman_products_centos7_sig_cloud_openstack_stein:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
     repositories:
-      - name: CentOS 7 - OpenStack stein
-        label: centos-7-openstack-stein
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack stein"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-stein"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-stein/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
 
 foreman_products_centos7_sig_cloud_openstack_stein_tested:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack stein Trunk Tested
-        label: centos-7-rdo-trunk-stein-tested
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack stein Trunk Tested"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-rdo-trunk-stein-tested"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-stein/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein_tested }}"
 
 foreman_products_centos7_sig_cloud_openstack_train:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
     repositories:
-      - name: CentOS 7 - OpenStack train
-        label: centos-7-openstack-train
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack train"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-train"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-train/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Cloud
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
 
 foreman_products_centos7_sig_cloud_openstack_train_tested:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack train Trunk Tested
-        label: centos-7-rdo-trunk-train-tested
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack train Trunk Tested"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-7-rdo-trunk-train-tested"
         <<: *foreman_products_defaults_centos7_sig_cloud
         url: "{{ foreman_repo_baseurl_trunk_rdo }}/centos7-train/current-passed-ci/"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train_tested }}"
@@ -129,11 +129,11 @@ foreman_products_centos7_sig_cloud: "{{ [] |
 
 
 foreman_content_views_centos7_sig_cloud_openstack_queens:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_queens"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openstack_queens"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
     repositories:
-      - name: CentOS 7 - OpenStack queens
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack queens"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens }}"
     filters:
       - name: "CentOS 7 - OpenStack queens exclude filter"
@@ -144,19 +144,19 @@ foreman_content_views_centos7_sig_cloud_openstack_queens:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_queens_tested:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_queens_tested"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_rdo_trunk_queens_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack queens Trunk Tested
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack queens Trunk Tested"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_queens_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_rocky:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_rocky"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openstack_rocky"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
     repositories:
-      - name: CentOS 7 - OpenStack rocky
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack rocky"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky }}"
     filters:
       - name: "CentOS 7 - OpenStack rocky exclude filter"
@@ -167,19 +167,19 @@ foreman_content_views_centos7_sig_cloud_openstack_rocky:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_rocky_tested:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_rocky_tested"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_rdo_trunk_rocky_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack rocky Trunk Tested
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack rocky Trunk Tested"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_rocky_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_stein:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_stein"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openstack_stein"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
     repositories:
-      - name: CentOS 7 - OpenStack stein
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack stein"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein }}"
     filters:
       - name: "CentOS 7 - OpenStack stein exclude filter"
@@ -190,19 +190,19 @@ foreman_content_views_centos7_sig_cloud_openstack_stein:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_stein_tested:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_stein_tested"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_rdo_trunk_stein_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack stein Trunk Tested
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack stein Trunk Tested"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_stein_tested }}"
 
 foreman_content_views_centos7_sig_cloud_openstack_train:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_openstack_train"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_openstack_train"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
     repositories:
-      - name: CentOS 7 - OpenStack train
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack train"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_train }}"
     filters:
       - name: "CentOS 7 - OpenStack train exclude filter"
@@ -213,11 +213,11 @@ foreman_content_views_centos7_sig_cloud_openstack_train:
         rule_name: PyQt4
 
 foreman_content_views_centos7_sig_cloud_openstack_train_tested:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos7_rdo_trunk_train_tested"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos7_rdo_trunk_train_tested"
     organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train_tested }}"
     repositories:
-      - name: CentOS 7 - OpenStack train Trunk Tested
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack train Trunk Tested"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos7_sig_cloud_openstack_train_tested }}"
 
 foreman_content_views_centos7_sig_cloud: "{{ [] |
