@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: ATIX-GPG-KEY
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}ATIX-GPG-KEY"
   download_policy: "{{ foreman_products_defaults_download_policy_atix }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -23,42 +23,42 @@ foreman_products_defaults_sles: &foreman_products_defaults_sles
 
 
 foreman_products_atix_sles12:
-  - name: ATIX
-    label: ATIX
+  - name: "{{ foreman_product_name_prefix | default('') }}ATIX"
+    label: "{{ foreman_product_label_prefix | default('') }}ATIX"
     organization: "{{ foreman_organization_atix_sles12 }}"
     repositories:
-      - name: ATIX Subscription Manager for SLES 12
-        label: atix-sles12
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for SLES 12"
+        label: "{{ foreman_repo_label_prefix | default('') }}atix-sles12"
         <<: *foreman_products_defaults_sles
         url: "{{ foreman_repo_baseurl_atix_sles12 }}/SLES12SP5/"
         organization: "{{ foreman_organization_atix_sles12 }}"
 
 foreman_products_atix_sles15:
-  - name: ATIX
-    label: ATIX
+  - name: "{{ foreman_product_name_prefix | default('') }}ATIX"
+    label: "{{ foreman_product_label_prefix | default('') }}ATIX"
     organization: "{{ foreman_organization_atix_sles15 }}"
     repositories:
-      - name: ATIX Subscription Manager for SLES 15
-        label: atix-sles15
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for SLES 15"
+        label: "{{ foreman_repo_label_prefix | default('') }}atix-sles15"
         <<: *foreman_products_defaults_sles
         url: "{{ foreman_repo_baseurl_atix_sles15 }}/SLES15SP5/"
         organization: "{{ foreman_organization_atix_sles15 }}"
 
 
 foreman_content_views_atix_sles12:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}atix_sles12"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}atix_sles12"
     organization: "{{ foreman_organization_atix_sles12 }}"
     repositories:
-      - name: ATIX Subscription Manager for SLES 12
-        product: ATIX
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for SLES 12"
+        product: "{{ foreman_product_name_prefix | default('') }}ATIX"
     allow_promote: "{{ foreman_cv_allow_promote_atix_sles12 }}"
 
 foreman_content_views_atix_sles15:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}atix_sles15"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}atix_sles15"
     organization: "{{ foreman_organization_atix_sles15 }}"
     repositories:
-      - name: ATIX Subscription Manager for SLES 15
-        product: ATIX
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for SLES 15"
+        product: "{{ foreman_product_name_prefix | default('') }}ATIX"
     allow_promote: "{{ foreman_cv_allow_promote_atix_sles15 }}"
 
 

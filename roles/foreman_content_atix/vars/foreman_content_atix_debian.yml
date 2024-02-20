@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: deb
-  gpg_key: ATIX-GPG-KEY
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}ATIX-GPG-KEY"
   download_policy: "{{ foreman_products_defaults_download_policy_atix }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -26,42 +26,42 @@ foreman_products_defaults_debian: &foreman_products_defaults_debian
 
 
 foreman_products_atix_debian11:
-  - name: ATIX
-    label: ATIX
+  - name: "{{ foreman_product_name_prefix | default('') }}ATIX"
+    label: "{{ foreman_product_label_prefix | default('') }}ATIX"
     organization: "{{ foreman_organization_atix_debian11 }}"
     repositories:
-      - name: ATIX Subscription Manager for Debian 11 (bullseye)
-        label: atix-debian11
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for Debian 11 (bullseye)"
+        label: "{{ foreman_repo_label_prefix | default('') }}atix-debian11"
         <<: *foreman_products_defaults_debian
         url: "{{ foreman_repo_baseurl_atix_debian11 }}/Debian11/"
         organization: "{{ foreman_organization_atix_debian11 }}"
 
 foreman_products_atix_debian12:
-  - name: ATIX
-    label: ATIX
+  - name: "{{ foreman_product_name_prefix | default('') }}ATIX"
+    label: "{{ foreman_product_label_prefix | default('') }}ATIX"
     organization: "{{ foreman_organization_atix_debian12 }}"
     repositories:
-      - name: ATIX Subscription Manager for Debian 12 (Bookworm)
-        label: atix-debian12
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for Debian 12 (Bookworm)"
+        label: "{{ foreman_repo_label_prefix | default('') }}atix-debian12"
         <<: *foreman_products_defaults_debian
         url: "{{ foreman_repo_baseurl_atix_debian12 }}/Debian12/"
         organization: "{{ foreman_organization_atix_debian12 }}"
 
 
 foreman_content_views_atix_debian11:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}atix_debian11"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}atix_debian11"
     organization: "{{ foreman_organization_atix_debian11 }}"
     repositories:
-      - name: ATIX Subscription Manager for Debian 11 (bullseye)
-        product: ATIX
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for Debian 11 (bullseye)"
+        product: "{{ foreman_product_name_prefix | default('') }}ATIX"
     allow_promote: "{{ foreman_cv_allow_promote_atix_debian11 }}"
 
 foreman_content_views_atix_debian12:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}atix_debian12"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}atix_debian12"
     organization: "{{ foreman_organization_atix_debian12 }}"
     repositories:
-      - name: ATIX Subscription Manager for Debian 12 (Bookworm)
-        product: ATIX
+      - name: "{{ foreman_repo_name_prefix | default('') }}ATIX Subscription Manager for Debian 12 (Bookworm)"
+        product: "{{ foreman_product_name_prefix | default('') }}ATIX"
     allow_promote: "{{ foreman_cv_allow_promote_atix_debian12 }}"
 
 
