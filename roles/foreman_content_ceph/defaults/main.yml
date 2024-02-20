@@ -217,7 +217,7 @@ foreman_cv_allow_promote_ceph_docker: "{{ foreman_cv_allow_promote_ceph | bool }
 #######################################
 
 foreman_content_credentials_ceph_main:
-  - name: RPM-GPG-KEY-Ceph-release
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Ceph-release"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_ceph ~ '/keys/release.asc', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Ceph-release') }}"
@@ -276,7 +276,7 @@ foreman_activation_keys_ceph: "{{ ( foreman_activation_keys_ceph_main | default(
   }}"
 
 foreman_sync_plan_products_ceph_main:
-  - Ceph
+  - "{{ foreman_product_name_prefix | default('') }}Ceph"
 
 foreman_sync_plan_products_ceph: "{{ ( foreman_sync_plan_products_ceph_main | default([]) if foreman_enable_ceph | bool else [] ) |
   union( foreman_installation_media_ceph_nautilus | default([]) if foreman_enable_ceph_nautilus | bool else [] ) |
