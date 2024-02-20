@@ -113,7 +113,7 @@ foreman_activation_keys_remi: "{{ ( foreman_activation_keys_remi_main | default(
   }}"
 
 foreman_sync_plan_products_remi_main:
-  - Remi Repository
+  - "{{ foreman_product_name_prefix | default('') }}Remi Repository"
 
 foreman_sync_plan_products_remi: "{{ ( foreman_sync_plan_products_remi_main | default([]) if foreman_enable_remi | bool else [] ) |
   union( foreman_sync_plan_products_remi_el7 | default([]) if foreman_enable_remi_el7 | bool else [] ) |
