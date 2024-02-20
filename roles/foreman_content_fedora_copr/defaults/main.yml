@@ -100,7 +100,7 @@ foreman_activation_keys_fedora_copr: "{{ ( foreman_activation_keys_fedora_copr_m
   }}"
 
 foreman_sync_plan_products_fedora_copr_main:
-  - Fedora COPR
+  - "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
 
 foreman_sync_plan_products_fedora_copr: "{{ ( foreman_sync_plan_products_fedora_copr_main | default([]) if foreman_enable_fedora_copr | bool else [] ) |
   union( foreman_sync_plan_products_fedora_copr_dgoodwin_subscription_manager | default([]) if foreman_enable_fedora_copr_dgoodwin_subscription_manager | bool else [] ) |
