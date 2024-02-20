@@ -1,5 +1,4 @@
 ---
-# defaults file for foreman
 
 ###############################################################################
 ### Connection details
@@ -160,7 +159,12 @@ foreman_operatingsystems: []
 
 foreman_installation_media_el_organizations: "{{ foreman_all_organizations_namelist }}"
 foreman_installation_media_el_locations: "{{ foreman_all_locations_namelist }}"
-foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='description') | list }}"
+foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | default([]) |
+                                                    selectattr('os_family', 'defined') |
+                                                    selectattr('os_family', '==', 'Redhat') |
+                                                    map(attribute='description') |
+                                                    list
+                                                 }}"
 
 ### =====================================
 ### DEB installation media defaults
@@ -168,7 +172,12 @@ foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | d
 
 foreman_installation_media_deb_organizations: "{{ foreman_all_organizations_namelist }}"
 foreman_installation_media_deb_locations: "{{ foreman_all_locations_namelist }}"
-foreman_installation_media_deb_operatingsystems: "{{ foreman_operatingsystems | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='description') | list }}"
+foreman_installation_media_deb_operatingsystems: "{{ foreman_operatingsystems | default([]) |
+                                                     selectattr('os_family', 'defined') |
+                                                     selectattr('os_family', '==', 'Debian') |
+                                                     map(attribute='description') |
+                                                     list
+                                                  }}"
 
 ### =====================================
 ### EL operating system defaults
@@ -179,7 +188,11 @@ foreman_operatingsystems_el_architectures:
 foreman_operatingsystems_el_ptables: "{{
   [ 'Kickstart default',
     'Kickstart custom' ] |
-    union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
+    union(foreman_partition_tables | default([]) |
+          selectattr('os_family', 'defined') |
+          selectattr('os_family', '==', 'Redhat') |
+          map(attribute='name') |
+          list)
   }}"
 
 ### =====================================
@@ -192,7 +205,11 @@ foreman_operatingsystems_deb_ptables: "{{
   [ 'Preseed default',
     'Preseed default LVM',
     'Preseed default autoinstall' ] |
-    union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Debian') | map(attribute='name') | list )
+    union(foreman_partition_tables | default([]) |
+          selectattr('os_family', 'defined') |
+          selectattr('os_family', '==', 'Debian') |
+          map(attribute='name') |
+          list)
   }}"
 
 ### =====================================
@@ -268,4 +285,3 @@ foreman_operatingsystems_deb_default_templates: []
 ###############################################################################
 foreman_global_parameters: []
 foreman_hostgroups: []
-
