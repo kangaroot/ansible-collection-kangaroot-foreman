@@ -5,7 +5,7 @@ foreman_content_credentials_ol5_uln: []
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol5_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -21,8 +21,8 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_ol5_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
       ### Oracle Linux 5 Latest (i386) | ol5_i386_latest ###
@@ -653,11 +653,11 @@ foreman_products_ol5_uln:
       #   organization: "{{ foreman_organization_ol5_uln }}"
 
 foreman_content_views_ol5_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_latest"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Oracle Linux 5 Latest (i386)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 5 Latest (i386)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_ELS"
   #   organization: "{{ foreman_organization_ol5_uln }}"
@@ -666,24 +666,24 @@ foreman_content_views_ol5_uln:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}el5_uln_unsupported_i386_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}el5_uln_unsupported_i386_latest"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Productivity Applications for Enterprise Linux 5 (i386)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Productivity Applications for Enterprise Linux 5 (i386)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_UEK_base"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Unbreakable Enterprise Kernel for Oracle Linux 5 (i386)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Unbreakable Enterprise Kernel for Oracle Linux 5 (i386)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_UEK_latest"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Latest Unbreakable Enterprise Kernel for Oracle Linux 5 (i386)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Latest Unbreakable Enterprise Kernel for Oracle Linux 5 (i386)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_ELS"
   #   organization: "{{ foreman_organization_ol5_uln }}"
@@ -805,11 +805,11 @@ foreman_content_views_ol5_uln:
   #     - name: Oracle Linux 5 Update 10 Patch (i386)
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u11_i386_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_u11_i386_patch"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Oracle Linux 5 Update 11 Patch (i386)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 5 Update 11 Patch (i386)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_exadata_i386_latest"
@@ -819,11 +819,11 @@ foreman_content_views_ol5_uln:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_latest"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Oracle Linux 5 Latest (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 5 Latest (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_ELS"
   #   organization: "{{ foreman_organization_ol5_uln }}"
@@ -832,17 +832,17 @@ foreman_content_views_ol5_uln:
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_UEK_base"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Unbreakable Enterprise Kernel for Oracle Linux 5 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Unbreakable Enterprise Kernel for Oracle Linux 5 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_UEK_latest"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Latest Unbreakable Enterprise Kernel for Oracle Linux 5 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Latest Unbreakable Enterprise Kernel for Oracle Linux 5 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_ELS"
   #   organization: "{{ foreman_organization_ol5_uln }}"
@@ -962,11 +962,11 @@ foreman_content_views_ol5_uln:
   #     - name: Oracle Linux 5 Update 10 Patch (x86_64)
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u11_x86_64_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_u11_x86_64_patch"
     organization: "{{ foreman_organization_ol5_uln }}"
     repositories:
-      - name: Oracle Linux 5 Update 11 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 5 Update 11 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
   # - name: "{{ foreman_cv_prefix | default('cv_') }}el5_uln_exadata_x86_64_latest"
@@ -1049,21 +1049,21 @@ foreman_content_views_ol5_uln:
   #   allow_promote: "{{ foreman_cv_allow_promote_ol5_uln }}"
 
 foreman_composite_content_views_ol5_uln:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol5_i386"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol5_i386"
     organization: "{{ foreman_organization_ol5_uln }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_ol5_uln }}"
     auto_publish: "{{ foreman_ccv_auto_publish_ol5_uln }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_latest"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_ELS"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}el5_uln_unsupported_i386_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}el5_uln_unsupported_i386_latest"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_base"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_UEK_base"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_i386_UEK_latest"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_i386_UEK_ELS"
       #   latest: true
@@ -1103,22 +1103,22 @@ foreman_composite_content_views_ol5_uln:
       #   latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u10_i386_patch"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u11_i386_patch"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_u11_i386_patch"
         latest: true
 
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol5_x86_64"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol5_x86_64"
     organization: "{{ foreman_organization_ol5_uln }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_ol5_uln }}"
     auto_publish: "{{ foreman_ccv_auto_publish_ol5_uln }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_latest"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_ELS"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_base"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_UEK_base"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_x86_64_UEK_latest"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_x86_64_UEK_ELS"
       #   latest: true
@@ -1158,7 +1158,7 @@ foreman_composite_content_views_ol5_uln:
       #   latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u10_x86_64_patch"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol5_uln_u11_x86_64_patch"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol5_uln_u11_x86_64_patch"
         latest: true
 
 foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
@@ -1200,7 +1200,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 foreman_installation_media_ol5_uln:
-  - name: Oracle Linux 5.11
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 5.11"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol5_uln_u11_x86_64_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -1216,114 +1216,114 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   # service_level: Standard
 
 foreman_activation_keys_ol5_uln:
-  - name: ak_ol5_i386
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}ol5_i386"
     organization: "{{ foreman_organization_ol5_uln }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}ol5_i386"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol5_i386"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_OL_ol5_uln_i386_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_el5_uln_unsupported_i386_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_unsupported_i386_{{ foreman_repo_label_prefix | default('') }}latest"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_i386_UEK_base"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_UEK_{{ foreman_repo_label_prefix | default('') }}base"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_i386_UEK_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_UEK_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_UEK_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_UEK_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_rds_i386_latest"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_rds_i386_{{ foreman_repo_label_prefix | default('') }}latest"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_spacewalk26_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_spacewalk26_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_spacewalk27_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_spacewalk27_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_ksplice"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_{{ foreman_repo_label_prefix | default('') }}ksplice"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_i386_ksplice_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_i386_ksplice_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_i386_latest"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_i386_{{ foreman_repo_label_prefix | default('') }}latest"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_i386_addons"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_i386_{{ foreman_repo_label_prefix | default('') }}addons"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_ga_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_ga_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u1_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u1_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u2_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u2_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u3_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u3_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u4_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u4_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u5_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u5_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u6_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u6_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u7_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u7_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u8_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u8_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u9_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u9_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u10_i386_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u10_i386_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_u11_i386_patch"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u11_i386_{{ foreman_repo_label_prefix | default('') }}patch"
         override: disabled
 
-  - name: ak_ol5_x86_64
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}ol5_x86_64"
     organization: "{{ foreman_organization_ol5_uln }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}ol5_x86_64"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol5_x86_64"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_UEK_base"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_UEK_{{ foreman_repo_label_prefix | default('') }}base"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_UEK_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_UEK_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_UEK_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_UEK_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_spacewalk26_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_spacewalk26_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_spacewalk27_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_spacewalk27_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_ksplice"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_{{ foreman_repo_label_prefix | default('') }}ksplice"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_x86_64_ksplice_ELS"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_x86_64_ksplice_{{ foreman_repo_label_prefix | default('') }}ELS"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_x86_64_latest"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_x86_64_{{ foreman_repo_label_prefix | default('') }}latest"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_x86_64_addons"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_x86_64_{{ foreman_repo_label_prefix | default('') }}addons"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_ga_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_ga_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u1_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u1_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u2_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u2_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u3_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u3_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u4_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u4_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_el5_uln_u5_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_el5_uln_u5_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u5_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u5_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u6_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u6_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u7_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u7_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u8_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u8_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u9_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u9_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol5_uln_u10_x86_64_patch"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u10_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol5_uln_u11_x86_64_patch"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol5_uln_u11_x86_64_{{ foreman_repo_label_prefix | default('') }}patch"
         override: disabled
 
 foreman_sync_plan_products_ol5_uln: []

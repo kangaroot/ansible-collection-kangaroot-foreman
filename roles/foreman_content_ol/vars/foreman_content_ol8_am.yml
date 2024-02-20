@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,8 +25,8 @@ foreman_products_defaults_ol8_am: &foreman_products_defaults_ol8_am
 
 
 foreman_products_ol8_am10:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol8_am10 }}"
     repositories:
       ### Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation ###
@@ -38,8 +38,8 @@ foreman_products_ol8_am10:
         organization: "{{ foreman_organization_ol8_am10 }}"
 
 foreman_products_ol8_am20:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol8_am20 }}"
     repositories:
       ### Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX | ol8_x86_64_automation2 ###
@@ -57,19 +57,19 @@ foreman_products_ol8_am: "{{ [] |
 
 
 foreman_content_views_ol8_am10:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_automation"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_automation"
     organization: "{{ foreman_organization_ol8_am10 }}"
     repositories:
-      - name: Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Automation Manager 1.0, based on the open source projects Ansible and AWX"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_am10 }}"
 
 foreman_content_views_ol8_am20:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_automation2"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_automation2"
     organization: "{{ foreman_organization_ol8_am20 }}"
     repositories:
-      - name: Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Automation Manager 2.0, based on the open source projects Ansible and AWX"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_am20 }}"
 
 foreman_content_views_ol8_am: "{{ [] |

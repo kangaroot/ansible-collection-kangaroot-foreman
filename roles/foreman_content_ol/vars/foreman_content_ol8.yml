@@ -5,7 +5,7 @@ foreman_content_credentials_ol8: []
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -19,8 +19,8 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_ol8:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
       ### Oracle Linux 8 BaseOS Latest (x86_64) | ol8_x86_64_baseos_latest ###
@@ -96,48 +96,48 @@ foreman_products_ol8:
 
 
 foreman_content_views_ol8:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_baseos_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_baseos_latest"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: Oracle Linux 8 BaseOS Latest (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 8 BaseOS Latest (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_appstream"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: Oracle Linux 8 Application Stream Packages (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 8 Application Stream Packages (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_addons"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_addons"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: Oracle Linux 8 Addons (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 8 Addons (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: Packages for creating test and development environments for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Packages for creating test and development environments for Oracle Linux 8 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_EPEL"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer_EPEL"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: EPEL Packages for creating test and development environments for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}EPEL Packages for creating test and development environments for Oracle Linux 8 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_EPEL_modular"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer_EPEL_modular"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: EPEL Modular Packages for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}EPEL Modular Packages for Oracle Linux 8 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_codeready_builder"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_codeready_builder"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: CodeReady Linux Builder for Oracle Linux 8 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}CodeReady Linux Builder for Oracle Linux 8 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_codeready_builder"
   #   organization: "{{ foreman_organization_ol8 }}"
@@ -145,11 +145,11 @@ foreman_content_views_ol8:
   #     - name: Developer Preview for CodeReady Linux Builder for Oracle Linux 8 (x86_64) - Unsupported
   #       product: Oracle Linux
   #   allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_distro_builder"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_distro_builder"
     organization: "{{ foreman_organization_ol8 }}"
     repositories:
-      - name: Oracle Linux 8 Distro Builder (x86_64) - Unsupported
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 8 Distro Builder (x86_64) - Unsupported"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
 
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_debuginfo"
@@ -160,29 +160,29 @@ foreman_content_views_ol8:
   #   allow_promote: "{{ foreman_cv_allow_promote_ol8 }}"
 
 foreman_composite_content_views_ol8:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol8"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol8"
     organization: "{{ foreman_organization_ol8 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_ol8 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_ol8 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_baseos_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_baseos_latest"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_addons"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_addons"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_EPEL"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer_EPEL"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_EPEL_modular"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_developer_EPEL_modular"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_codeready_builder"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_codeready_builder"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_developer_codeready_builder"
       #   latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_x86_64_distro_builder"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_x86_64_distro_builder"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol8_debuginfo"
       #   latest: true
@@ -242,30 +242,30 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_ol8:
-  - name: ak_ol8
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}ol8"
     organization: "{{ foreman_organization_ol8 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}ol8"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol8"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_baseos_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_baseos_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_{{ foreman_repo_label_prefix | default('') }}appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_addons"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_{{ foreman_repo_label_prefix | default('') }}addons"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_{{ foreman_repo_label_prefix | default('') }}developer"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_EPEL"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_developer_{{ foreman_repo_label_prefix | default('') }}EPEL"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_EPEL_modular"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_developer_EPEL_{{ foreman_repo_label_prefix | default('') }}modular"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_codeready_builder"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_codeready_{{ foreman_repo_label_prefix | default('') }}builder"
         override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_x86_64_developer_codeready_builder"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_developer_codeready_{{ foreman_repo_label_prefix | default('') }}builder"
       #   override: disabled
-      - label: "{{ foreman_organization }}_OL_ol8_x86_64_distro_builder"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_x86_64_distro_{{ foreman_repo_label_prefix | default('') }}builder"
         override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol8_debuginfo"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol8_{{ foreman_repo_label_prefix | default('') }}debuginfo"
       #   override: disabled
 
 

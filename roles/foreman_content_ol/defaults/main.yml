@@ -2551,13 +2551,13 @@ foreman_cv_allow_promote_ol9_uln_oci: "{{ foreman_cv_allow_promote_ol9_uln | boo
 #######################################
 
 foreman_content_credentials_ol_main:
-  - name: RPM-GPG-KEY-oracle
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
     content_type: gpg_key
     # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-oracle') }}"
     content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-oracle') }}"
 
 foreman_content_credentials_ol_uln_main:
-  - name: RPM-GPG-KEY-oracle
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
     content_type: gpg_key
     # content: "{{ lookup('ansible.builtin.file', playbook_dir ~ '/files/foreman/gpgkeys/RPM-GPG-KEY-oracle') }}"
     content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-oracle') }}"
@@ -2975,10 +2975,10 @@ foreman_activation_keys_ol_uln: "{{ ( foreman_activation_keys_ol_uln_main | defa
 
 
 foreman_sync_plan_products_ol_main:
-  - Oracle Linux
+  - "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
 
 foreman_sync_plan_products_ol_uln_main:
-  - Oracle Linux
+  - "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
 
 foreman_sync_plan_products_ol: "{{ ( foreman_sync_plan_products_ol_main | default([]) if foreman_enable_ol | bool else [] ) |
   union( foreman_sync_plan_products_ol5 | default([]) if foreman_enable_ol5 | bool else [] ) |
