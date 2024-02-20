@@ -163,7 +163,7 @@ foreman_cv_allow_promote_microsoft_mssql_server_2022_ubuntu2204: "{{ foreman_cv_
 #######################################
 
 foreman_content_credentials_microsoft_main:
-  - name: RPM-GPG-KEY-microsoft-prod
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-microsoft-prod"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_microsoft ~ '/keys/microsoft.asc', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-microsoft-prod') }}"
@@ -208,7 +208,7 @@ foreman_activation_keys_microsoft: "{{ ( foreman_activation_keys_microsoft_main 
   }}"
 
 foreman_sync_plan_products_microsoft_main:
-  - Microsoft
+  - "{{ foreman_product_name_prefix | default('') }}Microsoft"
 
 foreman_sync_plan_products_microsoft: "{{ ( foreman_sync_plan_products_microsoft_main | default([]) if foreman_enable_microsoft | bool else [] ) |
   union( foreman_sync_plan_products_microsoft_azure_cli | default([]) if foreman_enable_microsoft_azure_cli | bool else [] ) |
