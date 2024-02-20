@@ -130,7 +130,7 @@ foreman_activation_keys_docker: "{{ ( foreman_activation_keys_docker_main | defa
   }}"
 
 foreman_sync_plan_products_docker_main:
-  - Docker
+  - "{{ foreman_product_name_prefix | default('') }}Docker"
 
 foreman_sync_plan_products_docker: "{{ ( foreman_sync_plan_products_docker_main | default([]) if foreman_enable_docker | bool else [] ) |
   union( foreman_sync_plan_products_docker_ce | default([]) if foreman_enable_docker_ce | bool else [] ) |
