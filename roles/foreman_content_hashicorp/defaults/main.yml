@@ -67,7 +67,7 @@ foreman_cv_allow_promote_hashicorp_el9: "{{ foreman_cv_allow_promote_hashicorp |
 #######################################
 
 foreman_content_credentials_hashicorp_main:
-  - name: RPM-GPG-KEY-Hashicorp
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Hashicorp"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_hashicorp ~ '/gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-hashicorp') }}"
@@ -100,7 +100,7 @@ foreman_activation_keys_hashicorp: "{{ ( foreman_activation_keys_hashicorp_main 
   }}"
 
 foreman_sync_plan_products_hashicorp_main:
-  - Hashicorp
+  - "{{ foreman_product_name_prefix | default('') }}Hashicorp"
 
 foreman_sync_plan_products_hashicorp: "{{ ( foreman_sync_plan_products_hashicorp_main | default([]) if foreman_enable_hashicorp | bool else [] ) |
   union( foreman_sync_plan_products_hashicorp_el7 | default([]) if foreman_enable_hashicorp_el7 | bool else [] ) |
