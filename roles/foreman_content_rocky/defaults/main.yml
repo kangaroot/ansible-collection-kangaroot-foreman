@@ -464,23 +464,23 @@ foreman_cv_allow_promote_rocky9_sig_cloud_kernel: "{{ foreman_cv_allow_promote_r
 #######################################
 
 foreman_content_credentials_rocky_main:
-  - name: RPM-GPG-KEY-rockyofficial
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-rockyofficial"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky ~ '/RPM-GPG-KEY-rockyofficial', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-rockyofficial') }}"
-  - name: RPM-GPG-KEY-Rocky-8
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Rocky-8"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky ~ '/RPM-GPG-KEY-Rocky-8', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Rocky-8') }}"
-  - name: RPM-GPG-KEY-Rocky-9
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Rocky-9"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky ~ '/RPM-GPG-KEY-Rocky-9', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Rocky-9') }}"
-  - name: RPM-GPG-KEY-Rocky-SIG-Core
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Rocky-SIG-Core"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky_sig ~ '/8/core/x86_64/core-common/RPM-GPG-KEY-Rocky-SIG-Core', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-rockyofficial') }}"
-  - name: RPM-GPG-KEY-Rocky-SIG-Cloud
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Rocky-SIG-Cloud"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_rocky_sig ~ '/8/cloud/x86_64/cloud-common/RPM-GPG-KEY-Rocky-SIG-Cloud', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-rockyofficial') }}"
@@ -557,7 +557,7 @@ foreman_installation_media_rocky_defaults: &foreman_installation_media_rocky_def
     }}"
 
 foreman_installation_media_rocky_main:
-  - name: Rocky Linux
+  - name: "{{ foreman_media_name_prefix | default('') }}Rocky Linux"
     path: "{{ foreman_repo_baseurl_rocky }}/$major/BaseOS/$arch/kickstart"
     <<: *foreman_installation_media_rocky_defaults
 
@@ -577,7 +577,7 @@ foreman_activation_keys_rocky: "{{ ( foreman_activation_keys_rocky_main | defaul
   }}"
 
 foreman_sync_plan_products_rocky_main:
-  - Rocky Linux
+  - "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
 
 foreman_sync_plan_products_rocky: "{{ ( foreman_sync_plan_products_rocky_main | default([]) if foreman_enable_rocky | bool else [] ) |
   union( foreman_sync_plan_products_rocky8 | default([]) if foreman_enable_rocky8 | bool or foreman_enable_rocky8_kickstart | bool else [] ) |
