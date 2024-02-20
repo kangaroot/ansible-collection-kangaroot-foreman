@@ -2,7 +2,7 @@
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-foreman
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-foreman"
   download_policy: "{{ foreman_products_defaults_download_policy_foreman }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -16,8 +16,8 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_foreman_el7:
-  - name: Foreman
-    label: Foreman
+  - name: "{{ foreman_product_name_prefix | default('') }}Foreman"
+    label: "{{ foreman_product_label_prefix | default('') }}Foreman"
     organization: "{{ foreman_organization_foreman_el7 }}"
     repositories:
       - name: "Foreman Client {{ foreman_version }} - EL7"
@@ -27,8 +27,8 @@ foreman_products_foreman_el7:
         organization: "{{ foreman_organization_foreman_el7 }}"
 
 foreman_products_foreman_el8:
-  - name: Foreman
-    label: Foreman
+  - name: "{{ foreman_product_name_prefix | default('') }}Foreman"
+    label: "{{ foreman_product_label_prefix | default('') }}Foreman"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Foreman {{ foreman_version }} - EL8"
@@ -59,14 +59,14 @@ foreman_products_foreman_el8:
         label: "pulpcore-{{ foreman_pulpcore_version_label }}-el8"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_foreman }}/pulpcore/{{ foreman_pulpcore_version }}/el8/x86_64/"
-        gpg_key: RPM-GPG-KEY-pulpcore
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-pulpcore"
         organization: "{{ foreman_organization_foreman_el8 }}"
 
       - name: "Puppet {{ foreman_puppet_version }} Repository EL8 - x86_64"
         label: "puppet{{ foreman_puppet_version }}-el8"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_puppet }}/puppet{{ foreman_puppet_version }}/el/8/x86_64"
-        gpg_key: RPM-GPG-KEY-puppet
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-puppet"
         organization: "{{ foreman_organization_foreman_el8 }}"
 
       - name: "Foreman Client {{ foreman_version }} - EL8"
@@ -76,8 +76,8 @@ foreman_products_foreman_el8:
         organization: "{{ foreman_organization_foreman_el8 }}"
 
 foreman_products_foreman_el9:
-  - name: Foreman
-    label: Foreman
+  - name: "{{ foreman_product_name_prefix | default('') }}Foreman"
+    label: "{{ foreman_product_label_prefix | default('') }}Foreman"
     organization: "{{ foreman_organization_foreman_el9 }}"
     repositories:
       - name: "Foreman Client {{ foreman_version }} - EL9"
@@ -88,7 +88,7 @@ foreman_products_foreman_el9:
 
 
 foreman_content_views_foreman_el7:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}foreman_client_{{ foreman_version_label }}_el7"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}foreman_client_{{ foreman_version_label }}_el7"
     organization: "{{ foreman_organization_foreman_el7 }}"
     repositories:
       - name: "Foreman Client {{ foreman_version }} - EL7"
@@ -96,49 +96,49 @@ foreman_content_views_foreman_el7:
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el7 }}"
 
 foreman_content_views_foreman_el8:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}foreman_{{ foreman_version_label }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}foreman_{{ foreman_version_label }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Foreman {{ foreman_version }} - EL8"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}foreman_plugins_{{ foreman_version_label }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}foreman_plugins_{{ foreman_version_label }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Foreman plugins {{ foreman_version }} - EL8"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}katello_{{ foreman_katello_version_label }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}katello_{{ foreman_katello_version_label }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Katello {{ foreman_katello_version }} - EL8"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}katello_{{ foreman_katello_version_label }}_candlepin_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}katello_{{ foreman_katello_version_label }}_candlepin_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Katello {{ foreman_katello_version }} Candlepin - EL8"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}pulpcore_{{ foreman_pulpcore_version_label }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}pulpcore_{{ foreman_pulpcore_version_label }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Pulpcore {{ foreman_pulpcore_version }} - EL8"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}puppet{{ foreman_puppet_version }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}puppet{{ foreman_puppet_version }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Puppet {{ foreman_puppet_version }} Repository EL8 - x86_64"
         product: Foreman
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}foreman_client_{{ foreman_version_label }}_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}foreman_client_{{ foreman_version_label }}_el8"
     organization: "{{ foreman_organization_foreman_el8 }}"
     repositories:
       - name: "Foreman Client {{ foreman_version }} - EL8"
@@ -146,7 +146,7 @@ foreman_content_views_foreman_el8:
     allow_promote: "{{ foreman_cv_allow_promote_foreman_el8 }}"
 
 foreman_content_views_foreman_el9:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}foreman_client_{{ foreman_version_label }}_el9"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}foreman_client_{{ foreman_version_label }}_el9"
     organization: "{{ foreman_organization_foreman_el9 }}"
     repositories:
       - name: "Foreman Client {{ foreman_version }} - EL9"
