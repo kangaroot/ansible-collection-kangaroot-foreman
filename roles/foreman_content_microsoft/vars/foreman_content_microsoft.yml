@@ -435,7 +435,7 @@ foreman_content_views_microsoft_edge_deb:
 
 foreman_content_views_microsoft_edge_main: []
 foreman_content_views_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
-  union( foreman_content_views_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] )
+  union( foreman_content_views_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] ) |
   union( foreman_content_views_microsoft_edge_deb | default([]) if foreman_enable_microsoft_edge_deb | bool else [] )
   }}"
 
@@ -458,7 +458,7 @@ foreman_content_views_microsoft_code_deb:
 
 foreman_content_views_microsoft_code_main: []
 foreman_content_views_microsoft_code: "{{ ( foreman_products_microsoft_code_main | default([]) if foreman_enable_microsoft_code | bool else [] ) |
-  union( foreman_content_views_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] )
+  union( foreman_content_views_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] ) |
   union( foreman_content_views_microsoft_code_deb | default([]) if foreman_enable_microsoft_code_deb | bool else [] )
   }}"
 
