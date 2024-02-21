@@ -482,9 +482,18 @@
 
 # foreman_cv_allow_promote_microsoft_azure_cli: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
+# foreman_cv_allow_promote_microsoft_azure_cli_el: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_deb: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+
 # foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
+# foreman_cv_allow_promote_microsoft_edge_el: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
 # foreman_cv_allow_promote_microsoft_edge_deb: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
+
+# foreman_cv_allow_promote_microsoft_code: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+
+# foreman_cv_allow_promote_microsoft_code_el: "{{ foreman_cv_allow_promote_microsoft_code | bool }}"
+# foreman_cv_allow_promote_microsoft_code_deb: "{{ foreman_cv_allow_promote_microsoft_code | bool }}"
 
 # foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
