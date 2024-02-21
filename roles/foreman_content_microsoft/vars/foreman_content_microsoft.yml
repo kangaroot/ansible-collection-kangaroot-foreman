@@ -94,33 +94,33 @@ foreman_products_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | de
   }}"
 
 
-foreman_products_microsoft_code_el:
+foreman_products_microsoft_vscode_el:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_code_el }}"
+    organization: "{{ foreman_organization_microsoft_vscode_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for EL"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-code-yum"
-        url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/code/"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-vscode-yum"
+        url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/vscode/"
         <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_code_el }}"
+        organization: "{{ foreman_organization_microsoft_vscode_el }}"
 
-foreman_products_microsoft_code_deb:
+foreman_products_microsoft_vscode_deb:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_code_deb }}"
+    organization: "{{ foreman_organization_microsoft_vscode_deb }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Visual Studio Code for Debian/Ubuntu"
-        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-code-deb"
-        url: "{{ foreman_repo_baseurl_microsoft }}/repos/code/"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-vscode-deb"
+        url: "{{ foreman_repo_baseurl_microsoft }}/repos/vscode/"
         <<: *foreman_products_defaults_debian
-        organization: "{{ foreman_organization_microsoft_code_deb }}"
+        organization: "{{ foreman_organization_microsoft_vscode_deb }}"
         deb_releases: stable
 
-foreman_products_microsoft_code_main: []
-foreman_products_microsoft_code: "{{ ( foreman_products_microsoft_code_main | default([]) if foreman_enable_microsoft_code | bool else [] ) |
-  union( foreman_products_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] ) |
-  union( foreman_products_microsoft_code_deb | default([]) if foreman_enable_microsoft_code_deb | bool else [] )
+foreman_products_microsoft_vscode_main: []
+foreman_products_microsoft_vscode: "{{ ( foreman_products_microsoft_vscode_main | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_products_microsoft_vscode_el | default([]) if foreman_enable_microsoft_vscode_el | bool else [] ) |
+  union( foreman_products_microsoft_vscode_deb | default([]) if foreman_enable_microsoft_vscode_deb | bool else [] )
   }}"
 
 
@@ -440,26 +440,26 @@ foreman_content_views_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main
   }}"
 
 
-foreman_content_views_microsoft_code_el:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_code_el"
-    organization: "{{ foreman_organization_microsoft_code_el }}"
+foreman_content_views_microsoft_vscode_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_vscode_el"
+    organization: "{{ foreman_organization_microsoft_vscode_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_code_el }}"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_vscode_el }}"
 
-foreman_content_views_microsoft_code_deb:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_code_deb"
-    organization: "{{ foreman_organization_microsoft_code_deb }}"
+foreman_content_views_microsoft_vscode_deb:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_vscode_deb"
+    organization: "{{ foreman_organization_microsoft_vscode_deb }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for Debian/Ubuntu"
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_code_deb }}"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_vscode_deb }}"
 
-foreman_content_views_microsoft_code_main: []
-foreman_content_views_microsoft_code: "{{ ( foreman_products_microsoft_code_main | default([]) if foreman_enable_microsoft_code | bool else [] ) |
-  union( foreman_content_views_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] ) |
-  union( foreman_content_views_microsoft_code_deb | default([]) if foreman_enable_microsoft_code_deb | bool else [] )
+foreman_content_views_microsoft_vscode_main: []
+foreman_content_views_microsoft_vscode: "{{ ( foreman_products_microsoft_vscode_main | default([]) if foreman_enable_microsoft_vscode | bool else [] ) |
+  union( foreman_content_views_microsoft_vscode_el | default([]) if foreman_enable_microsoft_vscode_el | bool else [] ) |
+  union( foreman_content_views_microsoft_vscode_deb | default([]) if foreman_enable_microsoft_vscode_deb | bool else [] )
   }}"
 
 

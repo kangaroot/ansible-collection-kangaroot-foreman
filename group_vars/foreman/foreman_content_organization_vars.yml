@@ -416,10 +416,10 @@
 # foreman_organization_microsoft_edge_el: "{{ foreman_organization_microsoft_edge }}"
 # foreman_organization_microsoft_edge_deb: "{{ foreman_organization_microsoft_edge }}"
 
-# foreman_organization_microsoft_code: "{{ foreman_organization_microsoft }}"
+# foreman_organization_microsoft_vscode: "{{ foreman_organization_microsoft }}"
 
-# foreman_organization_microsoft_code_el: "{{ foreman_organization_microsoft_code }}"
-# foreman_organization_microsoft_code_deb: "{{ foreman_organization_microsoft_code }}"
+# foreman_organization_microsoft_vscode_el: "{{ foreman_organization_microsoft_vscode }}"
+# foreman_organization_microsoft_vscode_deb: "{{ foreman_organization_microsoft_vscode }}"
 
 # foreman_organization_microsoft_prod: "{{ foreman_organization_microsoft }}"
 

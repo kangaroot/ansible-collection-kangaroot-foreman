@@ -490,10 +490,10 @@
 # foreman_cv_allow_promote_microsoft_edge_el: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
 # foreman_cv_allow_promote_microsoft_edge_deb: "{{ foreman_cv_allow_promote_microsoft_edge | bool }}"
 
-# foreman_cv_allow_promote_microsoft_code: "{{ foreman_cv_allow_promote_microsoft | bool }}"
+# foreman_cv_allow_promote_microsoft_vscode: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
-# foreman_cv_allow_promote_microsoft_code_el: "{{ foreman_cv_allow_promote_microsoft_code | bool }}"
-# foreman_cv_allow_promote_microsoft_code_deb: "{{ foreman_cv_allow_promote_microsoft_code | bool }}"
+# foreman_cv_allow_promote_microsoft_vscode_el: "{{ foreman_cv_allow_promote_microsoft_vscode | bool }}"
+# foreman_cv_allow_promote_microsoft_vscode_deb: "{{ foreman_cv_allow_promote_microsoft_vscode | bool }}"
 
 # foreman_cv_allow_promote_microsoft_prod: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
