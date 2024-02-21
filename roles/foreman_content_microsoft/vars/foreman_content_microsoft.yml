@@ -64,16 +64,16 @@ foreman_products_microsoft_azure_cli:
 #         # xenial
 
 
-foreman_products_microsoft_edge_yum:
+foreman_products_microsoft_edge_el:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_edge_yum }}"
+    organization: "{{ foreman_organization_microsoft_edge_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
         label: "{{ foreman_repo_label_prefix | default('') }}microsoft-edge-yum"
         url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/edge/"
         <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_edge_yum }}"
+        organization: "{{ foreman_organization_microsoft_edge_el }}"
 
 foreman_products_microsoft_edge_deb:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
@@ -89,21 +89,21 @@ foreman_products_microsoft_edge_deb:
 
 foreman_products_microsoft_edge_main: []
 foreman_products_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
-  union( foreman_products_microsoft_edge_yum | default([]) if foreman_enable_microsoft_edge_yum | bool else [] ) |
+  union( foreman_products_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] ) |
   union( foreman_products_microsoft_edge_deb | default([]) if foreman_enable_microsoft_edge_deb | bool else [] )
   }}"
 
 
-foreman_products_microsoft_code_yum:
+foreman_products_microsoft_code_el:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
-    organization: "{{ foreman_organization_microsoft_code_yum }}"
+    organization: "{{ foreman_organization_microsoft_code_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
         label: "{{ foreman_repo_label_prefix | default('') }}microsoft-code-yum"
         url: "{{ foreman_repo_baseurl_microsoft }}/yumrepos/code/"
         <<: *foreman_products_defaults
-        organization: "{{ foreman_organization_microsoft_code_yum }}"
+        organization: "{{ foreman_organization_microsoft_code_el }}"
 
 foreman_products_microsoft_code_deb:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
@@ -119,7 +119,7 @@ foreman_products_microsoft_code_deb:
 
 foreman_products_microsoft_code_main: []
 foreman_products_microsoft_code: "{{ ( foreman_products_microsoft_code_main | default([]) if foreman_enable_microsoft_code | bool else [] ) |
-  union( foreman_products_microsoft_code_yum | default([]) if foreman_enable_microsoft_code_yum | bool else [] ) |
+  union( foreman_products_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] ) |
   union( foreman_products_microsoft_code_deb | default([]) if foreman_enable_microsoft_code_deb | bool else [] )
   }}"
 
@@ -417,13 +417,13 @@ foreman_content_views_microsoft_azure_cli:
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_azure_cli }}"
 
 
-foreman_content_views_microsoft_edge_yum:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_edge_yum"
-    organization: "{{ foreman_organization_microsoft_edge_yum }}"
+foreman_content_views_microsoft_edge_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_edge_el"
+    organization: "{{ foreman_organization_microsoft_edge_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_edge_yum }}"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_edge_el }}"
 
 foreman_content_views_microsoft_edge_deb:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_edge_deb"
@@ -435,18 +435,18 @@ foreman_content_views_microsoft_edge_deb:
 
 foreman_content_views_microsoft_edge_main: []
 foreman_content_views_microsoft_edge: "{{ ( foreman_products_microsoft_edge_main | default([]) if foreman_enable_microsoft_edge | bool else [] ) |
-  union( foreman_content_views_microsoft_edge_yum | default([]) if foreman_enable_microsoft_edge_yum | bool else [] )
+  union( foreman_content_views_microsoft_edge_el | default([]) if foreman_enable_microsoft_edge_el | bool else [] )
   union( foreman_content_views_microsoft_edge_deb | default([]) if foreman_enable_microsoft_edge_deb | bool else [] )
   }}"
 
 
-foreman_content_views_microsoft_code_yum:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_code_yum"
-    organization: "{{ foreman_organization_microsoft_code_yum }}"
+foreman_content_views_microsoft_code_el:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_code_el"
+    organization: "{{ foreman_organization_microsoft_code_el }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - Edge for EL"
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
-    allow_promote: "{{ foreman_cv_allow_promote_microsoft_code_yum }}"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_code_el }}"
 
 foreman_content_views_microsoft_code_deb:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_code_deb"
@@ -458,7 +458,7 @@ foreman_content_views_microsoft_code_deb:
 
 foreman_content_views_microsoft_code_main: []
 foreman_content_views_microsoft_code: "{{ ( foreman_products_microsoft_code_main | default([]) if foreman_enable_microsoft_code | bool else [] ) |
-  union( foreman_content_views_microsoft_code_yum | default([]) if foreman_enable_microsoft_code_yum | bool else [] )
+  union( foreman_content_views_microsoft_code_el | default([]) if foreman_enable_microsoft_code_el | bool else [] )
   union( foreman_content_views_microsoft_code_deb | default([]) if foreman_enable_microsoft_code_deb | bool else [] )
   }}"
 
