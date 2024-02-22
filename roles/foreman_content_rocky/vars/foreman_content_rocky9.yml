@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_content_credentials_rocky9:
   - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Rocky-9"

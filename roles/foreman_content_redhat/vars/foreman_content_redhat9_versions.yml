@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_redhat90:
   - name: Red Hat Enterprise Linux for x86_64
