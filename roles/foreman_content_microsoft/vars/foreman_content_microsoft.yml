@@ -302,7 +302,7 @@ foreman_products_microsoft_prod_debian12:
         url: "{{ foreman_repo_baseurl_microsoft }}/debian/12/prod/"
         <<: *foreman_products_defaults_debian
         organization: "{{ foreman_organization_microsoft_prod_debian12 }}"
-        deb_releases: Bookworm
+        deb_releases: bookworm
 
 foreman_products_microsoft_prod_ubuntu1804:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
