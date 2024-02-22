@@ -483,7 +483,13 @@
 # foreman_cv_allow_promote_microsoft_azure_cli: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
 # foreman_cv_allow_promote_microsoft_azure_cli_el: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
-# foreman_cv_allow_promote_microsoft_azure_cli_deb: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_debian9: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_debian10: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_debian11: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_debian12: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_ubuntu1804: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2004: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
+# foreman_cv_allow_promote_microsoft_azure_cli_ubuntu2204: "{{ foreman_cv_allow_promote_microsoft_azure_cli | bool }}"
 
 # foreman_cv_allow_promote_microsoft_edge: "{{ foreman_cv_allow_promote_microsoft | bool }}"
 
@@ -500,6 +506,9 @@
 # foreman_cv_allow_promote_microsoft_prod_el7: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_el8: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_el9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_cv_allow_promote_microsoft_prod_fedora37: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_cv_allow_promote_microsoft_prod_fedora38: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
+# foreman_cv_allow_promote_microsoft_prod_fedora39: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_debian9: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_debian10: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
 # foreman_cv_allow_promote_microsoft_prod_debian11: "{{ foreman_cv_allow_promote_microsoft_prod | bool }}"
