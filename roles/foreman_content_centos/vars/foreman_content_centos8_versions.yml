@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-Official
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Official"
   download_policy: "{{ foreman_products_defaults_download_policy_centos8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -65,379 +66,379 @@ foreman_products_defaults_centos85: &foreman_products_defaults_centos85
 
 
 foreman_products_centos80:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - BaseOS
-        label: centos-80-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-baseos"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - AppStream
-        label: centos-80-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-appstream"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
 
-      - name: CentOS 8.0.1905 - Extras
-        label: centos-80-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-extras"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - Plus
-        label: centos-80-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-plus"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - PowerTools
-        label: centos-80-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-powertools"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - HighAvailability
-        label: centos-80-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-ha"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - ContinuousRelease
-        label: centos-80-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-cr"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - FastTrack
-        label: centos-80-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-fasttrack"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos80 }}"
 
 foreman_products_centos80_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - BaseOS Kickstart
-        label: centos-80-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-baseos-kickstart"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos80 }}"
-      - name: CentOS 8.0.1905 - AppStream Kickstart
-        label: centos-80-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-80-appstream-kickstart"
         <<: *foreman_products_defaults_centos80
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.0.1905/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos80 }}"
 
 foreman_products_centos81:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - BaseOS
-        label: centos-81-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-baseos"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - AppStream
-        label: centos-81-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-appstream"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
 
-      - name: CentOS 8.1.1911 - Extras
-        label: centos-81-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-extras"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - Plus
-        label: centos-81-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-plus"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - PowerTools
-        label: centos-81-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-powertools"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - HighAvailability
-        label: centos-81-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-ha"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - ContinuousRelease
-        label: centos-81-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-cr"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - FastTrack
-        label: centos-81-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-fasttrack"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos81 }}"
 
 foreman_products_centos81_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - BaseOS Kickstart
-        label: centos-81-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-baseos-kickstart"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos81 }}"
-      - name: CentOS 8.1.1911 - AppStream Kickstart
-        label: centos-81-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-81-appstream-kickstart"
         <<: *foreman_products_defaults_centos81
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.1.1911/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos81 }}"
 
 foreman_products_centos82:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - BaseOS
-        label: centos-82-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-baseos"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - AppStream
-        label: centos-82-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-appstream"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
 
-      - name: CentOS 8.2.2004 - Extras
-        label: centos-82-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-extras"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - Plus
-        label: centos-82-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-plus"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - PowerTools
-        label: centos-82-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-powertools"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - HighAvailability
-        label: centos-82-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-ha"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - ContinuousRelease
-        label: centos-82-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-cr"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - FastTrack
-        label: centos-82-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-fasttrack"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos82 }}"
 
 foreman_products_centos82_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - BaseOS Kickstart
-        label: centos-82-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-baseos-kickstart"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos82 }}"
-      - name: CentOS 8.2.2004 - AppStream Kickstart
-        label: centos-82-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-82-appstream-kickstart"
         <<: *foreman_products_defaults_centos82
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.2.2004/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos82 }}"
 
 foreman_products_centos83:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - BaseOS
-        label: centos-83-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-baseos"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - AppStream
-        label: centos-83-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-appstream"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
 
-      - name: CentOS 8.3.2011 - Extras
-        label: centos-83-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-extras"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - Plus
-        label: centos-83-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-plus"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - PowerTools
-        label: centos-83-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-powertools"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - HighAvailability
-        label: centos-83-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-ha"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - ContinuousRelease
-        label: centos-83-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-cr"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - FastTrack
-        label: centos-83-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-fasttrack"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos83 }}"
 
 foreman_products_centos83_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - BaseOS Kickstart
-        label: centos-83-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-baseos-kickstart"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos83 }}"
-      - name: CentOS 8.3.2011 - AppStream Kickstart
-        label: centos-83-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-83-appstream-kickstart"
         <<: *foreman_products_defaults_centos83
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.3.2011/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos83 }}"
 
 foreman_products_centos84:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - BaseOS
-        label: centos-84-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-baseos"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - AppStream
-        label: centos-84-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-appstream"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
 
-      - name: CentOS 8.4.2105 - Extras
-        label: centos-84-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-extras"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - Plus
-        label: centos-84-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-plus"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - PowerTools
-        label: centos-84-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-powertools"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - HighAvailability
-        label: centos-84-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-ha"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - ContinuousRelease
-        label: centos-84-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-cr"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - FastTrack
-        label: centos-84-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-fasttrack"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos84 }}"
 
 foreman_products_centos84_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - BaseOS Kickstart
-        label: centos-84-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-baseos-kickstart"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos84 }}"
-      - name: CentOS 8.4.2105 - AppStream Kickstart
-        label: centos-84-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-84-appstream-kickstart"
         <<: *foreman_products_defaults_centos84
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.4.2105/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos84 }}"
 
 foreman_products_centos85:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - BaseOS
-        label: centos-85-baseos
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-baseos"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - AppStream
-        label: centos-85-appstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-appstream"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
 
-      - name: CentOS 8.5.2111 - Extras
-        label: centos-85-extras
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-extras"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/extras/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - Plus
-        label: centos-85-plus
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-plus"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/centosplus/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - PowerTools
-        label: centos-85-powertools
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-powertools"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - HighAvailability
-        label: centos-85-ha
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-ha"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - ContinuousRelease
-        label: centos-85-cr
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - ContinuousRelease"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-cr"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/cr/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - FastTrack
-        label: centos-85-fasttrack
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - FastTrack"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-fasttrack"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/fasttrack/x86_64/os/"
         organization: "{{ foreman_organization_centos85 }}"
 
 foreman_products_centos85_kickstart:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - BaseOS Kickstart
-        label: centos-85-baseos-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-baseos-kickstart"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos85 }}"
-      - name: CentOS 8.5.2111 - AppStream Kickstart
-        label: centos-85-appstream-kickstart
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-85-appstream-kickstart"
         <<: *foreman_products_defaults_centos85
         url: "{{ foreman_repo_baseurl_centos_vault }}/8.5.2111/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_centos85 }}"
@@ -460,453 +461,453 @@ foreman_products_centos8_versions: "{{ [] |
 
 
 foreman_content_views_centos80:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_baseos"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_appstream"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_extras"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_plus"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_powertools"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_ha"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_cr"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos80_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_fasttrack"
     organization: "{{ foreman_organization_centos80 }}"
     repositories:
-      - name: CentOS 8.0.1905 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.0.1905 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos80 }}"
 
 foreman_content_views_centos81:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_baseos"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_appstream"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_extras"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_plus"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_powertools"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_ha"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_cr"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos81_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_fasttrack"
     organization: "{{ foreman_organization_centos81 }}"
     repositories:
-      - name: CentOS 8.1.1911 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.1.1911 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos81 }}"
 
 foreman_content_views_centos82:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_baseos"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_appstream"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_extras"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_plus"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_powertools"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_ha"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_cr"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos82_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_fasttrack"
     organization: "{{ foreman_organization_centos82 }}"
     repositories:
-      - name: CentOS 8.2.2004 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.2.2004 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos82 }}"
 
 foreman_content_views_centos83:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_baseos"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_appstream"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_extras"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_plus"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_powertools"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_ha"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_cr"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos83_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_fasttrack"
     organization: "{{ foreman_organization_centos83 }}"
     repositories:
-      - name: CentOS 8.3.2011 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.3.2011 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos83 }}"
 
 foreman_content_views_centos84:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_baseos"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_appstream"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_extras"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_plus"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_powertools"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_ha"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_cr"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos84_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_fasttrack"
     organization: "{{ foreman_organization_centos84 }}"
     repositories:
-      - name: CentOS 8.4.2105 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.4.2105 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos84 }}"
 
 foreman_content_views_centos85:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_baseos"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_baseos"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - BaseOS
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_appstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_appstream"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - AppStream
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_extras"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_extras"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - Extras
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_plus"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_plus"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - Plus
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_powertools"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_powertools"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - PowerTools
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_ha"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_ha"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - HighAvailability
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_cr"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_cr"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - ContinuousRelease
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - ContinuousRelease"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos85_fasttrack"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_fasttrack"
     organization: "{{ foreman_organization_centos85 }}"
     repositories:
-      - name: CentOS 8.5.2111 - FastTrack
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8.5.2111 - FastTrack"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos85 }}"
 
 foreman_composite_content_views_centos80:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos80"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos80"
     organization: "{{ foreman_organization_centos80 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos80 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos80 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos80_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos80_fasttrack"
         latest: true
 
 foreman_composite_content_views_centos81:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos81"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos81"
     organization: "{{ foreman_organization_centos81 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos81 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos81 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos81_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos81_fasttrack"
         latest: true
 
 foreman_composite_content_views_centos82:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos82"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos82"
     organization: "{{ foreman_organization_centos82 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos82 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos82 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos82_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos82_fasttrack"
         latest: true
 
 foreman_composite_content_views_centos83:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos83"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos83"
     organization: "{{ foreman_organization_centos83 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos83 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos83 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos83_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos83_fasttrack"
         latest: true
 
 foreman_composite_content_views_centos84:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos84"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos84"
     organization: "{{ foreman_organization_centos84 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos84 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos84 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos84_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos84_fasttrack"
         latest: true
 
 foreman_composite_content_views_centos85:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}centos85"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos85"
     organization: "{{ foreman_organization_centos85 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_centos85 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_centos85 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_baseos"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_baseos"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_appstream"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_appstream"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_extras"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_extras"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_plus"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_plus"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_powertools"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_powertools"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_ha"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_ha"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_cr"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_cr"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}centos85_fasttrack"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos85_fasttrack"
         latest: true
 
 foreman_content_views_centos8_versions: "{{ [] |
@@ -1012,72 +1013,72 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_centos80:
-  - name: CentOS 8.0.1905 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.0.1905 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-80-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.0.1905
-  - name: CentOS 8.0.1905 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.0.1905 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-80-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.0.1905
 
 foreman_installation_media_centos81:
-  - name: CentOS 8.1.1911 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.1.1911 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-81-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.1.1911
-  - name: CentOS 8.1.1911 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.1.1911 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-81-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.1.1911
 
 foreman_installation_media_centos82:
-  - name: CentOS 8.2.2004 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.2.2004 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-82-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.2.2004
-  - name: CentOS 8.2.2004 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.2.2004 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-82-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.2.2004
 
 foreman_installation_media_centos83:
-  - name: CentOS 8.3.2011 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.3.2011 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-83-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.3.2011
-  - name: CentOS 8.3.2011 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.3.2011 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-83-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.3.2011
 
 foreman_installation_media_centos84:
-  - name: CentOS 8.4.2105 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.4.2105 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-84-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.4.2105
-  - name: CentOS 8.4.2105 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.4.2105 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-84-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.4.2105
 
 foreman_installation_media_centos85:
-  - name: CentOS 8.5.2111 BaseOS
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.5.2111 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-85-baseos-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Linux release 8.5.2111
-  - name: CentOS 8.5.2111 AppStream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8.5.2111 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/CentOS/centos-85-appstream-kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -1105,141 +1106,141 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_centos80:
-  - name: ak_centos80
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos80"
     organization: "{{ foreman_organization_centos80 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos80"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos80"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-80-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-80-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-80-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos81:
-  - name: ak_centos81
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos81"
     organization: "{{ foreman_organization_centos81 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos81"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos81"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-81-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-81-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-81-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos82:
-  - name: ak_centos82
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos82"
     organization: "{{ foreman_organization_centos82 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos82"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos82"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-82-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-82-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-82-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos83:
-  - name: ak_centos83
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos83"
     organization: "{{ foreman_organization_centos83 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos83"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos83"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-83-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-83-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-83-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos84:
-  - name: ak_centos84
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos84"
     organization: "{{ foreman_organization_centos84 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos84"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos84"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-84-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-84-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-84-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos85:
-  - name: ak_centos85
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}centos85"
     organization: "{{ foreman_organization_centos85 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}centos85"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}centos85"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_CentOS_centos-85-baseos"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-baseos"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-appstream"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-appstream"
         override: enabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-extras"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-extras"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-plus"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-plus"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-powertools"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-powertools"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-ha"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-ha"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-cr"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-cr"
         override: disabled
-      - label: "{{ foreman_organization }}_CentOS_centos-85-fasttrack"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}CentOS_{{ foreman_repo_label_prefix | default('') }}centos-85-fasttrack"
         override: disabled
 
 foreman_activation_keys_centos8_versions: "{{ [] |

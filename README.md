@@ -1,19 +1,17 @@
 Ansible collection: Kangaroot foreman
 =====================================
 
-Ansible collection to manage Foreman
+Ansible collection to manage Foreman (and derived products))configuration and contents.
 
 Requirements
 ------------
 
-Ansible 2.9 or higher is required for the playbooks.
+Ansible 4.0 or higher is required for the roles and playbooks in the collection.
 
-Ansible 4.0 or higher is preferred.
+Collection Variables
+--------------------
 
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The group_vars directory contains example vars files for the important variables used in the collection roles.
 
 Dependencies
 ------------
@@ -22,7 +20,7 @@ The playbooks and roles in this project make use of the `theforeman.foreman` and
 
 To install the collections, execute
 
-    ansible-galaxy install -r requirements.yml
+    ansible-galaxy collection install -r requirements.yml
 
-in the playbook project directory.
+in the collection directory.
 

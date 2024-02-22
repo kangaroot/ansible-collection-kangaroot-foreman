@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -180,8 +181,8 @@ foreman_products_defaults_ol79_patch_uln: &foreman_products_defaults_ol79_patch_
 
 
 foreman_products_ol70_uln_content: &foreman_products_ol70_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol70_uln }}"
     repositories:
       ### Oracle Linux 7 GA installation media copy (x86_64) | ol7_x86_64_u0_base ###
@@ -198,8 +199,8 @@ foreman_products_ol70_uln_kickstart:
   - *foreman_products_ol70_uln_content
 
 foreman_products_ol71_uln_content: &foreman_products_ol71_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol71_uln }}"
     repositories:
       ### Oracle Linux 7 Update 1 installation media copy (x86_64) | ol7_x86_64_u1_base ###
@@ -216,8 +217,8 @@ foreman_products_ol71_uln_kickstart:
   - *foreman_products_ol71_uln_content
 
 foreman_products_ol72_uln_content: &foreman_products_ol72_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol72_uln }}"
     repositories:
       ### Oracle Linux 7 Update 2 installation media copy (x86_64) | ol7_x86_64_u2_base ###
@@ -234,8 +235,8 @@ foreman_products_ol72_uln_kickstart:
   - *foreman_products_ol72_uln_content
 
 foreman_products_ol73_uln_content: &foreman_products_ol73_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol73_uln }}"
     repositories:
       ### Oracle Linux 7 Update 3 installation media copy (x86_64) | ol7_x86_64_u3_base ###
@@ -252,8 +253,8 @@ foreman_products_ol73_uln_kickstart:
   - *foreman_products_ol73_uln_content
 
 foreman_products_ol74_uln_content: &foreman_products_ol74_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol74_uln }}"
     repositories:
       ### Oracle Linux 7 Update 4 installation media copy (x86_64) | ol7_x86_64_u4_base ###
@@ -270,8 +271,8 @@ foreman_products_ol74_uln_kickstart:
   - *foreman_products_ol74_uln_content
 
 foreman_products_ol75_uln_content: &foreman_products_ol75_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol75_uln }}"
     repositories:
       ### Oracle Linux 7 Update 5 installation media copy (x86_64) | ol7_x86_64_u5_base ###
@@ -288,8 +289,8 @@ foreman_products_ol75_uln_kickstart:
   - *foreman_products_ol75_uln_content
 
 foreman_products_ol76_uln_content: &foreman_products_ol76_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol76_uln }}"
     repositories:
       ### Oracle Linux 7 Update 6 installation media copy (x86_64) | ol7_x86_64_u6_base ###
@@ -306,8 +307,8 @@ foreman_products_ol76_uln_kickstart:
   - *foreman_products_ol76_uln_content
 
 foreman_products_ol77_uln_content: &foreman_products_ol77_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol77_uln }}"
     repositories:
       ### Oracle Linux 7 Update 7 installation media copy (x86_64) | ol7_x86_64_u7_base ###
@@ -324,8 +325,8 @@ foreman_products_ol77_uln_kickstart:
   - *foreman_products_ol77_uln_content
 
 foreman_products_ol78_uln_content: &foreman_products_ol78_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol78_uln }}"
     repositories:
       ### Oracle Linux 7 Update 8 installation media copy (x86_64) | ol7_x86_64_u8_base ###
@@ -342,8 +343,8 @@ foreman_products_ol78_uln_kickstart:
   - *foreman_products_ol78_uln_content
 
 foreman_products_ol79_uln_content: &foreman_products_ol79_uln_content
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol79_uln }}"
     repositories:
       ### Oracle Linux 7 Update 9 installation media copy (x86_64) | ol7_x86_64_u9_base ###
@@ -360,8 +361,8 @@ foreman_products_ol79_uln_kickstart:
   - *foreman_products_ol79_uln_content
 
 foreman_products_ol70_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol70_patch_uln }}"
     repositories:
       ### Oracle Linux 7 GA Patch (x86_64) | ol7_x86_64_u0_patch ###
@@ -373,8 +374,8 @@ foreman_products_ol70_patch_uln:
         organization: "{{ foreman_organization_ol70_patch_uln }}"
 
 foreman_products_ol71_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol71_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 1 Patch (x86_64) | ol7_x86_64_u1_patch ###
@@ -386,8 +387,8 @@ foreman_products_ol71_patch_uln:
         organization: "{{ foreman_organization_ol71_patch_uln }}"
 
 foreman_products_ol72_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol72_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 2 Patch (x86_64) | ol7_x86_64_u2_patch ###
@@ -399,8 +400,8 @@ foreman_products_ol72_patch_uln:
         organization: "{{ foreman_organization_ol72_patch_uln }}"
 
 foreman_products_ol73_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol73_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 3 Patch (x86_64) | ol7_x86_64_u3_patch ###
@@ -412,8 +413,8 @@ foreman_products_ol73_patch_uln:
         organization: "{{ foreman_organization_ol73_patch_uln }}"
 
 foreman_products_ol74_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol74_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 4 Patch (x86_64) | ol7_x86_64_u4_patch ###
@@ -425,8 +426,8 @@ foreman_products_ol74_patch_uln:
         organization: "{{ foreman_organization_ol74_patch_uln }}"
 
 foreman_products_ol75_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol75_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 5 Patch (x86_64) | ol7_x86_64_u5_patch ###
@@ -438,8 +439,8 @@ foreman_products_ol75_patch_uln:
         organization: "{{ foreman_organization_ol75_patch_uln }}"
 
 foreman_products_ol76_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol76_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 6 Patch (x86_64) | ol7_x86_64_u6_patch ###
@@ -451,8 +452,8 @@ foreman_products_ol76_patch_uln:
         organization: "{{ foreman_organization_ol76_patch_uln }}"
 
 foreman_products_ol77_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol77_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 7 Patch (x86_64) | ol7_x86_64_u7_patch ###
@@ -464,8 +465,8 @@ foreman_products_ol77_patch_uln:
         organization: "{{ foreman_organization_ol77_patch_uln }}"
 
 foreman_products_ol78_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol78_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 8 Patch (x86_64) | ol7_x86_64_u8_patch ###
@@ -477,8 +478,8 @@ foreman_products_ol78_patch_uln:
         organization: "{{ foreman_organization_ol78_patch_uln }}"
 
 foreman_products_ol79_patch_uln:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol79_patch_uln }}"
     repositories:
       ### Oracle Linux 7 Update 9 Patch (x86_64) | ol7_x86_64_u9_patch ###
@@ -526,163 +527,163 @@ foreman_products_ol7_uln_versions: "{{ [] |
 
 
 foreman_content_views_ol70_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u0_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u0_base"
     organization: "{{ foreman_organization_ol70_uln }}"
     repositories:
-      - name: Oracle Linux 7 GA installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 GA installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol70_uln }}"
 
 foreman_content_views_ol71_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u1_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u1_base"
     organization: "{{ foreman_organization_ol71_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 1 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 1 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol71_uln }}"
 
 foreman_content_views_ol72_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u2_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u2_base"
     organization: "{{ foreman_organization_ol72_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 2 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 2 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol72_uln }}"
 
 foreman_content_views_ol73_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u3_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u3_base"
     organization: "{{ foreman_organization_ol73_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 3 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 3 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol73_uln }}"
 
 foreman_content_views_ol74_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u4_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u4_base"
     organization: "{{ foreman_organization_ol74_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 4 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 4 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol74_uln }}"
 
 foreman_content_views_ol75_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u5_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u5_base"
     organization: "{{ foreman_organization_ol75_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 5 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 5 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol75_uln }}"
 
 foreman_content_views_ol76_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u6_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u6_base"
     organization: "{{ foreman_organization_ol76_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 6 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 6 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol76_uln }}"
 
 foreman_content_views_ol77_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u7_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u7_base"
     organization: "{{ foreman_organization_ol77_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 7 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 7 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol77_uln }}"
 
 foreman_content_views_ol78_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u8_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u8_base"
     organization: "{{ foreman_organization_ol78_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 8 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 8 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol78_uln }}"
 
 foreman_content_views_ol79_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u9_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u9_base"
     organization: "{{ foreman_organization_ol79_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 9 installation media copy (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 9 installation media copy (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol79_uln }}"
 
 foreman_content_views_ol70_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u0_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u0_patch"
     organization: "{{ foreman_organization_ol70_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 GA Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 GA Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol70_patch_uln }}"
 
 foreman_content_views_ol71_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u1_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u1_patch"
     organization: "{{ foreman_organization_ol71_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 1 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 1 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol71_patch_uln }}"
 
 foreman_content_views_ol72_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u2_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u2_patch"
     organization: "{{ foreman_organization_ol72_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 2 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 2 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol72_patch_uln }}"
 
 foreman_content_views_ol73_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u3_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u3_patch"
     organization: "{{ foreman_organization_ol73_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 3 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 3 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol73_patch_uln }}"
 
 foreman_content_views_ol74_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u4_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u4_patch"
     organization: "{{ foreman_organization_ol74_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 4 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 4 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol74_patch_uln }}"
 
 foreman_content_views_ol75_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u5_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u5_patch"
     organization: "{{ foreman_organization_ol75_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 5 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 5 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol75_patch_uln }}"
 
 foreman_content_views_ol76_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u6_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u6_patch"
     organization: "{{ foreman_organization_ol76_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 6 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 6 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol76_patch_uln }}"
 
 foreman_content_views_ol77_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u7_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u7_patch"
     organization: "{{ foreman_organization_ol77_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 7 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 7 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol77_patch_uln }}"
 
 foreman_content_views_ol78_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u8_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u8_patch"
     organization: "{{ foreman_organization_ol78_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 8 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 8 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol78_patch_uln }}"
 
 foreman_content_views_ol79_patch_uln:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol7_uln_x86_64_u9_patch"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol7_uln_x86_64_u9_patch"
     organization: "{{ foreman_organization_ol79_patch_uln }}"
     repositories:
-      - name: Oracle Linux 7 Update 9 Patch (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 7 Update 9 Patch (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol79_patch_uln }}"
 
 foreman_composite_content_views_ol70_uln: []
@@ -863,70 +864,70 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_ol70_uln:
-  - name: Oracle Linux 7.0
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.0"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_ga_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.0
 
 foreman_installation_media_ol71_uln:
-  - name: Oracle Linux 7.1
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.1"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u1_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.1
 
 foreman_installation_media_ol72_uln:
-  - name: Oracle Linux 7.2
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.2"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u2_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.2
 
 foreman_installation_media_ol73_uln:
-  - name: Oracle Linux 7.3
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.3"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u3_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.3
 
 foreman_installation_media_ol74_uln:
-  - name: Oracle Linux 7.4
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.4"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u4_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.4
 
 foreman_installation_media_ol75_uln:
-  - name: Oracle Linux 7.5
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.5"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u5_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.5
 
 foreman_installation_media_ol76_uln:
-  - name: Oracle Linux 7.6
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.6"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u6_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.6
 
 foreman_installation_media_ol77_uln:
-  - name: Oracle Linux 7.7
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.7"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u7_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.7
 
 foreman_installation_media_ol78_uln:
-  - name: Oracle Linux 7.8
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.8"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u8_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - Oracle Linux 7.8
 
 foreman_installation_media_ol79_uln:
-  - name: Oracle Linux 7.9
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 7.9"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/OL/ol7_uln_x86_64_u9_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:

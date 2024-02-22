@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"

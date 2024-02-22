@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol7 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,8 +26,8 @@ foreman_products_defaults_ol9_mysql: &foreman_products_defaults_ol9_mysql
 
 
 foreman_products_ol9_mysql:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol9_mysql }}"
     repositories:
       ### MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64) | ol9_x86_64_MySQL80_connectors_community ###
@@ -53,22 +54,22 @@ foreman_products_ol9_mysql:
 
 
 foreman_content_views_ol9_mysql:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_MySQL80_connectors_community"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol9_x86_64_MySQL80_connectors_community"
     organization: "{{ foreman_organization_ol9_mysql }}"
     repositories:
-      - name: MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}MySQL 8.0 Connectors Community for Oracle Linux 9 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol9_mysql }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_MySQL80_community"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol9_x86_64_MySQL80_community"
     organization: "{{ foreman_organization_ol9_mysql }}"
     repositories:
-      - name: MySQL 8.0 for Oracle Linux 9 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}MySQL 8.0 for Oracle Linux 9 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol9_mysql }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol9_x86_64_MySQL80_tools_community"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol9_x86_64_MySQL80_tools_community"
     organization: "{{ foreman_organization_ol9_mysql }}"
     repositories:
-      - name: MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}MySQL 8.0 Tools Community for Oracle Linux 9 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol9_mysql }}"
 

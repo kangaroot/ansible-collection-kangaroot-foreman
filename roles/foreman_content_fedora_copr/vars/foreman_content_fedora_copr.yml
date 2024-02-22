@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
@@ -18,7 +19,7 @@ foreman_products_defaults: &foreman_products_defaults
 ### dgoodwin/subscription-manager OL 6/7
 
 foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager_main:
-  - name: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-copr-dgoodwin-subscription-manager"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dgoodwin/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dgoodwin-subscription-manager') }}"
@@ -30,27 +31,27 @@ foreman_content_credentials_fedora_copr_dgoodwin_subscription_manager: "{{ ( for
 
 
 foreman_products_fedora_copr_dgoodwin_subscription_manager_ol6:
-  - name: Fedora COPR
-    label: Fedora_COPR
+  - name: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
+    label: "{{ foreman_product_label_prefix | default('') }}Fedora_COPR"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
     repositories:
-      - name: Fedora COPR - dgoodwin:subscription-manager - OL6
-        label: copr-dgoodwin-subscription-manager-ol6
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dgoodwin:subscription-manager - OL6"
+        label: "{{ foreman_repo_label_prefix | default('') }}copr-dgoodwin-subscription-manager-ol6"
         url: "{{ foreman_repo_baseurl_fedora_copr }}/dgoodwin/subscription-manager/fedora_copr-6-x86_64/"
         <<: *foreman_products_defaults
-        gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-copr-dgoodwin-subscription-manager"
         organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
 
 foreman_products_fedora_copr_dgoodwin_subscription_manager_ol7:
-  - name: Fedora COPR
-    label: Fedora_COPR
+  - name: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
+    label: "{{ foreman_product_label_prefix | default('') }}Fedora_COPR"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
     repositories:
-      - name: Fedora COPR - dgoodwin:subscription-manager - OL7
-        label: copr-dgoodwin-subscription-manager-ol7
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dgoodwin:subscription-manager - OL7"
+        label: "{{ foreman_repo_label_prefix | default('') }}copr-dgoodwin-subscription-manager-ol7"
         url: "{{ foreman_repo_baseurl_fedora_copr }}/dgoodwin/subscription-manager/fedora_copr-7-x86_64/"
         <<: *foreman_products_defaults
-        gpg_key: RPM-GPG-KEY-copr-dgoodwin-subscription-manager
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-copr-dgoodwin-subscription-manager"
         organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
 
 foreman_products_fedora_copr_dgoodwin_subscription_manager_main: []
@@ -61,19 +62,19 @@ foreman_products_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_produc
 
 
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol6:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol6"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}copr_dgoodwin_subscription_manager_ol6"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
     repositories:
-      - name: Fedora COPR - dgoodwin:subscription-manager - OL6
-        product: Fedora COPR
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dgoodwin:subscription-manager - OL6"
+        product: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
     allow_promote: "{{ foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol6 }}"
 
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_ol7:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dgoodwin_subscription_manager_ol7"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}copr_dgoodwin_subscription_manager_ol7"
     organization: "{{ foreman_organization_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
     repositories:
-      - name: Fedora COPR - dgoodwin:subscription-manager - OL7
-        product: Fedora COPR
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dgoodwin:subscription-manager - OL7"
+        product: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
     allow_promote: "{{ foreman_cv_allow_promote_fedora_copr_dgoodwin_subscription_manager_ol7 }}"
 
 foreman_content_views_fedora_copr_dgoodwin_subscription_manager_main: []
@@ -86,7 +87,7 @@ foreman_content_views_fedora_copr_dgoodwin_subscription_manager: "{{ ( foreman_c
 ### dmann/subscription-manager OL 8
 
 foreman_content_credentials_fedora_copr_dmann_subscription_manager_main:
-  - name: RPM-GPG-KEY-copr-dmann-subscription-manager
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-copr-dmann-subscription-manager"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_fedora_copr ~ '/dmann/subscription-manager/pubkey.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-copr-dmann-subscription-manager') }}"
@@ -97,15 +98,15 @@ foreman_content_credentials_fedora_copr_dmann_subscription_manager: "{{ ( forema
 
 
 foreman_products_fedora_copr_dmann_subscription_manager_ol8:
-  - name: Fedora COPR
-    label: Fedora_COPR
+  - name: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
+    label: "{{ foreman_product_label_prefix | default('') }}Fedora_COPR"
     organization: "{{ foreman_organization_fedora_copr_dmann_subscription_manager_ol8 }}"
     repositories:
-      - name: Fedora COPR - dmann:subscription-manager - OL8
-        label: copr-dmann-subscription-manager-ol8
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dmann:subscription-manager - OL8"
+        label: "{{ foreman_repo_label_prefix | default('') }}copr-dmann-subscription-manager-ol8"
         url: "{{ foreman_repo_baseurl_fedora_copr }}/dmann/subscription-manager/fedora_copr-8-x86_64/"
         <<: *foreman_products_defaults
-        gpg_key: RPM-GPG-KEY-copr-dmann-subscription-manager
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-copr-dmann-subscription-manager"
         organization: "{{ foreman_organization_fedora_copr_dmann_subscription_manager_ol8 }}"
 
 foreman_products_fedora_copr_dmann_subscription_manager_main: []
@@ -115,11 +116,11 @@ foreman_products_fedora_copr_dmann_subscription_manager: "{{ ( foreman_products_
 
 
 foreman_content_views_fedora_copr_dmann_subscription_manager_ol8:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}copr_dmann_subscription_manager_ol8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}copr_dmann_subscription_manager_ol8"
     organization: "{{ foreman_organization_fedora_copr_dmann_subscription_manager_ol8 }}"
     repositories:
-      - name: Fedora COPR - dmann:subscription-manager - OL8
-        product: Fedora COPR
+      - name: "{{ foreman_repo_name_prefix | default('') }}Fedora COPR - dmann:subscription-manager - OL8"
+        product: "{{ foreman_product_name_prefix | default('') }}Fedora COPR"
     allow_promote: "{{ foreman_cv_allow_promote_fedora_copr_dmann_subscription_manager_ol8 }}"
 
 foreman_content_views_fedora_copr_dmann_subscription_manager_main: []

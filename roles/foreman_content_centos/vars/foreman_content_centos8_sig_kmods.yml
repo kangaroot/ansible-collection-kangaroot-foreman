@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-Official
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Official"
   download_policy: "{{ foreman_products_defaults_download_policy_centos8 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,27 +26,27 @@ foreman_products_defaults_centos8_sig_kmods: &foreman_products_defaults_centos8_
 
 
 foreman_products_centos8_sig_kmods_main:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos8_sig_kmods_main }}"
     repositories:
-      - name: CentOS 8 - Kmods
-        label: centos-8-kmods
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8 - Kmods"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-8-kmods"
         <<: *foreman_products_defaults_centos8_sig_kmods
         url: "{{ foreman_repo_baseurl_centos8 }}/8/kmods/x86_64/packages-main/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Kmods"
         organization: "{{ foreman_organization_centos8_sig_kmods_main }}"
 
 foreman_products_centos8_sig_kmods_rebuild:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos8_sig_kmods_rebuild }}"
     repositories:
-      - name: CentOS 8 - Kmods - Rebuild
-        label: centos-8-kmods-rebuild
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8 - Kmods - Rebuild"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-8-kmods-rebuild"
         <<: *foreman_products_defaults_centos8_sig_kmods
         url: "{{ foreman_repo_baseurl_centos8 }}/8/kmods/x86_64/packages-rebuild/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Kmods
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Kmods"
         organization: "{{ foreman_organization_centos8_sig_kmods_rebuild }}"
 
 foreman_products_centos8_sig_kmods: "{{ [] |
@@ -55,19 +56,19 @@ foreman_products_centos8_sig_kmods: "{{ [] |
 
 
 foreman_content_views_centos8_sig_kmods_main:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_kmods"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos8_kmods"
     organization: "{{ foreman_organization_centos8_sig_kmods_main }}"
     repositories:
-      - name: CentOS 8 - Kmods
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8 - Kmods"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos8_sig_kmods_main }}"
 
 foreman_content_views_centos8_sig_kmods_rebuild:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos8_kmods_rebuild"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos8_kmods_rebuild"
     organization: "{{ foreman_organization_centos8_sig_kmods_rebuild }}"
     repositories:
-      - name: CentOS 8 - Kmods - Rebuild
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 8 - Kmods - Rebuild"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos8_sig_kmods_rebuild }}"
 
 foreman_content_views_centos8_sig_kmods: "{{ [] |

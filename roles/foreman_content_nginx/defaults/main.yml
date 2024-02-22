@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 # defaults file for foreman_content_nginx
 
 #######################################
@@ -71,7 +72,7 @@ foreman_cv_allow_promote_nginx_el9: "{{ foreman_cv_allow_promote_nginx | bool }}
 #######################################
 
 foreman_content_credentials_nginx_main:
-  - name: RPM-GPG-KEY-nginx
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-nginx"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_nginx ~ '/keys/nginx_signing.key', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/nginx_signing.key') }}"
@@ -118,7 +119,7 @@ foreman_activation_keys_nginx: "{{ ( foreman_activation_keys_nginx_main | defaul
   }}"
 
 foreman_sync_plan_products_nginx_main:
-  - Nginx
+  - "{{ foreman_product_name_prefix | default('') }}Nginx"
 
 foreman_sync_plan_products_nginx: "{{ ( foreman_sync_plan_products_nginx_main | default([]) if foreman_enable_nginx | bool else [] ) |
   union( foreman_sync_plan_products_nginx_el7 | default([]) if foreman_enable_nginx_el7 | bool else [] ) |

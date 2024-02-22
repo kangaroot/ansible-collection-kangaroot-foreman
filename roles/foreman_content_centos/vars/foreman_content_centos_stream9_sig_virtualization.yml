@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-CentOS-Official
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Official"
   download_policy: "{{ foreman_products_defaults_download_policy_centos_stream9 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -25,21 +26,21 @@ foreman_products_defaults_centos_stream9_sig_virtualization: &foreman_products_d
 
 
 foreman_products_centos_stream9_sig_virtualization_ovirt45:
-  - name: CentOS
-    label: CentOS
+  - name: "{{ foreman_product_name_prefix | default('') }}CentOS"
+    label: "{{ foreman_product_label_prefix | default('') }}CentOS"
     organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
     repositories:
-      - name: CentOS Stream 9 - oVirt 4.5
-        label: centos-stream-9-ovirt45
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 9 - oVirt 4.5"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-9-ovirt45"
         <<: *foreman_products_defaults_centos_stream9_sig_virtualization
         url: "{{ foreman_repo_baseurl_centos_stream9 }}/SIGs/9-stream/virt/x86_64/ovirt-45/"
-        gpg_key: RPM-GPG-KEY-CentOS-SIG-Virtualization
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
-      - name: oVirt upstream for CentOS Stream 9 - oVirt 4.5
-        label: centos-stream-9-ovirt-45-upstream
+      - name: "{{ foreman_repo_name_prefix | default('') }}oVirt upstream for CentOS Stream 9 - oVirt 4.5"
+        label: "{{ foreman_repo_label_prefix | default('') }}centos-stream-9-ovirt-45-upstream"
         <<: *foreman_products_defaults_centos_stream9_sig_virtualization
         url: "https://{{ foreman_repo_baseurl_ovirt }}/pub/ovirt-4.5/rpm/el9/"
-        gpg_key: RPM-GPG-KEY-oVirt-4.5
+        gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oVirt-4.5"
         organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
 
 foreman_products_centos_stream9_sig_virtualization: "{{ [] |
@@ -48,17 +49,17 @@ foreman_products_centos_stream9_sig_virtualization: "{{ [] |
 
 
 foreman_content_views_centos_stream9_sig_virtualization_ovirt45:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_ovirt45"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream9_ovirt45"
     organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
     repositories:
-      - name: CentOS Stream 9 - oVirt 4.5
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}CentOS Stream 9 - oVirt 4.5"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_virtualization_ovirt45 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}centos_stream9_ovirt_45_upstream"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}centos_stream9_ovirt_45_upstream"
     organization: "{{ foreman_organization_centos_stream9_sig_virtualization_ovirt45 }}"
     repositories:
-      - name: oVirt upstream for CentOS Stream 9 - oVirt 4.5
-        product: CentOS
+      - name: "{{ foreman_repo_name_prefix | default('') }}oVirt upstream for CentOS Stream 9 - oVirt 4.5"
+        product: "{{ foreman_product_name_prefix | default('') }}CentOS"
     allow_promote: "{{ foreman_cv_allow_promote_centos_stream9_sig_virtualization_ovirt45 }}"
 
 foreman_content_views_centos_stream9_sig_virtualization: "{{ [] |

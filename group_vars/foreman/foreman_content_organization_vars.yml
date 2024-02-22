@@ -408,15 +408,33 @@
 
 # foreman_organization_microsoft_azure_cli: "{{ foreman_organization_microsoft }}"
 
+# foreman_organization_microsoft_azure_cli_el: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_debian9: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_debian10: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_debian11: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_debian12: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_ubuntu1804: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_ubuntu2004: "{{ foreman_organization_microsoft_azure_cli }}"
+# foreman_organization_microsoft_azure_cli_ubuntu2204: "{{ foreman_organization_microsoft_azure_cli }}"
+
 # foreman_organization_microsoft_edge: "{{ foreman_organization_microsoft }}"
 
+# foreman_organization_microsoft_edge_el: "{{ foreman_organization_microsoft_edge }}"
 # foreman_organization_microsoft_edge_deb: "{{ foreman_organization_microsoft_edge }}"
+
+# foreman_organization_microsoft_vscode: "{{ foreman_organization_microsoft }}"
+
+# foreman_organization_microsoft_vscode_el: "{{ foreman_organization_microsoft_vscode }}"
+# foreman_organization_microsoft_vscode_deb: "{{ foreman_organization_microsoft_vscode }}"
 
 # foreman_organization_microsoft_prod: "{{ foreman_organization_microsoft }}"
 
 # foreman_organization_microsoft_prod_el7: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_el8: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_el9: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_fedora37: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_fedora38: "{{ foreman_organization_microsoft_prod }}"
+# foreman_organization_microsoft_prod_fedora39: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_debian9: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_debian10: "{{ foreman_organization_microsoft_prod }}"
 # foreman_organization_microsoft_prod_debian11: "{{ foreman_organization_microsoft_prod }}"

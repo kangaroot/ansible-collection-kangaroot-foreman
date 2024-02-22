@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 # defaults file for foreman_content_kubernetes
 
 #######################################
@@ -61,11 +62,11 @@ foreman_cv_allow_promote_kubernetes_el7: "{{ foreman_cv_allow_promote_kubernetes
 #######################################
 
 foreman_content_credentials_kubernetes_main:
-  - name: RPM-GPG-KEY-kubernetes-pkg
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-kubernetes-pkg"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_kubernetes ~ '/doc/rpm-package-key.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-kubernetes-pkg') }}"
-  - name: RPM-GPG-KEY-kubernetes-yum
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-kubernetes-yum"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_kubernetes ~ '/doc/yum-key.gpg', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-kubernetes-yum') }}"
@@ -100,7 +101,7 @@ foreman_activation_keys_kubernetes: "{{ ( foreman_activation_keys_kubernetes_mai
   }}"
 
 foreman_sync_plan_products_kubernetes_main:
-  - Kubernetes
+  - "{{ foreman_product_name_prefix | default('') }}Kubernetes"
 
 foreman_sync_plan_products_kubernetes: "{{ ( foreman_sync_plan_products_kubernetes_main | default([]) if foreman_enable_kubernetes | bool else [] ) |
   union( foreman_sync_plan_products_kubernetes_el7 | default([]) if foreman_enable_kubernetes_el7 | bool else [] )

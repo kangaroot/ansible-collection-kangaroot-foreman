@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol7_uln }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -27,8 +28,8 @@ foreman_products_defaults_ol8_uln_olcne: &foreman_products_defaults_ol8_uln_olcn
 
 
 foreman_products_ol8_uln_olcne:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol8_uln_olcne }}"
     repositories:
       ### Oracle Linux Cloud Native Environment 1.2 (x86_64) | ol8_x86_64_olcne12 ###
@@ -62,28 +63,28 @@ foreman_products_ol8_uln_olcne:
 
 
 foreman_content_views_ol8_uln_olcne:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_olcne12"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_uln_x86_64_olcne12"
     organization: "{{ foreman_organization_ol8_uln_olcne }}"
     repositories:
-      - name: Oracle Linux Cloud Native Environment 1.2 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Cloud Native Environment 1.2 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_olcne }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_olcne13"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_uln_x86_64_olcne13"
     organization: "{{ foreman_organization_ol8_uln_olcne }}"
     repositories:
-      - name: Oracle Linux Cloud Native Environment 1.3 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Cloud Native Environment 1.3 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_olcne }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_olcne14"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_uln_x86_64_olcne14"
     organization: "{{ foreman_organization_ol8_uln_olcne }}"
     repositories:
-      - name: Oracle Linux Cloud Native Environment 1.4 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Cloud Native Environment 1.4 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_olcne }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol8_uln_x86_64_olcne15"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol8_uln_x86_64_olcne15"
     organization: "{{ foreman_organization_ol8_uln_olcne }}"
     repositories:
-      - name: Oracle Linux Cloud Native Environment 1.5 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux Cloud Native Environment 1.5 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol8_uln_olcne }}"
 

@@ -1,11 +1,12 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_content_credentials_ol6: []
 
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-oracle
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-oracle"
   download_policy: "{{ foreman_products_defaults_download_policy_ol6 }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -19,8 +20,8 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_ol6:
-  - name: Oracle Linux
-    label: OL
+  - name: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}OL"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
       ### Oracle Linux 6 Latest (x86_64) | ol6_x86_64_latest ###
@@ -326,61 +327,61 @@ foreman_products_ol6:
         organization: "{{ foreman_organization_ol6 }}"
 
 foreman_content_views_ol6:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_latest"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Oracle Linux 6 Latest (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 6 Latest (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_addons"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_addons"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Oracle Linux 6 Add ons (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Linux 6 Add ons (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_SoftwareCollections"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_SoftwareCollections"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Oracle Software Collections for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Oracle Software Collections for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_developer"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_developer"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Packages for creating test and development environments for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Packages for creating test and development environments for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEK_base"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEK_base"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Unbreakable Enterprise Kernel for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Unbreakable Enterprise Kernel for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEK_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEK_latest"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Latest Unbreakable Enterprise Kernel for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Latest Unbreakable Enterprise Kernel for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEKR3_latest"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEKR3_latest"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Unbreakable Enterprise Kernel Release 3 for Oracle Linux 6 (x86_64) - Latest
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Unbreakable Enterprise Kernel Release 3 for Oracle Linux 6 (x86_64) - Latest"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEKR4"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEKR4"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Unbreakable Enterprise Kernel Release 4 for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Unbreakable Enterprise Kernel Release 4 for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_MODRHCK"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_MODRHCK"
     organization: "{{ foreman_organization_ol6 }}"
     repositories:
-      - name: Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 6 (x86_64)
-        product: Oracle Linux
+      - name: "{{ foreman_repo_name_prefix | default('') }}Red Hat compatible kernel with Oracle provided fixes for Oracle Linux 6 (x86_64)"
+        product: "{{ foreman_product_name_prefix | default('') }}Oracle Linux"
     allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
   # - name: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_ofed_UEK"
@@ -479,29 +480,29 @@ foreman_content_views_ol6:
   #   allow_promote: "{{ foreman_cv_allow_promote_ol6 }}"
 
 foreman_composite_content_views_ol6:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}ol6"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol6"
     organization: "{{ foreman_organization_ol6 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_ol6 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_ol6 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_latest"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_addons"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_addons"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_SoftwareCollections"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_SoftwareCollections"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_developer"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_developer"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEK_base"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEK_base"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEK_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEK_latest"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEKR3_latest"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEKR3_latest"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_UEKR4"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_UEKR4"
         latest: true
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_MODRHCK"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}ol6_x86_64_MODRHCK"
         latest: true
       # - content_view: "{{ foreman_cv_prefix | default('cv_') }}ol6_x86_64_ofed_UEK"
       #   latest: true
@@ -682,7 +683,7 @@ foreman_installation_media_ol6:
   #   <<: *foreman_installation_media_defaults
   #   operatingsystems:
   #     - Oracle Linux 6.9
-  - name: Oracle Linux 6.10
+  - name: "{{ foreman_media_name_prefix | default('') }}Oracle Linux 6.10"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Oracle_Linux/ol6_u10_base/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -698,58 +699,58 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
   # service_level: Standard
 
 foreman_activation_keys_ol6:
-  - name: ak_ol6
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}ol6"
     organization: "{{ foreman_organization_ol6 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}ol6"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}ol6"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_addons"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}addons"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_SoftwareCollections"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}SoftwareCollections"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_developer"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}developer"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEK_base"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_UEK_{{ foreman_repo_label_prefix | default('') }}base"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEK_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_UEK_{{ foreman_repo_label_prefix | default('') }}latest"
         override: enabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEKR3_latest"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_UEKR3_{{ foreman_repo_label_prefix | default('') }}latest"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEKR4"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}UEKR4"
         override: disabled
-      - label: "{{ foreman_organization }}_OL_ol6_x86_64_MODRHCK"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}MODRHCK"
         override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_ofed_UEK"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_ofed_{{ foreman_repo_label_prefix | default('') }}UEK"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_UEKR4_OFED"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_UEKR4_{{ foreman_repo_label_prefix | default('') }}OFED"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_MySQL"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}MySQL"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_MySQL56"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}MySQL56"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_MySQL57_community"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_MySQL57_{{ foreman_repo_label_prefix | default('') }}community"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_MySQL80_community"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_MySQL80_{{ foreman_repo_label_prefix | default('') }}community"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_oracle_instantclient"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_oracle_{{ foreman_repo_label_prefix | default('') }}instantclient"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_openstack10"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}openstack10"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_openstack21"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}openstack21"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_openstack30"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}openstack30"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_openstack40"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_{{ foreman_repo_label_prefix | default('') }}openstack40"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_spacewalk26_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_spacewalk26_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_spacewalk27_client"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_spacewalk27_{{ foreman_repo_label_prefix | default('') }}client"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_spacewalk26_server"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_spacewalk26_{{ foreman_repo_label_prefix | default('') }}server"
       #   override: disabled
-      # - label: "{{ foreman_organization }}_OL_ol6_x86_64_spacewalk27_server"
+      # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}OL_ol6_x86_64_spacewalk27_{{ foreman_repo_label_prefix | default('') }}server"
       #   override: disabled
 
 foreman_sync_plan_products_ol6: []

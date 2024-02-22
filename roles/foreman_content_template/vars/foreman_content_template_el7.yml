@@ -1,7 +1,8 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_content_credentials_template_el7:
-  - name: RPM-GPG-KEY-Template-7
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Template-7"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_template ~ '/RPM-GPG-KEY-Template-7', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-Template-7') }}"
@@ -9,7 +10,7 @@ foreman_content_credentials_template_el7:
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-Template-7
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Template-7"
   download_policy: on_demand
   # download_policy: immediate
   # mirror_on_sync: True
@@ -22,33 +23,33 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_template_el7:
-  - name: Template Product
-    label: Template
+  - name: "{{ foreman_product_name_prefix | default('') }}Template Product"
+    label: "{{ foreman_product_label_prefix | default('') }}Template"
     organization: "{{ foreman_organization_template_el7 }}"
     repositories:
-      - name: Template Product EL7
-        label: template-el7
+      - name: "{{ foreman_repo_name_prefix | default('') }}Template Product EL7"
+        label: "{{ foreman_repo_label_prefix | default('') }}template-el7"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_template_el7 }}/7/x86_64/"
         organization: "{{ foreman_organization_template_el7 }}"
 
 
 foreman_content_views_template_el7:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}template_el7"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}template_el7"
     organization: "{{ foreman_organization_template_el7 }}"
     repositories:
-      - name: Template Product EL7
-        product: Template Product
+      - name: "{{ foreman_repo_name_prefix | default('') }}Template Product EL7"
+        product: "{{ foreman_product_name_prefix | default('') }}Template Product"
     allow_promote: "{{ foreman_cv_allow_promote_template_el7 }}"
 
 foreman_composite_content_views_template_el7:
-  - name: "{{ foreman_ccv_prefix | default('ccv_') }}template_el7"
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}template_el7"
     organization: "{{ foreman_organization_template_el7 }}"
     composite: True
     allow_promote: "{{ foreman_ccv_allow_promote_template_el7 }}"
     auto_publish: "{{ foreman_ccv_auto_publish_template_el7 }}"
     components:
-      - content_view: "{{ foreman_cv_prefix | default('cv_') }}template_el7"
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}template_el7"
         latest: true
 
 
@@ -89,7 +90,7 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
 
 
 foreman_installation_media_template7:
-  - name: Template EL7
+  - name: "{{ foreman_media_name_prefix | default('') }}Template EL7"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Template/template-el7/"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -108,12 +109,12 @@ foreman_activation_keys_defaults: &foreman_activation_keys_defaults
 
 
 foreman_activation_keys_template_el7:
-  - name: ak_template_el7
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}template_el7"
     organization: "{{ foreman_organization_template_el7 }}"
-    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}template_el7"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}template_el7"
     <<: *foreman_activation_keys_defaults
     content_overrides:
-      - label: "{{ foreman_organization }}_Template_template_el7"
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Template_template_{{ foreman_repo_label_prefix | default('') }}el7"
         override: default
 
 

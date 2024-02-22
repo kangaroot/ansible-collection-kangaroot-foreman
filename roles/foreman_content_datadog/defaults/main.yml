@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 # defaults file for foreman_content_datadog
 
 #######################################
@@ -64,7 +65,7 @@ foreman_cv_allow_promote_datadog_v7: "{{ foreman_cv_allow_promote_datadog | bool
 #######################################
 
 foreman_content_credentials_datadog_main:
-  - name: RPM-GPG-KEY-Datadog
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Datadog"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://keys.datadoghq.com/DATADOG_RPM_KEY_CURRENT.public', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/DATADOG_RPM_KEY_CURRENT.public') }}"
@@ -105,7 +106,7 @@ foreman_activation_keys_datadog: "{{ ( foreman_activation_keys_datadog_main | de
   }}"
 
 foreman_sync_plan_products_datadog_main:
-  - Datadog
+  - "{{ foreman_product_name_prefix | default('') }}Datadog"
 
 foreman_sync_plan_products_datadog: "{{ ( foreman_sync_plan_products_datadog_main | default([]) if foreman_enable_datadog | bool else [] ) |
   union( foreman_sync_plan_products_datadog_v6 | default([]) if foreman_enable_datadog_v6 | bool else [] ) |

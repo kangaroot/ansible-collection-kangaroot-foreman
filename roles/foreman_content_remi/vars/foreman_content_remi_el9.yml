@@ -1,7 +1,8 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_content_credentials_remi_el9:
-  - name: RPM-GPG-KEY-remi2021
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-remi2021"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_remi ~ '/RPM-GPG-KEY-remi2021', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-remi2021') }}"
@@ -9,7 +10,7 @@ foreman_content_credentials_remi_el9:
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-remi2021
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-remi2021"
   download_policy: "{{ foreman_products_defaults_download_policy_remi }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -23,44 +24,44 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_remi_el9:
-  - name: Remi Repository
-    label: Remi
+  - name: "{{ foreman_product_name_prefix | default('') }}Remi Repository"
+    label: "{{ foreman_product_label_prefix | default('') }}Remi"
     organization: "{{ foreman_organization_remi_el9 }}"
     repositories:
-      - name: Remi - EL9
-        label: remi-el9
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi - EL9"
+        label: "{{ foreman_repo_label_prefix | default('') }}remi-el9"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/remi/x86_64/"
         organization: "{{ foreman_organization_remi_el9 }}"
-      - name: Remi Modular - EL9
-        label: remi-modular-el9
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi Modular - EL9"
+        label: "{{ foreman_repo_label_prefix | default('') }}remi-modular-el9"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/modular/x86_64/"
         organization: "{{ foreman_organization_remi_el9 }}"
-      - name: Remi Safe - EL9
-        label: remi-safe-el9
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi Safe - EL9"
+        label: "{{ foreman_repo_label_prefix | default('') }}remi-safe-el9"
         <<: *foreman_products_defaults
         url: "{{ foreman_repo_baseurl_remi_el9 }}/enterprise/9/safe/x86_64/"
         organization: "{{ foreman_organization_remi_el9 }}"
 
 foreman_content_views_remi_el9:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_el9"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}remi_el9"
     organization: "{{ foreman_organization_remi_el9 }}"
     repositories:
-      - name: Remi - EL9
-        product: Remi Repository
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi - EL9"
+        product: "{{ foreman_product_name_prefix | default('') }}Remi Repository"
     allow_promote: "{{ foreman_cv_allow_promote_remi_el9 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_modular_el9"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}remi_modular_el9"
     organization: "{{ foreman_organization_remi_el9 }}"
     repositories:
-      - name: Remi Modular - EL9
-        product: Remi Repository
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi Modular - EL9"
+        product: "{{ foreman_product_name_prefix | default('') }}Remi Repository"
     allow_promote: "{{ foreman_cv_allow_promote_remi_el9 }}"
-  - name: "{{ foreman_cv_prefix | default('cv_') }}remi_safe_el9"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}remi_safe_el9"
     organization: "{{ foreman_organization_remi_el9 }}"
     repositories:
-      - name: Remi Safe - EL9
-        product: Remi Repository
+      - name: "{{ foreman_repo_name_prefix | default('') }}Remi Safe - EL9"
+        product: "{{ foreman_product_name_prefix | default('') }}Remi Repository"
     allow_promote: "{{ foreman_cv_allow_promote_remi_el9 }}"
 
 foreman_activation_keys_remi_el9: []

@@ -1,8 +1,9 @@
 ---
+# noqa: var-naming[no-role-prefix]
 
 foreman_products_defaults: &foreman_products_defaults
   content_type: yum
-  gpg_key: RPM-GPG-KEY-Hashicorp
+  gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-Hashicorp"
   download_policy: "{{ foreman_products_defaults_download_policy_hashicorp }}"
   # mirror_on_sync: True
   # mirroring_policy: "additive"
@@ -16,61 +17,61 @@ foreman_products_defaults: &foreman_products_defaults
 
 
 foreman_products_hashicorp_el8:
-  - name: Hashicorp
-    label: Hashicorp
+  - name: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
+    label: "{{ foreman_product_label_prefix | default('') }}Hashicorp"
     organization: "{{ foreman_organization_hashicorp_el8 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 8
-        label: hashicorp-el8
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 8"
+        label: "{{ foreman_repo_label_prefix | default('') }}hashicorp-el8"
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/8/x86_64/stable"
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_hashicorp_el8 }}"
 
 foreman_products_hashicorp_el7:
-  - name: Hashicorp
-    label: Hashicorp
+  - name: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
+    label: "{{ foreman_product_label_prefix | default('') }}Hashicorp"
     organization: "{{ foreman_organization_hashicorp_el7 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 7
-        label: hashicorp-el7
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 7"
+        label: "{{ foreman_repo_label_prefix | default('') }}hashicorp-el7"
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/7/x86_64/stable"
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_hashicorp_el7 }}"
 
 foreman_products_hashicorp_el9:
-  - name: Hashicorp
-    label: Hashicorp
+  - name: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
+    label: "{{ foreman_product_label_prefix | default('') }}Hashicorp"
     organization: "{{ foreman_organization_hashicorp_el9 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 9
-        label: hashicorp-el9
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 9"
+        label: "{{ foreman_repo_label_prefix | default('') }}hashicorp-el9"
         url: "{{ foreman_repo_baseurl_hashicorp }}/RHEL/9/x86_64/stable"
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_hashicorp_el9 }}"
 
 
 foreman_content_views_hashicorp_el7:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}hashicorp_el7"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}hashicorp_el7"
     organization: "{{ foreman_organization_hashicorp_el7 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 7
-        product: Hashicorp
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 7"
+        product: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
     allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el7 }}"
 
 foreman_content_views_hashicorp_el8:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}hashicorp_el8"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}hashicorp_el8"
     organization: "{{ foreman_organization_hashicorp_el8 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 8
-        product: Hashicorp
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 8"
+        product: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
     allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el8 }}"
 
 foreman_content_views_hashicorp_el9:
-  - name: "{{ foreman_cv_prefix | default('cv_') }}hashicorp_el9"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}hashicorp_el9"
     organization: "{{ foreman_organization_hashicorp_el9 }}"
     repositories:
-      - name: Hashicorp Stable - x86_64 - RHEL 9
-        product: Hashicorp
+      - name: "{{ foreman_repo_name_prefix | default('') }}Hashicorp Stable - x86_64 - RHEL 9"
+        product: "{{ foreman_product_name_prefix | default('') }}Hashicorp"
     allow_promote: "{{ foreman_cv_allow_promote_hashicorp_el9 }}"
 
 

@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 # defaults file for foreman_content_atix
 
 #######################################
@@ -131,7 +132,7 @@ foreman_cv_allow_promote_atix_sles15: "{{ foreman_cv_allow_promote_atix_sles | b
 #######################################
 
 foreman_content_credentials_atix_main:
-  - name: ATIX-GPG-KEY
+  - name: "{{ foreman_cred_name_prefix | default('') }}ATIX-GPG-KEY"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', foreman_repo_baseurl_atix ~ '/atix_gpg.pub', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/atix_gpg.pub') }}"
@@ -178,7 +179,7 @@ foreman_activation_keys_atix: "{{ ( foreman_activation_keys_atix_main | default(
   }}"
 
 foreman_sync_plan_products_atix_main:
-  - ATIX
+  - "{{ foreman_product_name_prefix | default('') }}ATIX"
 
 foreman_sync_plan_products_atix: "{{ ( foreman_sync_plan_products_atix_main | default([]) if foreman_enable_atix | bool else [] ) |
   union( foreman_installation_media_atix_debian | default([]) if foreman_enable_atix_debian | bool else [] ) |

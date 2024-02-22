@@ -1,4 +1,5 @@
 ---
+# noqa: var-naming[no-role-prefix]
 # defaults file for foreman_content_centos
 
 #######################################
@@ -1475,81 +1476,81 @@ foreman_cv_allow_promote_centos_stream9_sig_hyperscale_experimental: "{{ foreman
 #######################################
 
 foreman_content_credentials_centos_main:
-  - name: RPM-GPG-KEY-CentOS-Official
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Official"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Official') }}"
-  - name: RPM-GPG-KEY-CentOS-Testing
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-Testing"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Testing', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-Testing') }}"
 
-  - name: RPM-GPG-KEY-CentOS-SIG-Extras
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Extras"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Extras', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Extras') }}"
 
-  - name: RPM-GPG-KEY-CentOS-SIG-Atomic
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Atomic"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Atomic', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Atomic') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Automotive
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Automotive"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Automotive', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Automotive') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Cloud
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Cloud', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Cloud') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-ConfigManagement
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-ConfigManagement"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ConfigManagement', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ConfigManagement') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Core
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Core"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Core', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Core') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-HyperScale
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-HyperScale"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-HyperScale', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-HyperScale') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Infra
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Infra"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Infra', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Infra') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-ISA
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-ISA"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-ISA', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-ISA') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Kmods
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Kmods"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Kmods', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Kmods') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Messaging
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Messaging"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Messaging', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Messaging') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-NFV
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-NFV"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-NFV', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-NFV') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-OpsTools
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-OpsTools"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-OpsTools', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-OpsTools') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-PaaS
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-PaaS"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-PaaS', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-PaaS') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-SCLo
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-SCLo"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-SCLo') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Storage
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Storage', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Storage') }}"
-  - name: RPM-GPG-KEY-CentOS-SIG-Virtualization
+  - name: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
     content_type: gpg_key
     content: "{{ lookup('ansible.builtin.url', 'https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-Virtualization', split_lines=False, validate_certs=False) }}"
     # content: "{{ lookup('ansible.builtin.file', role_path ~ '/files/RPM-GPG-KEY-CentOS-SIG-Virtualization') }}"
@@ -1690,22 +1691,22 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   locations: "{{ foreman_all_locations_namelist }}"
 
 foreman_installation_media_centos_main:
-  - name: CentOS 7 mirror
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 7 mirror"
     path: "{{ foreman_repo_baseurl_centos7 }}/$major/os/$arch"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 7
-  - name: CentOS 8 mirror
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS 8 mirror"
     path: "{{ foreman_repo_baseurl_centos8 }}/$major/BaseOS/$arch/kickstart"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS 8
-  - name: CentOS Stream
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS Stream"
     path: "{{ foreman_repo_baseurl_centos_stream8 }}/$major-stream/BaseOS/$arch/os"
     <<: *foreman_installation_media_defaults
     operatingsystems:
       - CentOS Stream 8
-  - name: CentOS Stream 9 mirror
+  - name: "{{ foreman_media_name_prefix | default('') }}CentOS Stream 9 mirror"
     path: "{{ foreman_repo_baseurl_centos_stream9 }}/$major-stream/BaseOS/$arch/os"
     <<: *foreman_installation_media_defaults
     operatingsystems:
@@ -1732,7 +1733,7 @@ foreman_activation_keys_centos: "{{ ( foreman_activation_keys_centos_main | defa
   }}"
 
 foreman_sync_plan_products_centos_main:
-  - CentOS
+  - "{{ foreman_product_name_prefix | default('') }}CentOS"
 
 foreman_sync_plan_products_centos: "{{ ( foreman_sync_plan_products_centos_main | default([]) if foreman_enable_centos | bool else [] ) |
   union( foreman_sync_plan_products_centos7 | default([]) if foreman_enable_centos7 | bool or foreman_enable_centos7_kickstart | bool else [] ) |
