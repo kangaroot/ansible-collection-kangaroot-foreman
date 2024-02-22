@@ -223,6 +223,39 @@ foreman_products_microsoft_prod_el9:
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_microsoft_prod_el9 }}"
 
+foreman_products_microsoft_prod_fedora37:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora37"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/37/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+
+foreman_products_microsoft_prod_fedora38:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora38"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/38/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+
+foreman_products_microsoft_prod_fedora39:
+  - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
+    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
+        label: "{{ foreman_repo_label_prefix | default('') }}microsoft-prod-fedora39"
+        url: "{{ foreman_repo_baseurl_microsoft }}/fedora/39/prod/"
+        <<: *foreman_products_defaults
+        organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+
 foreman_products_microsoft_prod_debian9:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
@@ -312,6 +345,9 @@ foreman_products_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main | de
   union( foreman_products_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
   union( foreman_products_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
   union( foreman_products_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
+  union( foreman_products_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
   union( foreman_products_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
@@ -621,6 +657,30 @@ foreman_content_views_microsoft_prod_el9:
         product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_el9 }}"
 
+foreman_content_views_microsoft_prod_fedora37:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora37"
+    organization: "{{ foreman_organization_microsoft_prod_fedora37 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 37"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora37 }}"
+
+foreman_content_views_microsoft_prod_fedora38:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora38"
+    organization: "{{ foreman_organization_microsoft_prod_fedora38 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 38"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora38 }}"
+
+foreman_content_views_microsoft_prod_fedora39:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_fedora39"
+    organization: "{{ foreman_organization_microsoft_prod_fedora39 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Microsoft Linux Software Repository - PROD - Fedora 39"
+        product: "{{ foreman_product_name_prefix | default('') }}Microsoft"
+    allow_promote: "{{ foreman_cv_allow_promote_microsoft_prod_fedora39 }}"
+
 foreman_content_views_microsoft_prod_debian9:
   - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}microsoft_prod_debian9"
     organization: "{{ foreman_organization_microsoft_prod_debian9 }}"
@@ -682,6 +742,9 @@ foreman_content_views_microsoft_prod: "{{ ( foreman_products_microsoft_prod_main
   union( foreman_content_views_microsoft_prod_el7 | default([]) if foreman_enable_microsoft_prod_el7 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_el8 | default([]) if foreman_enable_microsoft_prod_el8 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_el9 | default([]) if foreman_enable_microsoft_prod_el9 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora37 | default([]) if foreman_enable_microsoft_prod_fedora37 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora38 | default([]) if foreman_enable_microsoft_prod_fedora38 | bool else [] ) |
+  union( foreman_content_views_microsoft_prod_fedora39 | default([]) if foreman_enable_microsoft_prod_fedora39 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian9 | default([]) if foreman_enable_microsoft_prod_debian9 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian10 | default([]) if foreman_enable_microsoft_prod_debian10 | bool else [] ) |
   union( foreman_content_views_microsoft_prod_debian11 | default([]) if foreman_enable_microsoft_prod_debian11 | bool else [] ) |
