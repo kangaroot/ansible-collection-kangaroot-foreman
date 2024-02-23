@@ -34,7 +34,7 @@ foreman_products_microsoft_azure_cli_el:
         <<: *foreman_products_defaults
         organization: "{{ foreman_organization_microsoft_azure_cli_el }}"
 
-foreman_products_microsoft_azure_clidebian9:
+foreman_products_microsoft_azure_cli_debian9:
   - name: "{{ foreman_product_name_prefix | default('') }}Microsoft"
     label: "{{ foreman_product_label_prefix | default('') }}Microsoft"
     organization: "{{ foreman_organization_microsoft_azure_cli_debian9 }}"
