@@ -11,6 +11,7 @@ foreman_repo_baseurl_ubuntu: http://archive.ubuntu.com/ubuntu
 foreman_repo_baseurl_ubuntu1804: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2004: "{{ foreman_repo_baseurl_ubuntu }}"
 foreman_repo_baseurl_ubuntu2204: "{{ foreman_repo_baseurl_ubuntu }}"
+foreman_repo_baseurl_ubuntu2404: "{{ foreman_repo_baseurl_ubuntu }}"
 
 
 #######################################
@@ -37,6 +38,11 @@ foreman_installation_media_ubuntu2204_locations: "{{ foreman_installation_media_
 foreman_installation_media_ubuntu2204_operatingsystems:
     - Ubuntu 22.04 LTS (Jammy Jellyfish)
 
+foreman_installation_media_ubuntu2404_organizations: "{{ foreman_installation_media_ubuntu_organizations }}"
+foreman_installation_media_ubuntu2404_locations: "{{ foreman_installation_media_ubuntu_locations }}"
+foreman_installation_media_ubuntu2404_operatingsystems:
+    - Ubuntu 24.04 LTS (Noble Numbat)
+
 
 #######################################
 ### OS DEFAULTS
@@ -53,6 +59,9 @@ foreman_operatingsystems_ubuntu2004_ptables: "{{ foreman_operatingsystems_ubuntu
 
 foreman_operatingsystems_ubuntu2204_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
 foreman_operatingsystems_ubuntu2204_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
+
+foreman_operatingsystems_ubuntu2404_architectures: "{{ foreman_operatingsystems_ubuntu_architectures }}"
+foreman_operatingsystems_ubuntu2404_ptables: "{{ foreman_operatingsystems_ubuntu_ptables }}"
 
 
 #######################################
@@ -214,6 +223,37 @@ foreman_operatingsystems_ubuntu2204_default_templates:
   - template_kind: "user_data"
     provisioning_template: "{{ foreman_operatingsystems_ubuntu2204_template_user_data | default( foreman_operatingsystems_ubuntu2x_template_user_data | default( foreman_operatingsystems_deb_template_user_data | default('Preseed default user data') ) ) }}"
 
+### Ubuntu 24.04 operating system default templates
+# foreman_operatingsystems_ubuntu2404_template_cloud_init: "{{ foreman_operatingsystems_ubuntu2x_template_cloud_init | default( foreman_operatingsystems_deb_template_cloud_init | default('CloudInit default') ) }}"
+foreman_operatingsystems_ubuntu2404_template_finish: "{{ foreman_operatingsystems_ubuntu2x_template_finish | default( foreman_operatingsystems_deb_template_finish | default('Preseed default finish') ) }}"
+# foreman_operatingsystems_ubuntu2404_template_host_init_config: "{{ foreman_operatingsystems_ubuntu2x_template_host_init_config | default( foreman_operatingsystems_deb_template_host_init_config | default('Linux host_init_config default') ) }}"
+# foreman_operatingsystems_ubuntu2404_template_ipxe: "{{ foreman_operatingsystems_ubuntu2x_template_ipxe | default( foreman_operatingsystems_deb_template_ipxe | default('Preseed default iPXE') ) }}"
+foreman_operatingsystems_ubuntu2404_template_provision: "{{ foreman_operatingsystems_ubuntu2x_template_provision | default( foreman_operatingsystems_deb_template_provision | default('Preseed default') ) }}"
+# foreman_operatingsystems_ubuntu2404_template_pxegrub: "{{ foreman_operatingsystems_ubuntu2x_template_pxegrub | default( foreman_operatingsystems_deb_template_pxegrub | default('Preseed default PXEGrub') ) }}"
+foreman_operatingsystems_ubuntu2404_template_pxegrub2: "{{ foreman_operatingsystems_ubuntu2x_template_pxegrub2 | default( foreman_operatingsystems_deb_template_pxegrub2 | default('Preseed default PXEGrub2') ) }}"
+foreman_operatingsystems_ubuntu2404_template_pxelinux: "{{ foreman_operatingsystems_ubuntu2x_template_pxelinux | default( foreman_operatingsystems_deb_template_pxelinux | default('Preseed default PXELinux') ) }}"
+foreman_operatingsystems_ubuntu2404_template_user_data: "{{ foreman_operatingsystems_ubuntu2x_template_user_data | default( foreman_operatingsystems_deb_template_user_data | default('Preseed default user data') ) }}"
+
+foreman_operatingsystems_ubuntu2404_default_templates:
+  # - template_kind: "cloud-init"
+  #   provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_cloud_init | default( foreman_operatingsystems_ubuntu2x_template_cloud_init | default( foreman_operatingsystems_deb_template_cloud_init | default('CloudInit default') ) ) }}"
+  - template_kind: "finish"
+    provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_finish | default( foreman_operatingsystems_ubuntu2x_template_finish | default( foreman_operatingsystems_deb_template_finish | default('Preseed default finish') ) ) }}"
+  # - template_kind: "host_init_config"
+  #   provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_host_init_config | default( foreman_operatingsystems_ubuntu2x_template_host_init_config | default( foreman_operatingsystems_deb_template_host_init_config | default('Linux host_init_config default') ) ) }}"
+  # - template_kind: "iPXE"
+  #   provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_ipxe | default( foreman_operatingsystems_ubuntu2x_template_ipxe | default( foreman_operatingsystems_deb_template_ipxe | default('Preseed default iPXE') ) ) }}"
+  - template_kind: "provision"
+    provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_provision | default( foreman_operatingsystems_ubuntu2x_template_provision | default( foreman_operatingsystems_deb_template_provision | default('Preseed default') ) ) }}"
+  # - template_kind: "PXEGrub"
+  #   provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_pxegrub | default( foreman_operatingsystems_ubuntu2x_template_pxegrub | default( foreman_operatingsystems_deb_template_pxegrub | default('Preseed default PXEGrub') ) ) }}"
+  - template_kind: "PXEGrub2"
+    provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_pxegrub2 | default( foreman_operatingsystems_ubuntu2x_template_pxegrub2 | default( foreman_operatingsystems_deb_template_pxegrub2 | default('Preseed default PXEGrub2') ) ) }}"
+  - template_kind: "PXELinux"
+    provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_pxelinux | default( foreman_operatingsystems_ubuntu2x_template_pxelinux | default( foreman_operatingsystems_deb_template_pxelinux | default('Preseed default PXELinux') ) ) }}"
+  - template_kind: "user_data"
+    provisioning_template: "{{ foreman_operatingsystems_ubuntu2404_template_user_data | default( foreman_operatingsystems_ubuntu2x_template_user_data | default( foreman_operatingsystems_deb_template_user_data | default('Preseed default user data') ) ) }}"
+
 
 #######################################
 ### ENABLE VARS
@@ -224,16 +264,19 @@ foreman_enable_ubuntu: false
 foreman_enable_ubuntu1804: false
 foreman_enable_ubuntu2004: "{{ foreman_enable_ubuntu | bool }}"
 foreman_enable_ubuntu2204: "{{ foreman_enable_ubuntu | bool }}"
+foreman_enable_ubuntu2404: "{{ foreman_enable_ubuntu | bool }}"
 
 foreman_enable_ubuntu_default_ccv: false
 foreman_enable_ubuntu1804_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
 foreman_enable_ubuntu2004_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
 foreman_enable_ubuntu2204_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
+foreman_enable_ubuntu2404_default_ccv: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
 
 foreman_enable_ubuntu_default_ak: "{{ foreman_enable_ubuntu_default_ccv | bool }}"
 foreman_enable_ubuntu1804_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
 foreman_enable_ubuntu2004_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
 foreman_enable_ubuntu2204_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
+foreman_enable_ubuntu2404_default_ak: "{{ foreman_enable_ubuntu_default_ak | bool }}"
 
 
 #######################################
@@ -274,6 +317,14 @@ foreman_products_defaults_unprotected_ubuntu2204: "{{ foreman_products_defaults_
 foreman_products_defaults_deb_components_ubuntu2204: "{{ foreman_products_defaults_deb_components_ubuntu }}"
 foreman_products_defaults_deb_architectures_ubuntu2204: "{{ foreman_products_defaults_deb_architectures_ubuntu }}"
 
+foreman_products_defaults_download_policy_ubuntu2404: "{{ foreman_products_defaults_download_policy_ubuntu }}"
+foreman_products_defaults_mirroring_policy_ubuntu2404: "{{ foreman_products_defaults_mirroring_policy_ubuntu }}"
+foreman_products_defaults_verify_ssl_on_sync_ubuntu2404: "{{ foreman_products_defaults_verify_ssl_on_sync_ubuntu | bool }}"
+foreman_products_defaults_http_proxy_policy_ubuntu2404: "{{ foreman_products_defaults_http_proxy_policy_ubuntu }}"
+foreman_products_defaults_unprotected_ubuntu2404: "{{ foreman_products_defaults_unprotected_ubuntu | bool }}"
+foreman_products_defaults_deb_components_ubuntu2404: "{{ foreman_products_defaults_deb_components_ubuntu }}"
+foreman_products_defaults_deb_architectures_ubuntu2404: "{{ foreman_products_defaults_deb_architectures_ubuntu }}"
+
 
 #######################################
 ### ORGANIZATION VARS
@@ -284,6 +335,7 @@ foreman_organization_ubuntu: "{{ foreman_organization }}"
 foreman_organization_ubuntu1804: "{{ foreman_organization_ubuntu }}"
 foreman_organization_ubuntu2004: "{{ foreman_organization_ubuntu }}"
 foreman_organization_ubuntu2204: "{{ foreman_organization_ubuntu }}"
+foreman_organization_ubuntu2404: "{{ foreman_organization_ubuntu }}"
 
 
 #######################################
@@ -309,6 +361,10 @@ foreman_cv_allow_promote_ubuntu2204: "{{ foreman_cv_allow_promote_ubuntu | bool 
 foreman_ccv_allow_promote_ubuntu2204: "{{ foreman_ccv_allow_promote_ubuntu | bool }}"
 foreman_ccv_auto_publish_ubuntu2204: "{{ foreman_ccv_auto_publish_ubuntu | bool }}"
 
+foreman_cv_allow_promote_ubuntu2404: "{{ foreman_cv_allow_promote_ubuntu | bool }}"
+foreman_ccv_allow_promote_ubuntu2404: "{{ foreman_ccv_allow_promote_ubuntu | bool }}"
+foreman_ccv_auto_publish_ubuntu2404: "{{ foreman_ccv_auto_publish_ubuntu | bool }}"
+
 
 #######################################
 ### CONTENT
@@ -319,13 +375,15 @@ foreman_content_credentials_ubuntu: "{{ ( foreman_content_credentials_ubuntu_mai
   union( foreman_content_credentials_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_content_credentials_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
   union( foreman_content_credentials_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_content_credentials_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 
 foreman_products_ubuntu_main: []
 foreman_products_ubuntu: "{{ ( foreman_products_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_products_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 
 foreman_content_views_ubuntu_main: []
@@ -334,17 +392,20 @@ foreman_content_views_ubuntu: "{{ ( foreman_content_views_ubuntu_main | default(
   union( foreman_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
   union( foreman_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_content_views_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] ) |
   union( foreman_composite_content_views_ubuntu_main | default([]) if foreman_enable_ubuntu | bool and foreman_enable_ubuntu_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] )
+  union( foreman_composite_content_views_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool and foreman_enable_ubuntu1804_default_ccv | bool else [] )
   }}"
 
 foreman_operatingsystems_ubuntu_main: []
 foreman_operatingsystems_ubuntu: "{{ ( foreman_operatingsystems_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_operatingsystems_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_operatingsystems_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_operatingsystems_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_operatingsystems_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_operatingsystems_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 
 foreman_installation_media_ubuntu_defaults: &foreman_installation_media_ubuntu_defaults
@@ -363,20 +424,23 @@ foreman_installation_media_ubuntu_main:
     operatingsystems: "{{ [] |
       union( ['Ubuntu 18.04 LTS (Bionic Beaver)'] if foreman_enable_ubuntu1804 | bool else [] ) |
       union( ['Ubuntu 20.04 LTS (Focal Fossa)'] if foreman_enable_ubuntu2004 | bool else [] ) |
-      union( ['Ubuntu 22.04 LTS (Jammy Jellyfish)'] if foreman_enable_ubuntu2204 | bool else [] )
+      union( ['Ubuntu 22.04 LTS (Jammy Jellyfish)'] if foreman_enable_ubuntu2204 | bool else [] ) |
+      union( ['Ubuntu 24.04 LTS (Noble Numbat)'] if foreman_enable_ubuntu2204 | bool else [] )
       }}"
 
 foreman_installation_media_ubuntu: "{{ ( foreman_installation_media_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_installation_media_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_installation_media_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_installation_media_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_installation_media_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_installation_media_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 
 foreman_activation_keys_ubuntu_main: []
 foreman_activation_keys_ubuntu: "{{ ( foreman_activation_keys_ubuntu_main | default([]) if foreman_enable_ubuntu | bool and foreman_enable_ubuntu_default_ak | bool else [] ) |
   union( foreman_activation_keys_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool and foreman_enable_ubuntu1804_default_ak | bool else [] ) |
   union( foreman_activation_keys_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool and foreman_enable_ubuntu2004_default_ak | bool else [] ) |
-  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu2204_default_ak | bool else [] )
+  union( foreman_activation_keys_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool and foreman_enable_ubuntu2204_default_ak | bool else [] ) |
+  union( foreman_activation_keys_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool and foreman_enable_ubuntu2404_default_ak | bool else [] )
   }}"
 
 foreman_sync_plan_products_ubuntu_main:
@@ -385,6 +449,7 @@ foreman_sync_plan_products_ubuntu_main:
 foreman_sync_plan_products_ubuntu: "{{ ( foreman_sync_plan_products_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_sync_plan_products_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_sync_plan_products_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_sync_plan_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_sync_plan_products_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
+  union( foreman_sync_plan_products_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 

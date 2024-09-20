@@ -1340,3 +1340,7 @@
 # foreman_ccv_allow_promote_ubuntu2204: "{{ foreman_ccv_allow_promote_ubuntu | bool }}"
 # foreman_ccv_auto_publish_ubuntu2204: "{{ foreman_ccv_auto_publish_ubuntu | bool }}"
 
+# foreman_cv_allow_promote_ubuntu2404: "{{ foreman_cv_allow_promote_ubuntu | bool }}"
+# foreman_ccv_allow_promote_ubuntu2404: "{{ foreman_ccv_allow_promote_ubuntu | bool }}"
+# foreman_ccv_auto_publish_ubuntu2404: "{{ foreman_ccv_auto_publish_ubuntu | bool }}"
+

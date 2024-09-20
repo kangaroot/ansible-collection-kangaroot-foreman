@@ -1641,3 +1641,11 @@
 # foreman_products_defaults_deb_components_ubuntu2204: "{{ foreman_products_defaults_deb_components_ubuntu }}"
 # foreman_products_defaults_deb_architectures_ubuntu2204: "{{ foreman_products_defaults_deb_architectures_ubuntu }}"
 
+# foreman_products_defaults_download_policy_ubuntu2404: "{{ foreman_products_defaults_download_policy_ubuntu }}"
+# foreman_products_defaults_mirroring_policy_ubuntu2404: "{{ foreman_products_defaults_mirroring_policy_ubuntu }}"
+# foreman_products_defaults_verify_ssl_on_sync_ubuntu2404: "{{ foreman_products_defaults_verify_ssl_on_sync_ubuntu | bool }}"
+# foreman_products_defaults_http_proxy_policy_ubuntu2404: "{{ foreman_products_defaults_http_proxy_policy_ubuntu }}"
+# foreman_products_defaults_unprotected_ubuntu2404: "{{ foreman_products_defaults_unprotected_ubuntu | bool }}"
+# foreman_products_defaults_deb_components_ubuntu2404: "{{ foreman_products_defaults_deb_components_ubuntu }}"
+# foreman_products_defaults_deb_architectures_ubuntu2404: "{{ foreman_products_defaults_deb_architectures_ubuntu }}"
+
