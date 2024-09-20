@@ -1200,6 +1200,10 @@
 # foreman_ccv_allow_promote_redhat89: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 # foreman_ccv_auto_publish_redhat89: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
 
+# foreman_cv_allow_promote_redhat810: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
+# foreman_ccv_allow_promote_redhat810: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
+# foreman_ccv_auto_publish_redhat810: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
+
 # foreman_cv_allow_promote_redhat8_sat: "{{ foreman_cv_allow_promote_redhat8 | bool }}"
 # foreman_ccv_allow_promote_redhat8_sat: "{{ foreman_ccv_allow_promote_redhat8 | bool }}"
 # foreman_ccv_auto_publish_redhat8_sat: "{{ foreman_ccv_auto_publish_redhat8 | bool }}"
@@ -1233,6 +1237,10 @@
 # foreman_cv_allow_promote_redhat93: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 # foreman_ccv_allow_promote_redhat93: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
 # foreman_ccv_auto_publish_redhat93: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
+
+# foreman_cv_allow_promote_redhat94: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
+# foreman_ccv_allow_promote_redhat94: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
+# foreman_ccv_auto_publish_redhat94: "{{ foreman_ccv_auto_publish_redhat9 | bool }}"
 
 # foreman_cv_allow_promote_redhat9_aap: "{{ foreman_cv_allow_promote_redhat9 | bool }}"
 # foreman_ccv_allow_promote_redhat9_aap: "{{ foreman_ccv_allow_promote_redhat9 | bool }}"
