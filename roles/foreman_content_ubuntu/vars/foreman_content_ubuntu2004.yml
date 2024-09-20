@@ -169,9 +169,9 @@ foreman_activation_keys_ubuntu2004:
     <<: *foreman_activation_keys_defaults
     content_overrides:
       - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2004"
-        override: default
+        override: enabled
       - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2004-updates"
-        override: default
+        override: enabled
       # - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2004-proposed"
       #   override: default
       - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Ubuntu_{{ foreman_repo_label_prefix | default('') }}ubuntu-2004-backports"
