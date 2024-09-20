@@ -1274,6 +1274,10 @@
 # foreman_ccv_allow_promote_rocky89: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
 # foreman_ccv_auto_publish_rocky89: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
 
+# foreman_cv_allow_promote_rocky810: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
+# foreman_ccv_allow_promote_rocky810: "{{ foreman_ccv_allow_promote_rocky8 | bool }}"
+# foreman_ccv_auto_publish_rocky810: "{{ foreman_ccv_auto_publish_rocky8 | bool }}"
+
 # foreman_cv_allow_promote_rocky8_sig_core: "{{ foreman_cv_allow_promote_rocky8 | bool }}"
 # foreman_cv_allow_promote_rocky8_sig_core_common: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
 # foreman_cv_allow_promote_rocky8_sig_core_infra: "{{ foreman_cv_allow_promote_rocky8_sig_core | bool }}"
@@ -1303,6 +1307,10 @@
 # foreman_cv_allow_promote_rocky93: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
 # foreman_ccv_allow_promote_rocky93: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
 # foreman_ccv_auto_publish_rocky93: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
+
+# foreman_cv_allow_promote_rocky94: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
+# foreman_ccv_allow_promote_rocky94: "{{ foreman_ccv_allow_promote_rocky9 | bool }}"
+# foreman_ccv_auto_publish_rocky94: "{{ foreman_ccv_auto_publish_rocky9 | bool }}"
 
 # foreman_cv_allow_promote_rocky9_sig_core: "{{ foreman_cv_allow_promote_rocky9 | bool }}"
 # foreman_cv_allow_promote_rocky9_sig_core_common: "{{ foreman_cv_allow_promote_rocky9_sig_core | bool }}"

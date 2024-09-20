@@ -48,13 +48,13 @@ foreman_products_defaults_rocky93: &foreman_products_defaults_rocky93
   http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky93 }}"
   unprotected: "{{ foreman_products_defaults_unprotected_rocky93 | bool }}"
 
-# foreman_products_defaults_rocky94: &foreman_products_defaults_rocky94
-#   <<: *foreman_products_defaults
-#   download_policy: "{{ foreman_products_defaults_download_policy_rocky94 }}"
-#   mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky94 }}"
-#   verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky94 | bool }}"
-#   http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky94 }}"
-#   unprotected: "{{ foreman_products_defaults_unprotected_rocky94 | bool }}"
+foreman_products_defaults_rocky94: &foreman_products_defaults_rocky94
+  <<: *foreman_products_defaults
+  download_policy: "{{ foreman_products_defaults_download_policy_rocky94 }}"
+  mirroring_policy: "{{ foreman_products_defaults_mirroring_policy_rocky94 }}"
+  verify_ssl_on_sync: "{{ foreman_products_defaults_verify_ssl_on_sync_rocky94 | bool }}"
+  http_proxy_policy: "{{ foreman_products_defaults_http_proxy_policy_rocky94 }}"
+  unprotected: "{{ foreman_products_defaults_unprotected_rocky94 | bool }}"
 
 
 foreman_products_rocky90:
@@ -202,7 +202,7 @@ foreman_products_rocky91:
 foreman_products_rocky91_kickstart:
   - name: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
     label: "{{ foreman_product_label_prefix | default('') }}Rocky"
-    organization: "{{ foreman_organization_rocky90 }}"
+    organization: "{{ foreman_organization_rocky91 }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.1 - BaseOS Kickstart"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-91-baseos-kickstart"
@@ -281,7 +281,7 @@ foreman_products_rocky92:
 foreman_products_rocky92_kickstart:
   - name: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
     label: "{{ foreman_product_label_prefix | default('') }}Rocky"
-    organization: "{{ foreman_organization_rocky90 }}"
+    organization: "{{ foreman_organization_rocky92 }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.2 - BaseOS Kickstart"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-92-baseos-kickstart"
@@ -302,166 +302,168 @@ foreman_products_rocky93:
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - BaseOS"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-baseos"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/BaseOS/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/BaseOS/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - AppStream"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-appstream"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/AppStream/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/AppStream/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
 
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - Extras"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-extras"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/extras/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/extras/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - Plus"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-plus"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/plus/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/plus/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - PowerTools"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-powertools"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/PowerTools/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/PowerTools/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - HighAvailability"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-ha"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/HighAvailability/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/HighAvailability/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - NFV"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-nfv"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/nfv/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/nfv/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - ResilientStorage"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-resilientstorage"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/ResilientStorage/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/ResilientStorage/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - Realtime"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-rt"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/RT/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/RT/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
 
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - SAP"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-sap"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/SAP/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/SAP/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - SAPHANA"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-saphana"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/SAPHANA/x86_64/os/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/SAPHANA/x86_64/os/"
         organization: "{{ foreman_organization_rocky93 }}"
 
 foreman_products_rocky93_kickstart:
   - name: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
     label: "{{ foreman_product_label_prefix | default('') }}Rocky"
-    organization: "{{ foreman_organization_rocky90 }}"
+    organization: "{{ foreman_organization_rocky93 }}"
     repositories:
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - BaseOS Kickstart"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-baseos-kickstart"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/BaseOS/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/BaseOS/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky93 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.3 - AppStream Kickstart"
         label: "{{ foreman_repo_label_prefix | default('') }}rocky-93-appstream-kickstart"
         <<: *foreman_products_defaults_rocky93
-        url: "{{ foreman_repo_baseurl_rocky9 }}/9.3/AppStream/x86_64/kickstart/"
+        url: "{{ foreman_repo_baseurl_rocky_vault }}/9.3/AppStream/x86_64/kickstart/"
         organization: "{{ foreman_organization_rocky93 }}"
 
-# foreman_products_rocky94:
-#   - name: Rocky Linux
-#     label: Rocky
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - BaseOS
-#         label: rocky-94-baseos
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/BaseOS/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - AppStream
-#         label: rocky-94-appstream
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/AppStream/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
+foreman_products_rocky94:
+  - name: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}Rocky"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - BaseOS"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-baseos"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/BaseOS/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - AppStream"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-appstream"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/AppStream/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
 
-#       - name: Rocky Linux 9.4 - Extras
-#         label: rocky-94-extras
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/extras/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - Plus
-#         label: rocky-94-plus
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/plus/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - PowerTools
-#         label: rocky-94-powertools
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/PowerTools/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - HighAvailability
-#         label: rocky-94-ha
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/HighAvailability/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - NFV
-#         label: rocky-94-nfv
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/nfv/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - ResilientStorage
-#         label: rocky-94-resilientstorage
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/ResilientStorage/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - Realtime
-#         label: rocky-94-rt
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/RT/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Extras"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-extras"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/extras/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Plus"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-plus"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/plus/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - PowerTools"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-powertools"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/PowerTools/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - HighAvailability"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-ha"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/HighAvailability/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - NFV"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-nfv"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/nfv/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - ResilientStorage"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-resilientstorage"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/ResilientStorage/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Realtime"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-rt"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/RT/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
 
-#       - name: Rocky Linux 9.4 - SAP
-#         label: rocky-94-sap
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAP/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - SAPHANA
-#         label: rocky-94-saphana
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAPHANA/x86_64/os/"
-#         organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - SAP"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-sap"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAP/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - SAPHANA"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-saphana"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/SAPHANA/x86_64/os/"
+        organization: "{{ foreman_organization_rocky94 }}"
 
-# foreman_products_rocky94_kickstart:
-#   - name: Rocky Linux
-#     label: Rocky
-#     organization: "{{ foreman_organization_rocky90 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - BaseOS Kickstart
-#         label: rocky-94-baseos-kickstart
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/BaseOS/x86_64/kickstart/"
-#         organization: "{{ foreman_organization_rocky94 }}"
-#       - name: Rocky Linux 9.4 - AppStream Kickstart
-#         label: rocky-94-appstream-kickstart
-#         <<: *foreman_products_defaults_rocky94
-#         url: "{{ foreman_repo_baseurl_rocky_vault }}/9.4/AppStream/x86_64/kickstart/"
-#         organization: "{{ foreman_organization_rocky94 }}"
+foreman_products_rocky94_kickstart:
+  - name: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    label: "{{ foreman_product_label_prefix | default('') }}Rocky"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - BaseOS Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-baseos-kickstart"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/BaseOS/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky94 }}"
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - AppStream Kickstart"
+        label: "{{ foreman_repo_label_prefix | default('') }}rocky-94-appstream-kickstart"
+        <<: *foreman_products_defaults_rocky94
+        url: "{{ foreman_repo_baseurl_rocky9 }}/9.4/AppStream/x86_64/kickstart/"
+        organization: "{{ foreman_organization_rocky94 }}"
 
 foreman_products_rocky9_versions: "{{ [] |
   union( foreman_products_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
   union( foreman_products_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
   union( foreman_products_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
   union( foreman_products_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] ) |
+  union( foreman_products_rocky94 | default([]) if foreman_enable_rocky94 | bool else [] ) |
 
   union( foreman_products_rocky90_kickstart | default([]) if foreman_enable_rocky90_kickstart | bool else [] ) |
   union( foreman_products_rocky91_kickstart | default([]) if foreman_enable_rocky91_kickstart | bool else [] ) |
   union( foreman_products_rocky92_kickstart | default([]) if foreman_enable_rocky92_kickstart | bool else [] ) |
-  union( foreman_products_rocky93_kickstart | default([]) if foreman_enable_rocky93_kickstart | bool else [] )
+  union( foreman_products_rocky93_kickstart | default([]) if foreman_enable_rocky93_kickstart | bool else [] ) |
+  union( foreman_products_rocky94_kickstart | default([]) if foreman_enable_rocky94_kickstart | bool else [] )
   }}"
 
 
@@ -737,73 +739,73 @@ foreman_content_views_rocky93:
         product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
     allow_promote: "{{ foreman_cv_allow_promote_rocky93 }}"
 
-# foreman_content_views_rocky94:
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_baseos"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - BaseOS
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_appstream"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - AppStream
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_extras"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - Extras
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_plus"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - Plus
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_powertools"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - PowerTools
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_ha"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - HighAvailability
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_nfv"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - NFV
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_resilientstorage"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - ResilientStorage
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_rt"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - Realtime
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_sap"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - SAP
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
-#   - name: "{{ foreman_cv_prefix | default('cv_') }}rocky94_saphana"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     repositories:
-#       - name: Rocky Linux 9.4 - SAPHANA
-#         product: Rocky Linux
-#     allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+foreman_content_views_rocky94:
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_baseos"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - BaseOS"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_appstream"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - AppStream"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_extras"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Extras"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_plus"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Plus"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_powertools"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - PowerTools"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_ha"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - HighAvailability"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_nfv"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - NFV"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_resilientstorage"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - ResilientStorage"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_rt"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - Realtime"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_sap"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - SAP"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
+  - name: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_saphana"
+    organization: "{{ foreman_organization_rocky94 }}"
+    repositories:
+      - name: "{{ foreman_repo_name_prefix | default('') }}Rocky Linux 9.4 - SAPHANA"
+        product: "{{ foreman_product_name_prefix | default('') }}Rocky Linux"
+    allow_promote: "{{ foreman_cv_allow_promote_rocky94 }}"
 
 foreman_composite_content_views_rocky90:
   - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rocky90"
@@ -925,48 +927,50 @@ foreman_composite_content_views_rocky93:
       - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky93_saphana"
         latest: true
 
-# foreman_composite_content_views_rocky94:
-#   - name: "{{ foreman_ccv_prefix | default('ccv_') }}rocky94"
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     composite: True
-#     allow_promote: "{{ foreman_ccv_allow_promote_rocky94 }}"
-#     auto_publish: "{{ foreman_ccv_auto_publish_rocky94 }}"
-#     components:
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_baseos"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_appstream"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_extras"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_plus"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_crb"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_ha"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_nfv"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_resilientstorage"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_rt"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_sap"
-#         latest: true
-#       - content_view: "{{ foreman_cv_prefix | default('cv_') }}rocky94_saphana"
-#         latest: true
+foreman_composite_content_views_rocky94:
+  - name: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rocky94"
+    organization: "{{ foreman_organization_rocky94 }}"
+    composite: True
+    allow_promote: "{{ foreman_ccv_allow_promote_rocky94 }}"
+    auto_publish: "{{ foreman_ccv_auto_publish_rocky94 }}"
+    components:
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_baseos"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_appstream"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_extras"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_plus"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_crb"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_ha"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_nfv"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_resilientstorage"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_rt"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_sap"
+        latest: true
+      - content_view: "{{ foreman_cv_prefix | default('cv_') }}{{ foreman_cv_name_prefix | default('') }}rocky94_saphana"
+        latest: true
 
 foreman_content_views_rocky9_versions: "{{ [] |
   union( foreman_content_views_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
   union( foreman_content_views_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
   union( foreman_content_views_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
-  union( foreman_content_views_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] )
+  union( foreman_content_views_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] ) |
+  union( foreman_content_views_rocky94 | default([]) if foreman_enable_rocky94 | bool else [] )
   }}"
 
 foreman_composite_content_views_rocky9_versions: "{{ [] |
   union( foreman_composite_content_views_rocky90 | default([]) if foreman_enable_rocky90 | bool and foreman_enable_rocky90_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_rocky91 | default([]) if foreman_enable_rocky91 | bool and foreman_enable_rocky91_default_ccv | bool else [] ) |
   union( foreman_composite_content_views_rocky92 | default([]) if foreman_enable_rocky92 | bool and foreman_enable_rocky92_default_ccv | bool else [] ) |
-  union( foreman_composite_content_views_rocky93 | default([]) if foreman_enable_rocky93 | bool and foreman_enable_rocky93_default_ccv | bool else [] )
+  union( foreman_composite_content_views_rocky93 | default([]) if foreman_enable_rocky93 | bool and foreman_enable_rocky93_default_ccv | bool else [] ) |
+  union( foreman_composite_content_views_rocky94 | default([]) if foreman_enable_rocky94 | bool and foreman_enable_rocky94_default_ccv | bool else [] )
   }}"
 
 
@@ -1012,19 +1016,20 @@ foreman_operatingsystems_rocky93:
     description: "Rocky Linux release 9.3 (Blue Onyx)"
     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
     <<: *foreman_operatingsystems_defaults
-# foreman_operatingsystems_rocky94:
-#   - name: "Rocky"
-#     major: "9"
-#     minor: "4"
-#     description: "Rocky Linux release 9.4 (Blue Onyx)"
-#     default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-#     <<: *foreman_operatingsystems_defaults
+foreman_operatingsystems_rocky94:
+  - name: "Rocky"
+    major: "9"
+    minor: "4"
+    description: "Rocky Linux release 9.4 (Blue Onyx)"
+    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_rocky9_versions: "{{ [] |
   union( foreman_operatingsystems_rocky90 | default([]) if foreman_enable_rocky90 | bool or foreman_enable_rocky90_kickstart | bool else [] ) |
   union( foreman_operatingsystems_rocky91 | default([]) if foreman_enable_rocky91 | bool or foreman_enable_rocky91_kickstart | bool else [] ) |
   union( foreman_operatingsystems_rocky92 | default([]) if foreman_enable_rocky92 | bool or foreman_enable_rocky92_kickstart | bool else [] ) |
-  union( foreman_operatingsystems_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] )
+  union( foreman_operatingsystems_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] ) |
+  union( foreman_operatingsystems_rocky94 | default([]) if foreman_enable_rocky94 | bool or foreman_enable_rocky94_kickstart | bool else [] )
   }}"
 
 
@@ -1085,23 +1090,24 @@ foreman_installation_media_rocky93:
     operatingsystems:
       - Rocky Linux release 9.3 (Blue Onyx)
 
-# foreman_installation_media_rocky94:
-#   - name: Rocky Linux 9.4 BaseOS
-#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-94-baseos-kickstart/"
-#     <<: *foreman_installation_media_defaults
-#     operatingsystems:
-#       - Rocky Linux release 9.4 (Blue Onyx)
-#   - name: Rocky Linux 9.4 AppStream
-#     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-94-appstream-kickstart/"
-#     <<: *foreman_installation_media_defaults
-#     operatingsystems:
-#       - Rocky Linux release 9.4 (Blue Onyx)
+foreman_installation_media_rocky94:
+  - name: "{{ foreman_media_name_prefix | default('') }}Rocky Linux 9.4 BaseOS"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-94-baseos-kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Rocky Linux release 9.4 (Blue Onyx)
+  - name: "{{ foreman_media_name_prefix | default('') }}Rocky Linux 9.4 AppStream"
+    path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-94-appstream-kickstart/"
+    <<: *foreman_installation_media_defaults
+    operatingsystems:
+      - Rocky Linux release 9.4 (Blue Onyx)
 
 foreman_installation_media_rocky9_versions: "{{ [] |
   union( foreman_installation_media_rocky90 | default([]) if foreman_enable_rocky90 | bool else [] ) |
   union( foreman_installation_media_rocky91 | default([]) if foreman_enable_rocky91 | bool else [] ) |
   union( foreman_installation_media_rocky92 | default([]) if foreman_enable_rocky92 | bool else [] ) |
-  union( foreman_installation_media_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] )
+  union( foreman_installation_media_rocky93 | default([]) if foreman_enable_rocky93 | bool else [] ) |
+  union( foreman_installation_media_rocky94 | default([]) if foreman_enable_rocky94 | bool else [] )
   }}"
 
 
@@ -1233,40 +1239,41 @@ foreman_activation_keys_rocky93:
       - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-93-saphana"
         override: disabled
 
-# foreman_activation_keys_rocky94:
-#   - name: ak_rocky94
-#     organization: "{{ foreman_organization_rocky94 }}"
-#     content_view: "{{ foreman_ccv_prefix | default('ccv_') }}rocky94"
-#     <<: *foreman_activation_keys_defaults
-#     content_overrides:
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-baseos"
-#         override: enabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-appstream"
-#         override: enabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-extras"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-plus"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-crb"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-ha"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-nfv"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-resilientstorage"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-rt"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-sap"
-#         override: disabled
-#       - label: "{{ foreman_organization }}_Rocky_rocky-94-saphana"
-#         override: disabled
+foreman_activation_keys_rocky94:
+  - name: "{{ foreman_ak_prefix | default('ak_') }}{{ foreman_ak_name_prefix | default('') }}rocky94"
+    organization: "{{ foreman_organization_rocky94 }}"
+    content_view: "{{ foreman_ccv_prefix | default('ccv_') }}{{ foreman_ccv_name_prefix | default('') }}rocky94"
+    <<: *foreman_activation_keys_defaults
+    content_overrides:
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-baseos"
+        override: enabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-appstream"
+        override: enabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-extras"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-plus"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-crb"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-ha"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-nfv"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-resilientstorage"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-rt"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-sap"
+        override: disabled
+      - label: "{{ foreman_organization }}_{{ foreman_product_label_prefix | default('') }}Rocky_{{ foreman_repo_label_prefix | default('') }}rocky-94-saphana"
+        override: disabled
 
 foreman_activation_keys_rocky9_versions: "{{ [] |
   union( foreman_activation_keys_rocky90 | default([]) if foreman_enable_rocky90 | bool and foreman_enable_rocky90_default_ak | bool else [] ) |
   union( foreman_activation_keys_rocky91 | default([]) if foreman_enable_rocky91 | bool and foreman_enable_rocky91_default_ak | bool else [] ) |
   union( foreman_activation_keys_rocky92 | default([]) if foreman_enable_rocky92 | bool and foreman_enable_rocky92_default_ak | bool else [] ) |
-  union( foreman_activation_keys_rocky93 | default([]) if foreman_enable_rocky93 | bool and foreman_enable_rocky93_default_ak | bool else [] )
+  union( foreman_activation_keys_rocky93 | default([]) if foreman_enable_rocky93 | bool and foreman_enable_rocky93_default_ak | bool else [] ) |
+  union( foreman_activation_keys_rocky94 | default([]) if foreman_enable_rocky94 | bool and foreman_enable_rocky94_default_ak | bool else [] )
   }}"
 
 
@@ -1274,12 +1281,13 @@ foreman_sync_plan_products_rocky90: []
 foreman_sync_plan_products_rocky91: []
 foreman_sync_plan_products_rocky92: []
 foreman_sync_plan_products_rocky93: []
-# foreman_sync_plan_products_rocky94: []
+foreman_sync_plan_products_rocky94: []
 
 foreman_sync_plan_products_rocky9_versions: "{{ [] |
   union( foreman_sync_plan_products_rocky90 | default([]) if foreman_enable_rocky90 | bool or foreman_enable_rocky90_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_rocky91 | default([]) if foreman_enable_rocky91 | bool or foreman_enable_rocky91_kickstart | bool else [] ) |
   union( foreman_sync_plan_products_rocky92 | default([]) if foreman_enable_rocky92 | bool or foreman_enable_rocky92_kickstart | bool else [] ) |
-  union( foreman_sync_plan_products_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] )
+  union( foreman_sync_plan_products_rocky93 | default([]) if foreman_enable_rocky93 | bool or foreman_enable_rocky93_kickstart | bool else [] ) |
+  union( foreman_sync_plan_products_rocky94 | default([]) if foreman_enable_rocky94 | bool or foreman_enable_rocky94_kickstart | bool else [] )
   }}"
 

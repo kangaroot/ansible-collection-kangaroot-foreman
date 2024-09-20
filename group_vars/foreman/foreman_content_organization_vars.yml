@@ -943,6 +943,7 @@
 # foreman_organization_rocky87: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky88: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky89: "{{ foreman_organization_rocky8 }}"
+# foreman_organization_rocky810: "{{ foreman_organization_rocky8 }}"
 
 # foreman_organization_rocky8_sig_core: "{{ foreman_organization_rocky8 }}"
 # foreman_organization_rocky8_sig_core_common: "{{ foreman_organization_rocky8_sig_core }}"
@@ -960,6 +961,7 @@
 # foreman_organization_rocky91: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky92: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky93: "{{ foreman_organization_rocky9 }}"
+# foreman_organization_rocky94: "{{ foreman_organization_rocky9 }}"
 
 # foreman_organization_rocky9_sig_core: "{{ foreman_organization_rocky9 }}"
 # foreman_organization_rocky9_sig_core_common: "{{ foreman_organization_rocky9_sig_core }}"
