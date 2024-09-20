@@ -15,6 +15,7 @@
 # foreman_organization_atix_ubuntu: "{{ foreman_organization_atix }}"
 # foreman_organization_atix_ubuntu2004: "{{ foreman_organization_atix_ubuntu }}"
 # foreman_organization_atix_ubuntu2204: "{{ foreman_organization_atix_ubuntu }}"
+# foreman_organization_atix_ubuntu2404: "{{ foreman_organization_atix_ubuntu }}"
 
 # foreman_organization_atix_sles: "{{ foreman_organization_atix }}"
 # foreman_organization_atix_sles12: "{{ foreman_organization_atix_sles }}"

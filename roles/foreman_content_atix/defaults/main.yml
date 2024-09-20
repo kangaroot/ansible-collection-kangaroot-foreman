@@ -17,6 +17,7 @@ foreman_repo_baseurl_atix_debian12: "{{ foreman_repo_baseurl_atix_debian }}"
 foreman_repo_baseurl_atix_ubuntu: "{{ foreman_repo_baseurl_atix }}"
 foreman_repo_baseurl_atix_ubuntu2004: "{{ foreman_repo_baseurl_atix_ubuntu }}"
 foreman_repo_baseurl_atix_ubuntu2204: "{{ foreman_repo_baseurl_atix_ubuntu }}"
+foreman_repo_baseurl_atix_ubuntu2404: "{{ foreman_repo_baseurl_atix_ubuntu }}"
 
 foreman_repo_baseurl_atix_sles: "{{ foreman_repo_baseurl_atix }}"
 foreman_repo_baseurl_atix_sles12: "{{ foreman_repo_baseurl_atix_sles }}"
@@ -38,6 +39,7 @@ foreman_enable_atix_debian12: "{{ foreman_enable_atix_debian | bool }}"
 foreman_enable_atix_ubuntu: false
 foreman_enable_atix_ubuntu2004: "{{ foreman_enable_atix_ubuntu | bool }}"
 foreman_enable_atix_ubuntu2204: "{{ foreman_enable_atix_ubuntu | bool }}"
+foreman_enable_atix_ubuntu2404: "{{ foreman_enable_atix_ubuntu | bool }}"
 
 foreman_enable_atix_sles: false
 foreman_enable_atix_sles12: "{{ foreman_enable_atix_sles | bool }}"
@@ -100,6 +102,7 @@ foreman_organization_atix_debian12: "{{ foreman_organization_atix_debian }}"
 foreman_organization_atix_ubuntu: "{{ foreman_organization_atix }}"
 foreman_organization_atix_ubuntu2004: "{{ foreman_organization_atix_ubuntu }}"
 foreman_organization_atix_ubuntu2204: "{{ foreman_organization_atix_ubuntu }}"
+foreman_organization_atix_ubuntu2404: "{{ foreman_organization_atix_ubuntu }}"
 
 foreman_organization_atix_sles: "{{ foreman_organization_atix }}"
 foreman_organization_atix_sles12: "{{ foreman_organization_atix_sles }}"
@@ -121,6 +124,7 @@ foreman_cv_allow_promote_atix_debian12: "{{ foreman_cv_allow_promote_atix_debian
 foreman_cv_allow_promote_atix_ubuntu: "{{ foreman_cv_allow_promote_atix | bool }}"
 foreman_cv_allow_promote_atix_ubuntu2004: "{{ foreman_cv_allow_promote_atix_ubuntu | bool }}"
 foreman_cv_allow_promote_atix_ubuntu2204: "{{ foreman_cv_allow_promote_atix_ubuntu | bool }}"
+foreman_cv_allow_promote_atix_ubuntu2404: "{{ foreman_cv_allow_promote_atix_ubuntu | bool }}"
 
 foreman_cv_allow_promote_atix_sles: "{{ foreman_cv_allow_promote_atix | bool }}"
 foreman_cv_allow_promote_atix_sles12: "{{ foreman_cv_allow_promote_atix_sles | bool }}"
