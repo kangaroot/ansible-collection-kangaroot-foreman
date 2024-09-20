@@ -604,6 +604,7 @@
 # foreman_organization_ol87: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol88: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol89: "{{ foreman_organization_ol8 }}"
+# foreman_organization_ol810: "{{ foreman_organization_ol8 }}"
 
 # foreman_organization_ol8_uek: "{{ foreman_organization_ol8 }}"
 # foreman_organization_ol8_uekr6: "{{ foreman_organization_ol8 }}"
@@ -637,6 +638,7 @@
 # foreman_organization_ol91: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol92: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol93: "{{ foreman_organization_ol9 }}"
+# foreman_organization_ol94: "{{ foreman_organization_ol9 }}"
 
 # foreman_organization_ol9_uek: "{{ foreman_organization_ol9 }}"
 # foreman_organization_ol9_uekr7: "{{ foreman_organization_ol9 }}"
@@ -779,6 +781,7 @@
 # foreman_organization_ol87_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol88_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol89_uln: "{{ foreman_organization_ol8_uln }}"
+# foreman_organization_ol810_uln: "{{ foreman_organization_ol8_uln }}"
 
 # foreman_organization_ol80_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol81_patch_uln: "{{ foreman_organization_ol8_uln }}"
@@ -790,6 +793,7 @@
 # foreman_organization_ol87_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol88_patch_uln: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol89_patch_uln: "{{ foreman_organization_ol8_uln }}"
+# foreman_organization_ol810_patch_uln: "{{ foreman_organization_ol8_uln }}"
 
 # foreman_organization_ol8_uln_uek: "{{ foreman_organization_ol8_uln }}"
 # foreman_organization_ol8_uln_uekr6: "{{ foreman_organization_ol8_uln }}"
@@ -824,11 +828,13 @@
 # foreman_organization_ol91_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol92_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol93_uln: "{{ foreman_organization_ol9_uln }}"
+# foreman_organization_ol94_uln: "{{ foreman_organization_ol9_uln }}"
 
 # foreman_organization_ol90_patch_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol91_patch_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol92_patch_uln: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol93_patch_uln: "{{ foreman_organization_ol9_uln }}"
+# foreman_organization_ol94_patch_uln: "{{ foreman_organization_ol9_uln }}"
 
 # foreman_organization_ol9_uln_uek: "{{ foreman_organization_ol9_uln }}"
 # foreman_organization_ol9_uln_uekr7: "{{ foreman_organization_ol9_uln }}"

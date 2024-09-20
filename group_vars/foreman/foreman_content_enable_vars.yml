@@ -1074,6 +1074,7 @@
 # foreman_enable_ol87_uln: false
 # foreman_enable_ol88_uln: false
 # foreman_enable_ol89_uln: false
+# foreman_enable_ol810_uln: false
 
 # foreman_enable_ol80_uln_kickstart: "{{ foreman_enable_ol80_uln | bool }}"
 # foreman_enable_ol81_uln_kickstart: "{{ foreman_enable_ol81_uln | bool }}"
@@ -1084,8 +1085,9 @@
 # foreman_enable_ol86_uln_kickstart: "{{ foreman_enable_ol86_uln | bool }}"
 # foreman_enable_ol87_uln_kickstart: "{{ foreman_enable_ol87_uln | bool }}"
 # foreman_enable_ol88_uln_kickstart: "{{ foreman_enable_ol88_uln | bool }}"
-# foreman_enable_ol89_uln_kickstart: "{{ foreman_enable_ol8_uln_kickstart | bool or
-#                                        foreman_enable_ol89_uln | bool }}"
+# foreman_enable_ol89_uln_kickstart: "{{ foreman_enable_ol89_uln | bool }}"
+# foreman_enable_ol810_uln_kickstart: "{{ foreman_enable_ol8_uln_kickstart | bool or
+#                                        foreman_enable_ol810_uln | bool }}"
 
 # foreman_enable_ol80_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 # foreman_enable_ol81_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
@@ -1097,6 +1099,7 @@
 # foreman_enable_ol87_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 # foreman_enable_ol88_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 # foreman_enable_ol89_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
+# foreman_enable_ol810_uln_default_ccv: "{{ foreman_enable_ol8_uln_default_ccv | bool }}"
 
 # foreman_enable_ol80_uln_default_ak: "{{ foreman_enable_ol80_uln_default_ccv | bool }}"
 # foreman_enable_ol81_uln_default_ak: "{{ foreman_enable_ol81_uln_default_ccv | bool }}"
@@ -1108,6 +1111,7 @@
 # foreman_enable_ol87_uln_default_ak: "{{ foreman_enable_ol87_uln_default_ccv | bool }}"
 # foreman_enable_ol88_uln_default_ak: "{{ foreman_enable_ol88_uln_default_ccv | bool }}"
 # foreman_enable_ol89_uln_default_ak: "{{ foreman_enable_ol89_uln_default_ccv | bool }}"
+# foreman_enable_ol810_uln_default_ak: "{{ foreman_enable_ol810_uln_default_ccv | bool }}"
 
 # foreman_enable_ol80_patch_uln: "{{ foreman_enable_ol80_uln | bool }}"
 # foreman_enable_ol81_patch_uln: "{{ foreman_enable_ol81_uln | bool }}"
@@ -1119,6 +1123,7 @@
 # foreman_enable_ol87_patch_uln: "{{ foreman_enable_ol87_uln | bool }}"
 # foreman_enable_ol88_patch_uln: "{{ foreman_enable_ol88_uln | bool }}"
 # foreman_enable_ol89_patch_uln: "{{ foreman_enable_ol89_uln | bool }}"
+# foreman_enable_ol810_patch_uln: "{{ foreman_enable_ol810_uln | bool }}"
 
 # foreman_enable_ol8_uln_uek: false
 # foreman_enable_ol8_uln_uekr6: "{{ foreman_enable_ol8_uln_uek | bool }}"
@@ -1157,27 +1162,32 @@
 # foreman_enable_ol91_uln: false
 # foreman_enable_ol92_uln: false
 # foreman_enable_ol93_uln: false
+# foreman_enable_ol94_uln: false
 
 # foreman_enable_ol90_uln_kickstart: "{{ foreman_enable_ol90_uln | bool }}"
 # foreman_enable_ol91_uln_kickstart: "{{ foreman_enable_ol91_uln | bool }}"
 # foreman_enable_ol92_uln_kickstart: "{{ foreman_enable_ol92_uln | bool }}"
-# foreman_enable_ol93_uln_kickstart: "{{ foreman_enable_ol9_uln_kickstart | bool or
-#                                        foreman_enable_ol93_uln | bool }}"
+# foreman_enable_ol93_uln_kickstart: "{{ foreman_enable_ol93_uln | bool }}"
+# foreman_enable_ol94_uln_kickstart: "{{ foreman_enable_ol9_uln_kickstart | bool or
+#                                        foreman_enable_ol94_uln | bool }}"
 
 # foreman_enable_ol90_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 # foreman_enable_ol91_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 # foreman_enable_ol92_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 # foreman_enable_ol93_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
+# foreman_enable_ol94_uln_default_ccv: "{{ foreman_enable_ol9_uln_default_ccv | bool }}"
 
 # foreman_enable_ol90_uln_default_ak: "{{ foreman_enable_ol90_uln_default_ccv | bool }}"
 # foreman_enable_ol91_uln_default_ak: "{{ foreman_enable_ol91_uln_default_ccv | bool }}"
 # foreman_enable_ol92_uln_default_ak: "{{ foreman_enable_ol92_uln_default_ccv | bool }}"
 # foreman_enable_ol93_uln_default_ak: "{{ foreman_enable_ol93_uln_default_ccv | bool }}"
+# foreman_enable_ol94_uln_default_ak: "{{ foreman_enable_ol94_uln_default_ccv | bool }}"
 
 # foreman_enable_ol90_patch_uln: "{{ foreman_enable_ol90_uln | bool }}"
 # foreman_enable_ol91_patch_uln: "{{ foreman_enable_ol91_uln | bool }}"
 # foreman_enable_ol92_patch_uln: "{{ foreman_enable_ol92_uln | bool }}"
 # foreman_enable_ol93_patch_uln: "{{ foreman_enable_ol93_uln | bool }}"
+# foreman_enable_ol94_patch_uln: "{{ foreman_enable_ol94_uln | bool }}"
 
 # foreman_enable_ol9_uln_uek: false
 # foreman_enable_ol9_uln_uekr7: "{{ foreman_enable_ol9_uln_uek | bool }}"
