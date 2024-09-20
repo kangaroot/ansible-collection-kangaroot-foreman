@@ -371,6 +371,19 @@
 # foreman_cv_allow_promote_ceph_quincy_deb11: "{{ foreman_cv_allow_promote_ceph_quincy | bool }}"
 # foreman_cv_allow_promote_ceph_quincy_ub2004: "{{ foreman_cv_allow_promote_ceph_quincy | bool }}"
 
+# foreman_cv_allow_promote_ceph_reef: "{{ foreman_cv_allow_promote_ceph | bool }}"
+# foreman_cv_allow_promote_ceph_reef_el8: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+# foreman_cv_allow_promote_ceph_reef_el9: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+# foreman_cv_allow_promote_ceph_reef_deb11: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+# foreman_cv_allow_promote_ceph_reef_ub2004: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+# foreman_cv_allow_promote_ceph_reef_ub2204: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+
+# foreman_cv_allow_promote_ceph_squid: "{{ foreman_cv_allow_promote_ceph | bool }}"
+# foreman_cv_allow_promote_ceph_squid_el8: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+# foreman_cv_allow_promote_ceph_squid_el9: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+# foreman_cv_allow_promote_ceph_squid_deb11: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+# foreman_cv_allow_promote_ceph_squid_ub2204: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+
 # foreman_cv_allow_promote_ceph_docker: "{{ foreman_cv_allow_promote_ceph | bool }}"
 
 

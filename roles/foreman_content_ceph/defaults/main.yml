@@ -41,6 +41,19 @@ foreman_repo_baseurl_ceph_quincy_el9: "{{ foreman_repo_baseurl_ceph_quincy }}"
 foreman_repo_baseurl_ceph_quincy_deb11: "{{ foreman_repo_baseurl_ceph_quincy }}"
 foreman_repo_baseurl_ceph_quincy_ub2004: "{{ foreman_repo_baseurl_ceph_quincy }}"
 
+foreman_repo_baseurl_ceph_reef: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_reef_el8: "{{ foreman_repo_baseurl_ceph_reef }}"
+foreman_repo_baseurl_ceph_reef_el9: "{{ foreman_repo_baseurl_ceph_reef }}"
+foreman_repo_baseurl_ceph_reef_deb11: "{{ foreman_repo_baseurl_ceph_reef }}"
+foreman_repo_baseurl_ceph_reef_ub2004: "{{ foreman_repo_baseurl_ceph_reef }}"
+foreman_repo_baseurl_ceph_reef_ub2204: "{{ foreman_repo_baseurl_ceph_reef }}"
+
+foreman_repo_baseurl_ceph_squid: "{{ foreman_repo_baseurl_ceph }}"
+foreman_repo_baseurl_ceph_squid_el8: "{{ foreman_repo_baseurl_ceph_squid }}"
+foreman_repo_baseurl_ceph_squid_el9: "{{ foreman_repo_baseurl_ceph_squid }}"
+foreman_repo_baseurl_ceph_squid_deb11: "{{ foreman_repo_baseurl_ceph_squid }}"
+foreman_repo_baseurl_ceph_squid_ub2204: "{{ foreman_repo_baseurl_ceph_squid }}"
+
 foreman_repo_baseurl_ceph_docker: https://quay.io
 
 
@@ -83,6 +96,19 @@ foreman_enable_ceph_quincy_el9: "{{ foreman_enable_ceph_quincy | bool }}"
 foreman_enable_ceph_quincy_deb11: false
 foreman_enable_ceph_quincy_ub2004: false
 
+foreman_enable_ceph_reef: false
+foreman_enable_ceph_reef_el8: "{{ foreman_enable_ceph_reef | bool }}"
+foreman_enable_ceph_reef_el9: "{{ foreman_enable_ceph_reef | bool }}"
+foreman_enable_ceph_reef_deb11: false
+foreman_enable_ceph_reef_ub2004: false
+foreman_enable_ceph_reef_ub2204: false
+
+foreman_enable_ceph_squid: false
+foreman_enable_ceph_squid_el8: "{{ foreman_enable_ceph_squid | bool }}"
+foreman_enable_ceph_squid_el9: "{{ foreman_enable_ceph_squid | bool }}"
+foreman_enable_ceph_squid_deb11: false
+foreman_enable_ceph_squid_ub2204: false
+
 foreman_enable_ceph_docker: false
 
 
@@ -102,30 +128,40 @@ foreman_products_defaults_download_policy_ceph_nautilus: "{{ foreman_products_de
 foreman_products_defaults_download_policy_ceph_octopus: "{{ foreman_products_defaults_download_policy_ceph }}"
 foreman_products_defaults_download_policy_ceph_pacific: "{{ foreman_products_defaults_download_policy_ceph }}"
 foreman_products_defaults_download_policy_ceph_quincy: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_reef: "{{ foreman_products_defaults_download_policy_ceph }}"
+foreman_products_defaults_download_policy_ceph_squid: "{{ foreman_products_defaults_download_policy_ceph }}"
 foreman_products_defaults_download_policy_ceph_docker: "{{ foreman_products_defaults_download_policy_ceph }}"
 
 foreman_products_defaults_mirroring_policy_ceph_nautilus: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
 foreman_products_defaults_mirroring_policy_ceph_octopus: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
 foreman_products_defaults_mirroring_policy_ceph_pacific: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
 foreman_products_defaults_mirroring_policy_ceph_quincy: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_reef: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
+foreman_products_defaults_mirroring_policy_ceph_squid: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
 foreman_products_defaults_mirroring_policy_ceph_docker: "{{ foreman_products_defaults_mirroring_policy_ceph }}"
 
 foreman_products_defaults_verify_ssl_on_sync_ceph_nautilus: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ceph_octopus: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ceph_pacific: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ceph_quincy: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_reef: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
+foreman_products_defaults_verify_ssl_on_sync_ceph_squid: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
 foreman_products_defaults_verify_ssl_on_sync_ceph_docker: "{{ foreman_products_defaults_verify_ssl_on_sync_ceph | bool }}"
 
 foreman_products_defaults_http_proxy_policy_ceph_nautilus: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
 foreman_products_defaults_http_proxy_policy_ceph_octopus: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
 foreman_products_defaults_http_proxy_policy_ceph_pacific: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
 foreman_products_defaults_http_proxy_policy_ceph_quincy: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_reef: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
+foreman_products_defaults_http_proxy_policy_ceph_squid: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
 foreman_products_defaults_http_proxy_policy_ceph_docker: "{{ foreman_products_defaults_http_proxy_policy_ceph }}"
 
 foreman_products_defaults_unprotected_ceph_nautilus: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 foreman_products_defaults_unprotected_ceph_octopus: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 foreman_products_defaults_unprotected_ceph_pacific: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 foreman_products_defaults_unprotected_ceph_quincy: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_reef: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
+foreman_products_defaults_unprotected_ceph_squid: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 foreman_products_defaults_unprotected_ceph_docker: "{{ foreman_products_defaults_unprotected_ceph | bool }}"
 
 
@@ -167,6 +203,19 @@ foreman_organization_ceph_quincy_el8: "{{ foreman_organization_ceph_quincy }}"
 foreman_organization_ceph_quincy_el9: "{{ foreman_organization_ceph_quincy }}"
 foreman_organization_ceph_quincy_deb11: "{{ foreman_organization_ceph_quincy }}"
 foreman_organization_ceph_quincy_ub2004: "{{ foreman_organization_ceph_quincy }}"
+
+foreman_organization_ceph_reef: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_reef_el8: "{{ foreman_organization_ceph_reef }}"
+foreman_organization_ceph_reef_el9: "{{ foreman_organization_ceph_reef }}"
+foreman_organization_ceph_reef_deb11: "{{ foreman_organization_ceph_reef }}"
+foreman_organization_ceph_reef_ub2004: "{{ foreman_organization_ceph_reef }}"
+foreman_organization_ceph_reef_ub2204: "{{ foreman_organization_ceph_reef }}"
+
+foreman_organization_ceph_squid: "{{ foreman_organization_ceph }}"
+foreman_organization_ceph_squid_el8: "{{ foreman_organization_ceph_squid }}"
+foreman_organization_ceph_squid_el9: "{{ foreman_organization_ceph_squid }}"
+foreman_organization_ceph_squid_deb11: "{{ foreman_organization_ceph_squid }}"
+foreman_organization_ceph_squid_ub2204: "{{ foreman_organization_ceph_squid }}"
 
 foreman_organization_ceph_docker: "{{ foreman_organization_ceph }}"
 
@@ -210,6 +259,19 @@ foreman_cv_allow_promote_ceph_quincy_el9: "{{ foreman_cv_allow_promote_ceph_quin
 foreman_cv_allow_promote_ceph_quincy_deb11: "{{ foreman_cv_allow_promote_ceph_quincy | bool }}"
 foreman_cv_allow_promote_ceph_quincy_ub2004: "{{ foreman_cv_allow_promote_ceph_quincy | bool }}"
 
+foreman_cv_allow_promote_ceph_reef: "{{ foreman_cv_allow_promote_ceph | bool }}"
+foreman_cv_allow_promote_ceph_reef_el8: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+foreman_cv_allow_promote_ceph_reef_el9: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+foreman_cv_allow_promote_ceph_reef_deb11: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+foreman_cv_allow_promote_ceph_reef_ub2004: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+foreman_cv_allow_promote_ceph_reef_ub2204: "{{ foreman_cv_allow_promote_ceph_reef | bool }}"
+
+foreman_cv_allow_promote_ceph_squid: "{{ foreman_cv_allow_promote_ceph | bool }}"
+foreman_cv_allow_promote_ceph_squid_el8: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+foreman_cv_allow_promote_ceph_squid_el9: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+foreman_cv_allow_promote_ceph_squid_deb11: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+foreman_cv_allow_promote_ceph_squid_ub2204: "{{ foreman_cv_allow_promote_ceph_squid | bool }}"
+
 foreman_cv_allow_promote_ceph_docker: "{{ foreman_cv_allow_promote_ceph | bool }}"
 
 
@@ -228,6 +290,8 @@ foreman_content_credentials_ceph: "{{ ( foreman_content_credentials_ceph_main | 
   union( foreman_content_credentials_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_content_credentials_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_content_credentials_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_content_credentials_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_content_credentials_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_content_credentials_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -237,6 +301,8 @@ foreman_products_ceph: "{{ ( foreman_products_ceph_main | default([]) if foreman
   union( foreman_products_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_products_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_products_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_products_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_products_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_products_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -246,6 +312,8 @@ foreman_content_views_ceph: "{{ ( foreman_content_views_ceph_main | default([]) 
   union( foreman_content_views_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_content_views_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_content_views_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_content_views_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_content_views_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_content_views_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -255,6 +323,8 @@ foreman_operatingsystems_ceph: "{{ ( foreman_operatingsystems_ceph_main | defaul
   union( foreman_operatingsystems_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_operatingsystems_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_operatingsystems_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_operatingsystems_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_operatingsystems_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_operatingsystems_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -264,6 +334,8 @@ foreman_installation_media_ceph: "{{ ( foreman_installation_media_ceph_main | de
   union( foreman_installation_media_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_installation_media_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_installation_media_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_installation_media_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_installation_media_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_installation_media_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -273,6 +345,8 @@ foreman_activation_keys_ceph: "{{ ( foreman_activation_keys_ceph_main | default(
   union( foreman_installation_media_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_installation_media_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_installation_media_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_installation_media_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_installation_media_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_installation_media_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 
@@ -284,6 +358,8 @@ foreman_sync_plan_products_ceph: "{{ ( foreman_sync_plan_products_ceph_main | de
   union( foreman_installation_media_ceph_octopus | default([]) if foreman_enable_ceph_octopus | bool else [] ) |
   union( foreman_installation_media_ceph_pacific | default([]) if foreman_enable_ceph_pacific | bool else [] ) |
   union( foreman_installation_media_ceph_quincy | default([]) if foreman_enable_ceph_quincy | bool else [] ) |
+  union( foreman_installation_media_ceph_reef | default([]) if foreman_enable_ceph_reef | bool else [] ) |
+  union( foreman_installation_media_ceph_squid | default([]) if foreman_enable_ceph_squid | bool else [] ) |
   union( foreman_installation_media_ceph_docker | default([]) if foreman_enable_ceph_docker | bool else [] )
   }}"
 

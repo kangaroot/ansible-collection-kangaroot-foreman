@@ -310,6 +310,19 @@
 # foreman_organization_ceph_quincy_deb11: "{{ foreman_organization_ceph_quincy }}"
 # foreman_organization_ceph_quincy_ub2004: "{{ foreman_organization_ceph_quincy }}"
 
+# foreman_organization_ceph_reef: "{{ foreman_organization_ceph }}"
+# foreman_organization_ceph_reef_el8: "{{ foreman_organization_ceph_reef }}"
+# foreman_organization_ceph_reef_el9: "{{ foreman_organization_ceph_reef }}"
+# foreman_organization_ceph_reef_deb11: "{{ foreman_organization_ceph_reef }}"
+# foreman_organization_ceph_reef_ub2004: "{{ foreman_organization_ceph_reef }}"
+# foreman_organization_ceph_reef_ub2204: "{{ foreman_organization_ceph_reef }}"
+
+# foreman_organization_ceph_squid: "{{ foreman_organization_ceph }}"
+# foreman_organization_ceph_squid_el8: "{{ foreman_organization_ceph_squid }}"
+# foreman_organization_ceph_squid_el9: "{{ foreman_organization_ceph_squid }}"
+# foreman_organization_ceph_squid_deb11: "{{ foreman_organization_ceph_squid }}"
+# foreman_organization_ceph_squid_ub2204: "{{ foreman_organization_ceph_squid }}"
+
 # foreman_organization_ceph_docker: "{{ foreman_organization_ceph }}"
 
 

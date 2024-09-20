@@ -429,6 +429,19 @@
 # foreman_enable_ceph_quincy_deb11: false
 # foreman_enable_ceph_quincy_ub2004: false
 
+# foreman_enable_ceph_reef: false
+# foreman_enable_ceph_reef_el8: "{{ foreman_enable_ceph_reef | bool }}"
+# foreman_enable_ceph_reef_el9: "{{ foreman_enable_ceph_reef | bool }}"
+# foreman_enable_ceph_reef_deb11: false
+# foreman_enable_ceph_reef_ub2004: false
+# foreman_enable_ceph_reef_ub2204: false
+
+# foreman_enable_ceph_squid: false
+# foreman_enable_ceph_squid_el8: "{{ foreman_enable_ceph_squid | bool }}"
+# foreman_enable_ceph_squid_el9: "{{ foreman_enable_ceph_squid | bool }}"
+# foreman_enable_ceph_squid_deb11: false
+# foreman_enable_ceph_squid_ub2204: false
+
 # foreman_enable_ceph_docker: false
 
 
