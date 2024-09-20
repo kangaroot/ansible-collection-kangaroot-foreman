@@ -57,7 +57,7 @@ foreman_products_centos7_dotnet:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - DotNet"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-dotnet"
         <<: *foreman_products_defaults_centos7_dotnet
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/dotnet/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/dotnet/x86_64/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
         organization: "{{ foreman_organization_centos7_dotnet }}"
 
@@ -78,13 +78,13 @@ foreman_products_centos7_sig_sclo:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo sclo"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-sclo-sclo"
         <<: *foreman_products_defaults_centos7_sig_sclo
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/sclo/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/sclo/x86_64/sclo/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-SCLo"
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - SCLo rh"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-sclo-rh"
         <<: *foreman_products_defaults_centos7_sig_sclo
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/sclo/x86_64/rh/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/sclo/x86_64/rh/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-SCLo"
         organization: "{{ foreman_organization_centos7_sig_sclo }}"
 
@@ -111,7 +111,7 @@ foreman_products_centos7_sig_opstools:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpsTools - release"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-release-opstools"
         <<: *foreman_products_defaults_centos7_sig_opstools
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/opstools/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/opstools/x86_64/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-OpsTools"
         organization: "{{ foreman_organization_centos7_sig_opstools }}"
 
@@ -132,7 +132,7 @@ foreman_products_centos7_sig_nfv_common:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - nfv common"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-nfv-common"
         <<: *foreman_products_defaults_centos7_sig_nfv
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/common/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/nfv/x86_64/common/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-NFV"
         organization: "{{ foreman_organization_centos7_sig_nfv_common }}"
 
@@ -144,7 +144,7 @@ foreman_products_centos7_sig_nfv_fdio:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - fd.io"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-fdio"
         <<: *foreman_products_defaults_centos7_sig_nfv
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/nfv/x86_64/fdio/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/nfv/x86_64/fdio/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-NFV"
         organization: "{{ foreman_organization_centos7_sig_nfv_fdio }}"
 

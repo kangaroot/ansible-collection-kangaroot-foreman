@@ -8,7 +8,7 @@
 
 foreman_repo_baseurl_centos: http://mirror.centos.org/centos
 
-foreman_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos }}"
+foreman_repo_baseurl_centos7: "{{ foreman_repo_baseurl_centos_vault }}"
 foreman_repo_baseurl_centos8: "{{ foreman_repo_baseurl_centos }}"
 foreman_repo_baseurl_centos_stream8: "{{ foreman_repo_baseurl_centos }}"
 foreman_repo_baseurl_centos_stream9: https://mirror.stream.centos.org

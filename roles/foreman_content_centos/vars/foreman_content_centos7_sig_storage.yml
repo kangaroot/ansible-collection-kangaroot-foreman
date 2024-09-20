@@ -33,7 +33,7 @@ foreman_products_centos7_sig_storage_samba411:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Samba 4.11"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-samba411"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/samba-411/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/samba-411/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_samba411 }}"
 
@@ -45,7 +45,7 @@ foreman_products_centos7_sig_storage_gluster40:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 4.0 (Short Term Maintanance)"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster40"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.0/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-4.0/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster40 }}"
 
@@ -57,7 +57,7 @@ foreman_products_centos7_sig_storage_gluster41:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 4.1 (Long Term Maintanance)"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster41"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-4.1/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-4.1/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster41 }}"
 
@@ -69,7 +69,7 @@ foreman_products_centos7_sig_storage_gluster5:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 5"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster5"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-5/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-5/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster5 }}"
 
@@ -81,7 +81,7 @@ foreman_products_centos7_sig_storage_gluster6:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 6"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster6"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-6/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-6/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster6 }}"
 
@@ -93,7 +93,7 @@ foreman_products_centos7_sig_storage_gluster7:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 7"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster7"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-7/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-7/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster7 }}"
 
@@ -105,7 +105,7 @@ foreman_products_centos7_sig_storage_gluster8:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 8"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster8"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-8/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-8/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster8 }}"
 
@@ -117,7 +117,7 @@ foreman_products_centos7_sig_storage_gluster9:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Gluster 9"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-gluster9"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/gluster-9/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/gluster-9/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_gluster9 }}"
 
@@ -129,7 +129,7 @@ foreman_products_centos7_sig_storage_ceph_jewel:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Ceph Jewel"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-ceph-jewel"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-jewel/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/ceph-jewel/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_jewel }}"
 
@@ -141,7 +141,7 @@ foreman_products_centos7_sig_storage_ceph_luminous:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Ceph Luminous"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-ceph-luminous"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-luminous/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/ceph-luminous/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_luminous }}"
 
@@ -153,7 +153,7 @@ foreman_products_centos7_sig_storage_ceph_nautilus:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Ceph Nautilus"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-ceph-nautilus"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/ceph-nautilus/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/ceph-nautilus/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_ceph_nautilus }}"
 
@@ -165,7 +165,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha28:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - NFS Ganesha 2.8"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-nfs-ganesha28"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-28/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/nfs-ganesha-28/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_nfs_ganesha28 }}"
 
@@ -177,7 +177,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha30:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - NFS Ganesha 3.0"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-nfs-ganesha30"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfs-ganesha-30/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/nfs-ganesha-30/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
 
 foreman_products_centos7_sig_storage_nfs_ganesha4:
@@ -188,7 +188,7 @@ foreman_products_centos7_sig_storage_nfs_ganesha4:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - NFS Ganesha 4"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-nfs-ganesha4"
         <<: *foreman_products_defaults_centos7_sig_storage
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/storage/x86_64/nfsganesha-4/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/storage/x86_64/nfsganesha-4/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Storage"
         organization: "{{ foreman_organization_centos7_sig_storage_nfs_ganesha4 }}"
 

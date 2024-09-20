@@ -33,7 +33,7 @@ foreman_products_centos7_sig_cloud_openstack_queens:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack queens"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-queens"
         <<: *foreman_products_defaults_centos7_sig_cloud
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-queens/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/cloud/x86_64/openstack-queens/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_queens }}"
 
@@ -56,7 +56,7 @@ foreman_products_centos7_sig_cloud_openstack_rocky:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack rocky"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-rocky"
         <<: *foreman_products_defaults_centos7_sig_cloud
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-rocky/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/cloud/x86_64/openstack-rocky/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_rocky }}"
 
@@ -79,7 +79,7 @@ foreman_products_centos7_sig_cloud_openstack_stein:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack stein"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-stein"
         <<: *foreman_products_defaults_centos7_sig_cloud
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-stein/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/cloud/x86_64/openstack-stein/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_stein }}"
 
@@ -102,7 +102,7 @@ foreman_products_centos7_sig_cloud_openstack_train:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - OpenStack train"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-openstack-train"
         <<: *foreman_products_defaults_centos7_sig_cloud
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/cloud/x86_64/openstack-train/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/cloud/x86_64/openstack-train/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Cloud"
         organization: "{{ foreman_organization_centos7_sig_cloud_openstack_train }}"
 

@@ -33,7 +33,7 @@ foreman_products_centos7_sig_virtualization_azure:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - Azure"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-azure"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/azure/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/azure/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_azure }}"
 
@@ -45,7 +45,7 @@ foreman_products_centos7_sig_virtualization_ovirt42:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - oVirt 4.2"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-ovirt42"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.2/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/ovirt-4.2/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt42 }}"
 
@@ -57,7 +57,7 @@ foreman_products_centos7_sig_virtualization_ovirt43:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - oVirt 4.3"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-ovirt43"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/ovirt-4.3/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/ovirt-4.3/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_ovirt43 }}"
 
@@ -69,7 +69,7 @@ foreman_products_centos7_sig_virtualization_qemu_ev:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - QEMU EV"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-qemu-ev"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/kvm-common/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/kvm-common/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_qemu_ev }}"
 
@@ -81,7 +81,7 @@ foreman_products_centos7_sig_virtualization_xen_46:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.6"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-46"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-46"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-46"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_46 }}"
 
@@ -93,7 +93,7 @@ foreman_products_centos7_sig_virtualization_xen_48:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.8"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-48"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-48"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-48"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_48 }}"
 
@@ -105,7 +105,7 @@ foreman_products_centos7_sig_virtualization_xen_410:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.10"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-410"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-410"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-410"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_410 }}"
 
@@ -117,7 +117,7 @@ foreman_products_centos7_sig_virtualization_xen_412:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.12"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-412"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-412"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-412"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_412 }}"
 
@@ -129,7 +129,7 @@ foreman_products_centos7_sig_virtualization_xen_413:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.13"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-413"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-413"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-413"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_413 }}"
 
@@ -141,7 +141,7 @@ foreman_products_centos7_sig_virtualization_xen_414:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7 - xen 4.14"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-7-virt-xen-414"
         <<: *foreman_products_defaults_centos7_sig_virtualization
-        url: "{{ foreman_repo_baseurl_centos7 }}/7/virt/x86_64/xen-414"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/virt/x86_64/xen-414"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-SIG-Virtualization"
         organization: "{{ foreman_organization_centos7_sig_virtualization_xen_414 }}"
 
