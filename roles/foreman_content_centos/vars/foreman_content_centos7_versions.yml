@@ -663,46 +663,46 @@ foreman_products_centos79:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - Base"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-base"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/os/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/os/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - Updates"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-updates"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/updates/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/updates/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - Extras"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-extras"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/extras/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/extras/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - CentOSPlus"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-centosplus"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/centosplus/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/centosplus/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - Fasttrack"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-fasttrack"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/fasttrack/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/fasttrack/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
 
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - cr"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-cr"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/cr/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/cr/x86_64/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
         organization: "{{ foreman_organization_centos79 }}"
 
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 LTS Kernels for x86_64"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-kernel"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos_altarch }}/7.9.2009/kernel/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.9.2009/kernel/x86_64/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
         organization: "{{ foreman_organization_centos79 }}"
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 Experimental Kernels for x86_64"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-kernel-experimental"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos_altarch }}/7.9.2009/experimental/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/altarch/7.9.2009/experimental/x86_64/"
         gpg_key: "{{ foreman_cred_name_prefix | default('') }}RPM-GPG-KEY-CentOS-7"
         organization: "{{ foreman_organization_centos79 }}"
 
@@ -714,7 +714,7 @@ foreman_products_centos79_kickstart:
       - name: "{{ foreman_repo_name_prefix | default('') }}CentOS 7.9.2009 - Base"
         label: "{{ foreman_repo_label_prefix | default('') }}centos-79-base"
         <<: *foreman_products_defaults_centos79
-        url: "{{ foreman_repo_baseurl_centos7 }}/7.9.2009/os/x86_64/"
+        url: "{{ foreman_repo_baseurl_centos_vault }}/7.9.2009/os/x86_64/"
         organization: "{{ foreman_organization_centos79 }}"
 
 foreman_products_centos7_versions: "{{ [] |
@@ -1528,101 +1528,6 @@ foreman_composite_content_views_centos7_versions: "{{ [] |
   union( foreman_composite_content_views_centos79 | default([]) if foreman_enable_centos79 | bool and foreman_enable_centos79_default_ccv | bool else [] )
   }}"
 
-
-foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
-  os_family: "Redhat"
-  password_hash: "SHA512"
-  architectures:
-    - x86_64
-  # ptables:
-  #   - Kickstart default
-  #   - Kickstart custom
-  ptables: "{{
-    [ 'Kickstart default',
-      'Kickstart custom' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
-    }}"
-
-
-foreman_operatingsystems_centos70:
-  - name: "CentOS"
-    major: "7"
-    minor: "0.1406"
-    description: "CentOS Linux release 7.0.1406 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos71:
-  - name: "CentOS"
-    major: "7"
-    minor: "1.1503"
-    description: "CentOS Linux release 7.1.1503 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos72:
-  - name: "CentOS"
-    major: "7"
-    minor: "2.1511"
-    description: "CentOS Linux release 7.2.1511 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos73:
-  - name: "CentOS"
-    major: "7"
-    minor: "3.1611"
-    description: "CentOS Linux release 7.3.1611 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos74:
-  - name: "CentOS"
-    major: "7"
-    minor: "4.1708"
-    description: "CentOS Linux release 7.4.1708 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos75:
-  - name: "CentOS"
-    major: "7"
-    minor: "5.1804"
-    description: "CentOS Linux release 7.5.1804"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos76:
-  - name: "CentOS"
-    major: "7"
-    minor: "6.1810"
-    description: "CentOS Linux release 7.6.1810 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos77:
-  - name: "CentOS"
-    major: "7"
-    minor: "7.1908"
-    description: "CentOS Linux release 7.7.1908 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos78:
-  - name: "CentOS"
-    major: "7"
-    minor: "8.2003"
-    description: "CentOS Linux release 7.8.2003 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos79:
-  - name: "CentOS"
-    major: "7"
-    minor: "9.2009"
-    description: "CentO Linux releaseS 7.9.2009 (Core)"
-    default_templates: "{{ foreman_operatingsystems_centos7_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
 
 foreman_operatingsystems_centos7_versions: "{{ [] |
   union( foreman_operatingsystems_centos70 | default([]) if foreman_enable_centos70 | bool or foreman_enable_centos70_kickstart | bool else [] ) |
