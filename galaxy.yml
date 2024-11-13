@@ -43,8 +43,8 @@ tags: []
 # L(specifiers,https://python-semanticversion.readthedocs.io/en/latest/#requirement-specification). Multiple version
 # range specifiers can be set and are separated by ','
 dependencies:
-  theforeman.foreman: '>=3.9.0'
-  theforeman.operations: '>=1.3.0'
+  theforeman.foreman: '>=4.0.0'
+  theforeman.operations: '>=2.0.0'
 
 # The URL of the originating SCM repository
 repository: https://github.com/kangaroot/ansible-collection-kangaroot-foreman
