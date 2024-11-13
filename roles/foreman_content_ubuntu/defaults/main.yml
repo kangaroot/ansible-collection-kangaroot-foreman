@@ -374,7 +374,7 @@ foreman_content_credentials_ubuntu_main: []
 foreman_content_credentials_ubuntu: "{{ ( foreman_content_credentials_ubuntu_main | default([]) if foreman_enable_ubuntu | bool else [] ) |
   union( foreman_content_credentials_ubuntu1804 | default([]) if foreman_enable_ubuntu1804 | bool else [] ) |
   union( foreman_content_credentials_ubuntu2004 | default([]) if foreman_enable_ubuntu2004 | bool else [] ) |
-  union( foreman_content_credentials_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] )
+  union( foreman_content_credentials_ubuntu2204 | default([]) if foreman_enable_ubuntu2204 | bool else [] ) |
   union( foreman_content_credentials_ubuntu2404 | default([]) if foreman_enable_ubuntu2404 | bool else [] )
   }}"
 
