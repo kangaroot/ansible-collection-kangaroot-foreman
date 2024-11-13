@@ -929,69 +929,6 @@ foreman_composite_content_views_centos8_versions: "{{ [] |
   }}"
 
 
-foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
-  os_family: "Redhat"
-  password_hash: "SHA512"
-  architectures:
-    - x86_64
-  # ptables:
-  #   - Kickstart default
-  #   - Kickstart custom
-  ptables: "{{
-    [ 'Kickstart default',
-      'Kickstart custom' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
-    }}"
-
-
-foreman_operatingsystems_centos80:
-  - name: "CentOS"
-    major: "8"
-    minor: "0.1905"
-    description: "CentOS Linux release 8.0.1905"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos81:
-  - name: "CentOS"
-    major: "8"
-    minor: "1.1911"
-    description: "CentOS Linux release 8.1.1911"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos82:
-  - name: "CentOS"
-    major: "8"
-    minor: "2.2004"
-    description: "CentOS Linux release 8.2.2004"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos83:
-  - name: "CentOS"
-    major: "8"
-    minor: "3.2011"
-    description: "CentOS Linux release 8.3.2011"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos84:
-  - name: "CentOS"
-    major: "8"
-    minor: "4.2105"
-    description: "CentOS Linux release 8.4.2105"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_centos85:
-  - name: "CentOS"
-    major: "8"
-    minor: "5.2111"
-    description: "CentOS Linux release 8.5.2111"
-    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
 foreman_operatingsystems_centos8_versions: "{{ [] |
   union( foreman_operatingsystems_centos80 | default([]) if foreman_enable_centos80 | bool or foreman_enable_centos80_kickstart | bool else [] ) |
   union( foreman_operatingsystems_centos81 | default([]) if foreman_enable_centos81 | bool or foreman_enable_centos81_kickstart | bool else [] ) |

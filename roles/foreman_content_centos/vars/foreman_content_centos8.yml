@@ -176,6 +176,42 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_centos8:
   - name: "CentOS"
     major: "8"
+    minor: "0.1905"
+    description: "CentOS Linux release 8.0.1905"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
+    minor: "1.1911"
+    description: "CentOS Linux release 8.1.1911"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
+    minor: "2.2004"
+    description: "CentOS Linux release 8.2.2004"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
+    minor: "3.2011"
+    description: "CentOS Linux release 8.3.2011"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
+    minor: "4.2105"
+    description: "CentOS Linux release 8.4.2105"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
+    minor: "5.2111"
+    description: "CentOS Linux release 8.5.2111"
+    default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "CentOS"
+    major: "8"
     minor: ""
     description: "CentOS 8"
     default_templates: "{{ foreman_operatingsystems_centos8_default_templates | default( foreman_operatingsystems_centos_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
