@@ -211,6 +211,36 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_ol9_uln:
   - name: "OracleLinux"
     major: "9"
+    minor: "0"
+    description: "Oracle Linux 9.0"
+    default_templates: "{{ foreman_operatingsystems_ol90_default_templates | default( foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "1"
+    description: "Oracle Linux 9.1"
+    default_templates: "{{ foreman_operatingsystems_ol91_default_templates | default( foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "2"
+    description: "Oracle Linux 9.2"
+    default_templates: "{{ foreman_operatingsystems_ol92_default_templates | default( foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "3"
+    description: "Oracle Linux 9.3"
+    default_templates: "{{ foreman_operatingsystems_ol93_default_templates | default( foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
+    minor: "4"
+    description: "Oracle Linux 9.4"
+    default_templates: "{{ foreman_operatingsystems_ol94_default_templates | default( foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "OracleLinux"
+    major: "9"
     minor: ""
     description: "Oracle Linux 9"
     default_templates: "{{ foreman_operatingsystems_ol9_default_templates | default( foreman_operatingsystems_ol_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
