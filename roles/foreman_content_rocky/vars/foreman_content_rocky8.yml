@@ -193,6 +193,48 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_rocky8:
   - name: "Rocky"
     major: "8"
+    minor: "4"
+    description: "Rocky Linux release 8.4 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky84_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "5"
+    description: "Rocky Linux release 8.5 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky85_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "6"
+    description: "Rocky Linux release 8.6 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky86_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "7"
+    description: "Rocky Linux release 8.7 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky87_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "8"
+    description: "Rocky Linux release 8.8 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky88_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "9"
+    description: "Rocky Linux release 8.9 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky89_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
+    minor: "10"
+    description: "Rocky Linux release 8.10 (Green Obsidian)"
+    default_templates: "{{ foreman_operatingsystems_rocky810_default_templates | default( foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "Rocky"
+    major: "8"
     minor: ""
     description: "Rocky Linux 8"
     default_templates: "{{ foreman_operatingsystems_rocky8_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
@@ -207,21 +249,28 @@ foreman_installation_media_defaults: &foreman_installation_media_defaults
   #   - "{{ foreman_default_location }}"
   organizations: "{{ foreman_all_organizations_namelist }}"
   locations: "{{ foreman_all_locations_namelist }}"
-  # operatingsystems:
-  #   - Rocky Linux 8
+  operatingsystems:
+    - Rocky Linux release 8.4 (Green Obsidian)
+    - Rocky Linux release 8.5 (Green Obsidian)
+    - Rocky Linux release 8.6 (Green Obsidian)
+    - Rocky Linux release 8.7 (Green Obsidian)
+    - Rocky Linux release 8.8 (Green Obsidian)
+    - Rocky Linux release 8.9 (Green Obsidian)
+    - Rocky Linux release 8.10 (Green Obsidian)
+    - Rocky Linux 8
 
 
 foreman_installation_media_rocky8:
   - name: "{{ foreman_media_name_prefix | default('') }}Rocky Linux 8 BaseOS"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-8-baseos-kickstart/"
     <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Rocky Linux 8
+    # operatingsystems:
+    #   - Rocky Linux 8
   - name: "{{ foreman_media_name_prefix | default('') }}Rocky Linux 8 AppStream"
     path: "https://{{ foreman_server_hostname }}/pulp/content/{{ foreman_organization }}/Library/custom/Rocky/rocky-8-appstream-kickstart/"
     <<: *foreman_installation_media_defaults
-    operatingsystems:
-      - Rocky Linux 8
+    # operatingsystems:
+    #   - Rocky Linux 8
 
 
 foreman_activation_keys_defaults: &foreman_activation_keys_defaults

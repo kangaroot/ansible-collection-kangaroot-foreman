@@ -974,56 +974,6 @@ foreman_composite_content_views_rocky9_versions: "{{ [] |
   }}"
 
 
-foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
-  os_family: "Redhat"
-  password_hash: "SHA512"
-  architectures:
-    - x86_64
-  # ptables:
-  #   - Kickstart default
-  #   - Kickstart custom
-  ptables: "{{
-    [ 'Kickstart default',
-      'Kickstart custom' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
-    }}"
-
-foreman_operatingsystems_rocky90:
-  - name: "Rocky"
-    major: "9"
-    minor: "0"
-    description: "Rocky Linux release 9.0 (Blue Onyx)"
-    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky91:
-  - name: "Rocky"
-    major: "9"
-    minor: "1"
-    description: "Rocky Linux release 9.1 (Blue Onyx)"
-    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky92:
-  - name: "Rocky"
-    major: "9"
-    minor: "2"
-    description: "Rocky Linux release 9.2 (Blue Onyx)"
-    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky93:
-  - name: "Rocky"
-    major: "9"
-    minor: "3"
-    description: "Rocky Linux release 9.3 (Blue Onyx)"
-    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-foreman_operatingsystems_rocky94:
-  - name: "Rocky"
-    major: "9"
-    minor: "4"
-    description: "Rocky Linux release 9.4 (Blue Onyx)"
-    default_templates: "{{ foreman_operatingsystems_rocky9_default_templates | default( foreman_operatingsystems_rocky_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
 foreman_operatingsystems_rocky9_versions: "{{ [] |
   union( foreman_operatingsystems_rocky90 | default([]) if foreman_enable_rocky90 | bool or foreman_enable_rocky90_kickstart | bool else [] ) |
   union( foreman_operatingsystems_rocky91 | default([]) if foreman_enable_rocky91 | bool or foreman_enable_rocky91_kickstart | bool else [] ) |
