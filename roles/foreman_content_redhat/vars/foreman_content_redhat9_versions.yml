@@ -413,61 +413,6 @@ foreman_composite_content_views_redhat9_versions: "{{ [] |
   }}"
 
 
-foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
-  os_family: "Redhat"
-  password_hash: "SHA512"
-  architectures:
-    - x86_64
-  # ptables:
-  #   - Kickstart default
-  #   - Kickstart custom
-  ptables: "{{
-    [ 'Kickstart default',
-      'Kickstart custom' ] |
-      union( foreman_partition_tables | default([]) | selectattr('os_family', 'defined') | selectattr('os_family', '==', 'Redhat') | map(attribute='name') | list )
-    }}"
-
-
-foreman_operatingsystems_redhat90:
-  - name: "RedHat"
-    major: "9"
-    minor: "0"
-    description: "RHEL 9.0"
-    default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_redhat91:
-  - name: "RedHat"
-    major: "9"
-    minor: "1"
-    description: "RHEL 9.1"
-    default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_redhat92:
-  - name: "RedHat"
-    major: "9"
-    minor: "2"
-    description: "RHEL 9.2"
-    default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_redhat93:
-  - name: "RedHat"
-    major: "9"
-    minor: "2"
-    description: "RHEL 9.3"
-    default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
-foreman_operatingsystems_redhat94:
-  - name: "RedHat"
-    major: "9"
-    minor: "2"
-    description: "RHEL 9.4"
-    default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
-    <<: *foreman_operatingsystems_defaults
-
 foreman_operatingsystems_redhat9_versions: "{{ [] |
   union( foreman_operatingsystems_redhat90 | default([]) if foreman_enable_redhat90 | bool or foreman_enable_redhat90_kickstart | bool else [] ) |
   union( foreman_operatingsystems_redhat91 | default([]) if foreman_enable_redhat91 | bool or foreman_enable_redhat91_kickstart | bool else [] ) |

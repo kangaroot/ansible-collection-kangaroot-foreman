@@ -96,6 +96,36 @@ foreman_operatingsystems_defaults: &foreman_operatingsystems_defaults
 foreman_operatingsystems_redhat9:
   - name: "RedHat"
     major: "9"
+    minor: "0"
+    description: "RHEL 9.0"
+    default_templates: "{{ foreman_operatingsystems_redhat90_default_templates | default( foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
+    minor: "1"
+    description: "RHEL 9.1"
+    default_templates: "{{ foreman_operatingsystems_redhat91_default_templates | default( foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
+    minor: "2"
+    description: "RHEL 9.2"
+    default_templates: "{{ foreman_operatingsystems_redhat92_default_templates | default( foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
+    minor: "3"
+    description: "RHEL 9.3"
+    default_templates: "{{ foreman_operatingsystems_redhat93_default_templates | default( foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
+    minor: "4"
+    description: "RHEL 9.4"
+    default_templates: "{{ foreman_operatingsystems_redhat94_default_templates | default( foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) ) }}"
+    <<: *foreman_operatingsystems_defaults
+  - name: "RedHat"
+    major: "9"
     minor: ""
     description: "RHEL 9"
     default_templates: "{{ foreman_operatingsystems_redhat9_default_templates | default( foreman_operatingsystems_redhat_default_templates | default( foreman_operatingsystems_el_default_templates | default([]) ) ) }}"
