@@ -2,11 +2,11 @@
 
 collections:
   - name: theforeman.foreman
-    version: ">=3.12.0"
+    version: ">=4.0.0"
   - name: theforeman.operations
     version: ">=2.0.0"
 
   # - name: redhat.satellite
-  #   version: ">=3.12.0"
+  #   version: ">=4.0.0"
   # - name: redhat.satellite_operations
   #   version: ">=2.0.0"
