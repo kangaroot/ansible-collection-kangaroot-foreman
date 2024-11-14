@@ -1,6 +1,0 @@
----
-
-- name: Apply foreman role
-  hosts: foreman
-  roles:
-    - foreman
