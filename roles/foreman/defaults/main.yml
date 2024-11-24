@@ -20,6 +20,11 @@ foreman_roles: []
 foreman_usergroups: []
 foreman_users: []
 
+# Additional vars that should be set
+# foreman_all_organizations_namelist: "{{ foreman_organizations | map(attribute='name') | list }}"
+# foreman_all_locations_namelist: "{{ foreman_locations | map(attribute='name') | list }}"
+
+
 ###############################################################################
 ### Foreman Infrastructure section
 ###############################################################################
