@@ -163,8 +163,8 @@ foreman_operatingsystems: []
 ### EL installation media defaults
 ### =====================================
 
-foreman_installation_media_el_organizations: "{{ foreman_all_organizations_namelist }}"
-foreman_installation_media_el_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_el_organizations: "{{ foreman_all_organizations_namelist | default([]) }}"
+foreman_installation_media_el_locations: "{{ foreman_all_locations_namelist | default([]) }}"
 foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | default([]) |
                                                     selectattr('os_family', 'defined') |
                                                     selectattr('os_family', '==', 'Redhat') |
@@ -176,8 +176,8 @@ foreman_installation_media_el_operatingsystems: "{{ foreman_operatingsystems | d
 ### DEB installation media defaults
 ### =====================================
 
-foreman_installation_media_deb_organizations: "{{ foreman_all_organizations_namelist }}"
-foreman_installation_media_deb_locations: "{{ foreman_all_locations_namelist }}"
+foreman_installation_media_deb_organizations: "{{ foreman_all_organizations_namelist | default([]) }}"
+foreman_installation_media_deb_locations: "{{ foreman_all_locations_namelist | default([]) }}"
 foreman_installation_media_deb_operatingsystems: "{{ foreman_operatingsystems | default([]) |
                                                      selectattr('os_family', 'defined') |
                                                      selectattr('os_family', '==', 'Debian') |
