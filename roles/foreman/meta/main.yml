@@ -1,0 +1,27 @@
+galaxy_info:
+  role_name: foreman
+  author: "Sven Meeus <sven.meeus@kangaroot.net>"
+  description: "Role for configuring Foreman/Katello on a system"
+  license: GPL-3.0-or-later
+  min_ansible_version: "2.13"
+  platforms:
+    - name: Enterprise Linux
+      versions:
+        - "7"
+        - "8"
+        - "9"
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+        - bullseye
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - jammy
+        - focal
+        - noble
+  galaxy_tags:
+    - foreman
+    - katello
+    - satellite
