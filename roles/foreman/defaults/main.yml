@@ -43,30 +43,31 @@ foreman_compute_profiles: []
 ### ======================================
 
 # Foreman content roles to include
-foreman_content_roles:
+foreman_content_roles: []
   # Package only content
-  - kangaroot.foreman.foreman_content_atix
-  - kangaroot.foreman.foreman_content_ceph
-  - kangaroot.foreman.foreman_content_datadog
-  - kangaroot.foreman.foreman_content_docker
-  - kangaroot.foreman.foreman_content_elrepo
-  - kangaroot.foreman.foreman_content_epel
-  - kangaroot.foreman.foreman_content_fedora_copr
-  - kangaroot.foreman.foreman_content_foreman
-  - kangaroot.foreman.foreman_content_hashicorp
-  - kangaroot.foreman.foreman_content_kubernetes
-  - kangaroot.foreman.foreman_content_microsoft
-  - kangaroot.foreman.foreman_content_nginx
-  - kangaroot.foreman.foreman_content_remi
+  # - kangaroot.foreman_content_atix.foreman_content_atix
+  # - kangaroot.foreman_content_ceph.foreman_content_ceph
+  # - kangaroot.foreman_content_datadog.foreman_content_datadog
+  # - kangaroot.foreman_content_docker.foreman_content_docker
+  # - kangaroot.foreman_content_elrepo.foreman_content_elrepo
+  # - kangaroot.foreman_content_epel.foreman_content_epel
+  # - kangaroot.foreman_content_fedora_copr.foreman_content_fedora_copr
+  # - kangaroot.foreman_content_foreman.foreman_content_foreman
+  # - kangaroot.foreman_content_hashicorp.foreman_content_hashicorp
+  # - kangaroot.foreman_content_kubernetes.foreman_content_kubernetes
+  # - kangaroot.foreman_content_microsoft.foreman_content_microsoft
+  # - kangaroot.foreman_content_nginx.foreman_content_nginx
+  # - kangaroot.foreman_content_puppet.foreman_content_puppet
+  # - kangaroot.foreman_content_remi.foreman_content_remi
   # OS content
-  - kangaroot.foreman.foreman_content_centos
-  - kangaroot.foreman.foreman_content_debian
-  - kangaroot.foreman.foreman_content_ol
-  - kangaroot.foreman.foreman_content_redhat
-  - kangaroot.foreman.foreman_content_rocky
-  - kangaroot.foreman.foreman_content_ubuntu
+  # - kangaroot.foreman_content_centos.foreman_content_centos
+  # - kangaroot.foreman_content_debian.foreman_content_debian
+  # - kangaroot.foreman_content_ol.foreman_content_ol
+  # - kangaroot.foreman_content_redhat.foreman_content_redhat
+  # - kangaroot.foreman_content_rocky.foreman_content_rocky
+  # - kangaroot.foreman_content_ubuntu.foreman_content_ubuntu
   # Builtin content
-  - kangaroot.foreman.foreman_content_builtin
+  # - kangaroot.foreman_content_builtin.foreman_content_builtin
 
 ### ======================================
 ### Content publish, promote and cleanup
