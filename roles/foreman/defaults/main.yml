@@ -194,6 +194,7 @@ foreman_operatingsystems_el_architectures:
   - x86_64
 foreman_operatingsystems_el_ptables: "{{
   [ 'Kickstart default',
+    'Kickstart default encrypted',
     'Kickstart custom' ] |
     union(foreman_partition_tables | default([]) |
           selectattr('os_family', 'defined') |
